@@ -1,0 +1,7 @@
+C:\VSProgetti\TEST\CDCMetal\CDCMetal.Entities\bin\Debug\CDCMetal.Entities.dll.config
+C:\VSProgetti\TEST\CDCMetal\CDCMetal.Entities\bin\Debug\CDCMetal.Entities.dll
+C:\VSProgetti\TEST\CDCMetal\CDCMetal.Entities\bin\Debug\CDCMetal.Entities.pdb
+C:\VSProgetti\TEST\CDCMetal\CDCMetal.Entities\obj\Debug\CDCMetal.Entities.csprojAssemblyReference.cache
+C:\VSProgetti\TEST\CDCMetal\CDCMetal.Entities\obj\Debug\CDCMetal.Entities.csproj.CoreCompileInputs.cache
+C:\VSProgetti\TEST\CDCMetal\CDCMetal.Entities\obj\Debug\CDCMetal.Entities.dll
+C:\VSProgetti\TEST\CDCMetal\CDCMetal.Entities\obj\Debug\CDCMetal.Entities.pdb

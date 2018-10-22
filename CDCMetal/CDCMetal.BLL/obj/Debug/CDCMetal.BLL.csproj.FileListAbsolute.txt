@@ -1,0 +1,13 @@
+C:\VSProgetti\TEST\CDCMetal\CDCMetal.BLL\bin\Debug\CDCMetal.BLL.dll
+C:\VSProgetti\TEST\CDCMetal\CDCMetal.BLL\bin\Debug\CDCMetal.BLL.pdb
+C:\VSProgetti\TEST\CDCMetal\CDCMetal.BLL\bin\Debug\CDCMetal.Data.dll
+C:\VSProgetti\TEST\CDCMetal\CDCMetal.BLL\bin\Debug\CDCMetal.Entities.dll
+C:\VSProgetti\TEST\CDCMetal\CDCMetal.BLL\bin\Debug\Oracle.ManagedDataAccess.dll
+C:\VSProgetti\TEST\CDCMetal\CDCMetal.BLL\bin\Debug\CDCMetal.Data.pdb
+C:\VSProgetti\TEST\CDCMetal\CDCMetal.BLL\bin\Debug\CDCMetal.Entities.pdb
+C:\VSProgetti\TEST\CDCMetal\CDCMetal.BLL\bin\Debug\CDCMetal.Entities.dll.config
+C:\VSProgetti\TEST\CDCMetal\CDCMetal.BLL\obj\Debug\CDCMetal.BLL.csprojAssemblyReference.cache
+C:\VSProgetti\TEST\CDCMetal\CDCMetal.BLL\obj\Debug\CDCMetal.BLL.csproj.CoreCompileInputs.cache
+C:\VSProgetti\TEST\CDCMetal\CDCMetal.BLL\obj\Debug\CDCMetal.BLL.csproj.CopyComplete
+C:\VSProgetti\TEST\CDCMetal\CDCMetal.BLL\obj\Debug\CDCMetal.BLL.dll
+C:\VSProgetti\TEST\CDCMetal\CDCMetal.BLL\obj\Debug\CDCMetal.BLL.pdb

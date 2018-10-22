@@ -1,0 +1,6 @@
+C:\VSProgetti\TEST\CDCMetal\CDCMetal.Helpers\bin\Debug\CDCMetal.Helpers.dll
+C:\VSProgetti\TEST\CDCMetal\CDCMetal.Helpers\bin\Debug\CDCMetal.Helpers.pdb
+C:\VSProgetti\TEST\CDCMetal\CDCMetal.Helpers\obj\Debug\CDCMetal.Helpers.csprojAssemblyReference.cache
+C:\VSProgetti\TEST\CDCMetal\CDCMetal.Helpers\obj\Debug\CDCMetal.Helpers.csproj.CoreCompileInputs.cache
+C:\VSProgetti\TEST\CDCMetal\CDCMetal.Helpers\obj\Debug\CDCMetal.Helpers.dll
+C:\VSProgetti\TEST\CDCMetal\CDCMetal.Helpers\obj\Debug\CDCMetal.Helpers.pdb
