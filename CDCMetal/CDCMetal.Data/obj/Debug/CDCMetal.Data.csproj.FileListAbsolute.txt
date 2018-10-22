@@ -9,3 +9,14 @@ C:\VSProgetti\TEST\CDCMetal\CDCMetal.Data\obj\Debug\CDCMetal.Data.pdb
 C:\VSProgetti\TEST\CDCMetal\CDCMetal.Data\bin\Debug\CDCMetal.Entities.dll
 C:\VSProgetti\TEST\CDCMetal\CDCMetal.Data\bin\Debug\CDCMetal.Entities.pdb
 C:\VSProgetti\TEST\CDCMetal\CDCMetal.Data\bin\Debug\CDCMetal.Entities.dll.config
+C:\VSProgetti\CDCMetal\CDCMetal\CDCMetal.Data\bin\Debug\CDCMetal.Data.dll
+C:\VSProgetti\CDCMetal\CDCMetal\CDCMetal.Data\bin\Debug\CDCMetal.Data.pdb
+C:\VSProgetti\CDCMetal\CDCMetal\CDCMetal.Data\bin\Debug\CDCMetal.Entities.dll
+C:\VSProgetti\CDCMetal\CDCMetal\CDCMetal.Data\bin\Debug\Oracle.ManagedDataAccess.dll
+C:\VSProgetti\CDCMetal\CDCMetal\CDCMetal.Data\bin\Debug\CDCMetal.Entities.pdb
+C:\VSProgetti\CDCMetal\CDCMetal\CDCMetal.Data\bin\Debug\CDCMetal.Entities.dll.config
+C:\VSProgetti\CDCMetal\CDCMetal\CDCMetal.Data\obj\Debug\CDCMetal.Data.csprojAssemblyReference.cache
+C:\VSProgetti\CDCMetal\CDCMetal\CDCMetal.Data\obj\Debug\CDCMetal.Data.csproj.CoreCompileInputs.cache
+C:\VSProgetti\CDCMetal\CDCMetal\CDCMetal.Data\obj\Debug\CDCMetal.Data.csproj.CopyComplete
+C:\VSProgetti\CDCMetal\CDCMetal\CDCMetal.Data\obj\Debug\CDCMetal.Data.dll
+C:\VSProgetti\CDCMetal\CDCMetal\CDCMetal.Data\obj\Debug\CDCMetal.Data.pdb

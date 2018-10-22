@@ -412,3 +412,9 @@ Oracle.ManagedDataAccess.Client.OracleException (0x80004005): ORA-01745: nome ho
    in CDCMetal.MainForm.MainForm_Load(Object sender, EventArgs e) in C:\VSProgetti\TEST\CDCMetal\CDCMetal\MainForm.cs:riga 65
 INFO  2018-10-22 17:00:03,602   129ms MainForm               LogScrivi          - Applicazione CDCMetal avviata
 INFO  2018-10-22 17:02:27,742 144270ms MainForm               LogScrivi          - Applicazione CDCMetal fermata
+INFO  2018-10-22 17:50:41,389   122ms MainForm               LogScrivi          - Applicazione CDCMetal avviata
+INFO  2018-10-22 17:50:55,923 14656ms MainForm               LogScrivi          - Applicazione CDCMetal fermata
+INFO  2018-10-22 17:51:33,506   122ms MainForm               LogScrivi          - Applicazione CDCMetal avviata
+INFO  2018-10-22 17:51:52,964 19580ms MainForm               LogScrivi          - Applicazione CDCMetal fermata
+INFO  2018-10-22 17:53:01,929   113ms MainForm               LogScrivi          - Applicazione CDCMetal avviata
+INFO  2018-10-22 17:53:40,187 38371ms MainForm               LogScrivi          - Applicazione CDCMetal fermata

@@ -11,3 +11,16 @@ C:\VSProgetti\TEST\CDCMetal\CDCMetal.BLL\obj\Debug\CDCMetal.BLL.csproj.CoreCompi
 C:\VSProgetti\TEST\CDCMetal\CDCMetal.BLL\obj\Debug\CDCMetal.BLL.csproj.CopyComplete
 C:\VSProgetti\TEST\CDCMetal\CDCMetal.BLL\obj\Debug\CDCMetal.BLL.dll
 C:\VSProgetti\TEST\CDCMetal\CDCMetal.BLL\obj\Debug\CDCMetal.BLL.pdb
+C:\VSProgetti\CDCMetal\CDCMetal\CDCMetal.BLL\bin\Debug\CDCMetal.BLL.dll
+C:\VSProgetti\CDCMetal\CDCMetal\CDCMetal.BLL\bin\Debug\CDCMetal.BLL.pdb
+C:\VSProgetti\CDCMetal\CDCMetal\CDCMetal.BLL\bin\Debug\CDCMetal.Data.dll
+C:\VSProgetti\CDCMetal\CDCMetal\CDCMetal.BLL\bin\Debug\CDCMetal.Entities.dll
+C:\VSProgetti\CDCMetal\CDCMetal\CDCMetal.BLL\bin\Debug\Oracle.ManagedDataAccess.dll
+C:\VSProgetti\CDCMetal\CDCMetal\CDCMetal.BLL\bin\Debug\CDCMetal.Data.pdb
+C:\VSProgetti\CDCMetal\CDCMetal\CDCMetal.BLL\bin\Debug\CDCMetal.Entities.pdb
+C:\VSProgetti\CDCMetal\CDCMetal\CDCMetal.BLL\bin\Debug\CDCMetal.Entities.dll.config
+C:\VSProgetti\CDCMetal\CDCMetal\CDCMetal.BLL\obj\Debug\CDCMetal.BLL.csprojAssemblyReference.cache
+C:\VSProgetti\CDCMetal\CDCMetal\CDCMetal.BLL\obj\Debug\CDCMetal.BLL.csproj.CoreCompileInputs.cache
+C:\VSProgetti\CDCMetal\CDCMetal\CDCMetal.BLL\obj\Debug\CDCMetal.BLL.csproj.CopyComplete
+C:\VSProgetti\CDCMetal\CDCMetal\CDCMetal.BLL\obj\Debug\CDCMetal.BLL.dll
+C:\VSProgetti\CDCMetal\CDCMetal\CDCMetal.BLL\obj\Debug\CDCMetal.BLL.pdb

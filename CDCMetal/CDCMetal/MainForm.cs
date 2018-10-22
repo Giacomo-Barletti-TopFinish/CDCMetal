@@ -33,7 +33,6 @@ namespace CDCMetal
         {
             InitializeComponent();
             LogScrivi("Applicazione CDCMetal avviata");
-            lb
         }
 
         private void exitToolStripMenuItem_Click(object sender, EventArgs e)
@@ -71,6 +70,34 @@ namespace CDCMetal
                 ExceptionFrm frm = new ExceptionFrm(ex);
                 frm.ShowDialog();
             }
+            AbilitaMenu();
+        }
+
+        private void AbilitaMenu()
+        {
+            if(!_utenteRiconosciuto)
+            {
+                DisabilitaElementiMenu(cdcMenu.Items,false);
+                loginToolStripMenuItem.Enabled = true;
+                exitToolStripMenuItem.Enabled = true;
+                fileToolStripMenuItem.Enabled = true;
+            }
+            else
+                DisabilitaElementiMenu(cdcMenu.Items, true);
+
+        }
+
+        private void DisabilitaElementiMenu(ToolStripItemCollection elementi, bool abilita)
+        {
+            foreach (ToolStripMenuItem elemento in elementi)
+            {
+                elemento.Enabled = abilita;
+                if (elemento.DropDownItems.Count > 0)
+                {
+                    DisabilitaElementiMenu(elemento.DropDownItems, abilita);
+                }
+
+            }
         }
 
         private void EseguiLogin()
@@ -100,8 +127,9 @@ namespace CDCMetal
             try
             {
                 EseguiLogin();
+                AbilitaMenu();
             }
-            catch(Exception ex)
+            catch (Exception ex)
             {
                 LogScriviErrore("ERRORE IN ESEGUI LOGIN", ex);
                 ExceptionFrm frm = new ExceptionFrm(ex);
