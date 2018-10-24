@@ -418,3 +418,65 @@ INFO  2018-10-22 17:51:33,506   122ms MainForm               LogScrivi          
 INFO  2018-10-22 17:51:52,964 19580ms MainForm               LogScrivi          - Applicazione CDCMetal fermata
 INFO  2018-10-22 17:53:01,929   113ms MainForm               LogScrivi          - Applicazione CDCMetal avviata
 INFO  2018-10-22 17:53:40,187 38371ms MainForm               LogScrivi          - Applicazione CDCMetal fermata
+INFO  2018-10-23 14:00:26,048   133ms MainForm               LogScrivi          - Applicazione CDCMetal avviata
+INFO  2018-10-23 14:00:39,520 13605ms MainForm               LogScrivi          - Applicazione CDCMetal fermata
+INFO  2018-10-23 16:49:02,634   124ms MainForm               LogScrivi          - Applicazione CDCMetal avviata
+INFO  2018-10-23 16:49:07,741  5232ms MainForm               LogScrivi          - Applicazione CDCMetal fermata
+INFO  2018-10-23 16:59:46,446   171ms MainForm               LogScrivi          - Applicazione CDCMetal avviata
+INFO  2018-10-23 17:01:48,129   113ms MainForm               LogScrivi          - Applicazione CDCMetal avviata
+INFO  2018-10-23 17:01:56,866  8850ms MainForm               LogScrivi          - Applicazione CDCMetal fermata
+INFO  2018-10-23 17:39:16,148   126ms MainForm               LogScrivi          - Applicazione CDCMetal avviata
+INFO  2018-10-23 17:41:33,607   116ms MainForm               LogScrivi          - Applicazione CDCMetal avviata
+INFO  2018-10-24 09:54:41,064   124ms MainForm               LogScrivi          - Applicazione CDCMetal avviata
+INFO  2018-10-24 09:56:09,854   156ms MainForm               LogScrivi          - Applicazione CDCMetal avviata
+INFO  2018-10-24 10:05:35,278   118ms MainForm               LogScrivi          - Applicazione CDCMetal avviata
+INFO  2018-10-24 10:08:32,069   150ms MainForm               LogScrivi          - Applicazione CDCMetal avviata
+INFO  2018-10-24 10:11:38,488   114ms MainForm               LogScrivi          - Applicazione CDCMetal avviata
+INFO  2018-10-24 10:13:56,598 138224ms MainForm               LogScrivi          - Applicazione CDCMetal fermata
+INFO  2018-10-24 10:14:55,225   132ms MainForm               LogScrivi          - Applicazione CDCMetal avviata
+INFO  2018-10-24 10:16:59,355   147ms MainForm               LogScrivi          - Applicazione CDCMetal avviata
+INFO  2018-10-24 10:20:44,896   124ms MainForm               LogScrivi          - Applicazione CDCMetal avviata
+ERROR 2018-10-24 10:22:38,031 113258ms MainForm               LogScriviErrore    - ERRORE IN APRI FILE EXCEL
+System.Data.NoNullAllowedException: La colonna 'IDDETTAGLIO' non accetta valori nulls.
+   in System.Data.DataColumn.CheckNullable(DataRow row)
+   in System.Data.DataTable.RaiseRowChanging(DataRowChangeEventArgs args, DataRow eRow, DataRowAction eAction, Boolean fireEvent)
+   in System.Data.DataTable.SetNewRecordWorker(DataRow row, Int32 proposedRecord, DataRowAction action, Boolean isInMerge, Boolean suppressEnsurePropertyChanged, Int32 position, Boolean fireEvent, Exception& deferredException)
+   in System.Data.DataTable.InsertRow(DataRow row, Int64 proposedID, Int32 pos, Boolean fireEvent)
+   in System.Data.DataRowCollection.Add(DataRow row)
+   in CDCMetal.Entities.CDCDS.CDC_DETTAGLIODataTable.AddCDC_DETTAGLIORow(CDC_DETTAGLIORow row) in C:\VSProgetti\CDCMetal\CDCMetal\CDCMetal.Entities\CDCDS.Designer.cs:riga 1555
+   in CDCMetal.Helpers.ExcelHelper.ReadCDC(Stream stream, CDCDS ds, Decimal IDEXCEL, String& messaggioErrore) in C:\VSProgetti\CDCMetal\CDCMetal\CDCMetal.Helpers\ExcelHelper.cs:riga 211
+   in CDCMetal.BLL.ExcelBLL.LeggiExcelCDC(CDCDS ds, String filePath, String utente, String& messaggioErrore) in C:\VSProgetti\CDCMetal\CDCMetal\CDCMetal.BLL\ExcelBLL.cs:riga 42
+   in CDCMetal.ExcelCaricaNuovoDocumentoFrm.btnApriFile_Click(Object sender, EventArgs e) in C:\VSProgetti\CDCMetal\CDCMetal\CDCMetal\ExcelCaricaNuovoDocumentoFrm.cs:riga 65
+INFO  2018-10-24 10:23:04,766 139994ms MainForm               LogScrivi          - Applicazione CDCMetal fermata
+INFO  2018-10-24 10:23:26,928   129ms MainForm               LogScrivi          - Applicazione CDCMetal avviata
+ERROR 2018-10-24 10:23:54,838 28039ms MainForm               LogScriviErrore    - ERRORE IN APRI FILE EXCEL
+System.Data.NoNullAllowedException: La colonna 'IDDETTAGLIO' non accetta valori nulls.
+   in System.Data.DataColumn.CheckNullable(DataRow row)
+   in System.Data.DataTable.RaiseRowChanging(DataRowChangeEventArgs args, DataRow eRow, DataRowAction eAction, Boolean fireEvent)
+   in System.Data.DataTable.SetNewRecordWorker(DataRow row, Int32 proposedRecord, DataRowAction action, Boolean isInMerge, Boolean suppressEnsurePropertyChanged, Int32 position, Boolean fireEvent, Exception& deferredException)
+   in System.Data.DataTable.InsertRow(DataRow row, Int64 proposedID, Int32 pos, Boolean fireEvent)
+   in System.Data.DataRowCollection.Add(DataRow row)
+   in CDCMetal.Entities.CDCDS.CDC_DETTAGLIODataTable.AddCDC_DETTAGLIORow(CDC_DETTAGLIORow row) in C:\VSProgetti\CDCMetal\CDCMetal\CDCMetal.Entities\CDCDS.Designer.cs:riga 1555
+   in CDCMetal.Helpers.ExcelHelper.ReadCDC(Stream stream, CDCDS ds, Decimal IDEXCEL, String& messaggioErrore) in C:\VSProgetti\CDCMetal\CDCMetal\CDCMetal.Helpers\ExcelHelper.cs:riga 211
+   in CDCMetal.BLL.ExcelBLL.LeggiExcelCDC(CDCDS ds, String filePath, String utente, String& messaggioErrore) in C:\VSProgetti\CDCMetal\CDCMetal\CDCMetal.BLL\ExcelBLL.cs:riga 42
+   in CDCMetal.ExcelCaricaNuovoDocumentoFrm.btnApriFile_Click(Object sender, EventArgs e) in C:\VSProgetti\CDCMetal\CDCMetal\CDCMetal\ExcelCaricaNuovoDocumentoFrm.cs:riga 65
+INFO  2018-10-24 10:24:08,543 41743ms MainForm               LogScrivi          - Applicazione CDCMetal fermata
+INFO  2018-10-24 10:24:23,238   127ms MainForm               LogScrivi          - Applicazione CDCMetal avviata
+INFO  2018-10-24 10:24:59,678 36567ms MainForm               LogScrivi          - Applicazione CDCMetal fermata
+INFO  2018-10-24 10:25:56,245   127ms MainForm               LogScrivi          - Applicazione CDCMetal avviata
+INFO  2018-10-24 10:26:04,326  8208ms MainForm               LogScrivi          - Applicazione CDCMetal fermata
+INFO  2018-10-24 10:28:19,312   115ms MainForm               LogScrivi          - Applicazione CDCMetal avviata
+ERROR 2018-10-24 10:30:14,729 115533ms MainForm               LogScriviErrore    - ERRORE IN APRI FILE EXCEL
+System.ArgumentException: La riga appartiene già a questa tabella.
+   in System.Data.DataTable.InsertRow(DataRow row, Int64 proposedID, Int32 pos, Boolean fireEvent)
+   in System.Data.DataRowCollection.Add(DataRow row)
+   in CDCMetal.Entities.CDCDS.CDC_EXCELDataTable.AddCDC_EXCELRow(CDC_EXCELRow row) in C:\VSProgetti\CDCMetal\CDCMetal\CDCMetal.Entities\CDCDS.Designer.cs:riga 989
+   in CDCMetal.BLL.ExcelBLL.LeggiExcelCDC(CDCDS ds, String filePath, String utente, String& messaggioErrore)
+   in CDCMetal.ExcelCaricaNuovoDocumentoFrm.btnApriFile_Click(Object sender, EventArgs e) in C:\VSProgetti\CDCMetal\CDCMetal\CDCMetal\ExcelCaricaNuovoDocumentoFrm.cs:riga 65
+INFO  2018-10-24 10:30:57,415   117ms MainForm               LogScrivi          - Applicazione CDCMetal avviata
+INFO  2018-10-24 10:32:24,446 87148ms MainForm               LogScrivi          - Applicazione CDCMetal fermata
+INFO  2018-10-24 10:35:36,532   113ms MainForm               LogScrivi          - Applicazione CDCMetal avviata
+INFO  2018-10-24 10:37:17,453   122ms MainForm               LogScrivi          - Applicazione CDCMetal avviata
+INFO  2018-10-24 10:38:17,997 60666ms MainForm               LogScrivi          - Applicazione CDCMetal fermata
+INFO  2018-10-24 10:39:04,757   161ms MainForm               LogScrivi          - Applicazione CDCMetal avviata
+INFO  2018-10-24 10:41:02,308 117712ms MainForm               LogScrivi          - Applicazione CDCMetal fermata

@@ -42,6 +42,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Account.cs" />
+    <Compile Include="ExcelBLL.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -52,6 +53,10 @@
     <ProjectReference Include="..\CDCMetal.Entities\CDCMetal.Entities.csproj">
       <Project>{30FD00F1-EC6C-42F0-B5AE-45EC03E86307}</Project>
       <Name>CDCMetal.Entities</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\CDCMetal.Helpers\CDCMetal.Helpers.csproj">
+      <Project>{2c9c360c-7b1b-4471-bc40-4633effad067}</Project>
+      <Name>CDCMetal.Helpers</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

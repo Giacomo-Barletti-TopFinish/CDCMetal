@@ -15,9 +15,7 @@ namespace CDCMetal
     {
         private static readonly log4net.ILog _log = log4net.LogManager.GetLogger(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
 
-
-        private CDCDS.USR_USERRow _user;
-        private bool _utenteRiconosciuto = false;
+        public CDCContext Contesto = new CDCContext();
 
         public static void LogScriviErrore(string Messaggio, Exception ex)
         {
@@ -58,8 +56,18 @@ namespace CDCMetal
             }
         }
 
+        private void CreaContesto()
+        {
+            Contesto = new CDCContext();
+            Contesto.DS = new CDCDS();
+            Contesto.UtenteConnesso = false;
+            Contesto.Utente = null;
+
+        }
+
         private void MainForm_Load(object sender, EventArgs e)
         {
+            CreaContesto();
             try
             {
                 EseguiLogin();
@@ -75,9 +83,10 @@ namespace CDCMetal
 
         private void AbilitaMenu()
         {
-            if(!_utenteRiconosciuto)
+
+            if (!Contesto.UtenteConnesso)
             {
-                DisabilitaElementiMenu(cdcMenu.Items,false);
+                DisabilitaElementiMenu(cdcMenu.Items, false);
                 loginToolStripMenuItem.Enabled = true;
                 exitToolStripMenuItem.Enabled = true;
                 fileToolStripMenuItem.Enabled = true;
@@ -105,14 +114,15 @@ namespace CDCMetal
             LoginDialog frm = new LoginDialog();
             if (frm.ShowDialog() == DialogResult.OK)
             {
-                _utenteRiconosciuto = true;
-                _user = frm.User;
-                lblUserLoggato.Text = _user.FULLNAMEUSER.Trim();
+                Contesto.UtenteConnesso = true;
+                Contesto.Utente = frm.User;
+                lblUserLoggato.Text = frm.User.FULLNAMEUSER.Trim();
             }
             else
             {
-                _utenteRiconosciuto = false; ;
-                _user = null;
+
+                Contesto.UtenteConnesso = false;
+                Contesto.Utente = null;
                 lblUserLoggato.Text = string.Empty;
             }
         }
@@ -126,6 +136,7 @@ namespace CDCMetal
         {
             try
             {
+                CreaContesto();
                 EseguiLogin();
                 AbilitaMenu();
             }

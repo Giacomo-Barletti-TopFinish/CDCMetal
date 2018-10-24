@@ -1,0 +1,11 @@
+C:\VSProgetti\CDCMetal\CDCMetal\CDCMetal.Data\bin\Release\CDCMetal.Data.dll
+C:\VSProgetti\CDCMetal\CDCMetal\CDCMetal.Data\bin\Release\CDCMetal.Data.pdb
+C:\VSProgetti\CDCMetal\CDCMetal\CDCMetal.Data\bin\Release\CDCMetal.Entities.dll
+C:\VSProgetti\CDCMetal\CDCMetal\CDCMetal.Data\bin\Release\Oracle.ManagedDataAccess.dll
+C:\VSProgetti\CDCMetal\CDCMetal\CDCMetal.Data\bin\Release\CDCMetal.Entities.pdb
+C:\VSProgetti\CDCMetal\CDCMetal\CDCMetal.Data\bin\Release\CDCMetal.Entities.dll.config
+C:\VSProgetti\CDCMetal\CDCMetal\CDCMetal.Data\obj\Release\CDCMetal.Data.csprojAssemblyReference.cache
+C:\VSProgetti\CDCMetal\CDCMetal\CDCMetal.Data\obj\Release\CDCMetal.Data.csproj.CoreCompileInputs.cache
+C:\VSProgetti\CDCMetal\CDCMetal\CDCMetal.Data\obj\Release\CDCMetal.Data.csproj.CopyComplete
+C:\VSProgetti\CDCMetal\CDCMetal\CDCMetal.Data\obj\Release\CDCMetal.Data.dll
+C:\VSProgetti\CDCMetal\CDCMetal\CDCMetal.Data\obj\Release\CDCMetal.Data.pdb

@@ -1,0 +1,7 @@
+C:\VSProgetti\CDCMetal\CDCMetal\CDCMetal.Entities\bin\Release\CDCMetal.Entities.dll.config
+C:\VSProgetti\CDCMetal\CDCMetal\CDCMetal.Entities\bin\Release\CDCMetal.Entities.dll
+C:\VSProgetti\CDCMetal\CDCMetal\CDCMetal.Entities\bin\Release\CDCMetal.Entities.pdb
+C:\VSProgetti\CDCMetal\CDCMetal\CDCMetal.Entities\obj\Release\CDCMetal.Entities.csprojAssemblyReference.cache
+C:\VSProgetti\CDCMetal\CDCMetal\CDCMetal.Entities\obj\Release\CDCMetal.Entities.csproj.CoreCompileInputs.cache
+C:\VSProgetti\CDCMetal\CDCMetal\CDCMetal.Entities\obj\Release\CDCMetal.Entities.dll
+C:\VSProgetti\CDCMetal\CDCMetal\CDCMetal.Entities\obj\Release\CDCMetal.Entities.pdb

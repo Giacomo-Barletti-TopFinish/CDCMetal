@@ -27,7 +27,11 @@ namespace CDCMetal
 
         private void LoginDialog_Load(object sender, EventArgs e)
         {
-
+#if DEBUG
+            txtUser.Text = "gbarletti";
+            txtPassword.Text = "rvl";
+            btnOK_Click(null, null);
+#endif
         }
 
         private void btnCancel_Click(object sender, EventArgs e)

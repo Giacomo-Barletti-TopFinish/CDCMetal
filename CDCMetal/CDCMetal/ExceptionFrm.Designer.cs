@@ -55,7 +55,7 @@
             // 
             // timer1
             // 
-            this.timer1.Interval = 2200;
+            this.timer1.Interval = 2100;
             this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
             // 
             // ExceptionFrm
@@ -69,6 +69,7 @@
             this.MinimizeBox = false;
             this.Name = "ExceptionFrm";
             this.Text = "ERRORE";
+            this.Load += new System.EventHandler(this.ExceptionFrm_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();

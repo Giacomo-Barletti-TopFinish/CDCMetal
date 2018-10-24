@@ -24,3 +24,8 @@ C:\VSProgetti\CDCMetal\CDCMetal\CDCMetal.BLL\obj\Debug\CDCMetal.BLL.csproj.CoreC
 C:\VSProgetti\CDCMetal\CDCMetal\CDCMetal.BLL\obj\Debug\CDCMetal.BLL.csproj.CopyComplete
 C:\VSProgetti\CDCMetal\CDCMetal\CDCMetal.BLL\obj\Debug\CDCMetal.BLL.dll
 C:\VSProgetti\CDCMetal\CDCMetal\CDCMetal.BLL\obj\Debug\CDCMetal.BLL.pdb
+C:\VSProgetti\CDCMetal\CDCMetal\CDCMetal.BLL\bin\Debug\CDCMetal.Helpers.dll
+C:\VSProgetti\CDCMetal\CDCMetal\CDCMetal.BLL\bin\Debug\DocumentFormat.OpenXml.dll
+C:\VSProgetti\CDCMetal\CDCMetal\CDCMetal.BLL\bin\Debug\CDCMetal.Helpers.pdb
+C:\VSProgetti\CDCMetal\CDCMetal\CDCMetal.BLL\bin\Debug\CDCMetal.Helpers.dll.config
+C:\VSProgetti\CDCMetal\CDCMetal\CDCMetal.BLL\bin\Debug\DocumentFormat.OpenXml.xml

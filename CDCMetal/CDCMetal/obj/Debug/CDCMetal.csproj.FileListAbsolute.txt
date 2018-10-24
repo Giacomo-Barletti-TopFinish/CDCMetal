@@ -46,3 +46,8 @@ C:\VSProgetti\CDCMetal\CDCMetal\CDCMetal\bin\Debug\CDCMetal.Entities.dll.config
 C:\VSProgetti\CDCMetal\CDCMetal\CDCMetal\bin\Debug\log4net.xml
 C:\VSProgetti\CDCMetal\CDCMetal\CDCMetal\bin\Debug\CDCMetal.Data.pdb
 C:\VSProgetti\CDCMetal\CDCMetal\CDCMetal\obj\Debug\CDCMetal.csproj.CopyComplete
+C:\VSProgetti\CDCMetal\CDCMetal\CDCMetal\bin\Debug\CDCMetal.Helpers.dll
+C:\VSProgetti\CDCMetal\CDCMetal\CDCMetal\bin\Debug\DocumentFormat.OpenXml.dll
+C:\VSProgetti\CDCMetal\CDCMetal\CDCMetal\bin\Debug\CDCMetal.Helpers.pdb
+C:\VSProgetti\CDCMetal\CDCMetal\CDCMetal\bin\Debug\CDCMetal.Helpers.dll.config
+C:\VSProgetti\CDCMetal\CDCMetal\CDCMetal\bin\Debug\DocumentFormat.OpenXml.xml

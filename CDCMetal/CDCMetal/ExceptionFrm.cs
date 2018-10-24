@@ -52,5 +52,10 @@ namespace CDCMetal
             pictureBox1.Enabled = false;
             timer1.Stop();
         }
+
+        private void ExceptionFrm_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }
