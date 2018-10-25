@@ -47,6 +47,8 @@ namespace CDCMetal
         {
             try
             {
+                btnSalvaDB.Enabled = false;
+
                 lblMessage.Text = string.Empty;
                 if (string.IsNullOrEmpty(txtFilePath.Text))
                 {
@@ -72,6 +74,13 @@ namespace CDCMetal
                 lblNumeroRigheExcel.Text = Contesto.DS.CDC_DETTAGLIO.Count.ToString();
                 if (Contesto.DS.CDC_DETTAGLIO.Count > 0)
                     lblDataExcel.Text = Contesto.DS.CDC_DETTAGLIO.FirstOrDefault().DATACOLLAUDO;
+                else
+                {
+                    lblMessage.Text = "Il file è vuoto";
+                    return;
+                }
+
+                btnSalvaDB.Enabled = true;
 
                 dgvExcelCaricato.AutoGenerateColumns = true;
                 dgvExcelCaricato.DataSource = Contesto.DS;
@@ -79,7 +88,26 @@ namespace CDCMetal
                 dgvExcelCaricato.Columns["IDDETTAGLIO"].Visible = false;
                 dgvExcelCaricato.Columns["IDEXCEL"].Visible = false;
 
+                List<decimal> IDPRENOTAZIONE_DUPLICATO = bll.VerificaExcelCaricato(Contesto.DS);
+                if (IDPRENOTAZIONE_DUPLICATO.Count > 0)
+                {
+                    StringBuilder sb = new StringBuilder();
+                    sb.AppendLine("Sono state individuate delle righe il cui ID PRENOTAZIONE è già stato acquisito. Si tratta di righe duplicate.");
+                    sb.AppendLine("Di seguito gli ID PRENOTAZIONE duplicati:");
+                    foreach (decimal id in IDPRENOTAZIONE_DUPLICATO)
+                        sb.AppendLine(id.ToString());
 
+                    MessageBox.Show(sb.ToString(), "RIGHE DUPLICATE", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                }
+
+                foreach (DataGridViewRow riga in dgvExcelCaricato.Rows)
+                {
+                    decimal IDPRENOTAZIONE = (decimal)riga.Cells["IDPRENOTAZIONE"].Value;
+                    if (IDPRENOTAZIONE_DUPLICATO.Contains(IDPRENOTAZIONE))
+                    {
+                        riga.Cells["IDPRENOTAZIONE"].Style.BackColor = Color.Yellow;
+                    }
+                }
             }
             catch (Exception ex)
             {
@@ -89,5 +117,27 @@ namespace CDCMetal
             }
         }
 
+        private void btnSalvaDB_Click(object sender, EventArgs e)
+        {
+            ExcelBLL bll = new ExcelBLL();
+            List<decimal> IDPRENOTAZIONE_DUPLICATO = bll.VerificaExcelCaricato(Contesto.DS);
+            if (IDPRENOTAZIONE_DUPLICATO.Count > 0)
+            {
+                StringBuilder sb = new StringBuilder();
+                sb.AppendLine("Ci sono righe che sono già state salvate sul database (doppioni).");
+                sb.AppendLine("Le righe duplicate NON saranno salvate.");
+
+                MessageBox.Show(sb.ToString(), "RIGHE DUPLICATE", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+
+                foreach (CDCDS.CDC_DETTAGLIORow dettaglio in Contesto.DS.CDC_DETTAGLIO.Where(x => x.RowState != DataRowState.Deleted && IDPRENOTAZIONE_DUPLICATO.Contains(x.IDPRENOTAZIONE)))
+                    dettaglio.Delete();
+
+                Contesto.DS.CDC_DETTAGLIO.AcceptChanges();
+
+            }
+
+            bll.Salva(Contesto.DS);
+
+        }
     }
 }

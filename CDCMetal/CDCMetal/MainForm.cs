@@ -62,7 +62,7 @@ namespace CDCMetal
             Contesto.DS = new CDCDS();
             Contesto.UtenteConnesso = false;
             Contesto.Utente = null;
-
+            Contesto.PathCollaudo = CDCMetal.Properties.Settings.Default.PathCollaudo;
         }
 
         private void MainForm_Load(object sender, EventArgs e)
@@ -79,6 +79,7 @@ namespace CDCMetal
                 frm.ShowDialog();
             }
             AbilitaMenu();
+
         }
 
         private void AbilitaMenu()
@@ -146,6 +147,14 @@ namespace CDCMetal
                 ExceptionFrm frm = new ExceptionFrm(ex);
                 frm.ShowDialog();
             }
+        }
+
+        private void creaCartelleToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            CreaCartelleFrm form = new CreaCartelleFrm();
+            form.MdiParent = this;
+            form.Show();
+
         }
     }
 }

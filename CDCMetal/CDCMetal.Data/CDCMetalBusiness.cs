@@ -19,6 +19,33 @@ namespace CDCMetal.Data
             a.LeggiUtente(ds, User);
         }
 
+        [DataContext]
+        public void FillCDC_DETTAGLIO(List<decimal> IDPRENOTAZIONE, CDCDS ds)
+        {
+            CDCMetalAdapter a = new CDCMetalAdapter(DbConnection, DbTransaction);
+            a.FillCDC_DETTAGLIO(IDPRENOTAZIONE, ds);
+        }
+
+        [DataContext(true)]
+        public void UpdateCDC_EXCEL(CDCDS ds)
+        {
+            CDCMetalAdapter a = new CDCMetalAdapter(DbConnection, DbTransaction);
+            a.UpdateTable(ds.CDC_EXCEL.TableName, ds);
+        }
+
+        [DataContext(true)]
+        public void UpdateCDC_DETTAGLIO(CDCDS ds)
+        {
+            CDCMetalAdapter a = new CDCMetalAdapter(DbConnection, DbTransaction);
+            a.UpdateTable(ds.CDC_DETTAGLIO.TableName, ds);
+        }
+
+        [DataContext]
+        public List<DateTime> LeggiDateRiferimento()
+        {
+            CDCMetalAdapter a = new CDCMetalAdapter(DbConnection, DbTransaction);
+            return a.LeggiDateRiferimento();
+        }
 
     }
 }

@@ -480,3 +480,44 @@ INFO  2018-10-24 10:37:17,453   122ms MainForm               LogScrivi          
 INFO  2018-10-24 10:38:17,997 60666ms MainForm               LogScrivi          - Applicazione CDCMetal fermata
 INFO  2018-10-24 10:39:04,757   161ms MainForm               LogScrivi          - Applicazione CDCMetal avviata
 INFO  2018-10-24 10:41:02,308 117712ms MainForm               LogScrivi          - Applicazione CDCMetal fermata
+INFO  2018-10-24 11:29:01,180   137ms MainForm               LogScrivi          - Applicazione CDCMetal avviata
+ERROR 2018-10-24 11:29:03,454  2411ms MainForm               LogScriviErrore    - ERRORE IN ESEGUI LOGIN
+System.DivideByZeroException: Tentativo di divisione per zero.
+   in CDCMetal.MainForm.MainForm_Load(Object sender, EventArgs e) in C:\VSProgetti\CDCMetal\CDCMetal\CDCMetal\MainForm.cs:riga 75
+INFO  2018-10-24 11:29:17,072 16029ms MainForm               LogScrivi          - Applicazione CDCMetal fermata
+INFO  2018-10-24 11:29:19,482   118ms MainForm               LogScrivi          - Applicazione CDCMetal avviata
+ERROR 2018-10-24 11:29:21,677  2313ms MainForm               LogScriviErrore    - ERRORE IN ESEGUI LOGIN
+System.DivideByZeroException: Tentativo di divisione per zero.
+   in CDCMetal.MainForm.MainForm_Load(Object sender, EventArgs e) in C:\VSProgetti\CDCMetal\CDCMetal\CDCMetal\MainForm.cs:riga 75
+INFO  2018-10-24 11:29:28,169  8805ms MainForm               LogScrivi          - Applicazione CDCMetal fermata
+INFO  2018-10-24 16:17:53,014   146ms MainForm               LogScrivi          - Applicazione CDCMetal avviata
+INFO  2018-10-24 16:19:55,044   142ms MainForm               LogScrivi          - Applicazione CDCMetal avviata
+INFO  2018-10-24 16:20:17,303 22401ms MainForm               LogScrivi          - Applicazione CDCMetal fermata
+INFO  2018-10-25 11:37:18,309   149ms MainForm               LogScrivi          - Applicazione CDCMetal avviata
+INFO  2018-10-25 11:39:31,241   104ms MainForm               LogScrivi          - Applicazione CDCMetal avviata
+INFO  2018-10-25 11:40:51,961   122ms MainForm               LogScrivi          - Applicazione CDCMetal avviata
+INFO  2018-10-25 11:41:57,716 65877ms MainForm               LogScrivi          - Applicazione CDCMetal fermata
+INFO  2018-10-25 11:54:35,777   116ms MainForm               LogScrivi          - Applicazione CDCMetal avviata
+INFO  2018-10-25 11:55:46,629   131ms MainForm               LogScrivi          - Applicazione CDCMetal avviata
+INFO  2018-10-25 11:56:58,627 72129ms MainForm               LogScrivi          - Applicazione CDCMetal fermata
+INFO  2018-10-25 13:36:57,110   138ms MainForm               LogScrivi          - Applicazione CDCMetal avviata
+INFO  2018-10-25 13:40:15,479   127ms MainForm               LogScrivi          - Applicazione CDCMetal avviata
+ERROR 2018-10-25 13:40:46,380 31027ms MainForm               LogScriviErrore    - ERRORE IN APRI FILE EXCEL
+System.NullReferenceException: Riferimento a un oggetto non impostato su un'istanza di oggetto.
+   in CDCMetal.Helpers.ExcelHelper.VerificaData(String cella) in C:\VSProgetti\CDCMetal\CDCMetal\CDCMetal.Helpers\ExcelHelper.cs:riga 244
+   in CDCMetal.Helpers.ExcelHelper.ReadCDC(Stream stream, CDCDS ds, Decimal IDEXCEL, String& messaggioErrore) in C:\VSProgetti\CDCMetal\CDCMetal\CDCMetal.Helpers\ExcelHelper.cs:riga 58
+   in CDCMetal.BLL.ExcelBLL.LeggiExcelCDC(CDCDS ds, String filePath, String utente, String& messaggioErrore) in C:\VSProgetti\CDCMetal\CDCMetal\CDCMetal.BLL\ExcelBLL.cs:riga 43
+   in CDCMetal.ExcelCaricaNuovoDocumentoFrm.btnApriFile_Click(Object sender, EventArgs e) in C:\VSProgetti\CDCMetal\CDCMetal\CDCMetal\ExcelCaricaNuovoDocumentoFrm.cs:riga 67
+ERROR 2018-10-25 13:45:34,098 318746ms MainForm               LogScriviErrore    - ERRORE IN APRI FILE EXCEL
+System.IO.IOException: Il processo non può accedere al file 'C:\Temp\CDC\Sorgenti\GUCCI 16.10.xlsx' perché è in uso da un altro processo.
+   in System.IO.__Error.WinIOError(Int32 errorCode, String maybeFullPath)
+   in System.IO.FileStream.Init(String path, FileMode mode, FileAccess access, Int32 rights, Boolean useRights, FileShare share, Int32 bufferSize, FileOptions options, SECURITY_ATTRIBUTES secAttrs, String msgPath, Boolean bFromProxy, Boolean useLongPath, Boolean checkHost)
+   in System.IO.FileStream..ctor(String path, FileMode mode, FileAccess access, FileShare share, Int32 bufferSize, FileOptions options, String msgPath, Boolean bFromProxy)
+   in System.IO.FileStream..ctor(String path, FileMode mode)
+   in CDCMetal.BLL.ExcelBLL.LeggiExcelCDC(CDCDS ds, String filePath, String utente, String& messaggioErrore) in C:\VSProgetti\CDCMetal\CDCMetal\CDCMetal.BLL\ExcelBLL.cs:riga 19
+   in CDCMetal.ExcelCaricaNuovoDocumentoFrm.btnApriFile_Click(Object sender, EventArgs e) in C:\VSProgetti\CDCMetal\CDCMetal\CDCMetal\ExcelCaricaNuovoDocumentoFrm.cs:riga 67
+INFO  2018-10-25 13:51:29,590   114ms MainForm               LogScrivi          - Applicazione CDCMetal avviata
+INFO  2018-10-25 13:55:40,186 250710ms MainForm               LogScrivi          - Applicazione CDCMetal fermata
+INFO  2018-10-25 13:55:44,070   123ms MainForm               LogScrivi          - Applicazione CDCMetal avviata
+INFO  2018-10-25 13:55:55,652 11706ms MainForm               LogScrivi          - Applicazione CDCMetal fermata
+INFO  2018-10-25 13:57:29,059   245ms MainForm               LogScrivi          - Applicazione CDCMetal avviata

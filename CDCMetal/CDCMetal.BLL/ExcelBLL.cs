@@ -3,6 +3,7 @@ using CDCMetal.Entities;
 using CDCMetal.Helpers;
 using System;
 using System.Collections.Generic;
+using System.Globalization;
 using System.IO;
 using System.Linq;
 using System.Text;
@@ -39,7 +40,7 @@ namespace CDCMetal.BLL
                 excelRow.DATI = dati;
 
                 ExcelHelper excel = new ExcelHelper();
-                if(!excel.ReadCDC(fs, ds, IDEXCEL, out messaggioErrore))
+                if (!excel.ReadCDC(fs, ds, IDEXCEL, out messaggioErrore))
                 {
                     ds.CDC_DETTAGLIO.Clear();
                     ds.CDC_EXCEL.Clear();
@@ -48,7 +49,9 @@ namespace CDCMetal.BLL
 
                 if (ds.CDC_DETTAGLIO.Count > 0)
                 {
-                    excelRow.DATARIFERIMENTO = ds.CDC_DETTAGLIO.FirstOrDefault().DATACOLLAUDO;
+                    string data = ds.CDC_DETTAGLIO.FirstOrDefault().DATACOLLAUDO;
+                    DateTime dt = DateTime.ParseExact(data, "dd/MM/yyyy", CultureInfo.InvariantCulture);
+                    excelRow.DATARIFERIMENTO = dt;
                     ds.CDC_EXCEL.AddCDC_EXCELRow(excelRow);
                     return true;
                 }
@@ -61,6 +64,31 @@ namespace CDCMetal.BLL
                 fs.Close();
             }
             return false;
+        }
+
+        public List<decimal> VerificaExcelCaricato(CDCDS ds)
+        {
+            List<decimal> IDPRENOTAZIONE = ds.CDC_DETTAGLIO.Select(x => x.IDPRENOTAZIONE).Distinct().ToList();
+
+            CDCDS dsDB = new CDCDS();
+            using (CDCMetalBusiness bCDCMetal = new CDCMetalBusiness())
+            {
+                bCDCMetal.FillCDC_DETTAGLIO(IDPRENOTAZIONE, dsDB);
+            }
+
+            List<decimal> IDPRENOTAZIONEDUPLICATI = dsDB.CDC_DETTAGLIO.Select(x => x.IDPRENOTAZIONE).Distinct().ToList();
+
+            return IDPRENOTAZIONEDUPLICATI;
+        }
+
+        public void Salva(CDCDS ds)
+        {
+            using (CDCMetalBusiness bCDCMetal = new CDCMetalBusiness())
+            {
+                bCDCMetal.UpdateCDC_EXCEL(ds);
+                bCDCMetal.UpdateCDC_DETTAGLIO(ds);
+            }
+
         }
     }
 }

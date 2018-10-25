@@ -116,36 +116,6 @@
             </xs:sequence>
           </xs:complexType>
         </xs:element>
-        <xs:element name="CDC_EXCEL" msprop:Generator_TableClassName="CDC_EXCELDataTable" msprop:Generator_TableVarName="tableCDC_EXCEL" msprop:Generator_RowChangedName="CDC_EXCELRowChanged" msprop:Generator_TablePropName="CDC_EXCEL" msprop:Generator_RowDeletingName="CDC_EXCELRowDeleting" msprop:Generator_RowChangingName="CDC_EXCELRowChanging" msprop:Generator_RowEvHandlerName="CDC_EXCELRowChangeEventHandler" msprop:Generator_RowDeletedName="CDC_EXCELRowDeleted" msprop:Generator_RowClassName="CDC_EXCELRow" msprop:Generator_UserTableName="CDC_EXCEL" msprop:Generator_RowEvArgName="CDC_EXCELRowChangeEvent">
-          <xs:complexType>
-            <xs:sequence>
-              <xs:element name="IDEXCEL" msprop:Generator_ColumnVarNameInTable="columnIDEXCEL" msprop:Generator_ColumnPropNameInRow="IDEXCEL" msprop:Generator_ColumnPropNameInTable="IDEXCELColumn" msprop:Generator_UserColumnName="IDEXCEL" type="xs:decimal" />
-              <xs:element name="NOMEFILE" msprop:Generator_ColumnVarNameInTable="columnNOMEFILE" msprop:Generator_ColumnPropNameInRow="NOMEFILE" msprop:Generator_ColumnPropNameInTable="NOMEFILEColumn" msprop:Generator_UserColumnName="NOMEFILE">
-                <xs:simpleType>
-                  <xs:restriction base="xs:string">
-                    <xs:maxLength value="200" />
-                  </xs:restriction>
-                </xs:simpleType>
-              </xs:element>
-              <xs:element name="DATAACQUISIZIONE" msprop:Generator_ColumnVarNameInTable="columnDATAACQUISIZIONE" msprop:Generator_ColumnPropNameInRow="DATAACQUISIZIONE" msprop:Generator_ColumnPropNameInTable="DATAACQUISIZIONEColumn" msprop:Generator_UserColumnName="DATAACQUISIZIONE" type="xs:dateTime" />
-              <xs:element name="DATARIFERIMENTO" msprop:Generator_ColumnVarNameInTable="columnDATARIFERIMENTO" msprop:Generator_ColumnPropNameInRow="DATARIFERIMENTO" msprop:Generator_ColumnPropNameInTable="DATARIFERIMENTOColumn" msprop:Generator_UserColumnName="DATARIFERIMENTO">
-                <xs:simpleType>
-                  <xs:restriction base="xs:string">
-                    <xs:maxLength value="10" />
-                  </xs:restriction>
-                </xs:simpleType>
-              </xs:element>
-              <xs:element name="UTENTE" msprop:Generator_ColumnVarNameInTable="columnUTENTE" msprop:Generator_ColumnPropNameInRow="UTENTE" msprop:Generator_ColumnPropNameInTable="UTENTEColumn" msprop:Generator_UserColumnName="UTENTE">
-                <xs:simpleType>
-                  <xs:restriction base="xs:string">
-                    <xs:maxLength value="50" />
-                  </xs:restriction>
-                </xs:simpleType>
-              </xs:element>
-              <xs:element name="DATI" msprop:Generator_ColumnVarNameInTable="columnDATI" msprop:Generator_ColumnPropNameInRow="DATI" msprop:Generator_ColumnPropNameInTable="DATIColumn" msprop:Generator_UserColumnName="DATI" type="xs:base64Binary" />
-            </xs:sequence>
-          </xs:complexType>
-        </xs:element>
         <xs:element name="CDC_DETTAGLIO" msprop:Generator_TableClassName="CDC_DETTAGLIODataTable" msprop:Generator_TableVarName="tableCDC_DETTAGLIO" msprop:Generator_TablePropName="CDC_DETTAGLIO" msprop:Generator_RowDeletingName="CDC_DETTAGLIORowDeleting" msprop:Generator_RowChangingName="CDC_DETTAGLIORowChanging" msprop:Generator_RowEvHandlerName="CDC_DETTAGLIORowChangeEventHandler" msprop:Generator_RowDeletedName="CDC_DETTAGLIORowDeleted" msprop:Generator_UserTableName="CDC_DETTAGLIO" msprop:Generator_RowChangedName="CDC_DETTAGLIORowChanged" msprop:Generator_RowEvArgName="CDC_DETTAGLIORowChangeEvent" msprop:Generator_RowClassName="CDC_DETTAGLIORow">
           <xs:complexType>
             <xs:sequence>
@@ -316,6 +286,30 @@
                   </xs:restriction>
                 </xs:simpleType>
               </xs:element>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="CDC_EXCEL" msprop:Generator_TableClassName="CDC_EXCELDataTable" msprop:Generator_TableVarName="tableCDC_EXCEL" msprop:Generator_TablePropName="CDC_EXCEL" msprop:Generator_RowDeletingName="CDC_EXCELRowDeleting" msprop:Generator_RowChangingName="CDC_EXCELRowChanging" msprop:Generator_RowEvHandlerName="CDC_EXCELRowChangeEventHandler" msprop:Generator_RowDeletedName="CDC_EXCELRowDeleted" msprop:Generator_UserTableName="CDC_EXCEL" msprop:Generator_RowChangedName="CDC_EXCELRowChanged" msprop:Generator_RowEvArgName="CDC_EXCELRowChangeEvent" msprop:Generator_RowClassName="CDC_EXCELRow">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="IDEXCEL" msprop:Generator_ColumnVarNameInTable="columnIDEXCEL" msprop:Generator_ColumnPropNameInRow="IDEXCEL" msprop:Generator_ColumnPropNameInTable="IDEXCELColumn" msprop:Generator_UserColumnName="IDEXCEL" type="xs:decimal" />
+              <xs:element name="NOMEFILE" msprop:Generator_ColumnVarNameInTable="columnNOMEFILE" msprop:Generator_ColumnPropNameInRow="NOMEFILE" msprop:Generator_ColumnPropNameInTable="NOMEFILEColumn" msprop:Generator_UserColumnName="NOMEFILE">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="200" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="DATAACQUISIZIONE" msprop:Generator_ColumnVarNameInTable="columnDATAACQUISIZIONE" msprop:Generator_ColumnPropNameInRow="DATAACQUISIZIONE" msprop:Generator_ColumnPropNameInTable="DATAACQUISIZIONEColumn" msprop:Generator_UserColumnName="DATAACQUISIZIONE" type="xs:dateTime" />
+              <xs:element name="DATARIFERIMENTO" msprop:Generator_ColumnVarNameInTable="columnDATARIFERIMENTO" msprop:Generator_ColumnPropNameInRow="DATARIFERIMENTO" msprop:Generator_ColumnPropNameInTable="DATARIFERIMENTOColumn" msprop:Generator_UserColumnName="DATARIFERIMENTO" type="xs:dateTime" />
+              <xs:element name="UTENTE" msprop:Generator_ColumnVarNameInTable="columnUTENTE" msprop:Generator_ColumnPropNameInRow="UTENTE" msprop:Generator_ColumnPropNameInTable="UTENTEColumn" msprop:Generator_UserColumnName="UTENTE">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="DATI" msprop:Generator_ColumnVarNameInTable="columnDATI" msprop:Generator_ColumnPropNameInRow="DATI" msprop:Generator_ColumnPropNameInTable="DATIColumn" msprop:Generator_UserColumnName="DATI" type="xs:base64Binary" />
             </xs:sequence>
           </xs:complexType>
         </xs:element>

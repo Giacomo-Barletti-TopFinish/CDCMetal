@@ -12,6 +12,6 @@ namespace CDCMetal
         public bool UtenteConnesso;
         public CDCDS DS ;
         public CDCDS.USR_USERRow Utente;
-        public string PathCartelle;
+        public string PathCollaudo;
     }
 }

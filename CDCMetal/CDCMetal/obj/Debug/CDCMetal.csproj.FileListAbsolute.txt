@@ -51,3 +51,4 @@ C:\VSProgetti\CDCMetal\CDCMetal\CDCMetal\bin\Debug\DocumentFormat.OpenXml.dll
 C:\VSProgetti\CDCMetal\CDCMetal\CDCMetal\bin\Debug\CDCMetal.Helpers.pdb
 C:\VSProgetti\CDCMetal\CDCMetal\CDCMetal\bin\Debug\CDCMetal.Helpers.dll.config
 C:\VSProgetti\CDCMetal\CDCMetal\CDCMetal\bin\Debug\DocumentFormat.OpenXml.xml
+C:\VSProgetti\CDCMetal\CDCMetal\CDCMetal\obj\Debug\CDCMetal.CreaCartelleFrm.resources

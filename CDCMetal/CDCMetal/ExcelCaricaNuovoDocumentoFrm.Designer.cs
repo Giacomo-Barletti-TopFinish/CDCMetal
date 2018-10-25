@@ -34,6 +34,7 @@
             this.label3 = new System.Windows.Forms.Label();
             this.lblDataExcel = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
+            this.btnSalvaDB = new System.Windows.Forms.Button();
             this.btnApriFile = new System.Windows.Forms.Button();
             this.btnCercaFile = new System.Windows.Forms.Button();
             this.txtFilePath = new System.Windows.Forms.TextBox();
@@ -49,6 +50,7 @@
             this.groupBox1.Controls.Add(this.label3);
             this.groupBox1.Controls.Add(this.lblDataExcel);
             this.groupBox1.Controls.Add(this.label1);
+            this.groupBox1.Controls.Add(this.btnSalvaDB);
             this.groupBox1.Controls.Add(this.btnApriFile);
             this.groupBox1.Controls.Add(this.btnCercaFile);
             this.groupBox1.Controls.Add(this.txtFilePath);
@@ -73,7 +75,8 @@
             // 
             this.lblNumeroRigheExcel.AutoSize = true;
             this.lblNumeroRigheExcel.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblNumeroRigheExcel.Location = new System.Drawing.Point(523, 85);
+            this.lblNumeroRigheExcel.ForeColor = System.Drawing.Color.Red;
+            this.lblNumeroRigheExcel.Location = new System.Drawing.Point(473, 85);
             this.lblNumeroRigheExcel.Name = "lblNumeroRigheExcel";
             this.lblNumeroRigheExcel.Size = new System.Drawing.Size(0, 16);
             this.lblNumeroRigheExcel.TabIndex = 3;
@@ -84,14 +87,15 @@
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.Location = new System.Drawing.Point(361, 85);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(140, 16);
+            this.label3.Size = new System.Drawing.Size(89, 16);
             this.label3.TabIndex = 4;
-            this.label3.Text = "Data riferimento excel:";
+            this.label3.Text = "Numero righe";
             // 
             // lblDataExcel
             // 
             this.lblDataExcel.AutoSize = true;
             this.lblDataExcel.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblDataExcel.ForeColor = System.Drawing.Color.Red;
             this.lblDataExcel.Location = new System.Drawing.Point(169, 85);
             this.lblDataExcel.Name = "lblDataExcel";
             this.lblDataExcel.Size = new System.Drawing.Size(0, 16);
@@ -107,11 +111,24 @@
             this.label1.TabIndex = 2;
             this.label1.Text = "Data riferimento excel:";
             // 
+            // btnSalvaDB
+            // 
+            this.btnSalvaDB.Enabled = false;
+            this.btnSalvaDB.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnSalvaDB.Location = new System.Drawing.Point(631, 72);
+            this.btnSalvaDB.Name = "btnSalvaDB";
+            this.btnSalvaDB.Size = new System.Drawing.Size(110, 33);
+            this.btnSalvaDB.TabIndex = 1;
+            this.btnSalvaDB.Text = "Salva su DB";
+            this.btnSalvaDB.UseVisualStyleBackColor = true;
+            this.btnSalvaDB.Click += new System.EventHandler(this.btnSalvaDB_Click);
+            // 
             // btnApriFile
             // 
-            this.btnApriFile.Location = new System.Drawing.Point(1108, 17);
+            this.btnApriFile.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnApriFile.Location = new System.Drawing.Point(1132, 17);
             this.btnApriFile.Name = "btnApriFile";
-            this.btnApriFile.Size = new System.Drawing.Size(75, 23);
+            this.btnApriFile.Size = new System.Drawing.Size(110, 33);
             this.btnApriFile.TabIndex = 1;
             this.btnApriFile.Text = "Leggi file";
             this.btnApriFile.UseVisualStyleBackColor = true;
@@ -119,9 +136,10 @@
             // 
             // btnCercaFile
             // 
-            this.btnCercaFile.Location = new System.Drawing.Point(1002, 17);
+            this.btnCercaFile.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnCercaFile.Location = new System.Drawing.Point(1005, 17);
             this.btnCercaFile.Name = "btnCercaFile";
-            this.btnCercaFile.Size = new System.Drawing.Size(75, 23);
+            this.btnCercaFile.Size = new System.Drawing.Size(110, 33);
             this.btnCercaFile.TabIndex = 1;
             this.btnCercaFile.Text = "Cerca ...";
             this.btnCercaFile.UseVisualStyleBackColor = true;
@@ -129,9 +147,10 @@
             // 
             // txtFilePath
             // 
+            this.txtFilePath.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtFilePath.Location = new System.Drawing.Point(6, 19);
             this.txtFilePath.Name = "txtFilePath";
-            this.txtFilePath.Size = new System.Drawing.Size(974, 20);
+            this.txtFilePath.Size = new System.Drawing.Size(974, 24);
             this.txtFilePath.TabIndex = 1;
             // 
             // dgvExcelCaricato
@@ -172,5 +191,6 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label lblMessage;
         private System.Windows.Forms.DataGridView dgvExcelCaricato;
+        private System.Windows.Forms.Button btnSalvaDB;
     }
 }

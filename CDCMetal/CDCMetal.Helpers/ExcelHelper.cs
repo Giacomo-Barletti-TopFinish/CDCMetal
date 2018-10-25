@@ -30,7 +30,7 @@ namespace CDCMetal.Helpers
             bool intestazione = true;
             foreach (Row r in sheetData.Elements<Row>())
             {
-                if(intestazione)
+                if (intestazione)
                 {
                     intestazione = false;
                     continue;
@@ -96,7 +96,7 @@ namespace CDCMetal.Helpers
                             }
                             break;
                         case "I": // livellodiff
-                            if(!string.IsNullOrEmpty(cella))                                
+                            if (!string.IsNullOrEmpty(cella))
                                 esito = EstraiValoreCellaDecimal(cella, "LIVELLODIFF", dettaglio, out messaggioErrore);
                             break;
                         case "J": // commessaordine
@@ -183,13 +183,13 @@ namespace CDCMetal.Helpers
                         case "X": // esitotest chimico
                             {
                                 int lunghezza = 2;
-                                dettaglio.ESITOTESTCHIMICO= cella.Length > lunghezza ? cella.Substring(0, lunghezza) : cella;
+                                dettaglio.ESITOTESTCHIMICO = cella.Length > lunghezza ? cella.Substring(0, lunghezza) : cella;
                             }
                             break;
                         case "Y": // test fisico
                             {
                                 int lunghezza = 2;
-                                dettaglio.TESTFISICO= cella.Length > lunghezza ? cella.Substring(0, lunghezza) : cella;
+                                dettaglio.TESTFISICO = cella.Length > lunghezza ? cella.Substring(0, lunghezza) : cella;
                             }
                             break;
                         case "Z": // notecollaudo
@@ -234,8 +234,14 @@ namespace CDCMetal.Helpers
 
         private bool VerificaData(string cella)
         {
-            string[] str = cella.Split('/');
-            if (str.Length == 3)
+            string[] str = null; 
+            if (cella.Contains('/'))
+                str = cella.Split('/');
+
+            if (cella.Contains('-'))
+                str = cella.Split('-');
+
+            if (str!=null && str.Length == 3)
             {
                 int anno;
                 if (int.TryParse(str[2], out anno))
@@ -319,7 +325,7 @@ namespace CDCMetal.Helpers
                                 .SingleOrDefault(f => f.NumberFormatId.Value == numberFormatId);
 
                             // Here's yer string! Example: $#,##0.00_);[Red]($#,##0.00)
-                            if (numberingFormat != null && numberingFormat.FormatCode.Value.Contains("yyyy-mm-dd"))
+                            if (numberingFormat != null && (numberingFormat.FormatCode.Value.Contains("yyyy-mm-dd") || numberingFormat.FormatCode.Value.Contains("yyyy\\-mm\\-dd")))
                             {
                                 string formatString = numberingFormat.FormatCode.Value;
                                 double oaDateAsDouble;

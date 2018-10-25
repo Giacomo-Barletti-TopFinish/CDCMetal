@@ -38,6 +38,8 @@
             this.lblUserLoggato = new System.Windows.Forms.ToolStripStatusLabel();
             this.prgProgressBar = new System.Windows.Forms.ToolStripProgressBar();
             this.lblStatusBar = new System.Windows.Forms.ToolStripStatusLabel();
+            this.cartelleToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.creaCartelleToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.cdcMenu.SuspendLayout();
             this.statusStrip1.SuspendLayout();
             this.SuspendLayout();
@@ -46,7 +48,8 @@
             // 
             this.cdcMenu.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.fileToolStripMenuItem,
-            this.excelToolStripMenuItem});
+            this.excelToolStripMenuItem,
+            this.cartelleToolStripMenuItem});
             this.cdcMenu.Location = new System.Drawing.Point(0, 0);
             this.cdcMenu.Name = "cdcMenu";
             this.cdcMenu.Size = new System.Drawing.Size(1558, 24);
@@ -119,6 +122,21 @@
             this.lblStatusBar.Name = "lblStatusBar";
             this.lblStatusBar.Size = new System.Drawing.Size(0, 17);
             // 
+            // cartelleToolStripMenuItem
+            // 
+            this.cartelleToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.creaCartelleToolStripMenuItem});
+            this.cartelleToolStripMenuItem.Name = "cartelleToolStripMenuItem";
+            this.cartelleToolStripMenuItem.Size = new System.Drawing.Size(59, 20);
+            this.cartelleToolStripMenuItem.Text = "Cartelle";
+            // 
+            // creaCartelleToolStripMenuItem
+            // 
+            this.creaCartelleToolStripMenuItem.Name = "creaCartelleToolStripMenuItem";
+            this.creaCartelleToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.creaCartelleToolStripMenuItem.Text = "Crea cartelle ...";
+            this.creaCartelleToolStripMenuItem.Click += new System.EventHandler(this.creaCartelleToolStripMenuItem_Click);
+            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -153,6 +171,8 @@
         private System.Windows.Forms.ToolStripMenuItem caricaNuovoDocumentoToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem loginToolStripMenuItem;
         private System.Windows.Forms.ToolStripStatusLabel lblUserLoggato;
+        private System.Windows.Forms.ToolStripMenuItem cartelleToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem creaCartelleToolStripMenuItem;
     }
 }
 
