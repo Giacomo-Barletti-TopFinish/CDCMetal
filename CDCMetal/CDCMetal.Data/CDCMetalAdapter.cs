@@ -75,5 +75,31 @@ namespace CDCMetal.Data
 
             return date;
         }
+
+        public void FillCDC_DETTAGLIO(CDCDS ds, List<decimal> IDEXCEL)
+        {
+            string selezione = ConvertToStringForInCondition(IDEXCEL);
+            string select = @"SELECT * FROM CDC_DETTAGLIO WHERE IDEXCEL IN ({0}) ORDER BY PREFISSO, PARTE, COLORE, MISURA,COMMESSAORDINE";
+
+            string query = string.Format(select, selezione);
+
+            using (DbDataAdapter da = BuildDataAdapter(query))
+            {
+                da.Fill(ds.CDC_DETTAGLIO);
+            }
+        }
+
+        public void FillCDC_EXCEL(CDCDS ds, DateTime DATARIFERIMENTO)
+        {
+            string select = @"SELECT * FROM CDC_EXCEL WHERE DATARIFERIMENTO = $P<DATARIFERIMENTO>";
+
+            ParamSet ps = new ParamSet();
+            ps.AddParam("DATARIFERIMENTO", DbType.DateTime, DATARIFERIMENTO);
+
+            using (DbDataAdapter da = BuildDataAdapter(select, ps))
+            {
+                da.Fill(ds.CDC_EXCEL);
+            }
+        }
     }
 }

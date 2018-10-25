@@ -25,7 +25,7 @@ namespace CDCMetal.Properties {
         
         [global::System.Configuration.ApplicationScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("\\\\dc02\\CONDIVISA\\Metal Plus\\Qualità - BAP e COLLAUDI GUCCI\\COLLAUDI")]
+        [global::System.Configuration.DefaultSettingValueAttribute("C:\\Temp\\CDC\\CARTELLACOLLAUDO")]
         public string PathCollaudo {
             get {
                 return ((string)(this["PathCollaudo"]));

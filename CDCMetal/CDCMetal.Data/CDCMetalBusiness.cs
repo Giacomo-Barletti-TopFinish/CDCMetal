@@ -47,5 +47,15 @@ namespace CDCMetal.Data
             return a.LeggiDateRiferimento();
         }
 
+        [DataContext]
+        public void FillCDC(CDCDS ds, DateTime DATARIFERIMENTO)
+        {
+            CDCMetalAdapter a = new CDCMetalAdapter(DbConnection, DbTransaction);
+            a.FillCDC_EXCEL(ds,DATARIFERIMENTO);
+
+            List<decimal> IDEXCEL = ds.CDC_EXCEL.Select(x => x.IDEXCEL).Distinct().ToList();
+            a.FillCDC_DETTAGLIO(ds, IDEXCEL);
+        }
+
     }
 }

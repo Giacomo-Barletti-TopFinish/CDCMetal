@@ -3,7 +3,7 @@
   <Profiles />
   <Settings>
     <Setting Name="PathCollaudo" Type="System.String" Scope="Application">
-      <Value Profile="(Default)">\\dc02\CONDIVISA\Metal Plus\Qualità - BAP e COLLAUDI GUCCI\COLLAUDI</Value>
+      <Value Profile="(Default)">C:\Temp\CDC\CARTELLACOLLAUDO</Value>
     </Setting>
   </Settings>
 </SettingsFile>
