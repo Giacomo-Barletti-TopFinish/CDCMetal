@@ -130,28 +130,27 @@ namespace CDCMetal
             {
                 DataRow riga = dtCartelle.NewRow();
 
-                if (dettaglio.ACCESSORISTA.Trim() == "Metalplus s.r.l.")
-                    riga[0] = "Metalplus";
-                else
-                    riga[0] = "TopFinish";
-
+                riga[0] = ConvertiAccessorista(dettaglio.ACCESSORISTA);
                 riga[1] = dettaglio.DATACOLLAUDO;
                 riga[2] = dettaglio.PREFISSO;
                 riga[3] = dettaglio.PARTE;
                 riga[4] = dettaglio.COLORE;
                 riga[5] = dettaglio.COMMESSAORDINE;
 
-                string meseCollaudo = creaStringaCartellaMeseCollaudo(dataSelezionata);
-                string giornoCollaudo = creaStringaCartellaGiornoCollaudo(dataSelezionata);
-
-                string cartellaArticolo = string.Format("{0}-{1}-{2} {3}", dettaglio.PREFISSO, dettaglio.PARTE, dettaglio.COLORE, dettaglio.COMMESSAORDINE.Replace('_', ' '));
-
-                string cartella = string.Format(@"{0}\{1}\{2}\{3}\{4}", Contesto.PathCollaudo, riga[0], meseCollaudo, giornoCollaudo, cartellaArticolo);
+                string cartella = CreaPathCartella(dataSelezionata, dettaglio.ACCESSORISTA, dettaglio.PREFISSO, dettaglio.PARTE, dettaglio.COLORE, dettaglio.COMMESSAORDINE);
                 riga[idColonnaCartella] = cartella;
 
                 dtCartelle.Rows.Add(riga);
             }
 
+        }
+
+        private string ConvertiAccessorista(string Accessorista)
+        {
+            if (Accessorista.Trim() == "Metalplus s.r.l.")
+                return "Metalplus";
+            else
+                return "TopFinish";
         }
 
         private string creaStringaCartellaGiornoCollaudo(DateTime dataSelezionata)
@@ -163,6 +162,17 @@ namespace CDCMetal
             System.Globalization.CultureInfo culture = new System.Globalization.CultureInfo("it-IT");
             string mese = dataSelezionata.ToString("MMMM", culture);
             return string.Format("COLLAUDI {0} {1}", mese.ToUpper(), dataSelezionata.Year);
+        }
+
+        public string CreaPathCartella(DateTime dataSelezionata, string Accessorista, string Prefisso, string Parte, string Colore, string Commessa)
+        {
+            string accessorista = ConvertiAccessorista(Accessorista);
+            string meseCollaudo = creaStringaCartellaMeseCollaudo(dataSelezionata);
+            string giornoCollaudo = creaStringaCartellaGiornoCollaudo(dataSelezionata);
+
+            string cartellaArticolo = string.Format("{0}-{1}-{2} {3}", Prefisso, Parte, Colore, Commessa.Replace('_', ' '));
+
+            return string.Format(@"{0}\{1}\{2}\{3}\{4}", Contesto.PathCollaudo, accessorista, meseCollaudo, giornoCollaudo, cartellaArticolo);
         }
     }
 }
