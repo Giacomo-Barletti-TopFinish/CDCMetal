@@ -151,10 +151,33 @@ namespace CDCMetal
 
         private void creaCartelleToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            CreaCartelleFrm form = new CreaCartelleFrm();
-            form.MdiParent = this;
-            form.Show();
+            try
+            {
+                CreaCartelleFrm form = new CreaCartelleFrm();
+                form.MdiParent = this;
+                form.Show();
+            }
+            catch (Exception ex)
+            {
+                LogScriviErrore("ERRORE IN ESEGUI LOGIN", ex);
+                ExceptionFrm frm = new ExceptionFrm(ex);
+                frm.ShowDialog();
+            }
 
+        }
+
+        private void creaCertificatoToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            try
+            {
+
+            }
+            catch (Exception ex)
+            {
+                LogScriviErrore("ERRORE IN ESEGUI LOGIN", ex);
+                ExceptionFrm frm = new ExceptionFrm(ex);
+                frm.ShowDialog();
+            }
         }
     }
 }

@@ -1,6 +1,6 @@
 ﻿namespace CDCMetal
 {
-    partial class CreaCartelleFrm
+    partial class CreaConformitaFrm
     {
         /// <summary>
         /// Required designer variable.
@@ -28,16 +28,24 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.dgvDettaglio = new System.Windows.Forms.DataGridView();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.lblMessaggio = new System.Windows.Forms.Label();
             this.btnCreaCartelle = new System.Windows.Forms.Button();
             this.btnLeggiDati = new System.Windows.Forms.Button();
             this.ddlDataCollaudo = new System.Windows.Forms.ComboBox();
             this.label1 = new System.Windows.Forms.Label();
-            this.dgvDettaglio = new System.Windows.Forms.DataGridView();
-            this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvDettaglio)).BeginInit();
+            this.groupBox1.SuspendLayout();
             this.SuspendLayout();
+            // 
+            // dgvDettaglio
+            // 
+            this.dgvDettaglio.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvDettaglio.Location = new System.Drawing.Point(12, 127);
+            this.dgvDettaglio.Name = "dgvDettaglio";
+            this.dgvDettaglio.Size = new System.Drawing.Size(1360, 546);
+            this.dgvDettaglio.TabIndex = 3;
             // 
             // groupBox1
             // 
@@ -49,7 +57,7 @@
             this.groupBox1.Location = new System.Drawing.Point(12, 12);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(1360, 100);
-            this.groupBox1.TabIndex = 0;
+            this.groupBox1.TabIndex = 2;
             this.groupBox1.TabStop = false;
             // 
             // lblMessaggio
@@ -72,7 +80,6 @@
             this.btnCreaCartelle.TabIndex = 2;
             this.btnCreaCartelle.Text = "Crea cartelle";
             this.btnCreaCartelle.UseVisualStyleBackColor = true;
-            this.btnCreaCartelle.Click += new System.EventHandler(this.btnCreaCartelle_Click);
             // 
             // btnLeggiDati
             // 
@@ -105,40 +112,31 @@
             this.label1.TabIndex = 1;
             this.label1.Text = "Data collaudo";
             // 
-            // dgvDettaglio
-            // 
-            this.dgvDettaglio.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvDettaglio.Location = new System.Drawing.Point(12, 127);
-            this.dgvDettaglio.Name = "dgvDettaglio";
-            this.dgvDettaglio.Size = new System.Drawing.Size(1360, 546);
-            this.dgvDettaglio.TabIndex = 1;
-            // 
-            // CreaCartelleFrm
+            // CreaConformitaFrm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1384, 685);
             this.Controls.Add(this.dgvDettaglio);
             this.Controls.Add(this.groupBox1);
-            this.Name = "CreaCartelleFrm";
-            this.Text = "Crea Cartelle";
-            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.CreaCartelleFrm_FormClosing);
-            this.Load += new System.EventHandler(this.CreaCartelleFrm_Load);
+            this.Name = "CreaConformitaFrm";
+            this.Text = "Crea Certificato di Conformità";
+            this.Load += new System.EventHandler(this.CreaConformitaFrm_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.dgvDettaglio)).EndInit();
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvDettaglio)).EndInit();
             this.ResumeLayout(false);
 
         }
 
         #endregion
 
-        private System.Windows.Forms.GroupBox groupBox1;
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.ComboBox ddlDataCollaudo;
-        private System.Windows.Forms.Button btnLeggiDati;
-        private System.Windows.Forms.Button btnCreaCartelle;
-        private System.Windows.Forms.Label lblMessaggio;
         private System.Windows.Forms.DataGridView dgvDettaglio;
+        private System.Windows.Forms.GroupBox groupBox1;
+        private System.Windows.Forms.Label lblMessaggio;
+        private System.Windows.Forms.Button btnCreaCartelle;
+        private System.Windows.Forms.Button btnLeggiDati;
+        private System.Windows.Forms.ComboBox ddlDataCollaudo;
+        private System.Windows.Forms.Label label1;
     }
 }

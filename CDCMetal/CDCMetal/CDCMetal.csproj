@@ -59,6 +59,12 @@
     <Compile Include="CreaCartelleFrm.Designer.cs">
       <DependentUpon>CreaCartelleFrm.cs</DependentUpon>
     </Compile>
+    <Compile Include="CreaConformitaFrm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CreaConformitaFrm.Designer.cs">
+      <DependentUpon>CreaConformitaFrm.cs</DependentUpon>
+    </Compile>
     <Compile Include="ExcelCaricaNuovoDocumentoFrm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -87,6 +93,9 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="CreaCartelleFrm.resx">
       <DependentUpon>CreaCartelleFrm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CreaConformitaFrm.resx">
+      <DependentUpon>CreaConformitaFrm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="ExcelCaricaNuovoDocumentoFrm.resx">
       <DependentUpon>ExcelCaricaNuovoDocumentoFrm.cs</DependentUpon>

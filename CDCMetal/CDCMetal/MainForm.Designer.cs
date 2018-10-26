@@ -34,25 +34,29 @@
             this.exitToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.excelToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.caricaNuovoDocumentoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.cartelleToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.creaCartelleToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.statusStrip1 = new System.Windows.Forms.StatusStrip();
             this.lblUserLoggato = new System.Windows.Forms.ToolStripStatusLabel();
             this.prgProgressBar = new System.Windows.Forms.ToolStripProgressBar();
             this.lblStatusBar = new System.Windows.Forms.ToolStripStatusLabel();
-            this.cartelleToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.creaCartelleToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.conformitàToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.creaCertificatoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.cdcMenu.SuspendLayout();
             this.statusStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
             // cdcMenu
             // 
+            this.cdcMenu.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cdcMenu.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.fileToolStripMenuItem,
             this.excelToolStripMenuItem,
-            this.cartelleToolStripMenuItem});
+            this.cartelleToolStripMenuItem,
+            this.conformitàToolStripMenuItem});
             this.cdcMenu.Location = new System.Drawing.Point(0, 0);
             this.cdcMenu.Name = "cdcMenu";
-            this.cdcMenu.Size = new System.Drawing.Size(1558, 24);
+            this.cdcMenu.Size = new System.Drawing.Size(1558, 25);
             this.cdcMenu.TabIndex = 1;
             this.cdcMenu.Text = "cdcMenu";
             // 
@@ -62,21 +66,21 @@
             this.loginToolStripMenuItem,
             this.exitToolStripMenuItem});
             this.fileToolStripMenuItem.Name = "fileToolStripMenuItem";
-            this.fileToolStripMenuItem.Size = new System.Drawing.Size(37, 20);
+            this.fileToolStripMenuItem.Size = new System.Drawing.Size(39, 21);
             this.fileToolStripMenuItem.Text = "File";
             this.fileToolStripMenuItem.Click += new System.EventHandler(this.fileToolStripMenuItem_Click);
             // 
             // loginToolStripMenuItem
             // 
             this.loginToolStripMenuItem.Name = "loginToolStripMenuItem";
-            this.loginToolStripMenuItem.Size = new System.Drawing.Size(116, 22);
+            this.loginToolStripMenuItem.Size = new System.Drawing.Size(121, 22);
             this.loginToolStripMenuItem.Text = "Login ...";
             this.loginToolStripMenuItem.Click += new System.EventHandler(this.loginToolStripMenuItem_Click);
             // 
             // exitToolStripMenuItem
             // 
             this.exitToolStripMenuItem.Name = "exitToolStripMenuItem";
-            this.exitToolStripMenuItem.Size = new System.Drawing.Size(116, 22);
+            this.exitToolStripMenuItem.Size = new System.Drawing.Size(121, 22);
             this.exitToolStripMenuItem.Text = "Exit";
             this.exitToolStripMenuItem.Click += new System.EventHandler(this.exitToolStripMenuItem_Click);
             // 
@@ -85,15 +89,30 @@
             this.excelToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.caricaNuovoDocumentoToolStripMenuItem});
             this.excelToolStripMenuItem.Name = "excelToolStripMenuItem";
-            this.excelToolStripMenuItem.Size = new System.Drawing.Size(45, 20);
+            this.excelToolStripMenuItem.Size = new System.Drawing.Size(49, 21);
             this.excelToolStripMenuItem.Text = "Excel";
             // 
             // caricaNuovoDocumentoToolStripMenuItem
             // 
             this.caricaNuovoDocumentoToolStripMenuItem.Name = "caricaNuovoDocumentoToolStripMenuItem";
-            this.caricaNuovoDocumentoToolStripMenuItem.Size = new System.Drawing.Size(218, 22);
+            this.caricaNuovoDocumentoToolStripMenuItem.Size = new System.Drawing.Size(231, 22);
             this.caricaNuovoDocumentoToolStripMenuItem.Text = "Carica nuovo documento...";
             this.caricaNuovoDocumentoToolStripMenuItem.Click += new System.EventHandler(this.caricaNuovoDocumentoToolStripMenuItem_Click);
+            // 
+            // cartelleToolStripMenuItem
+            // 
+            this.cartelleToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.creaCartelleToolStripMenuItem});
+            this.cartelleToolStripMenuItem.Name = "cartelleToolStripMenuItem";
+            this.cartelleToolStripMenuItem.Size = new System.Drawing.Size(64, 21);
+            this.cartelleToolStripMenuItem.Text = "Cartelle";
+            // 
+            // creaCartelleToolStripMenuItem
+            // 
+            this.creaCartelleToolStripMenuItem.Name = "creaCartelleToolStripMenuItem";
+            this.creaCartelleToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.creaCartelleToolStripMenuItem.Text = "Crea cartelle ...";
+            this.creaCartelleToolStripMenuItem.Click += new System.EventHandler(this.creaCartelleToolStripMenuItem_Click);
             // 
             // statusStrip1
             // 
@@ -122,20 +141,20 @@
             this.lblStatusBar.Name = "lblStatusBar";
             this.lblStatusBar.Size = new System.Drawing.Size(0, 17);
             // 
-            // cartelleToolStripMenuItem
+            // conformitàToolStripMenuItem
             // 
-            this.cartelleToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.creaCartelleToolStripMenuItem});
-            this.cartelleToolStripMenuItem.Name = "cartelleToolStripMenuItem";
-            this.cartelleToolStripMenuItem.Size = new System.Drawing.Size(59, 20);
-            this.cartelleToolStripMenuItem.Text = "Cartelle";
+            this.conformitàToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.creaCertificatoToolStripMenuItem});
+            this.conformitàToolStripMenuItem.Name = "conformitàToolStripMenuItem";
+            this.conformitàToolStripMenuItem.Size = new System.Drawing.Size(85, 21);
+            this.conformitàToolStripMenuItem.Text = "Conformità";
             // 
-            // creaCartelleToolStripMenuItem
+            // creaCertificatoToolStripMenuItem
             // 
-            this.creaCartelleToolStripMenuItem.Name = "creaCartelleToolStripMenuItem";
-            this.creaCartelleToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
-            this.creaCartelleToolStripMenuItem.Text = "Crea cartelle ...";
-            this.creaCartelleToolStripMenuItem.Click += new System.EventHandler(this.creaCartelleToolStripMenuItem_Click);
+            this.creaCertificatoToolStripMenuItem.Name = "creaCertificatoToolStripMenuItem";
+            this.creaCertificatoToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.creaCertificatoToolStripMenuItem.Text = "Crea certificato ...";
+            this.creaCertificatoToolStripMenuItem.Click += new System.EventHandler(this.creaCertificatoToolStripMenuItem_Click);
             // 
             // MainForm
             // 
@@ -173,6 +192,8 @@
         private System.Windows.Forms.ToolStripStatusLabel lblUserLoggato;
         private System.Windows.Forms.ToolStripMenuItem cartelleToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem creaCartelleToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem conformitàToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem creaCertificatoToolStripMenuItem;
     }
 }
 

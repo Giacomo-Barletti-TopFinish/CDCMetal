@@ -71,7 +71,6 @@ namespace CDCMetal
             dgvDettaglio.DataMember = tableName;
             dgvDettaglio.Columns["CARTELLA"].Width = 800;
 
-
         }
 
         private void btnCreaCartelle_Click(object sender, EventArgs e)
@@ -130,14 +129,14 @@ namespace CDCMetal
             {
                 DataRow riga = dtCartelle.NewRow();
 
-                riga[0] = ConvertiAccessorista(dettaglio.ACCESSORISTA);
+                riga[0] = CDCBLL.ConvertiAccessorista(dettaglio.ACCESSORISTA);
                 riga[1] = dettaglio.DATACOLLAUDO;
                 riga[2] = dettaglio.PREFISSO;
                 riga[3] = dettaglio.PARTE;
                 riga[4] = dettaglio.COLORE;
                 riga[5] = dettaglio.COMMESSAORDINE;
 
-                string cartella = CreaPathCartella(dataSelezionata, dettaglio.ACCESSORISTA, dettaglio.PREFISSO, dettaglio.PARTE, dettaglio.COLORE, dettaglio.COMMESSAORDINE);
+                string cartella = CDCBLL.CreaPathCartella(dataSelezionata, Contesto.PathCollaudo, dettaglio.ACCESSORISTA, dettaglio.PREFISSO, dettaglio.PARTE, dettaglio.COLORE, dettaglio.COMMESSAORDINE);
                 riga[idColonnaCartella] = cartella;
 
                 dtCartelle.Rows.Add(riga);
@@ -145,34 +144,9 @@ namespace CDCMetal
 
         }
 
-        private string ConvertiAccessorista(string Accessorista)
+        private void CreaCartelleFrm_FormClosing(object sender, FormClosingEventArgs e)
         {
-            if (Accessorista.Trim() == "Metalplus s.r.l.")
-                return "Metalplus";
-            else
-                return "TopFinish";
-        }
 
-        private string creaStringaCartellaGiornoCollaudo(DateTime dataSelezionata)
-        {
-            return string.Format("collaudo {0}-{1}-{2}", dataSelezionata.Day, dataSelezionata.Month, dataSelezionata.Year % 100);
-        }
-        private string creaStringaCartellaMeseCollaudo(DateTime dataSelezionata)
-        {
-            System.Globalization.CultureInfo culture = new System.Globalization.CultureInfo("it-IT");
-            string mese = dataSelezionata.ToString("MMMM", culture);
-            return string.Format("COLLAUDI {0} {1}", mese.ToUpper(), dataSelezionata.Year);
-        }
-
-        public string CreaPathCartella(DateTime dataSelezionata, string Accessorista, string Prefisso, string Parte, string Colore, string Commessa)
-        {
-            string accessorista = ConvertiAccessorista(Accessorista);
-            string meseCollaudo = creaStringaCartellaMeseCollaudo(dataSelezionata);
-            string giornoCollaudo = creaStringaCartellaGiornoCollaudo(dataSelezionata);
-
-            string cartellaArticolo = string.Format("{0}-{1}-{2} {3}", Prefisso, Parte, Colore, Commessa.Replace('_', ' '));
-
-            return string.Format(@"{0}\{1}\{2}\{3}\{4}", Contesto.PathCollaudo, accessorista, meseCollaudo, giornoCollaudo, cartellaArticolo);
         }
     }
 }

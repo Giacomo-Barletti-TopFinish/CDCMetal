@@ -538,3 +538,13 @@ INFO  2018-10-25 17:25:34,270   177ms MainForm               LogScrivi          
 INFO  2018-10-25 17:28:34,723 180630ms MainForm               LogScrivi          - Applicazione CDCMetal fermata
 INFO  2018-10-25 17:29:34,581   152ms MainForm               LogScrivi          - Applicazione CDCMetal avviata
 INFO  2018-10-25 17:31:03,948 89519ms MainForm               LogScrivi          - Applicazione CDCMetal fermata
+INFO  2018-10-26 17:33:19,364   119ms MainForm               LogScrivi          - Applicazione CDCMetal avviata
+ERROR 2018-10-26 17:33:24,278  5033ms MainForm               LogScriviErrore    - ERRORE IN ESEGUI LOGIN
+System.DivideByZeroException: Tentativo di divisione per zero.
+   in CDCMetal.MainForm.creaCertificatoToolStripMenuItem_Click(Object sender, EventArgs e) in C:\VSProgetti\CDCMetal\CDCMetal\CDCMetal\MainForm.cs:riga 174
+ERROR 2018-10-26 17:33:36,662 17417ms MainForm               LogScriviErrore    - ERRORE IN ESEGUI LOGIN
+System.DivideByZeroException: Tentativo di divisione per zero.
+   in CDCMetal.MainForm.creaCertificatoToolStripMenuItem_Click(Object sender, EventArgs e) in C:\VSProgetti\CDCMetal\CDCMetal\CDCMetal\MainForm.cs:riga 174
+ERROR 2018-10-26 17:33:54,110 34865ms MainForm               LogScriviErrore    - ERRORE IN ESEGUI LOGIN
+System.DivideByZeroException: Tentativo di divisione per zero.
+   in CDCMetal.MainForm.creaCertificatoToolStripMenuItem_Click(Object sender, EventArgs e) in C:\VSProgetti\CDCMetal\CDCMetal\CDCMetal\MainForm.cs:riga 174
