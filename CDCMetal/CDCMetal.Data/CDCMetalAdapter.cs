@@ -101,5 +101,46 @@ namespace CDCMetal.Data
                 da.Fill(ds.CDC_EXCEL);
             }
         }
+
+        public void FillCDC_CONFORMITA(CDCDS ds, List<decimal> IDDETTAGLIO)
+        {
+            string selezione = ConvertToStringForInCondition(IDDETTAGLIO);
+            string select = @"SELECT * FROM CDC_CONFORMITA WHERE IDDETTAGLIO IN ({0}) ";
+
+            string query = string.Format(select, selezione);
+
+            using (DbDataAdapter da = BuildDataAdapter(query))
+            {
+                da.Fill(ds.CDC_CONFORMITA);
+            }
+        }
+
+        public void CDC_PDF(CDCDS ds, List<decimal> IDDETTAGLIO)
+        {
+            string selezione = ConvertToStringForInCondition(IDDETTAGLIO);
+            string select = @"SELECT * FROM CDC_PDF WHERE IDDETTAGLIO IN ({0}) ";
+
+            string query = string.Format(select, selezione);
+
+            using (DbDataAdapter da = BuildDataAdapter(query))
+            {
+                da.Fill(ds.CDC_PDF);
+            }
+        }
+
+        public void FillCDC_CONFORMITA_DETTAGLIO(CDCDS ds, List<decimal> IDDETTAGLIO)
+        {
+            string selezione = ConvertToStringForInCondition(IDDETTAGLIO);
+            string select = @"SELECT DET.* FROM CDC_CONFORMITA_DETTAGLIO DET
+                                INNER JOIN CDC_DETTAGLIO CD ON CD.PREFISSO = DET.PREFISSO AND CD.PARTE = DET.PARTE AND CD.COLORE = DET.COLORE 
+                                WHERE CD.IDDETTAGLIO IN ({0}) ";
+
+            string query = string.Format(select, selezione);
+
+            using (DbDataAdapter da = BuildDataAdapter(query))
+            {
+                da.Fill(ds.CDC_CONFORMITA_DETTAGLIO);
+            }
+        }
     }
 }

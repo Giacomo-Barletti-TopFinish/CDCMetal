@@ -53,7 +53,7 @@ namespace CDCMetal
 
             Contesto.DS = new Entities.CDCDS();
 
-            bll.LeggiDateCollaudo(Contesto.DS, dataSelezionata);
+            bll.LeggiCollaudoDaData(Contesto.DS, dataSelezionata);
 
             if (Contesto.DS.CDC_DETTAGLIO.Count > 0)
             {

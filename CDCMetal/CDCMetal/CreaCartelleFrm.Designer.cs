@@ -107,10 +107,14 @@
             // 
             // dgvDettaglio
             // 
+            this.dgvDettaglio.AllowUserToAddRows = false;
+            this.dgvDettaglio.AllowUserToDeleteRows = false;
             this.dgvDettaglio.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvDettaglio.Location = new System.Drawing.Point(12, 127);
+            this.dgvDettaglio.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.dgvDettaglio.Location = new System.Drawing.Point(0, 139);
             this.dgvDettaglio.Name = "dgvDettaglio";
-            this.dgvDettaglio.Size = new System.Drawing.Size(1360, 546);
+            this.dgvDettaglio.ReadOnly = true;
+            this.dgvDettaglio.Size = new System.Drawing.Size(1384, 546);
             this.dgvDettaglio.TabIndex = 1;
             // 
             // CreaCartelleFrm

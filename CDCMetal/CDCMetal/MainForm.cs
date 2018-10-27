@@ -159,7 +159,7 @@ namespace CDCMetal
             }
             catch (Exception ex)
             {
-                LogScriviErrore("ERRORE IN ESEGUI LOGIN", ex);
+                LogScriviErrore("ERRORE IN CREA CARTELLE", ex);
                 ExceptionFrm frm = new ExceptionFrm(ex);
                 frm.ShowDialog();
             }
@@ -170,11 +170,13 @@ namespace CDCMetal
         {
             try
             {
-
+                CreaConformitaFrm form = new CreaConformitaFrm();
+                form.MdiParent = this;
+                form.Show();
             }
             catch (Exception ex)
             {
-                LogScriviErrore("ERRORE IN ESEGUI LOGIN", ex);
+                LogScriviErrore("ERRORE IN CREA CERTIFICATO CONFORMITA'", ex);
                 ExceptionFrm frm = new ExceptionFrm(ex);
                 frm.ShowDialog();
             }

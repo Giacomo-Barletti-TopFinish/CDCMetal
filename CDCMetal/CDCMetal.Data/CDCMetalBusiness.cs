@@ -57,5 +57,34 @@ namespace CDCMetal.Data
             a.FillCDC_DETTAGLIO(ds, IDEXCEL);
         }
 
+        [DataContext]
+        public void FillCDC_CONFORMITA(CDCDS ds, List<decimal> IDDETTAGLIO)
+        {
+            CDCMetalAdapter a = new CDCMetalAdapter(DbConnection, DbTransaction);
+            a.FillCDC_CONFORMITA(ds, IDDETTAGLIO);
+            a.FillCDC_CONFORMITA_DETTAGLIO(ds, IDDETTAGLIO);
+        }
+
+        [DataContext]
+        public void CDC_PDF(CDCDS ds, List<decimal> IDDETTAGLIO)
+        {
+            CDCMetalAdapter a = new CDCMetalAdapter(DbConnection, DbTransaction);
+            a.CDC_PDF(ds, IDDETTAGLIO);
+        }
+
+        [DataContext(true)]
+        public void UpdateConformita(CDCDS ds)
+        {
+            CDCMetalAdapter a = new CDCMetalAdapter(DbConnection, DbTransaction);
+            a.UpdateTable(ds.CDC_CONFORMITA.TableName, ds);
+            a.UpdateTable(ds.CDC_CONFORMITA_DETTAGLIO.TableName, ds);
+        }
+
+        [DataContext(true)]
+        public void UpdateCDC_PDF(CDCDS ds)
+        {
+            CDCMetalAdapter a = new CDCMetalAdapter(DbConnection, DbTransaction);
+            a.UpdateTable(ds.CDC_PDF.TableName, ds);
+        }
     }
 }

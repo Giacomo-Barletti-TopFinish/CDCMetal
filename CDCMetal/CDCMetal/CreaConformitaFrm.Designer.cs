@@ -31,7 +31,7 @@
             this.dgvDettaglio = new System.Windows.Forms.DataGridView();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.lblMessaggio = new System.Windows.Forms.Label();
-            this.btnCreaCartelle = new System.Windows.Forms.Button();
+            this.btnCreaPDF = new System.Windows.Forms.Button();
             this.btnLeggiDati = new System.Windows.Forms.Button();
             this.ddlDataCollaudo = new System.Windows.Forms.ComboBox();
             this.label1 = new System.Windows.Forms.Label();
@@ -41,16 +41,18 @@
             // 
             // dgvDettaglio
             // 
+            this.dgvDettaglio.AllowUserToAddRows = false;
             this.dgvDettaglio.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvDettaglio.Location = new System.Drawing.Point(12, 127);
+            this.dgvDettaglio.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.dgvDettaglio.Location = new System.Drawing.Point(0, 139);
             this.dgvDettaglio.Name = "dgvDettaglio";
-            this.dgvDettaglio.Size = new System.Drawing.Size(1360, 546);
+            this.dgvDettaglio.Size = new System.Drawing.Size(1384, 546);
             this.dgvDettaglio.TabIndex = 3;
             // 
             // groupBox1
             // 
             this.groupBox1.Controls.Add(this.lblMessaggio);
-            this.groupBox1.Controls.Add(this.btnCreaCartelle);
+            this.groupBox1.Controls.Add(this.btnCreaPDF);
             this.groupBox1.Controls.Add(this.btnLeggiDati);
             this.groupBox1.Controls.Add(this.ddlDataCollaudo);
             this.groupBox1.Controls.Add(this.label1);
@@ -70,16 +72,17 @@
             this.lblMessaggio.Size = new System.Drawing.Size(0, 18);
             this.lblMessaggio.TabIndex = 3;
             // 
-            // btnCreaCartelle
+            // btnCreaPDF
             // 
-            this.btnCreaCartelle.Enabled = false;
-            this.btnCreaCartelle.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnCreaCartelle.Location = new System.Drawing.Point(483, 9);
-            this.btnCreaCartelle.Name = "btnCreaCartelle";
-            this.btnCreaCartelle.Size = new System.Drawing.Size(110, 33);
-            this.btnCreaCartelle.TabIndex = 2;
-            this.btnCreaCartelle.Text = "Crea cartelle";
-            this.btnCreaCartelle.UseVisualStyleBackColor = true;
+            this.btnCreaPDF.Enabled = false;
+            this.btnCreaPDF.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnCreaPDF.Location = new System.Drawing.Point(483, 9);
+            this.btnCreaPDF.Name = "btnCreaPDF";
+            this.btnCreaPDF.Size = new System.Drawing.Size(110, 33);
+            this.btnCreaPDF.TabIndex = 2;
+            this.btnCreaPDF.Text = "Crea PDF";
+            this.btnCreaPDF.UseVisualStyleBackColor = true;
+            this.btnCreaPDF.Click += new System.EventHandler(this.btnCreaPDF_Click);
             // 
             // btnLeggiDati
             // 
@@ -134,7 +137,7 @@
         private System.Windows.Forms.DataGridView dgvDettaglio;
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.Label lblMessaggio;
-        private System.Windows.Forms.Button btnCreaCartelle;
+        private System.Windows.Forms.Button btnCreaPDF;
         private System.Windows.Forms.Button btnLeggiDati;
         private System.Windows.Forms.ComboBox ddlDataCollaudo;
         private System.Windows.Forms.Label label1;
