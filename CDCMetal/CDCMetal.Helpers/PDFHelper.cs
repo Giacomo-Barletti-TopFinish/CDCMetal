@@ -16,7 +16,7 @@ namespace CDCMetal.Helpers
         public void CreaCDC(string ragioneSociale, string idCollaudo, string data,
             string prefisso, string parte, string colore, string quantita,
             string descrizione, string commessa, bool controlloFisico, bool controlloFunzionale, bool controlloDimensionale,
-            bool controlloEstetico, bool acconto, bool saldo, byte[] image)
+            bool controlloEstetico, bool acconto, bool saldo, string altro, string certificati, byte[] image)
         {
 
             document.Info.Title = "CDC";
@@ -29,7 +29,7 @@ namespace CDCMetal.Helpers
             CreaTabellaCDC(ragioneSociale, idCollaudo, data,
              prefisso, parte, colore, quantita,
              descrizione, commessa, controlloFisico, controlloFunzionale, controlloDimensionale,
-             controlloEstetico, acconto, saldo, image);
+             controlloEstetico, acconto, saldo, altro, certificati, image);
         }
 
         public void SalvaPdf(string filename)
@@ -93,7 +93,7 @@ namespace CDCMetal.Helpers
         private void CreaTabellaCDC(string ragioneSociale, string idCollaudo, string data,
             string prefisso, string parte, string colore, string quantita,
             string descrizione, string commessa, bool controlloFisico, bool controlloFunzionale, bool controlloDimensionale,
-            bool controlloEstetico, bool acconto, bool saldo, byte[] image)
+            bool controlloEstetico, bool acconto, bool saldo, string altro, string certificati, byte[] image)
         {
             document.LastSection.AddParagraph();
 
@@ -336,9 +336,15 @@ namespace CDCMetal.Helpers
 
             cell = row.Cells[0];
             p = cell.AddParagraph(string.Empty);
-            p = cell.AddParagraph("Certificati: ..........................................................................................................................................");
+            if (string.IsNullOrEmpty(certificati))
+                p = cell.AddParagraph("Certificati: ..........................................................................................................................................");
+            else
+                p = cell.AddParagraph(string.Format("Certificati: {0}", certificati));
             p = cell.AddParagraph(string.Empty);
-            p = cell.AddParagraph("Altro: ..................................................................................................................................................");
+            if (string.IsNullOrEmpty(altro))
+                p = cell.AddParagraph("Altro: ..................................................................................................................................................");
+            else
+                p = cell.AddParagraph(string.Format("Altro: {0}", altro));
 
             table.SetEdge(0, 0, 1, 1, Edge.Top, BorderStyle.None, 0);
             table.SetEdge(0, 0, 1, 1, Edge.Left, BorderStyle.Single, 0.75);

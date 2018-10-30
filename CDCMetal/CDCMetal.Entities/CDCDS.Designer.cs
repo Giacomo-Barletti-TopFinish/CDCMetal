@@ -2332,6 +2332,10 @@ namespace CDCMetal.Entities {
             
             private global::System.Data.DataColumn columnSALDO;
             
+            private global::System.Data.DataColumn columnCERTIFICATI;
+            
+            private global::System.Data.DataColumn columnALTRO;
+            
             private global::System.Data.DataColumn columnDESCRIZIONE;
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -2449,6 +2453,22 @@ namespace CDCMetal.Entities {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public global::System.Data.DataColumn CERTIFICATIColumn {
+                get {
+                    return this.columnCERTIFICATI;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public global::System.Data.DataColumn ALTROColumn {
+                get {
+                    return this.columnALTRO;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             public global::System.Data.DataColumn DESCRIZIONEColumn {
                 get {
                     return this.columnDESCRIZIONE;
@@ -2492,7 +2512,7 @@ namespace CDCMetal.Entities {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public CDC_CONFORMITARow AddCDC_CONFORMITARow(decimal IDCONFORMITA, decimal IDDETTAGLIO, string UTENTE, System.DateTime DATAINSERIMENTO, string FISICOCHIMICO, string FUNZIONALE, string DIMENSIONALE, string ESTETICO, string ACCONTO, string SALDO, string DESCRIZIONE) {
+            public CDC_CONFORMITARow AddCDC_CONFORMITARow(decimal IDCONFORMITA, decimal IDDETTAGLIO, string UTENTE, System.DateTime DATAINSERIMENTO, string FISICOCHIMICO, string FUNZIONALE, string DIMENSIONALE, string ESTETICO, string ACCONTO, string SALDO, string CERTIFICATI, string ALTRO, string DESCRIZIONE) {
                 CDC_CONFORMITARow rowCDC_CONFORMITARow = ((CDC_CONFORMITARow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         IDCONFORMITA,
@@ -2505,6 +2525,8 @@ namespace CDCMetal.Entities {
                         ESTETICO,
                         ACCONTO,
                         SALDO,
+                        CERTIFICATI,
+                        ALTRO,
                         DESCRIZIONE};
                 rowCDC_CONFORMITARow.ItemArray = columnValuesArray;
                 this.Rows.Add(rowCDC_CONFORMITARow);
@@ -2538,6 +2560,8 @@ namespace CDCMetal.Entities {
                 this.columnESTETICO = base.Columns["ESTETICO"];
                 this.columnACCONTO = base.Columns["ACCONTO"];
                 this.columnSALDO = base.Columns["SALDO"];
+                this.columnCERTIFICATI = base.Columns["CERTIFICATI"];
+                this.columnALTRO = base.Columns["ALTRO"];
                 this.columnDESCRIZIONE = base.Columns["DESCRIZIONE"];
             }
             
@@ -2564,6 +2588,10 @@ namespace CDCMetal.Entities {
                 base.Columns.Add(this.columnACCONTO);
                 this.columnSALDO = new global::System.Data.DataColumn("SALDO", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnSALDO);
+                this.columnCERTIFICATI = new global::System.Data.DataColumn("CERTIFICATI", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnCERTIFICATI);
+                this.columnALTRO = new global::System.Data.DataColumn("ALTRO", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnALTRO);
                 this.columnDESCRIZIONE = new global::System.Data.DataColumn("DESCRIZIONE", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnDESCRIZIONE);
                 this.columnIDDETTAGLIO.AllowDBNull = false;
@@ -2582,8 +2610,11 @@ namespace CDCMetal.Entities {
                 this.columnACCONTO.MaxLength = 1;
                 this.columnSALDO.AllowDBNull = false;
                 this.columnSALDO.MaxLength = 1;
+                this.columnCERTIFICATI.Caption = "DESCRIZIONE";
+                this.columnCERTIFICATI.MaxLength = 50;
+                this.columnALTRO.Caption = "DESCRIZIONE";
+                this.columnALTRO.MaxLength = 50;
                 this.columnDESCRIZIONE.AllowDBNull = false;
-                this.columnDESCRIZIONE.MaxLength = 50;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -4451,6 +4482,38 @@ namespace CDCMetal.Entities {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public string CERTIFICATI {
+                get {
+                    try {
+                        return ((string)(this[this.tableCDC_CONFORMITA.CERTIFICATIColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'CERTIFICATI\' in table \'CDC_CONFORMITA\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableCDC_CONFORMITA.CERTIFICATIColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public string ALTRO {
+                get {
+                    try {
+                        return ((string)(this[this.tableCDC_CONFORMITA.ALTROColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'ALTRO\' in table \'CDC_CONFORMITA\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableCDC_CONFORMITA.ALTROColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             public string DESCRIZIONE {
                 get {
                     return ((string)(this[this.tableCDC_CONFORMITA.DESCRIZIONEColumn]));
@@ -4470,6 +4533,30 @@ namespace CDCMetal.Entities {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             public void SetIDCONFORMITANull() {
                 this[this.tableCDC_CONFORMITA.IDCONFORMITAColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public bool IsCERTIFICATINull() {
+                return this.IsNull(this.tableCDC_CONFORMITA.CERTIFICATIColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public void SetCERTIFICATINull() {
+                this[this.tableCDC_CONFORMITA.CERTIFICATIColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public bool IsALTRONull() {
+                return this.IsNull(this.tableCDC_CONFORMITA.ALTROColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public void SetALTRONull() {
+                this[this.tableCDC_CONFORMITA.ALTROColumn] = global::System.Convert.DBNull;
             }
         }
         

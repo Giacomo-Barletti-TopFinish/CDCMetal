@@ -83,12 +83,15 @@ namespace CDCMetal.BLL
             }
         }
 
-        public string CreaPDFConformita(CDCDS ds, string pathCollaudo, byte[] image)
+        public string CreaPDFConformita(List<decimal> idPerPDF, CDCDS ds, string pathCollaudo, byte[] image)
         {
             StringBuilder fileCreati = new StringBuilder();
 
-            foreach (CDCDS.CDC_CONFORMITARow conformita in ds.CDC_CONFORMITA)
+            foreach (decimal IDDETTAGLIO in idPerPDF)
             {
+                CDCDS.CDC_CONFORMITARow conformita = ds.CDC_CONFORMITA.Where(x => x.IDDETTAGLIO == IDDETTAGLIO).FirstOrDefault();
+                if (conformita == null)
+                    throw new Exception("CDC_CONFORMITA riga non trovat per IDDETTAGLIO" + IDDETTAGLIO.ToString());
                 CDCDS.CDC_DETTAGLIORow dettaglio = ds.CDC_DETTAGLIO.Where(x => x.IDDETTAGLIO == conformita.IDDETTAGLIO).FirstOrDefault();
                 if (dettaglio == null)
                 {
@@ -112,10 +115,12 @@ namespace CDCMetal.BLL
                 bool estetico = conformita.ESTETICO == "S" ? true : false;
                 bool acconto = conformita.ACCONTO == "S" ? true : false;
                 bool saldo = conformita.SALDO == "S" ? true : false;
+                string altro = conformita.IsALTRONull() ? string.Empty : conformita.ALTRO;
+                string certificato = conformita.IsCERTIFICATINull() ? string.Empty : conformita.CERTIFICATI;
 
                 CreaCDC(path, dettaglio.ACCESSORISTA, dettaglio.IDPRENOTAZIONE.ToString(), DateTime.Today.ToShortDateString(),
                     dettaglio.PREFISSO, dettaglio.PARTE, dettaglio.COLORE, dettaglio.QUANTITA.ToString(), conformita.DESCRIZIONE, dettaglio.COMMESSAORDINE, fisico, funzionale,
-                    dimensionale, estetico, acconto, saldo, image);
+                    dimensionale, estetico, acconto, saldo, altro, certificato, image);
                 fileCreati.AppendLine(path);
 
                 CDCDS.CDC_PDFRow pdf = ds.CDC_PDF.Where(x => x.IDDETTAGLIO == conformita.IDDETTAGLIO && x.TIPO == CDCTipoPDF.CERTIFICATOCONFORMITA).FirstOrDefault();
@@ -139,13 +144,13 @@ namespace CDCMetal.BLL
         private static void CreaCDC(string filename, string ragioneSociale, string idCollaudo, string data,
           string prefisso, string parte, string colore, string quantita,
           string descrizione, string commessa, bool controlloFisico, bool controlloFunzionale, bool controlloDimensionale,
-          bool controlloEstetico, bool acconto, bool saldo, byte[] image)
+          bool controlloEstetico, bool acconto, bool saldo, string altro, string certificati, byte[] image)
         {
             PDFHelper pdfHelper = new PDFHelper();
             pdfHelper.CreaCDC(ragioneSociale, idCollaudo, data,
              prefisso, parte, colore, quantita,
              descrizione, commessa, controlloFisico, controlloFunzionale, controlloDimensionale,
-             controlloEstetico, acconto, saldo, image);
+             controlloEstetico, acconto, saldo, altro, certificati, image);
 
             pdfHelper.SalvaPdf(filename);
         }

@@ -15,7 +15,7 @@
   <xs:element name="CDCDS" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:EnableTableAdapterManager="true" msprop:Generator_DataSetName="CDCDS" msprop:Generator_UserDSName="CDCDS">
     <xs:complexType>
       <xs:choice minOccurs="0" maxOccurs="unbounded">
-        <xs:element name="USR_USER" msprop:Generator_TableClassName="USR_USERDataTable" msprop:Generator_TableVarName="tableUSR_USER" msprop:Generator_TablePropName="USR_USER" msprop:Generator_RowDeletingName="USR_USERRowDeleting" msprop:Generator_RowChangingName="USR_USERRowChanging" msprop:Generator_RowEvHandlerName="USR_USERRowChangeEventHandler" msprop:Generator_RowDeletedName="USR_USERRowDeleted" msprop:Generator_UserTableName="USR_USER" msprop:Generator_RowChangedName="USR_USERRowChanged" msprop:Generator_RowEvArgName="USR_USERRowChangeEvent" msprop:Generator_RowClassName="USR_USERRow">
+        <xs:element name="USR_USER" msprop:Generator_TableClassName="USR_USERDataTable" msprop:Generator_TableVarName="tableUSR_USER" msprop:Generator_RowChangedName="USR_USERRowChanged" msprop:Generator_TablePropName="USR_USER" msprop:Generator_RowDeletingName="USR_USERRowDeleting" msprop:Generator_RowChangingName="USR_USERRowChanging" msprop:Generator_RowEvHandlerName="USR_USERRowChangeEventHandler" msprop:Generator_RowDeletedName="USR_USERRowDeleted" msprop:Generator_RowClassName="USR_USERRow" msprop:Generator_UserTableName="USR_USER" msprop:Generator_RowEvArgName="USR_USERRowChangeEvent">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="IDUSER" msprop:Generator_ColumnVarNameInTable="columnIDUSER" msprop:Generator_ColumnPropNameInRow="IDUSER" msprop:Generator_ColumnPropNameInTable="IDUSERColumn" msprop:Generator_UserColumnName="IDUSER">
@@ -116,7 +116,7 @@
             </xs:sequence>
           </xs:complexType>
         </xs:element>
-        <xs:element name="CDC_DETTAGLIO" msprop:Generator_TableClassName="CDC_DETTAGLIODataTable" msprop:Generator_TableVarName="tableCDC_DETTAGLIO" msprop:Generator_TablePropName="CDC_DETTAGLIO" msprop:Generator_RowDeletingName="CDC_DETTAGLIORowDeleting" msprop:Generator_RowChangingName="CDC_DETTAGLIORowChanging" msprop:Generator_RowEvHandlerName="CDC_DETTAGLIORowChangeEventHandler" msprop:Generator_RowDeletedName="CDC_DETTAGLIORowDeleted" msprop:Generator_UserTableName="CDC_DETTAGLIO" msprop:Generator_RowChangedName="CDC_DETTAGLIORowChanged" msprop:Generator_RowEvArgName="CDC_DETTAGLIORowChangeEvent" msprop:Generator_RowClassName="CDC_DETTAGLIORow">
+        <xs:element name="CDC_DETTAGLIO" msprop:Generator_TableClassName="CDC_DETTAGLIODataTable" msprop:Generator_TableVarName="tableCDC_DETTAGLIO" msprop:Generator_RowChangedName="CDC_DETTAGLIORowChanged" msprop:Generator_TablePropName="CDC_DETTAGLIO" msprop:Generator_RowDeletingName="CDC_DETTAGLIORowDeleting" msprop:Generator_RowChangingName="CDC_DETTAGLIORowChanging" msprop:Generator_RowEvHandlerName="CDC_DETTAGLIORowChangeEventHandler" msprop:Generator_RowDeletedName="CDC_DETTAGLIORowDeleted" msprop:Generator_RowClassName="CDC_DETTAGLIORow" msprop:Generator_UserTableName="CDC_DETTAGLIO" msprop:Generator_RowEvArgName="CDC_DETTAGLIORowChangeEvent">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="IDDETTAGLIO" msprop:Generator_ColumnVarNameInTable="columnIDDETTAGLIO" msprop:Generator_ColumnPropNameInRow="IDDETTAGLIO" msprop:Generator_ColumnPropNameInTable="IDDETTAGLIOColumn" msprop:Generator_UserColumnName="IDDETTAGLIO" type="xs:decimal" minOccurs="0" />
@@ -289,7 +289,7 @@
             </xs:sequence>
           </xs:complexType>
         </xs:element>
-        <xs:element name="CDC_EXCEL" msprop:Generator_TableClassName="CDC_EXCELDataTable" msprop:Generator_TableVarName="tableCDC_EXCEL" msprop:Generator_TablePropName="CDC_EXCEL" msprop:Generator_RowDeletingName="CDC_EXCELRowDeleting" msprop:Generator_RowChangingName="CDC_EXCELRowChanging" msprop:Generator_RowEvHandlerName="CDC_EXCELRowChangeEventHandler" msprop:Generator_RowDeletedName="CDC_EXCELRowDeleted" msprop:Generator_UserTableName="CDC_EXCEL" msprop:Generator_RowChangedName="CDC_EXCELRowChanged" msprop:Generator_RowEvArgName="CDC_EXCELRowChangeEvent" msprop:Generator_RowClassName="CDC_EXCELRow">
+        <xs:element name="CDC_EXCEL" msprop:Generator_TableClassName="CDC_EXCELDataTable" msprop:Generator_TableVarName="tableCDC_EXCEL" msprop:Generator_RowChangedName="CDC_EXCELRowChanged" msprop:Generator_TablePropName="CDC_EXCEL" msprop:Generator_RowDeletingName="CDC_EXCELRowDeleting" msprop:Generator_RowChangingName="CDC_EXCELRowChanging" msprop:Generator_RowEvHandlerName="CDC_EXCELRowChangeEventHandler" msprop:Generator_RowDeletedName="CDC_EXCELRowDeleted" msprop:Generator_RowClassName="CDC_EXCELRow" msprop:Generator_UserTableName="CDC_EXCEL" msprop:Generator_RowEvArgName="CDC_EXCELRowChangeEvent">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="IDEXCEL" msprop:Generator_ColumnVarNameInTable="columnIDEXCEL" msprop:Generator_ColumnPropNameInRow="IDEXCEL" msprop:Generator_ColumnPropNameInTable="IDEXCELColumn" msprop:Generator_UserColumnName="IDEXCEL" type="xs:decimal" />
@@ -313,7 +313,7 @@
             </xs:sequence>
           </xs:complexType>
         </xs:element>
-        <xs:element name="CDC_CONFORMITA_DETTAGLIO" msprop:Generator_TableClassName="CDC_CONFORMITA_DETTAGLIODataTable" msprop:Generator_TableVarName="tableCDC_CONFORMITA_DETTAGLIO" msprop:Generator_TablePropName="CDC_CONFORMITA_DETTAGLIO" msprop:Generator_RowDeletingName="CDC_CONFORMITA_DETTAGLIORowDeleting" msprop:Generator_RowChangingName="CDC_CONFORMITA_DETTAGLIORowChanging" msprop:Generator_RowEvHandlerName="CDC_CONFORMITA_DETTAGLIORowChangeEventHandler" msprop:Generator_RowDeletedName="CDC_CONFORMITA_DETTAGLIORowDeleted" msprop:Generator_UserTableName="CDC_CONFORMITA_DETTAGLIO" msprop:Generator_RowChangedName="CDC_CONFORMITA_DETTAGLIORowChanged" msprop:Generator_RowEvArgName="CDC_CONFORMITA_DETTAGLIORowChangeEvent" msprop:Generator_RowClassName="CDC_CONFORMITA_DETTAGLIORow">
+        <xs:element name="CDC_CONFORMITA_DETTAGLIO" msprop:Generator_TableClassName="CDC_CONFORMITA_DETTAGLIODataTable" msprop:Generator_TableVarName="tableCDC_CONFORMITA_DETTAGLIO" msprop:Generator_RowChangedName="CDC_CONFORMITA_DETTAGLIORowChanged" msprop:Generator_TablePropName="CDC_CONFORMITA_DETTAGLIO" msprop:Generator_RowDeletingName="CDC_CONFORMITA_DETTAGLIORowDeleting" msprop:Generator_RowChangingName="CDC_CONFORMITA_DETTAGLIORowChanging" msprop:Generator_RowEvHandlerName="CDC_CONFORMITA_DETTAGLIORowChangeEventHandler" msprop:Generator_RowDeletedName="CDC_CONFORMITA_DETTAGLIORowDeleted" msprop:Generator_RowClassName="CDC_CONFORMITA_DETTAGLIORow" msprop:Generator_UserTableName="CDC_CONFORMITA_DETTAGLIO" msprop:Generator_RowEvArgName="CDC_CONFORMITA_DETTAGLIORowChangeEvent">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="IDCDCDET" msprop:Generator_ColumnVarNameInTable="columnIDCDCDET" msprop:Generator_ColumnPropNameInRow="IDCDCDET" msprop:Generator_ColumnPropNameInTable="IDCDCDETColumn" msprop:Generator_UserColumnName="IDCDCDET" type="xs:decimal" minOccurs="0" />
@@ -348,7 +348,7 @@
             </xs:sequence>
           </xs:complexType>
         </xs:element>
-        <xs:element name="CDC_CONFORMITA" msprop:Generator_TableClassName="CDC_CONFORMITADataTable" msprop:Generator_TableVarName="tableCDC_CONFORMITA" msprop:Generator_TablePropName="CDC_CONFORMITA" msprop:Generator_RowDeletingName="CDC_CONFORMITARowDeleting" msprop:Generator_RowChangingName="CDC_CONFORMITARowChanging" msprop:Generator_RowEvHandlerName="CDC_CONFORMITARowChangeEventHandler" msprop:Generator_RowDeletedName="CDC_CONFORMITARowDeleted" msprop:Generator_UserTableName="CDC_CONFORMITA" msprop:Generator_RowChangedName="CDC_CONFORMITARowChanged" msprop:Generator_RowEvArgName="CDC_CONFORMITARowChangeEvent" msprop:Generator_RowClassName="CDC_CONFORMITARow">
+        <xs:element name="CDC_CONFORMITA" msprop:Generator_TableClassName="CDC_CONFORMITADataTable" msprop:Generator_TableVarName="tableCDC_CONFORMITA" msprop:Generator_RowChangedName="CDC_CONFORMITARowChanged" msprop:Generator_TablePropName="CDC_CONFORMITA" msprop:Generator_RowDeletingName="CDC_CONFORMITARowDeleting" msprop:Generator_RowChangingName="CDC_CONFORMITARowChanging" msprop:Generator_RowEvHandlerName="CDC_CONFORMITARowChangeEventHandler" msprop:Generator_RowDeletedName="CDC_CONFORMITARowDeleted" msprop:Generator_RowClassName="CDC_CONFORMITARow" msprop:Generator_UserTableName="CDC_CONFORMITA" msprop:Generator_RowEvArgName="CDC_CONFORMITARowChangeEvent">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="IDCONFORMITA" msprop:Generator_ColumnVarNameInTable="columnIDCONFORMITA" msprop:Generator_ColumnPropNameInRow="IDCONFORMITA" msprop:Generator_ColumnPropNameInTable="IDCONFORMITAColumn" msprop:Generator_UserColumnName="IDCONFORMITA" type="xs:decimal" minOccurs="0" />
@@ -403,17 +403,25 @@
                   </xs:restriction>
                 </xs:simpleType>
               </xs:element>
-              <xs:element name="DESCRIZIONE" msprop:Generator_ColumnVarNameInTable="columnDESCRIZIONE" msprop:Generator_ColumnPropNameInRow="DESCRIZIONE" msprop:Generator_ColumnPropNameInTable="DESCRIZIONEColumn" msprop:Generator_UserColumnName="DESCRIZIONE">
+              <xs:element name="CERTIFICATI" msdata:Caption="DESCRIZIONE" msprop:Generator_ColumnVarNameInTable="columnCERTIFICATI" msprop:Generator_ColumnPropNameInRow="CERTIFICATI" msprop:Generator_ColumnPropNameInTable="CERTIFICATIColumn" msprop:Generator_UserColumnName="CERTIFICATI" minOccurs="0">
                 <xs:simpleType>
                   <xs:restriction base="xs:string">
                     <xs:maxLength value="50" />
                   </xs:restriction>
                 </xs:simpleType>
               </xs:element>
+              <xs:element name="ALTRO" msdata:Caption="DESCRIZIONE" msprop:Generator_ColumnVarNameInTable="columnALTRO" msprop:Generator_ColumnPropNameInRow="ALTRO" msprop:Generator_ColumnPropNameInTable="ALTROColumn" msprop:Generator_UserColumnName="ALTRO" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="DESCRIZIONE" msprop:Generator_ColumnVarNameInTable="columnDESCRIZIONE" msprop:Generator_ColumnPropNameInRow="DESCRIZIONE" msprop:Generator_ColumnPropNameInTable="DESCRIZIONEColumn" msprop:Generator_UserColumnName="DESCRIZIONE" type="xs:string" />
             </xs:sequence>
           </xs:complexType>
         </xs:element>
-        <xs:element name="CDC_PDF" msprop:Generator_TableClassName="CDC_PDFDataTable" msprop:Generator_TableVarName="tableCDC_PDF" msprop:Generator_TablePropName="CDC_PDF" msprop:Generator_RowDeletingName="CDC_PDFRowDeleting" msprop:Generator_RowChangingName="CDC_PDFRowChanging" msprop:Generator_RowEvHandlerName="CDC_PDFRowChangeEventHandler" msprop:Generator_RowDeletedName="CDC_PDFRowDeleted" msprop:Generator_UserTableName="CDC_PDF" msprop:Generator_RowChangedName="CDC_PDFRowChanged" msprop:Generator_RowEvArgName="CDC_PDFRowChangeEvent" msprop:Generator_RowClassName="CDC_PDFRow">
+        <xs:element name="CDC_PDF" msprop:Generator_TableClassName="CDC_PDFDataTable" msprop:Generator_TableVarName="tableCDC_PDF" msprop:Generator_RowChangedName="CDC_PDFRowChanged" msprop:Generator_TablePropName="CDC_PDF" msprop:Generator_RowDeletingName="CDC_PDFRowDeleting" msprop:Generator_RowChangingName="CDC_PDFRowChanging" msprop:Generator_RowEvHandlerName="CDC_PDFRowChangeEventHandler" msprop:Generator_RowDeletedName="CDC_PDFRowDeleted" msprop:Generator_RowClassName="CDC_PDFRow" msprop:Generator_UserTableName="CDC_PDF" msprop:Generator_RowEvArgName="CDC_PDFRowChangeEvent">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="IDCDCPDF" msprop:Generator_ColumnVarNameInTable="columnIDCDCPDF" msprop:Generator_ColumnPropNameInRow="IDCDCPDF" msprop:Generator_ColumnPropNameInTable="IDCDCPDFColumn" msprop:Generator_UserColumnName="IDCDCPDF" type="xs:decimal" minOccurs="0" />

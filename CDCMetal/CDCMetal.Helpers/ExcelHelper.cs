@@ -87,7 +87,7 @@ namespace CDCMetal.Helpers
                         case "G": // colore
                             {
                                 int lunghezza = 5;
-                                dettaglio.COLORE = cella.Length > lunghezza ? cella.Substring(0, lunghezza) : cella;
+                                dettaglio.COLORE = cella.Length > lunghezza ? cella.Substring(0, lunghezza) : cella.PadLeft(4,'0');
                             }
                             break;
                         case "H": // misura

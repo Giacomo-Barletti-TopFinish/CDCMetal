@@ -81,9 +81,12 @@ namespace CDCMetal
             dgvDettaglio.Columns[5].Frozen = true;
             dgvDettaglio.Columns[5].Width = 70;
             dgvDettaglio.Columns[6].Frozen = true;
+            dgvDettaglio.Columns[6].Width = 130;
             ((DataGridViewTextBoxColumn)dgvDettaglio.Columns[7]).MaxInputLength = 50;
             dgvDettaglio.Columns[7].Width = 170;
-            dgvDettaglio.Columns[14].Visible = false; ;
+            dgvDettaglio.Columns[16].Visible = false; ;
+            ((DataGridViewTextBoxColumn)dgvDettaglio.Columns[14]).MaxInputLength = 50;
+            ((DataGridViewTextBoxColumn)dgvDettaglio.Columns[15]).MaxInputLength = 50;
 
         }
 
@@ -108,6 +111,9 @@ namespace CDCMetal
             dtCartelle.Columns.Add("ESTETICO", Type.GetType("System.Boolean"));
             dtCartelle.Columns.Add("ACCONTO", Type.GetType("System.Boolean"));
             dtCartelle.Columns.Add("SALDO", Type.GetType("System.Boolean"));
+            dtCartelle.Columns.Add("ALTRO", Type.GetType("System.String"));
+            dtCartelle.Columns.Add("CERTIFICATI", Type.GetType("System.String"));
+
             dtCartelle.Columns.Add("IDDETTAGLIO", Type.GetType("System.Decimal")).ReadOnly = true;
 
 
@@ -122,7 +128,7 @@ namespace CDCMetal
                 riga[4] = dettaglio.PARTE;
                 riga[5] = dettaglio.COLORE;
                 riga[6] = dettaglio.COMMESSAORDINE;
-                riga[14] = dettaglio.IDDETTAGLIO;
+                riga[16] = dettaglio.IDDETTAGLIO;
                 CDCDS.CDC_CONFORMITARow conformita = Contesto.DS.CDC_CONFORMITA.Where(x => x.IDDETTAGLIO == dettaglio.IDDETTAGLIO).FirstOrDefault();
                 if (conformita != null)
                 {
@@ -133,9 +139,15 @@ namespace CDCMetal
                     riga[11] = conformita.ESTETICO == "S" ? true : false;
                     riga[12] = conformita.ACCONTO == "S" ? true : false;
                     riga[13] = conformita.SALDO == "S" ? true : false;
+                    riga[14] = conformita.IsALTRONull() ? string.Empty : conformita.ALTRO;
+                    riga[15] = conformita.IsCERTIFICATINull() ? string.Empty : conformita.CERTIFICATI;
                 }
                 else
                 {
+                    riga[8] = true;
+                    riga[10] = true;
+                    riga[11] = true;
+
                     CDCDS.CDC_CONFORMITA_DETTAGLIORow descrizione = Contesto.DS.CDC_CONFORMITA_DETTAGLIO.
                         Where(x => x.PARTE == dettaglio.PARTE && x.PREFISSO == dettaglio.PREFISSO && x.COLORE == dettaglio.COLORE).FirstOrDefault();
                     if (descrizione != null)
@@ -167,10 +179,11 @@ namespace CDCMetal
                     lblMessaggio.Text = "Impossibile creare i file. Ci sono delle descrizioni vuote";
                     return;
                 }
-
+                List<decimal> idPerPDF = new List<decimal>();
                 foreach (DataRow riga in _dsServizio.Tables[tableName].Rows)
                 {
-                    decimal iddettaglio = (decimal)riga[14];
+                    decimal iddettaglio = (decimal)riga[16];
+                    idPerPDF.Add(iddettaglio);
                     CDCDS.CDC_CONFORMITARow conformitaRow = Contesto.DS.CDC_CONFORMITA.Where(x => x.IDDETTAGLIO == iddettaglio).FirstOrDefault();
                     if (conformitaRow == null)
                     {
@@ -185,6 +198,28 @@ namespace CDCMetal
                         conformitaRow.ACCONTO = ConvertiBoolInStringa(riga[12]);
                         conformitaRow.SALDO = ConvertiBoolInStringa(riga[13]);
                         conformitaRow.DESCRIZIONE = ((string)riga[7]).ToUpper().Trim();
+                        if (riga[14] == DBNull.Value)
+                            conformitaRow.SetALTRONull();
+                        else
+                        {
+                            string aux = (string)riga[14];
+                            if (string.IsNullOrEmpty(aux))
+                                conformitaRow.SetALTRONull();
+                            else
+                                conformitaRow.ALTRO = aux;
+                        }
+
+                        if (riga[15] == DBNull.Value)
+                            conformitaRow.SetALTRONull();
+                        else
+                        {
+                            string aux = (string)riga[15];
+                            if (string.IsNullOrEmpty(aux))
+                                conformitaRow.SetCERTIFICATINull();
+                            else
+                                conformitaRow.CERTIFICATI = aux;
+                        }
+
                         Contesto.DS.CDC_CONFORMITA.AddCDC_CONFORMITARow(conformitaRow);
                     }
                     else
@@ -198,6 +233,27 @@ namespace CDCMetal
                         conformitaRow.ACCONTO = ConvertiBoolInStringa(riga[12]);
                         conformitaRow.SALDO = ConvertiBoolInStringa(riga[13]);
                         conformitaRow.DESCRIZIONE = ((string)riga[7]).ToUpper().Trim();
+                        if (riga[14] == DBNull.Value)
+                            conformitaRow.SetALTRONull();
+                        else
+                        {
+                            string aux = (string)riga[14];
+                            if (string.IsNullOrEmpty(aux))
+                                conformitaRow.SetALTRONull();
+                            else
+                                conformitaRow.ALTRO = aux;
+                        }
+
+                        if (riga[15] == DBNull.Value)
+                            conformitaRow.SetCERTIFICATINull();
+                        else
+                        {
+                            string aux = (string)riga[15];
+                            if (string.IsNullOrEmpty(aux))
+                                conformitaRow.SetCERTIFICATINull();
+                            else
+                                conformitaRow.CERTIFICATI = aux;
+                        }
                     }
 
                     string parte = (string)riga[4];
@@ -225,7 +281,7 @@ namespace CDCMetal
                 ImageConverter converter = new ImageConverter();
                 byte[] image = (byte[])converter.ConvertTo(firma, typeof(byte[]));
 
-                fileCreati = bll.CreaPDFConformita(Contesto.DS, Contesto.PathCollaudo, image);
+                fileCreati = bll.CreaPDFConformita(idPerPDF, Contesto.DS, Contesto.PathCollaudo, image);
             }
             finally
             {
@@ -249,6 +305,18 @@ namespace CDCMetal
                 return aux ? "S" : "N";
             }
             return "N";
+        }
+
+        private string ConvertiInStringa(object o)
+        {
+            if (o == DBNull.Value)
+                return string.Empty;
+            if (o is Boolean)
+            {
+                string aux = (string)o;
+                return aux;
+            }
+            return string.Empty;
         }
     }
 }

@@ -66,3 +66,7 @@ C:\VSProgetti\CDCMetal\CDCMetal\CDCMetal\bin\Debug\PdfSharp.xml
 C:\VSProgetti\CDCMetal\CDCMetal\CDCMetal\bin\Debug\PdfSharp.Charting.pdb
 C:\VSProgetti\CDCMetal\CDCMetal\CDCMetal\bin\Debug\PdfSharp.Charting.xml
 C:\VSProgetti\CDCMetal\CDCMetal\CDCMetal\obj\Debug\CDCMetal.CreaConformitaFrm.resources
+C:\VSProgetti\CDCMetal\CDCMetal\CDCMetal\bin\Debug\CDCMetal.exe.manifest
+C:\VSProgetti\CDCMetal\CDCMetal\CDCMetal\bin\Debug\CDCMetal.application
+C:\VSProgetti\CDCMetal\CDCMetal\CDCMetal\obj\Debug\CDCMetal.exe.manifest
+C:\VSProgetti\CDCMetal\CDCMetal\CDCMetal\obj\Debug\CDCMetal.application
