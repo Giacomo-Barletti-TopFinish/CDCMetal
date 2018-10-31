@@ -82,11 +82,11 @@ namespace CDCMetal
             dgvDettaglio.Columns[5].Width = 70;
             dgvDettaglio.Columns[6].Frozen = true;
             dgvDettaglio.Columns[6].Width = 130;
-            ((DataGridViewTextBoxColumn)dgvDettaglio.Columns[7]).MaxInputLength = 50;
-            dgvDettaglio.Columns[7].Width = 170;
-            dgvDettaglio.Columns[16].Visible = false; ;
-            ((DataGridViewTextBoxColumn)dgvDettaglio.Columns[14]).MaxInputLength = 50;
+            ((DataGridViewTextBoxColumn)dgvDettaglio.Columns[8]).MaxInputLength = 50;
+            dgvDettaglio.Columns[8].Width = 170;
+            dgvDettaglio.Columns[17].Visible = false; ;
             ((DataGridViewTextBoxColumn)dgvDettaglio.Columns[15]).MaxInputLength = 50;
+            ((DataGridViewTextBoxColumn)dgvDettaglio.Columns[16]).MaxInputLength = 50;
 
         }
 
@@ -104,6 +104,7 @@ namespace CDCMetal
             dtCartelle.Columns.Add("PARTE", Type.GetType("System.String")).ReadOnly = true;
             dtCartelle.Columns.Add("COLORE", Type.GetType("System.String")).ReadOnly = true;
             dtCartelle.Columns.Add("COMMESSA", Type.GetType("System.String")).ReadOnly = true;
+            dtCartelle.Columns.Add("QUANTITA", Type.GetType("System.String")).ReadOnly = true; //7
             dtCartelle.Columns.Add("DESCRIZIONE", Type.GetType("System.String"));
             dtCartelle.Columns.Add("FISICO", Type.GetType("System.Boolean"));
             dtCartelle.Columns.Add("FUNZIONALE", Type.GetType("System.Boolean"));
@@ -128,30 +129,31 @@ namespace CDCMetal
                 riga[4] = dettaglio.PARTE;
                 riga[5] = dettaglio.COLORE;
                 riga[6] = dettaglio.COMMESSAORDINE;
-                riga[16] = dettaglio.IDDETTAGLIO;
+                riga[7] = dettaglio.QUANTITA;
+                riga[17] = dettaglio.IDDETTAGLIO;
                 CDCDS.CDC_CONFORMITARow conformita = Contesto.DS.CDC_CONFORMITA.Where(x => x.IDDETTAGLIO == dettaglio.IDDETTAGLIO).FirstOrDefault();
                 if (conformita != null)
                 {
-                    riga[7] = conformita.DESCRIZIONE;
-                    riga[8] = conformita.FISICOCHIMICO == "S" ? true : false;
-                    riga[9] = conformita.FUNZIONALE == "S" ? true : false;
-                    riga[10] = conformita.DIMENSIONALE == "S" ? true : false;
-                    riga[11] = conformita.ESTETICO == "S" ? true : false;
-                    riga[12] = conformita.ACCONTO == "S" ? true : false;
-                    riga[13] = conformita.SALDO == "S" ? true : false;
-                    riga[14] = conformita.IsALTRONull() ? string.Empty : conformita.ALTRO;
-                    riga[15] = conformita.IsCERTIFICATINull() ? string.Empty : conformita.CERTIFICATI;
+                    riga[8] = conformita.DESCRIZIONE;
+                    riga[9] = conformita.FISICOCHIMICO == "S" ? true : false;
+                    riga[10] = conformita.FUNZIONALE == "S" ? true : false;
+                    riga[11] = conformita.DIMENSIONALE == "S" ? true : false;
+                    riga[12] = conformita.ESTETICO == "S" ? true : false;
+                    riga[13] = conformita.ACCONTO == "S" ? true : false;
+                    riga[14] = conformita.SALDO == "S" ? true : false;
+                    riga[15] = conformita.IsALTRONull() ? string.Empty : conformita.ALTRO;
+                    riga[16] = conformita.IsCERTIFICATINull() ? string.Empty : conformita.CERTIFICATI;
                 }
                 else
                 {
-                    riga[8] = true;
-                    riga[10] = true;
+                    riga[9] = true;
                     riga[11] = true;
+                    riga[12] = true;
 
                     CDCDS.CDC_CONFORMITA_DETTAGLIORow descrizione = Contesto.DS.CDC_CONFORMITA_DETTAGLIO.
                         Where(x => x.PARTE == dettaglio.PARTE && x.PREFISSO == dettaglio.PREFISSO && x.COLORE == dettaglio.COLORE).FirstOrDefault();
                     if (descrizione != null)
-                        riga[7] = descrizione.DESCRIZIONE;
+                        riga[8] = descrizione.DESCRIZIONE;
                 }
 
                 dtCartelle.Rows.Add(riga);
@@ -170,7 +172,7 @@ namespace CDCMetal
                 lblMessaggio.Text = "";
                 foreach (DataRow riga in _dsServizio.Tables[tableName].Rows)
                 {
-                    if (riga[7] == DBNull.Value || string.IsNullOrEmpty((string)riga[7]))
+                    if (riga[8] == DBNull.Value || string.IsNullOrEmpty((string)riga[7]))
                         esito = false;
                 }
 
@@ -182,7 +184,7 @@ namespace CDCMetal
                 List<decimal> idPerPDF = new List<decimal>();
                 foreach (DataRow riga in _dsServizio.Tables[tableName].Rows)
                 {
-                    decimal iddettaglio = (decimal)riga[16];
+                    decimal iddettaglio = (decimal)riga[17];
                     idPerPDF.Add(iddettaglio);
                     CDCDS.CDC_CONFORMITARow conformitaRow = Contesto.DS.CDC_CONFORMITA.Where(x => x.IDDETTAGLIO == iddettaglio).FirstOrDefault();
                     if (conformitaRow == null)
@@ -191,29 +193,29 @@ namespace CDCMetal
                         conformitaRow.IDDETTAGLIO = iddettaglio;
                         conformitaRow.UTENTE = Contesto.Utente.FULLNAMEUSER;
                         conformitaRow.DATAINSERIMENTO = DateTime.Now;
-                        conformitaRow.FISICOCHIMICO = ConvertiBoolInStringa(riga[8]);
-                        conformitaRow.FUNZIONALE = ConvertiBoolInStringa(riga[9]);
-                        conformitaRow.DIMENSIONALE = ConvertiBoolInStringa(riga[10]);
-                        conformitaRow.ESTETICO = ConvertiBoolInStringa(riga[11]);
-                        conformitaRow.ACCONTO = ConvertiBoolInStringa(riga[12]);
-                        conformitaRow.SALDO = ConvertiBoolInStringa(riga[13]);
-                        conformitaRow.DESCRIZIONE = ((string)riga[7]).ToUpper().Trim();
-                        if (riga[14] == DBNull.Value)
+                        conformitaRow.FISICOCHIMICO = ConvertiBoolInStringa(riga[9]);
+                        conformitaRow.FUNZIONALE = ConvertiBoolInStringa(riga[10]);
+                        conformitaRow.DIMENSIONALE = ConvertiBoolInStringa(riga[11]);
+                        conformitaRow.ESTETICO = ConvertiBoolInStringa(riga[12]);
+                        conformitaRow.ACCONTO = ConvertiBoolInStringa(riga[13]);
+                        conformitaRow.SALDO = ConvertiBoolInStringa(riga[14]);
+                        conformitaRow.DESCRIZIONE = ((string)riga[8]).ToUpper().Trim();
+                        if (riga[15] == DBNull.Value)
                             conformitaRow.SetALTRONull();
                         else
                         {
-                            string aux = (string)riga[14];
+                            string aux = (string)riga[15];
                             if (string.IsNullOrEmpty(aux))
                                 conformitaRow.SetALTRONull();
                             else
                                 conformitaRow.ALTRO = aux;
                         }
 
-                        if (riga[15] == DBNull.Value)
+                        if (riga[16] == DBNull.Value)
                             conformitaRow.SetALTRONull();
                         else
                         {
-                            string aux = (string)riga[15];
+                            string aux = (string)riga[16];
                             if (string.IsNullOrEmpty(aux))
                                 conformitaRow.SetCERTIFICATINull();
                             else
@@ -226,29 +228,29 @@ namespace CDCMetal
                     {
                         conformitaRow.UTENTE = Contesto.Utente.FULLNAMEUSER;
                         conformitaRow.DATAINSERIMENTO = DateTime.Now;
-                        conformitaRow.FISICOCHIMICO = ConvertiBoolInStringa(riga[8]);
-                        conformitaRow.FUNZIONALE = ConvertiBoolInStringa(riga[9]);
-                        conformitaRow.DIMENSIONALE = ConvertiBoolInStringa(riga[10]);
-                        conformitaRow.ESTETICO = ConvertiBoolInStringa(riga[11]);
-                        conformitaRow.ACCONTO = ConvertiBoolInStringa(riga[12]);
-                        conformitaRow.SALDO = ConvertiBoolInStringa(riga[13]);
-                        conformitaRow.DESCRIZIONE = ((string)riga[7]).ToUpper().Trim();
-                        if (riga[14] == DBNull.Value)
+                        conformitaRow.FISICOCHIMICO = ConvertiBoolInStringa(riga[9]);
+                        conformitaRow.FUNZIONALE = ConvertiBoolInStringa(riga[10]);
+                        conformitaRow.DIMENSIONALE = ConvertiBoolInStringa(riga[11]);
+                        conformitaRow.ESTETICO = ConvertiBoolInStringa(riga[12]);
+                        conformitaRow.ACCONTO = ConvertiBoolInStringa(riga[13]);
+                        conformitaRow.SALDO = ConvertiBoolInStringa(riga[14]);
+                        conformitaRow.DESCRIZIONE = ((string)riga[8]).ToUpper().Trim();
+                        if (riga[15] == DBNull.Value)
                             conformitaRow.SetALTRONull();
                         else
                         {
-                            string aux = (string)riga[14];
+                            string aux = (string)riga[15];
                             if (string.IsNullOrEmpty(aux))
                                 conformitaRow.SetALTRONull();
                             else
                                 conformitaRow.ALTRO = aux;
                         }
 
-                        if (riga[15] == DBNull.Value)
+                        if (riga[16] == DBNull.Value)
                             conformitaRow.SetCERTIFICATINull();
                         else
                         {
-                            string aux = (string)riga[15];
+                            string aux = (string)riga[16];
                             if (string.IsNullOrEmpty(aux))
                                 conformitaRow.SetCERTIFICATINull();
                             else
@@ -267,11 +269,11 @@ namespace CDCMetal
                         dettaglioRow.PREFISSO = prefisso;
                         dettaglioRow.PARTE = parte;
                         dettaglioRow.COLORE = colore;
-                        dettaglioRow.DESCRIZIONE = ((string)riga[7]).ToUpper().Trim();
+                        dettaglioRow.DESCRIZIONE = ((string)riga[8]).ToUpper().Trim();
                         Contesto.DS.CDC_CONFORMITA_DETTAGLIO.AddCDC_CONFORMITA_DETTAGLIORow(dettaglioRow);
                     }
                     else
-                        dettaglioRow.DESCRIZIONE = ((string)riga[7]).ToUpper().Trim();
+                        dettaglioRow.DESCRIZIONE = ((string)riga[8]).ToUpper().Trim();
                 }
 
                 CDCBLL bll = new CDCBLL();

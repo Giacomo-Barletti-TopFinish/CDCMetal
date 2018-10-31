@@ -98,8 +98,7 @@ namespace CDCMetal.BLL
                     throw new Exception("IMPOSSIBILE TROVARE CDC DETTAGLIO DA CDC CONFORMITA'");
                 }
                 DateTime dt = DateTime.ParseExact(dettaglio.DATACOLLAUDO, "dd/MM/yyyy", CultureInfo.InvariantCulture);
-                string accessorista = ConvertiAccessorista(dettaglio.ACCESSORISTA);
-                string cartella = CreaPathCartella(dt, pathCollaudo, accessorista, dettaglio.PREFISSO, dettaglio.PARTE, dettaglio.COLORE, dettaglio.COMMESSAORDINE);
+                string cartella = CreaPathCartella(dt, pathCollaudo, dettaglio.ACCESSORISTA, dettaglio.PREFISSO, dettaglio.PARTE, dettaglio.COLORE, dettaglio.COMMESSAORDINE);
                 string fileName = string.Format("CDC {0}.pdf", dettaglio.PARTE.Trim());
                 string path = string.Format(@"{0}\{1}", cartella, fileName);
 
