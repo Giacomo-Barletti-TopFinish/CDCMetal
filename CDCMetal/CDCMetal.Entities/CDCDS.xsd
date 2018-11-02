@@ -15,7 +15,7 @@
   <xs:element name="CDCDS" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:EnableTableAdapterManager="true" msprop:Generator_DataSetName="CDCDS" msprop:Generator_UserDSName="CDCDS">
     <xs:complexType>
       <xs:choice minOccurs="0" maxOccurs="unbounded">
-        <xs:element name="USR_USER" msprop:Generator_TableClassName="USR_USERDataTable" msprop:Generator_TableVarName="tableUSR_USER" msprop:Generator_RowChangedName="USR_USERRowChanged" msprop:Generator_TablePropName="USR_USER" msprop:Generator_RowDeletingName="USR_USERRowDeleting" msprop:Generator_RowChangingName="USR_USERRowChanging" msprop:Generator_RowEvHandlerName="USR_USERRowChangeEventHandler" msprop:Generator_RowDeletedName="USR_USERRowDeleted" msprop:Generator_RowClassName="USR_USERRow" msprop:Generator_UserTableName="USR_USER" msprop:Generator_RowEvArgName="USR_USERRowChangeEvent">
+        <xs:element name="USR_USER" msprop:Generator_TableClassName="USR_USERDataTable" msprop:Generator_TableVarName="tableUSR_USER" msprop:Generator_TablePropName="USR_USER" msprop:Generator_RowDeletingName="USR_USERRowDeleting" msprop:Generator_RowChangingName="USR_USERRowChanging" msprop:Generator_RowEvHandlerName="USR_USERRowChangeEventHandler" msprop:Generator_RowDeletedName="USR_USERRowDeleted" msprop:Generator_UserTableName="USR_USER" msprop:Generator_RowChangedName="USR_USERRowChanged" msprop:Generator_RowEvArgName="USR_USERRowChangeEvent" msprop:Generator_RowClassName="USR_USERRow">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="IDUSER" msprop:Generator_ColumnVarNameInTable="columnIDUSER" msprop:Generator_ColumnPropNameInRow="IDUSER" msprop:Generator_ColumnPropNameInTable="IDUSERColumn" msprop:Generator_UserColumnName="IDUSER">
@@ -116,7 +116,7 @@
             </xs:sequence>
           </xs:complexType>
         </xs:element>
-        <xs:element name="CDC_DETTAGLIO" msprop:Generator_TableClassName="CDC_DETTAGLIODataTable" msprop:Generator_TableVarName="tableCDC_DETTAGLIO" msprop:Generator_RowChangedName="CDC_DETTAGLIORowChanged" msprop:Generator_TablePropName="CDC_DETTAGLIO" msprop:Generator_RowDeletingName="CDC_DETTAGLIORowDeleting" msprop:Generator_RowChangingName="CDC_DETTAGLIORowChanging" msprop:Generator_RowEvHandlerName="CDC_DETTAGLIORowChangeEventHandler" msprop:Generator_RowDeletedName="CDC_DETTAGLIORowDeleted" msprop:Generator_RowClassName="CDC_DETTAGLIORow" msprop:Generator_UserTableName="CDC_DETTAGLIO" msprop:Generator_RowEvArgName="CDC_DETTAGLIORowChangeEvent">
+        <xs:element name="CDC_DETTAGLIO" msprop:Generator_TableClassName="CDC_DETTAGLIODataTable" msprop:Generator_TableVarName="tableCDC_DETTAGLIO" msprop:Generator_TablePropName="CDC_DETTAGLIO" msprop:Generator_RowDeletingName="CDC_DETTAGLIORowDeleting" msprop:Generator_RowChangingName="CDC_DETTAGLIORowChanging" msprop:Generator_RowEvHandlerName="CDC_DETTAGLIORowChangeEventHandler" msprop:Generator_RowDeletedName="CDC_DETTAGLIORowDeleted" msprop:Generator_UserTableName="CDC_DETTAGLIO" msprop:Generator_RowChangedName="CDC_DETTAGLIORowChanged" msprop:Generator_RowEvArgName="CDC_DETTAGLIORowChangeEvent" msprop:Generator_RowClassName="CDC_DETTAGLIORow">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="IDDETTAGLIO" msprop:Generator_ColumnVarNameInTable="columnIDDETTAGLIO" msprop:Generator_ColumnPropNameInRow="IDDETTAGLIO" msprop:Generator_ColumnPropNameInTable="IDDETTAGLIOColumn" msprop:Generator_UserColumnName="IDDETTAGLIO" type="xs:decimal" minOccurs="0" />
@@ -289,7 +289,7 @@
             </xs:sequence>
           </xs:complexType>
         </xs:element>
-        <xs:element name="CDC_EXCEL" msprop:Generator_TableClassName="CDC_EXCELDataTable" msprop:Generator_TableVarName="tableCDC_EXCEL" msprop:Generator_RowChangedName="CDC_EXCELRowChanged" msprop:Generator_TablePropName="CDC_EXCEL" msprop:Generator_RowDeletingName="CDC_EXCELRowDeleting" msprop:Generator_RowChangingName="CDC_EXCELRowChanging" msprop:Generator_RowEvHandlerName="CDC_EXCELRowChangeEventHandler" msprop:Generator_RowDeletedName="CDC_EXCELRowDeleted" msprop:Generator_RowClassName="CDC_EXCELRow" msprop:Generator_UserTableName="CDC_EXCEL" msprop:Generator_RowEvArgName="CDC_EXCELRowChangeEvent">
+        <xs:element name="CDC_EXCEL" msprop:Generator_TableClassName="CDC_EXCELDataTable" msprop:Generator_TableVarName="tableCDC_EXCEL" msprop:Generator_TablePropName="CDC_EXCEL" msprop:Generator_RowDeletingName="CDC_EXCELRowDeleting" msprop:Generator_RowChangingName="CDC_EXCELRowChanging" msprop:Generator_RowEvHandlerName="CDC_EXCELRowChangeEventHandler" msprop:Generator_RowDeletedName="CDC_EXCELRowDeleted" msprop:Generator_UserTableName="CDC_EXCEL" msprop:Generator_RowChangedName="CDC_EXCELRowChanged" msprop:Generator_RowEvArgName="CDC_EXCELRowChangeEvent" msprop:Generator_RowClassName="CDC_EXCELRow">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="IDEXCEL" msprop:Generator_ColumnVarNameInTable="columnIDEXCEL" msprop:Generator_ColumnPropNameInRow="IDEXCEL" msprop:Generator_ColumnPropNameInTable="IDEXCELColumn" msprop:Generator_UserColumnName="IDEXCEL" type="xs:decimal" />
@@ -313,7 +313,7 @@
             </xs:sequence>
           </xs:complexType>
         </xs:element>
-        <xs:element name="CDC_CONFORMITA_DETTAGLIO" msprop:Generator_TableClassName="CDC_CONFORMITA_DETTAGLIODataTable" msprop:Generator_TableVarName="tableCDC_CONFORMITA_DETTAGLIO" msprop:Generator_RowChangedName="CDC_CONFORMITA_DETTAGLIORowChanged" msprop:Generator_TablePropName="CDC_CONFORMITA_DETTAGLIO" msprop:Generator_RowDeletingName="CDC_CONFORMITA_DETTAGLIORowDeleting" msprop:Generator_RowChangingName="CDC_CONFORMITA_DETTAGLIORowChanging" msprop:Generator_RowEvHandlerName="CDC_CONFORMITA_DETTAGLIORowChangeEventHandler" msprop:Generator_RowDeletedName="CDC_CONFORMITA_DETTAGLIORowDeleted" msprop:Generator_RowClassName="CDC_CONFORMITA_DETTAGLIORow" msprop:Generator_UserTableName="CDC_CONFORMITA_DETTAGLIO" msprop:Generator_RowEvArgName="CDC_CONFORMITA_DETTAGLIORowChangeEvent">
+        <xs:element name="CDC_CONFORMITA_DETTAGLIO" msprop:Generator_TableClassName="CDC_CONFORMITA_DETTAGLIODataTable" msprop:Generator_TableVarName="tableCDC_CONFORMITA_DETTAGLIO" msprop:Generator_TablePropName="CDC_CONFORMITA_DETTAGLIO" msprop:Generator_RowDeletingName="CDC_CONFORMITA_DETTAGLIORowDeleting" msprop:Generator_RowChangingName="CDC_CONFORMITA_DETTAGLIORowChanging" msprop:Generator_RowEvHandlerName="CDC_CONFORMITA_DETTAGLIORowChangeEventHandler" msprop:Generator_RowDeletedName="CDC_CONFORMITA_DETTAGLIORowDeleted" msprop:Generator_UserTableName="CDC_CONFORMITA_DETTAGLIO" msprop:Generator_RowChangedName="CDC_CONFORMITA_DETTAGLIORowChanged" msprop:Generator_RowEvArgName="CDC_CONFORMITA_DETTAGLIORowChangeEvent" msprop:Generator_RowClassName="CDC_CONFORMITA_DETTAGLIORow">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="IDCDCDET" msprop:Generator_ColumnVarNameInTable="columnIDCDCDET" msprop:Generator_ColumnPropNameInRow="IDCDCDET" msprop:Generator_ColumnPropNameInTable="IDCDCDETColumn" msprop:Generator_UserColumnName="IDCDCDET" type="xs:decimal" minOccurs="0" />
@@ -348,7 +348,7 @@
             </xs:sequence>
           </xs:complexType>
         </xs:element>
-        <xs:element name="CDC_CONFORMITA" msprop:Generator_TableClassName="CDC_CONFORMITADataTable" msprop:Generator_TableVarName="tableCDC_CONFORMITA" msprop:Generator_RowChangedName="CDC_CONFORMITARowChanged" msprop:Generator_TablePropName="CDC_CONFORMITA" msprop:Generator_RowDeletingName="CDC_CONFORMITARowDeleting" msprop:Generator_RowChangingName="CDC_CONFORMITARowChanging" msprop:Generator_RowEvHandlerName="CDC_CONFORMITARowChangeEventHandler" msprop:Generator_RowDeletedName="CDC_CONFORMITARowDeleted" msprop:Generator_RowClassName="CDC_CONFORMITARow" msprop:Generator_UserTableName="CDC_CONFORMITA" msprop:Generator_RowEvArgName="CDC_CONFORMITARowChangeEvent">
+        <xs:element name="CDC_CONFORMITA" msprop:Generator_TableClassName="CDC_CONFORMITADataTable" msprop:Generator_TableVarName="tableCDC_CONFORMITA" msprop:Generator_TablePropName="CDC_CONFORMITA" msprop:Generator_RowDeletingName="CDC_CONFORMITARowDeleting" msprop:Generator_RowChangingName="CDC_CONFORMITARowChanging" msprop:Generator_RowEvHandlerName="CDC_CONFORMITARowChangeEventHandler" msprop:Generator_RowDeletedName="CDC_CONFORMITARowDeleted" msprop:Generator_UserTableName="CDC_CONFORMITA" msprop:Generator_RowChangedName="CDC_CONFORMITARowChanged" msprop:Generator_RowEvArgName="CDC_CONFORMITARowChangeEvent" msprop:Generator_RowClassName="CDC_CONFORMITARow">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="IDCONFORMITA" msprop:Generator_ColumnVarNameInTable="columnIDCONFORMITA" msprop:Generator_ColumnPropNameInRow="IDCONFORMITA" msprop:Generator_ColumnPropNameInTable="IDCONFORMITAColumn" msprop:Generator_UserColumnName="IDCONFORMITA" type="xs:decimal" minOccurs="0" />
@@ -421,7 +421,7 @@
             </xs:sequence>
           </xs:complexType>
         </xs:element>
-        <xs:element name="CDC_PDF" msprop:Generator_TableClassName="CDC_PDFDataTable" msprop:Generator_TableVarName="tableCDC_PDF" msprop:Generator_RowChangedName="CDC_PDFRowChanged" msprop:Generator_TablePropName="CDC_PDF" msprop:Generator_RowDeletingName="CDC_PDFRowDeleting" msprop:Generator_RowChangingName="CDC_PDFRowChanging" msprop:Generator_RowEvHandlerName="CDC_PDFRowChangeEventHandler" msprop:Generator_RowDeletedName="CDC_PDFRowDeleted" msprop:Generator_RowClassName="CDC_PDFRow" msprop:Generator_UserTableName="CDC_PDF" msprop:Generator_RowEvArgName="CDC_PDFRowChangeEvent">
+        <xs:element name="CDC_PDF" msprop:Generator_TableClassName="CDC_PDFDataTable" msprop:Generator_TableVarName="tableCDC_PDF" msprop:Generator_TablePropName="CDC_PDF" msprop:Generator_RowDeletingName="CDC_PDFRowDeleting" msprop:Generator_RowChangingName="CDC_PDFRowChanging" msprop:Generator_RowEvHandlerName="CDC_PDFRowChangeEventHandler" msprop:Generator_RowDeletedName="CDC_PDFRowDeleted" msprop:Generator_UserTableName="CDC_PDF" msprop:Generator_RowChangedName="CDC_PDFRowChanged" msprop:Generator_RowEvArgName="CDC_PDFRowChangeEvent" msprop:Generator_RowClassName="CDC_PDFRow">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="IDCDCPDF" msprop:Generator_ColumnVarNameInTable="columnIDCDCPDF" msprop:Generator_ColumnPropNameInRow="IDCDCPDF" msprop:Generator_ColumnPropNameInTable="IDCDCPDFColumn" msprop:Generator_UserColumnName="IDCDCPDF" type="xs:decimal" minOccurs="0" />
@@ -437,6 +437,155 @@
                 <xs:simpleType>
                   <xs:restriction base="xs:string">
                     <xs:maxLength value="200" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="CDC_DIMEMSIONI" msprop:Generator_TableClassName="CDC_DIMEMSIONIDataTable" msprop:Generator_TableVarName="tableCDC_DIMEMSIONI" msprop:Generator_TablePropName="CDC_DIMEMSIONI" msprop:Generator_RowDeletingName="CDC_DIMEMSIONIRowDeleting" msprop:Generator_RowChangingName="CDC_DIMEMSIONIRowChanging" msprop:Generator_RowEvHandlerName="CDC_DIMEMSIONIRowChangeEventHandler" msprop:Generator_RowDeletedName="CDC_DIMEMSIONIRowDeleted" msprop:Generator_UserTableName="CDC_DIMEMSIONI" msprop:Generator_RowChangedName="CDC_DIMEMSIONIRowChanged" msprop:Generator_RowEvArgName="CDC_DIMEMSIONIRowChangeEvent" msprop:Generator_RowClassName="CDC_DIMEMSIONIRow">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="IDDIMENSIONALE" msprop:Generator_ColumnVarNameInTable="columnIDDIMENSIONALE" msprop:Generator_ColumnPropNameInRow="IDDIMENSIONALE" msprop:Generator_ColumnPropNameInTable="IDDIMENSIONALEColumn" msprop:Generator_UserColumnName="IDDIMENSIONALE" type="xs:decimal" minOccurs="0" />
+              <xs:element name="IDDETTAGLIO" msprop:Generator_ColumnVarNameInTable="columnIDDETTAGLIO" msprop:Generator_ColumnPropNameInRow="IDDETTAGLIO" msprop:Generator_ColumnPropNameInTable="IDDETTAGLIOColumn" msprop:Generator_UserColumnName="IDDETTAGLIO" type="xs:decimal" />
+              <xs:element name="UTENTE" msprop:Generator_ColumnVarNameInTable="columnUTENTE" msprop:Generator_ColumnPropNameInRow="UTENTE" msprop:Generator_ColumnPropNameInTable="UTENTEColumn" msprop:Generator_UserColumnName="UTENTE">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="DATAINSERIMENTO" msprop:Generator_ColumnVarNameInTable="columnDATAINSERIMENTO" msprop:Generator_ColumnPropNameInRow="DATAINSERIMENTO" msprop:Generator_ColumnPropNameInTable="DATAINSERIMENTOColumn" msprop:Generator_UserColumnName="DATAINSERIMENTO" type="xs:dateTime" />
+              <xs:element name="RIFERIMENTO" msprop:Generator_ColumnVarNameInTable="columnRIFERIMENTO" msprop:Generator_ColumnPropNameInRow="RIFERIMENTO" msprop:Generator_ColumnPropNameInTable="RIFERIMENTOColumn" msprop:Generator_UserColumnName="RIFERIMENTO">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="2" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="GRANDEZZA" msprop:Generator_ColumnVarNameInTable="columnGRANDEZZA" msprop:Generator_ColumnPropNameInRow="GRANDEZZA" msprop:Generator_ColumnPropNameInTable="GRANDEZZAColumn" msprop:Generator_UserColumnName="GRANDEZZA">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="30" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="RICHIESTO" msprop:Generator_ColumnVarNameInTable="columnRICHIESTO" msprop:Generator_ColumnPropNameInRow="RICHIESTO" msprop:Generator_ColumnPropNameInTable="RICHIESTOColumn" msprop:Generator_UserColumnName="RICHIESTO">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="5" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="TOLLERANZA" msprop:Generator_ColumnVarNameInTable="columnTOLLERANZA" msprop:Generator_ColumnPropNameInRow="TOLLERANZA" msprop:Generator_ColumnPropNameInTable="TOLLERANZAColumn" msprop:Generator_UserColumnName="TOLLERANZA" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="5" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="MINIMO" msprop:Generator_ColumnVarNameInTable="columnMINIMO" msprop:Generator_ColumnPropNameInRow="MINIMO" msprop:Generator_ColumnPropNameInTable="MINIMOColumn" msprop:Generator_UserColumnName="MINIMO" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="5" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="MASSIMO" msprop:Generator_ColumnVarNameInTable="columnMASSIMO" msprop:Generator_ColumnPropNameInRow="MASSIMO" msprop:Generator_ColumnPropNameInTable="MASSIMOColumn" msprop:Generator_UserColumnName="MASSIMO" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="5" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="TAMPONE" msprop:Generator_ColumnVarNameInTable="columnTAMPONE" msprop:Generator_ColumnPropNameInRow="TAMPONE" msprop:Generator_ColumnPropNameInTable="TAMPONEColumn" msprop:Generator_UserColumnName="TAMPONE" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="CONTAMPONE" msprop:Generator_ColumnVarNameInTable="columnCONTAMPONE" msprop:Generator_ColumnPropNameInRow="CONTAMPONE" msprop:Generator_ColumnPropNameInTable="CONTAMPONEColumn" msprop:Generator_UserColumnName="CONTAMPONE">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="1" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="CONFORME" msprop:Generator_ColumnVarNameInTable="columnCONFORME" msprop:Generator_ColumnPropNameInRow="CONFORME" msprop:Generator_ColumnPropNameInTable="CONFORMEColumn" msprop:Generator_UserColumnName="CONFORME">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="1" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="CDC_DIMEMSIONI_MISURE" msprop:Generator_TableClassName="CDC_DIMEMSIONI_MISUREDataTable" msprop:Generator_TableVarName="tableCDC_DIMEMSIONI_MISURE" msprop:Generator_RowChangedName="CDC_DIMEMSIONI_MISURERowChanged" msprop:Generator_TablePropName="CDC_DIMEMSIONI_MISURE" msprop:Generator_RowDeletingName="CDC_DIMEMSIONI_MISURERowDeleting" msprop:Generator_RowChangingName="CDC_DIMEMSIONI_MISURERowChanging" msprop:Generator_RowEvHandlerName="CDC_DIMEMSIONI_MISURERowChangeEventHandler" msprop:Generator_RowDeletedName="CDC_DIMEMSIONI_MISURERowDeleted" msprop:Generator_RowClassName="CDC_DIMEMSIONI_MISURERow" msprop:Generator_UserTableName="CDC_DIMEMSIONI_MISURE" msprop:Generator_RowEvArgName="CDC_DIMEMSIONI_MISURERowChangeEvent">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="IDCDCMIS" msprop:Generator_ColumnVarNameInTable="columnIDCDCMIS" msprop:Generator_ColumnPropNameInRow="IDCDCMIS" msprop:Generator_ColumnPropNameInTable="IDCDCMISColumn" msprop:Generator_UserColumnName="IDCDCMIS" type="xs:decimal" minOccurs="0" />
+              <xs:element name="PARTE" msprop:Generator_ColumnVarNameInTable="columnPARTE" msprop:Generator_ColumnPropNameInRow="PARTE" msprop:Generator_ColumnPropNameInTable="PARTEColumn" msprop:Generator_UserColumnName="PARTE">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="6" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="RIFERIMENTO" msprop:Generator_ColumnVarNameInTable="columnRIFERIMENTO" msprop:Generator_ColumnPropNameInRow="RIFERIMENTO" msprop:Generator_ColumnPropNameInTable="RIFERIMENTOColumn" msprop:Generator_UserColumnName="RIFERIMENTO">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="2" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="GRANDEZZA" msprop:Generator_ColumnVarNameInTable="columnGRANDEZZA" msprop:Generator_ColumnPropNameInRow="GRANDEZZA" msprop:Generator_ColumnPropNameInTable="GRANDEZZAColumn" msprop:Generator_UserColumnName="GRANDEZZA">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="30" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="RICHIESTO" msprop:Generator_ColumnVarNameInTable="columnRICHIESTO" msprop:Generator_ColumnPropNameInRow="RICHIESTO" msprop:Generator_ColumnPropNameInTable="RICHIESTOColumn" msprop:Generator_UserColumnName="RICHIESTO">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="5" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="TOLLERANZA" msprop:Generator_ColumnVarNameInTable="columnTOLLERANZA" msprop:Generator_ColumnPropNameInRow="TOLLERANZA" msprop:Generator_ColumnPropNameInTable="TOLLERANZAColumn" msprop:Generator_UserColumnName="TOLLERANZA" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="5" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="MINIMO" msprop:Generator_ColumnVarNameInTable="columnMINIMO" msprop:Generator_ColumnPropNameInRow="MINIMO" msprop:Generator_ColumnPropNameInTable="MINIMOColumn" msprop:Generator_UserColumnName="MINIMO" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="5" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="MASSIMO" msprop:Generator_ColumnVarNameInTable="columnMASSIMO" msprop:Generator_ColumnPropNameInRow="MASSIMO" msprop:Generator_ColumnPropNameInTable="MASSIMOColumn" msprop:Generator_UserColumnName="MASSIMO" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="5" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="TAMPONE" msprop:Generator_ColumnVarNameInTable="columnTAMPONE" msprop:Generator_ColumnPropNameInRow="TAMPONE" msprop:Generator_ColumnPropNameInTable="TAMPONEColumn" msprop:Generator_UserColumnName="TAMPONE" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="CONTAMPONE" msprop:Generator_ColumnVarNameInTable="columnCONTAMPONE" msprop:Generator_ColumnPropNameInRow="CONTAMPONE" msprop:Generator_ColumnPropNameInTable="CONTAMPONEColumn" msprop:Generator_UserColumnName="CONTAMPONE" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="1" />
                   </xs:restriction>
                 </xs:simpleType>
               </xs:element>

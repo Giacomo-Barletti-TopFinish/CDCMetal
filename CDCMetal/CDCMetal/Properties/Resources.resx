@@ -121,7 +121,16 @@
   <data name="FirmaCDC" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\FirmaCDC.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="firma_celeste" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\firma celeste.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="firma_vittoria" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\firma vittoria.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="IT" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\it2.gif;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="loghi" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\loghi.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
 </root>

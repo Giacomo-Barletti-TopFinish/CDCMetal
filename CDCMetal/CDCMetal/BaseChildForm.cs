@@ -20,6 +20,29 @@ namespace CDCMetal
                 (this.ParentForm as MainForm).Contesto = value;
             }
         }
-         
+
+        protected string ConvertiBoolInStringa(object o)
+        {
+            if (o == DBNull.Value)
+                return "N";
+            if (o is Boolean)
+            {
+                bool aux = (bool)o;
+                return aux ? "S" : "N";
+            }
+            return "N";
+        }
+
+        protected string ConvertiInStringa(object o)
+        {
+            if (o == DBNull.Value)
+                return string.Empty;
+            if (o is String)
+            {
+                string aux = (string)o;
+                return aux;
+            }
+            return string.Empty;
+        }
     }
 }

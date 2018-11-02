@@ -38,6 +38,15 @@ namespace CDCMetal.BLL
             }
         }
 
+        public void FillCDC_DIMEMSIONI(CDCDS ds, List<decimal> IDDETTAGLIO)
+        {
+            using (CDCMetalBusiness bCDCMetal = new CDCMetalBusiness())
+            {
+                bCDCMetal.FillCDC_DIMEMSIONI(ds, IDDETTAGLIO);
+                bCDCMetal.FillCDC_DIMEMSIONI_MISURE(ds, IDDETTAGLIO);
+            }
+        }
+
         public void CDC_PDF(CDCDS ds, List<decimal> IDDETTAGLIO)
         {
             using (CDCMetalBusiness bCDCMetal = new CDCMetalBusiness())
@@ -83,6 +92,13 @@ namespace CDCMetal.BLL
             }
         }
 
+        public void SalvaDatiDimensioni(CDCDS ds)
+        {
+            using (CDCMetalBusiness bCDCMetal = new CDCMetalBusiness())
+            {
+                bCDCMetal.UpdateDimensioni(ds);
+            }
+        }
         public string CreaPDFConformita(List<decimal> idPerPDF, CDCDS ds, string pathCollaudo, byte[] image)
         {
             StringBuilder fileCreati = new StringBuilder();
@@ -154,5 +170,77 @@ namespace CDCMetal.BLL
             pdfHelper.SalvaPdf(filename);
         }
 
+        private static void CreaCDCDimensionale(string filename, string data,
+       string prefisso, string parte, string colore, string operatore,
+        string commessa, byte[] iloghi, byte[] firma, List<MisuraDimensionale> misure)
+        {
+            PDFHelper pdfHelper = new PDFHelper();
+            pdfHelper.CreaReportDimensionale(data, prefisso, parte, colore, operatore, commessa, iloghi, firma, misure);
+
+            pdfHelper.SalvaPdf(filename);
+        }
+
+        public string CreaPDFDimensionale(decimal IDDETTAGLIO, CDCDS ds, string operatore, string pathCollaudo, byte[] iFirma, byte[] iLoghi)
+        {
+
+            CDCDS.CDC_DETTAGLIORow dettaglio = ds.CDC_DETTAGLIO.Where(x => x.IDDETTAGLIO == IDDETTAGLIO).FirstOrDefault();
+            List<CDCDS.CDC_DIMEMSIONIRow> dimensioni = ds.CDC_DIMEMSIONI.Where(x => x.IDDETTAGLIO == IDDETTAGLIO).ToList();
+
+            if (dimensioni.Count == 0)
+                throw new Exception("CDC_DETTAGLIO non trovat per IDDETTAGLIO" + IDDETTAGLIO.ToString());
+
+            if (dettaglio == null)
+            {
+                throw new Exception("IMPOSSIBILE TROVARE CDC DETTAGLIO DA CDC CONFORMITA'");
+            }
+
+            DateTime dt = DateTime.ParseExact(dettaglio.DATACOLLAUDO, "dd/MM/yyyy", CultureInfo.InvariantCulture);
+            string cartella = CreaPathCartella(dt, pathCollaudo, dettaglio.ACCESSORISTA, dettaglio.PREFISSO, dettaglio.PARTE, dettaglio.COLORE, dettaglio.COMMESSAORDINE);
+            string fileName = string.Format("{0}-{1}-DIM.pdf", dettaglio.PARTE.Trim(), dettaglio.COLORE.Trim());//4155F-8053-DIM
+            string path = string.Format(@"{0}\{1}", cartella, fileName);
+
+            if (!Directory.Exists(cartella))
+                Directory.CreateDirectory(cartella);
+
+            if (File.Exists(path))
+                File.Delete(path);
+
+            List<MisuraDimensionale> misure = new List<MisuraDimensionale>();
+            foreach (CDCDS.CDC_DIMEMSIONIRow dimensione in dimensioni)
+            {
+                MisuraDimensionale misura = new MisuraDimensionale()
+                {
+                    campoTampone = dimensione.CONTAMPONE == "S" ? true : false,
+                    Conforme = dimensione.CONFORME == "S" ? "OK" : "KO",
+                    Grandezza = dimensione.GRANDEZZA,
+                    Massimo = dimensione.MASSIMO,
+                    Minimo = dimensione.MINIMO,
+                    Richieste = dimensione.RICHIESTO,
+                    RIferimento = dimensione.RIFERIMENTO,
+                    Tampone = dimensione.TAMPONE,
+                    Tolleranza = dimensione.TOLLERANZA
+                };
+                misure.Add(misura);
+            }
+
+            CreaCDCDimensionale(path, dettaglio.DATACOLLAUDO, dettaglio.PREFISSO, dettaglio.PARTE, dettaglio.COLORE, operatore, dettaglio.COMMESSAORDINE, iLoghi, iFirma, misure);
+
+            CDCDS.CDC_PDFRow pdf = ds.CDC_PDF.Where(x => x.IDDETTAGLIO == IDDETTAGLIO && x.TIPO == CDCTipoPDF.CERTIFICATODIMENSIONALE).FirstOrDefault();
+            if (pdf == null)
+            {
+                pdf = ds.CDC_PDF.NewCDC_PDFRow();
+                pdf.TIPO = CDCTipoPDF.CERTIFICATOCONFORMITA;
+                pdf.NOMEFILE = path;
+                pdf.IDDETTAGLIO = IDDETTAGLIO;
+                ds.CDC_PDF.AddCDC_PDFRow(pdf);
+
+                using (CDCMetalBusiness bCDCMetalBusiness = new CDCMetalBusiness())
+                    bCDCMetalBusiness.UpdateCDC_PDF(ds);
+                ds.CDC_PDF.AcceptChanges();
+            }
+
+
+            return path;
+        }
     }
 }

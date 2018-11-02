@@ -142,5 +142,33 @@ namespace CDCMetal.Data
                 da.Fill(ds.CDC_CONFORMITA_DETTAGLIO);
             }
         }
+
+        public void FillCDC_DIMEMSIONI(CDCDS ds, List<decimal> IDDETTAGLIO)
+        {
+            string selezione = ConvertToStringForInCondition(IDDETTAGLIO);
+            string select = @"SELECT * FROM CDC_DIMEMSIONI WHERE IDDETTAGLIO IN ({0}) ";
+
+            string query = string.Format(select, selezione);
+
+            using (DbDataAdapter da = BuildDataAdapter(query))
+            {
+                da.Fill(ds.CDC_DIMEMSIONI);
+            }
+        }
+
+        public void FillCDC_DIMEMSIONI_MISURE(CDCDS ds, List<decimal> IDDETTAGLIO)
+        {
+            string selezione = ConvertToStringForInCondition(IDDETTAGLIO);
+            string select = @"SELECT DISTINCT DET.* FROM CDC_DIMEMSIONI_MISURE DET
+                                INNER JOIN CDC_DETTAGLIO CD ON CD.PARTE = DET.PARTE 
+                                WHERE CD.IDDETTAGLIO IN ({0}) ";
+
+            string query = string.Format(select, selezione);
+
+            using (DbDataAdapter da = BuildDataAdapter(query))
+            {
+                da.Fill(ds.CDC_DIMEMSIONI_MISURE);
+            }
+        }
     }
 }

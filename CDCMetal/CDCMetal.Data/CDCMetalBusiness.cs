@@ -51,7 +51,7 @@ namespace CDCMetal.Data
         public void FillCDC(CDCDS ds, DateTime DATARIFERIMENTO)
         {
             CDCMetalAdapter a = new CDCMetalAdapter(DbConnection, DbTransaction);
-            a.FillCDC_EXCEL(ds,DATARIFERIMENTO);
+            a.FillCDC_EXCEL(ds, DATARIFERIMENTO);
 
             List<decimal> IDEXCEL = ds.CDC_EXCEL.Select(x => x.IDEXCEL).Distinct().ToList();
             a.FillCDC_DETTAGLIO(ds, IDEXCEL);
@@ -72,6 +72,19 @@ namespace CDCMetal.Data
             a.CDC_PDF(ds, IDDETTAGLIO);
         }
 
+        [DataContext]
+        public void FillCDC_DIMEMSIONI(CDCDS ds, List<decimal> IDDETTAGLIO)
+        {
+            CDCMetalAdapter a = new CDCMetalAdapter(DbConnection, DbTransaction);
+            a.FillCDC_DIMEMSIONI(ds, IDDETTAGLIO);
+        }
+        [DataContext]
+        public void FillCDC_DIMEMSIONI_MISURE(CDCDS ds, List<decimal> IDDETTAGLIO)
+        {
+            CDCMetalAdapter a = new CDCMetalAdapter(DbConnection, DbTransaction);
+            a.FillCDC_DIMEMSIONI_MISURE(ds, IDDETTAGLIO);
+        }
+
         [DataContext(true)]
         public void UpdateConformita(CDCDS ds)
         {
@@ -85,6 +98,14 @@ namespace CDCMetal.Data
         {
             CDCMetalAdapter a = new CDCMetalAdapter(DbConnection, DbTransaction);
             a.UpdateTable(ds.CDC_PDF.TableName, ds);
+        }
+
+        [DataContext(true)]
+        public void UpdateDimensioni(CDCDS ds)
+        {
+            CDCMetalAdapter a = new CDCMetalAdapter(DbConnection, DbTransaction);
+            a.UpdateTable(ds.CDC_DIMEMSIONI.TableName, ds);
+            a.UpdateTable(ds.CDC_DIMEMSIONI_MISURE.TableName, ds);
         }
     }
 }

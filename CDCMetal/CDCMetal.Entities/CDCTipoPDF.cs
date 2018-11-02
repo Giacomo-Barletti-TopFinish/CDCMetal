@@ -9,5 +9,6 @@ namespace CDCMetal.Entities
     public class CDCTipoPDF
     {
         public static readonly string CERTIFICATOCONFORMITA = "CDC";
+        public static readonly string CERTIFICATODIMENSIONALE= "DIM";
     }
 }

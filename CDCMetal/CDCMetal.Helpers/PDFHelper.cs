@@ -420,5 +420,339 @@ namespace CDCMetal.Helpers
         {
             return "base64:" + Convert.ToBase64String(image);
         }
+
+        public void CreaReportDimensionale(string data,
+       string prefisso, string parte, string colore, string operatore,
+        string commessa, byte[] iloghi, byte[] firma, List<MisuraDimensionale> misure
+        )
+        {
+
+            document.Info.Title = "Dimensionale";
+            document.Info.Subject = String.Empty;
+            document.Info.Author = string.Empty;
+
+            Section section = document.AddSection();
+
+            DefineBasicStyles();
+            CreaTabellaDimensionale(data, prefisso, parte, colore, operatore,
+            commessa, iloghi, firma, misure);
+
+        }
+
+        private void CreaTabellaDimensionale(string data,
+          string prefisso, string parte, string colore, string operatore,
+           string commessa, byte[] iloghi, byte[] firma, List<MisuraDimensionale> misure)
+        {
+            document.LastSection.AddParagraph();
+
+            // RIGA 1
+            Table table = new Table();
+            table.Borders.Width = 0.75;
+
+            Column column = table.AddColumn(Unit.FromCentimeter(3.4));
+            column.Format.Alignment = ParagraphAlignment.Center;
+
+            table.AddColumn(Unit.FromCentimeter(10));
+            table.AddColumn(Unit.FromCentimeter(3.4));
+
+            Row row = table.AddRow();
+            row.Height = Unit.FromCentimeter(0.5);
+
+            Cell cell = row.Cells[0];
+            cell.MergeDown = 2;
+            Paragraph p = cell.AddParagraph();
+            string iLogoMP = MigraDocFilenameFromByteArray(iloghi);
+            p.AddImage(iLogoMP);
+
+            Cell cellA = row.Cells[1];
+            cellA.AddParagraph("REPORT DIMENSIONALE");
+            cellA.Format.Font.Bold = true;
+            cellA.Style = "Heading1";
+            cellA.Format.Alignment = ParagraphAlignment.Center;
+            cellA.VerticalAlignment = VerticalAlignment.Center;
+            cellA.Borders.Bottom.Width = 0;
+
+            cell = row.Cells[2];
+            cell.AddParagraph("M-Q01.01-REV00");
+            cell.Format.Alignment = ParagraphAlignment.Center;
+            cell.VerticalAlignment = VerticalAlignment.Center;
+
+            row = table.AddRow();
+            row.Height = Unit.FromCentimeter(0.5);
+            cell = row.Cells[0];
+            cell = row.Cells[1];
+            cell.Borders.Top.Width = 0;
+
+            cell = row.Cells[2];
+            cell.MergeDown = 1;
+            cell.AddParagraph("Pagina 1/1");
+            cell.Format.Alignment = ParagraphAlignment.Center;
+            cell.VerticalAlignment = VerticalAlignment.Center;
+
+            row = table.AddRow();
+            //row.Height = Unit.FromCentimeter(0.5);
+            cell = row.Cells[1];
+            cell.AddParagraph("MODULO CON MISURE");
+            cell.Format.Font.Size = 8;
+            cell.Format.Font.Bold = true;
+            cell.Format.Alignment = ParagraphAlignment.Center;
+            cell.VerticalAlignment = VerticalAlignment.Center;
+
+
+            document.LastSection.Add(table);
+
+            // RIGA 2
+            table = new Table();
+            table.Borders.Width = 0.75;
+
+            column = table.AddColumn(Unit.FromCentimeter(3.4));
+            column = table.AddColumn(Unit.FromCentimeter(6.7));
+            column = table.AddColumn(Unit.FromCentimeter(3.3));
+            table.AddColumn(Unit.FromCentimeter(3.4));
+
+            row = table.AddRow();
+
+            cell = row.Cells[0];
+            cell.AddParagraph("ARTICOLO");
+            cell.Format.Alignment = ParagraphAlignment.Center;
+            cell.Format.Font.Bold = true;
+            cell = row.Cells[1];
+            string articolo = string.Format("{0}-{1}-{2}", prefisso, parte, colore);
+            cell.AddParagraph(articolo);
+            cell.Format.Font.Size = 8;
+            cell.Format.Font.Bold = true;
+            cell.Format.Alignment = ParagraphAlignment.Center;
+
+            cell = row.Cells[2];
+            cell.AddParagraph("Controllore");
+            cell.Format.Alignment = ParagraphAlignment.Center;
+            cell.Format.Font.Size = 8;
+            cell.Format.Font.Bold = true;
+            cell = row.Cells[3];
+            cell.AddParagraph(operatore);
+            cell.Format.Alignment = ParagraphAlignment.Center;
+
+            row = table.AddRow();
+
+            cell = row.Cells[0];
+            cell.AddParagraph("IDX/COMMESSA");
+            cell.Format.Alignment = ParagraphAlignment.Center;
+            cell.Format.Font.Bold = true;
+            cell = row.Cells[1];
+            cell.AddParagraph(commessa);
+            cell.Format.Font.Size = 8;
+            cell.Format.Font.Bold = true;
+            cell.Format.Alignment = ParagraphAlignment.Center;
+
+            cell = row.Cells[2];
+            cell.AddParagraph("Data");
+            cell.Format.Alignment = ParagraphAlignment.Center;
+            cell.Format.Font.Size = 8;
+            cell.Format.Font.Bold = true;
+            cell = row.Cells[3];
+            cell.AddParagraph(data);
+            cell.Format.Font.Size = 8;
+            cell.Format.Font.Bold = true;
+            cell.Format.Alignment = ParagraphAlignment.Center;
+
+            table.SetEdge(0, 0, 4, 2, Edge.Box, BorderStyle.None, 0);
+            table.SetEdge(0, 0, 4, 2, Edge.Left, BorderStyle.Single, 0.75);
+            table.SetEdge(0, 0, 4, 2, Edge.Right, BorderStyle.Single, 0.75);
+
+
+            document.LastSection.Add(table);
+
+            // RIGA 3
+            table = new Table();
+            table.Borders.Width = 0.75;
+
+            column = table.AddColumn(Unit.FromCentimeter(3.4));
+            column = table.AddColumn(Unit.FromCentimeter(5));
+            column = table.AddColumn(Unit.FromCentimeter(1.7));
+            column = table.AddColumn(Unit.FromCentimeter(1.7));
+            column = table.AddColumn(Unit.FromCentimeter(1.6));
+            column = table.AddColumn(Unit.FromCentimeter(1.7));
+            table.AddColumn(Unit.FromCentimeter(1.7));
+
+            row = table.AddRow();
+            row.Height = Unit.FromCentimeter(1.4);
+
+            cell = row.Cells[0];
+            cell.AddParagraph("Riferimento Disegno");
+            cell.Format.Alignment = ParagraphAlignment.Center;
+            cell.VerticalAlignment = VerticalAlignment.Center;
+            cell.Format.Font.Size = 10;
+            cell = row.Cells[1];
+            cell.AddParagraph("Grandezza Misurata");
+            cell.Format.Alignment = ParagraphAlignment.Center;
+            cell.VerticalAlignment = VerticalAlignment.Center;
+            cell.Format.Font.Size = 10;
+            cell = row.Cells[2];
+            cell.AddParagraph("Valore");
+            cell.AddParagraph("Richie");
+            cell.Format.Alignment = ParagraphAlignment.Center;
+            cell.VerticalAlignment = VerticalAlignment.Center;
+            cell.Format.Font.Size = 10;
+            cell = row.Cells[3];
+            cell.AddParagraph("TOLLERANZA");
+            cell.Format.Alignment = ParagraphAlignment.Center;
+            cell.VerticalAlignment = VerticalAlignment.Center;
+            cell.Format.Font.Size = 8;
+            cell = row.Cells[4];
+            cell.AddParagraph("Valore");
+            cell.AddParagraph("Minimo");
+            cell.Format.Alignment = ParagraphAlignment.Center;
+            cell.VerticalAlignment = VerticalAlignment.Center;
+            cell.Format.Font.Size = 10;
+            cell = row.Cells[5];
+            cell.AddParagraph("Valore");
+            cell.AddParagraph("Massimo");
+            cell.Format.Alignment = ParagraphAlignment.Center;
+            cell.VerticalAlignment = VerticalAlignment.Center;
+            cell.Format.Font.Size = 10;
+            cell = row.Cells[6];
+            cell.AddParagraph("Conforme");
+            Paragraph p1 = cell.AddParagraph("OK-KO");
+            p1.Format.Font.Bold = true;
+            cell.VerticalAlignment = VerticalAlignment.Center;
+            cell.Format.Alignment = ParagraphAlignment.Center;
+            cell.Format.Font.Size = 10;
+
+            table.SetEdge(0, 0, 7, 1, Edge.Top, BorderStyle.Single, 0.75);
+
+
+            //misure
+            for (int i = 0; i < 20; i++)
+            {
+                row = table.AddRow();
+                row.Height = Unit.FromCentimeter(0.5);
+
+                MisuraDimensionale m = null;
+                if (misure.Count - 1 >= i)
+                    m = misure[i];
+
+                cell = row.Cells[0];
+                if (m == null)
+                    cell.AddParagraph(string.Empty);
+                else
+                    cell.AddParagraph(m.RIferimento);
+                cell.Format.Alignment = ParagraphAlignment.Center;
+                cell.VerticalAlignment = VerticalAlignment.Center;
+                cell.Format.Font.Size = 10;
+                cell = row.Cells[1];
+                if (m == null)
+                    cell.AddParagraph(string.Empty);
+                else
+                    cell.AddParagraph(m.Grandezza);
+                cell.Format.Alignment = ParagraphAlignment.Center;
+                cell.VerticalAlignment = VerticalAlignment.Center;
+                cell.Format.Font.Size = 10;
+                cell = row.Cells[2];
+                if (m == null)
+                    cell.AddParagraph(string.Empty);
+                else
+                    cell.AddParagraph(m.Richieste);
+                cell.Format.Alignment = ParagraphAlignment.Center;
+                cell.VerticalAlignment = VerticalAlignment.Center;
+                cell.Format.Font.Size = 10;
+
+
+
+                if (m == null)
+                {
+                    cell = row.Cells[3];
+                    cell.AddParagraph(string.Empty);
+                    cell.Format.Font.Size = 8;
+                    cell = row.Cells[4];
+                    cell.AddParagraph(string.Empty);
+                    cell.Format.Font.Size = 10;
+                    cell = row.Cells[5];
+                    cell.AddParagraph(string.Empty);
+                    cell.Format.Font.Size = 10;
+                }
+                else
+                {
+                    if (m.campoTampone)
+                    {
+                        cell = row.Cells[3];
+                        cell.MergeRight = 2;
+                        cell.AddParagraph(m.Tampone);
+                        cell.Format.Alignment = ParagraphAlignment.Center;
+                        cell.VerticalAlignment = VerticalAlignment.Center; cell.Format.Font.Size = 10;
+
+                    }
+                    else
+                    {
+                        cell = row.Cells[3];
+                        cell.AddParagraph(m.Tolleranza);
+                        cell.Format.Alignment = ParagraphAlignment.Center;
+                        cell.VerticalAlignment = VerticalAlignment.Center; cell.Format.Font.Size = 10;
+                        cell = row.Cells[4];
+                        cell.AddParagraph(m.Minimo);
+                        cell.Format.Alignment = ParagraphAlignment.Center;
+                        cell.VerticalAlignment = VerticalAlignment.Center; cell.Format.Font.Size = 10;
+                        cell = row.Cells[5];
+                        cell.AddParagraph(m.Massimo);
+                        cell.Format.Alignment = ParagraphAlignment.Center;
+                        cell.VerticalAlignment = VerticalAlignment.Center; cell.Format.Font.Size = 10;
+                    }
+                }
+
+
+                cell = row.Cells[6];
+                if (m == null)
+                    cell.AddParagraph(string.Empty);
+                else
+                    cell.AddParagraph(m.Conforme);
+                cell.VerticalAlignment = VerticalAlignment.Center;
+                cell.Format.Alignment = ParagraphAlignment.Center;
+                cell.Format.Font.Size = 10;
+            }
+
+            document.LastSection.Add(table);
+
+            // RIGA 4
+            table = new Table();
+            table.Borders.Width = 0.75;
+
+            column = table.AddColumn(Unit.FromCentimeter(11.8));
+            column = table.AddColumn(Unit.FromCentimeter(5));
+
+            row = table.AddRow();
+            row.Height = Unit.FromCentimeter(1.4);
+
+            cell = row.Cells[0];
+            cell.AddParagraph(string.Empty);
+
+            cell = row.Cells[1];
+            cell.AddParagraph("Firma");
+            cell.Format.Font.Size = 10;
+            Paragraph pFirma = cell.AddParagraph();
+            string iFirma = MigraDocFilenameFromByteArray(firma);
+            pFirma.AddImage(iFirma);
+
+
+            table.SetEdge(0, 0, 2, 1, Edge.Box, BorderStyle.None, 0);
+            table.SetEdge(0, 0, 2, 1, Edge.Left, BorderStyle.Single, 0.75);
+            table.SetEdge(0, 0, 2, 1, Edge.Right, BorderStyle.Single, 0.75);
+            table.SetEdge(0, 0, 2, 1, Edge.Bottom, BorderStyle.Single, 0.75);
+
+            document.LastSection.Add(table);
+
+        }
+
+    }
+
+    public class MisuraDimensionale
+    {
+        public string RIferimento { get; set; }
+        public string Grandezza { get; set; }
+        public string Richieste { get; set; }
+        public string Tolleranza { get; set; }
+        public string Minimo { get; set; }
+        public string Massimo { get; set; }
+        public string Conforme { get; set; }
+        public bool campoTampone { get; set; }
+        public string Tampone { get; set; }
     }
 }

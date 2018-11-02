@@ -42,6 +42,7 @@ namespace CDCMetal
             if (ddlDataCollaudo.SelectedIndex == -1)
             {
                 lblMessaggio.Text = "Selezionare una data";
+                return;
             }
 
             DateTime dataSelezionata = (DateTime)ddlDataCollaudo.SelectedItem;
@@ -297,28 +298,6 @@ namespace CDCMetal
             MessageBox.Show(sb.ToString(), "FILE PDF CREATI", MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
 
-        private string ConvertiBoolInStringa(object o)
-        {
-            if (o == DBNull.Value)
-                return "N";
-            if (o is Boolean)
-            {
-                bool aux = (bool)o;
-                return aux ? "S" : "N";
-            }
-            return "N";
-        }
-
-        private string ConvertiInStringa(object o)
-        {
-            if (o == DBNull.Value)
-                return string.Empty;
-            if (o is Boolean)
-            {
-                string aux = (string)o;
-                return aux;
-            }
-            return string.Empty;
-        }
+      
     }
 }

@@ -36,12 +36,14 @@
             this.caricaNuovoDocumentoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.cartelleToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.creaCartelleToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.conformitàToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.creaCertificatoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.statusStrip1 = new System.Windows.Forms.StatusStrip();
             this.lblUserLoggato = new System.Windows.Forms.ToolStripStatusLabel();
             this.prgProgressBar = new System.Windows.Forms.ToolStripProgressBar();
             this.lblStatusBar = new System.Windows.Forms.ToolStripStatusLabel();
-            this.conformitàToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.creaCertificatoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.dimensioniToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.creaCertificatoToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.cdcMenu.SuspendLayout();
             this.statusStrip1.SuspendLayout();
             this.SuspendLayout();
@@ -53,7 +55,8 @@
             this.fileToolStripMenuItem,
             this.excelToolStripMenuItem,
             this.cartelleToolStripMenuItem,
-            this.conformitàToolStripMenuItem});
+            this.conformitàToolStripMenuItem,
+            this.dimensioniToolStripMenuItem});
             this.cdcMenu.Location = new System.Drawing.Point(0, 0);
             this.cdcMenu.Name = "cdcMenu";
             this.cdcMenu.Size = new System.Drawing.Size(1558, 25);
@@ -110,9 +113,24 @@
             // creaCartelleToolStripMenuItem
             // 
             this.creaCartelleToolStripMenuItem.Name = "creaCartelleToolStripMenuItem";
-            this.creaCartelleToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.creaCartelleToolStripMenuItem.Size = new System.Drawing.Size(162, 22);
             this.creaCartelleToolStripMenuItem.Text = "Crea cartelle ...";
             this.creaCartelleToolStripMenuItem.Click += new System.EventHandler(this.creaCartelleToolStripMenuItem_Click);
+            // 
+            // conformitàToolStripMenuItem
+            // 
+            this.conformitàToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.creaCertificatoToolStripMenuItem});
+            this.conformitàToolStripMenuItem.Name = "conformitàToolStripMenuItem";
+            this.conformitàToolStripMenuItem.Size = new System.Drawing.Size(85, 21);
+            this.conformitàToolStripMenuItem.Text = "Conformità";
+            // 
+            // creaCertificatoToolStripMenuItem
+            // 
+            this.creaCertificatoToolStripMenuItem.Name = "creaCertificatoToolStripMenuItem";
+            this.creaCertificatoToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.creaCertificatoToolStripMenuItem.Text = "Crea certificato ...";
+            this.creaCertificatoToolStripMenuItem.Click += new System.EventHandler(this.creaCertificatoToolStripMenuItem_Click);
             // 
             // statusStrip1
             // 
@@ -141,20 +159,20 @@
             this.lblStatusBar.Name = "lblStatusBar";
             this.lblStatusBar.Size = new System.Drawing.Size(0, 17);
             // 
-            // conformitàToolStripMenuItem
+            // dimensioniToolStripMenuItem
             // 
-            this.conformitàToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.creaCertificatoToolStripMenuItem});
-            this.conformitàToolStripMenuItem.Name = "conformitàToolStripMenuItem";
-            this.conformitàToolStripMenuItem.Size = new System.Drawing.Size(85, 21);
-            this.conformitàToolStripMenuItem.Text = "Conformità";
+            this.dimensioniToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.creaCertificatoToolStripMenuItem1});
+            this.dimensioniToolStripMenuItem.Name = "dimensioniToolStripMenuItem";
+            this.dimensioniToolStripMenuItem.Size = new System.Drawing.Size(84, 21);
+            this.dimensioniToolStripMenuItem.Text = "Dimensioni";
             // 
-            // creaCertificatoToolStripMenuItem
+            // creaCertificatoToolStripMenuItem1
             // 
-            this.creaCertificatoToolStripMenuItem.Name = "creaCertificatoToolStripMenuItem";
-            this.creaCertificatoToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
-            this.creaCertificatoToolStripMenuItem.Text = "Crea certificato ...";
-            this.creaCertificatoToolStripMenuItem.Click += new System.EventHandler(this.creaCertificatoToolStripMenuItem_Click);
+            this.creaCertificatoToolStripMenuItem1.Name = "creaCertificatoToolStripMenuItem1";
+            this.creaCertificatoToolStripMenuItem1.Size = new System.Drawing.Size(180, 22);
+            this.creaCertificatoToolStripMenuItem1.Text = "Crea Certificato ...";
+            this.creaCertificatoToolStripMenuItem1.Click += new System.EventHandler(this.creaCertificatoToolStripMenuItem1_Click);
             // 
             // MainForm
             // 
@@ -194,6 +212,8 @@
         private System.Windows.Forms.ToolStripMenuItem creaCartelleToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem conformitàToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem creaCertificatoToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem dimensioniToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem creaCertificatoToolStripMenuItem1;
     }
 }
 

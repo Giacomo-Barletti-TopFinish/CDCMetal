@@ -45,6 +45,7 @@ namespace CDCMetal
             if (ddlDataCollaudo.SelectedIndex == -1)
             {
                 lblMessaggio.Text = "Selezionare una data";
+                return;
             }
 
             DateTime dataSelezionata = (DateTime)ddlDataCollaudo.SelectedItem;

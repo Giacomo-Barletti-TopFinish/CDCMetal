@@ -65,6 +65,10 @@ namespace CDCMetal
             Contesto.UtenteConnesso = false;
             Contesto.Utente = null;
             Contesto.PathCollaudo = CDCMetal.Properties.Settings.Default.PathCollaudo;
+#if DEBUG
+            Contesto.PathCollaudo = @"C:\Temp\CDC\CARTELLACOLLAUDO";
+#endif
+
         }
 
         private void MainForm_Load(object sender, EventArgs e)
@@ -98,7 +102,22 @@ namespace CDCMetal
                 fileToolStripMenuItem.Enabled = true;
             }
             else
+            {
                 DisabilitaElementiMenu(cdcMenu.Items, true);
+                switch(Contesto.Utente.IDUSER)
+                {
+                    case "0000000029":
+                    case "0000000100":
+                    case "0000000122":
+                    case "0000000166":
+
+                        break;
+                    default:
+                        dimensioniToolStripMenuItem.Enabled = false;
+                        break;
+                }
+            }
+
 
         }
 
@@ -185,6 +204,24 @@ namespace CDCMetal
                 ExceptionFrm frm = new ExceptionFrm(ex);
                 frm.ShowDialog();
             }
+        }
+
+        private void creaCertificatoToolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+            // dimensionale
+            try
+            {
+                CreaDimensionaleFrm form = new CreaDimensionaleFrm();
+                form.MdiParent = this;
+                form.Show();
+            }
+            catch (Exception ex)
+            {
+                LogScriviErrore("ERRORE IN CREA CERTIFICATO DIMENSIONALE'", ex);
+                ExceptionFrm frm = new ExceptionFrm(ex);
+                frm.ShowDialog();
+            }
+
         }
     }
 }
