@@ -146,7 +146,7 @@ namespace CDCMetal.Data
         public void FillCDC_DIMEMSIONI(CDCDS ds, List<decimal> IDDETTAGLIO)
         {
             string selezione = ConvertToStringForInCondition(IDDETTAGLIO);
-            string select = @"SELECT * FROM CDC_DIMEMSIONI WHERE IDDETTAGLIO IN ({0}) ";
+            string select = @"SELECT * FROM CDC_DIMEMSIONI WHERE IDDETTAGLIO IN ({0}) ORDER BY RIFERIMENTO";
 
             string query = string.Format(select, selezione);
 
@@ -161,7 +161,7 @@ namespace CDCMetal.Data
             string selezione = ConvertToStringForInCondition(IDDETTAGLIO);
             string select = @"SELECT DISTINCT DET.* FROM CDC_DIMEMSIONI_MISURE DET
                                 INNER JOIN CDC_DETTAGLIO CD ON CD.PARTE = DET.PARTE 
-                                WHERE CD.IDDETTAGLIO IN ({0}) ";
+                                WHERE CD.IDDETTAGLIO IN ({0}) ORDER BY DET.RIFERIMENTO";
 
             string query = string.Format(select, selezione);
 

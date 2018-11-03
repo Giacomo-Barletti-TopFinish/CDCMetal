@@ -539,7 +539,8 @@ namespace CDCMetal.Helpers
             cell.Format.Alignment = ParagraphAlignment.Center;
             cell.Format.Font.Bold = true;
             cell = row.Cells[1];
-            cell.AddParagraph(commessa);
+            string commessaStr = commessa.Replace('_', ' ');
+            cell.AddParagraph(commessaStr);
             cell.Format.Font.Size = 8;
             cell.Format.Font.Bold = true;
             cell.Format.Alignment = ParagraphAlignment.Center;
