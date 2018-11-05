@@ -24,9 +24,9 @@
     <UpdateRequired>true</UpdateRequired>
     <MapFileExtensions>true</MapFileExtensions>
     <InstallUrl>\\srv-webservices\publish\CDCMetal\</InstallUrl>
-    <MinimumRequiredVersion>1.0.0.10</MinimumRequiredVersion>
+    <MinimumRequiredVersion>1.0.0.13</MinimumRequiredVersion>
     <OpenBrowserOnPublish>false</OpenBrowserOnPublish>
-    <ApplicationRevision>10</ApplicationRevision>
+    <ApplicationRevision>14</ApplicationRevision>
     <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
     <UseApplicationTrust>false</UseApplicationTrust>
     <PublishWizardCompleted>true</PublishWizardCompleted>
@@ -84,6 +84,12 @@
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="CDCContext.cs" />
+    <Compile Include="CreaAntiallergicoFrm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CreaAntiallergicoFrm.Designer.cs">
+      <DependentUpon>CreaAntiallergicoFrm.cs</DependentUpon>
+    </Compile>
     <Compile Include="CreaCartelleFrm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -128,6 +134,9 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="CreaAntiallergicoFrm.resx">
+      <DependentUpon>CreaAntiallergicoFrm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="CreaCartelleFrm.resx">
       <DependentUpon>CreaCartelleFrm.cs</DependentUpon>
     </EmbeddedResource>
@@ -213,6 +222,9 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\loghi.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\logo_tf_autodichiarazione.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

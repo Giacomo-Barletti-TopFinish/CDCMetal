@@ -170,5 +170,18 @@ namespace CDCMetal.Data
                 da.Fill(ds.CDC_DIMEMSIONI_MISURE);
             }
         }
+
+        public void FillCDC_ANTIALLERGICO(CDCDS ds, List<decimal> IDDETTAGLIO)
+        {
+            string selezione = ConvertToStringForInCondition(IDDETTAGLIO);
+            string select = @"SELECT * FROM CDC_ANTIALLERGICO WHERE IDDETTAGLIO IN ({0}) ";
+
+            string query = string.Format(select, selezione);
+
+            using (DbDataAdapter da = BuildDataAdapter(query))
+            {
+                da.Fill(ds.CDC_ANTIALLERGICO);
+            }
+        }
     }
 }

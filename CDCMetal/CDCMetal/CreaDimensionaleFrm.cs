@@ -305,7 +305,8 @@ namespace CDCMetal
 
             CDCBLL bll = new CDCBLL();
             bll.SalvaDatiDimensioni(Contesto.DS);
-            Contesto.DS.AcceptChanges();
+            Contesto.DS.CDC_DIMEMSIONI.AcceptChanges();
+            Contesto.DS.CDC_DIMEMSIONI_MISURE.AcceptChanges();
 
             Bitmap firma = Properties.Resources.firma_vittoria;
             if (Contesto.Utente.IDUSER == "0000000122")

@@ -742,6 +742,177 @@ namespace CDCMetal.Helpers
 
         }
 
+        public void CreaReportAntiallergico(bool nichelFree, string data, string dataProduzione, string prefisso, string parte, string colore, string commessa, string quantita, byte[] iloghi)
+        {
+
+            document.Info.Title = "Autodichiarazione";
+            document.Info.Subject = String.Empty;
+            document.Info.Author = string.Empty;
+
+            Section section = document.AddSection();
+
+            DefineBasicStyles();
+
+            Paragraph p = document.LastSection.AddParagraph();
+            p.Format.Alignment = ParagraphAlignment.Center;
+            string iLogoMP = MigraDocFilenameFromByteArray(iloghi);
+            p.AddImage(iLogoMP);
+            p = document.LastSection.AddParagraph();
+            p.Format.Alignment = ParagraphAlignment.Center;
+            Font fontPiccolo = new Font("Times New Roman");
+            fontPiccolo.Size = 8;
+            p.AddFormattedText("Viale Kennedy, 103 - 50038 SCARPERIA (FI) - P.Iva 04949200481", fontPiccolo);
+            p.AddLineBreak();
+            p.AddLineBreak();
+            p.AddFormattedText("Tel 055 843611 - Fax 055 8436130 - e-mail: info@topfinish.it", fontPiccolo);
+
+            Font fontGrande = new Font("Times New Roman");
+            fontGrande.Size = 22;
+            fontGrande.Bold = true;
+            p = document.LastSection.AddParagraph();
+            p.Format.Alignment = ParagraphAlignment.Center;
+            p.AddLineBreak();
+            p.AddLineBreak();
+            if (nichelFree)
+                p.AddFormattedText("Autodichiarazione per articoli Nichel free", fontGrande);
+            else
+                p.AddFormattedText("Autodichiarazione per articoli Antiallergico", fontGrande);
+            p = document.LastSection.AddParagraph();
+            p.AddLineBreak();
+            p.AddLineBreak();
+            p.AddLineBreak();
+
+            Table table = new Table();
+            table.Borders.Width = 1.5;
+
+            Column column = table.AddColumn(Unit.FromCentimeter(4.5));
+            column = table.AddColumn(Unit.FromCentimeter(12.5));
+
+            Row row = table.AddRow();
+            row.Height = Unit.FromCentimeter(1.3);
+
+            Cell cell = row.Cells[0];
+            cell.Format.Alignment = ParagraphAlignment.Center;
+            cell.VerticalAlignment = VerticalAlignment.Center;
+            cell.Format.Font.Bold = true;
+            cell.Format.Font.Size = 14;
+            cell.AddParagraph("DATA");
+
+            cell = row.Cells[1];
+            cell.Format.Alignment = ParagraphAlignment.Center;
+            cell.VerticalAlignment = VerticalAlignment.Center;
+            cell.Format.Font.Bold = true;
+            cell.Format.Font.Size = 14;
+            cell.AddParagraph(data);
+
+            row = table.AddRow();
+            row.Height = Unit.FromCentimeter(1.3);
+            cell = row.Cells[0];
+            cell.AddParagraph("DATA PRODUZIONE");
+            cell.Format.Font.Bold = true;
+            cell.Format.Font.Size = 14;
+            cell.Format.Alignment = ParagraphAlignment.Center;
+            cell.VerticalAlignment = VerticalAlignment.Center;
+
+            cell = row.Cells[1];
+            cell.Format.Font.Bold = true;
+            cell.Format.Font.Size = 14;
+            cell.Format.Alignment = ParagraphAlignment.Center;
+            cell.VerticalAlignment = VerticalAlignment.Center;
+            cell.AddParagraph(dataProduzione);
+
+            row = table.AddRow();
+            row.Height = Unit.FromCentimeter(1.3);
+            cell = row.Cells[0];
+            cell.Format.Font.Size = 14;
+            cell.Format.Font.Bold = true;
+            cell.Format.Alignment = ParagraphAlignment.Center;
+            cell.VerticalAlignment = VerticalAlignment.Center;
+            cell.AddParagraph("ARTICOLO");
+            cell = row.Cells[1];
+            cell.Format.Font.Bold = true;
+            cell.Format.Alignment = ParagraphAlignment.Center;
+            cell.Format.Font.Size = 14;
+            cell.VerticalAlignment = VerticalAlignment.Center;
+            cell.AddParagraph(string.Format("{0}-{1}", prefisso, parte));
+
+            row = table.AddRow();
+            row.Height = Unit.FromCentimeter(1.1);
+            cell = row.Cells[0];
+            cell.Format.Font.Bold = true;
+            cell.Format.Font.Size = 14;
+            cell.Format.Alignment = ParagraphAlignment.Center;
+            cell.VerticalAlignment = VerticalAlignment.Center;
+            cell.AddParagraph("FINITURA");
+            cell = row.Cells[1];
+            cell.Format.Font.Bold = true;
+            cell.Format.Alignment = ParagraphAlignment.Center;
+            cell.Format.Font.Size = 14;
+            cell.VerticalAlignment = VerticalAlignment.Center;
+            cell.AddParagraph(colore);
+
+            row = table.AddRow();
+            row.Height = Unit.FromCentimeter(1.1);
+            cell = row.Cells[0];
+            cell.Format.Font.Bold = true;
+            cell.Format.Font.Size = 14;
+            cell.Format.Alignment = ParagraphAlignment.Center;
+            cell.VerticalAlignment = VerticalAlignment.Center;
+            cell.AddParagraph("COMMESSA");
+            cell = row.Cells[1];
+            cell.Format.Font.Bold = true;
+            cell.Format.Font.Size = 14;
+            cell.Format.Alignment = ParagraphAlignment.Center;
+            cell.VerticalAlignment = VerticalAlignment.Center;
+            cell.AddParagraph(commessa);
+
+            row = table.AddRow();
+            row.Height = Unit.FromCentimeter(1.1);
+            cell = row.Cells[0];
+            cell.Format.Font.Bold = true;
+            cell.Format.Font.Size = 14;
+            cell.Format.Alignment = ParagraphAlignment.Center;
+            cell.VerticalAlignment = VerticalAlignment.Center;
+            cell.AddParagraph("N° PEZZI PRODOTTI");
+            cell = row.Cells[1];
+            cell.Format.Font.Bold = true;
+            cell.Format.Font.Size = 14;
+            cell.Format.Alignment = ParagraphAlignment.Center;
+            cell.VerticalAlignment = VerticalAlignment.Center;
+            cell.AddParagraph(quantita);
+
+            document.LastSection.Add(table);
+
+
+            Font fontNormale = new Font("Times New Roman");
+            fontNormale.Size = 14;
+
+            p = document.LastSection.AddParagraph();
+            p.Format.Alignment = ParagraphAlignment.Center;
+            p.Format.Font = fontNormale;
+            p.AddLineBreak();
+            p.AddLineBreak();
+            if (nichelFree)
+                p.AddFormattedText("L’azienda Top Finish dichiara in fede che nella realizzazione del riporto galvanico del lotto in oggetto è stato seguito il ciclo Nichel free previsto sulla scheda del Capitolato Gucci, con la giusta sequenza dei bagni evitando tassativamente di utilizzare un qualunque bagno o trattamento che possa comportare un qualsivoglia deposito di nichel su pezzi. ", fontNormale);
+            else
+                p.AddFormattedText("L’azienda Top Finish dichiara in fede che nella realizzazione del riporto galvanico del lotto in oggetto è stato seguito il ciclo antiallergico previsto sulla scheda del Capitolato Gucci, con la giusta sequenza dei bagni. ", fontNormale);
+            p.AddLineBreak();
+            p.AddLineBreak();
+
+            fontNormale = new Font("Times New Roman");
+            fontNormale.Size = 14;
+
+            p = document.LastSection.AddParagraph();
+            p.Format.Alignment = ParagraphAlignment.Right;
+            p.Format.Font = fontNormale;
+            p.AddLineBreak();
+            p.AddLineBreak();
+            p.AddText("In fede");
+            p.AddLineBreak();
+            p.AddText("Crolli Fabio");
+        }
+
+
     }
 
     public class MisuraDimensionale

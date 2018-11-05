@@ -38,6 +38,14 @@ namespace CDCMetal.BLL
             }
         }
 
+        public void FillCDC_ANTIALLERGICO(CDCDS ds, List<decimal> IDDETTAGLIO)
+        {
+            using (CDCMetalBusiness bCDCMetal = new CDCMetalBusiness())
+            {
+                bCDCMetal.FillCDC_ANTIALLERGICO(ds, IDDETTAGLIO);
+            }
+        }
+
         public void FillCDC_DIMEMSIONI(CDCDS ds, List<decimal> IDDETTAGLIO)
         {
             using (CDCMetalBusiness bCDCMetal = new CDCMetalBusiness())
@@ -89,6 +97,14 @@ namespace CDCMetal.BLL
             using (CDCMetalBusiness bCDCMetal = new CDCMetalBusiness())
             {
                 bCDCMetal.UpdateConformita(ds);
+            }
+        }
+
+        public void SalvaDatiAntiallergia(CDCDS ds)
+        {
+            using (CDCMetalBusiness bCDCMetal = new CDCMetalBusiness())
+            {
+                bCDCMetal.UpdateCDC_ANTIALLERGICO(ds);
             }
         }
 
@@ -156,6 +172,58 @@ namespace CDCMetal.BLL
             return fileCreati.ToString();
         }
 
+        public string CreaPDFAntiallergico(List<decimal> idPerPDF, CDCDS ds, string pathCollaudo, byte[] image)
+        {
+            StringBuilder fileCreati = new StringBuilder();
+
+            foreach (decimal IDDETTAGLIO in idPerPDF)
+            {
+                CDCDS.CDC_ANTIALLERGICORow antiallergico = ds.CDC_ANTIALLERGICO.Where(x => x.IDDETTAGLIO == IDDETTAGLIO).FirstOrDefault();
+                if (antiallergico == null)
+                    throw new Exception("CDC_ANTIALLERGICO riga non trovat per IDDETTAGLIO" + IDDETTAGLIO.ToString());
+                CDCDS.CDC_DETTAGLIORow dettaglio = ds.CDC_DETTAGLIO.Where(x => x.IDDETTAGLIO == antiallergico.IDDETTAGLIO).FirstOrDefault();
+                if (dettaglio == null)
+                {
+                    throw new Exception("IMPOSSIBILE TROVARE CDC DETTAGLIO DA CDC ANTIALLERGICO'");
+                }
+                DateTime dt = DateTime.ParseExact(dettaglio.DATACOLLAUDO, "dd/MM/yyyy", CultureInfo.InvariantCulture);
+                string cartella = CreaPathCartella(dt, pathCollaudo, dettaglio.ACCESSORISTA, dettaglio.PREFISSO, dettaglio.PARTE, dettaglio.COLORE, dettaglio.COMMESSAORDINE);
+                bool nichelFree = antiallergico.NICHELFREE == "S" ? true : false;
+
+                string articolo = string.Format("{0} {1} {2}", dettaglio.PARTE, dettaglio.COLORE, dettaglio.COMMESSAORDINE.Replace('_', ' '));
+                string certificazione = nichelFree ? "Nichel Free" : "Antiallergico";
+
+                string fileName = string.Format("Certificazione {0} {1}.pdf", certificazione, articolo);
+                string path = string.Format(@"{0}\{1}", cartella, fileName);
+
+                if (!Directory.Exists(cartella))
+                    Directory.CreateDirectory(cartella);
+
+                if (File.Exists(path))
+                    File.Delete(path);
+
+                CreaCDCAntiallergico(path, nichelFree, dettaglio.DATACOLLAUDO, antiallergico.DATAPRODUZIONE.ToShortDateString(), dettaglio.PREFISSO, dettaglio.PARTE, dettaglio.COLORE, dettaglio.COMMESSAORDINE, dettaglio.QUANTITA.ToString(), image);
+
+                fileCreati.AppendLine(path);
+
+                CDCDS.CDC_PDFRow pdf = ds.CDC_PDF.Where(x => x.IDDETTAGLIO == antiallergico.IDDETTAGLIO && x.TIPO == CDCTipoPDF.CERTIFICATOCONFORMITA).FirstOrDefault();
+                if (pdf == null)
+                {
+                    pdf = ds.CDC_PDF.NewCDC_PDFRow();
+                    pdf.TIPO = CDCTipoPDF.CERTIFICATOANTIALLERGICO;
+                    pdf.NOMEFILE = path;
+                    pdf.IDDETTAGLIO = antiallergico.IDDETTAGLIO;
+                    ds.CDC_PDF.AddCDC_PDFRow(pdf);
+
+                    using (CDCMetalBusiness bCDCMetalBusiness = new CDCMetalBusiness())
+                        bCDCMetalBusiness.UpdateCDC_PDF(ds);
+                    ds.CDC_PDF.AcceptChanges();
+                }
+            }
+
+            return fileCreati.ToString();
+        }
+
         private static void CreaCDC(string filename, string ragioneSociale, string idCollaudo, string data,
           string prefisso, string parte, string colore, string quantita,
           string descrizione, string commessa, bool controlloFisico, bool controlloFunzionale, bool controlloDimensionale,
@@ -176,6 +244,14 @@ namespace CDCMetal.BLL
         {
             PDFHelper pdfHelper = new PDFHelper();
             pdfHelper.CreaReportDimensionale(data, prefisso, parte, colore, operatore, commessa, iloghi, firma, misure);
+
+            pdfHelper.SalvaPdf(filename);
+        }
+
+        private static void CreaCDCAntiallergico(string filename, bool nichelFree, string data, string dataProduzione, string prefisso, string parte, string colore, string commessa, string quantita, byte[] iloghi)
+        {
+            PDFHelper pdfHelper = new PDFHelper();
+            pdfHelper.CreaReportAntiallergico(nichelFree, data, dataProduzione, prefisso, parte, colore, commessa, quantita, iloghi);
 
             pdfHelper.SalvaPdf(filename);
         }

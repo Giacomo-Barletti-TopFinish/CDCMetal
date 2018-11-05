@@ -592,6 +592,30 @@
             </xs:sequence>
           </xs:complexType>
         </xs:element>
+        <xs:element name="CDC_ANTIALLERGICO" msprop:Generator_TableClassName="CDC_ANTIALLERGICODataTable" msprop:Generator_TableVarName="tableCDC_ANTIALLERGICO" msprop:Generator_RowChangedName="CDC_ANTIALLERGICORowChanged" msprop:Generator_TablePropName="CDC_ANTIALLERGICO" msprop:Generator_RowDeletingName="CDC_ANTIALLERGICORowDeleting" msprop:Generator_RowChangingName="CDC_ANTIALLERGICORowChanging" msprop:Generator_RowEvHandlerName="CDC_ANTIALLERGICORowChangeEventHandler" msprop:Generator_RowDeletedName="CDC_ANTIALLERGICORowDeleted" msprop:Generator_RowClassName="CDC_ANTIALLERGICORow" msprop:Generator_UserTableName="CDC_ANTIALLERGICO" msprop:Generator_RowEvArgName="CDC_ANTIALLERGICORowChangeEvent">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="IDNICHELFREE" msprop:Generator_ColumnVarNameInTable="columnIDNICHELFREE" msprop:Generator_ColumnPropNameInRow="IDNICHELFREE" msprop:Generator_ColumnPropNameInTable="IDNICHELFREEColumn" msprop:Generator_UserColumnName="IDNICHELFREE" type="xs:decimal" minOccurs="0" />
+              <xs:element name="IDDETTAGLIO" msprop:Generator_ColumnVarNameInTable="columnIDDETTAGLIO" msprop:Generator_ColumnPropNameInRow="IDDETTAGLIO" msprop:Generator_ColumnPropNameInTable="IDDETTAGLIOColumn" msprop:Generator_UserColumnName="IDDETTAGLIO" type="xs:decimal" />
+              <xs:element name="UTENTE" msprop:Generator_ColumnVarNameInTable="columnUTENTE" msprop:Generator_ColumnPropNameInRow="UTENTE" msprop:Generator_ColumnPropNameInTable="UTENTEColumn" msprop:Generator_UserColumnName="UTENTE">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="DATAINSERIMENTO" msprop:Generator_ColumnVarNameInTable="columnDATAINSERIMENTO" msprop:Generator_ColumnPropNameInRow="DATAINSERIMENTO" msprop:Generator_ColumnPropNameInTable="DATAINSERIMENTOColumn" msprop:Generator_UserColumnName="DATAINSERIMENTO" type="xs:dateTime" />
+              <xs:element name="DATAPRODUZIONE" msprop:Generator_ColumnVarNameInTable="columnDATAPRODUZIONE" msprop:Generator_ColumnPropNameInRow="DATAPRODUZIONE" msprop:Generator_ColumnPropNameInTable="DATAPRODUZIONEColumn" msprop:Generator_UserColumnName="DATAPRODUZIONE" type="xs:dateTime" />
+              <xs:element name="NICHELFREE" msprop:Generator_ColumnVarNameInTable="columnNICHELFREE" msprop:Generator_ColumnPropNameInRow="NICHELFREE" msprop:Generator_ColumnPropNameInTable="NICHELFREEColumn" msprop:Generator_UserColumnName="NICHELFREE">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="1" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
       </xs:choice>
     </xs:complexType>
     <xs:unique name="Constraint1" msdata:PrimaryKey="true">

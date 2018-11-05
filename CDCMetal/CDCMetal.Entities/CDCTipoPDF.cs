@@ -10,5 +10,6 @@ namespace CDCMetal.Entities
     {
         public static readonly string CERTIFICATOCONFORMITA = "CDC";
         public static readonly string CERTIFICATODIMENSIONALE= "DIM";
+        public static readonly string CERTIFICATOANTIALLERGICO = "ANT";
     }
 }

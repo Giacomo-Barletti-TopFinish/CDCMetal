@@ -117,6 +117,18 @@ namespace CDCMetal
                         dimensioniToolStripMenuItem.Enabled = false;
                         break;
                 }
+
+                switch (Contesto.Utente.IDUSER)
+                {
+                    case "0000000205":
+                    case "0000000206":
+                    case "0000000166":
+
+                        break;
+                    default:
+                        laboratorioToolStripMenuItem.Enabled = false;
+                        break;
+                }
             }
 
 
@@ -219,6 +231,23 @@ namespace CDCMetal
             catch (Exception ex)
             {
                 LogScriviErrore("ERRORE IN CREA CERTIFICATO DIMENSIONALE'", ex);
+                ExceptionFrm frm = new ExceptionFrm(ex);
+                frm.ShowDialog();
+            }
+
+        }
+
+        private void antiallergicoNichelFreeToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                CreaAntiallergicoFrm form = new CreaAntiallergicoFrm();
+                form.MdiParent = this;
+                form.Show();
+            }
+            catch (Exception ex)
+            {
+                LogScriviErrore("ERRORE IN CREA CERTIFICATO ANTIALLERGICO'", ex);
                 ExceptionFrm frm = new ExceptionFrm(ex);
                 frm.ShowDialog();
             }

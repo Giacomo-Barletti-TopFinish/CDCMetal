@@ -107,5 +107,19 @@ namespace CDCMetal.Data
             a.UpdateTable(ds.CDC_DIMEMSIONI.TableName, ds);
             a.UpdateTable(ds.CDC_DIMEMSIONI_MISURE.TableName, ds);
         }
+
+        [DataContext]
+        public void FillCDC_ANTIALLERGICO(CDCDS ds, List<decimal> IDDETTAGLIO)
+        {
+            CDCMetalAdapter a = new CDCMetalAdapter(DbConnection, DbTransaction);
+            a.FillCDC_ANTIALLERGICO(ds, IDDETTAGLIO);
+        }
+
+        [DataContext(true)]
+        public void UpdateCDC_ANTIALLERGICO(CDCDS ds)
+        {
+            CDCMetalAdapter a = new CDCMetalAdapter(DbConnection, DbTransaction);
+            a.UpdateTable(ds.CDC_ANTIALLERGICO.TableName, ds);
+        }
     }
 }

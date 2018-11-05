@@ -71,3 +71,4 @@ C:\VSProgetti\CDCMetal\CDCMetal\CDCMetal\bin\Debug\CDCMetal.application
 C:\VSProgetti\CDCMetal\CDCMetal\CDCMetal\obj\Debug\CDCMetal.exe.manifest
 C:\VSProgetti\CDCMetal\CDCMetal\CDCMetal\obj\Debug\CDCMetal.application
 C:\VSProgetti\CDCMetal\CDCMetal\CDCMetal\obj\Debug\CDCMetal.CreaDimensionaleFrm.resources
+C:\VSProgetti\CDCMetal\CDCMetal\CDCMetal\obj\Debug\CDCMetal.CreaAntiallergicoFrm.resources

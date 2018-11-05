@@ -38,12 +38,14 @@
             this.creaCartelleToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.conformitàToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.creaCertificatoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.dimensioniToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.creaCertificatoToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.statusStrip1 = new System.Windows.Forms.StatusStrip();
             this.lblUserLoggato = new System.Windows.Forms.ToolStripStatusLabel();
             this.prgProgressBar = new System.Windows.Forms.ToolStripProgressBar();
             this.lblStatusBar = new System.Windows.Forms.ToolStripStatusLabel();
-            this.dimensioniToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.creaCertificatoToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
+            this.laboratorioToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.antiallergicoNichelFreeToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.cdcMenu.SuspendLayout();
             this.statusStrip1.SuspendLayout();
             this.SuspendLayout();
@@ -56,7 +58,8 @@
             this.excelToolStripMenuItem,
             this.cartelleToolStripMenuItem,
             this.conformitàToolStripMenuItem,
-            this.dimensioniToolStripMenuItem});
+            this.dimensioniToolStripMenuItem,
+            this.laboratorioToolStripMenuItem});
             this.cdcMenu.Location = new System.Drawing.Point(0, 0);
             this.cdcMenu.Name = "cdcMenu";
             this.cdcMenu.Size = new System.Drawing.Size(1558, 25);
@@ -128,9 +131,24 @@
             // creaCertificatoToolStripMenuItem
             // 
             this.creaCertificatoToolStripMenuItem.Name = "creaCertificatoToolStripMenuItem";
-            this.creaCertificatoToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.creaCertificatoToolStripMenuItem.Size = new System.Drawing.Size(177, 22);
             this.creaCertificatoToolStripMenuItem.Text = "Crea certificato ...";
             this.creaCertificatoToolStripMenuItem.Click += new System.EventHandler(this.creaCertificatoToolStripMenuItem_Click);
+            // 
+            // dimensioniToolStripMenuItem
+            // 
+            this.dimensioniToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.creaCertificatoToolStripMenuItem1});
+            this.dimensioniToolStripMenuItem.Name = "dimensioniToolStripMenuItem";
+            this.dimensioniToolStripMenuItem.Size = new System.Drawing.Size(84, 21);
+            this.dimensioniToolStripMenuItem.Text = "Dimensioni";
+            // 
+            // creaCertificatoToolStripMenuItem1
+            // 
+            this.creaCertificatoToolStripMenuItem1.Name = "creaCertificatoToolStripMenuItem1";
+            this.creaCertificatoToolStripMenuItem1.Size = new System.Drawing.Size(179, 22);
+            this.creaCertificatoToolStripMenuItem1.Text = "Crea Certificato ...";
+            this.creaCertificatoToolStripMenuItem1.Click += new System.EventHandler(this.creaCertificatoToolStripMenuItem1_Click);
             // 
             // statusStrip1
             // 
@@ -159,20 +177,20 @@
             this.lblStatusBar.Name = "lblStatusBar";
             this.lblStatusBar.Size = new System.Drawing.Size(0, 17);
             // 
-            // dimensioniToolStripMenuItem
+            // laboratorioToolStripMenuItem
             // 
-            this.dimensioniToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.creaCertificatoToolStripMenuItem1});
-            this.dimensioniToolStripMenuItem.Name = "dimensioniToolStripMenuItem";
-            this.dimensioniToolStripMenuItem.Size = new System.Drawing.Size(84, 21);
-            this.dimensioniToolStripMenuItem.Text = "Dimensioni";
+            this.laboratorioToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.antiallergicoNichelFreeToolStripMenuItem});
+            this.laboratorioToolStripMenuItem.Name = "laboratorioToolStripMenuItem";
+            this.laboratorioToolStripMenuItem.Size = new System.Drawing.Size(89, 21);
+            this.laboratorioToolStripMenuItem.Text = "Laboratorio";
             // 
-            // creaCertificatoToolStripMenuItem1
+            // antiallergicoNichelFreeToolStripMenuItem
             // 
-            this.creaCertificatoToolStripMenuItem1.Name = "creaCertificatoToolStripMenuItem1";
-            this.creaCertificatoToolStripMenuItem1.Size = new System.Drawing.Size(180, 22);
-            this.creaCertificatoToolStripMenuItem1.Text = "Crea Certificato ...";
-            this.creaCertificatoToolStripMenuItem1.Click += new System.EventHandler(this.creaCertificatoToolStripMenuItem1_Click);
+            this.antiallergicoNichelFreeToolStripMenuItem.Name = "antiallergicoNichelFreeToolStripMenuItem";
+            this.antiallergicoNichelFreeToolStripMenuItem.Size = new System.Drawing.Size(226, 22);
+            this.antiallergicoNichelFreeToolStripMenuItem.Text = "Antiallergico / Nichel Free";
+            this.antiallergicoNichelFreeToolStripMenuItem.Click += new System.EventHandler(this.antiallergicoNichelFreeToolStripMenuItem_Click);
             // 
             // MainForm
             // 
@@ -214,6 +232,8 @@
         private System.Windows.Forms.ToolStripMenuItem creaCertificatoToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem dimensioniToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem creaCertificatoToolStripMenuItem1;
+        private System.Windows.Forms.ToolStripMenuItem laboratorioToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem antiallergicoNichelFreeToolStripMenuItem;
     }
 }
 
