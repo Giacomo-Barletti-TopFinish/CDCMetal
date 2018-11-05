@@ -25,10 +25,20 @@ namespace CDCMetal.Properties {
         
         [global::System.Configuration.ApplicationScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("C:\\Temp\\CDC\\CARTELLACOLLAUDO")]
+        [global::System.Configuration.DefaultSettingValueAttribute("\\\\dc02\\CONDIVISA\\Metal Plus\\Qualità - BAP e COLLAUDI GUCCI\\COLLAUDI")]
         public string PathCollaudo {
             get {
                 return ((string)(this["PathCollaudo"]));
+            }
+        }
+        
+        [global::System.Configuration.ApplicationScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("\\\\dc02\\CONDIVISA\\Metal Plus\\Qualità - BAP e COLLAUDI GUCCI\\COLLAUDI\\SCHEDE TECNIC" +
+            "HE")]
+        public string PathSchedeTecnic {
+            get {
+                return ((string)(this["PathSchedeTecnic"]));
             }
         }
     }

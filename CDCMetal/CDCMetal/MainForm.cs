@@ -64,6 +64,7 @@ namespace CDCMetal
             Contesto.DS = new CDCDS();
             Contesto.UtenteConnesso = false;
             Contesto.Utente = null;
+            Contesto.PathSchedeTecniche = CDCMetal.Properties.Settings.Default.PathSchedeTecnic;
             Contesto.PathCollaudo = CDCMetal.Properties.Settings.Default.PathCollaudo;
 #if DEBUG
             Contesto.PathCollaudo = @"C:\Temp\CDC\CARTELLACOLLAUDO";

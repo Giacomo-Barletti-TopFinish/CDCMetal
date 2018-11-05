@@ -13,5 +13,6 @@ namespace CDCMetal
         public CDCDS DS ;
         public CDCDS.USR_USERRow Utente;
         public string PathCollaudo;
+        public string PathSchedeTecniche;
     }
 }

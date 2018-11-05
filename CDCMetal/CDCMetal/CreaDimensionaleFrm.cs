@@ -5,6 +5,8 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.Globalization;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -107,6 +109,7 @@ namespace CDCMetal
             decimal IDDETTAGLIO = (decimal)r[0];
             decimal IDPRENOTAZIONE = (decimal)r[1];
             string PARTE = (string)r[7];
+            string COLORE = (string)r[8];
 
             _dsServizio = new DataSet();
 
@@ -125,6 +128,7 @@ namespace CDCMetal
             dtDimensioni.Columns.Add("CONTAMPONE", Type.GetType("System.Boolean"));
             dtDimensioni.Columns.Add("CONFORME", Type.GetType("System.Boolean"));
             dtDimensioni.Columns.Add("PARTE", Type.GetType("System.String"));
+            dtDimensioni.Columns.Add("COLORE", Type.GetType("System.String"));
 
             List<CDCDS.CDC_DIMEMSIONIRow> dimensioni = Contesto.DS.CDC_DIMEMSIONI.Where(x => x.IDDETTAGLIO == IDDETTAGLIO).ToList();
             List<CDCDS.CDC_DIMEMSIONI_MISURERow> misure = Contesto.DS.CDC_DIMEMSIONI_MISURE.Where(x => x.PARTE == PARTE).ToList();
@@ -135,6 +139,7 @@ namespace CDCMetal
                 riga[0] = IDPRENOTAZIONE;
                 riga[1] = IDDETTAGLIO;
                 riga[11] = PARTE;
+                riga[12] = COLORE;
                 if (dimensioni.Count > i)
                 {
                     CDCDS.CDC_DIMEMSIONIRow dimensione = dimensioni[i];
@@ -205,6 +210,7 @@ namespace CDCMetal
             dgvMisure.Columns[0].Visible = false;
             dgvMisure.Columns[1].Visible = false;
             dgvMisure.Columns[11].Visible = false;
+            dgvMisure.Columns[12].Visible = false;
             dgvMisure.Columns[3].Width = 220;
             dgvMisure.Columns[8].Width = 320;
             ((DataGridViewTextBoxColumn)dgvMisure.Columns[2]).MaxInputLength = 2;
@@ -219,6 +225,9 @@ namespace CDCMetal
 
         private void btnCreaPDF_Click(object sender, EventArgs e)
         {
+            if (_dsServizio.Tables[tableName].Rows.Count == 0)
+                return;
+
             lblMessaggio.Text = string.Empty;
             decimal IDDETTAGLIO = -1;
 
@@ -228,6 +237,7 @@ namespace CDCMetal
                 string RIFERIMENTO = ConvertiInStringa(riga[2]);
                 RIFERIMENTO = RIFERIMENTO.ToUpper().Trim();
                 string PARTE = (string)riga[11];
+                string COLORE = (string)riga[12];
                 if (!string.IsNullOrEmpty(RIFERIMENTO))
                 {
                     CDCDS.CDC_DIMEMSIONIRow dimensione = Contesto.DS.CDC_DIMEMSIONI.Where(x => x.IDDETTAGLIO == IDDETTAGLIO && x.RIFERIMENTO.Trim() == RIFERIMENTO).FirstOrDefault();
@@ -309,6 +319,32 @@ namespace CDCMetal
             byte[] iLoghi = (byte[])converter.ConvertTo(loghi, typeof(byte[]));
 
             bll.CreaPDFDimensionale(IDDETTAGLIO, Contesto.DS, Contesto.Utente.FULLNAMEUSER, Contesto.PathCollaudo, iFirma, iLoghi);
+
+            if (chkCopiaSchedaTecnica.Checked)
+            {
+                DataRow riga = _dsServizio.Tables[tableName].Rows[0];
+                string PARTE = (string)riga[11];
+                string COLORE = (string)riga[12];
+
+                string filename = string.Format(@"{0}\{1}-{2}.pdf", Contesto.PathSchedeTecniche, PARTE, COLORE);
+
+                if (!File.Exists(filename))
+                {
+                    string messaggio = string.Format("Impossibile trovare il file per PARTE:{0} e COLORE:{1}. File: {2}", PARTE, COLORE, filename);
+                    MessageBox.Show(messaggio);
+                    return;
+                }
+
+                CDCDS.CDC_DETTAGLIORow dettaglio = Contesto.DS.CDC_DETTAGLIO.Where(x => x.IDDETTAGLIO == IDDETTAGLIO).FirstOrDefault();
+                DateTime dt = DateTime.ParseExact(dettaglio.DATACOLLAUDO, "dd/MM/yyyy", CultureInfo.InvariantCulture);
+                string cartellaDestinazione = CDCBLL.CreaPathCartella(dt, Contesto.PathCollaudo, dettaglio.ACCESSORISTA, dettaglio.PREFISSO, dettaglio.PARTE, dettaglio.COLORE, dettaglio.COMMESSAORDINE);
+
+                string destinazione = string.Format(@"{0}\{1}-{2}.pdf", cartellaDestinazione, PARTE, COLORE);
+                if (File.Exists(destinazione))
+                    File.Delete(destinazione);
+
+                File.Copy(filename, destinazione, true);
+            }
         }
     }
 }

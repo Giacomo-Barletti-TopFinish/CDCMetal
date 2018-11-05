@@ -38,6 +38,7 @@
             this.dgvMisure = new System.Windows.Forms.DataGridView();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
+            this.chkCopiaSchedaTecnica = new System.Windows.Forms.CheckBox();
             ((System.ComponentModel.ISupportInitialize)(this.dgvDettaglio)).BeginInit();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvMisure)).BeginInit();
@@ -151,11 +152,25 @@
             this.label3.TabIndex = 8;
             this.label3.Text = "Misure";
             // 
+            // chkCopiaSchedaTecnica
+            // 
+            this.chkCopiaSchedaTecnica.AutoSize = true;
+            this.chkCopiaSchedaTecnica.Checked = true;
+            this.chkCopiaSchedaTecnica.CheckState = System.Windows.Forms.CheckState.Checked;
+            this.chkCopiaSchedaTecnica.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.chkCopiaSchedaTecnica.Location = new System.Drawing.Point(341, 411);
+            this.chkCopiaSchedaTecnica.Name = "chkCopiaSchedaTecnica";
+            this.chkCopiaSchedaTecnica.Size = new System.Drawing.Size(169, 22);
+            this.chkCopiaSchedaTecnica.TabIndex = 9;
+            this.chkCopiaSchedaTecnica.Text = "Copia scheda tecnica";
+            this.chkCopiaSchedaTecnica.UseVisualStyleBackColor = true;
+            // 
             // CreaDimensionaleFrm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1384, 685);
+            this.Controls.Add(this.chkCopiaSchedaTecnica);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.btnCreaPDF);
             this.Controls.Add(this.label2);
@@ -186,5 +201,6 @@
         private System.Windows.Forms.DataGridView dgvMisure;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.CheckBox chkCopiaSchedaTecnica;
     }
 }
