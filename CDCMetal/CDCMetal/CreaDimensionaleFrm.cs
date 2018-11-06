@@ -346,6 +346,7 @@ namespace CDCMetal
 
                 File.Copy(filename, destinazione, true);
             }
+          
         }
     }
 }
