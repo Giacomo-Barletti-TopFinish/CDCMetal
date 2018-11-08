@@ -132,7 +132,7 @@ namespace CDCMetal
                 else
                 {
                     riga[9] = DateTime.Today;
-                    riga[10] = true;
+                    riga[10] = false;
                     riga[11] = false;
                 }
 
@@ -198,7 +198,7 @@ namespace CDCMetal
                 ImageConverter converter = new ImageConverter();
                 byte[] image = (byte[])converter.ConvertTo(firma, typeof(byte[]));
 
-                fileCreati = bll.CreaPDFAntiallergico(idPerPDF, Contesto.DS, Contesto.PathCollaudo, image);
+                fileCreati = bll.CreaPDFAntiallergico(idPerPDF, Contesto.DS, Contesto.PathCollaudo, image, chkCopiaFileReferti.Checked, Contesto.PathRefertiLaboratorio);
                 btnLeggiDati_Click(null, null);
             }
             finally
@@ -212,5 +212,18 @@ namespace CDCMetal
 
             MessageBox.Show(sb.ToString(), "FILE PDF CREATI", MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
+
+        private void dgvDettaglio_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if (e.RowIndex == -1) return;
+
+            if (e.ColumnIndex == 10)
+                dgvDettaglio.Rows[e.RowIndex].Cells[e.ColumnIndex + 1].Value = (bool)dgvDettaglio.Rows[e.RowIndex].Cells[e.ColumnIndex].Value;
+
+            if (e.ColumnIndex == 11)
+                dgvDettaglio.Rows[e.RowIndex].Cells[e.ColumnIndex - 1].Value = (bool)dgvDettaglio.Rows[e.RowIndex].Cells[e.ColumnIndex].Value;
+        }
+
+
     }
 }

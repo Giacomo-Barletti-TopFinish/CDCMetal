@@ -41,5 +41,14 @@ namespace CDCMetal.Properties {
                 return ((string)(this["PathSchedeTecnic"]));
             }
         }
+        
+        [global::System.Configuration.ApplicationScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("\\\\dc02\\LABORATORIO\\Referti Lab\\Referti Gucci 2018")]
+        public string PathRefertiLaboratorio {
+            get {
+                return ((string)(this["PathRefertiLaboratorio"]));
+            }
+        }
     }
 }

@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.chkCopiaFileReferti = new System.Windows.Forms.CheckBox();
             this.lblMessaggio = new System.Windows.Forms.Label();
             this.btnCreaPDF = new System.Windows.Forms.Button();
             this.btnLeggiDati = new System.Windows.Forms.Button();
@@ -41,6 +42,7 @@
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.chkCopiaFileReferti);
             this.groupBox1.Controls.Add(this.lblMessaggio);
             this.groupBox1.Controls.Add(this.btnCreaPDF);
             this.groupBox1.Controls.Add(this.btnLeggiDati);
@@ -51,6 +53,19 @@
             this.groupBox1.Size = new System.Drawing.Size(1360, 100);
             this.groupBox1.TabIndex = 3;
             this.groupBox1.TabStop = false;
+            // 
+            // chkCopiaFileReferti
+            // 
+            this.chkCopiaFileReferti.AutoSize = true;
+            this.chkCopiaFileReferti.Checked = true;
+            this.chkCopiaFileReferti.CheckState = System.Windows.Forms.CheckState.Checked;
+            this.chkCopiaFileReferti.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.chkCopiaFileReferti.Location = new System.Drawing.Point(667, 19);
+            this.chkCopiaFileReferti.Name = "chkCopiaFileReferti";
+            this.chkCopiaFileReferti.Size = new System.Drawing.Size(260, 22);
+            this.chkCopiaFileReferti.TabIndex = 4;
+            this.chkCopiaFileReferti.Text = "Copia PDF nella cartella Referti Lab";
+            this.chkCopiaFileReferti.UseVisualStyleBackColor = true;
             // 
             // lblMessaggio
             // 
@@ -114,6 +129,7 @@
             this.dgvDettaglio.Name = "dgvDettaglio";
             this.dgvDettaglio.Size = new System.Drawing.Size(1384, 546);
             this.dgvDettaglio.TabIndex = 4;
+            this.dgvDettaglio.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvDettaglio_CellContentClick);
             // 
             // CreaAntiallergicoFrm
             // 
@@ -141,5 +157,6 @@
         private System.Windows.Forms.ComboBox ddlDataCollaudo;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.DataGridView dgvDettaglio;
+        private System.Windows.Forms.CheckBox chkCopiaFileReferti;
     }
 }

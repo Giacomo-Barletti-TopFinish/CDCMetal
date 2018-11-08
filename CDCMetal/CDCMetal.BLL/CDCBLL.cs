@@ -172,7 +172,7 @@ namespace CDCMetal.BLL
             return fileCreati.ToString();
         }
 
-        public string CreaPDFAntiallergico(List<decimal> idPerPDF, CDCDS ds, string pathCollaudo, byte[] image)
+        public string CreaPDFAntiallergico(List<decimal> idPerPDF, CDCDS ds, string pathCollaudo, byte[] image, bool CopiaReferto, string pathCartellaReferto)
         {
             StringBuilder fileCreati = new StringBuilder();
 
@@ -186,7 +186,8 @@ namespace CDCMetal.BLL
                 {
                     throw new Exception("IMPOSSIBILE TROVARE CDC DETTAGLIO DA CDC ANTIALLERGICO'");
                 }
-                DateTime dt = DateTime.ParseExact(dettaglio.DATACOLLAUDO, "dd/MM/yyyy", CultureInfo.InvariantCulture);
+                //  DateTime dt = DateTime.ParseExact(dettaglio.DATACOLLAUDO, "dd/MM/yyyy", CultureInfo.InvariantCulture);
+                DateTime dt = DateTime.Today;
                 string cartella = CreaPathCartella(dt, pathCollaudo, dettaglio.ACCESSORISTA, dettaglio.PREFISSO, dettaglio.PARTE, dettaglio.COLORE, dettaglio.COMMESSAORDINE);
                 bool nichelFree = antiallergico.NICHELFREE == "S" ? true : false;
 
@@ -204,9 +205,28 @@ namespace CDCMetal.BLL
 
                 CreaCDCAntiallergico(path, nichelFree, dettaglio.DATACOLLAUDO, antiallergico.DATAPRODUZIONE.ToShortDateString(), dettaglio.PREFISSO, dettaglio.PARTE, dettaglio.COLORE, dettaglio.COMMESSAORDINE, dettaglio.QUANTITA.ToString(), image);
 
+                if (CopiaReferto)
+                {
+                    System.Globalization.CultureInfo culture = new System.Globalization.CultureInfo("it-IT");
+                    string acce = "Top";
+                    if (dettaglio.ACCESSORISTA.Trim() == "Metalplus s.r.l.")
+                        acce = "M+";
+                    string meseCollaudo  = dt.ToString("MMMM", culture);
+                    string giorno = string.Format("{0}.{1}", dt.Day.ToString("00"), dt.Month.ToString("00"));
+                    string pathCartella = string.Format(@"{0}\{1}\{2}\{3}\{4}", pathCartellaReferto, dt.Year.ToString(), meseCollaudo, giorno, acce);
+                    string pathReferto = string.Format(@"{0}\{1}", pathCartella, fileName);
+
+                    if (!Directory.Exists(pathCartella))
+                        Directory.CreateDirectory(pathCartella);
+
+                    if (File.Exists(pathReferto))
+                        File.Delete(pathReferto);
+                    File.Copy(path, pathReferto, true);
+                }
+
                 fileCreati.AppendLine(path);
 
-                CDCDS.CDC_PDFRow pdf = ds.CDC_PDF.Where(x => x.IDDETTAGLIO == antiallergico.IDDETTAGLIO && x.TIPO == CDCTipoPDF.CERTIFICATOCONFORMITA).FirstOrDefault();
+                CDCDS.CDC_PDFRow pdf = ds.CDC_PDF.Where(x => x.IDDETTAGLIO == antiallergico.IDDETTAGLIO && x.TIPO == CDCTipoPDF.CERTIFICATOANTIALLERGICO).FirstOrDefault();
                 if (pdf == null)
                 {
                     pdf = ds.CDC_PDF.NewCDC_PDFRow();

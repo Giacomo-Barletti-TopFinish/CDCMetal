@@ -65,9 +65,11 @@ namespace CDCMetal
             Contesto.UtenteConnesso = false;
             Contesto.Utente = null;
             Contesto.PathSchedeTecniche = CDCMetal.Properties.Settings.Default.PathSchedeTecnic;
+            Contesto.PathRefertiLaboratorio = Properties.Settings.Default.PathRefertiLaboratorio;
             Contesto.PathCollaudo = CDCMetal.Properties.Settings.Default.PathCollaudo;
 #if DEBUG
             Contesto.PathCollaudo = @"C:\Temp\CDC\CARTELLACOLLAUDO";
+            Contesto.PathRefertiLaboratorio = @"C:\Temp\CDC\REFERTILABORATORIO";
 #endif
 
         }
