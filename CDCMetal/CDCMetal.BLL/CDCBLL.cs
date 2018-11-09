@@ -46,6 +46,14 @@ namespace CDCMetal.BLL
             }
         }
 
+        public void FillCDC_COLORE(CDCDS ds, List<decimal> IDDETTAGLIO)
+        {
+            using (CDCMetalBusiness bCDCMetal = new CDCMetalBusiness())
+            {
+                bCDCMetal.FillCDC_COLORE(ds, IDDETTAGLIO);
+            }
+        }
+
         public void FillCDC_DIMEMSIONI(CDCDS ds, List<decimal> IDDETTAGLIO)
         {
             using (CDCMetalBusiness bCDCMetal = new CDCMetalBusiness())
@@ -105,6 +113,14 @@ namespace CDCMetal.BLL
             using (CDCMetalBusiness bCDCMetal = new CDCMetalBusiness())
             {
                 bCDCMetal.UpdateCDC_ANTIALLERGICO(ds);
+            }
+        }
+
+        public void SalvaDatiColore(CDCDS ds)
+        {
+            using (CDCMetalBusiness bCDCMetal = new CDCMetalBusiness())
+            {
+                bCDCMetal.UpdateCDC_COLORE(ds);
             }
         }
 
@@ -211,7 +227,7 @@ namespace CDCMetal.BLL
                     string acce = "Top";
                     if (dettaglio.ACCESSORISTA.Trim() == "Metalplus s.r.l.")
                         acce = "M+";
-                    string meseCollaudo  = dt.ToString("MMMM", culture);
+                    string meseCollaudo = dt.ToString("MMMM", culture);
                     string giorno = string.Format("{0}.{1}", dt.Day.ToString("00"), dt.Month.ToString("00"));
                     string pathCartella = string.Format(@"{0}\{1}\{2}\{3}\{4}", pathCartellaReferto, dt.Year.ToString(), meseCollaudo, giorno, acce);
                     string pathReferto = string.Format(@"{0}\{1}", pathCartella, fileName);
@@ -233,6 +249,95 @@ namespace CDCMetal.BLL
                     pdf.TIPO = CDCTipoPDF.CERTIFICATOANTIALLERGICO;
                     pdf.NOMEFILE = path;
                     pdf.IDDETTAGLIO = antiallergico.IDDETTAGLIO;
+                    ds.CDC_PDF.AddCDC_PDFRow(pdf);
+
+                    using (CDCMetalBusiness bCDCMetalBusiness = new CDCMetalBusiness())
+                        bCDCMetalBusiness.UpdateCDC_PDF(ds);
+                    ds.CDC_PDF.AcceptChanges();
+                }
+            }
+
+            return fileCreati.ToString();
+        }
+
+        public string CreaPDFColore(List<decimal> idPerPDF, CDCDS ds, string pathCollaudo, byte[] image, bool CopiaReferto, string pathCartellaReferto)
+        {
+            StringBuilder fileCreati = new StringBuilder();
+
+            foreach (decimal IDDETTAGLIO in idPerPDF)
+            {
+                CDCDS.CDC_COLORERow colore = ds.CDC_COLORE.Where(x => x.IDDETTAGLIO == IDDETTAGLIO).FirstOrDefault();
+                if (colore == null)
+                    throw new Exception("CDC_COLORE riga non trovat per IDDETTAGLIO" + IDDETTAGLIO.ToString());
+                CDCDS.CDC_DETTAGLIORow dettaglio = ds.CDC_DETTAGLIO.Where(x => x.IDDETTAGLIO == colore.IDDETTAGLIO).FirstOrDefault();
+                if (dettaglio == null)
+                {
+                    throw new Exception("IMPOSSIBILE TROVARE CDC DETTAGLIO DA CDC COLORE'");
+                }
+                //  DateTime dt = DateTime.ParseExact(dettaglio.DATACOLLAUDO, "dd/MM/yyyy", CultureInfo.InvariantCulture);
+                DateTime dt = DateTime.Today;
+                string cartella = CreaPathCartella(dt, pathCollaudo, dettaglio.ACCESSORISTA, dettaglio.PREFISSO, dettaglio.PARTE, dettaglio.COLORE, dettaglio.COMMESSAORDINE);
+
+                string articolo = string.Format("{0} {1} {2}", dettaglio.PARTE, dettaglio.COLORE, dettaglio.COMMESSAORDINE.Replace('_', ' '));
+
+                string fileName = string.Format("M-Q01.02-REV00_Colore {0}.pdf", articolo);//M-Q01.02-REV00_Colore 4155F 8053 EACO 2018 189 K
+                string path = string.Format(@"{0}\{1}", cartella, fileName);
+
+                List<MisuraColore> misure = new List<MisuraColore>();
+                foreach (CDCDS.CDC_COLORERow coloreRow in ds.CDC_COLORE.Where(x => x.IDDETTAGLIO == IDDETTAGLIO))
+                {
+                    MisuraColore m = new MisuraColore()
+                    {
+                        Conforme = coloreRow.CONFORME == "S" ? "OK" : "KO",
+                        ControlloColore = coloreRow.COLORE + "'",
+                        Richiesto = coloreRow.RICHIESTO,
+                        Rilevato = coloreRow.IsRILEVATONull()?string.Empty:coloreRow.RILEVATO,
+                        Tolleranza = coloreRow.IsTOLLERANZANull() ? string.Empty : coloreRow.TOLLERANZA,
+                    };
+                    misure.Add(m);
+                }
+                string data = colore.DATAINSERIMENTO.ToShortDateString();
+                string dataCalibrazione = colore.DATACALIBRAZIONE.ToShortDateString();
+                string strumento = colore.STRUMENTO;
+                string nota = colore.IsNOTANull() ? string.Empty : colore.NOTA;
+
+                string operatore = "LB";
+                if (!Directory.Exists(cartella))
+                    Directory.CreateDirectory(cartella);
+
+                if (File.Exists(path))
+                    File.Delete(path);
+
+                CreaReportColorimetrico(path, data, dataCalibrazione, dettaglio.PREFISSO, dettaglio.PARTE, dettaglio.COLORE, dettaglio.COMMESSAORDINE, dettaglio.QUANTITA.ToString(), operatore, strumento, nota, misure, image);
+
+                if (CopiaReferto)
+                {
+                    System.Globalization.CultureInfo culture = new System.Globalization.CultureInfo("it-IT");
+                    string acce = "Top";
+                    if (dettaglio.ACCESSORISTA.Trim() == "Metalplus s.r.l.")
+                        acce = "M+";
+                    string meseCollaudo = dt.ToString("MMMM", culture);
+                    string giorno = string.Format("{0}.{1}", dt.Day.ToString("00"), dt.Month.ToString("00"));
+                    string pathCartella = string.Format(@"{0}\{1}\{2}\{3}\{4}", pathCartellaReferto, dt.Year.ToString(), meseCollaudo, giorno, acce);
+                    string pathReferto = string.Format(@"{0}\{1}", pathCartella, fileName);
+
+                    if (!Directory.Exists(pathCartella))
+                        Directory.CreateDirectory(pathCartella);
+
+                    if (File.Exists(pathReferto))
+                        File.Delete(pathReferto);
+                    File.Copy(path, pathReferto, true);
+                }
+
+                fileCreati.AppendLine(path);
+
+                CDCDS.CDC_PDFRow pdf = ds.CDC_PDF.Where(x => x.IDDETTAGLIO == colore.IDDETTAGLIO && x.TIPO == CDCTipoPDF.CERTIFICATOANTIALLERGICO).FirstOrDefault();
+                if (pdf == null)
+                {
+                    pdf = ds.CDC_PDF.NewCDC_PDFRow();
+                    pdf.TIPO = CDCTipoPDF.CERTIFICATOANTIALLERGICO;
+                    pdf.NOMEFILE = path;
+                    pdf.IDDETTAGLIO = colore.IDDETTAGLIO;
                     ds.CDC_PDF.AddCDC_PDFRow(pdf);
 
                     using (CDCMetalBusiness bCDCMetalBusiness = new CDCMetalBusiness())
@@ -276,6 +381,15 @@ namespace CDCMetal.BLL
             pdfHelper.SalvaPdf(filename);
         }
 
+        private static void CreaReportColorimetrico(string filename, string dataCollaudo, string dataCalibrazione,
+string prefisso, string parte, string colore, string commessa, string quantita, string operatore,
+string strumentoMisura, string nota, List<MisuraColore> misure, byte[] iloghi)
+        {
+            PDFHelper pdfHelper = new PDFHelper();
+            pdfHelper.CreaReportColorimetrico(dataCollaudo, dataCalibrazione, prefisso, parte, colore, commessa, quantita, operatore, strumentoMisura, nota, misure, iloghi);
+
+            pdfHelper.SalvaPdf(filename);
+        }
         public string CreaPDFDimensionale(decimal IDDETTAGLIO, CDCDS ds, string operatore, string pathCollaudo, byte[] iFirma, byte[] iLoghi)
         {
 

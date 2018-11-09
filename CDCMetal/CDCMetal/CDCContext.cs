@@ -15,5 +15,6 @@ namespace CDCMetal
         public string PathCollaudo;
         public string PathSchedeTecniche;
         public string PathRefertiLaboratorio;
+        public string StrumentoColore;
     }
 }

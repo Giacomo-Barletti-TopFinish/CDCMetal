@@ -912,6 +912,281 @@ namespace CDCMetal.Helpers
             p.AddText("Crolli Fabio");
         }
 
+        public void CreaReportColorimetrico(string dataCollaudo, string dataCalibrazione,
+string prefisso, string parte, string colore, string commessa, string quantita, string operatore,
+string strumentoMisura, string nota, List<MisuraColore> misure, byte[] iloghi)
+        {
+
+            document.Info.Title = "Colorimetrico";
+            document.Info.Subject = String.Empty;
+            document.Info.Author = string.Empty;
+
+            Section section = document.AddSection();
+
+            DefineBasicStyles();
+
+
+
+            Table table = new Table();
+            table.Borders.Width = 0.75;
+
+            Column column = table.AddColumn(Unit.FromCentimeter(3.3));
+            column = table.AddColumn(Unit.FromCentimeter(9.9));
+            column = table.AddColumn(Unit.FromCentimeter(3.3));
+
+            Row row = table.AddRow();
+            row.Height = Unit.FromCentimeter(0.5);
+
+            Cell cell = row.Cells[0];
+            cell.Format.Alignment = ParagraphAlignment.Center;
+            Paragraph p = cell.AddParagraph();
+            cell.MergeDown = 1;
+            string fileImage = MigraDocFilenameFromByteArray(iloghi);
+            p.AddImage(fileImage);
+
+            cell = row.Cells[1];
+            cell.Format.Alignment = ParagraphAlignment.Center;
+            cell.VerticalAlignment = VerticalAlignment.Center;
+            cell.Format.Font.Bold = true;
+            cell.Format.Font.Size = 18;
+            cell.MergeDown = 1;
+            cell.AddParagraph("REPORT COLORIMETRICO");
+
+            cell = row.Cells[2];
+            cell.Format.Alignment = ParagraphAlignment.Center;
+            cell.VerticalAlignment = VerticalAlignment.Center;
+            cell.AddParagraph("M-Q01.02-REV00");
+
+            row = table.AddRow();
+            row.Height = Unit.FromCentimeter(2.2);
+            cell = row.Cells[2];
+            cell.Format.Alignment = ParagraphAlignment.Center;
+            cell.VerticalAlignment = VerticalAlignment.Center;
+            cell.AddParagraph("Pagina 1/1");
+
+            document.LastSection.Add(table);
+
+            table = new Table();
+            table.Borders.Width = 0.75;
+
+            column = table.AddColumn(Unit.FromCentimeter(3.3));
+            column = table.AddColumn(Unit.FromCentimeter(6.6));
+            column = table.AddColumn(Unit.FromCentimeter(3.3));
+            column = table.AddColumn(Unit.FromCentimeter(3.3));
+
+            row = table.AddRow();
+            row.Height = Unit.FromCentimeter(0.5);
+
+            cell = row.Cells[0];
+            cell.Format.Alignment = ParagraphAlignment.Center;
+            cell.VerticalAlignment = VerticalAlignment.Center;
+            cell.Format.Font.Bold = true;
+            cell.Format.Font.Size = 8;
+            cell.AddParagraph("ARTICOLO");
+
+
+            cell = row.Cells[1];
+            cell.Format.Alignment = ParagraphAlignment.Center;
+            cell.VerticalAlignment = VerticalAlignment.Center;
+            cell.Format.Font.Bold = true;
+            cell.Format.Font.Size = 8;
+            cell.AddParagraph(string.Format("{0}-{1}-{2}", prefisso, parte, colore));
+
+            cell = row.Cells[2];
+            cell.Format.Alignment = ParagraphAlignment.Center;
+            cell.VerticalAlignment = VerticalAlignment.Center;
+            cell.Format.Font.Bold = true;
+            cell.Format.Font.Size = 8;
+            cell.AddParagraph("Controllore");
+
+
+            cell = row.Cells[3];
+            cell.Format.Alignment = ParagraphAlignment.Center;
+            cell.VerticalAlignment = VerticalAlignment.Center;
+            cell.Format.Font.Size = 8;
+            cell.AddParagraph(operatore);
+
+            row = table.AddRow();
+            row.Height = Unit.FromCentimeter(0.5);
+
+            cell = row.Cells[0];
+            cell.Format.Alignment = ParagraphAlignment.Center;
+            cell.VerticalAlignment = VerticalAlignment.Center;
+            cell.Format.Font.Bold = true;
+            cell.Format.Font.Size = 8;
+            cell.AddParagraph("IDX/COMMESSA");
+
+
+            cell = row.Cells[1];
+            cell.Format.Alignment = ParagraphAlignment.Center;
+            cell.VerticalAlignment = VerticalAlignment.Center;
+            cell.Format.Font.Bold = true;
+            cell.Format.Font.Size = 8;
+            string commessaStr = string.Format("{0}-PZ{1}", commessa, quantita);
+            cell.AddParagraph(commessaStr);
+
+            cell = row.Cells[2];
+            cell.Format.Alignment = ParagraphAlignment.Center;
+            cell.VerticalAlignment = VerticalAlignment.Center;
+            cell.Format.Font.Bold = true;
+            cell.Format.Font.Size = 8;
+            cell.AddParagraph("Data");
+
+
+            cell = row.Cells[3];
+            cell.Format.Alignment = ParagraphAlignment.Center;
+            cell.VerticalAlignment = VerticalAlignment.Center;
+            cell.Format.Font.Bold = true;
+            cell.Format.Font.Size = 8;
+            cell.AddParagraph(dataCollaudo);
+
+            row = table.AddRow();
+            row.Height = Unit.FromCentimeter(0.5);
+
+            cell = row.Cells[0];
+            cell.Format.Alignment = ParagraphAlignment.Center;
+            cell.VerticalAlignment = VerticalAlignment.Center;
+            cell.Format.Font.Bold = true;
+            cell.Format.Font.Size = 8;
+            cell.AddParagraph("STRUMENTO DI MISURA");
+
+
+            cell = row.Cells[1];
+            cell.Format.Alignment = ParagraphAlignment.Center;
+            cell.VerticalAlignment = VerticalAlignment.Center;
+            cell.Format.Font.Bold = true;
+            cell.Format.Font.Size = 8;
+            cell.AddParagraph(strumentoMisura);
+
+            cell = row.Cells[2];
+            cell.Format.Alignment = ParagraphAlignment.Center;
+            cell.VerticalAlignment = VerticalAlignment.Center;
+            cell.Format.Font.Bold = true;
+            cell.Format.Font.Size = 8;
+            cell.AddParagraph("DATA CALIBRAZIONE");
+
+
+            cell = row.Cells[3];
+            cell.Format.Alignment = ParagraphAlignment.Center;
+            cell.VerticalAlignment = VerticalAlignment.Center;
+            cell.Format.Font.Bold = true;
+            cell.Format.Font.Size = 8;
+            cell.AddParagraph(dataCalibrazione);
+
+            table.SetEdge(0, 0, 4, 3, Edge.Top, BorderStyle.None, 0);
+
+            document.LastSection.Add(table);
+
+
+            table = new Table();
+            table.Borders.Width = 0.75;
+
+            column = table.AddColumn(Unit.FromCentimeter(4.9));
+            column = table.AddColumn(Unit.FromCentimeter(3.3));
+            column = table.AddColumn(Unit.FromCentimeter(3.3));
+            column = table.AddColumn(Unit.FromCentimeter(3.3));
+            column = table.AddColumn(Unit.FromCentimeter(1.7));
+
+            row = table.AddRow();
+            row.Height = Unit.FromCentimeter(1.4);
+
+            cell = row.Cells[0];
+            cell.Format.Alignment = ParagraphAlignment.Center;
+            cell.VerticalAlignment = VerticalAlignment.Center;
+            cell.Format.Font.Size = 11;
+            cell.AddParagraph("Controllo Colore");
+
+            cell = row.Cells[1];
+            cell.Format.Alignment = ParagraphAlignment.Center;
+            cell.VerticalAlignment = VerticalAlignment.Center;
+            cell.Format.Font.Size = 11;
+            cell.AddParagraph("Valore Richiesto");
+
+            cell = row.Cells[2];
+            cell.Format.Alignment = ParagraphAlignment.Center;
+            cell.VerticalAlignment = VerticalAlignment.Center;
+            cell.Format.Font.Size = 11;
+            cell.AddParagraph("Tolleranza");
+
+            cell = row.Cells[3];
+            cell.Format.Alignment = ParagraphAlignment.Center;
+            cell.VerticalAlignment = VerticalAlignment.Center;
+            cell.Format.Font.Size = 11;
+            cell.AddParagraph("Rilevato");
+
+            cell = row.Cells[4];
+            cell.Format.Alignment = ParagraphAlignment.Center;
+            cell.VerticalAlignment = VerticalAlignment.Center;
+            cell.Format.Font.Size = 11;
+            cell.AddParagraph("Conforme");
+            cell.AddParagraph("OK-KO");
+
+            foreach (MisuraColore misura in misure)
+            {
+                row = table.AddRow();
+                row.Height = Unit.FromCentimeter(0.5);
+
+                cell = row.Cells[0];
+                cell.Format.Alignment = ParagraphAlignment.Center;
+                cell.VerticalAlignment = VerticalAlignment.Center;
+                cell.Format.Font.Size = 10;
+                cell.AddParagraph(misura.ControlloColore);
+
+                cell = row.Cells[1];
+                cell.Format.Alignment = ParagraphAlignment.Center;
+                cell.VerticalAlignment = VerticalAlignment.Center;
+                cell.Format.Font.Size = 10;
+                cell.AddParagraph(misura.Richiesto);
+
+                cell = row.Cells[2];
+                cell.Format.Alignment = ParagraphAlignment.Center;
+                cell.VerticalAlignment = VerticalAlignment.Center;
+                cell.Format.Font.Size = 10;
+                cell.AddParagraph(misura.Tolleranza);
+
+                cell = row.Cells[3];
+                cell.Format.Alignment = ParagraphAlignment.Center;
+                cell.VerticalAlignment = VerticalAlignment.Center;
+                cell.Format.Font.Size = 10;
+                cell.AddParagraph(misura.Rilevato);
+
+                cell = row.Cells[4];
+                cell.VerticalAlignment = VerticalAlignment.Center;
+                cell.Format.Font.Size = 10;
+                cell.AddParagraph(misura.Conforme);
+            }
+            table.SetEdge(0, 0, 5, 1, Edge.Top, BorderStyle.None, 0);
+
+            document.LastSection.Add(table);
+
+            table = new Table();
+            table.Borders.Width = 0;
+            table.AddColumn(Unit.FromCentimeter(4.9));
+            row = table.AddRow();
+            row.Height = Unit.FromCentimeter(16);
+            document.LastSection.Add(table);
+
+            table = new Table();
+            table.Borders.Width = 0.75;
+            table.AddColumn(Unit.FromCentimeter(11.5));
+            table.AddColumn(Unit.FromCentimeter(5));
+            row = table.AddRow();
+            row.Height = Unit.FromCentimeter(1.4);
+
+            cell = row.Cells[0];
+            cell.Format.Font.Size = 10;
+            cell.AddParagraph("Note");
+            cell.AddParagraph(nota);
+
+            cell = row.Cells[1];
+            cell.Format.Font.Size = 10;
+            cell.AddParagraph("Firma");
+
+            document.LastSection.Add(table);
+
+        }
+
+
 
     }
 
@@ -926,5 +1201,14 @@ namespace CDCMetal.Helpers
         public string Conforme { get; set; }
         public bool campoTampone { get; set; }
         public string Tampone { get; set; }
+    }
+
+    public class MisuraColore
+    {
+        public string ControlloColore { get; set; }
+        public string Richiesto { get; set; }
+        public string Tolleranza { get; set; }
+        public string Rilevato { get; set; }
+        public string Conforme { get; set; }
     }
 }

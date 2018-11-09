@@ -50,5 +50,14 @@ namespace CDCMetal.Properties {
                 return ((string)(this["PathRefertiLaboratorio"]));
             }
         }
+        
+        [global::System.Configuration.ApplicationScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("KONICA MINOLTA CM-A145")]
+        public string StrumentoColore {
+            get {
+                return ((string)(this["StrumentoColore"]));
+            }
+        }
     }
 }

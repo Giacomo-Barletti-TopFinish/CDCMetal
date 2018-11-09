@@ -48,3 +48,4 @@ C:\VSProgetti\CDCMetal\CDCMetal\CDCMetal\obj\Release\CDCMetal.exe.manifest
 C:\VSProgetti\CDCMetal\CDCMetal\CDCMetal\obj\Release\CDCMetal.application
 C:\VSProgetti\CDCMetal\CDCMetal\CDCMetal\obj\Release\CDCMetal.CreaDimensionaleFrm.resources
 C:\VSProgetti\CDCMetal\CDCMetal\CDCMetal\obj\Release\CDCMetal.CreaAntiallergicoFrm.resources
+C:\VSProgetti\CDCMetal\CDCMetal\CDCMetal\obj\Release\CDCMetal.CreaColorimetricoFrm.resources

@@ -193,5 +193,18 @@ namespace CDCMetal.Data
                 da.Fill(ds.CDC_ANTIALLERGICO);
             }
         }
+
+        public void FillCDC_COLORE(CDCDS ds, List<decimal> IDDETTAGLIO)
+        {
+            string selezione = ConvertToStringForInCondition(IDDETTAGLIO);
+            string select = @"SELECT * FROM CDC_COLORE WHERE IDDETTAGLIO IN ({0}) ";
+
+            string query = string.Format(select, selezione);
+
+            using (DbDataAdapter da = BuildDataAdapter(query))
+            {
+                da.Fill(ds.CDC_COLORE);
+            }
+        }
     }
 }

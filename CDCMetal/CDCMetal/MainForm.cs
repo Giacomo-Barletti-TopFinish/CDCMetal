@@ -66,6 +66,7 @@ namespace CDCMetal
             Contesto.Utente = null;
             Contesto.PathSchedeTecniche = CDCMetal.Properties.Settings.Default.PathSchedeTecnic;
             Contesto.PathRefertiLaboratorio = Properties.Settings.Default.PathRefertiLaboratorio;
+            Contesto.StrumentoColore = Properties.Settings.Default.StrumentoColore;
             Contesto.PathCollaudo = CDCMetal.Properties.Settings.Default.PathCollaudo;
 #if DEBUG
             Contesto.PathCollaudo = @"C:\Temp\CDC\CARTELLACOLLAUDO";
@@ -232,7 +233,7 @@ namespace CDCMetal
             }
             catch (Exception ex)
             {
-                LogScriviErrore("ERRORE IN CREA CERTIFICATO DIMENSIONALE'", ex);
+                LogScriviErrore("ERRORE IN CREA CERTIFICATO DIMENSIONALE", ex);
                 ExceptionFrm frm = new ExceptionFrm(ex);
                 frm.ShowDialog();
             }
@@ -249,11 +250,27 @@ namespace CDCMetal
             }
             catch (Exception ex)
             {
-                LogScriviErrore("ERRORE IN CREA CERTIFICATO ANTIALLERGICO'", ex);
+                LogScriviErrore("ERRORE IN CREA CERTIFICATO ANTIALLERGICO", ex);
                 ExceptionFrm frm = new ExceptionFrm(ex);
                 frm.ShowDialog();
             }
 
+        }
+
+        private void colorimetricoToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                CreaColorimetricoFrm form = new CreaColorimetricoFrm();
+                form.MdiParent = this;
+                form.Show();
+            }
+            catch (Exception ex)
+            {
+                LogScriviErrore("ERRORE IN CREA CERTIFICATO COLORIMETRICO", ex);
+                ExceptionFrm frm = new ExceptionFrm(ex);
+                frm.ShowDialog();
+            }
         }
     }
 }

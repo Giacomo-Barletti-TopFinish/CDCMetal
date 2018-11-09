@@ -11,5 +11,8 @@
     <Setting Name="PathRefertiLaboratorio" Type="System.String" Scope="Application">
       <Value Profile="(Default)">\\dc02\LABORATORIO\Referti Lab\Referti Gucci 2018</Value>
     </Setting>
+    <Setting Name="StrumentoColore" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">KONICA MINOLTA CM-A145</Value>
+    </Setting>
   </Settings>
 </SettingsFile>

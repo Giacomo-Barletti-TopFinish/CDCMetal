@@ -121,5 +121,19 @@ namespace CDCMetal.Data
             CDCMetalAdapter a = new CDCMetalAdapter(DbConnection, DbTransaction);
             a.UpdateTable(ds.CDC_ANTIALLERGICO.TableName, ds);
         }
+
+        [DataContext]
+        public void FillCDC_COLORE(CDCDS ds, List<decimal> IDDETTAGLIO)
+        {
+            CDCMetalAdapter a = new CDCMetalAdapter(DbConnection, DbTransaction);
+            a.FillCDC_COLORE(ds, IDDETTAGLIO);
+        }
+
+        [DataContext(true)]
+        public void UpdateCDC_COLORE(CDCDS ds)
+        {
+            CDCMetalAdapter a = new CDCMetalAdapter(DbConnection, DbTransaction);
+            a.UpdateTable(ds.CDC_COLORE.TableName, ds);
+        }
     }
 }
