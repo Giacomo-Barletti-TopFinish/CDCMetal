@@ -331,11 +331,11 @@ namespace CDCMetal.BLL
 
                 fileCreati.AppendLine(path);
 
-                CDCDS.CDC_PDFRow pdf = ds.CDC_PDF.Where(x => x.IDDETTAGLIO == colore.IDDETTAGLIO && x.TIPO == CDCTipoPDF.CERTIFICATOANTIALLERGICO).FirstOrDefault();
+                CDCDS.CDC_PDFRow pdf = ds.CDC_PDF.Where(x => x.IDDETTAGLIO == colore.IDDETTAGLIO && x.TIPO == CDCTipoPDF.CERTIFICATOCOLORIMETRICO).FirstOrDefault();
                 if (pdf == null)
                 {
                     pdf = ds.CDC_PDF.NewCDC_PDFRow();
-                    pdf.TIPO = CDCTipoPDF.CERTIFICATOANTIALLERGICO;
+                    pdf.TIPO = CDCTipoPDF.CERTIFICATOCOLORIMETRICO;
                     pdf.NOMEFILE = path;
                     pdf.IDDETTAGLIO = colore.IDDETTAGLIO;
                     ds.CDC_PDF.AddCDC_PDFRow(pdf);
@@ -439,7 +439,7 @@ string strumentoMisura, string nota, List<MisuraColore> misure, byte[] iloghi)
             if (pdf == null)
             {
                 pdf = ds.CDC_PDF.NewCDC_PDFRow();
-                pdf.TIPO = CDCTipoPDF.CERTIFICATOCONFORMITA;
+                pdf.TIPO = CDCTipoPDF.CERTIFICATODIMENSIONALE;
                 pdf.NOMEFILE = path;
                 pdf.IDDETTAGLIO = IDDETTAGLIO;
                 ds.CDC_PDF.AddCDC_PDFRow(pdf);

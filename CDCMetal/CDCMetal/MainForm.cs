@@ -272,5 +272,21 @@ namespace CDCMetal
                 frm.ShowDialog();
             }
         }
+
+        private void listaToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                ListaPDFFrm form = new ListaPDFFrm();
+                form.MdiParent = this;
+                form.Show();
+            }
+            catch (Exception ex)
+            {
+                LogScriviErrore("ERRORE IN MOSTRA LISTA PDF", ex);
+                ExceptionFrm frm = new ExceptionFrm(ex);
+                frm.ShowDialog();
+            }
+        }
     }
 }

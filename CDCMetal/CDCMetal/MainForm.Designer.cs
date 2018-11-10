@@ -42,11 +42,13 @@
             this.creaCertificatoToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.laboratorioToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.antiallergicoNichelFreeToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.colorimetricoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.statusStrip1 = new System.Windows.Forms.StatusStrip();
             this.lblUserLoggato = new System.Windows.Forms.ToolStripStatusLabel();
             this.prgProgressBar = new System.Windows.Forms.ToolStripProgressBar();
             this.lblStatusBar = new System.Windows.Forms.ToolStripStatusLabel();
-            this.colorimetricoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.pDFToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.listaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.cdcMenu.SuspendLayout();
             this.statusStrip1.SuspendLayout();
             this.SuspendLayout();
@@ -60,7 +62,8 @@
             this.cartelleToolStripMenuItem,
             this.conformitàToolStripMenuItem,
             this.dimensioniToolStripMenuItem,
-            this.laboratorioToolStripMenuItem});
+            this.laboratorioToolStripMenuItem,
+            this.pDFToolStripMenuItem});
             this.cdcMenu.Location = new System.Drawing.Point(0, 0);
             this.cdcMenu.Name = "cdcMenu";
             this.cdcMenu.Size = new System.Drawing.Size(1558, 25);
@@ -167,6 +170,13 @@
             this.antiallergicoNichelFreeToolStripMenuItem.Text = "Antiallergico / Nichel Free";
             this.antiallergicoNichelFreeToolStripMenuItem.Click += new System.EventHandler(this.antiallergicoNichelFreeToolStripMenuItem_Click);
             // 
+            // colorimetricoToolStripMenuItem
+            // 
+            this.colorimetricoToolStripMenuItem.Name = "colorimetricoToolStripMenuItem";
+            this.colorimetricoToolStripMenuItem.Size = new System.Drawing.Size(226, 22);
+            this.colorimetricoToolStripMenuItem.Text = "Colorimetrico";
+            this.colorimetricoToolStripMenuItem.Click += new System.EventHandler(this.colorimetricoToolStripMenuItem_Click);
+            // 
             // statusStrip1
             // 
             this.statusStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
@@ -194,12 +204,20 @@
             this.lblStatusBar.Name = "lblStatusBar";
             this.lblStatusBar.Size = new System.Drawing.Size(0, 17);
             // 
-            // colorimetricoToolStripMenuItem
+            // pDFToolStripMenuItem
             // 
-            this.colorimetricoToolStripMenuItem.Name = "colorimetricoToolStripMenuItem";
-            this.colorimetricoToolStripMenuItem.Size = new System.Drawing.Size(226, 22);
-            this.colorimetricoToolStripMenuItem.Text = "Colorimetrico";
-            this.colorimetricoToolStripMenuItem.Click += new System.EventHandler(this.colorimetricoToolStripMenuItem_Click);
+            this.pDFToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.listaToolStripMenuItem});
+            this.pDFToolStripMenuItem.Name = "pDFToolStripMenuItem";
+            this.pDFToolStripMenuItem.Size = new System.Drawing.Size(42, 21);
+            this.pDFToolStripMenuItem.Text = "PDF";
+            // 
+            // listaToolStripMenuItem
+            // 
+            this.listaToolStripMenuItem.Name = "listaToolStripMenuItem";
+            this.listaToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.listaToolStripMenuItem.Text = "Lista...";
+            this.listaToolStripMenuItem.Click += new System.EventHandler(this.listaToolStripMenuItem_Click);
             // 
             // MainForm
             // 
@@ -244,6 +262,8 @@
         private System.Windows.Forms.ToolStripMenuItem laboratorioToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem antiallergicoNichelFreeToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem colorimetricoToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem pDFToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem listaToolStripMenuItem;
     }
 }
 

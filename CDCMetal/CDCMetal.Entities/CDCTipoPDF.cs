@@ -12,5 +12,6 @@ namespace CDCMetal.Entities
         public static readonly string CERTIFICATODIMENSIONALE= "DIM";
         public static readonly string CERTIFICATOANTIALLERGICO = "ANT";
         public static readonly string CERTIFICATOCOLORIMETRICO = "COL";
+        public static readonly string CERTIFICATOMISURA = "MIS";
     }
 }
