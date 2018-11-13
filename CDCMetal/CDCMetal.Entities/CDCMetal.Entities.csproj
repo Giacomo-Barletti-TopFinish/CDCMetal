@@ -48,6 +48,7 @@
       <DependentUpon>CDCDS.xsd</DependentUpon>
     </Compile>
     <Compile Include="CDCTipoColore.cs" />
+    <Compile Include="CDCTipoMaterialeSpessore.cs" />
     <Compile Include="CDCTipoPDF.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Properties\Settings.Designer.cs">

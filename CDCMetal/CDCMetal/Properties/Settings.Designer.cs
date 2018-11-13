@@ -59,5 +59,14 @@ namespace CDCMetal.Properties {
                 return ((string)(this["StrumentoColore"]));
             }
         }
+        
+        [global::System.Configuration.ApplicationScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("XRF Bowman serie P (S/N P1718131)")]
+        public string StrumentoSpessore {
+            get {
+                return ((string)(this["StrumentoSpessore"]));
+            }
+        }
     }
 }

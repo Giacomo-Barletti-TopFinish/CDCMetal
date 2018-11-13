@@ -135,5 +135,49 @@ namespace CDCMetal.Data
             CDCMetalAdapter a = new CDCMetalAdapter(DbConnection, DbTransaction);
             a.UpdateTable(ds.CDC_COLORE.TableName, ds);
         }
+
+        [DataContext]
+        public void FillCDC_GALVANICA(CDCDS ds, List<decimal> IDDETTAGLIO)
+        {
+            CDCMetalAdapter a = new CDCMetalAdapter(DbConnection, DbTransaction);
+            a.FillCDC_GALVANICA(ds, IDDETTAGLIO);
+        }
+
+        [DataContext]
+        public void FillCDC_MISURE(CDCDS ds, List<decimal> IDDETTAGLIO)
+        {
+            CDCMetalAdapter a = new CDCMetalAdapter(DbConnection, DbTransaction);
+            a.FillCDC_MISURE(ds, IDDETTAGLIO);
+        }
+
+        [DataContext]
+        public void FillCDC_SPESSORE(CDCDS ds)
+        {
+            CDCMetalAdapter a = new CDCMetalAdapter(DbConnection, DbTransaction);
+            a.FillCDC_SPESSORE(ds);
+        }
+
+        [DataContext]
+        public void FillCDC_MISURA_COLORE(CDCDS ds)
+        {
+            CDCMetalAdapter a = new CDCMetalAdapter(DbConnection, DbTransaction);
+            a.FillCDC_MISURA_COLORE(ds);
+        }
+
+        [DataContext]
+        public void FillCDC_APPLICAZIONE(CDCDS ds)
+        {
+            CDCMetalAdapter a = new CDCMetalAdapter(DbConnection, DbTransaction);
+            a.FillCDC_APPLICAZIONE(ds);
+        }
+
+        [DataContext(true)]
+        public void UpdateCDCSPESSORE(CDCDS ds)
+        {
+            CDCMetalAdapter a = new CDCMetalAdapter(DbConnection, DbTransaction);
+            a.UpdateTable(ds.CDC_GALVANICA.TableName, ds);
+            a.UpdateTable(ds.CDC_SPESSORE.TableName, ds);
+            a.UpdateTable(ds.CDC_MISURE.TableName, ds);
+        }
     }
 }

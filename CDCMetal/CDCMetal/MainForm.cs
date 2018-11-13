@@ -67,6 +67,7 @@ namespace CDCMetal
             Contesto.PathSchedeTecniche = CDCMetal.Properties.Settings.Default.PathSchedeTecnic;
             Contesto.PathRefertiLaboratorio = Properties.Settings.Default.PathRefertiLaboratorio;
             Contesto.StrumentoColore = Properties.Settings.Default.StrumentoColore;
+            Contesto.StrumentoSpessore = Properties.Settings.Default.StrumentoSpessore;
             Contesto.PathCollaudo = CDCMetal.Properties.Settings.Default.PathCollaudo;
 #if DEBUG
             Contesto.PathCollaudo = @"C:\Temp\CDC\CARTELLACOLLAUDO";
@@ -284,6 +285,22 @@ namespace CDCMetal
             catch (Exception ex)
             {
                 LogScriviErrore("ERRORE IN MOSTRA LISTA PDF", ex);
+                ExceptionFrm frm = new ExceptionFrm(ex);
+                frm.ShowDialog();
+            }
+        }
+
+        private void spessoriToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                CreaSpessoreFrm form = new CreaSpessoreFrm();
+                form.MdiParent = this;
+                form.Show();
+            }
+            catch (Exception ex)
+            {
+                LogScriviErrore("ERRORE IN CREA CERTIFICATO SPESSORE", ex);
                 ExceptionFrm frm = new ExceptionFrm(ex);
                 frm.ShowDialog();
             }

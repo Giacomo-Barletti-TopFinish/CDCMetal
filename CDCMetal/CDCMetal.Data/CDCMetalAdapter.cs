@@ -44,7 +44,7 @@ namespace CDCMetal.Data
         public void UpdateTable(string tablename, CDCDS ds)
         {
             string query = string.Format(CultureInfo.InvariantCulture, "SELECT * FROM {0}", tablename);
-            
+
             using (DbDataAdapter a = BuildDataAdapter(query))
             {
                 try
@@ -56,7 +56,8 @@ namespace CDCMetal.Data
                     a.DeleteCommand = cmd.GetDeleteCommand();
                     a.InsertCommand = cmd.GetInsertCommand();
                     a.Update(dt);
-                }catch(DBConcurrencyException ex)
+                }
+                catch (DBConcurrencyException ex)
                 {
 
                 }
@@ -204,6 +205,63 @@ namespace CDCMetal.Data
             using (DbDataAdapter da = BuildDataAdapter(query))
             {
                 da.Fill(ds.CDC_COLORE);
+            }
+        }
+
+        public void FillCDC_GALVANICA(CDCDS ds, List<decimal> IDDETTAGLIO)
+        {
+            string selezione = ConvertToStringForInCondition(IDDETTAGLIO);
+            string select = @"SELECT * FROM CDC_GALVANICA WHERE IDDETTAGLIO IN ({0}) ";
+
+            string query = string.Format(select, selezione);
+
+            using (DbDataAdapter da = BuildDataAdapter(query))
+            {
+                da.Fill(ds.CDC_GALVANICA);
+            }
+        }
+
+        public void FillCDC_MISURE(CDCDS ds, List<decimal> IDDETTAGLIO)
+        {
+            string selezione = ConvertToStringForInCondition(IDDETTAGLIO);
+            string select = @"SELECT DISTINCT DET.* FROM CDC_MISURE DET
+                                INNER JOIN CDC_GALVANICA CD ON CD.IDGALVANICA = DET.IDGALVANICA 
+                                WHERE CD.IDDETTAGLIO IN ({0}) ORDER BY DET.IDGALVANICA,DET.NMISURA,DET.NCOLONNA";
+
+            string query = string.Format(select, selezione);
+
+            using (DbDataAdapter da = BuildDataAdapter(query))
+            {
+                da.Fill(ds.CDC_MISURE);
+            }
+        }
+
+        public void FillCDC_SPESSORE(CDCDS ds)
+        {
+            string select = @"SELECT * FROM CDC_SPESSORE";
+
+            using (DbDataAdapter da = BuildDataAdapter(select))
+            {
+                da.Fill(ds.CDC_SPESSORE);
+            }
+        }
+
+        public void FillCDC_MISURA_COLORE(CDCDS ds)
+        {
+            string select = @"SELECT * FROM CDC_MISURA_COLORE ORDER BY CODICEEXCEL,SEQUENZA";
+
+            using (DbDataAdapter da = BuildDataAdapter(select))
+            {
+                da.Fill(ds.CDC_MISURA_COLORE);
+            }
+        }
+        public void FillCDC_APPLICAZIONE(CDCDS ds)
+        {
+            string select = @"SELECT * FROM CDC_APPLICAZIONE";
+
+            using (DbDataAdapter da = BuildDataAdapter(select))
+            {
+                da.Fill(ds.CDC_APPLICAZIONE);
             }
         }
     }

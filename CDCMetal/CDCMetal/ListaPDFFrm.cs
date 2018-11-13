@@ -130,7 +130,7 @@ namespace CDCMetal
                 CDCDS.CDC_PDFRow PDF = Contesto.DS.CDC_PDF.Where(x => x.IDDETTAGLIO == dettaglio.IDDETTAGLIO && x.TIPO == CDCTipoPDF.CERTIFICATOCONFORMITA).FirstOrDefault();
                 riga[9] = PDF == null ? false : true;
 
-                 PDF = Contesto.DS.CDC_PDF.Where(x => x.IDDETTAGLIO == dettaglio.IDDETTAGLIO && x.TIPO == CDCTipoPDF.CERTIFICATODIMENSIONALE).FirstOrDefault();
+                PDF = Contesto.DS.CDC_PDF.Where(x => x.IDDETTAGLIO == dettaglio.IDDETTAGLIO && x.TIPO == CDCTipoPDF.CERTIFICATODIMENSIONALE).FirstOrDefault();
                 riga[10] = PDF == null ? false : true;
 
                 PDF = Contesto.DS.CDC_PDF.Where(x => x.IDDETTAGLIO == dettaglio.IDDETTAGLIO && x.TIPO == CDCTipoPDF.CERTIFICATOANTIALLERGICO).FirstOrDefault();
@@ -139,7 +139,7 @@ namespace CDCMetal
                 PDF = Contesto.DS.CDC_PDF.Where(x => x.IDDETTAGLIO == dettaglio.IDDETTAGLIO && x.TIPO == CDCTipoPDF.CERTIFICATOCOLORIMETRICO).FirstOrDefault();
                 riga[12] = PDF == null ? false : true;
 
-                PDF = Contesto.DS.CDC_PDF.Where(x => x.IDDETTAGLIO == dettaglio.IDDETTAGLIO && x.TIPO == CDCTipoPDF.CERTIFICATOMISURA).FirstOrDefault();
+                PDF = Contesto.DS.CDC_PDF.Where(x => x.IDDETTAGLIO == dettaglio.IDDETTAGLIO && x.TIPO == CDCTipoPDF.CERTIFICATOSPESSORE).FirstOrDefault();
                 riga[13] = PDF == null ? false : true;
 
                 dtCartelle.Rows.Add(riga);

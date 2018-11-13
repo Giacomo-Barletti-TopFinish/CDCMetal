@@ -22,6 +22,16 @@ namespace CDCMetal.BLL
             }
         }
 
+        public void LeggiTabelleSpessori(CDCDS ds)
+        {
+            using (CDCMetalBusiness bCDCMetal = new CDCMetalBusiness())
+            {
+                bCDCMetal.FillCDC_SPESSORE(ds);
+                bCDCMetal.FillCDC_APPLICAZIONE(ds);
+                bCDCMetal.FillCDC_MISURA_COLORE(ds);
+            }
+        }
+
         public void LeggiCollaudoDaData(CDCDS ds, DateTime dataSelezionata)
         {
             using (CDCMetalBusiness bCDCMetal = new CDCMetalBusiness())
@@ -63,10 +73,22 @@ namespace CDCMetal.BLL
             }
         }
 
+        public void FillCDC_GALVANICA(CDCDS ds, List<decimal> IDDETTAGLIO)
+        {
+            using (CDCMetalBusiness bCDCMetal = new CDCMetalBusiness())
+            {
+                ds.CDC_GALVANICA.Clear();
+                ds.CDC_DIMEMSIONI_MISURE.Clear();
+                bCDCMetal.FillCDC_GALVANICA(ds, IDDETTAGLIO);
+                bCDCMetal.FillCDC_MISURE(ds, IDDETTAGLIO);
+            }
+        }
+
         public void CDC_PDF(CDCDS ds, List<decimal> IDDETTAGLIO)
         {
             using (CDCMetalBusiness bCDCMetal = new CDCMetalBusiness())
             {
+                ds.CDC_PDF.Clear();
                 bCDCMetal.CDC_PDF(ds, IDDETTAGLIO);
             }
         }
@@ -202,8 +224,8 @@ namespace CDCMetal.BLL
                 {
                     throw new Exception("IMPOSSIBILE TROVARE CDC DETTAGLIO DA CDC ANTIALLERGICO'");
                 }
-                //  DateTime dt = DateTime.ParseExact(dettaglio.DATACOLLAUDO, "dd/MM/yyyy", CultureInfo.InvariantCulture);
-                DateTime dt = DateTime.Today;
+                DateTime dt = DateTime.ParseExact(dettaglio.DATACOLLAUDO, "dd/MM/yyyy", CultureInfo.InvariantCulture);
+                //DateTime dt = DateTime.Today;
                 string cartella = CreaPathCartella(dt, pathCollaudo, dettaglio.ACCESSORISTA, dettaglio.PREFISSO, dettaglio.PARTE, dettaglio.COLORE, dettaglio.COMMESSAORDINE);
                 bool nichelFree = antiallergico.NICHELFREE == "S" ? true : false;
 
@@ -219,7 +241,7 @@ namespace CDCMetal.BLL
                 if (File.Exists(path))
                     File.Delete(path);
 
-                CreaCDCAntiallergico(path, nichelFree, dettaglio.DATACOLLAUDO, antiallergico.DATAPRODUZIONE.ToShortDateString(), dettaglio.PREFISSO, dettaglio.PARTE, dettaglio.COLORE, dettaglio.COMMESSAORDINE, dettaglio.QUANTITA.ToString(), image);
+                CreaCDCAntiallergico(path, nichelFree, antiallergico.DATAPRODUZIONE.ToShortDateString(), antiallergico.DATAPRODUZIONE.ToShortDateString(), dettaglio.PREFISSO, dettaglio.PARTE, dettaglio.COLORE, dettaglio.COMMESSAORDINE, dettaglio.QUANTITA.ToString(), image);
 
                 if (CopiaReferto)
                 {
@@ -291,7 +313,7 @@ namespace CDCMetal.BLL
                         Conforme = coloreRow.CONFORME == "S" ? "OK" : "KO",
                         ControlloColore = coloreRow.COLORE + "'",
                         Richiesto = coloreRow.RICHIESTO,
-                        Rilevato = coloreRow.IsRILEVATONull()?string.Empty:coloreRow.RILEVATO,
+                        Rilevato = coloreRow.IsRILEVATONull() ? string.Empty : coloreRow.RILEVATO,
                         Tolleranza = coloreRow.IsTOLLERANZANull() ? string.Empty : coloreRow.TOLLERANZA,
                     };
                     misure.Add(m);
@@ -451,6 +473,47 @@ string strumentoMisura, string nota, List<MisuraColore> misure, byte[] iloghi)
 
 
             return path;
+        }
+
+        public decimal InserisciCDCGalvanica(CDCDS ds, decimal spessore, decimal IDDETTAGLIO, string applicazione, string strumentoMisura, int misurePreCampione, string utente)
+        {
+            using (CDCMetalBusiness bCDCMetal = new CDCMetalBusiness())
+            {
+                CDCDS.CDC_GALVANICARow galvanica = ds.CDC_GALVANICA.Where(x => x.IDDETTAGLIO == IDDETTAGLIO).FirstOrDefault();
+                if (galvanica == null)
+                {
+                    galvanica = ds.CDC_GALVANICA.NewCDC_GALVANICARow();
+                    galvanica.APPLICAZIONE = applicazione;
+                    galvanica.DATAREFERTO = DateTime.Today;
+                    galvanica.IDDETTAGLIO = IDDETTAGLIO;
+                    galvanica.IDGALVANICA = (decimal)bCDCMetal.GetID();
+                    galvanica.SPESSORE = spessore.ToString();
+                    galvanica.UTENTE = utente;
+                    galvanica.STRUMENTO = strumentoMisura;
+                    galvanica.MISURECAMPIONE = misurePreCampione;
+                    ds.CDC_GALVANICA.AddCDC_GALVANICARow(galvanica);
+                }
+                else
+                {
+                    galvanica.APPLICAZIONE = applicazione;
+                    galvanica.DATAREFERTO = DateTime.Today;
+                    galvanica.SPESSORE = spessore.ToString();
+                    galvanica.UTENTE = utente;
+                    galvanica.MISURECAMPIONE = misurePreCampione;
+                    galvanica.STRUMENTO = strumentoMisura;
+                }
+
+                return galvanica.IDGALVANICA;
+            }
+        }
+
+        public void SalvaCDCSpessori(CDCDS ds)
+        {
+            using (CDCMetalBusiness bCDCMetal = new CDCMetalBusiness())
+            {
+                bCDCMetal.UpdateCDCSPESSORE(ds);
+                ds.AcceptChanges();
+            }
         }
     }
 }

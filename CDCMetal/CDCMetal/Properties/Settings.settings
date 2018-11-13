@@ -14,5 +14,8 @@
     <Setting Name="StrumentoColore" Type="System.String" Scope="Application">
       <Value Profile="(Default)">KONICA MINOLTA CM-A145</Value>
     </Setting>
+    <Setting Name="StrumentoSpessore" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">XRF Bowman serie P (S/N P1718131)</Value>
+    </Setting>
   </Settings>
 </SettingsFile>

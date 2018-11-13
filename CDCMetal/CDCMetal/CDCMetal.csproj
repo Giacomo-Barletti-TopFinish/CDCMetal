@@ -24,9 +24,9 @@
     <UpdateRequired>true</UpdateRequired>
     <MapFileExtensions>true</MapFileExtensions>
     <InstallUrl>\\srv-webservices\publish\CDCMetal\</InstallUrl>
-    <MinimumRequiredVersion>1.0.0.17</MinimumRequiredVersion>
+    <MinimumRequiredVersion>1.0.0.18</MinimumRequiredVersion>
     <OpenBrowserOnPublish>false</OpenBrowserOnPublish>
-    <ApplicationRevision>18</ApplicationRevision>
+    <ApplicationRevision>19</ApplicationRevision>
     <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
     <UseApplicationTrust>false</UseApplicationTrust>
     <PublishWizardCompleted>true</PublishWizardCompleted>
@@ -114,6 +114,12 @@
     <Compile Include="CreaDimensionaleFrm.Designer.cs">
       <DependentUpon>CreaDimensionaleFrm.cs</DependentUpon>
     </Compile>
+    <Compile Include="CreaSpessoreFrm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CreaSpessoreFrm.Designer.cs">
+      <DependentUpon>CreaSpessoreFrm.cs</DependentUpon>
+    </Compile>
     <Compile Include="ExcelCaricaNuovoDocumentoFrm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -160,6 +166,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="CreaDimensionaleFrm.resx">
       <DependentUpon>CreaDimensionaleFrm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CreaSpessoreFrm.resx">
+      <DependentUpon>CreaSpessoreFrm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="ExcelCaricaNuovoDocumentoFrm.resx">
       <DependentUpon>ExcelCaricaNuovoDocumentoFrm.cs</DependentUpon>

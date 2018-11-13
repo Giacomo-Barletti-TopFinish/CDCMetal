@@ -16,6 +16,7 @@ namespace CDCMetal
     {
         private DataSet _dsServizio = new DataSet();
         private string tableName = "COLORIMETRICO";
+        private Random _rnd = new Random(DateTime.Now.Millisecond);
         public CreaColorimetricoFrm()
         {
             InitializeComponent();
@@ -368,7 +369,7 @@ namespace CDCMetal
 
         private string CalcolaValoreRilevato(string colore, string CDCColore)
         {
-            Random rnd = new Random(DateTime.Now.Millisecond);
+            
             decimal constante = 1.01M;
             if (CDCColore == CDCTipoColore.L)
                 switch (colore)
@@ -378,7 +379,7 @@ namespace CDCMetal
                     case "0953":
                         {
                             //19  =CASUALE.TRA(8300;8500)/100*T18                       
-                            int i = rnd.Next(8300, 8500);
+                            int i = _rnd.Next(8300, 8500);
                             decimal aux = i * constante;
                             aux = aux / 100;
                             return aux.ToString("F2");
@@ -387,7 +388,7 @@ namespace CDCMetal
                     case "0901":
                         //16    =CASUALE.TRA(8350;8400)/100*T18
                         {
-                            int i = rnd.Next(8350, 8400);
+                            int i = _rnd.Next(8350, 8400);
                             decimal aux = i * constante;
                             aux = aux / 100;
                             return aux.ToString("F2");
@@ -397,7 +398,7 @@ namespace CDCMetal
                     case "0921":
                         //20  =CASUALE.TRA(8300;8500)/100*T18
                         {
-                            int i = rnd.Next(8300, 8500);
+                            int i = _rnd.Next(8300, 8500);
                             decimal aux = i * constante;
                             aux = aux / 100;
                             return aux.ToString("F2");
@@ -408,7 +409,7 @@ namespace CDCMetal
                     case "8931":
                         //18  =CASUALE.TRA(8350;8400)/100*T18
                         {
-                            int i = rnd.Next(8350, 8400);
+                            int i = _rnd.Next(8350, 8400);
                             decimal aux = i * constante;
                             aux = aux / 100;
                             return aux.ToString("F2");
@@ -416,7 +417,7 @@ namespace CDCMetal
                     case "8130":
                         //17 =CASUALE.TRA(6450;6500)/100*T18
                         {
-                            int i = rnd.Next(6450, 6500);
+                            int i = _rnd.Next(6450, 6500);
                             decimal aux = i * constante;
                             aux = aux / 100;
                             return aux.ToString("F2");
@@ -431,7 +432,7 @@ namespace CDCMetal
                     case "0953":
                         {
                             //19  =CASUALE.TRA(2200;2600)/1000*T18                     
-                            int i = rnd.Next(2200, 2600);
+                            int i = _rnd.Next(2200, 2600);
                             decimal aux = i * constante;
                             aux = aux / 100;
                             return aux.ToString("F2");
@@ -440,7 +441,7 @@ namespace CDCMetal
                     case "0901":
                         {
                             //16 =CASUALE.TRA(680;750)/100*T18                     
-                            int i = rnd.Next(680, 750);
+                            int i = _rnd.Next(680, 750);
                             decimal aux = i * constante;
                             aux = aux / 100;
                             return aux.ToString("F2");
@@ -450,7 +451,7 @@ namespace CDCMetal
                     case "0921":
                         {
                             //20  =CASUALE.TRA(450;550)/100*T18                       
-                            int i = rnd.Next(450, 550);
+                            int i = _rnd.Next(450, 550);
                             decimal aux = i * constante;
                             aux = aux / 100;
                             return aux.ToString("F2");
@@ -478,7 +479,7 @@ namespace CDCMetal
                     case "0953":
                         {
                             //19  =CASUALE.TRA(1400;1500)/100*T18                    
-                            int i = rnd.Next(1400, 1500);
+                            int i = _rnd.Next(1400, 1500);
                             decimal aux = i * constante;
                             aux = aux / 100;
                             return aux.ToString("F2");
@@ -487,7 +488,7 @@ namespace CDCMetal
                     case "0901":
                         {
                             //16=CASUALE.TRA(3150;3250)/100*T18                    
-                            int i = rnd.Next(3150, 3250);
+                            int i = _rnd.Next(3150, 3250);
                             decimal aux = i * constante;
                             aux = aux / 100;
                             return aux.ToString("F2");
@@ -497,7 +498,7 @@ namespace CDCMetal
                     case "0921":
                         {
                             //20 =CASUALE.TRA(2450;2650)/100*T18                      
-                            int i = rnd.Next(2450, 2650);
+                            int i = _rnd.Next(2450, 2650);
                             decimal aux = i * constante;
                             aux = aux / 100;
                             return aux.ToString("F2");
