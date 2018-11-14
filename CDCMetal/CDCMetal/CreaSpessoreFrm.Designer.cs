@@ -276,6 +276,7 @@
             // 
             // ddlCodiceExcel
             // 
+            this.ddlCodiceExcel.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.ddlCodiceExcel.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.ddlCodiceExcel.FormattingEnabled = true;
             this.ddlCodiceExcel.Location = new System.Drawing.Point(221, 384);

@@ -50,3 +50,4 @@ C:\VSProgetti\CDCMetal\CDCMetal\CDCMetal\obj\Release\CDCMetal.CreaDimensionaleFr
 C:\VSProgetti\CDCMetal\CDCMetal\CDCMetal\obj\Release\CDCMetal.CreaAntiallergicoFrm.resources
 C:\VSProgetti\CDCMetal\CDCMetal\CDCMetal\obj\Release\CDCMetal.CreaColorimetricoFrm.resources
 C:\VSProgetti\CDCMetal\CDCMetal\CDCMetal\obj\Release\CDCMetal.ListaPDFFrm.resources
+C:\VSProgetti\CDCMetal\CDCMetal\CDCMetal\obj\Release\CDCMetal.CreaSpessoreFrm.resources

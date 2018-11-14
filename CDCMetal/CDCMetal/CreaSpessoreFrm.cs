@@ -121,6 +121,8 @@ namespace CDCMetal
         private void ImpostaApplicazione(string colore)
         {
             ddlCodiceExcel.Items.Clear();
+            ddlCodiceExcel.SelectedIndex = -1;
+            ddlCodiceExcel.Text = string.Empty;
             txtApplicazione.Text = string.Empty;
             List<CDCDS.CDC_APPLICAZIONERow> applicazioni = Contesto.DS.CDC_APPLICAZIONE.Where(x => x.COLORE == colore).ToList();
             if (applicazioni.Count > 0)
