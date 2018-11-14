@@ -1186,7 +1186,386 @@ string strumentoMisura, string nota, List<MisuraColore> misure, byte[] iloghi)
 
         }
 
+        public void CreaReportSpessori(DateTime data, string commessa, string operatore, string spessoreRichiesto, string applicazione, string strumentoMisura, int numeroMisure,
+          List<string> etichette, List<string> medie, List<string> Std, List<string> Pct, List<string> range, List<string> minimo, List<string> massimo, byte[] iloghi,
+          byte[] iBowman, List<List<string>> misure)
+        {
 
+            document.Info.Title = "Spessori";
+            document.Info.Subject = String.Empty;
+            document.Info.Author = string.Empty;
+
+            Section section = document.AddSection();
+
+            DefineBasicStyles();
+
+            document.DefaultPageSetup.BottomMargin = Unit.FromCentimeter(0.5);
+            document.DefaultPageSetup.TopMargin = Unit.FromCentimeter(0.5);
+            document.DefaultPageSetup.LeftMargin = Unit.FromCentimeter(0.3);
+            document.DefaultPageSetup.RightMargin = Unit.FromCentimeter(0.3);
+
+            Color grigio = Color.FromRgb(191, 191, 191);
+
+            Table table = new Table();
+            table.Borders.Width = 0;
+
+            Column column = table.AddColumn(Unit.FromCentimeter(11));
+            column = table.AddColumn(Unit.FromCentimeter(3.5));
+            column = table.AddColumn(Unit.FromCentimeter(5.5));
+
+            Row row = table.AddRow();
+            row.Height = Unit.FromCentimeter(4);
+
+            Cell cell = row.Cells[0];
+            cell.Format.Alignment = ParagraphAlignment.Left;
+            cell.VerticalAlignment = VerticalAlignment.Center;
+            Paragraph p = cell.AddParagraph("Top Finish 2002 S.p.A.");
+            p.Format.Font.Size = 22;
+            p.Format.Font.Bold = true;
+            p = cell.AddParagraph("Viale Kennedy nr. 103 int F -50038 - Scarperia e San Piero(FI)");
+            p.Format.Font.Bold = true;
+            p = cell.AddParagraph("Tel. 39 055 843611 - Fax 39 055 8436130");
+            p.Format.Font.Bold = true;
+            p = cell.AddParagraph("www.topfinish.it - info@topfinish.it");
+            p.Format.Font.Bold = true;
+            p = cell.AddParagraph("P.IVA e C.F: 04949200481");
+            p.Format.Font.Bold = true;
+
+            cell = row.Cells[1];
+            cell.Format.Alignment = ParagraphAlignment.Center;
+            cell.VerticalAlignment = VerticalAlignment.Center;
+            cell.Format.Font.Bold = true;
+            cell.Format.Font.Size = 18;
+            p = cell.AddParagraph();
+            string fileImage = MigraDocFilenameFromByteArray(iloghi);
+            p.AddImage(fileImage);
+
+            cell = row.Cells[2];
+            cell.Format.Alignment = ParagraphAlignment.Center;
+            cell.VerticalAlignment = VerticalAlignment.Center;
+            p = cell.AddParagraph();
+            fileImage = MigraDocFilenameFromByteArray(iBowman);
+            p.AddImage(fileImage);
+
+            table.SetEdge(0, 0, 3, 1, Edge.Bottom, BorderStyle.Single, 0.75);
+
+            document.LastSection.Add(table);
+            document.LastSection.AddParagraph();
+
+            table = new Table();
+            table.Borders.Width = 0.75;
+
+            column = table.AddColumn(Unit.FromCentimeter(3.9));
+            column = table.AddColumn(Unit.FromCentimeter(7.1));
+            column.Shading.Color = grigio;
+
+            row = table.AddRow();
+            row.Height = Unit.FromCentimeter(0.5);
+
+            cell = row.Cells[0];
+            cell.Format.Alignment = ParagraphAlignment.Left;
+            cell.VerticalAlignment = VerticalAlignment.Center;
+            p = cell.AddParagraph("Strumento:");
+            p.Format.Font.Bold = true;
+
+            cell = row.Cells[1];
+            cell.Format.Alignment = ParagraphAlignment.Left;
+            cell.VerticalAlignment = VerticalAlignment.Center;
+            p = cell.AddParagraph(strumentoMisura);
+
+            row = table.AddRow();
+            row.Height = Unit.FromCentimeter(0.5);
+
+            cell = row.Cells[0];
+            cell.Format.Alignment = ParagraphAlignment.Left;
+            cell.VerticalAlignment = VerticalAlignment.Center;
+            p = cell.AddParagraph("Operatore:");
+            p.Format.Font.Bold = true;
+
+            cell = row.Cells[1];
+            cell.Format.Alignment = ParagraphAlignment.Left;
+            cell.VerticalAlignment = VerticalAlignment.Center;
+            p = cell.AddParagraph(operatore);
+
+            row = table.AddRow();
+            row.Height = Unit.FromCentimeter(0.5);
+
+            cell = row.Cells[0];
+            cell.Format.Alignment = ParagraphAlignment.Left;
+            cell.VerticalAlignment = VerticalAlignment.Center;
+            p = cell.AddParagraph("Commessa:");
+            p.Format.Font.Bold = true;
+
+            cell = row.Cells[1];
+            cell.Format.Alignment = ParagraphAlignment.Left;
+            cell.VerticalAlignment = VerticalAlignment.Center;
+            p = cell.AddParagraph(commessa);
+
+            row = table.AddRow();
+            row.Height = Unit.FromCentimeter(0.5);
+
+            cell = row.Cells[0];
+            cell.Format.Alignment = ParagraphAlignment.Left;
+            cell.VerticalAlignment = VerticalAlignment.Center;
+            p = cell.AddParagraph("Spessore richiesto:");
+            p.Format.Font.Bold = true;
+
+            cell = row.Cells[1];
+            cell.Format.Alignment = ParagraphAlignment.Left;
+            cell.VerticalAlignment = VerticalAlignment.Center;
+            p = cell.AddParagraph(spessoreRichiesto);
+
+            row = table.AddRow();
+            row.Height = Unit.FromCentimeter(0.5);
+
+            cell = row.Cells[0];
+            cell.Format.Alignment = ParagraphAlignment.Left;
+            cell.VerticalAlignment = VerticalAlignment.Center;
+            p = cell.AddParagraph("Applicazione:");
+            p.Format.Font.Bold = true;
+
+            cell = row.Cells[1];
+            cell.Format.Alignment = ParagraphAlignment.Left;
+            cell.VerticalAlignment = VerticalAlignment.Center;
+            p = cell.AddParagraph(applicazione);
+
+            row = table.AddRow();
+            row.Height = Unit.FromCentimeter(0.5);
+
+            cell = row.Cells[0];
+            cell.Format.Alignment = ParagraphAlignment.Left;
+            cell.VerticalAlignment = VerticalAlignment.Center;
+            p = cell.AddParagraph("Data:");
+            p.Format.Font.Bold = true;
+
+            cell = row.Cells[1];
+            cell.Format.Alignment = ParagraphAlignment.Left;
+            cell.VerticalAlignment = VerticalAlignment.Center;
+            string str = data.ToLongDateString();
+            p = cell.AddParagraph(str);
+            document.LastSection.Add(table);
+
+            document.LastSection.AddParagraph();
+
+            // TABELLA AGGREGATI
+
+            table = new Table();
+            table.Borders.Width = 0.75;
+
+            column = table.AddColumn(Unit.FromCentimeter(4));
+            column.Shading.Color = grigio;
+            column = table.AddColumn(Unit.FromCentimeter(1.8));
+            column = table.AddColumn(Unit.FromCentimeter(1.8));
+            column = table.AddColumn(Unit.FromCentimeter(1.8));
+            column = table.AddColumn(Unit.FromCentimeter(1.8));
+            column = table.AddColumn(Unit.FromCentimeter(1.8));
+            column = table.AddColumn(Unit.FromCentimeter(1.8));
+            column = table.AddColumn(Unit.FromCentimeter(1.8));
+            column = table.AddColumn(Unit.FromCentimeter(1.8));
+
+            row = table.AddRow();
+            row.Height = Unit.FromCentimeter(0.5);
+
+            cell = row.Cells[0];
+            cell.Format.Alignment = ParagraphAlignment.Center;
+            cell.VerticalAlignment = VerticalAlignment.Center;
+            p = cell.AddParagraph("Statistiche");
+            for (int i = 0; i < 8; i++)
+            {
+                cell = row.Cells[i + 1];
+                cell.Format.Alignment = ParagraphAlignment.Center;
+                cell.VerticalAlignment = VerticalAlignment.Center;
+                if (i < etichette.Count)
+                {
+                    p = cell.AddParagraph(etichette[i]);
+                    p.Format.Font.Bold = true;
+                }
+            }
+
+            row = table.AddRow();
+            row.Height = Unit.FromCentimeter(0.5);
+
+            for (int i = 0; i < 9; i++)
+            {
+                cell = row.Cells[i];
+                cell.Format.Alignment = ParagraphAlignment.Center;
+                cell.VerticalAlignment = VerticalAlignment.Center;
+                if (i < medie.Count)
+                {
+                    p = cell.AddParagraph(medie[i]);
+                }
+            }
+
+            row = table.AddRow();
+            row.Height = Unit.FromCentimeter(0.5);
+
+            for (int i = 0; i < 9; i++)
+            {
+                cell = row.Cells[i];
+                cell.Format.Alignment = ParagraphAlignment.Center;
+                cell.VerticalAlignment = VerticalAlignment.Center;
+                if (i < Std.Count)
+                {
+                    p = cell.AddParagraph(Std[i]);
+                }
+            }
+
+            row = table.AddRow();
+            row.Height = Unit.FromCentimeter(0.5);
+
+            for (int i = 0; i < 9; i++)
+            {
+                cell = row.Cells[i];
+                cell.Format.Alignment = ParagraphAlignment.Center;
+                cell.VerticalAlignment = VerticalAlignment.Center;
+                if (i < Pct.Count)
+                {
+                    p = cell.AddParagraph(Pct[i]);
+                }
+            }
+
+            row = table.AddRow();
+            row.Height = Unit.FromCentimeter(0.5);
+
+            for (int i = 0; i < 9; i++)
+            {
+                cell = row.Cells[i];
+                cell.Format.Alignment = ParagraphAlignment.Center;
+                cell.VerticalAlignment = VerticalAlignment.Center;
+                if (i < range.Count)
+                {
+                    p = cell.AddParagraph(range[i]);
+                }
+            }
+
+            row = table.AddRow();
+            row.Height = Unit.FromCentimeter(0.5);
+
+            for (int i = 0; i < 9; i++)
+            {
+                cell = row.Cells[i];
+                cell.Format.Alignment = ParagraphAlignment.Center;
+                cell.VerticalAlignment = VerticalAlignment.Center;
+                if (i < minimo.Count)
+                {
+                    p = cell.AddParagraph(minimo[i]);
+                }
+            }
+
+            row = table.AddRow();
+            row.Height = Unit.FromCentimeter(0.5);
+
+            for (int i = 0; i < 9; i++)
+            {
+                cell = row.Cells[i];
+                cell.Format.Alignment = ParagraphAlignment.Center;
+                cell.VerticalAlignment = VerticalAlignment.Center;
+                if (i < massimo.Count)
+                {
+                    p = cell.AddParagraph(massimo[i]);
+                }
+            }
+
+            document.LastSection.Add(table);
+
+            table = new Table();
+            table.Borders.Width = 0.75;
+
+            column = table.AddColumn(Unit.FromCentimeter(4));
+            column.Shading.Color = grigio;
+            column = table.AddColumn(Unit.FromCentimeter(1.8));
+            row = table.AddRow();
+            row.Height = Unit.FromCentimeter(0.5);
+
+            cell = row.Cells[0];
+            cell.Format.Alignment = ParagraphAlignment.Center;
+            cell.VerticalAlignment = VerticalAlignment.Center;
+            p = cell.AddParagraph("Misure totali");
+            p.Format.Font.Bold = true;
+
+            cell = row.Cells[1];
+            cell.Format.Alignment = ParagraphAlignment.Center;
+            cell.VerticalAlignment = VerticalAlignment.Center;
+            p = cell.AddParagraph(numeroMisure.ToString());
+
+            table.SetEdge(0, 0, 2, 1, Edge.Top, BorderStyle.None, 0);
+
+            document.LastSection.Add(table);
+
+            document.LastSection.AddParagraph();
+
+            // TABELLA MISURE
+
+            table = new Table();
+            table.Borders.Width = 0.75;
+
+            column = table.AddColumn(Unit.FromCentimeter(4));
+            column = table.AddColumn(Unit.FromCentimeter(1.8));
+            column = table.AddColumn(Unit.FromCentimeter(1.8));
+            column = table.AddColumn(Unit.FromCentimeter(1.8));
+            column = table.AddColumn(Unit.FromCentimeter(1.8));
+            column = table.AddColumn(Unit.FromCentimeter(1.8));
+            column = table.AddColumn(Unit.FromCentimeter(1.8));
+            column = table.AddColumn(Unit.FromCentimeter(1.8));
+            column = table.AddColumn(Unit.FromCentimeter(1.8));
+            column = table.AddColumn(Unit.FromCentimeter(1.8));
+
+            row = table.AddRow();
+            row.Height = Unit.FromCentimeter(0.5);
+            row.Shading.Color = grigio;
+
+            cell = row.Cells[0];
+            cell.Format.Alignment = ParagraphAlignment.Center;
+            cell.VerticalAlignment = VerticalAlignment.Center;
+            p = cell.AddParagraph("Data");
+
+            cell = row.Cells[1];
+            cell.Format.Alignment = ParagraphAlignment.Center;
+            cell.VerticalAlignment = VerticalAlignment.Center;
+            p = cell.AddParagraph("Misura");
+
+            for (int i = 0; i < 8; i++)
+            {
+                cell = row.Cells[i + 2];
+                cell.Format.Alignment = ParagraphAlignment.Center;
+                cell.VerticalAlignment = VerticalAlignment.Center;
+                if (i < etichette.Count)
+                {
+                    p = cell.AddParagraph(etichette[i]);
+                }
+            }
+
+            for (int riga = 0; riga < 24; riga++)
+            {
+                row = table.AddRow();
+                row.Height = Unit.FromCentimeter(0.5);
+
+                if (riga < misure.Count)
+                {
+                    List<string> misura = misure[riga];
+                    cell = row.Cells[0];
+                    cell.Format.Alignment = ParagraphAlignment.Center;
+                    cell.VerticalAlignment = VerticalAlignment.Center;
+
+                    p = cell.AddParagraph(data.ToShortDateString());
+                    for (int colonna = 0; colonna < 9; colonna++)
+                    {
+                        if (colonna < misura.Count)
+                        {
+                            cell = row.Cells[colonna + 1];
+                            cell.Format.Alignment = ParagraphAlignment.Center;
+                            cell.VerticalAlignment = VerticalAlignment.Center;
+
+                            p = cell.AddParagraph(misura[colonna]);
+                        }
+                    }
+
+                }
+            }
+
+            document.LastSection.Add(table);
+
+        }
 
     }
 

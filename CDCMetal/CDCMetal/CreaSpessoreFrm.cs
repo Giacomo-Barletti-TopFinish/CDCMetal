@@ -4,6 +4,7 @@ using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Diagnostics;
 using System.Drawing;
 using System.Linq;
 using System.Text;
@@ -500,73 +501,124 @@ namespace CDCMetal
 
         private void btnCreaPDF_Click(object sender, EventArgs e)
         {
-            lblMessaggio.Text = string.Empty;
-            if (nSpessore.Value == 0)
+            string filename = string.Empty;
+
+            try
             {
-                lblMessaggio.Text = "Impostare lo spessore richiesto";
-                return;
-            }
-
-            if (_dsServizio.Tables[tblAggregati].Rows.Count == 0)
-            {
-                lblMessaggio.Text = "Creare i campioni per la misura";
-                return;
-            }
-
-            if (_dettaglio == null)
-            {
-                lblMessaggio.Text = "Selezionare un collaudo";
-                return;
-            }
-
-            if (string.IsNullOrEmpty(txtApplicazione.Text))
-            {
-                lblMessaggio.Text = "Il campo applicazione è vuoto impossibile procedere";
-                return;
-            }
-
-            CDCDS.CDC_SPESSORERow spessore = Contesto.DS.CDC_SPESSORE.Where(x => x.COLORE == _dettaglio.COLORE).FirstOrDefault();
-            if (spessore == null)
-            {
-                spessore = Contesto.DS.CDC_SPESSORE.NewCDC_SPESSORERow();
-                spessore.COLORE = _dettaglio.COLORE;
-                spessore.SPESSORE = nSpessore.Value.ToString();
-                Contesto.DS.CDC_SPESSORE.AddCDC_SPESSORERow(spessore);
-            }
-            else
-            {
-                spessore.SPESSORE = nSpessore.Value.ToString();
-            }
-
-            decimal IDDETTAGLIO = _dettaglio.IDDETTAGLIO;
-
-            CDCBLL bll = new CDCBLL();
-            int misurePerCampione = (int)nMisurePerCampione.Value;
-            decimal IDGALVANICA = bll.InserisciCDCGalvanica(Contesto.DS, nSpessore.Value, IDDETTAGLIO, txtApplicazione.Text, Contesto.StrumentoSpessore, misurePerCampione, Contesto.Utente.FULLNAMEUSER);
-
-            foreach (CDCDS.CDC_MISURERow row in Contesto.DS.CDC_MISURE.Where(x => x.IDGALVANICA == IDGALVANICA))
-                row.Delete();
-
-            foreach (DataRow riga in _dsServizio.Tables[tableName].Rows)
-            {
-
-                for (int j = 0; j < _dsServizio.Tables[tableName].Columns.Count - 3; j++)
+                Cursor.Current = Cursors.WaitCursor;
+                lblMessaggio.Text = string.Empty;
+                if (nSpessore.Value == 0)
                 {
-                    CDCDS.CDC_MISURERow misura = Contesto.DS.CDC_MISURE.NewCDC_MISURERow();
-                    int nMisura = (int)riga[2];
-                    misura.NMISURA = nMisura;
-                    misura.DATAMISURA = DateTime.Today;
-                    misura.IDGALVANICA = IDGALVANICA;
-                    string tipo = _dsServizio.Tables[tableName].Columns[j + 3].ColumnName;
-                    string valore = (riga[3 + j]).ToString();
-                    misura.NCOLONNA = j;
-                    misura.TIPOMISURA = tipo;
-                    misura.VALORE = valore;
-                    Contesto.DS.CDC_MISURE.AddCDC_MISURERow(misura);
+                    lblMessaggio.Text = "Impostare lo spessore richiesto";
+                    return;
+                }
+
+                if (_dsServizio.Tables[tblAggregati].Rows.Count == 0)
+                {
+                    lblMessaggio.Text = "Creare i campioni per la misura";
+                    return;
+                }
+
+                if (_dettaglio == null)
+                {
+                    lblMessaggio.Text = "Selezionare un collaudo";
+                    return;
+                }
+
+                if (string.IsNullOrEmpty(txtApplicazione.Text))
+                {
+                    lblMessaggio.Text = "Il campo applicazione è vuoto impossibile procedere";
+                    return;
+                }
+
+                CDCDS.CDC_SPESSORERow spessore = Contesto.DS.CDC_SPESSORE.Where(x => x.COLORE == _dettaglio.COLORE && x.PARTE == _dettaglio.PARTE).FirstOrDefault();
+                if (spessore == null)
+                {
+                    spessore = Contesto.DS.CDC_SPESSORE.NewCDC_SPESSORERow();
+                    spessore.COLORE = _dettaglio.COLORE;
+                    spessore.PARTE = _dettaglio.PARTE;
+                    spessore.SPESSORE = nSpessore.Value.ToString();
+                    Contesto.DS.CDC_SPESSORE.AddCDC_SPESSORERow(spessore);
+                }
+                else
+                {
+                    spessore.SPESSORE = nSpessore.Value.ToString();
+                }
+
+                decimal IDDETTAGLIO = _dettaglio.IDDETTAGLIO;
+
+                CDCBLL bll = new CDCBLL();
+                int misurePerCampione = (int)nMisurePerCampione.Value;
+                decimal IDGALVANICA = bll.InserisciCDCGalvanica(Contesto.DS, nSpessore.Value, IDDETTAGLIO, txtApplicazione.Text, Contesto.StrumentoSpessore, misurePerCampione, Contesto.Utente.FULLNAMEUSER);
+
+                foreach (CDCDS.CDC_MISURERow row in Contesto.DS.CDC_MISURE.Where(x => x.IDGALVANICA == IDGALVANICA))
+                    row.Delete();
+
+                foreach (DataRow riga in _dsServizio.Tables[tableName].Rows)
+                {
+
+                    for (int j = 0; j < _dsServizio.Tables[tableName].Columns.Count - 3; j++)
+                    {
+                        CDCDS.CDC_MISURERow misura = Contesto.DS.CDC_MISURE.NewCDC_MISURERow();
+                        int nMisura = (int)riga[2];
+                        misura.NMISURA = nMisura;
+                        misura.DATAMISURA = DateTime.Today;
+                        misura.IDGALVANICA = IDGALVANICA;
+                        string tipo = _dsServizio.Tables[tableName].Columns[j + 3].ColumnName;
+                        string valore = (riga[3 + j]).ToString();
+                        misura.NCOLONNA = j;
+                        misura.TIPOMISURA = tipo;
+                        misura.VALORE = valore;
+                        Contesto.DS.CDC_MISURE.AddCDC_MISURERow(misura);
+                    }
+                }
+
+                bll.SalvaCDCSpessori(Contesto.DS);
+                Contesto.DS.AcceptChanges();
+
+                Bitmap logoSpessori = Properties.Resources.logo_spessori;
+                ImageConverter converter = new ImageConverter();
+                byte[] iLogo = (byte[])converter.ConvertTo(logoSpessori, typeof(byte[]));
+
+                Bitmap bowman = Properties.Resources.Bowman;
+                converter = new ImageConverter();
+                byte[] iBowman = (byte[])converter.ConvertTo(bowman, typeof(byte[]));
+
+                List<string> medie = new List<string>();
+                List<string> Std = new List<string>();
+                List<string> Pct = new List<string>();
+                List<string> range = new List<string>();
+                List<string> minimo = new List<string>();
+                List<string> massimo = new List<string>();
+
+                DataRow rigaMedie = _dsServizio.Tables[tblAggregati].Rows[0];
+                DataRow rigaStd = _dsServizio.Tables[tblAggregati].Rows[1];
+                DataRow rigaPct = _dsServizio.Tables[tblAggregati].Rows[2];
+                DataRow rigarange = _dsServizio.Tables[tblAggregati].Rows[3];
+                DataRow rigaMinimo = _dsServizio.Tables[tblAggregati].Rows[4];
+                DataRow rigaMassimo = _dsServizio.Tables[tblAggregati].Rows[5];
+
+                for (int ncol = 0; ncol < _dsServizio.Tables[tblAggregati].Columns.Count; ncol++)
+                {
+                    medie.Add(rigaMedie[ncol].ToString());
+                    Std.Add(rigaStd[ncol].ToString());
+                    Pct.Add(rigaPct[ncol].ToString());
+                    range.Add(rigarange[ncol].ToString());
+                    minimo.Add(rigaMinimo[ncol].ToString());
+                    massimo.Add(rigaMassimo[ncol].ToString());
+                }
+
+                filename = bll.CreaPDFSpessore(IDDETTAGLIO, Contesto.DS, Contesto.PathCollaudo, iLogo, iBowman, chkCopiaReferto.Checked, Contesto.PathRefertiLaboratorio, medie, Std, Pct, range, minimo, massimo);
+
+                if (chkApriPDF.Checked)
+                {
+                    Process.Start(filename);
                 }
             }
-
-            bll.SalvaCDCSpessori(Contesto.DS);
+            finally
+            {
+                Cursor.Current = Cursors.Default;
+            }
         }
 
         private void dgvMisure_CellValueChanged(object sender, DataGridViewCellEventArgs e)

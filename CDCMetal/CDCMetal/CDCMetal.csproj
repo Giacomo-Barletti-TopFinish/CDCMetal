@@ -253,5 +253,11 @@
   <ItemGroup>
     <None Include="Resources\logo_tf_autodichiarazione.png" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Bowman.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\logo spessori.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

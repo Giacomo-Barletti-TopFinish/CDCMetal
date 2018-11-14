@@ -63,6 +63,16 @@ namespace CDCMetal.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap Bowman {
+            get {
+                object obj = ResourceManager.GetObject("Bowman", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap firma_celeste {
             get {
                 object obj = ResourceManager.GetObject("firma_celeste", resourceCulture);
@@ -106,6 +116,16 @@ namespace CDCMetal.Properties {
         internal static System.Drawing.Bitmap loghi {
             get {
                 object obj = ResourceManager.GetObject("loghi", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap logo_spessori {
+            get {
+                object obj = ResourceManager.GetObject("logo_spessori", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

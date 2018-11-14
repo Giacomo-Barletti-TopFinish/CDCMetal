@@ -371,6 +371,90 @@ namespace CDCMetal.BLL
             return fileCreati.ToString();
         }
 
+        public string CreaPDFSpessore(decimal IDDETTAGLIO, CDCDS ds, string pathCollaudo, byte[] iLoghi, byte[] iBowman, bool CopiaReferto, string pathCartellaReferto,
+            List<string> medie, List<string> Std, List<String> Pct, List<string> range, List<string> minimo, List<string> massimo)
+        {
+            string fileCreato = string.Empty;
+
+            CDCDS.CDC_GALVANICARow galvanica = ds.CDC_GALVANICA.Where(x => x.IDDETTAGLIO == IDDETTAGLIO).FirstOrDefault();
+            if (galvanica == null)
+                throw new Exception("CDC_GALVANICA riga non trovat per IDDETTAGLIO" + IDDETTAGLIO.ToString());
+            CDCDS.CDC_DETTAGLIORow dettaglio = ds.CDC_DETTAGLIO.Where(x => x.IDDETTAGLIO == galvanica.IDDETTAGLIO).FirstOrDefault();
+            if (dettaglio == null)
+            {
+                throw new Exception("IMPOSSIBILE TROVARE CDC DETTAGLIO DA CDC_GALVANICA'");
+            }
+
+            List<CDCDS.CDC_MISURERow> misureRow = ds.CDC_MISURE.Where(x => x.IDGALVANICA == galvanica.IDGALVANICA).OrderBy(x => x.NMISURA).ThenBy(x => x.NCOLONNA).ToList();
+            int numeroMisure = misureRow.Max(x => (int)x.NMISURA) + 1;
+
+            List<string> etichette = misureRow.Where(x => x.NMISURA == 0).OrderBy(x => x.NCOLONNA).Select(x => string.Format("{0} µm", x.TIPOMISURA)).ToList();
+
+            DateTime dt = DateTime.Today;
+            string cartella = CreaPathCartella(dt, pathCollaudo, dettaglio.ACCESSORISTA, dettaglio.PREFISSO, dettaglio.PARTE, dettaglio.COLORE, dettaglio.COMMESSAORDINE);
+
+            string commessa = dettaglio.COMMESSAORDINE.Replace('_', ' ');
+
+            string fileName = string.Format("{0} {1} {2}.pdf", dettaglio.PARTE, dettaglio.COLORE, commessa);//A3174 0933 EACP 2018 1916 E.pdf
+            string path = string.Format(@"{0}\{1}", cartella, fileName);
+
+            List<List<string>> misure = new List<List<string>>();
+            for (int nMisura = 0; nMisura < numeroMisure; nMisura++)
+            {
+                List<string> misura = misureRow.Where(x => x.NMISURA == nMisura).OrderBy(x => x.NCOLONNA).Select(x => string.Format("{0}", x.VALORE)).ToList();
+                misure.Add(misura);
+            }
+            List<string> elementoRiga = new List<string>();
+
+            string operatore = "LB";
+            if (!Directory.Exists(cartella))
+                Directory.CreateDirectory(cartella);
+
+            if (File.Exists(path))
+                File.Delete(path);
+
+            CreaReportSpessori(path, dt, commessa, operatore, galvanica.SPESSORE, galvanica.APPLICAZIONE, galvanica.STRUMENTO, numeroMisure, etichette, medie, Std, Pct, range, minimo, massimo, iLoghi, iBowman, misure);
+
+            if (CopiaReferto)
+            {
+                System.Globalization.CultureInfo culture = new System.Globalization.CultureInfo("it-IT");
+                string acce = "Top";
+                if (dettaglio.ACCESSORISTA.Trim() == "Metalplus s.r.l.")
+                    acce = "M+";
+                string meseCollaudo = dt.ToString("MMMM", culture);
+                string giorno = string.Format("{0}.{1}", dt.Day.ToString("00"), dt.Month.ToString("00"));
+                string pathCartella = string.Format(@"{0}\{1}\{2}\{3}\{4}", pathCartellaReferto, dt.Year.ToString(), meseCollaudo, giorno, acce);
+                string pathReferto = string.Format(@"{0}\{1}", pathCartella, fileName);
+
+                if (!Directory.Exists(pathCartella))
+                    Directory.CreateDirectory(pathCartella);
+
+                if (File.Exists(pathReferto))
+                    File.Delete(pathReferto);
+                File.Copy(path, pathReferto, true);
+            }
+
+            fileCreato = path;
+
+            CDCDS.CDC_PDFRow pdf = ds.CDC_PDF.Where(x => x.IDDETTAGLIO == galvanica.IDDETTAGLIO && x.TIPO == CDCTipoPDF.CERTIFICATOSPESSORE).FirstOrDefault();
+            if (pdf == null)
+            {
+                pdf = ds.CDC_PDF.NewCDC_PDFRow();
+                pdf.TIPO = CDCTipoPDF.CERTIFICATOSPESSORE;
+                pdf.NOMEFILE = path;
+                pdf.IDDETTAGLIO = galvanica.IDDETTAGLIO;
+                ds.CDC_PDF.AddCDC_PDFRow(pdf);
+
+                using (CDCMetalBusiness bCDCMetalBusiness = new CDCMetalBusiness())
+                    bCDCMetalBusiness.UpdateCDC_PDF(ds);
+                ds.CDC_PDF.AcceptChanges();
+            }
+
+
+            return fileCreato;
+        }
+
+
         private static void CreaCDC(string filename, string ragioneSociale, string idCollaudo, string data,
           string prefisso, string parte, string colore, string quantita,
           string descrizione, string commessa, bool controlloFisico, bool controlloFunzionale, bool controlloDimensionale,
@@ -412,6 +496,17 @@ string strumentoMisura, string nota, List<MisuraColore> misure, byte[] iloghi)
 
             pdfHelper.SalvaPdf(filename);
         }
+
+        private static void CreaReportSpessori(string filename, DateTime data, string commessa, string operatore, string spessoreRichiesto, string applicazione, string strumentoMisura, int numeroMisure,
+            List<string> etichette, List<string> medie, List<string> Std, List<string> Pct, List<string> range, List<string> minimo, List<string> massimo, byte[] iloghi,
+            byte[] iBowman, List<List<string>> misure)
+        {
+            PDFHelper pdfHelper = new PDFHelper();
+            pdfHelper.CreaReportSpessori(data, commessa, operatore, spessoreRichiesto, applicazione, strumentoMisura, numeroMisure, etichette, medie, Std, Pct, range, minimo, massimo, iloghi, iBowman, misure);
+
+            pdfHelper.SalvaPdf(filename);
+        }
+
         public string CreaPDFDimensionale(decimal IDDETTAGLIO, CDCDS ds, string operatore, string pathCollaudo, byte[] iFirma, byte[] iLoghi)
         {
 

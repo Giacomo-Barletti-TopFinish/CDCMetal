@@ -51,6 +51,7 @@
             this.ddlCodiceExcel = new System.Windows.Forms.ComboBox();
             this.dgvAggregati = new System.Windows.Forms.DataGridView();
             this.nSpessore = new System.Windows.Forms.NumericUpDown();
+            this.chkApriPDF = new System.Windows.Forms.CheckBox();
             ((System.ComponentModel.ISupportInitialize)(this.dgvMisure)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvDettaglio)).BeginInit();
             this.groupBox1.SuspendLayout();
@@ -65,10 +66,11 @@
             this.chkCopiaReferto.Checked = true;
             this.chkCopiaReferto.CheckState = System.Windows.Forms.CheckState.Checked;
             this.chkCopiaReferto.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.chkCopiaReferto.Location = new System.Drawing.Point(1076, 646);
+            this.chkCopiaReferto.Location = new System.Drawing.Point(894, 646);
             this.chkCopiaReferto.Name = "chkCopiaReferto";
             this.chkCopiaReferto.Size = new System.Drawing.Size(260, 22);
             this.chkCopiaReferto.TabIndex = 16;
+            this.chkCopiaReferto.TabStop = false;
             this.chkCopiaReferto.Text = "Copia PDF nella cartella Referti Lab";
             this.chkCopiaReferto.UseVisualStyleBackColor = true;
             // 
@@ -86,10 +88,10 @@
             // 
             this.btnCreaPDF.Enabled = false;
             this.btnCreaPDF.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnCreaPDF.Location = new System.Drawing.Point(945, 640);
+            this.btnCreaPDF.Location = new System.Drawing.Point(778, 640);
             this.btnCreaPDF.Name = "btnCreaPDF";
             this.btnCreaPDF.Size = new System.Drawing.Size(110, 33);
-            this.btnCreaPDF.TabIndex = 10;
+            this.btnCreaPDF.TabIndex = 8;
             this.btnCreaPDF.Text = "Crea PDF";
             this.btnCreaPDF.UseVisualStyleBackColor = true;
             this.btnCreaPDF.Click += new System.EventHandler(this.btnCreaPDF_Click);
@@ -125,7 +127,7 @@
             this.dgvDettaglio.Name = "dgvDettaglio";
             this.dgvDettaglio.ReadOnly = true;
             this.dgvDettaglio.Size = new System.Drawing.Size(1384, 243);
-            this.dgvDettaglio.TabIndex = 12;
+            this.dgvDettaglio.TabIndex = 3;
             this.dgvDettaglio.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvDettaglio_CellClick);
             // 
             // groupBox1
@@ -200,6 +202,7 @@
             this.txtApplicazione.ReadOnly = true;
             this.txtApplicazione.Size = new System.Drawing.Size(223, 24);
             this.txtApplicazione.TabIndex = 17;
+            this.txtApplicazione.TabStop = false;
             // 
             // label5
             // 
@@ -227,7 +230,7 @@
             this.nMisurePerCampione.Location = new System.Drawing.Point(833, 413);
             this.nMisurePerCampione.Name = "nMisurePerCampione";
             this.nMisurePerCampione.Size = new System.Drawing.Size(74, 24);
-            this.nMisurePerCampione.TabIndex = 18;
+            this.nMisurePerCampione.TabIndex = 6;
             this.nMisurePerCampione.ValueChanged += new System.EventHandler(this.nMisurePerCampione_ValueChanged);
             // 
             // btnCreaCampioni
@@ -236,7 +239,7 @@
             this.btnCreaCampioni.Location = new System.Drawing.Point(1223, 410);
             this.btnCreaCampioni.Name = "btnCreaCampioni";
             this.btnCreaCampioni.Size = new System.Drawing.Size(149, 33);
-            this.btnCreaCampioni.TabIndex = 19;
+            this.btnCreaCampioni.TabIndex = 7;
             this.btnCreaCampioni.Text = "Crea campioni";
             this.btnCreaCampioni.UseVisualStyleBackColor = true;
             this.btnCreaCampioni.Click += new System.EventHandler(this.btnCreaCampioni_Click);
@@ -278,7 +281,7 @@
             this.ddlCodiceExcel.Location = new System.Drawing.Point(221, 384);
             this.ddlCodiceExcel.Name = "ddlCodiceExcel";
             this.ddlCodiceExcel.Size = new System.Drawing.Size(223, 26);
-            this.ddlCodiceExcel.TabIndex = 20;
+            this.ddlCodiceExcel.TabIndex = 4;
             // 
             // dgvAggregati
             // 
@@ -307,7 +310,21 @@
             0});
             this.nSpessore.Name = "nSpessore";
             this.nSpessore.Size = new System.Drawing.Size(74, 24);
-            this.nSpessore.TabIndex = 22;
+            this.nSpessore.TabIndex = 5;
+            // 
+            // chkApriPDF
+            // 
+            this.chkApriPDF.AutoSize = true;
+            this.chkApriPDF.Checked = true;
+            this.chkApriPDF.CheckState = System.Windows.Forms.CheckState.Checked;
+            this.chkApriPDF.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.chkApriPDF.Location = new System.Drawing.Point(1171, 646);
+            this.chkApriPDF.Name = "chkApriPDF";
+            this.chkApriPDF.Size = new System.Drawing.Size(86, 22);
+            this.chkApriPDF.TabIndex = 16;
+            this.chkApriPDF.TabStop = false;
+            this.chkApriPDF.Text = "Apri PDF";
+            this.chkApriPDF.UseVisualStyleBackColor = true;
             // 
             // CreaSpessoreFrm
             // 
@@ -326,6 +343,7 @@
             this.Controls.Add(this.label8);
             this.Controls.Add(this.txtApplicazione);
             this.Controls.Add(this.label4);
+            this.Controls.Add(this.chkApriPDF);
             this.Controls.Add(this.chkCopiaReferto);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.btnCreaPDF);
@@ -373,5 +391,6 @@
         private System.Windows.Forms.ComboBox ddlCodiceExcel;
         private System.Windows.Forms.DataGridView dgvAggregati;
         private System.Windows.Forms.NumericUpDown nSpessore;
+        private System.Windows.Forms.CheckBox chkApriPDF;
     }
 }
