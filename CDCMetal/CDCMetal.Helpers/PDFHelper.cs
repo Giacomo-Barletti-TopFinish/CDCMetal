@@ -1546,13 +1546,18 @@ string strumentoMisura, string nota, List<MisuraColore> misure, byte[] iloghi)
                     cell = row.Cells[0];
                     cell.Format.Alignment = ParagraphAlignment.Center;
                     cell.VerticalAlignment = VerticalAlignment.Center;
-
                     p = cell.AddParagraph(data.ToShortDateString());
+
+                    cell = row.Cells[1];
+                    cell.Format.Alignment = ParagraphAlignment.Center;
+                    cell.VerticalAlignment = VerticalAlignment.Center;
+                    p = cell.AddParagraph((riga+1).ToString());
+
                     for (int colonna = 0; colonna < 9; colonna++)
                     {
                         if (colonna < misura.Count)
                         {
-                            cell = row.Cells[colonna + 1];
+                            cell = row.Cells[colonna + 2];
                             cell.Format.Alignment = ParagraphAlignment.Center;
                             cell.VerticalAlignment = VerticalAlignment.Center;
 

@@ -41,23 +41,20 @@
             this.label1 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.txtApplicazione = new System.Windows.Forms.TextBox();
-            this.label5 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
             this.nMisurePerCampione = new System.Windows.Forms.NumericUpDown();
             this.btnCreaCampioni = new System.Windows.Forms.Button();
             this.label7 = new System.Windows.Forms.Label();
             this.txtNumeroCampioni = new System.Windows.Forms.TextBox();
-            this.label8 = new System.Windows.Forms.Label();
-            this.ddlCodiceExcel = new System.Windows.Forms.ComboBox();
             this.dgvAggregati = new System.Windows.Forms.DataGridView();
-            this.nSpessore = new System.Windows.Forms.NumericUpDown();
             this.chkApriPDF = new System.Windows.Forms.CheckBox();
+            this.dgvSpessore = new System.Windows.Forms.DataGridView();
             ((System.ComponentModel.ISupportInitialize)(this.dgvMisure)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvDettaglio)).BeginInit();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.nMisurePerCampione)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvAggregati)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.nSpessore)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvSpessore)).BeginInit();
             this.SuspendLayout();
             // 
             // chkCopiaReferto
@@ -78,7 +75,7 @@
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(9, 411);
+            this.label3.Location = new System.Drawing.Point(9, 419);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(90, 18);
             this.label3.TabIndex = 15;
@@ -100,7 +97,7 @@
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(18, 114);
+            this.label2.Location = new System.Drawing.Point(18, 62);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(121, 18);
             this.label2.TabIndex = 14;
@@ -122,11 +119,11 @@
             this.dgvDettaglio.AllowUserToAddRows = false;
             this.dgvDettaglio.AllowUserToDeleteRows = false;
             this.dgvDettaglio.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvDettaglio.Location = new System.Drawing.Point(0, 135);
+            this.dgvDettaglio.Location = new System.Drawing.Point(0, 80);
             this.dgvDettaglio.MultiSelect = false;
             this.dgvDettaglio.Name = "dgvDettaglio";
             this.dgvDettaglio.ReadOnly = true;
-            this.dgvDettaglio.Size = new System.Drawing.Size(1384, 243);
+            this.dgvDettaglio.Size = new System.Drawing.Size(1372, 183);
             this.dgvDettaglio.TabIndex = 3;
             this.dgvDettaglio.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvDettaglio_CellClick);
             // 
@@ -138,7 +135,7 @@
             this.groupBox1.Controls.Add(this.label1);
             this.groupBox1.Location = new System.Drawing.Point(12, 2);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(1360, 100);
+            this.groupBox1.Size = new System.Drawing.Size(1360, 52);
             this.groupBox1.TabIndex = 11;
             this.groupBox1.TabStop = false;
             // 
@@ -147,7 +144,7 @@
             this.lblMessaggio.AutoSize = true;
             this.lblMessaggio.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblMessaggio.ForeColor = System.Drawing.Color.Red;
-            this.lblMessaggio.Location = new System.Drawing.Point(6, 60);
+            this.lblMessaggio.Location = new System.Drawing.Point(467, 16);
             this.lblMessaggio.Name = "lblMessaggio";
             this.lblMessaggio.Size = new System.Drawing.Size(0, 18);
             this.lblMessaggio.TabIndex = 3;
@@ -187,7 +184,7 @@
             // 
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(118, 415);
+            this.label4.Location = new System.Drawing.Point(973, 290);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(91, 18);
             this.label4.TabIndex = 4;
@@ -196,29 +193,18 @@
             // txtApplicazione
             // 
             this.txtApplicazione.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtApplicazione.Location = new System.Drawing.Point(221, 412);
+            this.txtApplicazione.Location = new System.Drawing.Point(1070, 287);
             this.txtApplicazione.MaxLength = 50;
             this.txtApplicazione.Name = "txtApplicazione";
-            this.txtApplicazione.ReadOnly = true;
-            this.txtApplicazione.Size = new System.Drawing.Size(223, 24);
+            this.txtApplicazione.Size = new System.Drawing.Size(288, 24);
             this.txtApplicazione.TabIndex = 17;
             this.txtApplicazione.TabStop = false;
-            // 
-            // label5
-            // 
-            this.label5.AutoSize = true;
-            this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(458, 414);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(72, 18);
-            this.label5.TabIndex = 4;
-            this.label5.Text = "Spessore";
             // 
             // label6
             // 
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.Location = new System.Drawing.Point(661, 415);
+            this.label6.Location = new System.Drawing.Point(978, 333);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(147, 18);
             this.label6.TabIndex = 4;
@@ -227,7 +213,7 @@
             // nMisurePerCampione
             // 
             this.nMisurePerCampione.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.nMisurePerCampione.Location = new System.Drawing.Point(833, 413);
+            this.nMisurePerCampione.Location = new System.Drawing.Point(1135, 331);
             this.nMisurePerCampione.Name = "nMisurePerCampione";
             this.nMisurePerCampione.Size = new System.Drawing.Size(74, 24);
             this.nMisurePerCampione.TabIndex = 6;
@@ -236,9 +222,9 @@
             // btnCreaCampioni
             // 
             this.btnCreaCampioni.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnCreaCampioni.Location = new System.Drawing.Point(1223, 410);
+            this.btnCreaCampioni.Location = new System.Drawing.Point(1215, 352);
             this.btnCreaCampioni.Name = "btnCreaCampioni";
-            this.btnCreaCampioni.Size = new System.Drawing.Size(149, 33);
+            this.btnCreaCampioni.Size = new System.Drawing.Size(143, 33);
             this.btnCreaCampioni.TabIndex = 7;
             this.btnCreaCampioni.Text = "Crea campioni";
             this.btnCreaCampioni.UseVisualStyleBackColor = true;
@@ -248,7 +234,7 @@
             // 
             this.label7.AutoSize = true;
             this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label7.Location = new System.Drawing.Point(946, 415);
+            this.label7.Location = new System.Drawing.Point(984, 364);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(141, 18);
             this.label7.TabIndex = 4;
@@ -257,61 +243,22 @@
             // txtNumeroCampioni
             // 
             this.txtNumeroCampioni.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtNumeroCampioni.Location = new System.Drawing.Point(1095, 412);
+            this.txtNumeroCampioni.Location = new System.Drawing.Point(1135, 361);
             this.txtNumeroCampioni.MaxLength = 5;
             this.txtNumeroCampioni.Name = "txtNumeroCampioni";
             this.txtNumeroCampioni.ReadOnly = true;
-            this.txtNumeroCampioni.Size = new System.Drawing.Size(69, 24);
+            this.txtNumeroCampioni.Size = new System.Drawing.Size(74, 24);
             this.txtNumeroCampioni.TabIndex = 17;
-            // 
-            // label8
-            // 
-            this.label8.AutoSize = true;
-            this.label8.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label8.Location = new System.Drawing.Point(118, 387);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(95, 18);
-            this.label8.TabIndex = 4;
-            this.label8.Text = "Codice Excel";
-            // 
-            // ddlCodiceExcel
-            // 
-            this.ddlCodiceExcel.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.ddlCodiceExcel.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.ddlCodiceExcel.FormattingEnabled = true;
-            this.ddlCodiceExcel.Location = new System.Drawing.Point(221, 384);
-            this.ddlCodiceExcel.Name = "ddlCodiceExcel";
-            this.ddlCodiceExcel.Size = new System.Drawing.Size(223, 26);
-            this.ddlCodiceExcel.TabIndex = 4;
             // 
             // dgvAggregati
             // 
             this.dgvAggregati.AllowUserToAddRows = false;
             this.dgvAggregati.AllowUserToDeleteRows = false;
             this.dgvAggregati.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvAggregati.Location = new System.Drawing.Point(778, 461);
+            this.dgvAggregati.Location = new System.Drawing.Point(778, 441);
             this.dgvAggregati.Name = "dgvAggregati";
             this.dgvAggregati.Size = new System.Drawing.Size(594, 173);
             this.dgvAggregati.TabIndex = 21;
-            // 
-            // nSpessore
-            // 
-            this.nSpessore.DecimalPlaces = 2;
-            this.nSpessore.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.nSpessore.Increment = new decimal(new int[] {
-            1,
-            0,
-            0,
-            131072});
-            this.nSpessore.Location = new System.Drawing.Point(536, 413);
-            this.nSpessore.Maximum = new decimal(new int[] {
-            1,
-            0,
-            0,
-            0});
-            this.nSpessore.Name = "nSpessore";
-            this.nSpessore.Size = new System.Drawing.Size(74, 24);
-            this.nSpessore.TabIndex = 5;
             // 
             // chkApriPDF
             // 
@@ -327,21 +274,27 @@
             this.chkApriPDF.Text = "Apri PDF";
             this.chkApriPDF.UseVisualStyleBackColor = true;
             // 
+            // dgvSpessore
+            // 
+            this.dgvSpessore.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvSpessore.Location = new System.Drawing.Point(0, 279);
+            this.dgvSpessore.Name = "dgvSpessore";
+            this.dgvSpessore.Size = new System.Drawing.Size(960, 136);
+            this.dgvSpessore.TabIndex = 22;
+            this.dgvSpessore.CellValidating += new System.Windows.Forms.DataGridViewCellValidatingEventHandler(this.dgvSpessore_CellValidating);
+            // 
             // CreaSpessoreFrm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1384, 685);
-            this.Controls.Add(this.nSpessore);
+            this.Controls.Add(this.dgvSpessore);
             this.Controls.Add(this.dgvAggregati);
-            this.Controls.Add(this.ddlCodiceExcel);
             this.Controls.Add(this.btnCreaCampioni);
             this.Controls.Add(this.nMisurePerCampione);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.txtNumeroCampioni);
             this.Controls.Add(this.label7);
-            this.Controls.Add(this.label5);
-            this.Controls.Add(this.label8);
             this.Controls.Add(this.txtApplicazione);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.chkApriPDF);
@@ -361,7 +314,7 @@
             this.groupBox1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.nMisurePerCampione)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvAggregati)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.nSpessore)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvSpessore)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -382,16 +335,13 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.TextBox txtApplicazione;
-        private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.NumericUpDown nMisurePerCampione;
         private System.Windows.Forms.Button btnCreaCampioni;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.TextBox txtNumeroCampioni;
-        private System.Windows.Forms.Label label8;
-        private System.Windows.Forms.ComboBox ddlCodiceExcel;
         private System.Windows.Forms.DataGridView dgvAggregati;
-        private System.Windows.Forms.NumericUpDown nSpessore;
         private System.Windows.Forms.CheckBox chkApriPDF;
+        private System.Windows.Forms.DataGridView dgvSpessore;
     }
 }

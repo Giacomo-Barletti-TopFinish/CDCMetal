@@ -157,12 +157,6 @@ namespace CDCMetal.Data
             a.FillCDC_SPESSORE(ds);
         }
 
-        [DataContext]
-        public void FillCDC_MISURA_COLORE(CDCDS ds)
-        {
-            CDCMetalAdapter a = new CDCMetalAdapter(DbConnection, DbTransaction);
-            a.FillCDC_MISURA_COLORE(ds);
-        }
 
         [DataContext]
         public void FillCDC_APPLICAZIONE(CDCDS ds)
@@ -172,12 +166,13 @@ namespace CDCMetal.Data
         }
 
         [DataContext(true)]
-        public void UpdateCDCSPESSORE(CDCDS ds)
+        public void UpdateTabelleSpessore(CDCDS ds)
         {
             CDCMetalAdapter a = new CDCMetalAdapter(DbConnection, DbTransaction);
             a.UpdateTable(ds.CDC_GALVANICA.TableName, ds);
             a.UpdateTable(ds.CDC_SPESSORE.TableName, ds);
             a.UpdateTable(ds.CDC_MISURE.TableName, ds);
+            a.UpdateTable(ds.CDC_APPLICAZIONE.TableName, ds);
         }
     }
 }

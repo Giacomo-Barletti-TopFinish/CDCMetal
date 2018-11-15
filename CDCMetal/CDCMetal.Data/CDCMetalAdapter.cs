@@ -246,15 +246,7 @@ namespace CDCMetal.Data
             }
         }
 
-        public void FillCDC_MISURA_COLORE(CDCDS ds)
-        {
-            string select = @"SELECT * FROM CDC_MISURA_COLORE ORDER BY CODICEEXCEL,SEQUENZA";
-
-            using (DbDataAdapter da = BuildDataAdapter(select))
-            {
-                da.Fill(ds.CDC_MISURA_COLORE);
-            }
-        }
+      
         public void FillCDC_APPLICAZIONE(CDCDS ds)
         {
             string select = @"SELECT * FROM CDC_APPLICAZIONE";

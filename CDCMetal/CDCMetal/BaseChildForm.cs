@@ -44,5 +44,10 @@ namespace CDCMetal
             }
             return string.Empty;
         }
+
+        protected void MostraEccezione(Exception ex, string messaggioLog)
+        {
+            (this.ParentForm as MainForm).MostraEccezione(messaggioLog, ex);
+        }
     }
 }

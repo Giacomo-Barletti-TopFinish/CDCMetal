@@ -24,11 +24,12 @@ namespace CDCMetal.BLL
 
         public void LeggiTabelleSpessori(CDCDS ds)
         {
+            ds.CDC_SPESSORE.Clear();
+            ds.CDC_APPLICAZIONE.Clear();
             using (CDCMetalBusiness bCDCMetal = new CDCMetalBusiness())
             {
                 bCDCMetal.FillCDC_SPESSORE(ds);
                 bCDCMetal.FillCDC_APPLICAZIONE(ds);
-                bCDCMetal.FillCDC_MISURA_COLORE(ds);
             }
         }
 
@@ -78,7 +79,7 @@ namespace CDCMetal.BLL
             using (CDCMetalBusiness bCDCMetal = new CDCMetalBusiness())
             {
                 ds.CDC_GALVANICA.Clear();
-                ds.CDC_DIMEMSIONI_MISURE.Clear();
+                ds.CDC_MISURE.Clear();
                 bCDCMetal.FillCDC_GALVANICA(ds, IDDETTAGLIO);
                 bCDCMetal.FillCDC_MISURE(ds, IDDETTAGLIO);
             }
@@ -298,7 +299,8 @@ namespace CDCMetal.BLL
                 }
                 //  DateTime dt = DateTime.ParseExact(dettaglio.DATACOLLAUDO, "dd/MM/yyyy", CultureInfo.InvariantCulture);
                 DateTime dt = DateTime.Today;
-                string cartella = CreaPathCartella(dt, pathCollaudo, dettaglio.ACCESSORISTA, dettaglio.PREFISSO, dettaglio.PARTE, dettaglio.COLORE, dettaglio.COMMESSAORDINE);
+                DateTime dtCollaudo = DateTime.ParseExact(dettaglio.DATACOLLAUDO, "dd/MM/yyyy", CultureInfo.InvariantCulture);
+                string cartella = CreaPathCartella(dtCollaudo, pathCollaudo, dettaglio.ACCESSORISTA, dettaglio.PREFISSO, dettaglio.PARTE, dettaglio.COLORE, dettaglio.COMMESSAORDINE);
 
                 string articolo = string.Format("{0} {1} {2}", dettaglio.PARTE, dettaglio.COLORE, dettaglio.COMMESSAORDINE.Replace('_', ' '));
 
@@ -338,9 +340,9 @@ namespace CDCMetal.BLL
                     string acce = "Top";
                     if (dettaglio.ACCESSORISTA.Trim() == "Metalplus s.r.l.")
                         acce = "M+";
-                    string meseCollaudo = dt.ToString("MMMM", culture);
-                    string giorno = string.Format("{0}.{1}", dt.Day.ToString("00"), dt.Month.ToString("00"));
-                    string pathCartella = string.Format(@"{0}\{1}\{2}\{3}\{4}", pathCartellaReferto, dt.Year.ToString(), meseCollaudo, giorno, acce);
+                    string meseCollaudo = dtCollaudo.ToString("MMMM", culture);
+                    string giorno = string.Format("{0}.{1}", dtCollaudo.Day.ToString("00"), dtCollaudo.Month.ToString("00"));
+                    string pathCartella = string.Format(@"{0}\{1}\{2}\{3}\{4}", pathCartellaReferto, dtCollaudo.Year.ToString(), meseCollaudo, giorno, acce);
                     string pathReferto = string.Format(@"{0}\{1}", pathCartella, fileName);
 
                     if (!Directory.Exists(pathCartella))
@@ -391,7 +393,8 @@ namespace CDCMetal.BLL
             List<string> etichette = misureRow.Where(x => x.NMISURA == 0).OrderBy(x => x.NCOLONNA).Select(x => string.Format("{0} µm", x.TIPOMISURA)).ToList();
 
             DateTime dt = DateTime.Today;
-            string cartella = CreaPathCartella(dt, pathCollaudo, dettaglio.ACCESSORISTA, dettaglio.PREFISSO, dettaglio.PARTE, dettaglio.COLORE, dettaglio.COMMESSAORDINE);
+            DateTime dtCollaudo = DateTime.ParseExact(dettaglio.DATACOLLAUDO, "dd/MM/yyyy", CultureInfo.InvariantCulture);
+            string cartella = CreaPathCartella(dtCollaudo, pathCollaudo, dettaglio.ACCESSORISTA, dettaglio.PREFISSO, dettaglio.PARTE, dettaglio.COLORE, dettaglio.COMMESSAORDINE);
 
             string commessa = dettaglio.COMMESSAORDINE.Replace('_', ' ');
 
@@ -421,9 +424,9 @@ namespace CDCMetal.BLL
                 string acce = "Top";
                 if (dettaglio.ACCESSORISTA.Trim() == "Metalplus s.r.l.")
                     acce = "M+";
-                string meseCollaudo = dt.ToString("MMMM", culture);
-                string giorno = string.Format("{0}.{1}", dt.Day.ToString("00"), dt.Month.ToString("00"));
-                string pathCartella = string.Format(@"{0}\{1}\{2}\{3}\{4}", pathCartellaReferto, dt.Year.ToString(), meseCollaudo, giorno, acce);
+                string meseCollaudo = dtCollaudo.ToString("MMMM", culture);
+                string giorno = string.Format("{0}.{1}", dtCollaudo.Day.ToString("00"), dtCollaudo.Month.ToString("00"));
+                string pathCartella = string.Format(@"{0}\{1}\{2}\{3}\{4}", pathCartellaReferto, dtCollaudo.Year.ToString(), meseCollaudo, giorno, acce);
                 string pathReferto = string.Format(@"{0}\{1}", pathCartella, fileName);
 
                 if (!Directory.Exists(pathCartella))
@@ -602,11 +605,11 @@ string strumentoMisura, string nota, List<MisuraColore> misure, byte[] iloghi)
             }
         }
 
-        public void SalvaCDCSpessori(CDCDS ds)
+        public void SalvaTabelleSpessori(CDCDS ds)
         {
             using (CDCMetalBusiness bCDCMetal = new CDCMetalBusiness())
             {
-                bCDCMetal.UpdateCDCSPESSORE(ds);
+                bCDCMetal.UpdateTabelleSpessore(ds);
                 ds.AcceptChanges();
             }
         }

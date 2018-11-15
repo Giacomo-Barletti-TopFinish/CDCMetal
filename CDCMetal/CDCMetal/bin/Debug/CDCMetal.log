@@ -776,3 +776,373 @@ INFO  2018-11-14 13:12:44,640 53476ms MainForm               LogScrivi          
 INFO  2018-11-14 13:15:09,720   126ms MainForm               LogScrivi          - Applicazione CDCMetal avviata
 INFO  2018-11-14 13:17:56,287   146ms MainForm               LogScrivi          - Applicazione CDCMetal avviata
 INFO  2018-11-14 13:18:56,784 60644ms MainForm               LogScrivi          - Applicazione CDCMetal fermata
+INFO  2018-11-14 16:43:37,385   197ms MainForm               LogScrivi          - Applicazione CDCMetal avviata
+INFO  2018-11-14 16:44:00,673 23485ms MainForm               LogScrivi          - Applicazione CDCMetal fermata
+INFO  2018-11-14 17:11:29,628   119ms MainForm               LogScrivi          - Applicazione CDCMetal avviata
+INFO  2018-11-14 17:12:01,240 31731ms MainForm               LogScrivi          - Applicazione CDCMetal fermata
+INFO  2018-11-14 17:12:57,840   129ms MainForm               LogScrivi          - Applicazione CDCMetal avviata
+INFO  2018-11-14 17:13:17,671 19960ms MainForm               LogScrivi          - Applicazione CDCMetal fermata
+INFO  2018-11-14 17:14:30,263   131ms MainForm               LogScrivi          - Applicazione CDCMetal avviata
+INFO  2018-11-14 17:15:26,656 56525ms MainForm               LogScrivi          - Applicazione CDCMetal fermata
+INFO  2018-11-14 17:17:22,983   134ms MainForm               LogScrivi          - Applicazione CDCMetal avviata
+INFO  2018-11-14 17:18:05,079 42230ms MainForm               LogScrivi          - Applicazione CDCMetal fermata
+INFO  2018-11-14 17:19:21,605   147ms MainForm               LogScrivi          - Applicazione CDCMetal avviata
+INFO  2018-11-14 17:20:37,995   138ms MainForm               LogScrivi          - Applicazione CDCMetal avviata
+INFO  2018-11-14 17:21:04,730   110ms MainForm               LogScrivi          - Applicazione CDCMetal avviata
+INFO  2018-11-14 17:22:22,543 77924ms MainForm               LogScrivi          - Applicazione CDCMetal fermata
+INFO  2018-11-14 17:23:14,138   120ms MainForm               LogScrivi          - Applicazione CDCMetal avviata
+INFO  2018-11-14 17:24:13,587   137ms MainForm               LogScrivi          - Applicazione CDCMetal avviata
+INFO  2018-11-14 17:25:57,055   160ms MainForm               LogScrivi          - Applicazione CDCMetal avviata
+INFO  2018-11-14 17:26:26,035   133ms MainForm               LogScrivi          - Applicazione CDCMetal avviata
+INFO  2018-11-14 17:29:48,003   159ms MainForm               LogScrivi          - Applicazione CDCMetal avviata
+INFO  2018-11-14 17:31:00,479 72636ms MainForm               LogScrivi          - Applicazione CDCMetal fermata
+INFO  2018-11-14 17:31:03,965   138ms MainForm               LogScrivi          - Applicazione CDCMetal avviata
+INFO  2018-11-14 17:35:17,242   153ms MainForm               LogScrivi          - Applicazione CDCMetal avviata
+INFO  2018-11-14 17:35:43,799 26710ms MainForm               LogScrivi          - Applicazione CDCMetal fermata
+INFO  2018-11-14 17:47:32,256   135ms MainForm               LogScrivi          - Applicazione CDCMetal avviata
+INFO  2018-11-14 17:48:21,566 49446ms MainForm               LogScrivi          - Applicazione CDCMetal fermata
+INFO  2018-11-14 17:57:36,003   136ms MainForm               LogScrivi          - Applicazione CDCMetal avviata
+INFO  2018-11-14 17:58:19,042   110ms MainForm               LogScrivi          - Applicazione CDCMetal avviata
+INFO  2018-11-14 17:59:26,250   166ms MainForm               LogScrivi          - Applicazione CDCMetal avviata
+INFO  2018-11-14 18:00:36,436   159ms MainForm               LogScrivi          - Applicazione CDCMetal avviata
+INFO  2018-11-14 18:00:42,359  6082ms MainForm               LogScrivi          - Applicazione CDCMetal fermata
+INFO  2018-11-14 18:00:54,431   163ms MainForm               LogScrivi          - Applicazione CDCMetal avviata
+INFO  2018-11-14 18:02:27,991 93723ms MainForm               LogScrivi          - Applicazione CDCMetal fermata
+INFO  2018-11-15 07:32:56,587   749ms MainForm               LogScrivi          - Applicazione CDCMetal avviata
+INFO  2018-11-15 07:35:46,227   390ms MainForm               LogScrivi          - Applicazione CDCMetal avviata
+INFO  2018-11-15 07:35:53,045  7208ms MainForm               LogScrivi          - Applicazione CDCMetal fermata
+INFO  2018-11-15 07:45:56,561   362ms MainForm               LogScrivi          - Applicazione CDCMetal avviata
+INFO  2018-11-15 07:47:57,128   431ms MainForm               LogScrivi          - Applicazione CDCMetal avviata
+INFO  2018-11-15 07:59:33,750   369ms MainForm               LogScrivi          - Applicazione CDCMetal avviata
+INFO  2018-11-15 07:59:37,877  4495ms MainForm               LogScrivi          - Applicazione CDCMetal fermata
+INFO  2018-11-15 08:01:10,758   377ms MainForm               LogScrivi          - Applicazione CDCMetal avviata
+INFO  2018-11-15 08:01:49,937 39557ms MainForm               LogScrivi          - Applicazione CDCMetal fermata
+INFO  2018-11-15 08:02:15,396   391ms MainForm               LogScrivi          - Applicazione CDCMetal avviata
+INFO  2018-11-15 08:05:56,261   455ms MainForm               LogScrivi          - Applicazione CDCMetal avviata
+INFO  2018-11-15 08:07:04,666   384ms MainForm               LogScrivi          - Applicazione CDCMetal avviata
+INFO  2018-11-15 08:08:47,987   382ms MainForm               LogScrivi          - Applicazione CDCMetal avviata
+INFO  2018-11-15 08:09:28,195   409ms MainForm               LogScrivi          - Applicazione CDCMetal avviata
+INFO  2018-11-15 08:11:25,131   390ms MainForm               LogScrivi          - Applicazione CDCMetal avviata
+INFO  2018-11-15 08:12:01,878   368ms MainForm               LogScrivi          - Applicazione CDCMetal avviata
+INFO  2018-11-15 08:12:37,351   448ms MainForm               LogScrivi          - Applicazione CDCMetal avviata
+INFO  2018-11-15 08:13:04,210   396ms MainForm               LogScrivi          - Applicazione CDCMetal avviata
+INFO  2018-11-15 08:13:22,294   381ms MainForm               LogScrivi          - Applicazione CDCMetal avviata
+INFO  2018-11-15 08:14:52,592   419ms MainForm               LogScrivi          - Applicazione CDCMetal avviata
+ERROR 2018-11-15 08:15:02,565 10393ms MainForm               LogScriviErrore    - Errore in dgvDettaglio_CellClick
+System.Data.DuplicateNameException: Un DataTable di nome 'SPESSORI' appartiene già a questo DataSet.
+   in System.Data.DataTableCollection.RegisterName(String name, String tbNamespace)
+   in System.Data.DataTable.set_TableName(String value)
+   in CDCMetal.CreaSpessoreFrm.ImpostaSpessore(String parte, String colore) in C:\VSProgetti\CDCMetal\CDCMetal\CDCMetal\CreaSpessoreFrm.cs:riga 137
+   in CDCMetal.CreaSpessoreFrm.dgvDettaglio_CellClick(Object sender, DataGridViewCellEventArgs e) in C:\VSProgetti\CDCMetal\CDCMetal\CDCMetal\CreaSpessoreFrm.cs:riga 176
+INFO  2018-11-15 08:15:11,539 19367ms MainForm               LogScrivi          - Applicazione CDCMetal fermata
+INFO  2018-11-15 08:21:58,951   389ms MainForm               LogScrivi          - Applicazione CDCMetal avviata
+ERROR 2018-11-15 08:27:41,123 342562ms MainForm               LogScriviErrore    - Errore in Crea Campioni Click
+System.InvalidCastException: Cast specificato non valido.
+   in CDCMetal.CreaSpessoreFrm.GetList(DataTable dt, Int32 column)
+   in CDCMetal.CreaSpessoreFrm.CalcolaValoriAggregati()
+   in CDCMetal.CreaSpessoreFrm.btnCreaCampioni_Click(Object sender, EventArgs e)
+ERROR 2018-11-15 08:29:30,943 452382ms MainForm               LogScriviErrore    - Errore in Crea Campioni Click
+System.InvalidCastException: Cast specificato non valido.
+   in CDCMetal.CreaSpessoreFrm.GetList(DataTable dt, Int32 column)
+   in CDCMetal.CreaSpessoreFrm.CalcolaValoriAggregati()
+   in CDCMetal.CreaSpessoreFrm.btnCreaCampioni_Click(Object sender, EventArgs e)
+INFO  2018-11-15 08:53:08,107   387ms MainForm               LogScrivi          - Applicazione CDCMetal avviata
+INFO  2018-11-15 08:53:13,228  5509ms MainForm               LogScrivi          - Applicazione CDCMetal fermata
+INFO  2018-11-15 08:53:23,062   374ms MainForm               LogScrivi          - Applicazione CDCMetal avviata
+ERROR 2018-11-15 08:54:49,166 86478ms MainForm               LogScriviErrore    - Errore in crea PDF
+System.InvalidOperationException: Generazione SQL dinamica per UpdateCommand non supportata per un SelectCommand che non restituisce informazioni di colonne chiave.
+   in System.Data.Common.DbCommandBuilder.BuildWhereClause(DataTableMapping mappings, DataRow dataRow, StringBuilder builder, DbCommand command, Int32 parameterCount, Boolean isUpdate)
+   in System.Data.Common.DbCommandBuilder.BuildUpdateCommand(DataTableMapping mappings, DataRow dataRow)
+   in System.Data.Common.DbCommandBuilder.GetUpdateCommand(DataRow dataRow, Boolean useColumnsForParameterNames)
+   in System.Data.Common.DbCommandBuilder.GetUpdateCommand()
+   in CDCMetal.Data.CDCMetalAdapter.UpdateTable(String tablename, CDCDS ds) in C:\VSProgetti\CDCMetal\CDCMetal\CDCMetal.Data\CDCMetalAdapter.cs:riga 66
+   in CDCMetal.Data.CDCMetalBusiness.UpdateTabelleSpessore(CDCDS ds) in C:\VSProgetti\CDCMetal\CDCMetal\CDCMetal.Data\CDCMetalBusiness.cs:riga 173
+   in CDCMetal.BLL.CDCBLL.SalvaTabelleSpessori(CDCDS ds) in C:\VSProgetti\CDCMetal\CDCMetal\CDCMetal.BLL\CDCBLL.cs:riga 608
+   in CDCMetal.CreaSpessoreFrm.btnCreaPDF_Click(Object sender, EventArgs e) in C:\VSProgetti\CDCMetal\CDCMetal\CDCMetal\CreaSpessoreFrm.cs:riga 724
+INFO  2018-11-15 09:00:45,822   375ms MainForm               LogScrivi          - Applicazione CDCMetal avviata
+ERROR 2018-11-15 09:03:14,293 148846ms MainForm               LogScriviErrore    - Errore in dgvDettaglio_CellClick
+System.InvalidCastException: Cast specificato non valido.
+   in CDCMetal.CreaSpessoreFrm.GetList(DataTable dt, Int32 column) in C:\VSProgetti\CDCMetal\CDCMetal\CDCMetal\CreaSpessoreFrm.cs:riga 575
+   in CDCMetal.CreaSpessoreFrm.CalcolaValoriAggregati() in C:\VSProgetti\CDCMetal\CDCMetal\CDCMetal\CreaSpessoreFrm.cs:riga 502
+   in CDCMetal.CreaSpessoreFrm.CaricaCampioniMisuraPrecedente(Decimal IDGALVANICA) in C:\VSProgetti\CDCMetal\CDCMetal\CDCMetal\CreaSpessoreFrm.cs:riga 253
+   in CDCMetal.CreaSpessoreFrm.dgvDettaglio_CellClick(Object sender, DataGridViewCellEventArgs e) in C:\VSProgetti\CDCMetal\CDCMetal\CDCMetal\CreaSpessoreFrm.cs:riga 190
+ERROR 2018-11-15 09:06:38,244 352797ms MainForm               LogScriviErrore    - Errore in dgvDettaglio_CellClick
+System.InvalidCastException: Cast specificato non valido.
+   in CDCMetal.CreaSpessoreFrm.GetList(DataTable dt, Int32 column) in C:\VSProgetti\CDCMetal\CDCMetal\CDCMetal\CreaSpessoreFrm.cs:riga 575
+   in CDCMetal.CreaSpessoreFrm.CalcolaValoriAggregati() in C:\VSProgetti\CDCMetal\CDCMetal\CDCMetal\CreaSpessoreFrm.cs:riga 502
+   in CDCMetal.CreaSpessoreFrm.CaricaCampioniMisuraPrecedente(Decimal IDGALVANICA) in C:\VSProgetti\CDCMetal\CDCMetal\CDCMetal\CreaSpessoreFrm.cs:riga 253
+   in CDCMetal.CreaSpessoreFrm.dgvDettaglio_CellClick(Object sender, DataGridViewCellEventArgs e) in C:\VSProgetti\CDCMetal\CDCMetal\CDCMetal\CreaSpessoreFrm.cs:riga 190
+ERROR 2018-11-15 09:08:45,028 479581ms MainForm               LogScriviErrore    - Errore in dgvDettaglio_CellClick
+System.InvalidCastException: Cast specificato non valido.
+   in CDCMetal.CreaSpessoreFrm.GetList(DataTable dt, Int32 column) in C:\VSProgetti\CDCMetal\CDCMetal\CDCMetal\CreaSpessoreFrm.cs:riga 575
+   in CDCMetal.CreaSpessoreFrm.CalcolaValoriAggregati() in C:\VSProgetti\CDCMetal\CDCMetal\CDCMetal\CreaSpessoreFrm.cs:riga 502
+   in CDCMetal.CreaSpessoreFrm.CaricaCampioniMisuraPrecedente(Decimal IDGALVANICA) in C:\VSProgetti\CDCMetal\CDCMetal\CDCMetal\CreaSpessoreFrm.cs:riga 253
+   in CDCMetal.CreaSpessoreFrm.dgvDettaglio_CellClick(Object sender, DataGridViewCellEventArgs e) in C:\VSProgetti\CDCMetal\CDCMetal\CDCMetal\CreaSpessoreFrm.cs:riga 190
+ERROR 2018-11-15 09:09:23,130 517684ms MainForm               LogScriviErrore    - Errore in dgvDettaglio_CellClick
+System.InvalidCastException: Cast specificato non valido.
+   in CDCMetal.CreaSpessoreFrm.GetList(DataTable dt, Int32 column) in C:\VSProgetti\CDCMetal\CDCMetal\CDCMetal\CreaSpessoreFrm.cs:riga 575
+   in CDCMetal.CreaSpessoreFrm.CalcolaValoriAggregati() in C:\VSProgetti\CDCMetal\CDCMetal\CDCMetal\CreaSpessoreFrm.cs:riga 502
+   in CDCMetal.CreaSpessoreFrm.CaricaCampioniMisuraPrecedente(Decimal IDGALVANICA) in C:\VSProgetti\CDCMetal\CDCMetal\CDCMetal\CreaSpessoreFrm.cs:riga 253
+   in CDCMetal.CreaSpessoreFrm.dgvDettaglio_CellClick(Object sender, DataGridViewCellEventArgs e) in C:\VSProgetti\CDCMetal\CDCMetal\CDCMetal\CreaSpessoreFrm.cs:riga 190
+INFO  2018-11-15 09:13:47,709   355ms MainForm               LogScrivi          - Applicazione CDCMetal avviata
+INFO  2018-11-15 09:24:55,918   382ms MainForm               LogScrivi          - Applicazione CDCMetal avviata
+ERROR 2018-11-15 09:30:13,769 318234ms MainForm               LogScriviErrore    - Errore in dgvDettaglio_CellClick
+System.Data.DuplicateNameException: Una colonna denominata 'a' appartiene già a questa DataTable.
+   in System.Data.DataColumnCollection.RegisterColumnName(String name, DataColumn column)
+   in System.Data.DataColumnCollection.BaseAdd(DataColumn column)
+   in System.Data.DataColumnCollection.AddAt(Int32 index, DataColumn column)
+   in System.Data.DataColumnCollection.Add(String columnName, Type type)
+   in CDCMetal.CreaSpessoreFrm.CaricaCampioniMisuraPrecedente(Decimal IDGALVANICA)
+   in CDCMetal.CreaSpessoreFrm.dgvDettaglio_CellClick(Object sender, DataGridViewCellEventArgs e)
+ERROR 2018-11-15 09:30:26,862 331327ms MainForm               LogScriviErrore    - Errore in dgvDettaglio_CellClick
+System.Data.DuplicateNameException: Una colonna denominata 'a' appartiene già a questa DataTable.
+   in System.Data.DataColumnCollection.RegisterColumnName(String name, DataColumn column)
+   in System.Data.DataColumnCollection.BaseAdd(DataColumn column)
+   in System.Data.DataColumnCollection.AddAt(Int32 index, DataColumn column)
+   in System.Data.DataColumnCollection.Add(String columnName, Type type)
+   in CDCMetal.CreaSpessoreFrm.CaricaCampioniMisuraPrecedente(Decimal IDGALVANICA)
+   in CDCMetal.CreaSpessoreFrm.dgvDettaglio_CellClick(Object sender, DataGridViewCellEventArgs e)
+INFO  2018-11-15 09:30:51,162 355627ms MainForm               LogScrivi          - Applicazione CDCMetal fermata
+INFO  2018-11-15 09:33:46,671   394ms MainForm               LogScrivi          - Applicazione CDCMetal avviata
+ERROR 2018-11-15 09:34:41,921 55645ms MainForm               LogScriviErrore    - Errore in dgvDettaglio_CellClick
+System.Data.DuplicateNameException: Una colonna denominata 'a' appartiene già a questa DataTable.
+   in System.Data.DataColumnCollection.RegisterColumnName(String name, DataColumn column)
+   in System.Data.DataColumnCollection.BaseAdd(DataColumn column)
+   in System.Data.DataColumnCollection.AddAt(Int32 index, DataColumn column)
+   in System.Data.DataColumnCollection.Add(String columnName, Type type)
+   in CDCMetal.CreaSpessoreFrm.CaricaCampioniMisuraPrecedente(Decimal IDGALVANICA) in C:\VSProgetti\CDCMetal\CDCMetal\CDCMetal\CreaSpessoreFrm.cs:riga 256
+   in CDCMetal.CreaSpessoreFrm.dgvDettaglio_CellClick(Object sender, DataGridViewCellEventArgs e) in C:\VSProgetti\CDCMetal\CDCMetal\CDCMetal\CreaSpessoreFrm.cs:riga 203
+INFO  2018-11-15 09:38:29,564   382ms MainForm               LogScrivi          - Applicazione CDCMetal avviata
+INFO  2018-11-15 09:41:33,210   349ms MainForm               LogScrivi          - Applicazione CDCMetal avviata
+INFO  2018-11-15 09:43:25,160 112298ms MainForm               LogScrivi          - Applicazione CDCMetal fermata
+INFO  2018-11-15 09:51:23,488   419ms MainForm               LogScrivi          - Applicazione CDCMetal avviata
+ERROR 2018-11-15 09:53:20,052 116984ms MainForm               LogScriviErrore    - Errore in crea PDF
+System.UnauthorizedAccessException: Accesso al percorso 'C:\Temp\CDC\CARTELLACOLLAUDO\Metalplus\COLLAUDI NOVEMBRE 2018\collaudo 15-11-18\00Y511-461-0514 EACY 2018 734 29\461 0514 EACY 2018 734 29.pdf' negato.
+   in System.IO.__Error.WinIOError(Int32 errorCode, String maybeFullPath)
+   in System.IO.File.InternalDelete(String path, Boolean checkHost)
+   in System.IO.File.Delete(String path)
+   in CDCMetal.BLL.CDCBLL.CreaPDFSpessore(Decimal IDDETTAGLIO, CDCDS ds, String pathCollaudo, Byte[] iLoghi, Byte[] iBowman, Boolean CopiaReferto, String pathCartellaReferto, List`1 medie, List`1 Std, List`1 Pct, List`1 range, List`1 minimo, List`1 massimo) in C:\VSProgetti\CDCMetal\CDCMetal\CDCMetal.BLL\CDCBLL.cs:riga 413
+   in CDCMetal.CreaSpessoreFrm.btnCreaPDF_Click(Object sender, EventArgs e) in C:\VSProgetti\CDCMetal\CDCMetal\CDCMetal\CreaSpessoreFrm.cs:riga 796
+INFO  2018-11-15 09:57:07,154   387ms MainForm               LogScrivi          - Applicazione CDCMetal avviata
+ERROR 2018-11-15 09:57:55,645 48878ms MainForm               LogScriviErrore    - Errore in dgvDettaglio_CellClick
+System.InvalidOperationException: La sequenza non contiene elementi
+   in System.Linq.Enumerable.Max(IEnumerable`1 source)
+   in System.Linq.Enumerable.Max[TSource](IEnumerable`1 source, Func`2 selector)
+   in CDCMetal.CreaSpessoreFrm.CaricaCampioniMisuraPrecedente(Decimal IDGALVANICA) in C:\VSProgetti\CDCMetal\CDCMetal\CDCMetal\CreaSpessoreFrm.cs:riga 231
+   in CDCMetal.CreaSpessoreFrm.dgvDettaglio_CellClick(Object sender, DataGridViewCellEventArgs e) in C:\VSProgetti\CDCMetal\CDCMetal\CDCMetal\CreaSpessoreFrm.cs:riga 203
+ERROR 2018-11-15 09:58:10,874 64108ms MainForm               LogScriviErrore    - Errore in dgvDettaglio_CellClick
+System.InvalidOperationException: La sequenza non contiene elementi
+   in System.Linq.Enumerable.Max(IEnumerable`1 source)
+   in System.Linq.Enumerable.Max[TSource](IEnumerable`1 source, Func`2 selector)
+   in CDCMetal.CreaSpessoreFrm.CaricaCampioniMisuraPrecedente(Decimal IDGALVANICA) in C:\VSProgetti\CDCMetal\CDCMetal\CDCMetal\CreaSpessoreFrm.cs:riga 231
+   in CDCMetal.CreaSpessoreFrm.dgvDettaglio_CellClick(Object sender, DataGridViewCellEventArgs e) in C:\VSProgetti\CDCMetal\CDCMetal\CDCMetal\CreaSpessoreFrm.cs:riga 203
+INFO  2018-11-15 10:02:44,853   427ms MainForm               LogScrivi          - Applicazione CDCMetal avviata
+INFO  2018-11-15 10:09:48,822   389ms MainForm               LogScrivi          - Applicazione CDCMetal avviata
+INFO  2018-11-15 10:10:32,226 43794ms MainForm               LogScrivi          - Applicazione CDCMetal fermata
+INFO  2018-11-15 10:13:15,055   470ms MainForm               LogScrivi          - Applicazione CDCMetal avviata
+INFO  2018-11-15 10:14:41,448   410ms MainForm               LogScrivi          - Applicazione CDCMetal avviata
+ERROR 2018-11-15 10:14:53,835 12798ms MainForm               LogScriviErrore    - Errore in dgvDettaglio_CellClick
+System.ArgumentException: Impossibile creare un elenco di elementi figlio per il campo MISURE.
+   in System.Windows.Forms.BindingContext.EnsureListManager(Object dataSource, String dataMember)
+   in System.Windows.Forms.DataGridView.DataGridViewDataConnection.SetDataConnection(Object dataSource, String dataMember)
+   in System.Windows.Forms.DataGridView.set_DataMember(String value)
+   in CDCMetal.CreaSpessoreFrm.mostradgvMisure() in C:\VSProgetti\CDCMetal\CDCMetal\CDCMetal\CreaSpessoreFrm.cs:riga 288
+   in CDCMetal.CreaSpessoreFrm.dgvDettaglio_CellClick(Object sender, DataGridViewCellEventArgs e) in C:\VSProgetti\CDCMetal\CDCMetal\CDCMetal\CreaSpessoreFrm.cs:riga 216
+ERROR 2018-11-15 10:15:08,193 27156ms MainForm               LogScriviErrore    - Errore in dgvDettaglio_CellClick
+System.ArgumentOutOfRangeException: Index non compreso nell'intervallo. Richiesto valore non negativo e minore della dimensione della raccolta.
+Nome parametro: index
+   in System.Collections.ArrayList.get_Item(Int32 index)
+   in System.Windows.Forms.DataGridViewColumnCollection.get_Item(Int32 index)
+   in CDCMetal.CreaSpessoreFrm.mostradgvMisure() in C:\VSProgetti\CDCMetal\CDCMetal\CDCMetal\CreaSpessoreFrm.cs:riga 290
+   in CDCMetal.CreaSpessoreFrm.CaricaCampioniMisuraPrecedente(Decimal IDGALVANICA) in C:\VSProgetti\CDCMetal\CDCMetal\CDCMetal\CreaSpessoreFrm.cs:riga 279
+   in CDCMetal.CreaSpessoreFrm.dgvDettaglio_CellClick(Object sender, DataGridViewCellEventArgs e) in C:\VSProgetti\CDCMetal\CDCMetal\CDCMetal\CreaSpessoreFrm.cs:riga 203
+INFO  2018-11-15 10:16:15,742   419ms MainForm               LogScrivi          - Applicazione CDCMetal avviata
+INFO  2018-11-15 10:19:44,260   452ms MainForm               LogScrivi          - Applicazione CDCMetal avviata
+INFO  2018-11-15 10:22:19,778   387ms MainForm               LogScrivi          - Applicazione CDCMetal avviata
+INFO  2018-11-15 10:26:29,989   406ms MainForm               LogScrivi          - Applicazione CDCMetal avviata
+ERROR 2018-11-15 10:26:41,975 12392ms MainForm               LogScriviErrore    - Errore in dgvDettaglio_CellClick
+System.ArgumentException: Impossibile cancellare questo elenco.
+   in System.Data.DataView.System.Collections.IList.Clear()
+   in System.Windows.Forms.DataGridViewRowCollection.Clear()
+   in CDCMetal.CreaSpessoreFrm.dgvDettaglio_CellClick(Object sender, DataGridViewCellEventArgs e) in C:\VSProgetti\CDCMetal\CDCMetal\CDCMetal\CreaSpessoreFrm.cs:riga 210
+ERROR 2018-11-15 10:27:31,965 62382ms MainForm               LogScriviErrore    - Errore in dgvDettaglio_CellClick
+System.ArgumentException: Impossibile cancellare questo elenco.
+   in System.Data.DataView.System.Collections.IList.Clear()
+   in System.Windows.Forms.DataGridViewRowCollection.Clear()
+   in CDCMetal.CreaSpessoreFrm.dgvDettaglio_CellClick(Object sender, DataGridViewCellEventArgs e) in C:\VSProgetti\CDCMetal\CDCMetal\CDCMetal\CreaSpessoreFrm.cs:riga 216
+INFO  2018-11-15 10:27:43,810 74227ms MainForm               LogScrivi          - Applicazione CDCMetal fermata
+INFO  2018-11-15 10:28:20,314   434ms MainForm               LogScrivi          - Applicazione CDCMetal avviata
+ERROR 2018-11-15 10:28:36,734 16854ms MainForm               LogScriviErrore    - Errore in dgvDettaglio_CellClick
+System.ArgumentException: Impossibile cancellare questo elenco.
+   in System.Data.DataView.System.Collections.IList.Clear()
+   in System.Windows.Forms.DataGridViewRowCollection.Clear()
+   in CDCMetal.CreaSpessoreFrm.dgvDettaglio_CellClick(Object sender, DataGridViewCellEventArgs e) in C:\VSProgetti\CDCMetal\CDCMetal\CDCMetal\CreaSpessoreFrm.cs:riga 207
+INFO  2018-11-15 10:28:49,755 29875ms MainForm               LogScrivi          - Applicazione CDCMetal fermata
+INFO  2018-11-15 10:32:42,362   369ms MainForm               LogScrivi          - Applicazione CDCMetal avviata
+ERROR 2018-11-15 10:32:51,796  9802ms MainForm               LogScriviErrore    - Errore in dgvDettaglio_CellClick
+System.ArgumentException: Impossibile creare un elenco di elementi figlio per il campo MISURE.
+   in System.Windows.Forms.BindingContext.EnsureListManager(Object dataSource, String dataMember)
+   in System.Windows.Forms.DataGridView.DataGridViewDataConnection.SetDataConnection(Object dataSource, String dataMember)
+   in System.Windows.Forms.DataGridView.set_DataMember(String value)
+   in CDCMetal.CreaSpessoreFrm.mostradgvMisure() in C:\VSProgetti\CDCMetal\CDCMetal\CDCMetal\CreaSpessoreFrm.cs:riga 279
+   in CDCMetal.CreaSpessoreFrm.dgvDettaglio_CellClick(Object sender, DataGridViewCellEventArgs e) in C:\VSProgetti\CDCMetal\CDCMetal\CDCMetal\CreaSpessoreFrm.cs:riga 207
+ERROR 2018-11-15 10:38:29,498 347504ms MainForm               LogScriviErrore    - Errore in Crea Campioni Click
+System.Data.DeletedRowInaccessibleException: Impossibile accedere alle informazioni sulla riga eliminata tramite la riga.
+   in System.Data.DataRow.GetDefaultRecord()
+   in System.Data.DataRow.get_Item(DataColumn column)
+   in CDCMetal.Entities.CDCDS.CDC_SPESSORERow.get_SEQUENZA() in C:\VSProgetti\CDCMetal\CDCMetal\CDCMetal.Entities\CDCDS.Designer.cs:riga 8993
+   in CDCMetal.CreaSpessoreFrm.<>c.<btnCreaCampioni_Click>b__19_0(CDC_SPESSORERow x)
+   in System.Linq.EnumerableSorter`2.ComputeKeys(TElement[] elements, Int32 count)
+   in System.Linq.EnumerableSorter`1.Sort(TElement[] elements, Int32 count)
+   in System.Linq.OrderedEnumerable`1.<GetEnumerator>d__1.MoveNext()
+   in CDCMetal.CreaSpessoreFrm.btnCreaCampioni_Click(Object sender, EventArgs e)
+ERROR 2018-11-15 10:38:44,308 362315ms MainForm               LogScriviErrore    - Errore in Crea Campioni Click
+System.Data.DeletedRowInaccessibleException: Impossibile accedere alle informazioni sulla riga eliminata tramite la riga.
+   in System.Data.DataRow.GetDefaultRecord()
+   in System.Data.DataRow.get_Item(DataColumn column)
+   in CDCMetal.Entities.CDCDS.CDC_SPESSORERow.get_PARTE() in C:\VSProgetti\CDCMetal\CDCMetal\CDCMetal.Entities\CDCDS.Designer.cs:riga 8971
+   in CDCMetal.CreaSpessoreFrm.<popolaCDC_SPESSORE>b__18_0(CDC_SPESSORERow x)
+   in System.Linq.Enumerable.WhereEnumerableIterator`1.MoveNext()
+   in CDCMetal.CreaSpessoreFrm.popolaCDC_SPESSORE()
+   in CDCMetal.CreaSpessoreFrm.btnCreaCampioni_Click(Object sender, EventArgs e)
+INFO  2018-11-15 10:39:02,003 380009ms MainForm               LogScrivi          - Applicazione CDCMetal fermata
+INFO  2018-11-15 10:39:48,893   383ms MainForm               LogScrivi          - Applicazione CDCMetal avviata
+ERROR 2018-11-15 10:40:00,907 12398ms MainForm               LogScriviErrore    - Errore in dgvDettaglio_CellClick
+System.ArgumentException: Impossibile creare un elenco di elementi figlio per il campo MISURE.
+   in System.Windows.Forms.BindingContext.EnsureListManager(Object dataSource, String dataMember)
+   in System.Windows.Forms.DataGridView.DataGridViewDataConnection.SetDataConnection(Object dataSource, String dataMember)
+   in System.Windows.Forms.DataGridView.set_DataMember(String value)
+   in CDCMetal.CreaSpessoreFrm.mostradgvMisure() in C:\VSProgetti\CDCMetal\CDCMetal\CDCMetal\CreaSpessoreFrm.cs:riga 279
+   in CDCMetal.CreaSpessoreFrm.dgvDettaglio_CellClick(Object sender, DataGridViewCellEventArgs e) in C:\VSProgetti\CDCMetal\CDCMetal\CDCMetal\CreaSpessoreFrm.cs:riga 207
+INFO  2018-11-15 10:40:11,275 22766ms MainForm               LogScrivi          - Applicazione CDCMetal fermata
+INFO  2018-11-15 10:40:53,493   428ms MainForm               LogScrivi          - Applicazione CDCMetal avviata
+INFO  2018-11-15 10:43:22,127   395ms MainForm               LogScrivi          - Applicazione CDCMetal avviata
+INFO  2018-11-15 10:48:09,563   384ms MainForm               LogScrivi          - Applicazione CDCMetal avviata
+ERROR 2018-11-15 10:48:39,496 30317ms MainForm               LogScriviErrore    - Errore in Crea Campioni Click
+System.Data.DeletedRowInaccessibleException: Impossibile accedere alle informazioni sulla riga eliminata tramite la riga.
+   in System.Data.DataRow.GetDefaultRecord()
+   in System.Data.DataRow.get_Item(DataColumn column)
+   in CDCMetal.Entities.CDCDS.CDC_SPESSORERow.get_SEQUENZA() in C:\VSProgetti\CDCMetal\CDCMetal\CDCMetal.Entities\CDCDS.Designer.cs:riga 8993
+   in CDCMetal.CreaSpessoreFrm.<>c.<btnCreaCampioni_Click>b__19_0(CDC_SPESSORERow x) in C:\VSProgetti\CDCMetal\CDCMetal\CDCMetal\CreaSpessoreFrm.cs:riga 448
+   in System.Linq.EnumerableSorter`2.ComputeKeys(TElement[] elements, Int32 count)
+   in System.Linq.EnumerableSorter`1.Sort(TElement[] elements, Int32 count)
+   in System.Linq.OrderedEnumerable`1.<GetEnumerator>d__1.MoveNext()
+   in CDCMetal.CreaSpessoreFrm.btnCreaCampioni_Click(Object sender, EventArgs e) in C:\VSProgetti\CDCMetal\CDCMetal\CDCMetal\CreaSpessoreFrm.cs:riga 448
+INFO  2018-11-15 10:50:57,708   445ms MainForm               LogScrivi          - Applicazione CDCMetal avviata
+ERROR 2018-11-15 10:51:29,833 32570ms MainForm               LogScriviErrore    - Errore in dgvDettaglio_CellClick
+System.Data.DuplicateNameException: Una colonna denominata 'a' appartiene già a questa DataTable.
+   in System.Data.DataColumnCollection.RegisterColumnName(String name, DataColumn column)
+   in System.Data.DataColumnCollection.BaseAdd(DataColumn column)
+   in System.Data.DataColumnCollection.AddAt(Int32 index, DataColumn column)
+   in System.Data.DataColumnCollection.Add(String columnName, Type type)
+   in CDCMetal.CreaSpessoreFrm.CaricaCampioniMisuraPrecedente(Decimal IDGALVANICA) in C:\VSProgetti\CDCMetal\CDCMetal\CDCMetal\CreaSpessoreFrm.cs:riga 258
+   in CDCMetal.CreaSpessoreFrm.dgvDettaglio_CellClick(Object sender, DataGridViewCellEventArgs e) in C:\VSProgetti\CDCMetal\CDCMetal\CDCMetal\CreaSpessoreFrm.cs:riga 203
+ERROR 2018-11-15 10:51:38,558 41295ms MainForm               LogScriviErrore    - Errore in dgvDettaglio_CellClick
+System.Data.DuplicateNameException: Una colonna denominata 'a' appartiene già a questa DataTable.
+   in System.Data.DataColumnCollection.RegisterColumnName(String name, DataColumn column)
+   in System.Data.DataColumnCollection.BaseAdd(DataColumn column)
+   in System.Data.DataColumnCollection.AddAt(Int32 index, DataColumn column)
+   in System.Data.DataColumnCollection.Add(String columnName, Type type)
+   in CDCMetal.CreaSpessoreFrm.CaricaCampioniMisuraPrecedente(Decimal IDGALVANICA) in C:\VSProgetti\CDCMetal\CDCMetal\CDCMetal\CreaSpessoreFrm.cs:riga 258
+   in CDCMetal.CreaSpessoreFrm.dgvDettaglio_CellClick(Object sender, DataGridViewCellEventArgs e) in C:\VSProgetti\CDCMetal\CDCMetal\CDCMetal\CreaSpessoreFrm.cs:riga 203
+ERROR 2018-11-15 10:52:10,421 73159ms MainForm               LogScriviErrore    - Errore in dgvDettaglio_CellClick
+System.Data.DuplicateNameException: Una colonna denominata 'a' appartiene già a questa DataTable.
+   in System.Data.DataColumnCollection.RegisterColumnName(String name, DataColumn column)
+   in System.Data.DataColumnCollection.BaseAdd(DataColumn column)
+   in System.Data.DataColumnCollection.AddAt(Int32 index, DataColumn column)
+   in System.Data.DataColumnCollection.Add(String columnName, Type type)
+   in CDCMetal.CreaSpessoreFrm.CaricaCampioniMisuraPrecedente(Decimal IDGALVANICA) in C:\VSProgetti\CDCMetal\CDCMetal\CDCMetal\CreaSpessoreFrm.cs:riga 258
+   in CDCMetal.CreaSpessoreFrm.dgvDettaglio_CellClick(Object sender, DataGridViewCellEventArgs e) in C:\VSProgetti\CDCMetal\CDCMetal\CDCMetal\CreaSpessoreFrm.cs:riga 203
+ERROR 2018-11-15 10:52:26,836 89573ms MainForm               LogScriviErrore    - Errore in dgvDettaglio_CellClick
+System.Data.DuplicateNameException: Una colonna denominata 'a' appartiene già a questa DataTable.
+   in System.Data.DataColumnCollection.RegisterColumnName(String name, DataColumn column)
+   in System.Data.DataColumnCollection.BaseAdd(DataColumn column)
+   in System.Data.DataColumnCollection.AddAt(Int32 index, DataColumn column)
+   in System.Data.DataColumnCollection.Add(String columnName, Type type)
+   in CDCMetal.CreaSpessoreFrm.CaricaCampioniMisuraPrecedente(Decimal IDGALVANICA) in C:\VSProgetti\CDCMetal\CDCMetal\CDCMetal\CreaSpessoreFrm.cs:riga 258
+   in CDCMetal.CreaSpessoreFrm.dgvDettaglio_CellClick(Object sender, DataGridViewCellEventArgs e) in C:\VSProgetti\CDCMetal\CDCMetal\CDCMetal\CreaSpessoreFrm.cs:riga 203
+INFO  2018-11-15 10:53:37,218   376ms MainForm               LogScrivi          - Applicazione CDCMetal avviata
+ERROR 2018-11-15 10:54:13,275 36433ms MainForm               LogScriviErrore    - Errore in Crea Campioni Click
+System.InvalidOperationException: La raccolta è stata modificata; impossibile eseguire l'operazione di enumerazione.
+   in System.Data.RBTree`1.RBTreeEnumerator.MoveNext()
+   in System.Linq.Enumerable.<CastIterator>d__97`1.MoveNext()
+   in System.Linq.Enumerable.WhereEnumerableIterator`1.MoveNext()
+   in CDCMetal.CreaSpessoreFrm.popolaCDC_SPESSORE() in C:\VSProgetti\CDCMetal\CDCMetal\CDCMetal\CreaSpessoreFrm.cs:riga 384
+   in CDCMetal.CreaSpessoreFrm.btnCreaCampioni_Click(Object sender, EventArgs e) in C:\VSProgetti\CDCMetal\CDCMetal\CDCMetal\CreaSpessoreFrm.cs:riga 434
+ERROR 2018-11-15 10:54:52,232 75390ms MainForm               LogScriviErrore    - Errore in Crea Campioni Click
+System.InvalidOperationException: La raccolta è stata modificata; impossibile eseguire l'operazione di enumerazione.
+   in System.Data.RBTree`1.RBTreeEnumerator.MoveNext()
+   in System.Linq.Enumerable.<CastIterator>d__97`1.MoveNext()
+   in System.Linq.Enumerable.WhereEnumerableIterator`1.MoveNext()
+   in CDCMetal.CreaSpessoreFrm.popolaCDC_SPESSORE() in C:\VSProgetti\CDCMetal\CDCMetal\CDCMetal\CreaSpessoreFrm.cs:riga 384
+   in CDCMetal.CreaSpessoreFrm.btnCreaCampioni_Click(Object sender, EventArgs e) in C:\VSProgetti\CDCMetal\CDCMetal\CDCMetal\CreaSpessoreFrm.cs:riga 434
+INFO  2018-11-15 11:00:09,387   378ms MainForm               LogScrivi          - Applicazione CDCMetal avviata
+ERROR 2018-11-15 11:00:47,254 38245ms MainForm               LogScriviErrore    - Errore in Crea Campioni Click
+System.Data.StrongTypingException: The value for column 'IDSPESSORE' in table 'CDC_SPESSORE' is DBNull. ---> System.InvalidCastException: Cast specificato non valido.
+   in CDCMetal.Entities.CDCDS.CDC_SPESSORERow.get_IDSPESSORE() in C:\VSProgetti\CDCMetal\CDCMetal\CDCMetal.Entities\CDCDS.Designer.cs:riga 8956
+   --- Fine della traccia dello stack dell'eccezione interna ---
+   in CDCMetal.Entities.CDCDS.CDC_SPESSORERow.get_IDSPESSORE() in C:\VSProgetti\CDCMetal\CDCMetal\CDCMetal.Entities\CDCDS.Designer.cs:riga 8959
+   in CDCMetal.CreaSpessoreFrm.<>c.<popolaCDC_SPESSORE>b__18_1(CDC_SPESSORERow x) in C:\VSProgetti\CDCMetal\CDCMetal\CDCMetal\CreaSpessoreFrm.cs:riga 384
+   in System.Linq.Enumerable.WhereSelectEnumerableIterator`2.MoveNext()
+   in System.Collections.Generic.List`1..ctor(IEnumerable`1 collection)
+   in System.Linq.Enumerable.ToList[TSource](IEnumerable`1 source)
+   in CDCMetal.CreaSpessoreFrm.popolaCDC_SPESSORE() in C:\VSProgetti\CDCMetal\CDCMetal\CDCMetal\CreaSpessoreFrm.cs:riga 384
+   in CDCMetal.CreaSpessoreFrm.btnCreaCampioni_Click(Object sender, EventArgs e) in C:\VSProgetti\CDCMetal\CDCMetal\CDCMetal\CreaSpessoreFrm.cs:riga 436
+INFO  2018-11-15 11:02:12,005   489ms MainForm               LogScrivi          - Applicazione CDCMetal avviata
+ERROR 2018-11-15 11:16:09,876 838360ms MainForm               LogScriviErrore    - Errore in dgvDettaglio_CellClick
+System.Data.DuplicateNameException: Una colonna denominata 'a' appartiene già a questa DataTable.
+   in System.Data.DataColumnCollection.RegisterColumnName(String name, DataColumn column)
+   in System.Data.DataColumnCollection.BaseAdd(DataColumn column)
+   in System.Data.DataColumnCollection.AddAt(Int32 index, DataColumn column)
+   in System.Data.DataColumnCollection.Add(String columnName, Type type)
+   in CDCMetal.CreaSpessoreFrm.CaricaCampioniMisuraPrecedente(Decimal IDGALVANICA)
+   in CDCMetal.CreaSpessoreFrm.dgvDettaglio_CellClick(Object sender, DataGridViewCellEventArgs e)
+ERROR 2018-11-15 11:16:31,034 859518ms MainForm               LogScriviErrore    - Errore in dgvDettaglio_CellClick
+System.Data.DuplicateNameException: Una colonna denominata 'a' appartiene già a questa DataTable.
+   in System.Data.DataColumnCollection.RegisterColumnName(String name, DataColumn column)
+   in System.Data.DataColumnCollection.BaseAdd(DataColumn column)
+   in System.Data.DataColumnCollection.AddAt(Int32 index, DataColumn column)
+   in System.Data.DataColumnCollection.Add(String columnName, Type type)
+   in CDCMetal.CreaSpessoreFrm.CaricaCampioniMisuraPrecedente(Decimal IDGALVANICA)
+   in CDCMetal.CreaSpessoreFrm.dgvDettaglio_CellClick(Object sender, DataGridViewCellEventArgs e)
+INFO  2018-11-15 11:21:47,815   456ms MainForm               LogScrivi          - Applicazione CDCMetal avviata
+ERROR 2018-11-15 11:23:59,033 131674ms MainForm               LogScriviErrore    - Errore in Crea Campioni Click
+System.Data.DuplicateNameException: Una colonna denominata 'a' appartiene già a questa DataTable.
+   in System.Data.DataColumnCollection.RegisterColumnName(String name, DataColumn column)
+   in System.Data.DataColumnCollection.BaseAdd(DataColumn column)
+   in System.Data.DataColumnCollection.AddAt(Int32 index, DataColumn column)
+   in System.Data.DataColumnCollection.Add(String columnName, Type type)
+   in CDCMetal.CreaSpessoreFrm.btnCreaCampioni_Click(Object sender, EventArgs e) in C:\VSProgetti\CDCMetal\CDCMetal\CDCMetal\CreaSpessoreFrm.cs:riga 452
+ERROR 2018-11-15 11:24:04,629 137271ms MainForm               LogScriviErrore    - Errore in Crea Campioni Click
+System.Data.DuplicateNameException: Una colonna denominata 'a' appartiene già a questa DataTable.
+   in System.Data.DataColumnCollection.RegisterColumnName(String name, DataColumn column)
+   in System.Data.DataColumnCollection.BaseAdd(DataColumn column)
+   in System.Data.DataColumnCollection.AddAt(Int32 index, DataColumn column)
+   in System.Data.DataColumnCollection.Add(String columnName, Type type)
+   in CDCMetal.CreaSpessoreFrm.btnCreaCampioni_Click(Object sender, EventArgs e) in C:\VSProgetti\CDCMetal\CDCMetal\CDCMetal\CreaSpessoreFrm.cs:riga 452
+ERROR 2018-11-15 11:24:49,699 182340ms MainForm               LogScriviErrore    - Errore in Crea Campioni Click
+System.Data.DuplicateNameException: Una colonna denominata 'a' appartiene già a questa DataTable.
+   in System.Data.DataColumnCollection.RegisterColumnName(String name, DataColumn column)
+   in System.Data.DataColumnCollection.BaseAdd(DataColumn column)
+   in System.Data.DataColumnCollection.AddAt(Int32 index, DataColumn column)
+   in System.Data.DataColumnCollection.Add(String columnName, Type type)
+   in CDCMetal.CreaSpessoreFrm.btnCreaCampioni_Click(Object sender, EventArgs e) in C:\VSProgetti\CDCMetal\CDCMetal\CDCMetal\CreaSpessoreFrm.cs:riga 452
+ERROR 2018-11-15 11:25:50,349 242990ms MainForm               LogScriviErrore    - Errore in Crea Campioni Click
+System.Data.DuplicateNameException: Una colonna denominata 'a' appartiene già a questa DataTable.
+   in System.Data.DataColumnCollection.RegisterColumnName(String name, DataColumn column)
+   in System.Data.DataColumnCollection.BaseAdd(DataColumn column)
+   in System.Data.DataColumnCollection.AddAt(Int32 index, DataColumn column)
+   in System.Data.DataColumnCollection.Add(String columnName, Type type)
+   in CDCMetal.CreaSpessoreFrm.btnCreaCampioni_Click(Object sender, EventArgs e) in C:\VSProgetti\CDCMetal\CDCMetal\CDCMetal\CreaSpessoreFrm.cs:riga 452
+INFO  2018-11-15 11:28:37,077   413ms MainForm               LogScrivi          - Applicazione CDCMetal avviata
+INFO  2018-11-15 11:30:30,274 113611ms MainForm               LogScrivi          - Applicazione CDCMetal fermata
+INFO  2018-11-15 11:36:20,752   452ms MainForm               LogScrivi          - Applicazione CDCMetal avviata
+INFO  2018-11-15 11:37:42,832   377ms MainForm               LogScrivi          - Applicazione CDCMetal avviata
+ERROR 2018-11-15 11:37:53,915 11460ms MainForm               LogScriviErrore    - Errore in dgvDettaglio_CellClick
+System.ArgumentException: Impossibile creare un elenco di elementi figlio per il campo AGGREGATI.
+   in System.Windows.Forms.BindingContext.EnsureListManager(Object dataSource, String dataMember)
+   in System.Windows.Forms.DataGridView.DataGridViewDataConnection.SetDataConnection(Object dataSource, String dataMember)
+   in System.Windows.Forms.DataGridView.set_DataMember(String value)
+   in CDCMetal.CreaSpessoreFrm.mostradgvAggregati() in C:\VSProgetti\CDCMetal\CDCMetal\CDCMetal\CreaSpessoreFrm.cs:riga 626
+   in CDCMetal.CreaSpessoreFrm.dgvDettaglio_CellClick(Object sender, DataGridViewCellEventArgs e) in C:\VSProgetti\CDCMetal\CDCMetal\CDCMetal\CreaSpessoreFrm.cs:riga 207
+INFO  2018-11-15 11:39:47,674 125220ms MainForm               LogScrivi          - Applicazione CDCMetal fermata

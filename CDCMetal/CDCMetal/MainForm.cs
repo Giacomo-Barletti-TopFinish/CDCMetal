@@ -88,9 +88,7 @@ namespace CDCMetal
             }
             catch (Exception ex)
             {
-                LogScriviErrore("ERRORE IN ESEGUI LOGIN", ex);
-                ExceptionFrm frm = new ExceptionFrm(ex);
-                frm.ShowDialog();
+                MostraEccezione("ERRORE IN ESEGUI LOGIN", ex);
             }
             AbilitaMenu();
 
@@ -109,7 +107,7 @@ namespace CDCMetal
             else
             {
                 DisabilitaElementiMenu(cdcMenu.Items, true);
-                switch(Contesto.Utente.IDUSER)
+                switch (Contesto.Utente.IDUSER)
                 {
                     case "0000000029":
                     case "0000000100":
@@ -184,10 +182,16 @@ namespace CDCMetal
             }
             catch (Exception ex)
             {
-                LogScriviErrore("ERRORE IN ESEGUI LOGIN", ex);
-                ExceptionFrm frm = new ExceptionFrm(ex);
-                frm.ShowDialog();
+                MostraEccezione("ERRORE IN ESEGUI LOGIN", ex);
             }
+        }
+
+        public void MostraEccezione(string messaggioLog, Exception ex)
+        {
+            LogScriviErrore(messaggioLog, ex);
+            ExceptionFrm frm = new ExceptionFrm(ex);
+            frm.ShowDialog();
+
         }
 
         private void creaCartelleToolStripMenuItem_Click(object sender, EventArgs e)
@@ -200,9 +204,7 @@ namespace CDCMetal
             }
             catch (Exception ex)
             {
-                LogScriviErrore("ERRORE IN CREA CARTELLE", ex);
-                ExceptionFrm frm = new ExceptionFrm(ex);
-                frm.ShowDialog();
+                MostraEccezione("ERRORE IN CREA CARTELLE", ex);
             }
 
         }
@@ -217,9 +219,7 @@ namespace CDCMetal
             }
             catch (Exception ex)
             {
-                LogScriviErrore("ERRORE IN CREA CERTIFICATO CONFORMITA'", ex);
-                ExceptionFrm frm = new ExceptionFrm(ex);
-                frm.ShowDialog();
+                MostraEccezione("ERRORE IN CREA CERTIFICATO CONFORMITA'", ex);
             }
         }
 
@@ -234,9 +234,7 @@ namespace CDCMetal
             }
             catch (Exception ex)
             {
-                LogScriviErrore("ERRORE IN CREA CERTIFICATO DIMENSIONALE", ex);
-                ExceptionFrm frm = new ExceptionFrm(ex);
-                frm.ShowDialog();
+                MostraEccezione("ERRORE IN CREA CERTIFICATO DIMENSIONALE", ex);
             }
 
         }
@@ -251,9 +249,7 @@ namespace CDCMetal
             }
             catch (Exception ex)
             {
-                LogScriviErrore("ERRORE IN CREA CERTIFICATO ANTIALLERGICO", ex);
-                ExceptionFrm frm = new ExceptionFrm(ex);
-                frm.ShowDialog();
+                MostraEccezione("ERRORE IN CREA CERTIFICATO ANTIALLERGICO", ex);
             }
 
         }
@@ -268,9 +264,7 @@ namespace CDCMetal
             }
             catch (Exception ex)
             {
-                LogScriviErrore("ERRORE IN CREA CERTIFICATO COLORIMETRICO", ex);
-                ExceptionFrm frm = new ExceptionFrm(ex);
-                frm.ShowDialog();
+                MostraEccezione("ERRORE IN CREA CERTIFICATO COLORIMETRICO", ex);
             }
         }
 
@@ -284,9 +278,7 @@ namespace CDCMetal
             }
             catch (Exception ex)
             {
-                LogScriviErrore("ERRORE IN MOSTRA LISTA PDF", ex);
-                ExceptionFrm frm = new ExceptionFrm(ex);
-                frm.ShowDialog();
+                MostraEccezione("ERRORE IN MOSTRA LISTA PDF", ex);
             }
         }
 
@@ -300,9 +292,7 @@ namespace CDCMetal
             }
             catch (Exception ex)
             {
-                LogScriviErrore("ERRORE IN CREA CERTIFICATO SPESSORE", ex);
-                ExceptionFrm frm = new ExceptionFrm(ex);
-                frm.ShowDialog();
+                MostraEccezione("ERRORE IN CREA CERTIFICATO SPESSORE", ex);
             }
         }
     }
