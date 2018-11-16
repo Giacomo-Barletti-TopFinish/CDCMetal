@@ -188,8 +188,8 @@ namespace CDCMetal
                 if (colorea != null)
                 {
                     riga[15] = colorea.RICHIESTO;
-                    riga[16] = colorea.IsTOLLERANZANull() ? string.Empty : coloreL.TOLLERANZA;
-                    riga[17] = colorea.IsRILEVATONull() ? string.Empty : coloreL.RILEVATO;
+                    riga[16] = colorea.IsTOLLERANZANull() ? string.Empty : colorea.TOLLERANZA;
+                    riga[17] = colorea.IsRILEVATONull() ? string.Empty : colorea.RILEVATO;
                     riga[18] = colorea.CONFORME == "S" ? true : false;
                 }
                 else
@@ -204,8 +204,8 @@ namespace CDCMetal
                 if (coloreb != null)
                 {
                     riga[19] = coloreb.RICHIESTO;
-                    riga[20] = coloreb.IsTOLLERANZANull() ? string.Empty : coloreL.TOLLERANZA;
-                    riga[21] = coloreb.IsRILEVATONull() ? string.Empty : coloreL.RILEVATO;
+                    riga[20] = coloreb.IsTOLLERANZANull() ? string.Empty : coloreb.TOLLERANZA;
+                    riga[21] = coloreb.IsRILEVATONull() ? string.Empty : coloreb.RILEVATO;
                     riga[22] = coloreb.CONFORME == "S" ? true : false;
                 }
                 else
@@ -590,13 +590,13 @@ namespace CDCMetal
                     DateTime dataCalibrazione = (DateTime)riga[10];
 
                     CaricaColore(Contesto.DS, iddettaglio, CDCTipoColore.L, dataInserimento, dataCalibrazione,
-                        ConvertiInStringa(riga[11]), ConvertiInStringa(riga[12]), ConvertiInStringa(riga[13]), ConvertiBoolInStringa(riga[14]), ConvertiInStringa(riga[22]));
+                        ConvertiInStringa(riga[11]), ConvertiInStringa(riga[12]), ConvertiInStringa(riga[13]), ConvertiBoolInStringa(riga[14]), ConvertiInStringa(riga[23]));
 
                     CaricaColore(Contesto.DS, iddettaglio, CDCTipoColore.a, dataInserimento, dataCalibrazione,
-                        ConvertiInStringa(riga[15]), ConvertiInStringa(riga[16]), ConvertiInStringa(riga[17]), ConvertiBoolInStringa(riga[18]), ConvertiInStringa(riga[22]));
+                        ConvertiInStringa(riga[15]), ConvertiInStringa(riga[16]), ConvertiInStringa(riga[17]), ConvertiBoolInStringa(riga[18]), ConvertiInStringa(riga[23]));
 
                     CaricaColore(Contesto.DS, iddettaglio, CDCTipoColore.b, dataInserimento, dataCalibrazione,
-                        ConvertiInStringa(riga[11]), ConvertiInStringa(riga[19]), ConvertiInStringa(riga[20]), ConvertiBoolInStringa(riga[21]), ConvertiInStringa(riga[22]));
+                        ConvertiInStringa(riga[19]), ConvertiInStringa(riga[20]), ConvertiInStringa(riga[21]), ConvertiBoolInStringa(riga[22]), ConvertiInStringa(riga[23]));
 
                 }
 
