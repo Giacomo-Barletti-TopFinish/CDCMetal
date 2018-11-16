@@ -235,7 +235,7 @@ namespace CDCMetal
                         return "85";
                     case "0812":
                     case "8991":
-                    case "0921":
+                    case "0912":
                         return "84";
                     case "8126":
                     case "8926":
@@ -252,21 +252,21 @@ namespace CDCMetal
                     case "8053":
                     case "8953":
                     case "0953":
-                        return "84";
+                        return "2";
                     case "8000":
                     case "0901":
-                        return "85";
+                        return "7";
                     case "0812":
                     case "8991":
-                    case "0921":
-                        return "84";
+                    case "0912":
+                        return "5";
                     case "8126":
                     case "8926":
                     case "0926":
                     case "8931":
-                        return "83";
+                        return "0";
                     case "8130":
-                        return "83";
+                        return "0";
                 }
 
             if (CDCColore == CDCTipoColore.b)
@@ -281,7 +281,7 @@ namespace CDCMetal
                         return "32";
                     case "0812":
                     case "8991":
-                    case "0921":
+                    case "0912":
                         return "25,5";
                     case "8126":
                     case "8926":
@@ -308,7 +308,7 @@ namespace CDCMetal
                         return "2";
                     case "0812":
                     case "8991":
-                    case "0921":
+                    case "0912":
                         return "2";
                     case "8126":
                     case "8926":
@@ -331,7 +331,7 @@ namespace CDCMetal
                         return "1";
                     case "0812":
                     case "8991":
-                    case "0921":
+                    case "0912":
                         return "1";
                     case "8126":
                     case "8926":
@@ -354,7 +354,7 @@ namespace CDCMetal
                         return "1";
                     case "0812":
                     case "8991":
-                    case "0921":
+                    case "0912":
                         return "2";
                     case "8126":
                     case "8926":
@@ -395,7 +395,7 @@ namespace CDCMetal
                         }
                     case "0812":
                     case "8991":
-                    case "0921":
+                    case "0912":
                         //20  =CASUALE.TRA(8300;8500)/100*T18
                         {
                             int i = _rnd.Next(8300, 8500);
@@ -448,7 +448,7 @@ namespace CDCMetal
                         }
                     case "0812":
                     case "8991":
-                    case "0921":
+                    case "0912":
                         {
                             //20  =CASUALE.TRA(450;550)/100*T18                       
                             int i = _rnd.Next(450, 550);
@@ -495,7 +495,7 @@ namespace CDCMetal
                         }
                     case "0812":
                     case "8991":
-                    case "0921":
+                    case "0912":
                         {
                             //20 =CASUALE.TRA(2450;2650)/100*T18                      
                             int i = _rnd.Next(2450, 2650);
