@@ -470,7 +470,7 @@ namespace CDCMetal
                 dtAggregati.TableName = tblAggregati;
                 dtAggregati.Columns.Add("DATO", Type.GetType("System.String"));
 
-                foreach (CDCDS.CDC_SPESSORERow spessore in Contesto.DS.CDC_SPESSORE.Where(x => x.RowState != DataRowState.Deleted).OrderBy(x => x.SEQUENZA))
+                foreach (CDCDS.CDC_SPESSORERow spessore in Contesto.DS.CDC_SPESSORE.Where(x => x.RowState != DataRowState.Deleted && x.PARTE == _dettaglio.PARTE && x.COLORE == _dettaglio.COLORE).OrderBy(x => x.SEQUENZA))
                 {
                     dtDimensioni.Columns.Add(spessore.ETICHETTA, Type.GetType("System.Decimal"));
                     dtAggregati.Columns.Add(spessore.ETICHETTA, Type.GetType("System.String"));
@@ -484,7 +484,7 @@ namespace CDCMetal
                     riga[2] = i;
 
                     int j = 0;
-                    foreach (CDCDS.CDC_SPESSORERow spessore in Contesto.DS.CDC_SPESSORE.Where(x => x.RowState != DataRowState.Deleted).OrderBy(x => x.SEQUENZA))
+                    foreach (CDCDS.CDC_SPESSORERow spessore in Contesto.DS.CDC_SPESSORE.Where(x => x.RowState != DataRowState.Deleted && x.PARTE == _dettaglio.PARTE && x.COLORE == _dettaglio.COLORE).OrderBy(x => x.SEQUENZA))
                     {
                         int massimo = (int)spessore.MASSIMO;
                         int minimo = (int)spessore.MINIMO;

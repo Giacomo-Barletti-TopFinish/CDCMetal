@@ -397,7 +397,7 @@ namespace CDCMetal.BLL
             string cartella = CreaPathCartella(dtCollaudo, pathCollaudo, dettaglio.ACCESSORISTA, dettaglio.PREFISSO, dettaglio.PARTE, dettaglio.COLORE, dettaglio.COMMESSAORDINE);
 
             string commessa = dettaglio.COMMESSAORDINE.Replace('_', ' ');
-
+            string commessaPerStampa = string.Format("{0}-{1}-{2}-{3}-PZ{4}", dettaglio.PREFISSO,dettaglio.PARTE,dettaglio.COLORE,dettaglio.COMMESSAORDINE,dettaglio.QUANTITA);
             string fileName = string.Format("{0} {1} {2}.pdf", dettaglio.PARTE, dettaglio.COLORE, commessa);//A3174 0933 EACP 2018 1916 E.pdf
             string path = string.Format(@"{0}\{1}", cartella, fileName);
 
@@ -416,7 +416,7 @@ namespace CDCMetal.BLL
             if (File.Exists(path))
                 File.Delete(path);
 
-            CreaReportSpessori(path, dt, commessa, operatore, galvanica.SPESSORE, galvanica.APPLICAZIONE, galvanica.STRUMENTO, numeroMisure, etichette, medie, Std, Pct, range, minimo, massimo, iLoghi, iBowman, misure);
+            CreaReportSpessori( path, dt, commessaPerStampa, operatore, galvanica.SPESSORE, galvanica.APPLICAZIONE, galvanica.STRUMENTO, numeroMisure, etichette, medie, Std, Pct, range, minimo, massimo, iLoghi, iBowman, misure);
 
             if (CopiaReferto)
             {

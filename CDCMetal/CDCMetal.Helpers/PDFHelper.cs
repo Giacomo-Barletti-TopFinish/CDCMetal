@@ -1256,7 +1256,7 @@ string strumentoMisura, string nota, List<MisuraColore> misure, byte[] iloghi)
             table.Borders.Width = 0.75;
 
             column = table.AddColumn(Unit.FromCentimeter(3.9));
-            column = table.AddColumn(Unit.FromCentimeter(7.1));
+            column = table.AddColumn(Unit.FromCentimeter(8.1));
             column.Shading.Color = grigio;
 
             row = table.AddRow();
@@ -1535,7 +1535,8 @@ string strumentoMisura, string nota, List<MisuraColore> misure, byte[] iloghi)
                 }
             }
 
-            for (int riga = 0; riga < 24; riga++)
+            //   for (int riga = 0; riga < 24; riga++)
+            for (int riga = 0; riga < misure.Count; riga++)
             {
                 row = table.AddRow();
                 row.Height = Unit.FromCentimeter(0.5);
