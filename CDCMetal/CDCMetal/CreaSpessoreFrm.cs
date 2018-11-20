@@ -119,10 +119,26 @@ namespace CDCMetal
                 {
                     column.SortMode = DataGridViewColumnSortMode.NotSortable;
                 }
+
+                evidenziaPDFFatti();
             }
             catch (Exception ex)
             {
                 MostraEccezione(ex, "Errore in leggi dati");
+            }
+
+        }
+
+        private void evidenziaPDFFatti()
+        {
+            List<decimal> iddettaglioConPdf = Contesto.DS.CDC_PDF.Where(x => x.TIPO == CDCTipoPDF.CERTIFICATOSPESSORE).Select(x => x.IDDETTAGLIO).Distinct().ToList();
+            foreach (DataGridViewRow riga in dgvDettaglio.Rows)
+            {
+                decimal IDDETTAGLIO = (decimal)riga.Cells["IDDETTAGLIO"].Value;
+                if (iddettaglioConPdf.Contains(IDDETTAGLIO))
+                {
+                    riga.Cells[1].Style.BackColor = Color.Yellow;
+                }
             }
 
         }
@@ -134,7 +150,7 @@ namespace CDCMetal
             {
                 txtApplicazione.Text = applicazione.APPLICAZIONE;
                 nMisurePerCampione.Value = applicazione.NUMEROCAMPIONI;
-
+                txtSpessoreRichiesto.Text = applicazione.IsSPESSORENull() ? string.Empty : applicazione.SPESSORE;
             }
             else
             {
@@ -153,7 +169,6 @@ namespace CDCMetal
                 dtSpessori.Columns.Add("Materiale", Type.GetType("System.String"));
                 dtSpessori.Columns.Add("Massimo", Type.GetType("System.Decimal"));
                 dtSpessori.Columns.Add("Minimo", Type.GetType("System.Decimal"));
-                dtSpessori.Columns.Add("Richiesto", Type.GetType("System.Decimal"));
                 dtSpessori.Columns.Add("Denominatore", Type.GetType("System.Decimal"));
             }
             else
@@ -168,8 +183,7 @@ namespace CDCMetal
                 riga[0] = spessore.ETICHETTA;
                 riga[1] = spessore.MASSIMO;
                 riga[2] = spessore.MINIMO;
-                riga[3] = spessore.SPESSORE;
-                riga[4] = spessore.DENOMINATORE;
+                riga[3] = spessore.DENOMINATORE;
 
                 dtSpessori.Rows.Add(riga);
             }
@@ -225,17 +239,6 @@ namespace CDCMetal
 
                     mostradgvAggregati();
                     mostradgvMisure();
-                    //if (_dsServizio.Tables[tblMisure] != null)
-                    //{
-                    //    DataTable dtMisure = _dsServizio.Tables[tblMisure];
-                    //    dtMisure.Clear();
-                    //}
-
-                    //if (_dsServizio.Tables[tblAggregati] != null)
-                    //{
-                    //    DataTable dtMisure = _dsServizio.Tables[tblAggregati];
-                    //    dtMisure.Clear();
-                    //}
 
                 }
                 ImpostaSpessore(_dettaglio.PARTE, _dettaglio.COLORE);
@@ -361,14 +364,8 @@ namespace CDCMetal
                     messaggio = "Nella tabella spessori la colonna minimo deve contenere solo numeri";
                     return false;
                 }
-                decimal Spessore;
-                if (!decimal.TryParse(dr.Cells[3].Value.ToString(), out Spessore))
-                {
-                    messaggio = "Nella tabella spessori la colonna richiesto deve contenere solo numeri";
-                    return false;
-                }
                 decimal Denominatore;
-                if (!decimal.TryParse(dr.Cells[4].Value.ToString(), out Denominatore))
+                if (!decimal.TryParse(dr.Cells[3].Value.ToString(), out Denominatore))
                 {
                     messaggio = "Nella tabella spessori la colonna denominatore deve contenere solo numeri";
                     return false;
@@ -377,18 +374,6 @@ namespace CDCMetal
                 if (Massimo <= Minimo)
                 {
                     messaggio = "Nella tabella spessori il valore massimo deve essere superiore al minimo";
-                    return false;
-                }
-
-                if (Spessore > Massimo)
-                {
-                    messaggio = "Nella tabella spessori il valore richiesto deve essere inferiore al massimo";
-                    return false;
-                }
-
-                if (Minimo > Spessore)
-                {
-                    messaggio = "Nella tabella spessori il valore richiesto deve essere superiore al minimo";
                     return false;
                 }
 
@@ -414,8 +399,7 @@ namespace CDCMetal
                 string etichetta = dr.Cells[0].Value.ToString();
                 decimal Massimo = (decimal)dr.Cells[1].Value;
                 decimal Minimo = (decimal)dr.Cells[2].Value;
-                decimal Spessore = (decimal)dr.Cells[3].Value;
-                decimal Denominatore = (decimal)dr.Cells[4].Value;
+                decimal Denominatore = (decimal)dr.Cells[3].Value;
                 CDCDS.CDC_SPESSORERow spessore = Contesto.DS.CDC_SPESSORE.NewCDC_SPESSORERow();
                 spessore.COLORE = _dettaglio.COLORE;
                 spessore.DENOMINATORE = Denominatore;
@@ -424,7 +408,6 @@ namespace CDCMetal
                 spessore.MINIMO = Minimo;
                 spessore.PARTE = _dettaglio.PARTE;
                 spessore.SEQUENZA = sequenza;
-                spessore.SPESSORE = Spessore;
                 Contesto.DS.CDC_SPESSORE.AddCDC_SPESSORERow(spessore);
 
                 sequenza++;
@@ -523,10 +506,7 @@ namespace CDCMetal
             if (_dettaglio == null) return;
 
             if (_dettaglio.QUANTITA < 25)
-            {
-                lblMessaggio.Text = "Quantita inferiore a 26. Nessuna misura richiesta";
-                return;
-            }
+                numeroCampioni = (int)nMisurePerCampione.Value;
 
             if (_dettaglio.QUANTITA >= 25 && _dettaglio.QUANTITA <= 150)
                 numeroCampioni = 3 * (int)nMisurePerCampione.Value;
@@ -538,10 +518,7 @@ namespace CDCMetal
                 numeroCampioni = 8 * (int)nMisurePerCampione.Value;
 
             if (_dettaglio.QUANTITA > 10001)
-            {
-                lblMessaggio.Text = "Quantita superiore a 10001. Nessuna misura impostata";
-                return;
-            }
+                numeroCampioni = 8 * (int)nMisurePerCampione.Value;
 
             txtNumeroCampioni.Text = numeroCampioni.ToString();
         }
@@ -726,6 +703,11 @@ namespace CDCMetal
                     return;
                 }
 
+                if (string.IsNullOrEmpty(txtSpessoreRichiesto.Text))
+                {
+                    lblMessaggio.Text = "Il campo spessore richiesto è vuoto impossibile procedere";
+                    return;
+                }
                 decimal IDDETTAGLIO = _dettaglio.IDDETTAGLIO;
 
                 CDCDS.CDC_SPESSORERow spessore = Contesto.DS.CDC_SPESSORE.Where(x => x.RowState != DataRowState.Deleted && x.PARTE == _dettaglio.PARTE && x.COLORE == _dettaglio.COLORE && x.SEQUENZA == 0).FirstOrDefault();
@@ -746,7 +728,6 @@ namespace CDCMetal
                     lblMessaggio.Text = "Numero misure per campioni non può essere zero";
                     return;
                 }
-                decimal spessoreRichiesto = spessore.SPESSORE / spessore.DENOMINATORE;
 
                 CDCBLL bll = new CDCBLL();
                 int misurePerCampione = (int)nMisurePerCampione.Value;
@@ -759,16 +740,18 @@ namespace CDCMetal
                     applicazioneRow.COLORE = _dettaglio.COLORE;
                     applicazioneRow.APPLICAZIONE = txtApplicazione.Text;
                     applicazioneRow.NUMEROCAMPIONI = nMisurePerCampione.Value;
+                    applicazioneRow.SPESSORE = txtSpessoreRichiesto.Text;
                     Contesto.DS.CDC_APPLICAZIONE.AddCDC_APPLICAZIONERow(applicazioneRow);
                 }
                 else
                 {
                     applicazioneRow.APPLICAZIONE = txtApplicazione.Text;
                     applicazioneRow.NUMEROCAMPIONI = nMisurePerCampione.Value;
+                    applicazioneRow.SPESSORE = txtSpessoreRichiesto.Text;
                 }
 
 
-                decimal IDGALVANICA = bll.InserisciCDCGalvanica(Contesto.DS, spessoreRichiesto, IDDETTAGLIO, txtApplicazione.Text, Contesto.StrumentoSpessore, misurePerCampione, Contesto.Utente.FULLNAMEUSER);
+                decimal IDGALVANICA = bll.InserisciCDCGalvanica(Contesto.DS, txtSpessoreRichiesto.Text, IDDETTAGLIO, txtApplicazione.Text, Contesto.StrumentoSpessore, misurePerCampione, Contesto.Utente.FULLNAMEUSER);
 
                 foreach (CDCDS.CDC_MISURERow row in Contesto.DS.CDC_MISURE.Where(x => x.IDGALVANICA == IDGALVANICA))
                     row.Delete();
@@ -833,6 +816,7 @@ namespace CDCMetal
                 {
                     Process.Start(filename);
                 }
+                evidenziaPDFFatti();
             }
             catch (Exception ex)
             {

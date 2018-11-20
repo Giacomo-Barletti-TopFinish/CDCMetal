@@ -730,7 +730,7 @@
               <xs:element name="SPESSORE" msprop:Generator_ColumnVarNameInTable="columnSPESSORE" msprop:Generator_ColumnPropNameInRow="SPESSORE" msprop:Generator_ColumnPropNameInTable="SPESSOREColumn" msprop:Generator_UserColumnName="SPESSORE">
                 <xs:simpleType>
                   <xs:restriction base="xs:string">
-                    <xs:maxLength value="5" />
+                    <xs:maxLength value="10" />
                   </xs:restriction>
                 </xs:simpleType>
               </xs:element>
@@ -742,35 +742,6 @@
                   </xs:restriction>
                 </xs:simpleType>
               </xs:element>
-            </xs:sequence>
-          </xs:complexType>
-        </xs:element>
-        <xs:element name="CDC_APPLICAZIONE" msprop:Generator_TableClassName="CDC_APPLICAZIONEDataTable" msprop:Generator_TableVarName="tableCDC_APPLICAZIONE" msprop:Generator_TablePropName="CDC_APPLICAZIONE" msprop:Generator_RowDeletingName="CDC_APPLICAZIONERowDeleting" msprop:Generator_RowChangingName="CDC_APPLICAZIONERowChanging" msprop:Generator_RowEvHandlerName="CDC_APPLICAZIONERowChangeEventHandler" msprop:Generator_RowDeletedName="CDC_APPLICAZIONERowDeleted" msprop:Generator_UserTableName="CDC_APPLICAZIONE" msprop:Generator_RowChangedName="CDC_APPLICAZIONERowChanged" msprop:Generator_RowEvArgName="CDC_APPLICAZIONERowChangeEvent" msprop:Generator_RowClassName="CDC_APPLICAZIONERow">
-          <xs:complexType>
-            <xs:sequence>
-              <xs:element name="IDAPPLICAZIONE" msprop:Generator_ColumnVarNameInTable="columnIDAPPLICAZIONE" msprop:Generator_ColumnPropNameInRow="IDAPPLICAZIONE" msprop:Generator_ColumnPropNameInTable="IDAPPLICAZIONEColumn" msprop:Generator_UserColumnName="IDAPPLICAZIONE" type="xs:decimal" minOccurs="0" />
-              <xs:element name="PARTE" msprop:Generator_ColumnVarNameInTable="columnPARTE" msprop:Generator_ColumnPropNameInRow="PARTE" msprop:Generator_ColumnPropNameInTable="PARTEColumn" msprop:Generator_UserColumnName="PARTE">
-                <xs:simpleType>
-                  <xs:restriction base="xs:string">
-                    <xs:maxLength value="6" />
-                  </xs:restriction>
-                </xs:simpleType>
-              </xs:element>
-              <xs:element name="COLORE" msprop:Generator_ColumnVarNameInTable="columnCOLORE" msprop:Generator_ColumnPropNameInRow="COLORE" msprop:Generator_ColumnPropNameInTable="COLOREColumn" msprop:Generator_UserColumnName="COLORE">
-                <xs:simpleType>
-                  <xs:restriction base="xs:string">
-                    <xs:maxLength value="5" />
-                  </xs:restriction>
-                </xs:simpleType>
-              </xs:element>
-              <xs:element name="APPLICAZIONE" msprop:Generator_ColumnVarNameInTable="columnAPPLICAZIONE" msprop:Generator_ColumnPropNameInRow="APPLICAZIONE" msprop:Generator_ColumnPropNameInTable="APPLICAZIONEColumn" msprop:Generator_UserColumnName="APPLICAZIONE">
-                <xs:simpleType>
-                  <xs:restriction base="xs:string">
-                    <xs:maxLength value="50" />
-                  </xs:restriction>
-                </xs:simpleType>
-              </xs:element>
-              <xs:element name="NUMEROCAMPIONI" msprop:Generator_ColumnVarNameInTable="columnNUMEROCAMPIONI" msprop:Generator_ColumnPropNameInRow="NUMEROCAMPIONI" msprop:Generator_ColumnPropNameInTable="NUMEROCAMPIONIColumn" msprop:Generator_UserColumnName="NUMEROCAMPIONI" type="xs:decimal" />
             </xs:sequence>
           </xs:complexType>
         </xs:element>
@@ -800,10 +771,45 @@
                   </xs:restriction>
                 </xs:simpleType>
               </xs:element>
-              <xs:element name="SPESSORE" msprop:Generator_ColumnVarNameInTable="columnSPESSORE" msprop:Generator_ColumnPropNameInRow="SPESSORE" msprop:Generator_ColumnPropNameInTable="SPESSOREColumn" msprop:Generator_UserColumnName="SPESSORE" type="xs:decimal" />
               <xs:element name="MASSIMO" msprop:Generator_ColumnVarNameInTable="columnMASSIMO" msprop:Generator_ColumnPropNameInRow="MASSIMO" msprop:Generator_ColumnPropNameInTable="MASSIMOColumn" msprop:Generator_UserColumnName="MASSIMO" type="xs:decimal" />
               <xs:element name="MINIMO" msprop:Generator_ColumnVarNameInTable="columnMINIMO" msprop:Generator_ColumnPropNameInRow="MINIMO" msprop:Generator_ColumnPropNameInTable="MINIMOColumn" msprop:Generator_UserColumnName="MINIMO" type="xs:decimal" />
               <xs:element name="DENOMINATORE" msprop:Generator_ColumnVarNameInTable="columnDENOMINATORE" msprop:Generator_ColumnPropNameInRow="DENOMINATORE" msprop:Generator_ColumnPropNameInTable="DENOMINATOREColumn" msprop:Generator_UserColumnName="DENOMINATORE" type="xs:decimal" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="CDC_APPLICAZIONE" msprop:Generator_TableClassName="CDC_APPLICAZIONEDataTable" msprop:Generator_TableVarName="tableCDC_APPLICAZIONE" msprop:Generator_TablePropName="CDC_APPLICAZIONE" msprop:Generator_RowDeletingName="CDC_APPLICAZIONERowDeleting" msprop:Generator_RowChangingName="CDC_APPLICAZIONERowChanging" msprop:Generator_RowEvHandlerName="CDC_APPLICAZIONERowChangeEventHandler" msprop:Generator_RowDeletedName="CDC_APPLICAZIONERowDeleted" msprop:Generator_UserTableName="CDC_APPLICAZIONE" msprop:Generator_RowChangedName="CDC_APPLICAZIONERowChanged" msprop:Generator_RowEvArgName="CDC_APPLICAZIONERowChangeEvent" msprop:Generator_RowClassName="CDC_APPLICAZIONERow">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="IDAPPLICAZIONE" msprop:Generator_ColumnVarNameInTable="columnIDAPPLICAZIONE" msprop:Generator_ColumnPropNameInRow="IDAPPLICAZIONE" msprop:Generator_ColumnPropNameInTable="IDAPPLICAZIONEColumn" msprop:Generator_UserColumnName="IDAPPLICAZIONE" type="xs:decimal" minOccurs="0" />
+              <xs:element name="PARTE" msprop:Generator_ColumnVarNameInTable="columnPARTE" msprop:Generator_ColumnPropNameInRow="PARTE" msprop:Generator_ColumnPropNameInTable="PARTEColumn" msprop:Generator_UserColumnName="PARTE">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="6" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="COLORE" msprop:Generator_ColumnVarNameInTable="columnCOLORE" msprop:Generator_ColumnPropNameInRow="COLORE" msprop:Generator_ColumnPropNameInTable="COLOREColumn" msprop:Generator_UserColumnName="COLORE">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="5" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="APPLICAZIONE" msprop:Generator_ColumnVarNameInTable="columnAPPLICAZIONE" msprop:Generator_ColumnPropNameInRow="APPLICAZIONE" msprop:Generator_ColumnPropNameInTable="APPLICAZIONEColumn" msprop:Generator_UserColumnName="APPLICAZIONE">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="NUMEROCAMPIONI" msprop:Generator_ColumnVarNameInTable="columnNUMEROCAMPIONI" msprop:Generator_ColumnPropNameInRow="NUMEROCAMPIONI" msprop:Generator_ColumnPropNameInTable="NUMEROCAMPIONIColumn" msprop:Generator_UserColumnName="NUMEROCAMPIONI" type="xs:decimal" />
+              <xs:element name="SPESSORE" msprop:Generator_ColumnVarNameInTable="columnSPESSORE" msprop:Generator_ColumnPropNameInRow="SPESSORE" msprop:Generator_ColumnPropNameInTable="SPESSOREColumn" msprop:Generator_UserColumnName="SPESSORE" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="10" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
             </xs:sequence>
           </xs:complexType>
         </xs:element>

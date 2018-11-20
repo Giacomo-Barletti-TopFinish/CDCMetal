@@ -573,7 +573,7 @@ string strumentoMisura, string nota, List<MisuraColore> misure, byte[] iloghi)
             return path;
         }
 
-        public decimal InserisciCDCGalvanica(CDCDS ds, decimal spessore, decimal IDDETTAGLIO, string applicazione, string strumentoMisura, int misurePreCampione, string utente)
+        public decimal InserisciCDCGalvanica(CDCDS ds, string spessore, decimal IDDETTAGLIO, string applicazione, string strumentoMisura, int misurePreCampione, string utente)
         {
             using (CDCMetalBusiness bCDCMetal = new CDCMetalBusiness())
             {

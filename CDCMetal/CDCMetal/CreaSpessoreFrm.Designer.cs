@@ -49,6 +49,8 @@
             this.dgvAggregati = new System.Windows.Forms.DataGridView();
             this.chkApriPDF = new System.Windows.Forms.CheckBox();
             this.dgvSpessore = new System.Windows.Forms.DataGridView();
+            this.label5 = new System.Windows.Forms.Label();
+            this.txtSpessoreRichiesto = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.dgvMisure)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvDettaglio)).BeginInit();
             this.groupBox1.SuspendLayout();
@@ -184,7 +186,7 @@
             // 
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(973, 290);
+            this.label4.Location = new System.Drawing.Point(978, 279);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(91, 18);
             this.label4.TabIndex = 4;
@@ -193,7 +195,7 @@
             // txtApplicazione
             // 
             this.txtApplicazione.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtApplicazione.Location = new System.Drawing.Point(1070, 287);
+            this.txtApplicazione.Location = new System.Drawing.Point(1075, 276);
             this.txtApplicazione.MaxLength = 50;
             this.txtApplicazione.Name = "txtApplicazione";
             this.txtApplicazione.Size = new System.Drawing.Size(288, 24);
@@ -204,7 +206,7 @@
             // 
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.Location = new System.Drawing.Point(978, 333);
+            this.label6.Location = new System.Drawing.Point(978, 354);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(147, 18);
             this.label6.TabIndex = 4;
@@ -213,7 +215,7 @@
             // nMisurePerCampione
             // 
             this.nMisurePerCampione.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.nMisurePerCampione.Location = new System.Drawing.Point(1135, 331);
+            this.nMisurePerCampione.Location = new System.Drawing.Point(1135, 352);
             this.nMisurePerCampione.Name = "nMisurePerCampione";
             this.nMisurePerCampione.Size = new System.Drawing.Size(74, 24);
             this.nMisurePerCampione.TabIndex = 6;
@@ -222,7 +224,7 @@
             // btnCreaCampioni
             // 
             this.btnCreaCampioni.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnCreaCampioni.Location = new System.Drawing.Point(1215, 352);
+            this.btnCreaCampioni.Location = new System.Drawing.Point(1215, 373);
             this.btnCreaCampioni.Name = "btnCreaCampioni";
             this.btnCreaCampioni.Size = new System.Drawing.Size(143, 33);
             this.btnCreaCampioni.TabIndex = 7;
@@ -234,7 +236,7 @@
             // 
             this.label7.AutoSize = true;
             this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label7.Location = new System.Drawing.Point(984, 364);
+            this.label7.Location = new System.Drawing.Point(984, 385);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(141, 18);
             this.label7.TabIndex = 4;
@@ -243,7 +245,7 @@
             // txtNumeroCampioni
             // 
             this.txtNumeroCampioni.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtNumeroCampioni.Location = new System.Drawing.Point(1135, 361);
+            this.txtNumeroCampioni.Location = new System.Drawing.Point(1135, 382);
             this.txtNumeroCampioni.MaxLength = 5;
             this.txtNumeroCampioni.Name = "txtNumeroCampioni";
             this.txtNumeroCampioni.ReadOnly = true;
@@ -283,6 +285,26 @@
             this.dgvSpessore.TabIndex = 22;
             this.dgvSpessore.CellValidating += new System.Windows.Forms.DataGridViewCellValidatingEventHandler(this.dgvSpessore_CellValidating);
             // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label5.Location = new System.Drawing.Point(978, 319);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(132, 18);
+            this.label5.TabIndex = 4;
+            this.label5.Text = "Spessore richiesto";
+            // 
+            // txtSpessoreRichiesto
+            // 
+            this.txtSpessoreRichiesto.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtSpessoreRichiesto.Location = new System.Drawing.Point(1126, 316);
+            this.txtSpessoreRichiesto.MaxLength = 10;
+            this.txtSpessoreRichiesto.Name = "txtSpessoreRichiesto";
+            this.txtSpessoreRichiesto.Size = new System.Drawing.Size(237, 24);
+            this.txtSpessoreRichiesto.TabIndex = 17;
+            this.txtSpessoreRichiesto.TabStop = false;
+            // 
             // CreaSpessoreFrm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -295,6 +317,8 @@
             this.Controls.Add(this.label6);
             this.Controls.Add(this.txtNumeroCampioni);
             this.Controls.Add(this.label7);
+            this.Controls.Add(this.txtSpessoreRichiesto);
+            this.Controls.Add(this.label5);
             this.Controls.Add(this.txtApplicazione);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.chkApriPDF);
@@ -343,5 +367,7 @@
         private System.Windows.Forms.DataGridView dgvAggregati;
         private System.Windows.Forms.CheckBox chkApriPDF;
         private System.Windows.Forms.DataGridView dgvSpessore;
+        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.TextBox txtSpessoreRichiesto;
     }
 }

@@ -1256,7 +1256,7 @@ string strumentoMisura, string nota, List<MisuraColore> misure, byte[] iloghi)
             table.Borders.Width = 0.75;
 
             column = table.AddColumn(Unit.FromCentimeter(3.9));
-            column = table.AddColumn(Unit.FromCentimeter(8.1));
+            column = table.AddColumn(Unit.FromCentimeter(10.1));
             column.Shading.Color = grigio;
 
             row = table.AddRow();

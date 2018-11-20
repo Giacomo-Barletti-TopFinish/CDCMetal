@@ -1,6 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <asmv1:assembly xsi:schemaLocation="urn:schemas-microsoft-com:asm.v1 assembly.adaptive.xsd" manifestVersion="1.0" xmlns:asmv1="urn:schemas-microsoft-com:asm.v1" xmlns="urn:schemas-microsoft-com:asm.v2" xmlns:asmv2="urn:schemas-microsoft-com:asm.v2" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:co.v1="urn:schemas-microsoft-com:clickonce.v1" xmlns:asmv3="urn:schemas-microsoft-com:asm.v3" xmlns:dsig="http://www.w3.org/2000/09/xmldsig#" xmlns:co.v2="urn:schemas-microsoft-com:clickonce.v2">
-  <asmv1:assemblyIdentity name="CDCMetal.exe" version="1.0.0.26" publicKeyToken="bee1534d22c89024" language="neutral" processorArchitecture="msil" type="win32" />
+  <asmv1:assemblyIdentity name="CDCMetal.exe" version="1.0.0.28" publicKeyToken="bee1534d22c89024" language="neutral" processorArchitecture="msil" type="win32" />
   <application />
   <entryPoint>
     <assemblyIdentity name="CDCMetal" version="1.0.0.0" language="neutral" processorArchitecture="msil" />
@@ -42,14 +42,14 @@
     </dependentAssembly>
   </dependency>
   <dependency>
-    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="CDCMetal.exe" size="690688">
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="CDCMetal.exe" size="691200">
       <assemblyIdentity name="CDCMetal" version="1.0.0.0" language="neutral" processorArchitecture="msil" />
       <hash>
         <dsig:Transforms>
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>NPBeccpsU+uvTgq96fJ7ZYEpowavDGX9ohRXY/BUpTM=</dsig:DigestValue>
+        <dsig:DigestValue>XoSdTvvuwu+iV/5Rlxz1GKZO1PhEqvln1i6GSYllkjY=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>
@@ -61,7 +61,7 @@
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>hW4I6G14CndA08PU0N1iSHHZwW337OnPs0aXMtQGjno=</dsig:DigestValue>
+        <dsig:DigestValue>Gff1txcU+ZaEaiQDK1+WKJgtuBE4VlgAbf2uSAwD/MY=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>
@@ -85,7 +85,7 @@
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>Q6vXNtExc7cqfjs9LUuLbJXPrVbvG2zNeFYGWUE+6Qw=</dsig:DigestValue>
+        <dsig:DigestValue>HLs4N0N46g10iP2bAiViTIfU03b59r2Z3l0ZllsWQog=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>
@@ -97,7 +97,7 @@
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>uSvUl4VQxMu7Jvv2hSOX2xCmo2Uuwz9NnYn8ATWBI6c=</dsig:DigestValue>
+        <dsig:DigestValue>nhZ7A00magCOQ9vYoWdWrok9WTmEqulk/tNs4oA7JN4=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>
@@ -194,4 +194,4 @@
       <dsig:DigestValue>Bmx93TNFQm+eHK2SdqQqizBwqpYqmC+Ef171M+/eAMI=</dsig:DigestValue>
     </hash>
   </file>
-<publisherIdentity name="CN=VIAMATTEI\giacomo.barletti" issuerKeyHash="43b6461fa3653c57592e632f5c508df56ffd3bca" /><Signature Id="StrongNameSignature" xmlns="http://www.w3.org/2000/09/xmldsig#"><SignedInfo><CanonicalizationMethod Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#" /><SignatureMethod Algorithm="http://www.w3.org/2000/09/xmldsig#rsa-sha256" /><Reference URI=""><Transforms><Transform Algorithm="http://www.w3.org/2000/09/xmldsig#enveloped-signature" /><Transform Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#" /></Transforms><DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" /><DigestValue>db6zz5pMbcn/CyG5VkiqGTEDDeHaAPMtUcYKzDMLawY=</DigestValue></Reference></SignedInfo><SignatureValue>W1fUkx8D8Ut4fSAtZy3DluW3keht+kPLNGJogNU2EhsYNz7XZnI0YhEkK5jhuMSqYM19byUW4Tp/buDn4VU+zbWp5zfhsi0hzIiUTHVxCsFAfw7w4s1ERmH0+wwtU243e/SM4uiPPG7o/ZIW/1WLS9K8eTAqwoJ9LYjcvJQOJXk=</SignatureValue><KeyInfo Id="StrongNameKeyInfo"><KeyValue><RSAKeyValue><Modulus>q1htyVA+mEoV5aVUJ1eNmqq0TSMX46C8Xsd9WrXpzhvMlQ4NPqbwDctKLV/EvRp0DWHLw5xcY7YdCczhQPestZL+0Wil4Aqi5qPQrBwVVFihXTQnGUfwRk5XY5XyWUIPdjrIYu8j4P0qyOPHRIDIpG6WP9AEORgQ0fpadIZW71k=</Modulus><Exponent>AQAB</Exponent></RSAKeyValue></KeyValue><msrel:RelData xmlns:msrel="http://schemas.microsoft.com/windows/rel/2005/reldata"><r:license xmlns:r="urn:mpeg:mpeg21:2003:01-REL-R-NS" xmlns:as="http://schemas.microsoft.com/windows/pki/2005/Authenticode"><r:grant><as:ManifestInformation Hash="066b0b33cc0ac6512df300dae10d033119aa4856b9210bffc96d4c9acfb3be75" Description="" Url=""><as:assemblyIdentity name="CDCMetal.exe" version="1.0.0.26" publicKeyToken="bee1534d22c89024" language="neutral" processorArchitecture="msil" type="win32" /></as:ManifestInformation><as:SignedBy /><as:AuthenticodePublisher><as:X509SubjectName>CN=VIAMATTEI\giacomo.barletti</as:X509SubjectName></as:AuthenticodePublisher></r:grant><r:issuer><Signature Id="AuthenticodeSignature" xmlns="http://www.w3.org/2000/09/xmldsig#"><SignedInfo><CanonicalizationMethod Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#" /><SignatureMethod Algorithm="http://www.w3.org/2000/09/xmldsig#rsa-sha256" /><Reference URI=""><Transforms><Transform Algorithm="http://www.w3.org/2000/09/xmldsig#enveloped-signature" /><Transform Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#" /></Transforms><DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" /><DigestValue>JOKBEFNkpzygIapRgjYviskT3eYgBT0IvpG0Bbd6Xtw=</DigestValue></Reference></SignedInfo><SignatureValue>OaQC+JWjkygLUTowXLDHOXJT9A6CKirjZUzjhhxI98gfknKKYsQBf9CshTE0gLQ0tRrvxx/HnZAlIcfEBpUvhw8i2Bs+6+/si02QVF+9loSCHtxQc4oZsDxqPwuCnDRvfV88IptQkP6woDifvVMJAdpNWiGw8aIPnzZfz9g8SsA=</SignatureValue><KeyInfo><KeyValue><RSAKeyValue><Modulus>q1htyVA+mEoV5aVUJ1eNmqq0TSMX46C8Xsd9WrXpzhvMlQ4NPqbwDctKLV/EvRp0DWHLw5xcY7YdCczhQPestZL+0Wil4Aqi5qPQrBwVVFihXTQnGUfwRk5XY5XyWUIPdjrIYu8j4P0qyOPHRIDIpG6WP9AEORgQ0fpadIZW71k=</Modulus><Exponent>AQAB</Exponent></RSAKeyValue></KeyValue><X509Data><X509Certificate>MIICATCCAWqgAwIBAgIQX3meX5saSahI8YzV2DCvIjANBgkqhkiG9w0BAQsFADA/MT0wOwYDVQQDHjQAVgBJAEEATQBBAFQAVABFAEkAXABnAGkAYQBjAG8AbQBvAC4AYgBhAHIAbABlAHQAdABpMB4XDTE4MTAzMDE1NTcwM1oXDTE5MTAzMDIxNTcwM1owPzE9MDsGA1UEAx40AFYASQBBAE0AQQBUAFQARQBJAFwAZwBpAGEAYwBvAG0AbwAuAGIAYQByAGwAZQB0AHQAaTCBnzANBgkqhkiG9w0BAQEFAAOBjQAwgYkCgYEAq1htyVA+mEoV5aVUJ1eNmqq0TSMX46C8Xsd9WrXpzhvMlQ4NPqbwDctKLV/EvRp0DWHLw5xcY7YdCczhQPestZL+0Wil4Aqi5qPQrBwVVFihXTQnGUfwRk5XY5XyWUIPdjrIYu8j4P0qyOPHRIDIpG6WP9AEORgQ0fpadIZW71kCAwEAATANBgkqhkiG9w0BAQsFAAOBgQBOhi6vUld/wGMco/iT+TTs7yBsmAkUo7+Il+EmBrkPMvWX31m4yNnyIp2qOMt5stxMiQ3e02PSSENzTP9rf88IR6gGKATuBVSVAHr76DDa9+YLKBpQ22JRdybHRsLCYtBBHKFd1EHHiVtcTQstTStN2D1lTcVNpx3qD70pONdUZA==</X509Certificate></X509Data></KeyInfo></Signature></r:issuer></r:license></msrel:RelData></KeyInfo></Signature></asmv1:assembly>
+<publisherIdentity name="CN=VIAMATTEI\giacomo.barletti" issuerKeyHash="43b6461fa3653c57592e632f5c508df56ffd3bca" /><Signature Id="StrongNameSignature" xmlns="http://www.w3.org/2000/09/xmldsig#"><SignedInfo><CanonicalizationMethod Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#" /><SignatureMethod Algorithm="http://www.w3.org/2000/09/xmldsig#rsa-sha256" /><Reference URI=""><Transforms><Transform Algorithm="http://www.w3.org/2000/09/xmldsig#enveloped-signature" /><Transform Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#" /></Transforms><DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" /><DigestValue>gesQDpuhx5kq7QnKzjOyUHkjYiVpJEYY863bplGmQbI=</DigestValue></Reference></SignedInfo><SignatureValue>gzQgCB6T576OYWKMgntIF3I09+3SPWW1+sYZu1m1KwmqBLbKaE1jq7UYMJ66ZUu6oZvC2HSlkYBiLZqjXqsBydvkmMsdZf1ZvXQGnyPe4Bh70lpzElHPFLmLH94xYqUcLm4RNw+ch0Ge68cp+PEphqiB3J2BvP6uuHLt4XaXKmc=</SignatureValue><KeyInfo Id="StrongNameKeyInfo"><KeyValue><RSAKeyValue><Modulus>q1htyVA+mEoV5aVUJ1eNmqq0TSMX46C8Xsd9WrXpzhvMlQ4NPqbwDctKLV/EvRp0DWHLw5xcY7YdCczhQPestZL+0Wil4Aqi5qPQrBwVVFihXTQnGUfwRk5XY5XyWUIPdjrIYu8j4P0qyOPHRIDIpG6WP9AEORgQ0fpadIZW71k=</Modulus><Exponent>AQAB</Exponent></RSAKeyValue></KeyValue><msrel:RelData xmlns:msrel="http://schemas.microsoft.com/windows/rel/2005/reldata"><r:license xmlns:r="urn:mpeg:mpeg21:2003:01-REL-R-NS" xmlns:as="http://schemas.microsoft.com/windows/pki/2005/Authenticode"><r:grant><as:ManifestInformation Hash="b241a651a6dbadf3184624692562237950b233ceca09ed2a99c7a19b0e10eb81" Description="" Url=""><as:assemblyIdentity name="CDCMetal.exe" version="1.0.0.28" publicKeyToken="bee1534d22c89024" language="neutral" processorArchitecture="msil" type="win32" /></as:ManifestInformation><as:SignedBy /><as:AuthenticodePublisher><as:X509SubjectName>CN=VIAMATTEI\giacomo.barletti</as:X509SubjectName></as:AuthenticodePublisher></r:grant><r:issuer><Signature Id="AuthenticodeSignature" xmlns="http://www.w3.org/2000/09/xmldsig#"><SignedInfo><CanonicalizationMethod Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#" /><SignatureMethod Algorithm="http://www.w3.org/2000/09/xmldsig#rsa-sha256" /><Reference URI=""><Transforms><Transform Algorithm="http://www.w3.org/2000/09/xmldsig#enveloped-signature" /><Transform Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#" /></Transforms><DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" /><DigestValue>wvhuLDX5SYINw3JGG+q9L5rI6Nqlag/Gdj3ZQdVm5kY=</DigestValue></Reference></SignedInfo><SignatureValue>pK0LviKWstVl0YQncqXYGUn3+bEZ+OZocesJ5J1nC0lzjN4GVnjg7jPVWN5I284N6/Ec2h/Sw4euaXDEpfU17ZdJPQLUB9iwXtYgDtFs4+1P2+IvUB3xexaQb1VTrAiuwo8MWzdSGpQuw+oy8a9sqzbsP4gd7HhHKwlcOb1OjB0=</SignatureValue><KeyInfo><KeyValue><RSAKeyValue><Modulus>q1htyVA+mEoV5aVUJ1eNmqq0TSMX46C8Xsd9WrXpzhvMlQ4NPqbwDctKLV/EvRp0DWHLw5xcY7YdCczhQPestZL+0Wil4Aqi5qPQrBwVVFihXTQnGUfwRk5XY5XyWUIPdjrIYu8j4P0qyOPHRIDIpG6WP9AEORgQ0fpadIZW71k=</Modulus><Exponent>AQAB</Exponent></RSAKeyValue></KeyValue><X509Data><X509Certificate>MIICATCCAWqgAwIBAgIQX3meX5saSahI8YzV2DCvIjANBgkqhkiG9w0BAQsFADA/MT0wOwYDVQQDHjQAVgBJAEEATQBBAFQAVABFAEkAXABnAGkAYQBjAG8AbQBvAC4AYgBhAHIAbABlAHQAdABpMB4XDTE4MTAzMDE1NTcwM1oXDTE5MTAzMDIxNTcwM1owPzE9MDsGA1UEAx40AFYASQBBAE0AQQBUAFQARQBJAFwAZwBpAGEAYwBvAG0AbwAuAGIAYQByAGwAZQB0AHQAaTCBnzANBgkqhkiG9w0BAQEFAAOBjQAwgYkCgYEAq1htyVA+mEoV5aVUJ1eNmqq0TSMX46C8Xsd9WrXpzhvMlQ4NPqbwDctKLV/EvRp0DWHLw5xcY7YdCczhQPestZL+0Wil4Aqi5qPQrBwVVFihXTQnGUfwRk5XY5XyWUIPdjrIYu8j4P0qyOPHRIDIpG6WP9AEORgQ0fpadIZW71kCAwEAATANBgkqhkiG9w0BAQsFAAOBgQBOhi6vUld/wGMco/iT+TTs7yBsmAkUo7+Il+EmBrkPMvWX31m4yNnyIp2qOMt5stxMiQ3e02PSSENzTP9rf88IR6gGKATuBVSVAHr76DDa9+YLKBpQ22JRdybHRsLCYtBBHKFd1EHHiVtcTQstTStN2D1lTcVNpx3qD70pONdUZA==</X509Certificate></X509Data></KeyInfo></Signature></r:issuer></r:license></msrel:RelData></KeyInfo></Signature></asmv1:assembly>
