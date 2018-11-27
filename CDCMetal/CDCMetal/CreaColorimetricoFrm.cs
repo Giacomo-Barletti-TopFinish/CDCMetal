@@ -434,7 +434,7 @@ namespace CDCMetal
                             //19  =CASUALE.TRA(2200;2600)/1000*T18                     
                             int i = _rnd.Next(2200, 2600);
                             decimal aux = i * constante;
-                            aux = aux / 100;
+                            aux = aux / 1000;
                             return aux.ToString("F2");
                         }
                     case "8000":

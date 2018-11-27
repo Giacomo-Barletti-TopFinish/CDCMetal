@@ -506,7 +506,7 @@ namespace CDCMetal
             if (_dettaglio == null) return;
 
             if (_dettaglio.QUANTITA < 25)
-                numeroCampioni = (int)nMisurePerCampione.Value;
+                numeroCampioni = 3 * (int)nMisurePerCampione.Value;
 
             if (_dettaglio.QUANTITA >= 25 && _dettaglio.QUANTITA <= 150)
                 numeroCampioni = 3 * (int)nMisurePerCampione.Value;
