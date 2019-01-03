@@ -778,7 +778,7 @@ namespace CDCMetal
                 bll.SalvaTabelleSpessori(Contesto.DS);
                 Contesto.DS.AcceptChanges();
 
-                Bitmap logoSpessori = Properties.Resources.logo_spessori;
+                Bitmap logoSpessori = Properties.Resources.logo_spessori_v2;
                 ImageConverter converter = new ImageConverter();
                 byte[] iLogo = (byte[])converter.ConvertTo(logoSpessori, typeof(byte[]));
 
