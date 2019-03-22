@@ -24,9 +24,9 @@
     <UpdateRequired>true</UpdateRequired>
     <MapFileExtensions>true</MapFileExtensions>
     <InstallUrl>\\srv-webservices\publish\CDCMetal\</InstallUrl>
-    <MinimumRequiredVersion>1.0.0.33</MinimumRequiredVersion>
+    <MinimumRequiredVersion>1.0.0.37</MinimumRequiredVersion>
     <OpenBrowserOnPublish>false</OpenBrowserOnPublish>
-    <ApplicationRevision>34</ApplicationRevision>
+    <ApplicationRevision>37</ApplicationRevision>
     <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
     <UseApplicationTrust>false</UseApplicationTrust>
     <PublishWizardCompleted>true</PublishWizardCompleted>
@@ -114,6 +114,12 @@
     <Compile Include="CreaDimensionaleFrm.Designer.cs">
       <DependentUpon>CreaDimensionaleFrm.cs</DependentUpon>
     </Compile>
+    <Compile Include="CreaEtichetteFrm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CreaEtichetteFrm.Designer.cs">
+      <DependentUpon>CreaEtichetteFrm.cs</DependentUpon>
+    </Compile>
     <Compile Include="CreaSpessoreFrm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -152,6 +158,12 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="StampaEtichetteFrm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="StampaEtichetteFrm.Designer.cs">
+      <DependentUpon>StampaEtichetteFrm.cs</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="CreaAntiallergicoFrm.resx">
       <DependentUpon>CreaAntiallergicoFrm.cs</DependentUpon>
     </EmbeddedResource>
@@ -166,6 +178,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="CreaDimensionaleFrm.resx">
       <DependentUpon>CreaDimensionaleFrm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CreaEtichetteFrm.resx">
+      <DependentUpon>CreaEtichetteFrm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="CreaSpessoreFrm.resx">
       <DependentUpon>CreaSpessoreFrm.cs</DependentUpon>
@@ -195,6 +210,9 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
+    <EmbeddedResource Include="StampaEtichetteFrm.resx">
+      <DependentUpon>StampaEtichetteFrm.cs</DependentUpon>
+    </EmbeddedResource>
     <None Include="CDCMetal_TemporaryKey.pfx" />
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
@@ -220,6 +238,10 @@
     <ProjectReference Include="..\CDCMetal.Entities\CDCMetal.Entities.csproj">
       <Project>{30FD00F1-EC6C-42F0-B5AE-45EC03E86307}</Project>
       <Name>CDCMetal.Entities</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\CDCMetal.Helpers\CDCMetal.Helpers.csproj">
+      <Project>{2c9c360c-7b1b-4471-bc40-4633effad067}</Project>
+      <Name>CDCMetal.Helpers</Name>
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>

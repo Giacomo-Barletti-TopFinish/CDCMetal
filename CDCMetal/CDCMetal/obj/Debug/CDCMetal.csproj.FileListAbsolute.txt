@@ -75,3 +75,5 @@ C:\VSProgetti\CDCMetal\CDCMetal\CDCMetal\obj\Debug\CDCMetal.CreaAntiallergicoFrm
 C:\VSProgetti\CDCMetal\CDCMetal\CDCMetal\obj\Debug\CDCMetal.CreaColorimetricoFrm.resources
 C:\VSProgetti\CDCMetal\CDCMetal\CDCMetal\obj\Debug\CDCMetal.ListaPDFFrm.resources
 C:\VSProgetti\CDCMetal\CDCMetal\CDCMetal\obj\Debug\CDCMetal.CreaSpessoreFrm.resources
+C:\VSProgetti\CDCMetal\CDCMetal\CDCMetal\obj\Debug\CDCMetal.CreaEtichetteFrm.resources
+C:\VSProgetti\CDCMetal\CDCMetal\CDCMetal\obj\Debug\CDCMetal.StampaEtichetteFrm.resources

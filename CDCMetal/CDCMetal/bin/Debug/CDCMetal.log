@@ -1170,3 +1170,88 @@ INFO  2018-11-20 12:14:19,301   201ms MainForm               LogScrivi          
 INFO  2018-11-27 08:43:08,925   120ms MainForm               LogScrivi          - Applicazione CDCMetal avviata
 INFO  2019-01-04 09:30:45,905   126ms MainForm               LogScrivi          - Applicazione CDCMetal avviata
 INFO  2019-01-04 09:51:08,484 1222704ms MainForm               LogScrivi          - Applicazione CDCMetal fermata
+INFO  2019-03-19 16:18:03,075   147ms MainForm               LogScrivi          - Applicazione CDCMetal avviata
+INFO  2019-03-19 16:19:02,279   130ms MainForm               LogScrivi          - Applicazione CDCMetal avviata
+INFO  2019-03-19 16:19:10,396  8247ms MainForm               LogScrivi          - Applicazione CDCMetal fermata
+INFO  2019-03-19 16:19:37,094   156ms MainForm               LogScrivi          - Applicazione CDCMetal avviata
+INFO  2019-03-19 16:19:47,840 10902ms MainForm               LogScrivi          - Applicazione CDCMetal fermata
+INFO  2019-03-19 16:20:07,300   136ms MainForm               LogScrivi          - Applicazione CDCMetal avviata
+INFO  2019-03-19 16:21:12,692 65528ms MainForm               LogScrivi          - Applicazione CDCMetal fermata
+INFO  2019-03-19 16:24:05,506   164ms MainForm               LogScrivi          - Applicazione CDCMetal avviata
+INFO  2019-03-19 16:24:37,217   152ms MainForm               LogScrivi          - Applicazione CDCMetal avviata
+INFO  2019-03-19 16:25:15,822   210ms MainForm               LogScrivi          - Applicazione CDCMetal avviata
+INFO  2019-03-19 16:38:16,838   156ms MainForm               LogScrivi          - Applicazione CDCMetal avviata
+INFO  2019-03-19 16:38:49,325 32642ms MainForm               LogScrivi          - Applicazione CDCMetal fermata
+INFO  2019-03-19 16:38:57,499   122ms MainForm               LogScrivi          - Applicazione CDCMetal avviata
+INFO  2019-03-19 16:41:51,342   125ms MainForm               LogScrivi          - Applicazione CDCMetal avviata
+INFO  2019-03-19 16:42:06,967 15750ms MainForm               LogScrivi          - Applicazione CDCMetal fermata
+INFO  2019-03-19 16:42:21,236   125ms MainForm               LogScrivi          - Applicazione CDCMetal avviata
+INFO  2019-03-19 16:42:50,014 28903ms MainForm               LogScrivi          - Applicazione CDCMetal fermata
+INFO  2019-03-19 17:18:14,553   130ms MainForm               LogScrivi          - Applicazione CDCMetal avviata
+INFO  2019-03-19 17:19:31,702   119ms MainForm               LogScrivi          - Applicazione CDCMetal avviata
+INFO  2019-03-19 17:29:54,885   176ms MainForm               LogScrivi          - Applicazione CDCMetal avviata
+INFO  2019-03-19 17:31:16,828   154ms MainForm               LogScrivi          - Applicazione CDCMetal avviata
+INFO  2019-03-19 17:31:43,408 26734ms MainForm               LogScrivi          - Applicazione CDCMetal fermata
+INFO  2019-03-19 17:46:10,911   143ms MainForm               LogScrivi          - Applicazione CDCMetal avviata
+INFO  2019-03-19 17:46:24,177 13409ms MainForm               LogScrivi          - Applicazione CDCMetal fermata
+INFO  2019-03-21 07:40:29,039   167ms MainForm               LogScrivi          - Applicazione CDCMetal avviata
+ERROR 2019-03-21 07:41:09,297 40425ms MainForm               LogScriviErrore    - Errore nella verifica etichette
+System.InvalidCastException: Impossibile eseguire il cast di oggetti di tipo 'System.Decimal' sul tipo 'System.String'.
+   in CDCMetal.CreaEtichetteFrm.btnVerificaEtichette_Click(Object sender, EventArgs e) in C:\VSProgetti\CDCMetal\CDCMetal\CDCMetal\CreaEtichetteFrm.cs:riga 174
+INFO  2019-03-21 07:42:18,654   215ms MainForm               LogScrivi          - Applicazione CDCMetal avviata
+INFO  2019-03-21 07:43:06,668   134ms MainForm               LogScrivi          - Applicazione CDCMetal avviata
+ERROR 2019-03-21 07:45:35,570 149036ms MainForm               LogScriviErrore    - Errore nella verifica etichette
+System.InvalidCastException: Impossibile eseguire il cast di oggetti di tipo 'System.DBNull' sul tipo 'System.String'.
+   in CDCMetal.CreaEtichetteFrm.btnVerificaEtichette_Click(Object sender, EventArgs e)
+ERROR 2019-03-21 07:45:52,654 166119ms MainForm               LogScriviErrore    - Errore nella verifica etichette
+System.InvalidCastException: Impossibile eseguire il cast di oggetti di tipo 'System.DBNull' sul tipo 'System.String'.
+   in CDCMetal.CreaEtichetteFrm.btnVerificaEtichette_Click(Object sender, EventArgs e)
+INFO  2019-03-21 07:53:21,827   125ms MainForm               LogScrivi          - Applicazione CDCMetal avviata
+INFO  2019-03-21 07:55:36,319   123ms MainForm               LogScrivi          - Applicazione CDCMetal avviata
+INFO  2019-03-21 08:03:15,461   122ms MainForm               LogScrivi          - Applicazione CDCMetal avviata
+INFO  2019-03-21 08:03:59,577 44237ms MainForm               LogScrivi          - Applicazione CDCMetal fermata
+INFO  2019-03-21 08:17:29,650   114ms MainForm               LogScrivi          - Applicazione CDCMetal avviata
+INFO  2019-03-21 08:19:12,203   167ms MainForm               LogScrivi          - Applicazione CDCMetal avviata
+INFO  2019-03-21 08:38:52,181   129ms MainForm               LogScrivi          - Applicazione CDCMetal avviata
+INFO  2019-03-21 08:41:35,015   124ms MainForm               LogScrivi          - Applicazione CDCMetal avviata
+INFO  2019-03-21 08:42:34,785   122ms MainForm               LogScrivi          - Applicazione CDCMetal avviata
+INFO  2019-03-21 08:43:57,688   139ms MainForm               LogScrivi          - Applicazione CDCMetal avviata
+INFO  2019-03-21 08:45:40,673   133ms MainForm               LogScrivi          - Applicazione CDCMetal avviata
+INFO  2019-03-21 08:46:23,067 42527ms MainForm               LogScrivi          - Applicazione CDCMetal fermata
+INFO  2019-03-21 09:00:41,796   170ms MainForm               LogScrivi          - Applicazione CDCMetal avviata
+INFO  2019-03-21 09:02:23,718   124ms MainForm               LogScrivi          - Applicazione CDCMetal avviata
+INFO  2019-03-21 09:14:33,395   130ms MainForm               LogScrivi          - Applicazione CDCMetal avviata
+INFO  2019-03-21 09:16:45,893 132628ms MainForm               LogScrivi          - Applicazione CDCMetal fermata
+INFO  2019-03-21 09:19:51,004   113ms MainForm               LogScrivi          - Applicazione CDCMetal avviata
+INFO  2019-03-21 09:27:31,457   149ms MainForm               LogScrivi          - Applicazione CDCMetal avviata
+INFO  2019-03-21 09:31:32,900   146ms MainForm               LogScrivi          - Applicazione CDCMetal avviata
+INFO  2019-03-21 09:32:12,350 39596ms MainForm               LogScrivi          - Applicazione CDCMetal fermata
+INFO  2019-03-21 09:33:45,905   114ms MainForm               LogScrivi          - Applicazione CDCMetal avviata
+INFO  2019-03-21 09:35:43,332   164ms MainForm               LogScrivi          - Applicazione CDCMetal avviata
+INFO  2019-03-21 16:29:19,829   137ms MainForm               LogScrivi          - Applicazione CDCMetal avviata
+INFO  2019-03-21 16:46:30,323 1030631ms MainForm               LogScrivi          - Applicazione CDCMetal fermata
+INFO  2019-03-21 16:53:53,883   147ms MainForm               LogScrivi          - Applicazione CDCMetal avviata
+INFO  2019-03-21 16:54:31,367 37630ms MainForm               LogScrivi          - Applicazione CDCMetal fermata
+INFO  2019-03-21 17:00:16,211   117ms MainForm               LogScrivi          - Applicazione CDCMetal avviata
+INFO  2019-03-21 17:07:14,754   133ms MainForm               LogScrivi          - Applicazione CDCMetal avviata
+INFO  2019-03-21 17:10:48,958   120ms MainForm               LogScrivi          - Applicazione CDCMetal avviata
+INFO  2019-03-21 17:11:20,410 31572ms MainForm               LogScrivi          - Applicazione CDCMetal fermata
+INFO  2019-03-21 17:40:22,642   171ms MainForm               LogScrivi          - Applicazione CDCMetal avviata
+INFO  2019-03-21 17:43:08,931 166460ms MainForm               LogScrivi          - Applicazione CDCMetal fermata
+INFO  2019-03-21 17:45:40,458   122ms MainForm               LogScrivi          - Applicazione CDCMetal avviata
+ERROR 2019-03-21 17:46:09,719 29383ms MainForm               LogScriviErrore    - Errore nella verifica etichette
+System.InvalidCastException: Cast specificato non valido.
+   in CDCMetal.Helpers.ZebraHelper.EseguiStampaEtichetta(String zebraPrinter, DataRow riga, String quantita) in C:\VSProgetti\CDCMetal\CDCMetal\CDCMetal.Helpers\ZebraHelper.cs:riga 25
+   in CDCMetal.CreaEtichetteFrm.btnVerificaEtichette_Click(Object sender, EventArgs e) in C:\VSProgetti\CDCMetal\CDCMetal\CDCMetal\CreaEtichetteFrm.cs:riga 282
+INFO  2019-03-21 18:02:50,579   129ms MainForm               LogScrivi          - Applicazione CDCMetal avviata
+INFO  2019-03-21 18:03:14,344 23893ms MainForm               LogScrivi          - Applicazione CDCMetal fermata
+INFO  2019-03-22 07:19:12,169   131ms MainForm               LogScrivi          - Applicazione CDCMetal avviata
+INFO  2019-03-22 07:23:37,514   121ms MainForm               LogScrivi          - Applicazione CDCMetal avviata
+INFO  2019-03-22 07:23:46,378  8984ms MainForm               LogScrivi          - Applicazione CDCMetal fermata
+INFO  2019-03-22 07:24:07,962   117ms MainForm               LogScrivi          - Applicazione CDCMetal avviata
+INFO  2019-03-22 07:27:39,879   111ms MainForm               LogScrivi          - Applicazione CDCMetal avviata
+INFO  2019-03-22 07:37:02,439   122ms MainForm               LogScrivi          - Applicazione CDCMetal avviata
+INFO  2019-03-22 07:57:04,853 1202537ms MainForm               LogScrivi          - Applicazione CDCMetal fermata
+INFO  2019-03-22 08:06:08,755   116ms MainForm               LogScrivi          - Applicazione CDCMetal avviata
+INFO  2019-03-22 08:10:43,574   131ms MainForm               LogScrivi          - Applicazione CDCMetal avviata
+INFO  2019-03-22 08:11:23,625 40182ms MainForm               LogScrivi          - Applicazione CDCMetal fermata

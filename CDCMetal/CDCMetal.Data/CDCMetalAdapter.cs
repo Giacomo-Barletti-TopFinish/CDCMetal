@@ -126,6 +126,21 @@ namespace CDCMetal.Data
             }
         }
 
+        public void FillCDC_DETTAGLIO_CON_DESCRIZIONE(CDCDS ds, List<decimal> IDEXCEL)
+        {
+            string selezione = ConvertToStringForInCondition(IDEXCEL);
+            string select = @"SELECT cdc.*, nvl(( select NVL(desmagazz,'') from gruppo.magazz ma where rownum = 1 and  ma.modello = ma.modellobase and ma.modello like cdc.prefisso||'-'||cdc.parte||'-'||cdc.colore||'%'),' ') as descrizione
+                                FROM CDC_DETTAGLIO cdc
+                                WHERE IDEXCEL IN ({0}) ORDER BY PREFISSO, PARTE, COLORE, MISURA,COMMESSAORDINE";
+
+            string query = string.Format(select, selezione);
+
+            using (DbDataAdapter da = BuildDataAdapter(query))
+            {
+                da.Fill(ds.CDC_DETTAGLIO1);
+            }
+        }
+
         public void CDC_PDF(CDCDS ds, List<decimal> IDDETTAGLIO)
         {
             string selezione = ConvertToStringForInCondition(IDDETTAGLIO);
@@ -151,6 +166,21 @@ namespace CDCMetal.Data
             using (DbDataAdapter da = BuildDataAdapter(query))
             {
                 da.Fill(ds.CDC_CONFORMITA_DETTAGLIO);
+            }
+        }
+
+        public void FillCDC_ETICHETTE_DETTAGLIO(CDCDS ds, List<decimal> IDDETTAGLIO)
+        {
+            string selezione = ConvertToStringForInCondition(IDDETTAGLIO);
+            string select = @"SELECT DET.* FROM CDC_ETICHETTE_DETTAGLIO DET
+                                INNER JOIN CDC_DETTAGLIO CD ON CD.PREFISSO = DET.PREFISSO AND CD.PARTE = DET.PARTE AND CD.COLORE = DET.COLORE 
+                                WHERE CD.IDDETTAGLIO IN ({0}) ";
+
+            string query = string.Format(select, selezione);
+
+            using (DbDataAdapter da = BuildDataAdapter(query))
+            {
+                da.Fill(ds.CDC_ETICHETTE_DETTAGLIO);
             }
         }
 
@@ -246,7 +276,7 @@ namespace CDCMetal.Data
             }
         }
 
-      
+
         public void FillCDC_APPLICAZIONE(CDCDS ds)
         {
             string select = @"SELECT * FROM CDC_APPLICAZIONE";

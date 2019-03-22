@@ -52,6 +52,10 @@ namespace CDCMetal.Entities {
         
         private CDC_APPLICAZIONEDataTable tableCDC_APPLICAZIONE;
         
+        private CDC_DETTAGLIO1DataTable tableCDC_DETTAGLIO1;
+        
+        private CDC_ETICHETTE_DETTAGLIODataTable tableCDC_ETICHETTE_DETTAGLIO;
+        
         private global::System.Data.SchemaSerializationMode _schemaSerializationMode = global::System.Data.SchemaSerializationMode.IncludeSchema;
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -121,6 +125,12 @@ namespace CDCMetal.Entities {
                 }
                 if ((ds.Tables["CDC_APPLICAZIONE"] != null)) {
                     base.Tables.Add(new CDC_APPLICAZIONEDataTable(ds.Tables["CDC_APPLICAZIONE"]));
+                }
+                if ((ds.Tables["CDC_DETTAGLIO1"] != null)) {
+                    base.Tables.Add(new CDC_DETTAGLIO1DataTable(ds.Tables["CDC_DETTAGLIO1"]));
+                }
+                if ((ds.Tables["CDC_ETICHETTE_DETTAGLIO"] != null)) {
+                    base.Tables.Add(new CDC_ETICHETTE_DETTAGLIODataTable(ds.Tables["CDC_ETICHETTE_DETTAGLIO"]));
                 }
                 this.DataSetName = ds.DataSetName;
                 this.Prefix = ds.Prefix;
@@ -282,6 +292,26 @@ namespace CDCMetal.Entities {
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+        [global::System.ComponentModel.Browsable(false)]
+        [global::System.ComponentModel.DesignerSerializationVisibility(global::System.ComponentModel.DesignerSerializationVisibility.Content)]
+        public CDC_DETTAGLIO1DataTable CDC_DETTAGLIO1 {
+            get {
+                return this.tableCDC_DETTAGLIO1;
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+        [global::System.ComponentModel.Browsable(false)]
+        [global::System.ComponentModel.DesignerSerializationVisibility(global::System.ComponentModel.DesignerSerializationVisibility.Content)]
+        public CDC_ETICHETTE_DETTAGLIODataTable CDC_ETICHETTE_DETTAGLIO {
+            get {
+                return this.tableCDC_ETICHETTE_DETTAGLIO;
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
         [global::System.ComponentModel.BrowsableAttribute(true)]
         [global::System.ComponentModel.DesignerSerializationVisibilityAttribute(global::System.ComponentModel.DesignerSerializationVisibility.Visible)]
         public override global::System.Data.SchemaSerializationMode SchemaSerializationMode {
@@ -388,6 +418,12 @@ namespace CDCMetal.Entities {
                 }
                 if ((ds.Tables["CDC_APPLICAZIONE"] != null)) {
                     base.Tables.Add(new CDC_APPLICAZIONEDataTable(ds.Tables["CDC_APPLICAZIONE"]));
+                }
+                if ((ds.Tables["CDC_DETTAGLIO1"] != null)) {
+                    base.Tables.Add(new CDC_DETTAGLIO1DataTable(ds.Tables["CDC_DETTAGLIO1"]));
+                }
+                if ((ds.Tables["CDC_ETICHETTE_DETTAGLIO"] != null)) {
+                    base.Tables.Add(new CDC_ETICHETTE_DETTAGLIODataTable(ds.Tables["CDC_ETICHETTE_DETTAGLIO"]));
                 }
                 this.DataSetName = ds.DataSetName;
                 this.Prefix = ds.Prefix;
@@ -506,6 +542,18 @@ namespace CDCMetal.Entities {
                     this.tableCDC_APPLICAZIONE.InitVars();
                 }
             }
+            this.tableCDC_DETTAGLIO1 = ((CDC_DETTAGLIO1DataTable)(base.Tables["CDC_DETTAGLIO1"]));
+            if ((initTable == true)) {
+                if ((this.tableCDC_DETTAGLIO1 != null)) {
+                    this.tableCDC_DETTAGLIO1.InitVars();
+                }
+            }
+            this.tableCDC_ETICHETTE_DETTAGLIO = ((CDC_ETICHETTE_DETTAGLIODataTable)(base.Tables["CDC_ETICHETTE_DETTAGLIO"]));
+            if ((initTable == true)) {
+                if ((this.tableCDC_ETICHETTE_DETTAGLIO != null)) {
+                    this.tableCDC_ETICHETTE_DETTAGLIO.InitVars();
+                }
+            }
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -544,6 +592,10 @@ namespace CDCMetal.Entities {
             base.Tables.Add(this.tableCDC_SPESSORE);
             this.tableCDC_APPLICAZIONE = new CDC_APPLICAZIONEDataTable();
             base.Tables.Add(this.tableCDC_APPLICAZIONE);
+            this.tableCDC_DETTAGLIO1 = new CDC_DETTAGLIO1DataTable();
+            base.Tables.Add(this.tableCDC_DETTAGLIO1);
+            this.tableCDC_ETICHETTE_DETTAGLIO = new CDC_ETICHETTE_DETTAGLIODataTable();
+            base.Tables.Add(this.tableCDC_ETICHETTE_DETTAGLIO);
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -627,6 +679,18 @@ namespace CDCMetal.Entities {
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
         private bool ShouldSerializeCDC_APPLICAZIONE() {
+            return false;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+        private bool ShouldSerializeCDC_DETTAGLIO1() {
+            return false;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+        private bool ShouldSerializeCDC_ETICHETTE_DETTAGLIO() {
             return false;
         }
         
@@ -726,6 +790,12 @@ namespace CDCMetal.Entities {
         
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
         public delegate void CDC_APPLICAZIONERowChangeEventHandler(object sender, CDC_APPLICAZIONERowChangeEvent e);
+        
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+        public delegate void CDC_DETTAGLIO1RowChangeEventHandler(object sender, CDC_DETTAGLIO1RowChangeEvent e);
+        
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+        public delegate void CDC_ETICHETTE_DETTAGLIORowChangeEventHandler(object sender, CDC_ETICHETTE_DETTAGLIORowChangeEvent e);
         
         /// <summary>
         ///Represents the strongly named DataTable class.
@@ -6252,6 +6322,1048 @@ namespace CDCMetal.Entities {
         }
         
         /// <summary>
+        ///Represents the strongly named DataTable class.
+        ///</summary>
+        [global::System.Serializable()]
+        [global::System.Xml.Serialization.XmlSchemaProviderAttribute("GetTypedTableSchema")]
+        public partial class CDC_DETTAGLIO1DataTable : global::System.Data.TypedTableBase<CDC_DETTAGLIO1Row> {
+            
+            private global::System.Data.DataColumn columnIDDETTAGLIO;
+            
+            private global::System.Data.DataColumn columnIDPRENOTAZIONE;
+            
+            private global::System.Data.DataColumn columnIDEXCEL;
+            
+            private global::System.Data.DataColumn columnIDVERBALE;
+            
+            private global::System.Data.DataColumn columnDATACOLLAUDO;
+            
+            private global::System.Data.DataColumn columnACCESSORISTA;
+            
+            private global::System.Data.DataColumn columnPREFISSO;
+            
+            private global::System.Data.DataColumn columnPARTE;
+            
+            private global::System.Data.DataColumn columnCOLORE;
+            
+            private global::System.Data.DataColumn columnMISURA;
+            
+            private global::System.Data.DataColumn columnLIVELLODIFF;
+            
+            private global::System.Data.DataColumn columnCOMMESSAORDINE;
+            
+            private global::System.Data.DataColumn columnENTE;
+            
+            private global::System.Data.DataColumn columnUM;
+            
+            private global::System.Data.DataColumn columnQUANTITA;
+            
+            private global::System.Data.DataColumn columnASSEGN;
+            
+            private global::System.Data.DataColumn columnAUTO;
+            
+            private global::System.Data.DataColumn columnCOLLTO;
+            
+            private global::System.Data.DataColumn columnQUANTITAVALIDITA;
+            
+            private global::System.Data.DataColumn columnLOTTOBLOCCATO;
+            
+            private global::System.Data.DataColumn columnVERBALEBLOCCATO;
+            
+            private global::System.Data.DataColumn columnDEROGA;
+            
+            private global::System.Data.DataColumn columnCONTROLLODIMENSIONALE;
+            
+            private global::System.Data.DataColumn columnCONTROLLOESTETICO;
+            
+            private global::System.Data.DataColumn columnCONTROLLOFUNZIONALE;
+            
+            private global::System.Data.DataColumn columnESITOTESTCHIMICO;
+            
+            private global::System.Data.DataColumn columnTESTFISICO;
+            
+            private global::System.Data.DataColumn columnNOTECOLLAUDO;
+            
+            private global::System.Data.DataColumn columnASSEGNAZIONE;
+            
+            private global::System.Data.DataColumn columnDESCRIZIONE;
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public CDC_DETTAGLIO1DataTable() {
+                this.TableName = "CDC_DETTAGLIO1";
+                this.BeginInit();
+                this.InitClass();
+                this.EndInit();
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            internal CDC_DETTAGLIO1DataTable(global::System.Data.DataTable table) {
+                this.TableName = table.TableName;
+                if ((table.CaseSensitive != table.DataSet.CaseSensitive)) {
+                    this.CaseSensitive = table.CaseSensitive;
+                }
+                if ((table.Locale.ToString() != table.DataSet.Locale.ToString())) {
+                    this.Locale = table.Locale;
+                }
+                if ((table.Namespace != table.DataSet.Namespace)) {
+                    this.Namespace = table.Namespace;
+                }
+                this.Prefix = table.Prefix;
+                this.MinimumCapacity = table.MinimumCapacity;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            protected CDC_DETTAGLIO1DataTable(global::System.Runtime.Serialization.SerializationInfo info, global::System.Runtime.Serialization.StreamingContext context) : 
+                    base(info, context) {
+                this.InitVars();
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public global::System.Data.DataColumn IDDETTAGLIOColumn {
+                get {
+                    return this.columnIDDETTAGLIO;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public global::System.Data.DataColumn IDPRENOTAZIONEColumn {
+                get {
+                    return this.columnIDPRENOTAZIONE;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public global::System.Data.DataColumn IDEXCELColumn {
+                get {
+                    return this.columnIDEXCEL;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public global::System.Data.DataColumn IDVERBALEColumn {
+                get {
+                    return this.columnIDVERBALE;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public global::System.Data.DataColumn DATACOLLAUDOColumn {
+                get {
+                    return this.columnDATACOLLAUDO;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public global::System.Data.DataColumn ACCESSORISTAColumn {
+                get {
+                    return this.columnACCESSORISTA;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public global::System.Data.DataColumn PREFISSOColumn {
+                get {
+                    return this.columnPREFISSO;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public global::System.Data.DataColumn PARTEColumn {
+                get {
+                    return this.columnPARTE;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public global::System.Data.DataColumn COLOREColumn {
+                get {
+                    return this.columnCOLORE;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public global::System.Data.DataColumn MISURAColumn {
+                get {
+                    return this.columnMISURA;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public global::System.Data.DataColumn LIVELLODIFFColumn {
+                get {
+                    return this.columnLIVELLODIFF;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public global::System.Data.DataColumn COMMESSAORDINEColumn {
+                get {
+                    return this.columnCOMMESSAORDINE;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public global::System.Data.DataColumn ENTEColumn {
+                get {
+                    return this.columnENTE;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public global::System.Data.DataColumn UMColumn {
+                get {
+                    return this.columnUM;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public global::System.Data.DataColumn QUANTITAColumn {
+                get {
+                    return this.columnQUANTITA;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public global::System.Data.DataColumn ASSEGNColumn {
+                get {
+                    return this.columnASSEGN;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public global::System.Data.DataColumn AUTOColumn {
+                get {
+                    return this.columnAUTO;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public global::System.Data.DataColumn COLLTOColumn {
+                get {
+                    return this.columnCOLLTO;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public global::System.Data.DataColumn QUANTITAVALIDITAColumn {
+                get {
+                    return this.columnQUANTITAVALIDITA;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public global::System.Data.DataColumn LOTTOBLOCCATOColumn {
+                get {
+                    return this.columnLOTTOBLOCCATO;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public global::System.Data.DataColumn VERBALEBLOCCATOColumn {
+                get {
+                    return this.columnVERBALEBLOCCATO;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public global::System.Data.DataColumn DEROGAColumn {
+                get {
+                    return this.columnDEROGA;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public global::System.Data.DataColumn CONTROLLODIMENSIONALEColumn {
+                get {
+                    return this.columnCONTROLLODIMENSIONALE;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public global::System.Data.DataColumn CONTROLLOESTETICOColumn {
+                get {
+                    return this.columnCONTROLLOESTETICO;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public global::System.Data.DataColumn CONTROLLOFUNZIONALEColumn {
+                get {
+                    return this.columnCONTROLLOFUNZIONALE;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public global::System.Data.DataColumn ESITOTESTCHIMICOColumn {
+                get {
+                    return this.columnESITOTESTCHIMICO;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public global::System.Data.DataColumn TESTFISICOColumn {
+                get {
+                    return this.columnTESTFISICO;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public global::System.Data.DataColumn NOTECOLLAUDOColumn {
+                get {
+                    return this.columnNOTECOLLAUDO;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public global::System.Data.DataColumn ASSEGNAZIONEColumn {
+                get {
+                    return this.columnASSEGNAZIONE;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public global::System.Data.DataColumn DESCRIZIONEColumn {
+                get {
+                    return this.columnDESCRIZIONE;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            [global::System.ComponentModel.Browsable(false)]
+            public int Count {
+                get {
+                    return this.Rows.Count;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public CDC_DETTAGLIO1Row this[int index] {
+                get {
+                    return ((CDC_DETTAGLIO1Row)(this.Rows[index]));
+                }
+            }
+            
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public event CDC_DETTAGLIO1RowChangeEventHandler CDC_DETTAGLIO1RowChanging;
+            
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public event CDC_DETTAGLIO1RowChangeEventHandler CDC_DETTAGLIO1RowChanged;
+            
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public event CDC_DETTAGLIO1RowChangeEventHandler CDC_DETTAGLIO1RowDeleting;
+            
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public event CDC_DETTAGLIO1RowChangeEventHandler CDC_DETTAGLIO1RowDeleted;
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public void AddCDC_DETTAGLIO1Row(CDC_DETTAGLIO1Row row) {
+                this.Rows.Add(row);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public CDC_DETTAGLIO1Row AddCDC_DETTAGLIO1Row(
+                        decimal IDDETTAGLIO, 
+                        decimal IDPRENOTAZIONE, 
+                        decimal IDEXCEL, 
+                        string IDVERBALE, 
+                        string DATACOLLAUDO, 
+                        string ACCESSORISTA, 
+                        string PREFISSO, 
+                        string PARTE, 
+                        string COLORE, 
+                        decimal MISURA, 
+                        decimal LIVELLODIFF, 
+                        string COMMESSAORDINE, 
+                        string ENTE, 
+                        string UM, 
+                        decimal QUANTITA, 
+                        string ASSEGN, 
+                        string AUTO, 
+                        string COLLTO, 
+                        string QUANTITAVALIDITA, 
+                        string LOTTOBLOCCATO, 
+                        string VERBALEBLOCCATO, 
+                        string DEROGA, 
+                        string CONTROLLODIMENSIONALE, 
+                        string CONTROLLOESTETICO, 
+                        string CONTROLLOFUNZIONALE, 
+                        string ESITOTESTCHIMICO, 
+                        string TESTFISICO, 
+                        string NOTECOLLAUDO, 
+                        string ASSEGNAZIONE, 
+                        string DESCRIZIONE) {
+                CDC_DETTAGLIO1Row rowCDC_DETTAGLIO1Row = ((CDC_DETTAGLIO1Row)(this.NewRow()));
+                object[] columnValuesArray = new object[] {
+                        IDDETTAGLIO,
+                        IDPRENOTAZIONE,
+                        IDEXCEL,
+                        IDVERBALE,
+                        DATACOLLAUDO,
+                        ACCESSORISTA,
+                        PREFISSO,
+                        PARTE,
+                        COLORE,
+                        MISURA,
+                        LIVELLODIFF,
+                        COMMESSAORDINE,
+                        ENTE,
+                        UM,
+                        QUANTITA,
+                        ASSEGN,
+                        AUTO,
+                        COLLTO,
+                        QUANTITAVALIDITA,
+                        LOTTOBLOCCATO,
+                        VERBALEBLOCCATO,
+                        DEROGA,
+                        CONTROLLODIMENSIONALE,
+                        CONTROLLOESTETICO,
+                        CONTROLLOFUNZIONALE,
+                        ESITOTESTCHIMICO,
+                        TESTFISICO,
+                        NOTECOLLAUDO,
+                        ASSEGNAZIONE,
+                        DESCRIZIONE};
+                rowCDC_DETTAGLIO1Row.ItemArray = columnValuesArray;
+                this.Rows.Add(rowCDC_DETTAGLIO1Row);
+                return rowCDC_DETTAGLIO1Row;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public override global::System.Data.DataTable Clone() {
+                CDC_DETTAGLIO1DataTable cln = ((CDC_DETTAGLIO1DataTable)(base.Clone()));
+                cln.InitVars();
+                return cln;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            protected override global::System.Data.DataTable CreateInstance() {
+                return new CDC_DETTAGLIO1DataTable();
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            internal void InitVars() {
+                this.columnIDDETTAGLIO = base.Columns["IDDETTAGLIO"];
+                this.columnIDPRENOTAZIONE = base.Columns["IDPRENOTAZIONE"];
+                this.columnIDEXCEL = base.Columns["IDEXCEL"];
+                this.columnIDVERBALE = base.Columns["IDVERBALE"];
+                this.columnDATACOLLAUDO = base.Columns["DATACOLLAUDO"];
+                this.columnACCESSORISTA = base.Columns["ACCESSORISTA"];
+                this.columnPREFISSO = base.Columns["PREFISSO"];
+                this.columnPARTE = base.Columns["PARTE"];
+                this.columnCOLORE = base.Columns["COLORE"];
+                this.columnMISURA = base.Columns["MISURA"];
+                this.columnLIVELLODIFF = base.Columns["LIVELLODIFF"];
+                this.columnCOMMESSAORDINE = base.Columns["COMMESSAORDINE"];
+                this.columnENTE = base.Columns["ENTE"];
+                this.columnUM = base.Columns["UM"];
+                this.columnQUANTITA = base.Columns["QUANTITA"];
+                this.columnASSEGN = base.Columns["ASSEGN"];
+                this.columnAUTO = base.Columns["AUTO"];
+                this.columnCOLLTO = base.Columns["COLLTO"];
+                this.columnQUANTITAVALIDITA = base.Columns["QUANTITAVALIDITA"];
+                this.columnLOTTOBLOCCATO = base.Columns["LOTTOBLOCCATO"];
+                this.columnVERBALEBLOCCATO = base.Columns["VERBALEBLOCCATO"];
+                this.columnDEROGA = base.Columns["DEROGA"];
+                this.columnCONTROLLODIMENSIONALE = base.Columns["CONTROLLODIMENSIONALE"];
+                this.columnCONTROLLOESTETICO = base.Columns["CONTROLLOESTETICO"];
+                this.columnCONTROLLOFUNZIONALE = base.Columns["CONTROLLOFUNZIONALE"];
+                this.columnESITOTESTCHIMICO = base.Columns["ESITOTESTCHIMICO"];
+                this.columnTESTFISICO = base.Columns["TESTFISICO"];
+                this.columnNOTECOLLAUDO = base.Columns["NOTECOLLAUDO"];
+                this.columnASSEGNAZIONE = base.Columns["ASSEGNAZIONE"];
+                this.columnDESCRIZIONE = base.Columns["DESCRIZIONE"];
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            private void InitClass() {
+                this.columnIDDETTAGLIO = new global::System.Data.DataColumn("IDDETTAGLIO", typeof(decimal), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnIDDETTAGLIO);
+                this.columnIDPRENOTAZIONE = new global::System.Data.DataColumn("IDPRENOTAZIONE", typeof(decimal), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnIDPRENOTAZIONE);
+                this.columnIDEXCEL = new global::System.Data.DataColumn("IDEXCEL", typeof(decimal), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnIDEXCEL);
+                this.columnIDVERBALE = new global::System.Data.DataColumn("IDVERBALE", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnIDVERBALE);
+                this.columnDATACOLLAUDO = new global::System.Data.DataColumn("DATACOLLAUDO", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnDATACOLLAUDO);
+                this.columnACCESSORISTA = new global::System.Data.DataColumn("ACCESSORISTA", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnACCESSORISTA);
+                this.columnPREFISSO = new global::System.Data.DataColumn("PREFISSO", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnPREFISSO);
+                this.columnPARTE = new global::System.Data.DataColumn("PARTE", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnPARTE);
+                this.columnCOLORE = new global::System.Data.DataColumn("COLORE", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnCOLORE);
+                this.columnMISURA = new global::System.Data.DataColumn("MISURA", typeof(decimal), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnMISURA);
+                this.columnLIVELLODIFF = new global::System.Data.DataColumn("LIVELLODIFF", typeof(decimal), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnLIVELLODIFF);
+                this.columnCOMMESSAORDINE = new global::System.Data.DataColumn("COMMESSAORDINE", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnCOMMESSAORDINE);
+                this.columnENTE = new global::System.Data.DataColumn("ENTE", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnENTE);
+                this.columnUM = new global::System.Data.DataColumn("UM", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnUM);
+                this.columnQUANTITA = new global::System.Data.DataColumn("QUANTITA", typeof(decimal), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnQUANTITA);
+                this.columnASSEGN = new global::System.Data.DataColumn("ASSEGN", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnASSEGN);
+                this.columnAUTO = new global::System.Data.DataColumn("AUTO", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnAUTO);
+                this.columnCOLLTO = new global::System.Data.DataColumn("COLLTO", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnCOLLTO);
+                this.columnQUANTITAVALIDITA = new global::System.Data.DataColumn("QUANTITAVALIDITA", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnQUANTITAVALIDITA);
+                this.columnLOTTOBLOCCATO = new global::System.Data.DataColumn("LOTTOBLOCCATO", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnLOTTOBLOCCATO);
+                this.columnVERBALEBLOCCATO = new global::System.Data.DataColumn("VERBALEBLOCCATO", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnVERBALEBLOCCATO);
+                this.columnDEROGA = new global::System.Data.DataColumn("DEROGA", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnDEROGA);
+                this.columnCONTROLLODIMENSIONALE = new global::System.Data.DataColumn("CONTROLLODIMENSIONALE", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnCONTROLLODIMENSIONALE);
+                this.columnCONTROLLOESTETICO = new global::System.Data.DataColumn("CONTROLLOESTETICO", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnCONTROLLOESTETICO);
+                this.columnCONTROLLOFUNZIONALE = new global::System.Data.DataColumn("CONTROLLOFUNZIONALE", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnCONTROLLOFUNZIONALE);
+                this.columnESITOTESTCHIMICO = new global::System.Data.DataColumn("ESITOTESTCHIMICO", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnESITOTESTCHIMICO);
+                this.columnTESTFISICO = new global::System.Data.DataColumn("TESTFISICO", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnTESTFISICO);
+                this.columnNOTECOLLAUDO = new global::System.Data.DataColumn("NOTECOLLAUDO", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnNOTECOLLAUDO);
+                this.columnASSEGNAZIONE = new global::System.Data.DataColumn("ASSEGNAZIONE", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnASSEGNAZIONE);
+                this.columnDESCRIZIONE = new global::System.Data.DataColumn("DESCRIZIONE", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnDESCRIZIONE);
+                this.columnIDPRENOTAZIONE.AllowDBNull = false;
+                this.columnIDEXCEL.AllowDBNull = false;
+                this.columnIDVERBALE.MaxLength = 10;
+                this.columnDATACOLLAUDO.AllowDBNull = false;
+                this.columnDATACOLLAUDO.MaxLength = 10;
+                this.columnACCESSORISTA.AllowDBNull = false;
+                this.columnACCESSORISTA.MaxLength = 30;
+                this.columnPREFISSO.AllowDBNull = false;
+                this.columnPREFISSO.MaxLength = 7;
+                this.columnPARTE.AllowDBNull = false;
+                this.columnPARTE.MaxLength = 6;
+                this.columnCOLORE.AllowDBNull = false;
+                this.columnCOLORE.MaxLength = 5;
+                this.columnCOMMESSAORDINE.AllowDBNull = false;
+                this.columnCOMMESSAORDINE.MaxLength = 18;
+                this.columnENTE.AllowDBNull = false;
+                this.columnENTE.MaxLength = 5;
+                this.columnUM.MaxLength = 2;
+                this.columnASSEGN.MaxLength = 2;
+                this.columnAUTO.MaxLength = 5;
+                this.columnCOLLTO.MaxLength = 5;
+                this.columnQUANTITAVALIDITA.MaxLength = 6;
+                this.columnLOTTOBLOCCATO.MaxLength = 2;
+                this.columnVERBALEBLOCCATO.MaxLength = 2;
+                this.columnDEROGA.MaxLength = 2;
+                this.columnCONTROLLODIMENSIONALE.MaxLength = 2;
+                this.columnCONTROLLOESTETICO.MaxLength = 2;
+                this.columnCONTROLLOFUNZIONALE.MaxLength = 2;
+                this.columnESITOTESTCHIMICO.MaxLength = 2;
+                this.columnTESTFISICO.MaxLength = 2;
+                this.columnNOTECOLLAUDO.MaxLength = 100;
+                this.columnASSEGNAZIONE.MaxLength = 500;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public CDC_DETTAGLIO1Row NewCDC_DETTAGLIO1Row() {
+                return ((CDC_DETTAGLIO1Row)(this.NewRow()));
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            protected override global::System.Data.DataRow NewRowFromBuilder(global::System.Data.DataRowBuilder builder) {
+                return new CDC_DETTAGLIO1Row(builder);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            protected override global::System.Type GetRowType() {
+                return typeof(CDC_DETTAGLIO1Row);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            protected override void OnRowChanged(global::System.Data.DataRowChangeEventArgs e) {
+                base.OnRowChanged(e);
+                if ((this.CDC_DETTAGLIO1RowChanged != null)) {
+                    this.CDC_DETTAGLIO1RowChanged(this, new CDC_DETTAGLIO1RowChangeEvent(((CDC_DETTAGLIO1Row)(e.Row)), e.Action));
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            protected override void OnRowChanging(global::System.Data.DataRowChangeEventArgs e) {
+                base.OnRowChanging(e);
+                if ((this.CDC_DETTAGLIO1RowChanging != null)) {
+                    this.CDC_DETTAGLIO1RowChanging(this, new CDC_DETTAGLIO1RowChangeEvent(((CDC_DETTAGLIO1Row)(e.Row)), e.Action));
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            protected override void OnRowDeleted(global::System.Data.DataRowChangeEventArgs e) {
+                base.OnRowDeleted(e);
+                if ((this.CDC_DETTAGLIO1RowDeleted != null)) {
+                    this.CDC_DETTAGLIO1RowDeleted(this, new CDC_DETTAGLIO1RowChangeEvent(((CDC_DETTAGLIO1Row)(e.Row)), e.Action));
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            protected override void OnRowDeleting(global::System.Data.DataRowChangeEventArgs e) {
+                base.OnRowDeleting(e);
+                if ((this.CDC_DETTAGLIO1RowDeleting != null)) {
+                    this.CDC_DETTAGLIO1RowDeleting(this, new CDC_DETTAGLIO1RowChangeEvent(((CDC_DETTAGLIO1Row)(e.Row)), e.Action));
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public void RemoveCDC_DETTAGLIO1Row(CDC_DETTAGLIO1Row row) {
+                this.Rows.Remove(row);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public static global::System.Xml.Schema.XmlSchemaComplexType GetTypedTableSchema(global::System.Xml.Schema.XmlSchemaSet xs) {
+                global::System.Xml.Schema.XmlSchemaComplexType type = new global::System.Xml.Schema.XmlSchemaComplexType();
+                global::System.Xml.Schema.XmlSchemaSequence sequence = new global::System.Xml.Schema.XmlSchemaSequence();
+                CDCDS ds = new CDCDS();
+                global::System.Xml.Schema.XmlSchemaAny any1 = new global::System.Xml.Schema.XmlSchemaAny();
+                any1.Namespace = "http://www.w3.org/2001/XMLSchema";
+                any1.MinOccurs = new decimal(0);
+                any1.MaxOccurs = decimal.MaxValue;
+                any1.ProcessContents = global::System.Xml.Schema.XmlSchemaContentProcessing.Lax;
+                sequence.Items.Add(any1);
+                global::System.Xml.Schema.XmlSchemaAny any2 = new global::System.Xml.Schema.XmlSchemaAny();
+                any2.Namespace = "urn:schemas-microsoft-com:xml-diffgram-v1";
+                any2.MinOccurs = new decimal(1);
+                any2.ProcessContents = global::System.Xml.Schema.XmlSchemaContentProcessing.Lax;
+                sequence.Items.Add(any2);
+                global::System.Xml.Schema.XmlSchemaAttribute attribute1 = new global::System.Xml.Schema.XmlSchemaAttribute();
+                attribute1.Name = "namespace";
+                attribute1.FixedValue = ds.Namespace;
+                type.Attributes.Add(attribute1);
+                global::System.Xml.Schema.XmlSchemaAttribute attribute2 = new global::System.Xml.Schema.XmlSchemaAttribute();
+                attribute2.Name = "tableTypeName";
+                attribute2.FixedValue = "CDC_DETTAGLIO1DataTable";
+                type.Attributes.Add(attribute2);
+                type.Particle = sequence;
+                global::System.Xml.Schema.XmlSchema dsSchema = ds.GetSchemaSerializable();
+                if (xs.Contains(dsSchema.TargetNamespace)) {
+                    global::System.IO.MemoryStream s1 = new global::System.IO.MemoryStream();
+                    global::System.IO.MemoryStream s2 = new global::System.IO.MemoryStream();
+                    try {
+                        global::System.Xml.Schema.XmlSchema schema = null;
+                        dsSchema.Write(s1);
+                        for (global::System.Collections.IEnumerator schemas = xs.Schemas(dsSchema.TargetNamespace).GetEnumerator(); schemas.MoveNext(); ) {
+                            schema = ((global::System.Xml.Schema.XmlSchema)(schemas.Current));
+                            s2.SetLength(0);
+                            schema.Write(s2);
+                            if ((s1.Length == s2.Length)) {
+                                s1.Position = 0;
+                                s2.Position = 0;
+                                for (; ((s1.Position != s1.Length) 
+                                            && (s1.ReadByte() == s2.ReadByte())); ) {
+                                    ;
+                                }
+                                if ((s1.Position == s1.Length)) {
+                                    return type;
+                                }
+                            }
+                        }
+                    }
+                    finally {
+                        if ((s1 != null)) {
+                            s1.Close();
+                        }
+                        if ((s2 != null)) {
+                            s2.Close();
+                        }
+                    }
+                }
+                xs.Add(dsSchema);
+                return type;
+            }
+        }
+        
+        /// <summary>
+        ///Represents the strongly named DataTable class.
+        ///</summary>
+        [global::System.Serializable()]
+        [global::System.Xml.Serialization.XmlSchemaProviderAttribute("GetTypedTableSchema")]
+        public partial class CDC_ETICHETTE_DETTAGLIODataTable : global::System.Data.TypedTableBase<CDC_ETICHETTE_DETTAGLIORow> {
+            
+            private global::System.Data.DataColumn columnIDCDCETT;
+            
+            private global::System.Data.DataColumn columnPREFISSO;
+            
+            private global::System.Data.DataColumn columnPARTE;
+            
+            private global::System.Data.DataColumn columnCOLORE;
+            
+            private global::System.Data.DataColumn columnLINEA;
+            
+            private global::System.Data.DataColumn columnDESCRIZIONE;
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public CDC_ETICHETTE_DETTAGLIODataTable() {
+                this.TableName = "CDC_ETICHETTE_DETTAGLIO";
+                this.BeginInit();
+                this.InitClass();
+                this.EndInit();
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            internal CDC_ETICHETTE_DETTAGLIODataTable(global::System.Data.DataTable table) {
+                this.TableName = table.TableName;
+                if ((table.CaseSensitive != table.DataSet.CaseSensitive)) {
+                    this.CaseSensitive = table.CaseSensitive;
+                }
+                if ((table.Locale.ToString() != table.DataSet.Locale.ToString())) {
+                    this.Locale = table.Locale;
+                }
+                if ((table.Namespace != table.DataSet.Namespace)) {
+                    this.Namespace = table.Namespace;
+                }
+                this.Prefix = table.Prefix;
+                this.MinimumCapacity = table.MinimumCapacity;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            protected CDC_ETICHETTE_DETTAGLIODataTable(global::System.Runtime.Serialization.SerializationInfo info, global::System.Runtime.Serialization.StreamingContext context) : 
+                    base(info, context) {
+                this.InitVars();
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public global::System.Data.DataColumn IDCDCETTColumn {
+                get {
+                    return this.columnIDCDCETT;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public global::System.Data.DataColumn PREFISSOColumn {
+                get {
+                    return this.columnPREFISSO;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public global::System.Data.DataColumn PARTEColumn {
+                get {
+                    return this.columnPARTE;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public global::System.Data.DataColumn COLOREColumn {
+                get {
+                    return this.columnCOLORE;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public global::System.Data.DataColumn LINEAColumn {
+                get {
+                    return this.columnLINEA;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public global::System.Data.DataColumn DESCRIZIONEColumn {
+                get {
+                    return this.columnDESCRIZIONE;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            [global::System.ComponentModel.Browsable(false)]
+            public int Count {
+                get {
+                    return this.Rows.Count;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public CDC_ETICHETTE_DETTAGLIORow this[int index] {
+                get {
+                    return ((CDC_ETICHETTE_DETTAGLIORow)(this.Rows[index]));
+                }
+            }
+            
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public event CDC_ETICHETTE_DETTAGLIORowChangeEventHandler CDC_ETICHETTE_DETTAGLIORowChanging;
+            
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public event CDC_ETICHETTE_DETTAGLIORowChangeEventHandler CDC_ETICHETTE_DETTAGLIORowChanged;
+            
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public event CDC_ETICHETTE_DETTAGLIORowChangeEventHandler CDC_ETICHETTE_DETTAGLIORowDeleting;
+            
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public event CDC_ETICHETTE_DETTAGLIORowChangeEventHandler CDC_ETICHETTE_DETTAGLIORowDeleted;
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public void AddCDC_ETICHETTE_DETTAGLIORow(CDC_ETICHETTE_DETTAGLIORow row) {
+                this.Rows.Add(row);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public CDC_ETICHETTE_DETTAGLIORow AddCDC_ETICHETTE_DETTAGLIORow(decimal IDCDCETT, string PREFISSO, string PARTE, string COLORE, string LINEA, string DESCRIZIONE) {
+                CDC_ETICHETTE_DETTAGLIORow rowCDC_ETICHETTE_DETTAGLIORow = ((CDC_ETICHETTE_DETTAGLIORow)(this.NewRow()));
+                object[] columnValuesArray = new object[] {
+                        IDCDCETT,
+                        PREFISSO,
+                        PARTE,
+                        COLORE,
+                        LINEA,
+                        DESCRIZIONE};
+                rowCDC_ETICHETTE_DETTAGLIORow.ItemArray = columnValuesArray;
+                this.Rows.Add(rowCDC_ETICHETTE_DETTAGLIORow);
+                return rowCDC_ETICHETTE_DETTAGLIORow;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public override global::System.Data.DataTable Clone() {
+                CDC_ETICHETTE_DETTAGLIODataTable cln = ((CDC_ETICHETTE_DETTAGLIODataTable)(base.Clone()));
+                cln.InitVars();
+                return cln;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            protected override global::System.Data.DataTable CreateInstance() {
+                return new CDC_ETICHETTE_DETTAGLIODataTable();
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            internal void InitVars() {
+                this.columnIDCDCETT = base.Columns["IDCDCETT"];
+                this.columnPREFISSO = base.Columns["PREFISSO"];
+                this.columnPARTE = base.Columns["PARTE"];
+                this.columnCOLORE = base.Columns["COLORE"];
+                this.columnLINEA = base.Columns["LINEA"];
+                this.columnDESCRIZIONE = base.Columns["DESCRIZIONE"];
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            private void InitClass() {
+                this.columnIDCDCETT = new global::System.Data.DataColumn("IDCDCETT", typeof(decimal), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnIDCDCETT);
+                this.columnPREFISSO = new global::System.Data.DataColumn("PREFISSO", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnPREFISSO);
+                this.columnPARTE = new global::System.Data.DataColumn("PARTE", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnPARTE);
+                this.columnCOLORE = new global::System.Data.DataColumn("COLORE", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnCOLORE);
+                this.columnLINEA = new global::System.Data.DataColumn("LINEA", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnLINEA);
+                this.columnDESCRIZIONE = new global::System.Data.DataColumn("DESCRIZIONE", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnDESCRIZIONE);
+                this.columnPREFISSO.AllowDBNull = false;
+                this.columnPREFISSO.MaxLength = 7;
+                this.columnPARTE.AllowDBNull = false;
+                this.columnPARTE.MaxLength = 6;
+                this.columnCOLORE.AllowDBNull = false;
+                this.columnCOLORE.MaxLength = 5;
+                this.columnLINEA.AllowDBNull = false;
+                this.columnLINEA.MaxLength = 5;
+                this.columnDESCRIZIONE.AllowDBNull = false;
+                this.columnDESCRIZIONE.MaxLength = 50;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public CDC_ETICHETTE_DETTAGLIORow NewCDC_ETICHETTE_DETTAGLIORow() {
+                return ((CDC_ETICHETTE_DETTAGLIORow)(this.NewRow()));
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            protected override global::System.Data.DataRow NewRowFromBuilder(global::System.Data.DataRowBuilder builder) {
+                return new CDC_ETICHETTE_DETTAGLIORow(builder);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            protected override global::System.Type GetRowType() {
+                return typeof(CDC_ETICHETTE_DETTAGLIORow);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            protected override void OnRowChanged(global::System.Data.DataRowChangeEventArgs e) {
+                base.OnRowChanged(e);
+                if ((this.CDC_ETICHETTE_DETTAGLIORowChanged != null)) {
+                    this.CDC_ETICHETTE_DETTAGLIORowChanged(this, new CDC_ETICHETTE_DETTAGLIORowChangeEvent(((CDC_ETICHETTE_DETTAGLIORow)(e.Row)), e.Action));
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            protected override void OnRowChanging(global::System.Data.DataRowChangeEventArgs e) {
+                base.OnRowChanging(e);
+                if ((this.CDC_ETICHETTE_DETTAGLIORowChanging != null)) {
+                    this.CDC_ETICHETTE_DETTAGLIORowChanging(this, new CDC_ETICHETTE_DETTAGLIORowChangeEvent(((CDC_ETICHETTE_DETTAGLIORow)(e.Row)), e.Action));
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            protected override void OnRowDeleted(global::System.Data.DataRowChangeEventArgs e) {
+                base.OnRowDeleted(e);
+                if ((this.CDC_ETICHETTE_DETTAGLIORowDeleted != null)) {
+                    this.CDC_ETICHETTE_DETTAGLIORowDeleted(this, new CDC_ETICHETTE_DETTAGLIORowChangeEvent(((CDC_ETICHETTE_DETTAGLIORow)(e.Row)), e.Action));
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            protected override void OnRowDeleting(global::System.Data.DataRowChangeEventArgs e) {
+                base.OnRowDeleting(e);
+                if ((this.CDC_ETICHETTE_DETTAGLIORowDeleting != null)) {
+                    this.CDC_ETICHETTE_DETTAGLIORowDeleting(this, new CDC_ETICHETTE_DETTAGLIORowChangeEvent(((CDC_ETICHETTE_DETTAGLIORow)(e.Row)), e.Action));
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public void RemoveCDC_ETICHETTE_DETTAGLIORow(CDC_ETICHETTE_DETTAGLIORow row) {
+                this.Rows.Remove(row);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public static global::System.Xml.Schema.XmlSchemaComplexType GetTypedTableSchema(global::System.Xml.Schema.XmlSchemaSet xs) {
+                global::System.Xml.Schema.XmlSchemaComplexType type = new global::System.Xml.Schema.XmlSchemaComplexType();
+                global::System.Xml.Schema.XmlSchemaSequence sequence = new global::System.Xml.Schema.XmlSchemaSequence();
+                CDCDS ds = new CDCDS();
+                global::System.Xml.Schema.XmlSchemaAny any1 = new global::System.Xml.Schema.XmlSchemaAny();
+                any1.Namespace = "http://www.w3.org/2001/XMLSchema";
+                any1.MinOccurs = new decimal(0);
+                any1.MaxOccurs = decimal.MaxValue;
+                any1.ProcessContents = global::System.Xml.Schema.XmlSchemaContentProcessing.Lax;
+                sequence.Items.Add(any1);
+                global::System.Xml.Schema.XmlSchemaAny any2 = new global::System.Xml.Schema.XmlSchemaAny();
+                any2.Namespace = "urn:schemas-microsoft-com:xml-diffgram-v1";
+                any2.MinOccurs = new decimal(1);
+                any2.ProcessContents = global::System.Xml.Schema.XmlSchemaContentProcessing.Lax;
+                sequence.Items.Add(any2);
+                global::System.Xml.Schema.XmlSchemaAttribute attribute1 = new global::System.Xml.Schema.XmlSchemaAttribute();
+                attribute1.Name = "namespace";
+                attribute1.FixedValue = ds.Namespace;
+                type.Attributes.Add(attribute1);
+                global::System.Xml.Schema.XmlSchemaAttribute attribute2 = new global::System.Xml.Schema.XmlSchemaAttribute();
+                attribute2.Name = "tableTypeName";
+                attribute2.FixedValue = "CDC_ETICHETTE_DETTAGLIODataTable";
+                type.Attributes.Add(attribute2);
+                type.Particle = sequence;
+                global::System.Xml.Schema.XmlSchema dsSchema = ds.GetSchemaSerializable();
+                if (xs.Contains(dsSchema.TargetNamespace)) {
+                    global::System.IO.MemoryStream s1 = new global::System.IO.MemoryStream();
+                    global::System.IO.MemoryStream s2 = new global::System.IO.MemoryStream();
+                    try {
+                        global::System.Xml.Schema.XmlSchema schema = null;
+                        dsSchema.Write(s1);
+                        for (global::System.Collections.IEnumerator schemas = xs.Schemas(dsSchema.TargetNamespace).GetEnumerator(); schemas.MoveNext(); ) {
+                            schema = ((global::System.Xml.Schema.XmlSchema)(schemas.Current));
+                            s2.SetLength(0);
+                            schema.Write(s2);
+                            if ((s1.Length == s2.Length)) {
+                                s1.Position = 0;
+                                s2.Position = 0;
+                                for (; ((s1.Position != s1.Length) 
+                                            && (s1.ReadByte() == s2.ReadByte())); ) {
+                                    ;
+                                }
+                                if ((s1.Position == s1.Length)) {
+                                    return type;
+                                }
+                            }
+                        }
+                    }
+                    finally {
+                        if ((s1 != null)) {
+                            s1.Close();
+                        }
+                        if ((s2 != null)) {
+                            s2.Close();
+                        }
+                    }
+                }
+                xs.Add(dsSchema);
+                return type;
+            }
+        }
+        
+        /// <summary>
         ///Represents strongly named DataRow class.
         ///</summary>
         public partial class USR_USERRow : global::System.Data.DataRow {
@@ -9083,6 +10195,807 @@ namespace CDCMetal.Entities {
         }
         
         /// <summary>
+        ///Represents strongly named DataRow class.
+        ///</summary>
+        public partial class CDC_DETTAGLIO1Row : global::System.Data.DataRow {
+            
+            private CDC_DETTAGLIO1DataTable tableCDC_DETTAGLIO1;
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            internal CDC_DETTAGLIO1Row(global::System.Data.DataRowBuilder rb) : 
+                    base(rb) {
+                this.tableCDC_DETTAGLIO1 = ((CDC_DETTAGLIO1DataTable)(this.Table));
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public decimal IDDETTAGLIO {
+                get {
+                    try {
+                        return ((decimal)(this[this.tableCDC_DETTAGLIO1.IDDETTAGLIOColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'IDDETTAGLIO\' in table \'CDC_DETTAGLIO1\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableCDC_DETTAGLIO1.IDDETTAGLIOColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public decimal IDPRENOTAZIONE {
+                get {
+                    return ((decimal)(this[this.tableCDC_DETTAGLIO1.IDPRENOTAZIONEColumn]));
+                }
+                set {
+                    this[this.tableCDC_DETTAGLIO1.IDPRENOTAZIONEColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public decimal IDEXCEL {
+                get {
+                    return ((decimal)(this[this.tableCDC_DETTAGLIO1.IDEXCELColumn]));
+                }
+                set {
+                    this[this.tableCDC_DETTAGLIO1.IDEXCELColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public string IDVERBALE {
+                get {
+                    try {
+                        return ((string)(this[this.tableCDC_DETTAGLIO1.IDVERBALEColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'IDVERBALE\' in table \'CDC_DETTAGLIO1\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableCDC_DETTAGLIO1.IDVERBALEColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public string DATACOLLAUDO {
+                get {
+                    return ((string)(this[this.tableCDC_DETTAGLIO1.DATACOLLAUDOColumn]));
+                }
+                set {
+                    this[this.tableCDC_DETTAGLIO1.DATACOLLAUDOColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public string ACCESSORISTA {
+                get {
+                    return ((string)(this[this.tableCDC_DETTAGLIO1.ACCESSORISTAColumn]));
+                }
+                set {
+                    this[this.tableCDC_DETTAGLIO1.ACCESSORISTAColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public string PREFISSO {
+                get {
+                    return ((string)(this[this.tableCDC_DETTAGLIO1.PREFISSOColumn]));
+                }
+                set {
+                    this[this.tableCDC_DETTAGLIO1.PREFISSOColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public string PARTE {
+                get {
+                    return ((string)(this[this.tableCDC_DETTAGLIO1.PARTEColumn]));
+                }
+                set {
+                    this[this.tableCDC_DETTAGLIO1.PARTEColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public string COLORE {
+                get {
+                    return ((string)(this[this.tableCDC_DETTAGLIO1.COLOREColumn]));
+                }
+                set {
+                    this[this.tableCDC_DETTAGLIO1.COLOREColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public decimal MISURA {
+                get {
+                    try {
+                        return ((decimal)(this[this.tableCDC_DETTAGLIO1.MISURAColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'MISURA\' in table \'CDC_DETTAGLIO1\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableCDC_DETTAGLIO1.MISURAColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public decimal LIVELLODIFF {
+                get {
+                    try {
+                        return ((decimal)(this[this.tableCDC_DETTAGLIO1.LIVELLODIFFColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'LIVELLODIFF\' in table \'CDC_DETTAGLIO1\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableCDC_DETTAGLIO1.LIVELLODIFFColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public string COMMESSAORDINE {
+                get {
+                    return ((string)(this[this.tableCDC_DETTAGLIO1.COMMESSAORDINEColumn]));
+                }
+                set {
+                    this[this.tableCDC_DETTAGLIO1.COMMESSAORDINEColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public string ENTE {
+                get {
+                    return ((string)(this[this.tableCDC_DETTAGLIO1.ENTEColumn]));
+                }
+                set {
+                    this[this.tableCDC_DETTAGLIO1.ENTEColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public string UM {
+                get {
+                    try {
+                        return ((string)(this[this.tableCDC_DETTAGLIO1.UMColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'UM\' in table \'CDC_DETTAGLIO1\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableCDC_DETTAGLIO1.UMColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public decimal QUANTITA {
+                get {
+                    try {
+                        return ((decimal)(this[this.tableCDC_DETTAGLIO1.QUANTITAColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'QUANTITA\' in table \'CDC_DETTAGLIO1\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableCDC_DETTAGLIO1.QUANTITAColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public string ASSEGN {
+                get {
+                    try {
+                        return ((string)(this[this.tableCDC_DETTAGLIO1.ASSEGNColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'ASSEGN\' in table \'CDC_DETTAGLIO1\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableCDC_DETTAGLIO1.ASSEGNColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public string AUTO {
+                get {
+                    try {
+                        return ((string)(this[this.tableCDC_DETTAGLIO1.AUTOColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'AUTO\' in table \'CDC_DETTAGLIO1\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableCDC_DETTAGLIO1.AUTOColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public string COLLTO {
+                get {
+                    try {
+                        return ((string)(this[this.tableCDC_DETTAGLIO1.COLLTOColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'COLLTO\' in table \'CDC_DETTAGLIO1\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableCDC_DETTAGLIO1.COLLTOColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public string QUANTITAVALIDITA {
+                get {
+                    try {
+                        return ((string)(this[this.tableCDC_DETTAGLIO1.QUANTITAVALIDITAColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'QUANTITAVALIDITA\' in table \'CDC_DETTAGLIO1\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableCDC_DETTAGLIO1.QUANTITAVALIDITAColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public string LOTTOBLOCCATO {
+                get {
+                    try {
+                        return ((string)(this[this.tableCDC_DETTAGLIO1.LOTTOBLOCCATOColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'LOTTOBLOCCATO\' in table \'CDC_DETTAGLIO1\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableCDC_DETTAGLIO1.LOTTOBLOCCATOColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public string VERBALEBLOCCATO {
+                get {
+                    try {
+                        return ((string)(this[this.tableCDC_DETTAGLIO1.VERBALEBLOCCATOColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'VERBALEBLOCCATO\' in table \'CDC_DETTAGLIO1\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableCDC_DETTAGLIO1.VERBALEBLOCCATOColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public string DEROGA {
+                get {
+                    try {
+                        return ((string)(this[this.tableCDC_DETTAGLIO1.DEROGAColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'DEROGA\' in table \'CDC_DETTAGLIO1\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableCDC_DETTAGLIO1.DEROGAColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public string CONTROLLODIMENSIONALE {
+                get {
+                    try {
+                        return ((string)(this[this.tableCDC_DETTAGLIO1.CONTROLLODIMENSIONALEColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'CONTROLLODIMENSIONALE\' in table \'CDC_DETTAGLIO1\' is DBNull." +
+                                "", e);
+                    }
+                }
+                set {
+                    this[this.tableCDC_DETTAGLIO1.CONTROLLODIMENSIONALEColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public string CONTROLLOESTETICO {
+                get {
+                    try {
+                        return ((string)(this[this.tableCDC_DETTAGLIO1.CONTROLLOESTETICOColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'CONTROLLOESTETICO\' in table \'CDC_DETTAGLIO1\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableCDC_DETTAGLIO1.CONTROLLOESTETICOColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public string CONTROLLOFUNZIONALE {
+                get {
+                    try {
+                        return ((string)(this[this.tableCDC_DETTAGLIO1.CONTROLLOFUNZIONALEColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'CONTROLLOFUNZIONALE\' in table \'CDC_DETTAGLIO1\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableCDC_DETTAGLIO1.CONTROLLOFUNZIONALEColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public string ESITOTESTCHIMICO {
+                get {
+                    try {
+                        return ((string)(this[this.tableCDC_DETTAGLIO1.ESITOTESTCHIMICOColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'ESITOTESTCHIMICO\' in table \'CDC_DETTAGLIO1\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableCDC_DETTAGLIO1.ESITOTESTCHIMICOColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public string TESTFISICO {
+                get {
+                    try {
+                        return ((string)(this[this.tableCDC_DETTAGLIO1.TESTFISICOColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'TESTFISICO\' in table \'CDC_DETTAGLIO1\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableCDC_DETTAGLIO1.TESTFISICOColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public string NOTECOLLAUDO {
+                get {
+                    try {
+                        return ((string)(this[this.tableCDC_DETTAGLIO1.NOTECOLLAUDOColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'NOTECOLLAUDO\' in table \'CDC_DETTAGLIO1\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableCDC_DETTAGLIO1.NOTECOLLAUDOColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public string ASSEGNAZIONE {
+                get {
+                    try {
+                        return ((string)(this[this.tableCDC_DETTAGLIO1.ASSEGNAZIONEColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'ASSEGNAZIONE\' in table \'CDC_DETTAGLIO1\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableCDC_DETTAGLIO1.ASSEGNAZIONEColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public string DESCRIZIONE {
+                get {
+                    try {
+                        return ((string)(this[this.tableCDC_DETTAGLIO1.DESCRIZIONEColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'DESCRIZIONE\' in table \'CDC_DETTAGLIO1\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableCDC_DETTAGLIO1.DESCRIZIONEColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public bool IsIDDETTAGLIONull() {
+                return this.IsNull(this.tableCDC_DETTAGLIO1.IDDETTAGLIOColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public void SetIDDETTAGLIONull() {
+                this[this.tableCDC_DETTAGLIO1.IDDETTAGLIOColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public bool IsIDVERBALENull() {
+                return this.IsNull(this.tableCDC_DETTAGLIO1.IDVERBALEColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public void SetIDVERBALENull() {
+                this[this.tableCDC_DETTAGLIO1.IDVERBALEColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public bool IsMISURANull() {
+                return this.IsNull(this.tableCDC_DETTAGLIO1.MISURAColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public void SetMISURANull() {
+                this[this.tableCDC_DETTAGLIO1.MISURAColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public bool IsLIVELLODIFFNull() {
+                return this.IsNull(this.tableCDC_DETTAGLIO1.LIVELLODIFFColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public void SetLIVELLODIFFNull() {
+                this[this.tableCDC_DETTAGLIO1.LIVELLODIFFColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public bool IsUMNull() {
+                return this.IsNull(this.tableCDC_DETTAGLIO1.UMColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public void SetUMNull() {
+                this[this.tableCDC_DETTAGLIO1.UMColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public bool IsQUANTITANull() {
+                return this.IsNull(this.tableCDC_DETTAGLIO1.QUANTITAColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public void SetQUANTITANull() {
+                this[this.tableCDC_DETTAGLIO1.QUANTITAColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public bool IsASSEGNNull() {
+                return this.IsNull(this.tableCDC_DETTAGLIO1.ASSEGNColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public void SetASSEGNNull() {
+                this[this.tableCDC_DETTAGLIO1.ASSEGNColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public bool IsAUTONull() {
+                return this.IsNull(this.tableCDC_DETTAGLIO1.AUTOColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public void SetAUTONull() {
+                this[this.tableCDC_DETTAGLIO1.AUTOColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public bool IsCOLLTONull() {
+                return this.IsNull(this.tableCDC_DETTAGLIO1.COLLTOColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public void SetCOLLTONull() {
+                this[this.tableCDC_DETTAGLIO1.COLLTOColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public bool IsQUANTITAVALIDITANull() {
+                return this.IsNull(this.tableCDC_DETTAGLIO1.QUANTITAVALIDITAColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public void SetQUANTITAVALIDITANull() {
+                this[this.tableCDC_DETTAGLIO1.QUANTITAVALIDITAColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public bool IsLOTTOBLOCCATONull() {
+                return this.IsNull(this.tableCDC_DETTAGLIO1.LOTTOBLOCCATOColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public void SetLOTTOBLOCCATONull() {
+                this[this.tableCDC_DETTAGLIO1.LOTTOBLOCCATOColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public bool IsVERBALEBLOCCATONull() {
+                return this.IsNull(this.tableCDC_DETTAGLIO1.VERBALEBLOCCATOColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public void SetVERBALEBLOCCATONull() {
+                this[this.tableCDC_DETTAGLIO1.VERBALEBLOCCATOColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public bool IsDEROGANull() {
+                return this.IsNull(this.tableCDC_DETTAGLIO1.DEROGAColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public void SetDEROGANull() {
+                this[this.tableCDC_DETTAGLIO1.DEROGAColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public bool IsCONTROLLODIMENSIONALENull() {
+                return this.IsNull(this.tableCDC_DETTAGLIO1.CONTROLLODIMENSIONALEColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public void SetCONTROLLODIMENSIONALENull() {
+                this[this.tableCDC_DETTAGLIO1.CONTROLLODIMENSIONALEColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public bool IsCONTROLLOESTETICONull() {
+                return this.IsNull(this.tableCDC_DETTAGLIO1.CONTROLLOESTETICOColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public void SetCONTROLLOESTETICONull() {
+                this[this.tableCDC_DETTAGLIO1.CONTROLLOESTETICOColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public bool IsCONTROLLOFUNZIONALENull() {
+                return this.IsNull(this.tableCDC_DETTAGLIO1.CONTROLLOFUNZIONALEColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public void SetCONTROLLOFUNZIONALENull() {
+                this[this.tableCDC_DETTAGLIO1.CONTROLLOFUNZIONALEColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public bool IsESITOTESTCHIMICONull() {
+                return this.IsNull(this.tableCDC_DETTAGLIO1.ESITOTESTCHIMICOColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public void SetESITOTESTCHIMICONull() {
+                this[this.tableCDC_DETTAGLIO1.ESITOTESTCHIMICOColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public bool IsTESTFISICONull() {
+                return this.IsNull(this.tableCDC_DETTAGLIO1.TESTFISICOColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public void SetTESTFISICONull() {
+                this[this.tableCDC_DETTAGLIO1.TESTFISICOColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public bool IsNOTECOLLAUDONull() {
+                return this.IsNull(this.tableCDC_DETTAGLIO1.NOTECOLLAUDOColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public void SetNOTECOLLAUDONull() {
+                this[this.tableCDC_DETTAGLIO1.NOTECOLLAUDOColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public bool IsASSEGNAZIONENull() {
+                return this.IsNull(this.tableCDC_DETTAGLIO1.ASSEGNAZIONEColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public void SetASSEGNAZIONENull() {
+                this[this.tableCDC_DETTAGLIO1.ASSEGNAZIONEColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public bool IsDESCRIZIONENull() {
+                return this.IsNull(this.tableCDC_DETTAGLIO1.DESCRIZIONEColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public void SetDESCRIZIONENull() {
+                this[this.tableCDC_DETTAGLIO1.DESCRIZIONEColumn] = global::System.Convert.DBNull;
+            }
+        }
+        
+        /// <summary>
+        ///Represents strongly named DataRow class.
+        ///</summary>
+        public partial class CDC_ETICHETTE_DETTAGLIORow : global::System.Data.DataRow {
+            
+            private CDC_ETICHETTE_DETTAGLIODataTable tableCDC_ETICHETTE_DETTAGLIO;
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            internal CDC_ETICHETTE_DETTAGLIORow(global::System.Data.DataRowBuilder rb) : 
+                    base(rb) {
+                this.tableCDC_ETICHETTE_DETTAGLIO = ((CDC_ETICHETTE_DETTAGLIODataTable)(this.Table));
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public decimal IDCDCETT {
+                get {
+                    try {
+                        return ((decimal)(this[this.tableCDC_ETICHETTE_DETTAGLIO.IDCDCETTColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'IDCDCETT\' in table \'CDC_ETICHETTE_DETTAGLIO\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableCDC_ETICHETTE_DETTAGLIO.IDCDCETTColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public string PREFISSO {
+                get {
+                    return ((string)(this[this.tableCDC_ETICHETTE_DETTAGLIO.PREFISSOColumn]));
+                }
+                set {
+                    this[this.tableCDC_ETICHETTE_DETTAGLIO.PREFISSOColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public string PARTE {
+                get {
+                    return ((string)(this[this.tableCDC_ETICHETTE_DETTAGLIO.PARTEColumn]));
+                }
+                set {
+                    this[this.tableCDC_ETICHETTE_DETTAGLIO.PARTEColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public string COLORE {
+                get {
+                    return ((string)(this[this.tableCDC_ETICHETTE_DETTAGLIO.COLOREColumn]));
+                }
+                set {
+                    this[this.tableCDC_ETICHETTE_DETTAGLIO.COLOREColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public string LINEA {
+                get {
+                    return ((string)(this[this.tableCDC_ETICHETTE_DETTAGLIO.LINEAColumn]));
+                }
+                set {
+                    this[this.tableCDC_ETICHETTE_DETTAGLIO.LINEAColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public string DESCRIZIONE {
+                get {
+                    return ((string)(this[this.tableCDC_ETICHETTE_DETTAGLIO.DESCRIZIONEColumn]));
+                }
+                set {
+                    this[this.tableCDC_ETICHETTE_DETTAGLIO.DESCRIZIONEColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public bool IsIDCDCETTNull() {
+                return this.IsNull(this.tableCDC_ETICHETTE_DETTAGLIO.IDCDCETTColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public void SetIDCDCETTNull() {
+                this[this.tableCDC_ETICHETTE_DETTAGLIO.IDCDCETTColumn] = global::System.Convert.DBNull;
+            }
+        }
+        
+        /// <summary>
         ///Row event argument class
         ///</summary>
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
@@ -9544,6 +11457,74 @@ namespace CDCMetal.Entities {
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             public CDC_APPLICAZIONERow Row {
+                get {
+                    return this.eventRow;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public global::System.Data.DataRowAction Action {
+                get {
+                    return this.eventAction;
+                }
+            }
+        }
+        
+        /// <summary>
+        ///Row event argument class
+        ///</summary>
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+        public class CDC_DETTAGLIO1RowChangeEvent : global::System.EventArgs {
+            
+            private CDC_DETTAGLIO1Row eventRow;
+            
+            private global::System.Data.DataRowAction eventAction;
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public CDC_DETTAGLIO1RowChangeEvent(CDC_DETTAGLIO1Row row, global::System.Data.DataRowAction action) {
+                this.eventRow = row;
+                this.eventAction = action;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public CDC_DETTAGLIO1Row Row {
+                get {
+                    return this.eventRow;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public global::System.Data.DataRowAction Action {
+                get {
+                    return this.eventAction;
+                }
+            }
+        }
+        
+        /// <summary>
+        ///Row event argument class
+        ///</summary>
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+        public class CDC_ETICHETTE_DETTAGLIORowChangeEvent : global::System.EventArgs {
+            
+            private CDC_ETICHETTE_DETTAGLIORow eventRow;
+            
+            private global::System.Data.DataRowAction eventAction;
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public CDC_ETICHETTE_DETTAGLIORowChangeEvent(CDC_ETICHETTE_DETTAGLIORow row, global::System.Data.DataRowAction action) {
+                this.eventRow = row;
+                this.eventAction = action;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public CDC_ETICHETTE_DETTAGLIORow Row {
                 get {
                     return this.eventRow;
                 }

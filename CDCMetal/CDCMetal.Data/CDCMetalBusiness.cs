@@ -58,6 +58,15 @@ namespace CDCMetal.Data
         }
 
         [DataContext]
+        public void FillCDC_CON_DESCRIZIONE(CDCDS ds, DateTime DATARIFERIMENTO)
+        {
+            CDCMetalAdapter a = new CDCMetalAdapter(DbConnection, DbTransaction);
+            a.FillCDC_EXCEL(ds, DATARIFERIMENTO);
+
+            List<decimal> IDEXCEL = ds.CDC_EXCEL.Select(x => x.IDEXCEL).Distinct().ToList();
+            a.FillCDC_DETTAGLIO_CON_DESCRIZIONE(ds, IDEXCEL);
+        }
+        [DataContext]
         public void FillCDC_CONFORMITA(CDCDS ds, List<decimal> IDDETTAGLIO)
         {
             CDCMetalAdapter a = new CDCMetalAdapter(DbConnection, DbTransaction);
@@ -65,6 +74,12 @@ namespace CDCMetal.Data
             a.FillCDC_CONFORMITA_DETTAGLIO(ds, IDDETTAGLIO);
         }
 
+        [DataContext]
+        public void FillCDC_ETICHETTE_DETTAGLIO(CDCDS ds, List<decimal> IDDETTAGLIO)
+        {
+            CDCMetalAdapter a = new CDCMetalAdapter(DbConnection, DbTransaction);
+            a.FillCDC_ETICHETTE_DETTAGLIO(ds, IDDETTAGLIO);
+        }
         [DataContext]
         public void CDC_PDF(CDCDS ds, List<decimal> IDDETTAGLIO)
         {
@@ -134,6 +149,13 @@ namespace CDCMetal.Data
         {
             CDCMetalAdapter a = new CDCMetalAdapter(DbConnection, DbTransaction);
             a.UpdateTable(ds.CDC_COLORE.TableName, ds);
+        }
+
+        [DataContext(true)]
+        public void UpdateCDC_ETICHETTE_DETTAGLIO(CDCDS ds)
+        {
+            CDCMetalAdapter a = new CDCMetalAdapter(DbConnection, DbTransaction);
+            a.UpdateTable(ds.CDC_ETICHETTE_DETTAGLIO.TableName, ds);
         }
 
         [DataContext]

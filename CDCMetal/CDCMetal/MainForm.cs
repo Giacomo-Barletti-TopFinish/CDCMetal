@@ -295,5 +295,19 @@ namespace CDCMetal
                 MostraEccezione("ERRORE IN CREA CERTIFICATO SPESSORE", ex);
             }
         }
+
+        private void creaEtichetteToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                CreaEtichetteFrm form = new CreaEtichetteFrm();
+                form.MdiParent = this;
+                form.Show();
+            }
+            catch (Exception ex)
+            {
+                MostraEccezione("ERRORE IN CREA ETICHETTE", ex);
+            }
+        }
     }
 }

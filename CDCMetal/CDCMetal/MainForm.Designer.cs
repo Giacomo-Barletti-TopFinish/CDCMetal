@@ -43,13 +43,15 @@
             this.laboratorioToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.antiallergicoNichelFreeToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.colorimetricoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.spessoriToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.pDFToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.listaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.statusStrip1 = new System.Windows.Forms.StatusStrip();
             this.lblUserLoggato = new System.Windows.Forms.ToolStripStatusLabel();
             this.prgProgressBar = new System.Windows.Forms.ToolStripProgressBar();
             this.lblStatusBar = new System.Windows.Forms.ToolStripStatusLabel();
-            this.spessoriToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.eTICHETTEToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.creaEtichetteToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.cdcMenu.SuspendLayout();
             this.statusStrip1.SuspendLayout();
             this.SuspendLayout();
@@ -64,7 +66,8 @@
             this.conformitàToolStripMenuItem,
             this.dimensioniToolStripMenuItem,
             this.laboratorioToolStripMenuItem,
-            this.pDFToolStripMenuItem});
+            this.pDFToolStripMenuItem,
+            this.eTICHETTEToolStripMenuItem});
             this.cdcMenu.Location = new System.Drawing.Point(0, 0);
             this.cdcMenu.Name = "cdcMenu";
             this.cdcMenu.Size = new System.Drawing.Size(1558, 25);
@@ -179,6 +182,13 @@
             this.colorimetricoToolStripMenuItem.Text = "Colorimetrico";
             this.colorimetricoToolStripMenuItem.Click += new System.EventHandler(this.colorimetricoToolStripMenuItem_Click);
             // 
+            // spessoriToolStripMenuItem
+            // 
+            this.spessoriToolStripMenuItem.Name = "spessoriToolStripMenuItem";
+            this.spessoriToolStripMenuItem.Size = new System.Drawing.Size(226, 22);
+            this.spessoriToolStripMenuItem.Text = "Spessori";
+            this.spessoriToolStripMenuItem.Click += new System.EventHandler(this.spessoriToolStripMenuItem_Click);
+            // 
             // pDFToolStripMenuItem
             // 
             this.pDFToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
@@ -190,7 +200,7 @@
             // listaToolStripMenuItem
             // 
             this.listaToolStripMenuItem.Name = "listaToolStripMenuItem";
-            this.listaToolStripMenuItem.Size = new System.Drawing.Size(111, 22);
+            this.listaToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.listaToolStripMenuItem.Text = "Lista...";
             this.listaToolStripMenuItem.Click += new System.EventHandler(this.listaToolStripMenuItem_Click);
             // 
@@ -221,12 +231,20 @@
             this.lblStatusBar.Name = "lblStatusBar";
             this.lblStatusBar.Size = new System.Drawing.Size(0, 17);
             // 
-            // spessoriToolStripMenuItem
+            // eTICHETTEToolStripMenuItem
             // 
-            this.spessoriToolStripMenuItem.Name = "spessoriToolStripMenuItem";
-            this.spessoriToolStripMenuItem.Size = new System.Drawing.Size(226, 22);
-            this.spessoriToolStripMenuItem.Text = "Spessori";
-            this.spessoriToolStripMenuItem.Click += new System.EventHandler(this.spessoriToolStripMenuItem_Click);
+            this.eTICHETTEToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.creaEtichetteToolStripMenuItem});
+            this.eTICHETTEToolStripMenuItem.Name = "eTICHETTEToolStripMenuItem";
+            this.eTICHETTEToolStripMenuItem.Size = new System.Drawing.Size(69, 21);
+            this.eTICHETTEToolStripMenuItem.Text = "Etichette";
+            // 
+            // creaEtichetteToolStripMenuItem
+            // 
+            this.creaEtichetteToolStripMenuItem.Name = "creaEtichetteToolStripMenuItem";
+            this.creaEtichetteToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.creaEtichetteToolStripMenuItem.Text = "Crea etichette...";
+            this.creaEtichetteToolStripMenuItem.Click += new System.EventHandler(this.creaEtichetteToolStripMenuItem_Click);
             // 
             // MainForm
             // 
@@ -274,6 +292,8 @@
         private System.Windows.Forms.ToolStripMenuItem pDFToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem listaToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem spessoriToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem eTICHETTEToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem creaEtichetteToolStripMenuItem;
     }
 }
 

@@ -41,11 +41,27 @@ namespace CDCMetal.BLL
             }
         }
 
+        public void LeggiCollaudoDaDataConDescrizione(CDCDS ds, DateTime dataSelezionata)
+        {
+            using (CDCMetalBusiness bCDCMetal = new CDCMetalBusiness())
+            {
+                bCDCMetal.FillCDC_CON_DESCRIZIONE(ds, dataSelezionata);
+            }
+        }
+
         public void FillCDC_CONFORMITA(CDCDS ds, List<decimal> IDDETTAGLIO)
         {
             using (CDCMetalBusiness bCDCMetal = new CDCMetalBusiness())
             {
                 bCDCMetal.FillCDC_CONFORMITA(ds, IDDETTAGLIO);
+            }
+        }
+
+        public void FillCDC_ETICHETTE_DETTAGLIO(CDCDS ds, List<decimal> IDDETTAGLIO)
+        {
+            using (CDCMetalBusiness bCDCMetal = new CDCMetalBusiness())
+            {
+                bCDCMetal.FillCDC_ETICHETTE_DETTAGLIO(ds, IDDETTAGLIO);
             }
         }
 
@@ -74,6 +90,46 @@ namespace CDCMetal.BLL
             }
         }
 
+        public void SalvaDescrizioneEtichette(CDCDS ds)
+        {
+            using (CDCMetalBusiness bCDCMetal = new CDCMetalBusiness())
+            {
+                bCDCMetal.UpdateCDC_ETICHETTE_DETTAGLIO(ds);
+            }
+
+
+        }
+
+        public bool verificaNumeroEtichette(string numeroEtichette, out string messaggio, out List<Tuple<int, int>> SC_QTA)
+        {
+            StringBuilder sb = new StringBuilder();
+            SC_QTA = new List<Tuple<int, int>>();
+
+            bool esito = true;
+            string[] nscQta = numeroEtichette.ToUpper().Split(';');
+            foreach (string ns in nscQta)
+            {
+                string[] n = ns.Split('X');
+                if (n.Length == 2)
+                {
+                    int sc;
+                    int qta;
+                    if (!int.TryParse(n[0], out sc))
+                        esito = false;
+                    if (!int.TryParse(n[1], out qta))
+                        esito = false;
+
+                    if (esito)
+                    {
+                        sb.AppendLine(string.Format("                        {0} scatole da {1} pezzi", sc, qta));
+                        SC_QTA.Add(new Tuple<int, int>(sc, qta));
+                    }
+                }
+            }
+
+            messaggio = sb.ToString();
+            return esito;
+        }
         public void FillCDC_GALVANICA(CDCDS ds, List<decimal> IDDETTAGLIO)
         {
             using (CDCMetalBusiness bCDCMetal = new CDCMetalBusiness())
@@ -397,7 +453,7 @@ namespace CDCMetal.BLL
             string cartella = CreaPathCartella(dtCollaudo, pathCollaudo, dettaglio.ACCESSORISTA, dettaglio.PREFISSO, dettaglio.PARTE, dettaglio.COLORE, dettaglio.COMMESSAORDINE);
 
             string commessa = dettaglio.COMMESSAORDINE.Replace('_', ' ');
-            string commessaPerStampa = string.Format("{0}-{1}-{2}-{3}-PZ{4}", dettaglio.PREFISSO,dettaglio.PARTE,dettaglio.COLORE,dettaglio.COMMESSAORDINE,dettaglio.QUANTITA);
+            string commessaPerStampa = string.Format("{0}-{1}-{2}-{3}-PZ{4}", dettaglio.PREFISSO, dettaglio.PARTE, dettaglio.COLORE, dettaglio.COMMESSAORDINE, dettaglio.QUANTITA);
             string fileName = string.Format("{0} {1} {2}.pdf", dettaglio.PARTE, dettaglio.COLORE, commessa);//A3174 0933 EACP 2018 1916 E.pdf
             string path = string.Format(@"{0}\{1}", cartella, fileName);
 
@@ -416,7 +472,7 @@ namespace CDCMetal.BLL
             if (File.Exists(path))
                 File.Delete(path);
 
-            CreaReportSpessori( path, dt, commessaPerStampa, operatore, galvanica.SPESSORE, galvanica.APPLICAZIONE, galvanica.STRUMENTO, numeroMisure, etichette, medie, Std, Pct, range, minimo, massimo, iLoghi, iBowman, misure);
+            CreaReportSpessori(path, dt, commessaPerStampa, operatore, galvanica.SPESSORE, galvanica.APPLICAZIONE, galvanica.STRUMENTO, numeroMisure, etichette, medie, Std, Pct, range, minimo, massimo, iLoghi, iBowman, misure);
 
             if (CopiaReferto)
             {
