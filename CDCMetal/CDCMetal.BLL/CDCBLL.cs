@@ -381,7 +381,7 @@ namespace CDCMetal.BLL
                 string strumento = colore.STRUMENTO;
                 string nota = colore.IsNOTANull() ? string.Empty : colore.NOTA;
 
-                string operatore = "LB";
+                string operatore = "MM";
                 if (!Directory.Exists(cartella))
                     Directory.CreateDirectory(cartella);
 
@@ -465,7 +465,7 @@ namespace CDCMetal.BLL
             }
             List<string> elementoRiga = new List<string>();
 
-            string operatore = "LB";
+            string operatore = "MM";
             if (!Directory.Exists(cartella))
                 Directory.CreateDirectory(cartella);
 
