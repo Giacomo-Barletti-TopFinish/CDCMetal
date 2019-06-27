@@ -125,6 +125,7 @@ namespace CDCMetal
                     case "0000000205":
                     case "0000000206":
                     case "0000000166":
+                    case "0000000234":
 
                         break;
                     default:
