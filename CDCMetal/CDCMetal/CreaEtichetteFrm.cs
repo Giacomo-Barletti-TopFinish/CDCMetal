@@ -296,20 +296,27 @@ namespace CDCMetal
 
         private void btnStampaEtichette_Click(object sender, EventArgs e)
         {
-            lblMessaggio.Text = string.Empty;
-            if (ddlStampanti.SelectedIndex == -1)
+            try
             {
-                lblMessaggio.Text = "Selezionare una stampante";
-                return;
+                lblMessaggio.Text = string.Empty;
+                if (ddlStampanti.SelectedIndex == -1)
+                {
+                    lblMessaggio.Text = "Selezionare una stampante";
+                    return;
+                }
+
+                string zebraPrinter = ddlStampanti.SelectedItem.ToString();
+
+                SalvaDescrizioneEtichette();
+
+                StampaEtichetteFrm form = new StampaEtichetteFrm(_dsServizio, zebraPrinter);
+                form.ShowDialog();
             }
-
-            string zebraPrinter = ddlStampanti.SelectedItem.ToString();
-
-            SalvaDescrizioneEtichette();
-
-            StampaEtichetteFrm form = new StampaEtichetteFrm(_dsServizio, zebraPrinter);
-            form.ShowDialog();
-
+            catch (Exception ex)
+            {
+                btnStampaEtichette.Enabled = false;
+                MostraEccezione(ex, "Errore nella stampa etichette");
+            }
         }
 
         private void SalvaDescrizioneEtichette()
