@@ -62,9 +62,16 @@ namespace CDCMetal
                     return;
                 }
 
+                if (ddlBrand.SelectedIndex == -1)
+                {
+                    lblMessage.Text = "Selezionare il brand a cui si riferisce il file EXCEL.";
+                    return;
+                }
+                string brand = (string)ddlBrand.SelectedItem;
+
                 ExcelBLL bll = new ExcelBLL();
                 string messaggioErrore;
-                if (!bll.LeggiExcelCDC(Contesto.DS, txtFilePath.Text, Contesto.Utente.FULLNAMEUSER, out messaggioErrore))
+                if (!bll.LeggiExcelCDC(Contesto.DS, txtFilePath.Text, Contesto.Utente.FULLNAMEUSER, brand, out messaggioErrore))
                 {
                     string messaggio = string.Format("Errore nel caricamento del file excel. Errore: {0}", messaggioErrore);
                     MessageBox.Show(messaggio, "ERRORE LETTURA FILE", MessageBoxButtons.OK, MessageBoxIcon.Error);
@@ -119,25 +126,46 @@ namespace CDCMetal
 
         private void btnSalvaDB_Click(object sender, EventArgs e)
         {
-            ExcelBLL bll = new ExcelBLL();
-            List<decimal> IDPRENOTAZIONE_DUPLICATO = bll.VerificaExcelCaricato(Contesto.DS);
-            if (IDPRENOTAZIONE_DUPLICATO.Count > 0)
+            try
             {
-                StringBuilder sb = new StringBuilder();
-                sb.AppendLine("Ci sono righe che sono già state salvate sul database (doppioni).");
-                sb.AppendLine("Le righe duplicate NON saranno salvate.");
+                lblMessage.Text = string.Empty;
 
-                MessageBox.Show(sb.ToString(), "RIGHE DUPLICATE", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                ExcelBLL bll = new ExcelBLL();
+                List<decimal> IDPRENOTAZIONE_DUPLICATO = bll.VerificaExcelCaricato(Contesto.DS);
+                if (IDPRENOTAZIONE_DUPLICATO.Count > 0)
+                {
+                    StringBuilder sb = new StringBuilder();
+                    sb.AppendLine("Ci sono righe che sono già state salvate sul database (doppioni).");
+                    sb.AppendLine("Le righe duplicate NON saranno salvate.");
 
-                foreach (CDCDS.CDC_DETTAGLIORow dettaglio in Contesto.DS.CDC_DETTAGLIO.Where(x => x.RowState != DataRowState.Deleted && IDPRENOTAZIONE_DUPLICATO.Contains(x.IDPRENOTAZIONE)))
-                    dettaglio.Delete();
+                    MessageBox.Show(sb.ToString(), "RIGHE DUPLICATE", MessageBoxButtons.OK, MessageBoxIcon.Warning);
 
-                Contesto.DS.CDC_DETTAGLIO.AcceptChanges();
+                    foreach (CDCDS.CDC_DETTAGLIORow dettaglio in Contesto.DS.CDC_DETTAGLIO.Where(x => x.RowState != DataRowState.Deleted && IDPRENOTAZIONE_DUPLICATO.Contains(x.IDPRENOTAZIONE)))
+                        dettaglio.Delete();
 
+                    Contesto.DS.CDC_DETTAGLIO.AcceptChanges();
+                }
+
+                bll.Salva(Contesto.DS);
+
+                lblMessage.Text = "Salvataggio riuscito";
             }
+            catch (Exception ex)
+            {
+                MainForm.LogScriviErrore("ERRORE IN APRI FILE EXCEL", ex);
+                ExceptionFrm frm = new ExceptionFrm(ex);
+                frm.ShowDialog();
+            }
+        }
 
-            bll.Salva(Contesto.DS);
+        private void ExcelCaricaNuovoDocumentoFrm_Load(object sender, EventArgs e)
+        {
+            CaricaDropDownListBrands();
+        }
 
+        private void CaricaDropDownListBrands()
+        {
+            ddlBrand.Items.AddRange(Contesto.DS.CDC_BRANDS.Select(XmlReadMode => XmlReadMode.CODICE).ToArray());
         }
     }
 }

@@ -1,4 +1,6 @@
-﻿using System;
+﻿using CDCMetal.Entities;
+using CDCMetal.BLL;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -21,6 +23,11 @@ namespace CDCMetal
             }
         }
 
+        protected List<DataCollaudo> CaricaDateCollaudo()
+        {
+            CDCBLL bll = new CDCBLL();
+            return bll.LeggiDateCollaudo();
+        }
         protected string ConvertiBoolInStringa(object o)
         {
             if (o == DBNull.Value)

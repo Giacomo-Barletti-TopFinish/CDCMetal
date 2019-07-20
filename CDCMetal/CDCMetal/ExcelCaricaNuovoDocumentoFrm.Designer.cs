@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.ddlBrand = new System.Windows.Forms.ComboBox();
             this.lblMessage = new System.Windows.Forms.Label();
             this.lblNumeroRigheExcel = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
@@ -39,16 +40,19 @@
             this.btnCercaFile = new System.Windows.Forms.Button();
             this.txtFilePath = new System.Windows.Forms.TextBox();
             this.dgvExcelCaricato = new System.Windows.Forms.DataGridView();
+            this.label2 = new System.Windows.Forms.Label();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvExcelCaricato)).BeginInit();
             this.SuspendLayout();
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.ddlBrand);
             this.groupBox1.Controls.Add(this.lblMessage);
             this.groupBox1.Controls.Add(this.lblNumeroRigheExcel);
             this.groupBox1.Controls.Add(this.label3);
             this.groupBox1.Controls.Add(this.lblDataExcel);
+            this.groupBox1.Controls.Add(this.label2);
             this.groupBox1.Controls.Add(this.label1);
             this.groupBox1.Controls.Add(this.btnSalvaDB);
             this.groupBox1.Controls.Add(this.btnApriFile);
@@ -60,6 +64,15 @@
             this.groupBox1.TabIndex = 0;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Selezionare il file";
+            // 
+            // ddlBrand
+            // 
+            this.ddlBrand.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.ddlBrand.FormattingEnabled = true;
+            this.ddlBrand.Location = new System.Drawing.Point(1052, 32);
+            this.ddlBrand.Name = "ddlBrand";
+            this.ddlBrand.Size = new System.Drawing.Size(121, 21);
+            this.ddlBrand.TabIndex = 3;
             // 
             // lblMessage
             // 
@@ -118,7 +131,7 @@
             this.btnSalvaDB.Location = new System.Drawing.Point(631, 72);
             this.btnSalvaDB.Name = "btnSalvaDB";
             this.btnSalvaDB.Size = new System.Drawing.Size(110, 33);
-            this.btnSalvaDB.TabIndex = 1;
+            this.btnSalvaDB.TabIndex = 5;
             this.btnSalvaDB.Text = "Salva su DB";
             this.btnSalvaDB.UseVisualStyleBackColor = true;
             this.btnSalvaDB.Click += new System.EventHandler(this.btnSalvaDB_Click);
@@ -126,10 +139,10 @@
             // btnApriFile
             // 
             this.btnApriFile.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnApriFile.Location = new System.Drawing.Point(1132, 17);
+            this.btnApriFile.Location = new System.Drawing.Point(1197, 24);
             this.btnApriFile.Name = "btnApriFile";
             this.btnApriFile.Size = new System.Drawing.Size(110, 33);
-            this.btnApriFile.TabIndex = 1;
+            this.btnApriFile.TabIndex = 4;
             this.btnApriFile.Text = "Leggi file";
             this.btnApriFile.UseVisualStyleBackColor = true;
             this.btnApriFile.Click += new System.EventHandler(this.btnApriFile_Click);
@@ -137,10 +150,10 @@
             // btnCercaFile
             // 
             this.btnCercaFile.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnCercaFile.Location = new System.Drawing.Point(1005, 17);
+            this.btnCercaFile.Location = new System.Drawing.Point(889, 24);
             this.btnCercaFile.Name = "btnCercaFile";
             this.btnCercaFile.Size = new System.Drawing.Size(110, 33);
-            this.btnCercaFile.TabIndex = 1;
+            this.btnCercaFile.TabIndex = 2;
             this.btnCercaFile.Text = "Cerca ...";
             this.btnCercaFile.UseVisualStyleBackColor = true;
             this.btnCercaFile.Click += new System.EventHandler(this.btnCercaFile_Click);
@@ -148,9 +161,9 @@
             // txtFilePath
             // 
             this.txtFilePath.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtFilePath.Location = new System.Drawing.Point(6, 19);
+            this.txtFilePath.Location = new System.Drawing.Point(6, 28);
             this.txtFilePath.Name = "txtFilePath";
-            this.txtFilePath.Size = new System.Drawing.Size(974, 24);
+            this.txtFilePath.Size = new System.Drawing.Size(877, 24);
             this.txtFilePath.TabIndex = 1;
             // 
             // dgvExcelCaricato
@@ -163,6 +176,16 @@
             this.dgvExcelCaricato.Size = new System.Drawing.Size(1360, 541);
             this.dgvExcelCaricato.TabIndex = 1;
             // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Location = new System.Drawing.Point(1052, 13);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(44, 16);
+            this.label2.TabIndex = 2;
+            this.label2.Text = "Brand";
+            // 
             // ExcelCaricaNuovoDocumentoFrm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -172,6 +195,7 @@
             this.Controls.Add(this.groupBox1);
             this.Name = "ExcelCaricaNuovoDocumentoFrm";
             this.Text = "Carica nuovo excel";
+            this.Load += new System.EventHandler(this.ExcelCaricaNuovoDocumentoFrm_Load);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvExcelCaricato)).EndInit();
@@ -192,5 +216,7 @@
         private System.Windows.Forms.Label lblMessage;
         private System.Windows.Forms.DataGridView dgvExcelCaricato;
         private System.Windows.Forms.Button btnSalvaDB;
+        private System.Windows.Forms.ComboBox ddlBrand;
+        private System.Windows.Forms.Label label2;
     }
 }

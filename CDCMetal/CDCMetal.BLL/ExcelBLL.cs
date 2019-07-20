@@ -13,7 +13,7 @@ namespace CDCMetal.BLL
 {
     public class ExcelBLL
     {
-        public bool LeggiExcelCDC(CDCDS ds, string filePath, string utente, out string messaggioErrore)
+        public bool LeggiExcelCDC(CDCDS ds, string filePath, string utente, string brand, out string messaggioErrore)
         {
             messaggioErrore = string.Empty;
             using (FileStream fs = new FileStream(filePath, FileMode.Open))
@@ -33,6 +33,7 @@ namespace CDCMetal.BLL
                 excelRow.NOMEFILE = filePath.Length > 200 ? filePath.Substring(0, 200) : filePath;
                 excelRow.DATAACQUISIZIONE = DateTime.Today;
                 excelRow.UTENTE = utente.Length > 50 ? utente.Substring(0, 50) : utente;
+                excelRow.AZIENDA = brand;
 
                 MemoryStream ms = new MemoryStream();
                 byte[] dati = new byte[fs.Length];

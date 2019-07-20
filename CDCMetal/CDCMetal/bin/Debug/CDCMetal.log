@@ -1255,3 +1255,52 @@ INFO  2019-03-22 07:57:04,853 1202537ms MainForm               LogScrivi        
 INFO  2019-03-22 08:06:08,755   116ms MainForm               LogScrivi          - Applicazione CDCMetal avviata
 INFO  2019-03-22 08:10:43,574   131ms MainForm               LogScrivi          - Applicazione CDCMetal avviata
 INFO  2019-03-22 08:11:23,625 40182ms MainForm               LogScrivi          - Applicazione CDCMetal fermata
+INFO  2019-07-19 13:35:21,882   149ms MainForm               LogScrivi          - Applicazione CDCMetal avviata
+INFO  2019-07-19 13:36:43,393   122ms MainForm               LogScrivi          - Applicazione CDCMetal avviata
+INFO  2019-07-19 13:41:11,374   147ms MainForm               LogScrivi          - Applicazione CDCMetal avviata
+INFO  2019-07-19 13:42:25,799   163ms MainForm               LogScrivi          - Applicazione CDCMetal avviata
+INFO  2019-07-19 13:42:37,975 12339ms MainForm               LogScrivi          - Applicazione CDCMetal fermata
+INFO  2019-07-19 13:42:53,256   198ms MainForm               LogScrivi          - Applicazione CDCMetal avviata
+INFO  2019-07-19 13:45:33,402   163ms MainForm               LogScrivi          - Applicazione CDCMetal avviata
+INFO  2019-07-19 13:45:45,327 12087ms MainForm               LogScrivi          - Applicazione CDCMetal fermata
+INFO  2019-07-19 16:41:44,261   173ms MainForm               LogScrivi          - Applicazione CDCMetal avviata
+INFO  2019-07-19 16:42:00,263 16175ms MainForm               LogScrivi          - Applicazione CDCMetal fermata
+INFO  2019-07-20 08:28:55,144   156ms MainForm               LogScrivi          - Applicazione CDCMetal avviata
+INFO  2019-07-20 09:26:49,961   149ms MainForm               LogScrivi          - Applicazione CDCMetal avviata
+INFO  2019-07-20 09:27:07,145 17332ms MainForm               LogScrivi          - Applicazione CDCMetal fermata
+INFO  2019-07-20 09:35:57,514   139ms MainForm               LogScrivi          - Applicazione CDCMetal avviata
+INFO  2019-07-20 09:37:11,848   145ms MainForm               LogScrivi          - Applicazione CDCMetal avviata
+ERROR 2019-07-20 09:38:12,559 60856ms MainForm               LogScriviErrore    - ERRORE IN APRI FILE EXCEL
+Oracle.ManagedDataAccess.Client.OracleException (0x80004005): ORA-02289: la sequenza non esiste
+   in OracleInternal.ServiceObjects.OracleConnectionImpl.VerifyExecution(Int32& cursorId, Boolean bThrowArrayBindRelatedErrors, SqlStatementType sqlStatementType, Int32 arrayBindCount, OracleException& exceptionForArrayBindDML, Boolean& hasMoreRowsInDB, Boolean bFirstIterationDone)
+   in OracleInternal.ServiceObjects.OracleCommandImpl.ExecuteReader(String commandText, OracleParameterCollection paramColl, CommandType commandType, OracleConnectionImpl connectionImpl, OracleDataReaderImpl& rdrImpl, Int32 longFetchSize, Int64 clientInitialLOBFS, OracleDependencyImpl orclDependencyImpl, Int64[] scnForExecution, Int64[]& scnFromExecution, OracleParameterCollection& bindByPositionParamColl, Boolean& bBindParamPresent, Int64& internalInitialLOBFS, OracleException& exceptionForArrayBindDML, OracleConnection connection, OracleLogicalTransaction& oracleLogicalTransaction, IEnumerable`1 adrianParsedStmt, Boolean isDescribeOnly, Boolean isFromEF)
+   in Oracle.ManagedDataAccess.Client.OracleCommand.ExecuteReader(Boolean requery, Boolean fillRequest, CommandBehavior behavior)
+   in Oracle.ManagedDataAccess.Client.OracleCommand.ExecuteReader()
+   in Oracle.ManagedDataAccess.Client.OracleCommand.ExecuteScalar()
+   in CDCMetal.Data.CDCMetalAdapterBase.GetID() in C:\VSProgetti\CDCMetal\CDCMetal\CDCMetal.Data\CDCMetalAdapterBase.cs:riga 180
+   in CDCMetal.Data.CDCMetalBusinessBase.GetID() in C:\VSProgetti\CDCMetal\CDCMetal\CDCMetal.Data\CDCMetalBusinessBase.cs:riga 55
+   in CDCMetal.BLL.ExcelBLL.LeggiExcelCDC(CDCDS ds, String filePath, String utente, String brand, String& messaggioErrore) in C:\VSProgetti\CDCMetal\CDCMetal\CDCMetal.BLL\ExcelBLL.cs:riga 27
+   in CDCMetal.ExcelCaricaNuovoDocumentoFrm.btnApriFile_Click(Object sender, EventArgs e)
+ERROR 2019-07-20 09:38:40,456 88753ms MainForm               LogScriviErrore    - ERRORE IN APRI FILE EXCEL
+Oracle.ManagedDataAccess.Client.OracleException (0x80004005): ORA-02289: la sequenza non esiste
+   in OracleInternal.ServiceObjects.OracleConnectionImpl.VerifyExecution(Int32& cursorId, Boolean bThrowArrayBindRelatedErrors, SqlStatementType sqlStatementType, Int32 arrayBindCount, OracleException& exceptionForArrayBindDML, Boolean& hasMoreRowsInDB, Boolean bFirstIterationDone)
+   in OracleInternal.ServiceObjects.OracleCommandImpl.ExecuteReader(String commandText, OracleParameterCollection paramColl, CommandType commandType, OracleConnectionImpl connectionImpl, OracleDataReaderImpl& rdrImpl, Int32 longFetchSize, Int64 clientInitialLOBFS, OracleDependencyImpl orclDependencyImpl, Int64[] scnForExecution, Int64[]& scnFromExecution, OracleParameterCollection& bindByPositionParamColl, Boolean& bBindParamPresent, Int64& internalInitialLOBFS, OracleException& exceptionForArrayBindDML, OracleConnection connection, OracleLogicalTransaction& oracleLogicalTransaction, IEnumerable`1 adrianParsedStmt, Boolean isDescribeOnly, Boolean isFromEF)
+   in Oracle.ManagedDataAccess.Client.OracleCommand.ExecuteReader(Boolean requery, Boolean fillRequest, CommandBehavior behavior)
+   in Oracle.ManagedDataAccess.Client.OracleCommand.ExecuteReader()
+   in Oracle.ManagedDataAccess.Client.OracleCommand.ExecuteScalar()
+   in CDCMetal.Data.CDCMetalAdapterBase.GetID() in C:\VSProgetti\CDCMetal\CDCMetal\CDCMetal.Data\CDCMetalAdapterBase.cs:riga 180
+   in CDCMetal.Data.CDCMetalBusinessBase.GetID() in C:\VSProgetti\CDCMetal\CDCMetal\CDCMetal.Data\CDCMetalBusinessBase.cs:riga 55
+   in CDCMetal.BLL.ExcelBLL.LeggiExcelCDC(CDCDS ds, String filePath, String utente, String brand, String& messaggioErrore) in C:\VSProgetti\CDCMetal\CDCMetal\CDCMetal.BLL\ExcelBLL.cs:riga 27
+   in CDCMetal.ExcelCaricaNuovoDocumentoFrm.btnApriFile_Click(Object sender, EventArgs e)
+INFO  2019-07-20 09:41:52,528   144ms MainForm               LogScrivi          - Applicazione CDCMetal avviata
+INFO  2019-07-20 09:54:42,627   201ms MainForm               LogScrivi          - Applicazione CDCMetal avviata
+INFO  2019-07-20 10:04:45,601   128ms MainForm               LogScrivi          - Applicazione CDCMetal avviata
+INFO  2019-07-20 10:17:52,504   137ms MainForm               LogScrivi          - Applicazione CDCMetal avviata
+INFO  2019-07-20 10:19:03,689   163ms MainForm               LogScrivi          - Applicazione CDCMetal avviata
+INFO  2019-07-20 10:19:16,062 12536ms MainForm               LogScrivi          - Applicazione CDCMetal fermata
+INFO  2019-07-20 10:43:50,782   157ms MainForm               LogScrivi          - Applicazione CDCMetal avviata
+INFO  2019-07-20 10:44:23,293 32667ms MainForm               LogScrivi          - Applicazione CDCMetal fermata
+INFO  2019-07-20 10:48:50,913   137ms MainForm               LogScrivi          - Applicazione CDCMetal avviata
+INFO  2019-07-20 10:53:55,792   149ms MainForm               LogScrivi          - Applicazione CDCMetal avviata
+INFO  2019-07-20 10:55:56,434   148ms MainForm               LogScrivi          - Applicazione CDCMetal avviata
+INFO  2019-07-20 10:56:26,828 30542ms MainForm               LogScrivi          - Applicazione CDCMetal fermata

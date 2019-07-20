@@ -1,4 +1,5 @@
-﻿using CDCMetal.Entities;
+﻿using CDCMetal.BLL;
+using CDCMetal.Entities;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -62,6 +63,8 @@ namespace CDCMetal
         {
             Contesto = new CDCContext();
             Contesto.DS = new CDCDS();
+            CDCBLL bll = new CDCBLL();
+            bll.CaricaBrands(Contesto.DS);
             Contesto.UtenteConnesso = false;
             Contesto.Utente = null;
             Contesto.PathSchedeTecniche = CDCMetal.Properties.Settings.Default.PathSchedeTecnic;

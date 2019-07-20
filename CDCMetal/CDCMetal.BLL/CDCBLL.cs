@@ -14,7 +14,15 @@ namespace CDCMetal.BLL
     public class CDCBLL
     {
 
-        public List<DateTime> LeggiDateCollaudo()
+        public void CaricaBrands(CDCDS ds)
+        {
+            using (CDCMetalBusiness bCDCMetal = new CDCMetalBusiness())
+            {
+                bCDCMetal.FillCDC_BRANDS(ds);
+            }
+        }
+
+        public List<DataCollaudo> LeggiDateCollaudo()
         {
             using (CDCMetalBusiness bCDCMetal = new CDCMetalBusiness())
             {

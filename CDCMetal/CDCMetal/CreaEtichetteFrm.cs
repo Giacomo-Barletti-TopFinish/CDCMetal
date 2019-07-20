@@ -21,19 +21,15 @@ namespace CDCMetal
         {
             InitializeComponent();
         }
-        private void CaricaDateCollaudo()
+        private void PopolaDDLDate()
         {
-            CDCBLL bll = new CDCBLL();
-            List<DateTime> date = bll.LeggiDateCollaudo();
-            foreach (DateTime dt in date)
-                ddlDataCollaudo.Items.Add(dt);
-
+            ddlDataCollaudo.Items.AddRange(CaricaDateCollaudo().ToArray());
         }
 
         private void CreaEtichetteFrm_Load(object sender, EventArgs e)
         {
             CaricaStampanti();
-            CaricaDateCollaudo();
+            PopolaDDLDate();
         }
 
         private void CaricaStampanti()
@@ -58,13 +54,13 @@ namespace CDCMetal
                 return;
             }
 
-            DateTime dataSelezionata = (DateTime)ddlDataCollaudo.SelectedItem;
+            DataCollaudo dataSelezionata = (DataCollaudo)ddlDataCollaudo.SelectedItem;
 
             CDCBLL bll = new CDCBLL();
 
             Contesto.DS = new Entities.CDCDS();
 
-            bll.LeggiCollaudoDaDataConDescrizione(Contesto.DS, dataSelezionata);
+            bll.LeggiCollaudoDaDataConDescrizione(Contesto.DS, dataSelezionata.Data);
 
 
             if (Contesto.DS.CDC_DETTAGLIO1.Count > 0)
@@ -78,7 +74,7 @@ namespace CDCMetal
                 lblMessaggio.Text = "Nessuna riga trovata per questa data";
             }
 
-            CreaDsPerEtichette(dataSelezionata);
+            CreaDsPerEtichette(dataSelezionata.Data);
 
             dgvDettaglio.AutoGenerateColumns = true;
             dgvDettaglio.DataSource = _dsServizio;

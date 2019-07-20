@@ -26,6 +26,13 @@ namespace CDCMetal.Data
             a.FillCDC_DETTAGLIO(IDPRENOTAZIONE, ds);
         }
 
+        [DataContext]
+        public void FillCDC_BRANDS(CDCDS ds)
+        {
+            CDCMetalAdapter a = new CDCMetalAdapter(DbConnection, DbTransaction);
+            a.FillCDC_BRANDS(ds);
+        }
+
         [DataContext(true)]
         public void UpdateCDC_EXCEL(CDCDS ds)
         {
@@ -41,7 +48,7 @@ namespace CDCMetal.Data
         }
 
         [DataContext]
-        public List<DateTime> LeggiDateRiferimento()
+        public List<DataCollaudo> LeggiDateRiferimento()
         {
             CDCMetalAdapter a = new CDCMetalAdapter(DbConnection, DbTransaction);
             return a.LeggiDateRiferimento();

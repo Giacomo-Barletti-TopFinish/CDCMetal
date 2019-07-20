@@ -68,10 +68,10 @@ namespace CDCMetal.Data
             }
         }
 
-        public List<DateTime> LeggiDateRiferimento()
+        public List<DataCollaudo> LeggiDateRiferimento()
         {
-            List<DateTime> date = new List<DateTime>();
-            string select = @"SELECT DISTINCT DATARIFERIMENTO FROM CDC_EXCEL ORDER BY DATARIFERIMENTO DESC";
+            List<DataCollaudo> date = new List<DataCollaudo>();
+            string select = @"SELECT DISTINCT DATARIFERIMENTO,AZIENDA FROM CDC_EXCEL ORDER BY DATARIFERIMENTO DESC";
 
             using (DbCommand cmd = BuildCommand(select))
             {
@@ -79,7 +79,8 @@ namespace CDCMetal.Data
                 while (dataReader.Read())
                 {
                     DateTime dt = (DateTime)dataReader.GetValue(0);
-                    date.Add(dt);
+                    string Brand = (string)dataReader.GetValue(1);
+                    date.Add(new DataCollaudo(Brand, dt));
                 }
                 dataReader.Close();
             }
@@ -235,6 +236,17 @@ namespace CDCMetal.Data
             using (DbDataAdapter da = BuildDataAdapter(query))
             {
                 da.Fill(ds.CDC_COLORE);
+            }
+        }
+
+        public void FillCDC_BRANDS(CDCDS ds)
+        {
+
+            string select = @"SELECT * FROM CDC_BRANDS ";
+
+            using (DbDataAdapter da = BuildDataAdapter(select))
+            {
+                da.Fill(ds.CDC_BRANDS);
             }
         }
 

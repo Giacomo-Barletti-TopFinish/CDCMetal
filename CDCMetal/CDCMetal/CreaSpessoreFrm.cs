@@ -32,17 +32,13 @@ namespace CDCMetal
 
         private void CreaSpessoreFrm_Load(object sender, EventArgs e)
         {
-            CaricaDateCollaudo();
+            PopolaDDLDate();
             CaricaTabelleSpessori();
         }
 
-        private void CaricaDateCollaudo()
+        private void PopolaDDLDate()
         {
-            CDCBLL bll = new CDCBLL();
-            List<DateTime> date = bll.LeggiDateCollaudo();
-            foreach (DateTime dt in date)
-                ddlDataCollaudo.Items.Add(dt);
-
+            ddlDataCollaudo.Items.AddRange(CaricaDateCollaudo().ToArray());
         }
 
         private void CaricaTabelleSpessori()
@@ -64,7 +60,7 @@ namespace CDCMetal
             }
             try
             {
-                DateTime dataSelezionata = (DateTime)ddlDataCollaudo.SelectedItem;
+                DataCollaudo dataSelezionata = (DataCollaudo)ddlDataCollaudo.SelectedItem;
 
                 CDCBLL bll = new CDCBLL();
 
@@ -72,7 +68,7 @@ namespace CDCMetal
                 Contesto.DS.CDC_DETTAGLIO.Clear();
                 _dettaglio = null;
 
-                bll.LeggiCollaudoDaData(Contesto.DS, dataSelezionata);
+                bll.LeggiCollaudoDaData(Contesto.DS, dataSelezionata.Data);
 
 
                 if (Contesto.DS.CDC_DETTAGLIO.Count > 0)

@@ -23,15 +23,11 @@ namespace CDCMetal
 
         private void CreaConformitaFrm_Load(object sender, EventArgs e)
         {
-            CaricaDateCollaudo();
+            PopolaDDLDate();
         }
-        private void CaricaDateCollaudo()
+        private void PopolaDDLDate()
         {
-            CDCBLL bll = new CDCBLL();
-            List<DateTime> date = bll.LeggiDateCollaudo();
-            foreach (DateTime dt in date)
-                ddlDataCollaudo.Items.Add(dt);
-
+            ddlDataCollaudo.Items.AddRange(CaricaDateCollaudo().ToArray());
         }
 
         private void btnLeggiDati_Click(object sender, EventArgs e)
@@ -45,13 +41,13 @@ namespace CDCMetal
                 return;
             }
 
-            DateTime dataSelezionata = (DateTime)ddlDataCollaudo.SelectedItem;
+            DataCollaudo dataSelezionata = (DataCollaudo)ddlDataCollaudo.SelectedItem;
 
             CDCBLL bll = new CDCBLL();
 
             Contesto.DS = new Entities.CDCDS();
 
-            bll.LeggiCollaudoDaData(Contesto.DS, dataSelezionata);
+            bll.LeggiCollaudoDaData(Contesto.DS, dataSelezionata.Data);
 
 
             if (Contesto.DS.CDC_DETTAGLIO.Count > 0)
@@ -66,7 +62,7 @@ namespace CDCMetal
                 lblMessaggio.Text = "Nessuna riga trovata per questa data";
             }
 
-            CreaDsPerCartificati(dataSelezionata);
+            CreaDsPerCartificati(dataSelezionata.Data);
 
             dgvDettaglio.AutoGenerateColumns = true;
             dgvDettaglio.DataSource = _dsServizio;

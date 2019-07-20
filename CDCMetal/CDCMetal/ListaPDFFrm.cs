@@ -24,15 +24,12 @@ namespace CDCMetal
 
         private void ListaPDFFrm_Load(object sender, EventArgs e)
         {
-            CaricaDateCollaudo();
+            PopolaDDLDate();
         }
 
-        private void CaricaDateCollaudo()
+        private void PopolaDDLDate()
         {
-            CDCBLL bll = new CDCBLL();
-            List<DateTime> date = bll.LeggiDateCollaudo();
-            foreach (DateTime dt in date)
-                ddlDataCollaudo.Items.Add(dt);
+            ddlDataCollaudo.Items.AddRange(CaricaDateCollaudo().ToArray());
         }
 
         private void btnLeggiDati_Click(object sender, EventArgs e)
@@ -44,13 +41,13 @@ namespace CDCMetal
                 return;
             }
 
-            DateTime dataSelezionata = (DateTime)ddlDataCollaudo.SelectedItem;
+            DataCollaudo dataSelezionata = (DataCollaudo)ddlDataCollaudo.SelectedItem;
 
             CDCBLL bll = new CDCBLL();
 
             Contesto.DS = new Entities.CDCDS();
 
-            bll.LeggiCollaudoDaData(Contesto.DS, dataSelezionata);
+            bll.LeggiCollaudoDaData(Contesto.DS, dataSelezionata.Data);
 
 
             if (Contesto.DS.CDC_DETTAGLIO.Count > 0)
@@ -63,7 +60,7 @@ namespace CDCMetal
                 lblMessaggio.Text = "Nessuna riga trovata per questa data";
             }
 
-            CreaDsPerListaPDF(dataSelezionata);
+            CreaDsPerListaPDF(dataSelezionata.Data);
 
             dgvDettaglio.AutoGenerateColumns = true;
             dgvDettaglio.DataSource = _dsServizio;
@@ -81,11 +78,11 @@ namespace CDCMetal
             dgvDettaglio.Columns[7].Width = 130;
             dgvDettaglio.Columns[8].Frozen = true;
 
-            ((DataGridViewTextBoxColumn)dgvDettaglio.Columns[9]).HeaderText = "CDC";
-            ((DataGridViewTextBoxColumn)dgvDettaglio.Columns[10]).HeaderText = "DIMENSIONE";
-            ((DataGridViewTextBoxColumn)dgvDettaglio.Columns[11]).HeaderText = "ALLERGICO";
-            ((DataGridViewTextBoxColumn)dgvDettaglio.Columns[12]).HeaderText = "COLORE";
-            ((DataGridViewTextBoxColumn)dgvDettaglio.Columns[13]).HeaderText = "MISURA";
+            ((DataGridViewCheckBoxColumn)dgvDettaglio.Columns[9]).HeaderText = "CDC";
+            ((DataGridViewCheckBoxColumn)dgvDettaglio.Columns[10]).HeaderText = "DIMENSIONE";
+            ((DataGridViewCheckBoxColumn)dgvDettaglio.Columns[11]).HeaderText = "ALLERGICO";
+            ((DataGridViewCheckBoxColumn)dgvDettaglio.Columns[12]).HeaderText = "COLORE";
+            ((DataGridViewCheckBoxColumn)dgvDettaglio.Columns[13]).HeaderText = "MISURA";
         }
 
         private void CreaDsPerListaPDF(DateTime dataSelezionata)
