@@ -101,12 +101,13 @@ namespace CDCMetal.Data
             }
         }
 
-        public void FillCDC_EXCEL(CDCDS ds, DateTime DATARIFERIMENTO)
+        public void FillCDC_EXCEL(CDCDS ds, DateTime DATARIFERIMENTO, string Azienda)
         {
-            string select = @"SELECT * FROM CDC_EXCEL WHERE DATARIFERIMENTO = $P<DATARIFERIMENTO>";
+            string select = @"SELECT * FROM CDC_EXCEL WHERE DATARIFERIMENTO = $P<DATARIFERIMENTO> AND AZIENDA = $P<AZIENDA>";
 
             ParamSet ps = new ParamSet();
             ps.AddParam("DATARIFERIMENTO", DbType.DateTime, DATARIFERIMENTO);
+            ps.AddParam("AZIENDA", DbType.String, Azienda);
 
             using (DbDataAdapter da = BuildDataAdapter(select, ps))
             {

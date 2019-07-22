@@ -60,7 +60,7 @@ namespace CDCMetal
 
             Contesto.DS = new Entities.CDCDS();
 
-            bll.LeggiCollaudoDaDataConDescrizione(Contesto.DS, dataSelezionata.Data);
+            bll.LeggiCollaudoDaDataConDescrizione(Contesto.DS, dataSelezionata);
 
 
             if (Contesto.DS.CDC_DETTAGLIO1.Count > 0)
@@ -74,7 +74,7 @@ namespace CDCMetal
                 lblMessaggio.Text = "Nessuna riga trovata per questa data";
             }
 
-            CreaDsPerEtichette(dataSelezionata.Data);
+            CreaDsPerEtichette();
 
             dgvDettaglio.AutoGenerateColumns = true;
             dgvDettaglio.DataSource = _dsServizio;
@@ -100,7 +100,7 @@ namespace CDCMetal
 
         }
 
-        private void CreaDsPerEtichette(DateTime dataSelezionata)
+        private void CreaDsPerEtichette()
         {
 
             _dsServizio = new DataSet();

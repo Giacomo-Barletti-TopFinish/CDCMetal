@@ -41,7 +41,7 @@ namespace CDCMetal.BLL
             }
         }
 
-        public void LeggiCollaudoDaData(CDCDS ds, DateTime dataSelezionata)
+        public void LeggiCollaudoDaData(CDCDS ds, DataCollaudo dataSelezionata)
         {
             using (CDCMetalBusiness bCDCMetal = new CDCMetalBusiness())
             {
@@ -49,11 +49,11 @@ namespace CDCMetal.BLL
             }
         }
 
-        public void LeggiCollaudoDaDataConDescrizione(CDCDS ds, DateTime dataSelezionata)
+        public void LeggiCollaudoDaDataConDescrizione(CDCDS ds, DataCollaudo dataSelezionata)
         {
             using (CDCMetalBusiness bCDCMetal = new CDCMetalBusiness())
             {
-                bCDCMetal.FillCDC_CON_DESCRIZIONE(ds, dataSelezionata);
+                bCDCMetal.FillCDC_CON_DESCRIZIONE(ds, dataSelezionata.Data, dataSelezionata.Brand);
             }
         }
 

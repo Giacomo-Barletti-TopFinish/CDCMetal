@@ -68,7 +68,7 @@ namespace CDCMetal
                 Contesto.DS.CDC_DETTAGLIO.Clear();
                 _dettaglio = null;
 
-                bll.LeggiCollaudoDaData(Contesto.DS, dataSelezionata.Data);
+                bll.LeggiCollaudoDaData(Contesto.DS, dataSelezionata);
 
 
                 if (Contesto.DS.CDC_DETTAGLIO.Count > 0)

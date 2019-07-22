@@ -47,7 +47,7 @@ namespace CDCMetal
 
             Contesto.DS = new Entities.CDCDS();
 
-            bll.LeggiCollaudoDaData(Contesto.DS, dataSelezionata.Data);
+            bll.LeggiCollaudoDaData(Contesto.DS, dataSelezionata);
 
 
             if (Contesto.DS.CDC_DETTAGLIO.Count > 0)
@@ -60,7 +60,7 @@ namespace CDCMetal
                 lblMessaggio.Text = "Nessuna riga trovata per questa data";
             }
 
-            CreaDsPerListaPDF(dataSelezionata.Data);
+            CreaDsPerListaPDF();
 
             dgvDettaglio.AutoGenerateColumns = true;
             dgvDettaglio.DataSource = _dsServizio;
@@ -85,7 +85,7 @@ namespace CDCMetal
             ((DataGridViewCheckBoxColumn)dgvDettaglio.Columns[13]).HeaderText = "MISURA";
         }
 
-        private void CreaDsPerListaPDF(DateTime dataSelezionata)
+        private void CreaDsPerListaPDF( )
         {
 
             _dsServizio = new DataSet();

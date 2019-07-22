@@ -49,7 +49,7 @@ namespace CDCMetal
 
             Contesto.DS = new Entities.CDCDS();
 
-            bll.LeggiCollaudoDaData(Contesto.DS, dataSelezionata.Data);
+            bll.LeggiCollaudoDaData(Contesto.DS, dataSelezionata);
 
 
             if (Contesto.DS.CDC_DETTAGLIO.Count > 0)
@@ -64,7 +64,7 @@ namespace CDCMetal
                 lblMessaggio.Text = "Nessuna riga trovata per questa data";
             }
 
-            CreaDsPerColorimetrico(dataSelezionata.Data);
+            CreaDsPerColorimetrico();
 
             dgvDettaglio.AutoGenerateColumns = true;
             dgvDettaglio.DataSource = _dsServizio;
@@ -107,7 +107,7 @@ namespace CDCMetal
 
         }
 
-        private void CreaDsPerColorimetrico(DateTime dataSelezionata)
+        private void CreaDsPerColorimetrico()
         {
 
             _dsServizio = new DataSet();

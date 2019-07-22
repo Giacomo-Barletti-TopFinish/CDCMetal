@@ -55,20 +55,20 @@ namespace CDCMetal.Data
         }
 
         [DataContext]
-        public void FillCDC(CDCDS ds, DateTime DATARIFERIMENTO)
+        public void FillCDC(CDCDS ds, DataCollaudo DATARIFERIMENTO)
         {
             CDCMetalAdapter a = new CDCMetalAdapter(DbConnection, DbTransaction);
-            a.FillCDC_EXCEL(ds, DATARIFERIMENTO);
+            a.FillCDC_EXCEL(ds, DATARIFERIMENTO.Data, DATARIFERIMENTO.Brand);
 
             List<decimal> IDEXCEL = ds.CDC_EXCEL.Select(x => x.IDEXCEL).Distinct().ToList();
             a.FillCDC_DETTAGLIO(ds, IDEXCEL);
         }
 
         [DataContext]
-        public void FillCDC_CON_DESCRIZIONE(CDCDS ds, DateTime DATARIFERIMENTO)
+        public void FillCDC_CON_DESCRIZIONE(CDCDS ds, DateTime DATARIFERIMENTO, string Azienda)
         {
             CDCMetalAdapter a = new CDCMetalAdapter(DbConnection, DbTransaction);
-            a.FillCDC_EXCEL(ds, DATARIFERIMENTO);
+            a.FillCDC_EXCEL(ds, DATARIFERIMENTO, Azienda);
 
             List<decimal> IDEXCEL = ds.CDC_EXCEL.Select(x => x.IDEXCEL).Distinct().ToList();
             a.FillCDC_DETTAGLIO_CON_DESCRIZIONE(ds, IDEXCEL);

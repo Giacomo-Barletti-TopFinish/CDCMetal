@@ -1304,3 +1304,5 @@ INFO  2019-07-20 10:48:50,913   137ms MainForm               LogScrivi          
 INFO  2019-07-20 10:53:55,792   149ms MainForm               LogScrivi          - Applicazione CDCMetal avviata
 INFO  2019-07-20 10:55:56,434   148ms MainForm               LogScrivi          - Applicazione CDCMetal avviata
 INFO  2019-07-20 10:56:26,828 30542ms MainForm               LogScrivi          - Applicazione CDCMetal fermata
+INFO  2019-07-22 08:15:49,504   159ms MainForm               LogScrivi          - Applicazione CDCMetal avviata
+INFO  2019-07-22 08:16:54,207 64862ms MainForm               LogScrivi          - Applicazione CDCMetal fermata

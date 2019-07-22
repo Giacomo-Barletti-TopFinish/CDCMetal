@@ -17,5 +17,3 @@ UPDATE CDC_EXCEL SET AZIENDA = 'GUCCI';
 
 alter table cdc_excel MODIFY (AZIENDA NOT null);
 COMMIT;
-
-
