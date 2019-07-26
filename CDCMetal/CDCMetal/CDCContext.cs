@@ -10,7 +10,7 @@ namespace CDCMetal
     public class CDCContext
     {
         public bool UtenteConnesso;
-        public CDCDS DS;
+//        public CDCDS DS;
         public CDCDS.USR_USERRow Utente;
         public string PathCollaudo;
         public string PathSchedeTecniche;

@@ -45,17 +45,17 @@ namespace CDCMetal
 
             CDCBLL bll = new CDCBLL();
 
-            Contesto.DS = new Entities.CDCDS();
+            _DS = new Entities.CDCDS();
 
-            bll.LeggiCollaudoDaData(Contesto.DS, dataSelezionata);
+            bll.LeggiCollaudoDaData(_DS, dataSelezionata);
 
 
-            if (Contesto.DS.CDC_DETTAGLIO.Count > 0)
+            if (_DS.CDC_DETTAGLIO.Count > 0)
             {
                 btnCreaPDF.Enabled = true;
-                List<decimal> IDDETTAGLIO = Contesto.DS.CDC_DETTAGLIO.Select(x => x.IDDETTAGLIO).Distinct().ToList();
-                bll.FillCDC_ANTIALLERGICO(Contesto.DS, IDDETTAGLIO);
-                bll.CDC_PDF(Contesto.DS, IDDETTAGLIO);
+                List<decimal> IDDETTAGLIO = _DS.CDC_DETTAGLIO.Select(x => x.IDDETTAGLIO).Distinct().ToList();
+                bll.FillCDC_ANTIALLERGICO(_DS, IDDETTAGLIO);
+                bll.CDC_PDF(_DS, IDDETTAGLIO);
             }
             else
             {
@@ -104,7 +104,7 @@ namespace CDCMetal
             dtCartelle.Columns.Add("NICHELFREE", Type.GetType("System.Boolean"));
 
 
-            foreach (CDCDS.CDC_DETTAGLIORow dettaglio in Contesto.DS.CDC_DETTAGLIO)
+            foreach (CDCDS.CDC_DETTAGLIORow dettaglio in _DS.CDC_DETTAGLIO)
             {
                 DataRow riga = dtCartelle.NewRow();
 
@@ -118,7 +118,7 @@ namespace CDCMetal
                 riga[7] = dettaglio.COMMESSAORDINE;
                 riga[8] = dettaglio.QUANTITA;
 
-                CDCDS.CDC_ANTIALLERGICORow antiallergico = Contesto.DS.CDC_ANTIALLERGICO.Where(x => x.IDDETTAGLIO == dettaglio.IDDETTAGLIO).FirstOrDefault();
+                CDCDS.CDC_ANTIALLERGICORow antiallergico = _DS.CDC_ANTIALLERGICO.Where(x => x.IDDETTAGLIO == dettaglio.IDDETTAGLIO).FirstOrDefault();
                 if (antiallergico != null)
                 {
                     riga[9] = antiallergico.DATAPRODUZIONE;
@@ -163,17 +163,17 @@ namespace CDCMetal
                 {
                     decimal iddettaglio = (decimal)riga[0];
                     idPerPDF.Add(iddettaglio);
-                    CDCDS.CDC_ANTIALLERGICORow antiallergicoRow = Contesto.DS.CDC_ANTIALLERGICO.Where(x => x.IDDETTAGLIO == iddettaglio).FirstOrDefault();
+                    CDCDS.CDC_ANTIALLERGICORow antiallergicoRow = _DS.CDC_ANTIALLERGICO.Where(x => x.IDDETTAGLIO == iddettaglio).FirstOrDefault();
                     if (antiallergicoRow == null)
                     {
-                        antiallergicoRow = Contesto.DS.CDC_ANTIALLERGICO.NewCDC_ANTIALLERGICORow();
+                        antiallergicoRow = _DS.CDC_ANTIALLERGICO.NewCDC_ANTIALLERGICORow();
                         antiallergicoRow.IDDETTAGLIO = iddettaglio;
                         antiallergicoRow.UTENTE = Contesto.Utente.FULLNAMEUSER;
                         antiallergicoRow.DATAINSERIMENTO = DateTime.Now;
                         antiallergicoRow.DATAPRODUZIONE = (DateTime)riga[9];
 
                         antiallergicoRow.NICHELFREE = ConvertiBoolInStringa(riga[11]);
-                        Contesto.DS.CDC_ANTIALLERGICO.AddCDC_ANTIALLERGICORow(antiallergicoRow);
+                        _DS.CDC_ANTIALLERGICO.AddCDC_ANTIALLERGICORow(antiallergicoRow);
                     }
                     else
                     {
@@ -187,14 +187,14 @@ namespace CDCMetal
                 }
 
                 CDCBLL bll = new CDCBLL();
-                bll.SalvaDatiAntiallergia(Contesto.DS);
-                Contesto.DS.CDC_ANTIALLERGICO.AcceptChanges();
+                bll.SalvaDatiAntiallergia(_DS);
+                _DS.CDC_ANTIALLERGICO.AcceptChanges();
 
                 Bitmap firma = Properties.Resources.logo_tf_autodichiarazione;
                 ImageConverter converter = new ImageConverter();
                 byte[] image = (byte[])converter.ConvertTo(firma, typeof(byte[]));
 
-                fileCreati = bll.CreaPDFAntiallergico(idPerPDF, Contesto.DS, Contesto.PathCollaudo, image, chkCopiaFileReferti.Checked, Contesto.GetPathRefertiLaboratorio(((DataCollaudo) ddlDataCollaudo.SelectedItem).Brand));
+                fileCreati = bll.CreaPDFAntiallergico(idPerPDF, _DS, Contesto.PathCollaudo, image, chkCopiaFileReferti.Checked, Contesto.GetPathRefertiLaboratorio(((DataCollaudo) ddlDataCollaudo.SelectedItem).Brand));
                 btnLeggiDati_Click(null, null);
             }
             finally

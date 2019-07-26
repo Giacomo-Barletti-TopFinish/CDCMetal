@@ -1627,3 +1627,13 @@ INFO  2019-07-26 09:01:44,643   116ms MainForm               LogScrivi          
 INFO  2019-07-26 09:08:52,430   144ms MainForm               LogScrivi          - Applicazione CDCMetal avviata
 INFO  2019-07-26 09:48:24,849   150ms MainForm               LogScrivi          - Applicazione CDCMetal avviata
 INFO  2019-07-26 09:51:00,882 156183ms MainForm               LogScrivi          - Applicazione CDCMetal fermata
+INFO  2019-07-26 16:08:41,609   170ms MainForm               LogScrivi          - Applicazione CDCMetal avviata
+ERROR 2019-07-26 16:09:36,571 55132ms MainForm               LogScriviErrore    - ERRORE IN APRI FILE EXCEL
+System.InvalidOperationException: La raccolta è stata modificata; impossibile eseguire l'operazione di enumerazione.
+   in System.Data.RBTree`1.RBTreeEnumerator.MoveNext()
+   in System.Linq.Enumerable.<CastIterator>d__97`1.MoveNext()
+   in System.Linq.Enumerable.WhereEnumerableIterator`1.MoveNext()
+   in CDCMetal.ExcelCaricaNuovoDocumentoFrm.btnSalvaDB_Click(Object sender, EventArgs e) in C:\VSProgetti\CDCMetal\CDCMetal\CDCMetal\ExcelCaricaNuovoDocumentoFrm.cs:riga 144
+INFO  2019-07-26 16:10:07,170 85731ms MainForm               LogScrivi          - Applicazione CDCMetal fermata
+INFO  2019-07-26 16:31:53,740   167ms MainForm               LogScrivi          - Applicazione CDCMetal avviata
+INFO  2019-07-26 16:32:11,319 17746ms MainForm               LogScrivi          - Applicazione CDCMetal fermata

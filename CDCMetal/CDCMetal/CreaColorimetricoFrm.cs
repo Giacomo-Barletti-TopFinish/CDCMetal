@@ -47,17 +47,17 @@ namespace CDCMetal
 
             CDCBLL bll = new CDCBLL();
 
-            Contesto.DS = new Entities.CDCDS();
+            _DS = new Entities.CDCDS();
 
-            bll.LeggiCollaudoDaData(Contesto.DS, dataSelezionata);
+            bll.LeggiCollaudoDaData(_DS, dataSelezionata);
 
 
-            if (Contesto.DS.CDC_DETTAGLIO.Count > 0)
+            if (_DS.CDC_DETTAGLIO.Count > 0)
             {
                 btnCreaPDF.Enabled = true;
-                List<decimal> IDDETTAGLIO = Contesto.DS.CDC_DETTAGLIO.Select(x => x.IDDETTAGLIO).Distinct().ToList();
-                bll.FillCDC_COLORE(Contesto.DS, IDDETTAGLIO);
-                bll.CDC_PDF(Contesto.DS, IDDETTAGLIO);
+                List<decimal> IDDETTAGLIO = _DS.CDC_DETTAGLIO.Select(x => x.IDDETTAGLIO).Distinct().ToList();
+                bll.FillCDC_COLORE(_DS, IDDETTAGLIO);
+                bll.CDC_PDF(_DS, IDDETTAGLIO);
             }
             else
             {
@@ -144,7 +144,7 @@ namespace CDCMetal
             dtCartelle.Columns.Add("CONFORMEB", Type.GetType("System.Boolean"));
             dtCartelle.Columns.Add("NOTA", Type.GetType("System.String"));
 
-            foreach (CDCDS.CDC_DETTAGLIORow dettaglio in Contesto.DS.CDC_DETTAGLIO)
+            foreach (CDCDS.CDC_DETTAGLIORow dettaglio in _DS.CDC_DETTAGLIO)
             {
                 DataRow riga = dtCartelle.NewRow();
 
@@ -158,7 +158,7 @@ namespace CDCMetal
                 riga[7] = dettaglio.COMMESSAORDINE;
                 riga[8] = dettaglio.QUANTITA;
 
-                CDCDS.CDC_COLORERow coloreL = Contesto.DS.CDC_COLORE.Where(x => x.IDDETTAGLIO == dettaglio.IDDETTAGLIO && x.COLORE == CDCTipoColore.L).FirstOrDefault();
+                CDCDS.CDC_COLORERow coloreL = _DS.CDC_COLORE.Where(x => x.IDDETTAGLIO == dettaglio.IDDETTAGLIO && x.COLORE == CDCTipoColore.L).FirstOrDefault();
                 if (coloreL != null)
                 {
                     riga[9] = coloreL.DATAINSERIMENTO;
@@ -180,7 +180,7 @@ namespace CDCMetal
                     riga[23] = string.Empty;
                 }
 
-                CDCDS.CDC_COLORERow colorea = Contesto.DS.CDC_COLORE.Where(x => x.IDDETTAGLIO == dettaglio.IDDETTAGLIO && x.COLORE == CDCTipoColore.a).FirstOrDefault();
+                CDCDS.CDC_COLORERow colorea = _DS.CDC_COLORE.Where(x => x.IDDETTAGLIO == dettaglio.IDDETTAGLIO && x.COLORE == CDCTipoColore.a).FirstOrDefault();
                 if (colorea != null)
                 {
                     riga[15] = colorea.RICHIESTO;
@@ -196,7 +196,7 @@ namespace CDCMetal
                     riga[18] = true;
                 }
 
-                CDCDS.CDC_COLORERow coloreb = Contesto.DS.CDC_COLORE.Where(x => x.IDDETTAGLIO == dettaglio.IDDETTAGLIO && x.COLORE == CDCTipoColore.b).FirstOrDefault();
+                CDCDS.CDC_COLORERow coloreb = _DS.CDC_COLORE.Where(x => x.IDDETTAGLIO == dettaglio.IDDETTAGLIO && x.COLORE == CDCTipoColore.b).FirstOrDefault();
                 if (coloreb != null)
                 {
                     riga[19] = coloreb.RICHIESTO;
@@ -518,10 +518,10 @@ namespace CDCMetal
 
         private void CaricaColore(CDCDS ds, decimal idDettaglio, string colore, DateTime dataInserimento, DateTime dataCalibrazione, string richiesto, string tolleranza, string rilevato, string conforme, string nota)
         {
-            CDCDS.CDC_COLORERow coloreRow = Contesto.DS.CDC_COLORE.Where(x => x.IDDETTAGLIO == idDettaglio && x.COLORE == colore).FirstOrDefault();
+            CDCDS.CDC_COLORERow coloreRow = _DS.CDC_COLORE.Where(x => x.IDDETTAGLIO == idDettaglio && x.COLORE == colore).FirstOrDefault();
             if (coloreRow == null)
             {
-                coloreRow = Contesto.DS.CDC_COLORE.NewCDC_COLORERow();
+                coloreRow = _DS.CDC_COLORE.NewCDC_COLORERow();
                 coloreRow.IDDETTAGLIO = idDettaglio;
                 coloreRow.UTENTE = Contesto.Utente.FULLNAMEUSER;
                 coloreRow.DATAINSERIMENTO = dataInserimento;
@@ -533,7 +533,7 @@ namespace CDCMetal
                 coloreRow.RILEVATO = rilevato;
                 coloreRow.CONFORME = conforme;
                 coloreRow.NOTA = nota;
-                Contesto.DS.CDC_COLORE.AddCDC_COLORERow(coloreRow);
+                _DS.CDC_COLORE.AddCDC_COLORERow(coloreRow);
             }
             else
             {
@@ -585,26 +585,26 @@ namespace CDCMetal
                     DateTime dataInserimento = (DateTime)riga[9];
                     DateTime dataCalibrazione = (DateTime)riga[10];
 
-                    CaricaColore(Contesto.DS, iddettaglio, CDCTipoColore.L, dataInserimento, dataCalibrazione,
+                    CaricaColore(_DS, iddettaglio, CDCTipoColore.L, dataInserimento, dataCalibrazione,
                         ConvertiInStringa(riga[11]), ConvertiInStringa(riga[12]), ConvertiInStringa(riga[13]), ConvertiBoolInStringa(riga[14]), ConvertiInStringa(riga[23]));
 
-                    CaricaColore(Contesto.DS, iddettaglio, CDCTipoColore.a, dataInserimento, dataCalibrazione,
+                    CaricaColore(_DS, iddettaglio, CDCTipoColore.a, dataInserimento, dataCalibrazione,
                         ConvertiInStringa(riga[15]), ConvertiInStringa(riga[16]), ConvertiInStringa(riga[17]), ConvertiBoolInStringa(riga[18]), ConvertiInStringa(riga[23]));
 
-                    CaricaColore(Contesto.DS, iddettaglio, CDCTipoColore.b, dataInserimento, dataCalibrazione,
+                    CaricaColore(_DS, iddettaglio, CDCTipoColore.b, dataInserimento, dataCalibrazione,
                         ConvertiInStringa(riga[19]), ConvertiInStringa(riga[20]), ConvertiInStringa(riga[21]), ConvertiBoolInStringa(riga[22]), ConvertiInStringa(riga[23]));
 
                 }
 
                 CDCBLL bll = new CDCBLL();
-                bll.SalvaDatiColore(Contesto.DS);
-                Contesto.DS.CDC_COLORE.AcceptChanges();
+                bll.SalvaDatiColore(_DS);
+                _DS.CDC_COLORE.AcceptChanges();
 
                 Bitmap firma = Properties.Resources.loghi;
                 ImageConverter converter = new ImageConverter();
                 byte[] image = (byte[])converter.ConvertTo(firma, typeof(byte[]));
 
-                fileCreati = bll.CreaPDFColore(idPerPDF, Contesto.DS, Contesto.PathCollaudo, image, chkCopiaFileReferti.Checked, Contesto.GetPathRefertiLaboratorio(((DataCollaudo)ddlDataCollaudo.SelectedItem).Brand));
+                fileCreati = bll.CreaPDFColore(idPerPDF, _DS, Contesto.PathCollaudo, image, chkCopiaFileReferti.Checked, Contesto.GetPathRefertiLaboratorio(((DataCollaudo)ddlDataCollaudo.SelectedItem).Brand));
                 btnLeggiDati_Click(null, null);
             }
             finally

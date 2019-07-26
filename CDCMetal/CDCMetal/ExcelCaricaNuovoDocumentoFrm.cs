@@ -72,16 +72,16 @@ namespace CDCMetal
 
                 ExcelBLL bll = new ExcelBLL();
                 string messaggioErrore;
-                if (!bll.LeggiExcelCDC(Contesto.DS, txtFilePath.Text, Contesto.Utente.FULLNAMEUSER, brand, out messaggioErrore))
+                if (!bll.LeggiExcelCDC(_DS, txtFilePath.Text, Contesto.Utente.FULLNAMEUSER, brand, out messaggioErrore))
                 {
                     string messaggio = string.Format("Errore nel caricamento del file excel. Errore: {0}", messaggioErrore);
                     MessageBox.Show(messaggio, "ERRORE LETTURA FILE", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     return;
                 }
 
-                lblNumeroRigheExcel.Text = Contesto.DS.CDC_DETTAGLIO.Count.ToString();
-                if (Contesto.DS.CDC_DETTAGLIO.Count > 0)
-                    lblDataExcel.Text = Contesto.DS.CDC_DETTAGLIO.FirstOrDefault().DATACOLLAUDO;
+                lblNumeroRigheExcel.Text = _DS.CDC_DETTAGLIO.Count.ToString();
+                if (_DS.CDC_DETTAGLIO.Count > 0)
+                    lblDataExcel.Text = _DS.CDC_DETTAGLIO.FirstOrDefault().DATACOLLAUDO;
                 else
                 {
                     lblMessage.Text = "Il file è vuoto";
@@ -91,12 +91,12 @@ namespace CDCMetal
                 btnSalvaDB.Enabled = true;
 
                 dgvExcelCaricato.AutoGenerateColumns = true;
-                dgvExcelCaricato.DataSource = Contesto.DS;
-                dgvExcelCaricato.DataMember = Contesto.DS.CDC_DETTAGLIO.TableName;
+                dgvExcelCaricato.DataSource = _DS;
+                dgvExcelCaricato.DataMember = _DS.CDC_DETTAGLIO.TableName;
                 dgvExcelCaricato.Columns["IDDETTAGLIO"].Visible = false;
                 dgvExcelCaricato.Columns["IDEXCEL"].Visible = false;
 
-                List<decimal> IDPRENOTAZIONE_DUPLICATO = bll.VerificaExcelCaricato(Contesto.DS);
+                List<decimal> IDPRENOTAZIONE_DUPLICATO = bll.VerificaExcelCaricato(_DS);
                 if (IDPRENOTAZIONE_DUPLICATO.Count > 0)
                 {
                     StringBuilder sb = new StringBuilder();
@@ -132,7 +132,7 @@ namespace CDCMetal
                 lblMessage.Text = string.Empty;
 
                 ExcelBLL bll = new ExcelBLL();
-                List<decimal> IDPRENOTAZIONE_DUPLICATO = bll.VerificaExcelCaricato(Contesto.DS);
+                List<decimal> IDPRENOTAZIONE_DUPLICATO = bll.VerificaExcelCaricato(_DS);
                 if (IDPRENOTAZIONE_DUPLICATO.Count > 0)
                 {
                     StringBuilder sb = new StringBuilder();
@@ -141,13 +141,13 @@ namespace CDCMetal
 
                     MessageBox.Show(sb.ToString(), "RIGHE DUPLICATE", MessageBoxButtons.OK, MessageBoxIcon.Warning);
 
-                    foreach (CDCDS.CDC_DETTAGLIORow dettaglio in Contesto.DS.CDC_DETTAGLIO.Where(x => x.RowState != DataRowState.Deleted && IDPRENOTAZIONE_DUPLICATO.Contains(x.IDPRENOTAZIONE)))
+                    foreach (CDCDS.CDC_DETTAGLIORow dettaglio in _DS.CDC_DETTAGLIO.Where(x => x.RowState != DataRowState.Deleted && IDPRENOTAZIONE_DUPLICATO.Contains(x.IDPRENOTAZIONE)))
                         dettaglio.Delete();
 
-                    Contesto.DS.CDC_DETTAGLIO.AcceptChanges();
+                    _DS.CDC_DETTAGLIO.AcceptChanges();
                 }
 
-                bll.Salva(Contesto.DS);
+                bll.Salva(_DS);
 
                 lblMessage.Text = "Salvataggio riuscito";
                 ddlBrand.SelectedIndex = -1;
@@ -163,12 +163,15 @@ namespace CDCMetal
 
         private void ExcelCaricaNuovoDocumentoFrm_Load(object sender, EventArgs e)
         {
+            CDCBLL bll = new CDCBLL();
+            bll.CaricaBrands(_DS);
+
             CaricaDropDownListBrands();
         }
 
         private void CaricaDropDownListBrands()
         {
-            ddlBrand.Items.AddRange(Contesto.DS.CDC_BRANDS.Select(XmlReadMode => XmlReadMode.CODICE).ToArray());
+            ddlBrand.Items.AddRange(_DS.CDC_BRANDS.Select(XmlReadMode => XmlReadMode.CODICE).ToArray());
         }
     }
 }

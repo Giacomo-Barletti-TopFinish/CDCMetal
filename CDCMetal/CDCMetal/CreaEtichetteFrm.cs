@@ -58,16 +58,16 @@ namespace CDCMetal
 
             CDCBLL bll = new CDCBLL();
 
-            Contesto.DS = new Entities.CDCDS();
+            _DS = new Entities.CDCDS();
 
-            bll.LeggiCollaudoDaDataConDescrizione(Contesto.DS, dataSelezionata);
+            bll.LeggiCollaudoDaDataConDescrizione(_DS, dataSelezionata);
 
 
-            if (Contesto.DS.CDC_DETTAGLIO1.Count > 0)
+            if (_DS.CDC_DETTAGLIO1.Count > 0)
             {
                 btnVerificaEtichette.Enabled = true;
-                List<decimal> IDDETTAGLIO = Contesto.DS.CDC_DETTAGLIO1.Select(x => x.IDDETTAGLIO).Distinct().ToList();
-                bll.FillCDC_ETICHETTE_DETTAGLIO(Contesto.DS, IDDETTAGLIO);
+                List<decimal> IDDETTAGLIO = _DS.CDC_DETTAGLIO1.Select(x => x.IDDETTAGLIO).Distinct().ToList();
+                bll.FillCDC_ETICHETTE_DETTAGLIO(_DS, IDDETTAGLIO);
             }
             else
             {
@@ -121,7 +121,7 @@ namespace CDCMetal
             dtCartelle.Columns.Add("NUMERO ETICHETTE", Type.GetType("System.String"));//12
 
 
-            foreach (CDCDS.CDC_DETTAGLIO1Row dettaglio in Contesto.DS.CDC_DETTAGLIO1)
+            foreach (CDCDS.CDC_DETTAGLIO1Row dettaglio in _DS.CDC_DETTAGLIO1)
             {
                 DataRow riga = dtCartelle.NewRow();
 
@@ -142,7 +142,7 @@ namespace CDCMetal
                     riga[12] = EstraiNumeroEtichette(dettaglio.NOTECOLLAUDO, dettaglio.QUANTITA.ToString());
                 }
 
-                CDCDS.CDC_ETICHETTE_DETTAGLIORow etichetta = Contesto.DS.CDC_ETICHETTE_DETTAGLIO.Where(x => x.PREFISSO == dettaglio.PREFISSO && x.PARTE == dettaglio.PARTE && x.COLORE == dettaglio.COLORE).FirstOrDefault();
+                CDCDS.CDC_ETICHETTE_DETTAGLIORow etichetta = _DS.CDC_ETICHETTE_DETTAGLIO.Where(x => x.PREFISSO == dettaglio.PREFISSO && x.PARTE == dettaglio.PARTE && x.COLORE == dettaglio.COLORE).FirstOrDefault();
                 if (etichetta != null)
                 {
                     riga[9] = etichetta.LINEA;
@@ -327,16 +327,16 @@ namespace CDCMetal
                 descrizione = descrizione.Trim().ToUpper();
                 linea = linea.Trim().ToUpper();
 
-                CDCDS.CDC_ETICHETTE_DETTAGLIORow rigaEtichetta = Contesto.DS.CDC_ETICHETTE_DETTAGLIO.Where(x => x.PREFISSO == prefisso && x.PARTE == parte && x.COLORE == colore).FirstOrDefault();
+                CDCDS.CDC_ETICHETTE_DETTAGLIORow rigaEtichetta = _DS.CDC_ETICHETTE_DETTAGLIO.Where(x => x.PREFISSO == prefisso && x.PARTE == parte && x.COLORE == colore).FirstOrDefault();
                 if (rigaEtichetta == null)
                 {
-                    rigaEtichetta = Contesto.DS.CDC_ETICHETTE_DETTAGLIO.NewCDC_ETICHETTE_DETTAGLIORow();
+                    rigaEtichetta = _DS.CDC_ETICHETTE_DETTAGLIO.NewCDC_ETICHETTE_DETTAGLIORow();
                     rigaEtichetta.PREFISSO = prefisso;
                     rigaEtichetta.PARTE = parte;
                     rigaEtichetta.COLORE = colore;
                     rigaEtichetta.LINEA = linea;
                     rigaEtichetta.DESCRIZIONE = descrizione.Length > 50 ? descrizione.Substring(0, 50) : descrizione;
-                    Contesto.DS.CDC_ETICHETTE_DETTAGLIO.AddCDC_ETICHETTE_DETTAGLIORow(rigaEtichetta);
+                    _DS.CDC_ETICHETTE_DETTAGLIO.AddCDC_ETICHETTE_DETTAGLIORow(rigaEtichetta);
                 }
                 else
                 {
@@ -346,7 +346,7 @@ namespace CDCMetal
             }
 
             CDCBLL bll = new CDCBLL();
-            bll.SalvaDescrizioneEtichette(Contesto.DS);
+            bll.SalvaDescrizioneEtichette(_DS);
 
         }
     }

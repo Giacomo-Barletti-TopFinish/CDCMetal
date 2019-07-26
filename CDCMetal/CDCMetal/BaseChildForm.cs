@@ -11,6 +11,7 @@ namespace CDCMetal
 {
     public class BaseChildForm : Form
     {
+        protected CDCDS _DS = new CDCDS();
         protected CDCContext Contesto
         {
             get

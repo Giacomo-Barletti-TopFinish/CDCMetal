@@ -62,9 +62,7 @@ namespace CDCMetal
         private void CreaContesto()
         {
             Contesto = new CDCContext();
-            Contesto.DS = new CDCDS();
-            CDCBLL bll = new CDCBLL();
-            bll.CaricaBrands(Contesto.DS);
+
             Contesto.UtenteConnesso = false;
             Contesto.Utente = null;
             Contesto.PathSchedeTecniche = CDCMetal.Properties.Settings.Default.PathSchedeTecnic;

@@ -46,7 +46,7 @@ namespace CDCMetal
             dtCartelle.Columns.Add("QUADRETTATURA", Type.GetType("System.Boolean"));
 
 
-            foreach (CDCDS.CDC_DETTAGLIORow dettaglio in Contesto.DS.CDC_DETTAGLIO)
+            foreach (CDCDS.CDC_DETTAGLIORow dettaglio in _DS.CDC_DETTAGLIO)
             {
                 DataRow riga = dtCartelle.NewRow();
 
@@ -60,7 +60,7 @@ namespace CDCMetal
                 riga[7] = dettaglio.COMMESSAORDINE;
                 riga[8] = dettaglio.QUANTITA;
 
-                CDCDS.CDC_VERNICICOPRENTIRow vCoprente = Contesto.DS.CDC_VERNICICOPRENTI.Where(x => x.IDDETTAGLIO == dettaglio.IDDETTAGLIO).FirstOrDefault();
+                CDCDS.CDC_VERNICICOPRENTIRow vCoprente = _DS.CDC_VERNICICOPRENTI.Where(x => x.IDDETTAGLIO == dettaglio.IDDETTAGLIO).FirstOrDefault();
                 if (vCoprente != null)
                 {
                     riga[9] = vCoprente.DATATEST;
@@ -97,17 +97,17 @@ namespace CDCMetal
 
             CDCBLL bll = new CDCBLL();
 
-            Contesto.DS = new Entities.CDCDS();
+            _DS = new Entities.CDCDS();
 
-            bll.LeggiCollaudoDaData(Contesto.DS, dataSelezionata);
+            bll.LeggiCollaudoDaData(_DS, dataSelezionata);
 
 
-            if (Contesto.DS.CDC_DETTAGLIO.Count > 0)
+            if (_DS.CDC_DETTAGLIO.Count > 0)
             {
                 btnCreaPDF.Enabled = true;
-                List<decimal> IDDETTAGLIO = Contesto.DS.CDC_DETTAGLIO.Select(x => x.IDDETTAGLIO).Distinct().ToList();
-                bll.FillCDC_VERNICICOPRENTI(Contesto.DS, IDDETTAGLIO);
-                bll.CDC_PDF(Contesto.DS, IDDETTAGLIO);
+                List<decimal> IDDETTAGLIO = _DS.CDC_DETTAGLIO.Select(x => x.IDDETTAGLIO).Distinct().ToList();
+                bll.FillCDC_VERNICICOPRENTI(_DS, IDDETTAGLIO);
+                bll.CDC_PDF(_DS, IDDETTAGLIO);
             }
             else
             {
@@ -165,10 +165,10 @@ namespace CDCMetal
                     string fornitore = ConvertiInStringa(riga[11]);
                     fornitore = fornitore.Length > 25 ? fornitore.Substring(0, 25) : fornitore;
 
-                    CDCDS.CDC_VERNICICOPRENTIRow vCoprenteRow = Contesto.DS.CDC_VERNICICOPRENTI.Where(x => x.IDDETTAGLIO == iddettaglio).FirstOrDefault();
+                    CDCDS.CDC_VERNICICOPRENTIRow vCoprenteRow = _DS.CDC_VERNICICOPRENTI.Where(x => x.IDDETTAGLIO == iddettaglio).FirstOrDefault();
                     if (vCoprenteRow == null)
                     {
-                        vCoprenteRow = Contesto.DS.CDC_VERNICICOPRENTI.NewCDC_VERNICICOPRENTIRow();
+                        vCoprenteRow = _DS.CDC_VERNICICOPRENTI.NewCDC_VERNICICOPRENTIRow();
                         vCoprenteRow.IDDETTAGLIO = iddettaglio;
                         vCoprenteRow.UTENTE = Contesto.Utente.FULLNAMEUSER;
                         vCoprenteRow.DATAINSERIMENTO = DateTime.Now;
@@ -178,7 +178,7 @@ namespace CDCMetal
                         vCoprenteRow.TURBULA = ConvertiBoolInStringa(riga[12]);
                         vCoprenteRow.QUADRETTATURA = ConvertiBoolInStringa(riga[13]);
 
-                        Contesto.DS.CDC_VERNICICOPRENTI.AddCDC_VERNICICOPRENTIRow(vCoprenteRow);
+                        _DS.CDC_VERNICICOPRENTI.AddCDC_VERNICICOPRENTIRow(vCoprenteRow);
                     }
                     else
                     {
@@ -194,14 +194,14 @@ namespace CDCMetal
                 }
 
                 CDCBLL bll = new CDCBLL();
-                bll.SalvaDatiVerniciaturaCoprente(Contesto.DS);
-                Contesto.DS.CDC_VERNICICOPRENTI.AcceptChanges();
+                bll.SalvaDatiVerniciaturaCoprente(_DS);
+                _DS.CDC_VERNICICOPRENTI.AcceptChanges();
 
                 Bitmap firma = Properties.Resources.logo_spessori_v2;
                 ImageConverter converter = new ImageConverter();
                 byte[] image = (byte[])converter.ConvertTo(firma, typeof(byte[]));
 
-                fileCreati = bll.CreaPDFVerniceCoprente(idPerPDF, Contesto.DS, Contesto.PathCollaudo, image, chkCopiaFileReferti.Checked, Contesto.GetPathRefertiLaboratorio(((DataCollaudo)ddlDataCollaudo.SelectedItem).Brand));
+                fileCreati = bll.CreaPDFVerniceCoprente(idPerPDF, _DS, Contesto.PathCollaudo, image, chkCopiaFileReferti.Checked, Contesto.GetPathRefertiLaboratorio(((DataCollaudo)ddlDataCollaudo.SelectedItem).Brand));
                 btnLeggiDati_Click(null, null);
             }
             finally

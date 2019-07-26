@@ -48,11 +48,11 @@ namespace CDCMetal
 
             CDCBLL bll = new CDCBLL();
 
-            Contesto.DS = new Entities.CDCDS();
+            _DS = new Entities.CDCDS();
 
-            bll.LeggiCollaudoDaData(Contesto.DS, dataSelezionata);
+            bll.LeggiCollaudoDaData(_DS, dataSelezionata);
 
-            if (Contesto.DS.CDC_DETTAGLIO.Count > 0)
+            if (_DS.CDC_DETTAGLIO.Count > 0)
             {
                 btnCreaCartelle.Enabled = true;
             }
@@ -122,7 +122,7 @@ namespace CDCMetal
             dtCartelle.Columns.Add("CARTELLA", Type.GetType("System.String"));
 
 
-            foreach (CDCDS.CDC_DETTAGLIORow dettaglio in Contesto.DS.CDC_DETTAGLIO)
+            foreach (CDCDS.CDC_DETTAGLIORow dettaglio in _DS.CDC_DETTAGLIO)
             {
                 DataRow riga = dtCartelle.NewRow();
 

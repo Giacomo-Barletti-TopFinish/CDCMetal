@@ -48,17 +48,17 @@ namespace CDCMetal
 
             CDCBLL bll = new CDCBLL();
 
-            Contesto.DS = new Entities.CDCDS();
+            _DS = new Entities.CDCDS();
 
-            bll.LeggiCollaudoDaData(Contesto.DS, dataSelezionata);
+            bll.LeggiCollaudoDaData(_DS, dataSelezionata);
 
 
-            if (Contesto.DS.CDC_DETTAGLIO.Count > 0)
+            if (_DS.CDC_DETTAGLIO.Count > 0)
             {
                 btnCreaPDF.Enabled = true;
-                List<decimal> IDDETTAGLIO = Contesto.DS.CDC_DETTAGLIO.Select(x => x.IDDETTAGLIO).Distinct().ToList();
-                bll.FillCDC_DIMEMSIONI(Contesto.DS, IDDETTAGLIO);
-                bll.CDC_PDF(Contesto.DS, IDDETTAGLIO);
+                List<decimal> IDDETTAGLIO = _DS.CDC_DETTAGLIO.Select(x => x.IDDETTAGLIO).Distinct().ToList();
+                bll.FillCDC_DIMEMSIONI(_DS, IDDETTAGLIO);
+                bll.CDC_PDF(_DS, IDDETTAGLIO);
             }
             else
             {
@@ -67,8 +67,8 @@ namespace CDCMetal
 
 
             dgvDettaglio.AutoGenerateColumns = true;
-            dgvDettaglio.DataSource = Contesto.DS;
-            dgvDettaglio.DataMember = Contesto.DS.CDC_DETTAGLIO.TableName;
+            dgvDettaglio.DataSource = _DS;
+            dgvDettaglio.DataMember = _DS.CDC_DETTAGLIO.TableName;
 
             dgvDettaglio.Columns[0].Visible = false;
             dgvDettaglio.Columns[2].Visible = false;
@@ -102,7 +102,7 @@ namespace CDCMetal
         private void dgvDettaglio_CellClick(object sender, DataGridViewCellEventArgs e)
         {
             if (e.RowIndex == -1) return;
-            DataRow r = Contesto.DS.CDC_DETTAGLIO.Rows[e.RowIndex];
+            DataRow r = _DS.CDC_DETTAGLIO.Rows[e.RowIndex];
             decimal IDDETTAGLIO = (decimal)r[0];
             decimal IDPRENOTAZIONE = (decimal)r[1];
             string PARTE = (string)r[7];
@@ -127,8 +127,8 @@ namespace CDCMetal
             dtDimensioni.Columns.Add("PARTE", Type.GetType("System.String"));
             dtDimensioni.Columns.Add("COLORE", Type.GetType("System.String"));
 
-            List<CDCDS.CDC_DIMEMSIONIRow> dimensioni = Contesto.DS.CDC_DIMEMSIONI.Where(x => x.IDDETTAGLIO == IDDETTAGLIO).ToList();
-            List<CDCDS.CDC_DIMEMSIONI_MISURERow> misure = Contesto.DS.CDC_DIMEMSIONI_MISURE.Where(x => x.PARTE == PARTE).ToList();
+            List<CDCDS.CDC_DIMEMSIONIRow> dimensioni = _DS.CDC_DIMEMSIONI.Where(x => x.IDDETTAGLIO == IDDETTAGLIO).ToList();
+            List<CDCDS.CDC_DIMEMSIONI_MISURERow> misure = _DS.CDC_DIMEMSIONI_MISURE.Where(x => x.PARTE == PARTE).ToList();
 
             for (int i = 0; i < 20; i++)
             {
@@ -237,10 +237,10 @@ namespace CDCMetal
                 string COLORE = (string)riga[12];
                 if (!string.IsNullOrEmpty(RIFERIMENTO))
                 {
-                    CDCDS.CDC_DIMEMSIONIRow dimensione = Contesto.DS.CDC_DIMEMSIONI.Where(x => x.IDDETTAGLIO == IDDETTAGLIO && x.RIFERIMENTO.Trim() == RIFERIMENTO).FirstOrDefault();
+                    CDCDS.CDC_DIMEMSIONIRow dimensione = _DS.CDC_DIMEMSIONI.Where(x => x.IDDETTAGLIO == IDDETTAGLIO && x.RIFERIMENTO.Trim() == RIFERIMENTO).FirstOrDefault();
                     if (dimensione == null)
                     {
-                        dimensione = Contesto.DS.CDC_DIMEMSIONI.NewCDC_DIMEMSIONIRow();
+                        dimensione = _DS.CDC_DIMEMSIONI.NewCDC_DIMEMSIONIRow();
                         dimensione.CONFORME = ConvertiBoolInStringa(riga[10]);
                         dimensione.CONTAMPONE = ConvertiBoolInStringa(riga[9]);
                         dimensione.DATAINSERIMENTO = DateTime.Now;
@@ -253,7 +253,7 @@ namespace CDCMetal
                         dimensione.TAMPONE = ConvertiInStringa(riga[8]).ToUpper().Trim();
                         dimensione.TOLLERANZA = ConvertiInStringa(riga[5]).ToUpper().Trim();
                         dimensione.UTENTE = Contesto.Utente.FULLNAMEUSER;
-                        Contesto.DS.CDC_DIMEMSIONI.AddCDC_DIMEMSIONIRow(dimensione);
+                        _DS.CDC_DIMEMSIONI.AddCDC_DIMEMSIONIRow(dimensione);
                     }
                     else
                     {
@@ -271,10 +271,10 @@ namespace CDCMetal
                         dimensione.UTENTE = Contesto.Utente.FULLNAMEUSER;
                     }
 
-                    CDCDS.CDC_DIMEMSIONI_MISURERow misura = Contesto.DS.CDC_DIMEMSIONI_MISURE.Where(x => x.PARTE == PARTE && x.RIFERIMENTO.Trim() == RIFERIMENTO).FirstOrDefault();
+                    CDCDS.CDC_DIMEMSIONI_MISURERow misura = _DS.CDC_DIMEMSIONI_MISURE.Where(x => x.PARTE == PARTE && x.RIFERIMENTO.Trim() == RIFERIMENTO).FirstOrDefault();
                     if (misura == null)
                     {
-                        misura = Contesto.DS.CDC_DIMEMSIONI_MISURE.NewCDC_DIMEMSIONI_MISURERow();
+                        misura = _DS.CDC_DIMEMSIONI_MISURE.NewCDC_DIMEMSIONI_MISURERow();
                         misura.PARTE = PARTE;
                         misura.CONTAMPONE = ConvertiBoolInStringa(riga[9]);
                         misura.GRANDEZZA = ((string)riga[3]).ToUpper().Trim();
@@ -284,7 +284,7 @@ namespace CDCMetal
                         misura.RIFERIMENTO = ((string)riga[2]).ToUpper().Trim();
                         misura.TAMPONE = ConvertiInStringa(riga[8]).ToUpper().Trim();
                         misura.TOLLERANZA = ConvertiInStringa(riga[5]).ToUpper().Trim();
-                        Contesto.DS.CDC_DIMEMSIONI_MISURE.AddCDC_DIMEMSIONI_MISURERow(misura);
+                        _DS.CDC_DIMEMSIONI_MISURE.AddCDC_DIMEMSIONI_MISURERow(misura);
                     }
                     else
                     {
@@ -301,9 +301,9 @@ namespace CDCMetal
             }
 
             CDCBLL bll = new CDCBLL();
-            bll.SalvaDatiDimensioni(Contesto.DS);
-            Contesto.DS.CDC_DIMEMSIONI.AcceptChanges();
-            Contesto.DS.CDC_DIMEMSIONI_MISURE.AcceptChanges();
+            bll.SalvaDatiDimensioni(_DS);
+            _DS.CDC_DIMEMSIONI.AcceptChanges();
+            _DS.CDC_DIMEMSIONI_MISURE.AcceptChanges();
 
             Bitmap firma = Properties.Resources.firma_vittoria;
             if (Contesto.Utente.IDUSER == "0000000122")
@@ -316,7 +316,7 @@ namespace CDCMetal
 
             byte[] iLoghi = (byte[])converter.ConvertTo(loghi, typeof(byte[]));
 
-            bll.CreaPDFDimensionale(IDDETTAGLIO, Contesto.DS, Contesto.Utente.FULLNAMEUSER, Contesto.PathCollaudo, iFirma, iLoghi);
+            bll.CreaPDFDimensionale(IDDETTAGLIO, _DS, Contesto.Utente.FULLNAMEUSER, Contesto.PathCollaudo, iFirma, iLoghi);
 
             if (chkCopiaSchedaTecnica.Checked)
             {
@@ -333,7 +333,7 @@ namespace CDCMetal
                     return;
                 }
 
-                CDCDS.CDC_DETTAGLIORow dettaglio = Contesto.DS.CDC_DETTAGLIO.Where(x => x.IDDETTAGLIO == IDDETTAGLIO).FirstOrDefault();
+                CDCDS.CDC_DETTAGLIORow dettaglio = _DS.CDC_DETTAGLIO.Where(x => x.IDDETTAGLIO == IDDETTAGLIO).FirstOrDefault();
                 DateTime dt = DateTime.ParseExact(dettaglio.DATACOLLAUDO, "dd/MM/yyyy", CultureInfo.InvariantCulture);
                 string cartellaDestinazione = CDCBLL.CreaPathCartella(dt, Contesto.PathCollaudo, dettaglio.ACCESSORISTA, dettaglio.PREFISSO, dettaglio.PARTE, dettaglio.COLORE, dettaglio.COMMESSAORDINE);
 

@@ -44,7 +44,7 @@ namespace CDCMetal
         private void CaricaTabelleSpessori()
         {
             CDCBLL bll = new CDCBLL();
-            bll.LeggiTabelleSpessori(Contesto.DS);
+            bll.LeggiTabelleSpessori(_DS);
 
         }
 
@@ -64,19 +64,19 @@ namespace CDCMetal
 
                 CDCBLL bll = new CDCBLL();
 
-                Contesto.DS.CDC_EXCEL.Clear();
-                Contesto.DS.CDC_DETTAGLIO.Clear();
+                _DS.CDC_EXCEL.Clear();
+                _DS.CDC_DETTAGLIO.Clear();
                 _dettaglio = null;
 
-                bll.LeggiCollaudoDaData(Contesto.DS, dataSelezionata);
+                bll.LeggiCollaudoDaData(_DS, dataSelezionata);
 
 
-                if (Contesto.DS.CDC_DETTAGLIO.Count > 0)
+                if (_DS.CDC_DETTAGLIO.Count > 0)
                 {
                     btnCreaPDF.Enabled = true;
-                    List<decimal> IDDETTAGLIO = Contesto.DS.CDC_DETTAGLIO.Select(x => x.IDDETTAGLIO).Distinct().ToList();
-                    bll.FillCDC_GALVANICA(Contesto.DS, IDDETTAGLIO);
-                    bll.CDC_PDF(Contesto.DS, IDDETTAGLIO);
+                    List<decimal> IDDETTAGLIO = _DS.CDC_DETTAGLIO.Select(x => x.IDDETTAGLIO).Distinct().ToList();
+                    bll.FillCDC_GALVANICA(_DS, IDDETTAGLIO);
+                    bll.CDC_PDF(_DS, IDDETTAGLIO);
                 }
                 else
                 {
@@ -85,8 +85,8 @@ namespace CDCMetal
 
 
                 dgvDettaglio.AutoGenerateColumns = true;
-                dgvDettaglio.DataSource = Contesto.DS;
-                dgvDettaglio.DataMember = Contesto.DS.CDC_DETTAGLIO.TableName;
+                dgvDettaglio.DataSource = _DS;
+                dgvDettaglio.DataMember = _DS.CDC_DETTAGLIO.TableName;
 
                 dgvDettaglio.Columns[0].Visible = false;
                 dgvDettaglio.Columns[2].Visible = false;
@@ -127,7 +127,7 @@ namespace CDCMetal
 
         private void evidenziaPDFFatti()
         {
-            List<decimal> iddettaglioConPdf = Contesto.DS.CDC_PDF.Where(x => x.TIPO == CDCTipoPDF.CERTIFICATOSPESSORE).Select(x => x.IDDETTAGLIO).Distinct().ToList();
+            List<decimal> iddettaglioConPdf = _DS.CDC_PDF.Where(x => x.TIPO == CDCTipoPDF.CERTIFICATOSPESSORE).Select(x => x.IDDETTAGLIO).Distinct().ToList();
             foreach (DataGridViewRow riga in dgvDettaglio.Rows)
             {
                 decimal IDDETTAGLIO = (decimal)riga.Cells["IDDETTAGLIO"].Value;
@@ -141,7 +141,7 @@ namespace CDCMetal
 
         private void ImpostaApplicazione(string colore, string parte)
         {
-            CDCDS.CDC_APPLICAZIONERow applicazione = Contesto.DS.CDC_APPLICAZIONE.Where(x => x.COLORE == colore && x.PARTE == parte).FirstOrDefault();
+            CDCDS.CDC_APPLICAZIONERow applicazione = _DS.CDC_APPLICAZIONE.Where(x => x.COLORE == colore && x.PARTE == parte).FirstOrDefault();
             if (applicazione != null)
             {
                 txtApplicazione.Text = applicazione.IsAPPLICAZIONENull() ? string.Empty : applicazione.APPLICAZIONE;
@@ -173,7 +173,7 @@ namespace CDCMetal
                 dtSpessori.Clear();
             }
 
-            foreach (CDCDS.CDC_SPESSORERow spessore in Contesto.DS.CDC_SPESSORE.Where(x => x.RowState != DataRowState.Deleted && x.COLORE == colore && x.PARTE == parte).OrderBy(x => x.SEQUENZA))
+            foreach (CDCDS.CDC_SPESSORERow spessore in _DS.CDC_SPESSORE.Where(x => x.RowState != DataRowState.Deleted && x.COLORE == colore && x.PARTE == parte).OrderBy(x => x.SEQUENZA))
             {
                 DataRow riga = dtSpessori.NewRow();
                 riga[0] = spessore.ETICHETTA;
@@ -198,16 +198,16 @@ namespace CDCMetal
                 lblMessaggio.Text = string.Empty;
 
                 if (e.RowIndex == -1) return;
-                DataRow r = Contesto.DS.CDC_DETTAGLIO.Rows[e.RowIndex];
+                DataRow r = _DS.CDC_DETTAGLIO.Rows[e.RowIndex];
                 decimal IDDETTAGLIO = (decimal)r[0];
-                _dettaglio = Contesto.DS.CDC_DETTAGLIO.Where(x => x.IDDETTAGLIO == IDDETTAGLIO).FirstOrDefault();
+                _dettaglio = _DS.CDC_DETTAGLIO.Where(x => x.IDDETTAGLIO == IDDETTAGLIO).FirstOrDefault();
 
                 ImpostaApplicazione(_dettaglio.COLORE, _dettaglio.PARTE);
                 _dsServizio = new DataSet();
 
                 CalcolaNumeroCampioni();
 
-                CDCDS.CDC_GALVANICARow galvanica = Contesto.DS.CDC_GALVANICA.Where(x => x.IDDETTAGLIO == IDDETTAGLIO).FirstOrDefault();
+                CDCDS.CDC_GALVANICARow galvanica = _DS.CDC_GALVANICA.Where(x => x.IDDETTAGLIO == IDDETTAGLIO).FirstOrDefault();
                 if (galvanica != null)
                 {
                     CaricaCampioniMisuraPrecedente(galvanica);
@@ -250,7 +250,7 @@ namespace CDCMetal
         private void CaricaCampioniMisuraPrecedente(CDCDS.CDC_GALVANICARow galvanica)
         {
 
-            List<CDCDS.CDC_MISURERow> misurePrecedenti = Contesto.DS.CDC_MISURE.Where(x => x.IDGALVANICA == galvanica.IDGALVANICA).OrderBy(x => x.NMISURA).ThenBy(x => x.NCOLONNA).ToList();
+            List<CDCDS.CDC_MISURERow> misurePrecedenti = _DS.CDC_MISURE.Where(x => x.IDGALVANICA == galvanica.IDGALVANICA).OrderBy(x => x.NMISURA).ThenBy(x => x.NCOLONNA).ToList();
 
             int numeroCampioni = (int)misurePrecedenti.Max(x => x.NMISURA) + 1;
             txtNumeroCampioni.Text = numeroCampioni.ToString();
@@ -393,7 +393,7 @@ namespace CDCMetal
         private void popolaCDC_SPESSORE()
         {
             int sequenza = 0;
-            List<CDCDS.CDC_SPESSORERow> elementi = Contesto.DS.CDC_SPESSORE.Where(x => x.RowState != DataRowState.Deleted && x.PARTE == _dettaglio.PARTE && x.COLORE == _dettaglio.COLORE).ToList();
+            List<CDCDS.CDC_SPESSORERow> elementi = _DS.CDC_SPESSORE.Where(x => x.RowState != DataRowState.Deleted && x.PARTE == _dettaglio.PARTE && x.COLORE == _dettaglio.COLORE).ToList();
             foreach (CDCDS.CDC_SPESSORERow elemento in elementi)
                 elemento.Delete();
 
@@ -404,7 +404,7 @@ namespace CDCMetal
                 decimal Massimo = (decimal)dr.Cells[1].Value;
                 decimal Minimo = (decimal)dr.Cells[2].Value;
                 decimal Denominatore = (decimal)dr.Cells[3].Value;
-                CDCDS.CDC_SPESSORERow spessore = Contesto.DS.CDC_SPESSORE.NewCDC_SPESSORERow();
+                CDCDS.CDC_SPESSORERow spessore = _DS.CDC_SPESSORE.NewCDC_SPESSORERow();
                 spessore.COLORE = _dettaglio.COLORE;
                 spessore.DENOMINATORE = Denominatore;
                 spessore.ETICHETTA = etichetta;
@@ -412,7 +412,7 @@ namespace CDCMetal
                 spessore.MINIMO = Minimo;
                 spessore.PARTE = _dettaglio.PARTE;
                 spessore.SEQUENZA = sequenza;
-                Contesto.DS.CDC_SPESSORE.AddCDC_SPESSORERow(spessore);
+                _DS.CDC_SPESSORE.AddCDC_SPESSORERow(spessore);
 
                 sequenza++;
             }
@@ -463,7 +463,7 @@ namespace CDCMetal
                 dtAggregati.TableName = tblAggregati;
                 dtAggregati.Columns.Add("DATO", Type.GetType("System.String"));
 
-                foreach (CDCDS.CDC_SPESSORERow spessore in Contesto.DS.CDC_SPESSORE.Where(x => x.RowState != DataRowState.Deleted && x.PARTE == _dettaglio.PARTE && x.COLORE == _dettaglio.COLORE).OrderBy(x => x.SEQUENZA))
+                foreach (CDCDS.CDC_SPESSORERow spessore in _DS.CDC_SPESSORE.Where(x => x.RowState != DataRowState.Deleted && x.PARTE == _dettaglio.PARTE && x.COLORE == _dettaglio.COLORE).OrderBy(x => x.SEQUENZA))
                 {
                     dtDimensioni.Columns.Add(spessore.ETICHETTA, Type.GetType("System.Decimal"));
                     dtAggregati.Columns.Add(spessore.ETICHETTA, Type.GetType("System.String"));
@@ -477,7 +477,7 @@ namespace CDCMetal
                     riga[2] = i;
 
                     int j = 0;
-                    foreach (CDCDS.CDC_SPESSORERow spessore in Contesto.DS.CDC_SPESSORE.Where(x => x.RowState != DataRowState.Deleted && x.PARTE == _dettaglio.PARTE && x.COLORE == _dettaglio.COLORE).OrderBy(x => x.SEQUENZA))
+                    foreach (CDCDS.CDC_SPESSORERow spessore in _DS.CDC_SPESSORE.Where(x => x.RowState != DataRowState.Deleted && x.PARTE == _dettaglio.PARTE && x.COLORE == _dettaglio.COLORE).OrderBy(x => x.SEQUENZA))
                     {
                         int massimo = (int)spessore.MASSIMO;
                         int minimo = (int)spessore.MINIMO;
@@ -738,7 +738,7 @@ namespace CDCMetal
                 }
                 decimal IDDETTAGLIO = _dettaglio.IDDETTAGLIO;
 
-                CDCDS.CDC_SPESSORERow spessore = Contesto.DS.CDC_SPESSORE.Where(x => x.RowState != DataRowState.Deleted && x.PARTE == _dettaglio.PARTE && x.COLORE == _dettaglio.COLORE && x.SEQUENZA == 0).FirstOrDefault();
+                CDCDS.CDC_SPESSORERow spessore = _DS.CDC_SPESSORE.Where(x => x.RowState != DataRowState.Deleted && x.PARTE == _dettaglio.PARTE && x.COLORE == _dettaglio.COLORE && x.SEQUENZA == 0).FirstOrDefault();
                 if (spessore == null)
                 {
                     lblMessaggio.Text = "Impossibile individuare lo spessore richiesto. Impossibile procedere";
@@ -760,16 +760,16 @@ namespace CDCMetal
                 CDCBLL bll = new CDCBLL();
                 int misurePerCampione = (int)nMisurePerCampione.Value;
 
-                CDCDS.CDC_APPLICAZIONERow applicazioneRow = Contesto.DS.CDC_APPLICAZIONE.Where(x => x.PARTE == _dettaglio.PARTE && x.COLORE == _dettaglio.COLORE).FirstOrDefault();
+                CDCDS.CDC_APPLICAZIONERow applicazioneRow = _DS.CDC_APPLICAZIONE.Where(x => x.PARTE == _dettaglio.PARTE && x.COLORE == _dettaglio.COLORE).FirstOrDefault();
                 if (applicazioneRow == null)
                 {
-                    applicazioneRow = Contesto.DS.CDC_APPLICAZIONE.NewCDC_APPLICAZIONERow();
+                    applicazioneRow = _DS.CDC_APPLICAZIONE.NewCDC_APPLICAZIONERow();
                     applicazioneRow.PARTE = _dettaglio.PARTE;
                     applicazioneRow.COLORE = _dettaglio.COLORE;
                     applicazioneRow.APPLICAZIONE = txtApplicazione.Text;
                     applicazioneRow.NUMEROCAMPIONI = nMisurePerCampione.Value;
                     applicazioneRow.SPESSORE = txtSpessoreRichiesto.Text;
-                    Contesto.DS.CDC_APPLICAZIONE.AddCDC_APPLICAZIONERow(applicazioneRow);
+                    _DS.CDC_APPLICAZIONE.AddCDC_APPLICAZIONERow(applicazioneRow);
                 }
                 else
                 {
@@ -779,14 +779,14 @@ namespace CDCMetal
                 }
 
 
-                decimal IDGALVANICA = bll.InserisciCDCGalvanica(Contesto.DS, txtSpessoreRichiesto.Text, IDDETTAGLIO, txtApplicazione.Text, Contesto.StrumentoSpessore, misurePerCampione, Contesto.Utente.FULLNAMEUSER);
+                decimal IDGALVANICA = bll.InserisciCDCGalvanica(_DS, txtSpessoreRichiesto.Text, IDDETTAGLIO, txtApplicazione.Text, Contesto.StrumentoSpessore, misurePerCampione, Contesto.Utente.FULLNAMEUSER);
 
-                Contesto.DS.CDC_MISURE.Clear();
+                _DS.CDC_MISURE.Clear();
 
-               // List<decimal> idMisuraDaCancellare = Contesto.DS.CDC_MISURE.Where(x => x.IDGALVANICA == IDGALVANICA).Select(x => x.IDMISURA).ToList();
+               // List<decimal> idMisuraDaCancellare = _DS.CDC_MISURE.Where(x => x.IDGALVANICA == IDGALVANICA).Select(x => x.IDMISURA).ToList();
                 //foreach (decimal idmisura in idMisuraDaCancellare)
                 //{
-                //    CDCDS.CDC_MISURERow row = Contesto.DS.CDC_MISURE.Where(x => x.RowState != DataRowState.Deleted && x.IDMISURA == idmisura).FirstOrDefault();
+                //    CDCDS.CDC_MISURERow row = _DS.CDC_MISURE.Where(x => x.RowState != DataRowState.Deleted && x.IDMISURA == idmisura).FirstOrDefault();
                 //    row.Delete();
                 //}
 
@@ -795,7 +795,7 @@ namespace CDCMetal
 
                     for (int j = 0; j < _dsServizio.Tables[tblMisure].Columns.Count - 3; j++)
                     {
-                        CDCDS.CDC_MISURERow misura = Contesto.DS.CDC_MISURE.NewCDC_MISURERow();
+                        CDCDS.CDC_MISURERow misura = _DS.CDC_MISURE.NewCDC_MISURERow();
                         int nMisura = (int)riga[2];
                         misura.NMISURA = nMisura;
                         misura.DATAMISURA = DateTime.Today;
@@ -805,12 +805,12 @@ namespace CDCMetal
                         misura.NCOLONNA = j;
                         misura.TIPOMISURA = tipo;
                         misura.VALORE = valore;
-                        Contesto.DS.CDC_MISURE.AddCDC_MISURERow(misura);
+                        _DS.CDC_MISURE.AddCDC_MISURERow(misura);
                     }
                 }
 
-                bll.SalvaTabelleSpessori(Contesto.DS);
-                Contesto.DS.AcceptChanges();
+                bll.SalvaTabelleSpessori(_DS);
+                _DS.AcceptChanges();
 
                 Bitmap logoSpessori = Properties.Resources.logo_spessori_v2;
                 ImageConverter converter = new ImageConverter();
@@ -843,7 +843,7 @@ namespace CDCMetal
                     minimo.Add(rigaMinimo[ncol].ToString());
                     massimo.Add(rigaMassimo[ncol].ToString());
                 }
-                filename = bll.CreaPDFSpessore(IDDETTAGLIO, Contesto.DS, Contesto.PathCollaudo, iLogo, iBowman, chkCopiaReferto.Checked, Contesto.GetPathRefertiLaboratorio(brand),
+                filename = bll.CreaPDFSpessore(IDDETTAGLIO, _DS, Contesto.PathCollaudo, iLogo, iBowman, chkCopiaReferto.Checked, Contesto.GetPathRefertiLaboratorio(brand),
                     medie, Std, Pct, range, minimo, massimo, brand, txtNumeroCampioni.Text);
 
                 if (chkApriPDF.Checked)

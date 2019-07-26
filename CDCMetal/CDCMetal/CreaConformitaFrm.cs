@@ -45,17 +45,17 @@ namespace CDCMetal
 
             CDCBLL bll = new CDCBLL();
 
-            Contesto.DS = new Entities.CDCDS();
+            _DS = new Entities.CDCDS();
 
-            bll.LeggiCollaudoDaData(Contesto.DS, dataSelezionata);
+            bll.LeggiCollaudoDaData(_DS, dataSelezionata);
 
 
-            if (Contesto.DS.CDC_DETTAGLIO.Count > 0)
+            if (_DS.CDC_DETTAGLIO.Count > 0)
             {
                 btnCreaPDF.Enabled = true;
-                List<decimal> IDDETTAGLIO = Contesto.DS.CDC_DETTAGLIO.Select(x => x.IDDETTAGLIO).Distinct().ToList();
-                bll.FillCDC_CONFORMITA(Contesto.DS, IDDETTAGLIO);
-                bll.CDC_PDF(Contesto.DS, IDDETTAGLIO);
+                List<decimal> IDDETTAGLIO = _DS.CDC_DETTAGLIO.Select(x => x.IDDETTAGLIO).Distinct().ToList();
+                bll.FillCDC_CONFORMITA(_DS, IDDETTAGLIO);
+                bll.CDC_PDF(_DS, IDDETTAGLIO);
             }
             else
             {
@@ -115,7 +115,7 @@ namespace CDCMetal
             dtCartelle.Columns.Add("IDDETTAGLIO", Type.GetType("System.Decimal")).ReadOnly = true;
 
 
-            foreach (CDCDS.CDC_DETTAGLIORow dettaglio in Contesto.DS.CDC_DETTAGLIO)
+            foreach (CDCDS.CDC_DETTAGLIORow dettaglio in _DS.CDC_DETTAGLIO)
             {
                 DataRow riga = dtCartelle.NewRow();
 
@@ -128,7 +128,7 @@ namespace CDCMetal
                 riga[6] = dettaglio.COMMESSAORDINE;
                 riga[7] = dettaglio.QUANTITA;
                 riga[17] = dettaglio.IDDETTAGLIO;
-                CDCDS.CDC_CONFORMITARow conformita = Contesto.DS.CDC_CONFORMITA.Where(x => x.IDDETTAGLIO == dettaglio.IDDETTAGLIO).FirstOrDefault();
+                CDCDS.CDC_CONFORMITARow conformita = _DS.CDC_CONFORMITA.Where(x => x.IDDETTAGLIO == dettaglio.IDDETTAGLIO).FirstOrDefault();
                 if (conformita != null)
                 {
                     riga[8] = conformita.DESCRIZIONE;
@@ -147,7 +147,7 @@ namespace CDCMetal
                     riga[11] = true;
                     riga[12] = true;
 
-                    CDCDS.CDC_CONFORMITA_DETTAGLIORow descrizione = Contesto.DS.CDC_CONFORMITA_DETTAGLIO.
+                    CDCDS.CDC_CONFORMITA_DETTAGLIORow descrizione = _DS.CDC_CONFORMITA_DETTAGLIO.
                         Where(x => x.PARTE == dettaglio.PARTE && x.PREFISSO == dettaglio.PREFISSO && x.COLORE == dettaglio.COLORE).FirstOrDefault();
                     if (descrizione != null)
                         riga[8] = descrizione.DESCRIZIONE;
@@ -183,10 +183,10 @@ namespace CDCMetal
                 {
                     decimal iddettaglio = (decimal)riga[17];
                     idPerPDF.Add(iddettaglio);
-                    CDCDS.CDC_CONFORMITARow conformitaRow = Contesto.DS.CDC_CONFORMITA.Where(x => x.IDDETTAGLIO == iddettaglio).FirstOrDefault();
+                    CDCDS.CDC_CONFORMITARow conformitaRow = _DS.CDC_CONFORMITA.Where(x => x.IDDETTAGLIO == iddettaglio).FirstOrDefault();
                     if (conformitaRow == null)
                     {
-                        conformitaRow = Contesto.DS.CDC_CONFORMITA.NewCDC_CONFORMITARow();
+                        conformitaRow = _DS.CDC_CONFORMITA.NewCDC_CONFORMITARow();
                         conformitaRow.IDDETTAGLIO = iddettaglio;
                         conformitaRow.UTENTE = Contesto.Utente.FULLNAMEUSER;
                         conformitaRow.DATAINSERIMENTO = DateTime.Now;
@@ -219,7 +219,7 @@ namespace CDCMetal
                                 conformitaRow.CERTIFICATI = aux;
                         }
 
-                        Contesto.DS.CDC_CONFORMITA.AddCDC_CONFORMITARow(conformitaRow);
+                        _DS.CDC_CONFORMITA.AddCDC_CONFORMITARow(conformitaRow);
                     }
                     else
                     {
@@ -259,28 +259,28 @@ namespace CDCMetal
                     string prefisso = (string)riga[3];
                     string colore = (string)riga[5];
 
-                    CDCDS.CDC_CONFORMITA_DETTAGLIORow dettaglioRow = Contesto.DS.CDC_CONFORMITA_DETTAGLIO.Where(x => x.PARTE == parte && x.PREFISSO == prefisso && x.COLORE == colore).FirstOrDefault();
+                    CDCDS.CDC_CONFORMITA_DETTAGLIORow dettaglioRow = _DS.CDC_CONFORMITA_DETTAGLIO.Where(x => x.PARTE == parte && x.PREFISSO == prefisso && x.COLORE == colore).FirstOrDefault();
                     if (dettaglioRow == null)
                     {
-                        dettaglioRow = Contesto.DS.CDC_CONFORMITA_DETTAGLIO.NewCDC_CONFORMITA_DETTAGLIORow();
+                        dettaglioRow = _DS.CDC_CONFORMITA_DETTAGLIO.NewCDC_CONFORMITA_DETTAGLIORow();
                         dettaglioRow.PREFISSO = prefisso;
                         dettaglioRow.PARTE = parte;
                         dettaglioRow.COLORE = colore;
                         dettaglioRow.DESCRIZIONE = ((string)riga[8]).ToUpper().Trim();
-                        Contesto.DS.CDC_CONFORMITA_DETTAGLIO.AddCDC_CONFORMITA_DETTAGLIORow(dettaglioRow);
+                        _DS.CDC_CONFORMITA_DETTAGLIO.AddCDC_CONFORMITA_DETTAGLIORow(dettaglioRow);
                     }
                     else
                         dettaglioRow.DESCRIZIONE = ((string)riga[8]).ToUpper().Trim();
                 }
 
                 CDCBLL bll = new CDCBLL();
-                bll.SalvaDatiConformita(Contesto.DS);
-                Contesto.DS.AcceptChanges();
+                bll.SalvaDatiConformita(_DS);
+                _DS.AcceptChanges();
                 Bitmap firma = Properties.Resources.FirmaCDC;
                 ImageConverter converter = new ImageConverter();
                 byte[] image = (byte[])converter.ConvertTo(firma, typeof(byte[]));
 
-                fileCreati = bll.CreaPDFConformita(idPerPDF, Contesto.DS, Contesto.PathCollaudo, image);
+                fileCreati = bll.CreaPDFConformita(idPerPDF, _DS, Contesto.PathCollaudo, image);
             }
             finally
             {
