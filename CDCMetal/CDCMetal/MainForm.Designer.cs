@@ -44,14 +44,16 @@
             this.antiallergicoNichelFreeToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.colorimetricoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.spessoriToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.verniciCoprentiToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.pDFToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.listaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.eTICHETTEToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.creaEtichetteToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.statusStrip1 = new System.Windows.Forms.StatusStrip();
             this.lblUserLoggato = new System.Windows.Forms.ToolStripStatusLabel();
             this.prgProgressBar = new System.Windows.Forms.ToolStripProgressBar();
             this.lblStatusBar = new System.Windows.Forms.ToolStripStatusLabel();
-            this.eTICHETTEToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.creaEtichetteToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.tenutaAcidoNitricoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.cdcMenu.SuspendLayout();
             this.statusStrip1.SuspendLayout();
             this.SuspendLayout();
@@ -163,7 +165,9 @@
             this.laboratorioToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.antiallergicoNichelFreeToolStripMenuItem,
             this.colorimetricoToolStripMenuItem,
-            this.spessoriToolStripMenuItem});
+            this.spessoriToolStripMenuItem,
+            this.verniciCoprentiToolStripMenuItem,
+            this.tenutaAcidoNitricoToolStripMenuItem});
             this.laboratorioToolStripMenuItem.Name = "laboratorioToolStripMenuItem";
             this.laboratorioToolStripMenuItem.Size = new System.Drawing.Size(89, 21);
             this.laboratorioToolStripMenuItem.Text = "Laboratorio";
@@ -189,6 +193,13 @@
             this.spessoriToolStripMenuItem.Text = "Spessori";
             this.spessoriToolStripMenuItem.Click += new System.EventHandler(this.spessoriToolStripMenuItem_Click);
             // 
+            // verniciCoprentiToolStripMenuItem
+            // 
+            this.verniciCoprentiToolStripMenuItem.Name = "verniciCoprentiToolStripMenuItem";
+            this.verniciCoprentiToolStripMenuItem.Size = new System.Drawing.Size(226, 22);
+            this.verniciCoprentiToolStripMenuItem.Text = "Vernici coprenti";
+            this.verniciCoprentiToolStripMenuItem.Click += new System.EventHandler(this.verniciCoprentiToolStripMenuItem_Click);
+            // 
             // pDFToolStripMenuItem
             // 
             this.pDFToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
@@ -200,9 +211,24 @@
             // listaToolStripMenuItem
             // 
             this.listaToolStripMenuItem.Name = "listaToolStripMenuItem";
-            this.listaToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.listaToolStripMenuItem.Size = new System.Drawing.Size(111, 22);
             this.listaToolStripMenuItem.Text = "Lista...";
             this.listaToolStripMenuItem.Click += new System.EventHandler(this.listaToolStripMenuItem_Click);
+            // 
+            // eTICHETTEToolStripMenuItem
+            // 
+            this.eTICHETTEToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.creaEtichetteToolStripMenuItem});
+            this.eTICHETTEToolStripMenuItem.Name = "eTICHETTEToolStripMenuItem";
+            this.eTICHETTEToolStripMenuItem.Size = new System.Drawing.Size(69, 21);
+            this.eTICHETTEToolStripMenuItem.Text = "Etichette";
+            // 
+            // creaEtichetteToolStripMenuItem
+            // 
+            this.creaEtichetteToolStripMenuItem.Name = "creaEtichetteToolStripMenuItem";
+            this.creaEtichetteToolStripMenuItem.Size = new System.Drawing.Size(165, 22);
+            this.creaEtichetteToolStripMenuItem.Text = "Crea etichette...";
+            this.creaEtichetteToolStripMenuItem.Click += new System.EventHandler(this.creaEtichetteToolStripMenuItem_Click);
             // 
             // statusStrip1
             // 
@@ -231,20 +257,12 @@
             this.lblStatusBar.Name = "lblStatusBar";
             this.lblStatusBar.Size = new System.Drawing.Size(0, 17);
             // 
-            // eTICHETTEToolStripMenuItem
+            // tenutaAcidoNitricoToolStripMenuItem
             // 
-            this.eTICHETTEToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.creaEtichetteToolStripMenuItem});
-            this.eTICHETTEToolStripMenuItem.Name = "eTICHETTEToolStripMenuItem";
-            this.eTICHETTEToolStripMenuItem.Size = new System.Drawing.Size(69, 21);
-            this.eTICHETTEToolStripMenuItem.Text = "Etichette";
-            // 
-            // creaEtichetteToolStripMenuItem
-            // 
-            this.creaEtichetteToolStripMenuItem.Name = "creaEtichetteToolStripMenuItem";
-            this.creaEtichetteToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
-            this.creaEtichetteToolStripMenuItem.Text = "Crea etichette...";
-            this.creaEtichetteToolStripMenuItem.Click += new System.EventHandler(this.creaEtichetteToolStripMenuItem_Click);
+            this.tenutaAcidoNitricoToolStripMenuItem.Name = "tenutaAcidoNitricoToolStripMenuItem";
+            this.tenutaAcidoNitricoToolStripMenuItem.Size = new System.Drawing.Size(226, 22);
+            this.tenutaAcidoNitricoToolStripMenuItem.Text = "Tenuta acido nitrico";
+            this.tenutaAcidoNitricoToolStripMenuItem.Click += new System.EventHandler(this.tenutaAcidoNitricoToolStripMenuItem_Click);
             // 
             // MainForm
             // 
@@ -294,6 +312,8 @@
         private System.Windows.Forms.ToolStripMenuItem spessoriToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem eTICHETTEToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem creaEtichetteToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem verniciCoprentiToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem tenutaAcidoNitricoToolStripMenuItem;
     }
 }
 

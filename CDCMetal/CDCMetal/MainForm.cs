@@ -313,5 +313,33 @@ namespace CDCMetal
                 MostraEccezione("ERRORE IN CREA ETICHETTE", ex);
             }
         }
+
+        private void verniciCoprentiToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                CreaVerniciCoprentiFrm form = new CreaVerniciCoprentiFrm();
+                form.MdiParent = this;
+                form.Show();
+            }
+            catch (Exception ex)
+            {
+                MostraEccezione("ERRORE IN CREA CERTIFICATO VERNICI COPRENTI", ex);
+            }
+        }
+
+        private void tenutaAcidoNitricoToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                CreaTenutaAcidoNitricoFrm form = new CreaTenutaAcidoNitricoFrm();
+                form.MdiParent = this;
+                form.Show();
+            }
+            catch (Exception ex)
+            {
+                MostraEccezione("ERRORE IN CREA CERTIFICATO TENUTA ACIDO NITRICO", ex);
+            }
+        }
     }
 }

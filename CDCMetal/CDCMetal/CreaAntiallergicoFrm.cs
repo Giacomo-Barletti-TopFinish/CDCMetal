@@ -194,7 +194,7 @@ namespace CDCMetal
                 ImageConverter converter = new ImageConverter();
                 byte[] image = (byte[])converter.ConvertTo(firma, typeof(byte[]));
 
-                fileCreati = bll.CreaPDFAntiallergico(idPerPDF, Contesto.DS, Contesto.PathCollaudo, image, chkCopiaFileReferti.Checked, Contesto.PathRefertiLaboratorio);
+                fileCreati = bll.CreaPDFAntiallergico(idPerPDF, Contesto.DS, Contesto.PathCollaudo, image, chkCopiaFileReferti.Checked, Contesto.GetPathRefertiLaboratorio(((DataCollaudo) ddlDataCollaudo.SelectedItem).Brand));
                 btnLeggiDati_Click(null, null);
             }
             finally

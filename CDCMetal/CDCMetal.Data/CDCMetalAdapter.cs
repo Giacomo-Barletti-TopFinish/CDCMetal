@@ -227,6 +227,32 @@ namespace CDCMetal.Data
             }
         }
 
+        public void FillCDC_VERNICICOPRENTI(CDCDS ds, List<decimal> IDDETTAGLIO)
+        {
+            string selezione = ConvertToStringForInCondition(IDDETTAGLIO);
+            string select = @"SELECT * FROM CDC_VERNICICOPRENTI WHERE IDDETTAGLIO IN ({0}) ";
+
+            string query = string.Format(select, selezione);
+
+            using (DbDataAdapter da = BuildDataAdapter(query))
+            {
+                da.Fill(ds.CDC_VERNICICOPRENTI);
+            }
+        }
+
+        public void FillCDC_TENUTACIDONITRICO(CDCDS ds, List<decimal> IDDETTAGLIO)
+        {
+            string selezione = ConvertToStringForInCondition(IDDETTAGLIO);
+            string select = @"SELECT * FROM CDC_TENUTACIDONITRICO WHERE IDDETTAGLIO IN ({0}) ";
+
+            string query = string.Format(select, selezione);
+
+            using (DbDataAdapter da = BuildDataAdapter(query))
+            {
+                da.Fill(ds.CDC_TENUTACIDONITRICO);
+            }
+        }
+
         public void FillCDC_COLORE(CDCDS ds, List<decimal> IDDETTAGLIO)
         {
             string selezione = ConvertToStringForInCondition(IDDETTAGLIO);

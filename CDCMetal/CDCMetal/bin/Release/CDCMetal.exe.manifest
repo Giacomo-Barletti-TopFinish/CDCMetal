@@ -1,6 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <asmv1:assembly xsi:schemaLocation="urn:schemas-microsoft-com:asm.v1 assembly.adaptive.xsd" manifestVersion="1.0" xmlns:asmv1="urn:schemas-microsoft-com:asm.v1" xmlns="urn:schemas-microsoft-com:asm.v2" xmlns:asmv2="urn:schemas-microsoft-com:asm.v2" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:co.v1="urn:schemas-microsoft-com:clickonce.v1" xmlns:asmv3="urn:schemas-microsoft-com:asm.v3" xmlns:dsig="http://www.w3.org/2000/09/xmldsig#" xmlns:co.v2="urn:schemas-microsoft-com:clickonce.v2">
-  <asmv1:assemblyIdentity name="CDCMetal.exe" version="1.0.0.41" publicKeyToken="0000000000000000" language="neutral" processorArchitecture="msil" type="win32" />
+  <asmv1:assemblyIdentity name="CDCMetal.exe" version="2.0.0.4" publicKeyToken="0000000000000000" language="neutral" processorArchitecture="msil" type="win32" />
   <application />
   <entryPoint>
     <assemblyIdentity name="CDCMetal" version="1.0.0.0" language="neutral" processorArchitecture="msil" />
@@ -42,62 +42,62 @@
     </dependentAssembly>
   </dependency>
   <dependency>
-    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="CDCMetal.exe" size="723968">
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="CDCMetal.exe" size="738304">
       <assemblyIdentity name="CDCMetal" version="1.0.0.0" language="neutral" processorArchitecture="msil" />
       <hash>
         <dsig:Transforms>
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>8qsKv57gjVmcZPTHLcFu0pjA2byls4OgejYs9eIRZig=</dsig:DigestValue>
+        <dsig:DigestValue>cdKWaOAtxzM43m3mINJ3EaUs+cURlS8u5+OscAzKCVE=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>
   <dependency>
-    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="CDCMetal.BLL.dll" size="27136">
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="CDCMetal.BLL.dll" size="32768">
       <assemblyIdentity name="CDCMetal.BLL" version="1.0.0.0" language="neutral" processorArchitecture="msil" />
       <hash>
         <dsig:Transforms>
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>vbvvwJh0pUk03OYPbcb03ciMcYq/FpnqSNx8dEqqK9I=</dsig:DigestValue>
+        <dsig:DigestValue>+Upf0IQMYoIXdlmvBeZh5DTyeIDKz71kCEmgcSt3XT8=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>
   <dependency>
-    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="CDCMetal.Data.dll" size="40960">
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="CDCMetal.Data.dll" size="42496">
       <assemblyIdentity name="CDCMetal.Data" version="1.0.0.0" language="neutral" processorArchitecture="msil" />
       <hash>
         <dsig:Transforms>
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>mM++W10H7EBMK2R4gsJ9OdZKTw8lEXa1ak8YcglQlMM=</dsig:DigestValue>
+        <dsig:DigestValue>hcBO2HNJ18jb1y5ywkOYTrXV8wgG+ZXwItyGPuwQ0Kk=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>
   <dependency>
-    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="CDCMetal.Entities.dll" size="157696">
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="CDCMetal.Entities.dll" size="178688">
       <assemblyIdentity name="CDCMetal.Entities" version="1.0.0.0" language="neutral" processorArchitecture="msil" />
       <hash>
         <dsig:Transforms>
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>L7kJ8QUyE7dhwhlcx2ycD000B0pDLxC+2LK9ZGa/eWk=</dsig:DigestValue>
+        <dsig:DigestValue>vKqd3UAwAwaWRi7JaHqNCkpWl5FDeeO2NtyqSvXW1Co=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>
   <dependency>
-    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="CDCMetal.Helpers.dll" size="44544">
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="CDCMetal.Helpers.dll" size="51200">
       <assemblyIdentity name="CDCMetal.Helpers" version="1.0.0.0" language="neutral" processorArchitecture="msil" />
       <hash>
         <dsig:Transforms>
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>TxPdM1aqOXj5HWlpAyYpgrVI8tyzmGmrl9Ie355xOaA=</dsig:DigestValue>
+        <dsig:DigestValue>YqS+PsFRHmaxpe41Osfs5IoKer5+23sXQMKzwAVqBj8=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>
@@ -185,13 +185,13 @@
       </hash>
     </dependentAssembly>
   </dependency>
-  <file name="CDCMetal.exe.config" size="3225">
+  <file name="CDCMetal.exe.config" size="3220">
     <hash>
       <dsig:Transforms>
         <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
       </dsig:Transforms>
       <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-      <dsig:DigestValue>mOUNZHeUNwfvvW/zOBFH/wxZ5rGXoEyGUbx78GkmzQQ=</dsig:DigestValue>
+      <dsig:DigestValue>OkIvwurSOZUeMWw+Wa9y9e9adi/nWImMFHPP7mQQpcg=</dsig:DigestValue>
     </hash>
   </file>
 </asmv1:assembly>

@@ -1306,3 +1306,324 @@ INFO  2019-07-20 10:55:56,434   148ms MainForm               LogScrivi          
 INFO  2019-07-20 10:56:26,828 30542ms MainForm               LogScrivi          - Applicazione CDCMetal fermata
 INFO  2019-07-22 08:15:49,504   159ms MainForm               LogScrivi          - Applicazione CDCMetal avviata
 INFO  2019-07-22 08:16:54,207 64862ms MainForm               LogScrivi          - Applicazione CDCMetal fermata
+INFO  2019-07-23 09:11:59,540   140ms MainForm               LogScrivi          - Applicazione CDCMetal avviata
+INFO  2019-07-23 09:13:48,715 109315ms MainForm               LogScrivi          - Applicazione CDCMetal fermata
+INFO  2019-07-23 09:16:42,571   148ms MainForm               LogScrivi          - Applicazione CDCMetal avviata
+INFO  2019-07-23 09:24:11,738 449316ms MainForm               LogScrivi          - Applicazione CDCMetal fermata
+INFO  2019-07-24 09:32:27,246   180ms MainForm               LogScrivi          - Applicazione CDCMetal avviata
+INFO  2019-07-24 09:33:55,469   127ms MainForm               LogScrivi          - Applicazione CDCMetal avviata
+INFO  2019-07-24 09:41:48,026   135ms MainForm               LogScrivi          - Applicazione CDCMetal avviata
+INFO  2019-07-24 09:44:02,759   193ms MainForm               LogScrivi          - Applicazione CDCMetal avviata
+INFO  2019-07-24 09:46:10,689   137ms MainForm               LogScrivi          - Applicazione CDCMetal avviata
+INFO  2019-07-24 09:49:28,519   123ms MainForm               LogScrivi          - Applicazione CDCMetal avviata
+INFO  2019-07-24 10:18:26,754   151ms MainForm               LogScrivi          - Applicazione CDCMetal avviata
+INFO  2019-07-24 10:24:56,286   142ms MainForm               LogScrivi          - Applicazione CDCMetal avviata
+INFO  2019-07-24 11:42:45,011   154ms MainForm               LogScrivi          - Applicazione CDCMetal avviata
+INFO  2019-07-24 11:44:35,160   366ms MainForm               LogScrivi          - Applicazione CDCMetal avviata
+INFO  2019-07-24 11:45:23,159 48364ms MainForm               LogScrivi          - Applicazione CDCMetal fermata
+INFO  2019-07-24 15:42:04,236   164ms MainForm               LogScrivi          - Applicazione CDCMetal avviata
+INFO  2019-07-24 15:42:51,342 47270ms MainForm               LogScrivi          - Applicazione CDCMetal fermata
+INFO  2019-07-24 15:43:04,630   145ms MainForm               LogScrivi          - Applicazione CDCMetal avviata
+INFO  2019-07-24 15:45:04,472   136ms MainForm               LogScrivi          - Applicazione CDCMetal avviata
+INFO  2019-07-24 15:47:36,096   143ms MainForm               LogScrivi          - Applicazione CDCMetal avviata
+INFO  2019-07-24 15:50:07,905   161ms MainForm               LogScrivi          - Applicazione CDCMetal avviata
+INFO  2019-07-24 15:52:32,953   172ms MainForm               LogScrivi          - Applicazione CDCMetal avviata
+INFO  2019-07-24 15:54:25,661 112879ms MainForm               LogScrivi          - Applicazione CDCMetal fermata
+INFO  2019-07-24 16:34:07,598   143ms MainForm               LogScrivi          - Applicazione CDCMetal avviata
+INFO  2019-07-24 16:35:31,098 83643ms MainForm               LogScrivi          - Applicazione CDCMetal fermata
+INFO  2019-07-24 16:35:44,188   162ms MainForm               LogScrivi          - Applicazione CDCMetal avviata
+INFO  2019-07-24 16:36:03,082 19056ms MainForm               LogScrivi          - Applicazione CDCMetal fermata
+INFO  2019-07-25 09:26:14,351   141ms MainForm               LogScrivi          - Applicazione CDCMetal avviata
+INFO  2019-07-25 09:28:23,031   149ms MainForm               LogScrivi          - Applicazione CDCMetal avviata
+INFO  2019-07-25 09:33:55,182 332300ms MainForm               LogScrivi          - Applicazione CDCMetal fermata
+INFO  2019-07-25 09:34:08,210   170ms MainForm               LogScrivi          - Applicazione CDCMetal avviata
+INFO  2019-07-25 09:34:43,565 35524ms MainForm               LogScrivi          - Applicazione CDCMetal fermata
+INFO  2019-07-25 10:05:51,064   159ms MainForm               LogScrivi          - Applicazione CDCMetal avviata
+INFO  2019-07-25 11:11:00,181   137ms MainForm               LogScrivi          - Applicazione CDCMetal avviata
+INFO  2019-07-25 11:16:28,282   152ms MainForm               LogScrivi          - Applicazione CDCMetal avviata
+ERROR 2019-07-25 11:18:08,669 100540ms MainForm               LogScriviErrore    - Errore in crea PDF
+Oracle.ManagedDataAccess.Client.OracleException (0x80004005): ORA-01400: impossibile inserire NULL in ("ITUSER_TEST"."CDC_GALVANICA"."SPESSORE")
+   in System.Data.Common.DbDataAdapter.UpdatedRowStatusErrors(RowUpdatedEventArgs rowUpdatedEvent, BatchCommandInfo[] batchCommands, Int32 commandCount)
+   in System.Data.Common.DbDataAdapter.UpdatedRowStatus(RowUpdatedEventArgs rowUpdatedEvent, BatchCommandInfo[] batchCommands, Int32 commandCount)
+   in System.Data.Common.DbDataAdapter.Update(DataRow[] dataRows, DataTableMapping tableMapping)
+   in Oracle.ManagedDataAccess.Client.OracleDataAdapter.Update(DataRow[] dataRows, DataTableMapping tableMapping)
+   in System.Data.Common.DbDataAdapter.UpdateFromDataTable(DataTable dataTable, DataTableMapping tableMapping)
+   in System.Data.Common.DbDataAdapter.Update(DataTable dataTable)
+   in CDCMetal.Data.CDCMetalAdapter.UpdateTable(String tablename, CDCDS ds) in C:\VSProgetti\CDCMetal\CDCMetal\CDCMetal.Data\CDCMetalAdapter.cs:riga 66
+   in CDCMetal.Data.CDCMetalBusiness.UpdateTabelleSpessore(CDCDS ds) in C:\VSProgetti\CDCMetal\CDCMetal\CDCMetal.Data\CDCMetalBusiness.cs:riga 228
+   in CDCMetal.BLL.CDCBLL.SalvaTabelleSpessori(CDCDS ds) in C:\VSProgetti\CDCMetal\CDCMetal\CDCMetal.BLL\CDCBLL.cs:riga 886
+   in CDCMetal.CreaSpessoreFrm.btnCreaPDF_Click(Object sender, EventArgs e) in C:\VSProgetti\CDCMetal\CDCMetal\CDCMetal\CreaSpessoreFrm.cs:riga 798
+INFO  2019-07-25 11:22:43,219   130ms MainForm               LogScrivi          - Applicazione CDCMetal avviata
+ERROR 2019-07-25 11:23:28,768 45679ms MainForm               LogScriviErrore    - Errore in crea PDF
+Oracle.ManagedDataAccess.Client.OracleException (0x80004005): ORA-01400: impossibile inserire NULL in ("ITUSER_TEST"."CDC_GALVANICA"."APPLICAZIONE")
+   in System.Data.Common.DbDataAdapter.UpdatedRowStatusErrors(RowUpdatedEventArgs rowUpdatedEvent, BatchCommandInfo[] batchCommands, Int32 commandCount)
+   in System.Data.Common.DbDataAdapter.UpdatedRowStatus(RowUpdatedEventArgs rowUpdatedEvent, BatchCommandInfo[] batchCommands, Int32 commandCount)
+   in System.Data.Common.DbDataAdapter.Update(DataRow[] dataRows, DataTableMapping tableMapping)
+   in Oracle.ManagedDataAccess.Client.OracleDataAdapter.Update(DataRow[] dataRows, DataTableMapping tableMapping)
+   in System.Data.Common.DbDataAdapter.UpdateFromDataTable(DataTable dataTable, DataTableMapping tableMapping)
+   in System.Data.Common.DbDataAdapter.Update(DataTable dataTable)
+   in CDCMetal.Data.CDCMetalAdapter.UpdateTable(String tablename, CDCDS ds) in C:\VSProgetti\CDCMetal\CDCMetal\CDCMetal.Data\CDCMetalAdapter.cs:riga 66
+   in CDCMetal.Data.CDCMetalBusiness.UpdateTabelleSpessore(CDCDS ds) in C:\VSProgetti\CDCMetal\CDCMetal\CDCMetal.Data\CDCMetalBusiness.cs:riga 228
+   in CDCMetal.BLL.CDCBLL.SalvaTabelleSpessori(CDCDS ds) in C:\VSProgetti\CDCMetal\CDCMetal\CDCMetal.BLL\CDCBLL.cs:riga 886
+   in CDCMetal.CreaSpessoreFrm.btnCreaPDF_Click(Object sender, EventArgs e) in C:\VSProgetti\CDCMetal\CDCMetal\CDCMetal\CreaSpessoreFrm.cs:riga 798
+INFO  2019-07-25 11:24:18,098   140ms MainForm               LogScrivi          - Applicazione CDCMetal avviata
+INFO  2019-07-25 11:25:03,199   124ms MainForm               LogScrivi          - Applicazione CDCMetal avviata
+ERROR 2019-07-25 11:25:44,243 41167ms MainForm               LogScriviErrore    - Errore in crea PDF
+Oracle.ManagedDataAccess.Client.OracleException (0x80004005): ORA-00001: violata restrizione di unicità (ITUSER_TEST.IDX_CDC_SPESSORE_1)
+   in System.Data.Common.DbDataAdapter.UpdatedRowStatusErrors(RowUpdatedEventArgs rowUpdatedEvent, BatchCommandInfo[] batchCommands, Int32 commandCount)
+   in System.Data.Common.DbDataAdapter.UpdatedRowStatus(RowUpdatedEventArgs rowUpdatedEvent, BatchCommandInfo[] batchCommands, Int32 commandCount)
+   in System.Data.Common.DbDataAdapter.Update(DataRow[] dataRows, DataTableMapping tableMapping)
+   in Oracle.ManagedDataAccess.Client.OracleDataAdapter.Update(DataRow[] dataRows, DataTableMapping tableMapping)
+   in System.Data.Common.DbDataAdapter.UpdateFromDataTable(DataTable dataTable, DataTableMapping tableMapping)
+   in System.Data.Common.DbDataAdapter.Update(DataTable dataTable)
+   in CDCMetal.Data.CDCMetalAdapter.UpdateTable(String tablename, CDCDS ds) in C:\VSProgetti\CDCMetal\CDCMetal\CDCMetal.Data\CDCMetalAdapter.cs:riga 66
+   in CDCMetal.Data.CDCMetalBusiness.UpdateTabelleSpessore(CDCDS ds) in C:\VSProgetti\CDCMetal\CDCMetal\CDCMetal.Data\CDCMetalBusiness.cs:riga 229
+   in CDCMetal.BLL.CDCBLL.SalvaTabelleSpessori(CDCDS ds) in C:\VSProgetti\CDCMetal\CDCMetal\CDCMetal.BLL\CDCBLL.cs:riga 886
+   in CDCMetal.CreaSpessoreFrm.btnCreaPDF_Click(Object sender, EventArgs e) in C:\VSProgetti\CDCMetal\CDCMetal\CDCMetal\CreaSpessoreFrm.cs:riga 798
+ERROR 2019-07-25 11:28:10,316 187241ms MainForm               LogScriviErrore    - Errore in crea PDF
+System.InvalidOperationException: La raccolta è stata modificata; impossibile eseguire l'operazione di enumerazione.
+   in System.Data.RBTree`1.RBTreeEnumerator.MoveNext()
+   in System.Linq.Enumerable.<CastIterator>d__97`1.MoveNext()
+   in System.Linq.Enumerable.WhereEnumerableIterator`1.MoveNext()
+   in CDCMetal.CreaSpessoreFrm.btnCreaPDF_Click(Object sender, EventArgs e) in C:\VSProgetti\CDCMetal\CDCMetal\CDCMetal\CreaSpessoreFrm.cs:riga 776
+INFO  2019-07-25 11:29:35,447   133ms MainForm               LogScrivi          - Applicazione CDCMetal avviata
+ERROR 2019-07-25 11:29:54,001 18686ms MainForm               LogScriviErrore    - Errore in dgvDettaglio_CellClick
+System.InvalidOperationException: La sequenza non contiene elementi
+   in System.Linq.Enumerable.Max(IEnumerable`1 source)
+   in System.Linq.Enumerable.Max[TSource](IEnumerable`1 source, Func`2 selector)
+   in CDCMetal.CreaSpessoreFrm.CaricaCampioniMisuraPrecedente(Decimal IDGALVANICA) in C:\VSProgetti\CDCMetal\CDCMetal\CDCMetal\CreaSpessoreFrm.cs:riga 255
+   in CDCMetal.CreaSpessoreFrm.dgvDettaglio_CellClick(Object sender, DataGridViewCellEventArgs e) in C:\VSProgetti\CDCMetal\CDCMetal\CDCMetal\CreaSpessoreFrm.cs:riga 213
+ERROR 2019-07-25 11:30:09,185 33871ms MainForm               LogScriviErrore    - Errore in dgvDettaglio_CellClick
+System.InvalidOperationException: La sequenza non contiene elementi
+   in System.Linq.Enumerable.Max(IEnumerable`1 source)
+   in System.Linq.Enumerable.Max[TSource](IEnumerable`1 source, Func`2 selector)
+   in CDCMetal.CreaSpessoreFrm.CaricaCampioniMisuraPrecedente(Decimal IDGALVANICA) in C:\VSProgetti\CDCMetal\CDCMetal\CDCMetal\CreaSpessoreFrm.cs:riga 255
+   in CDCMetal.CreaSpessoreFrm.dgvDettaglio_CellClick(Object sender, DataGridViewCellEventArgs e) in C:\VSProgetti\CDCMetal\CDCMetal\CDCMetal\CreaSpessoreFrm.cs:riga 213
+ERROR 2019-07-25 11:30:30,069 54754ms MainForm               LogScriviErrore    - Errore in dgvDettaglio_CellClick
+System.InvalidOperationException: La sequenza non contiene elementi
+   in System.Linq.Enumerable.Max(IEnumerable`1 source)
+   in System.Linq.Enumerable.Max[TSource](IEnumerable`1 source, Func`2 selector)
+   in CDCMetal.CreaSpessoreFrm.CaricaCampioniMisuraPrecedente(Decimal IDGALVANICA) in C:\VSProgetti\CDCMetal\CDCMetal\CDCMetal\CreaSpessoreFrm.cs:riga 255
+   in CDCMetal.CreaSpessoreFrm.dgvDettaglio_CellClick(Object sender, DataGridViewCellEventArgs e) in C:\VSProgetti\CDCMetal\CDCMetal\CDCMetal\CreaSpessoreFrm.cs:riga 213
+ERROR 2019-07-25 11:31:46,522 131208ms MainForm               LogScriviErrore    - Errore in dgvDettaglio_CellClick
+System.InvalidOperationException: La sequenza non contiene elementi
+   in System.Linq.Enumerable.Max(IEnumerable`1 source)
+   in System.Linq.Enumerable.Max[TSource](IEnumerable`1 source, Func`2 selector)
+   in CDCMetal.CreaSpessoreFrm.CaricaCampioniMisuraPrecedente(Decimal IDGALVANICA) in C:\VSProgetti\CDCMetal\CDCMetal\CDCMetal\CreaSpessoreFrm.cs:riga 255
+   in CDCMetal.CreaSpessoreFrm.dgvDettaglio_CellClick(Object sender, DataGridViewCellEventArgs e) in C:\VSProgetti\CDCMetal\CDCMetal\CDCMetal\CreaSpessoreFrm.cs:riga 213
+ERROR 2019-07-25 11:32:15,982 160668ms MainForm               LogScriviErrore    - Errore in dgvDettaglio_CellClick
+System.InvalidOperationException: La sequenza non contiene elementi
+   in System.Linq.Enumerable.Max(IEnumerable`1 source)
+   in System.Linq.Enumerable.Max[TSource](IEnumerable`1 source, Func`2 selector)
+   in CDCMetal.CreaSpessoreFrm.CaricaCampioniMisuraPrecedente(Decimal IDGALVANICA) in C:\VSProgetti\CDCMetal\CDCMetal\CDCMetal\CreaSpessoreFrm.cs:riga 255
+   in CDCMetal.CreaSpessoreFrm.dgvDettaglio_CellClick(Object sender, DataGridViewCellEventArgs e) in C:\VSProgetti\CDCMetal\CDCMetal\CDCMetal\CreaSpessoreFrm.cs:riga 213
+INFO  2019-07-25 11:37:58,773   112ms MainForm               LogScrivi          - Applicazione CDCMetal avviata
+ERROR 2019-07-25 11:39:15,615 76954ms MainForm               LogScriviErrore    - Errore in crea PDF
+Oracle.ManagedDataAccess.Client.OracleException (0x80004005): ORA-00001: violata restrizione di unicità (ITUSER_TEST.IDX_CDC_SPESSORE_1)
+   in System.Data.Common.DbDataAdapter.UpdatedRowStatusErrors(RowUpdatedEventArgs rowUpdatedEvent, BatchCommandInfo[] batchCommands, Int32 commandCount)
+   in System.Data.Common.DbDataAdapter.UpdatedRowStatus(RowUpdatedEventArgs rowUpdatedEvent, BatchCommandInfo[] batchCommands, Int32 commandCount)
+   in System.Data.Common.DbDataAdapter.Update(DataRow[] dataRows, DataTableMapping tableMapping)
+   in Oracle.ManagedDataAccess.Client.OracleDataAdapter.Update(DataRow[] dataRows, DataTableMapping tableMapping)
+   in System.Data.Common.DbDataAdapter.UpdateFromDataTable(DataTable dataTable, DataTableMapping tableMapping)
+   in System.Data.Common.DbDataAdapter.Update(DataTable dataTable)
+   in CDCMetal.Data.CDCMetalAdapter.UpdateTable(String tablename, CDCDS ds) in C:\VSProgetti\CDCMetal\CDCMetal\CDCMetal.Data\CDCMetalAdapter.cs:riga 66
+   in CDCMetal.Data.CDCMetalBusiness.UpdateTabelleSpessore(CDCDS ds) in C:\VSProgetti\CDCMetal\CDCMetal\CDCMetal.Data\CDCMetalBusiness.cs:riga 229
+   in CDCMetal.BLL.CDCBLL.SalvaTabelleSpessori(CDCDS ds) in C:\VSProgetti\CDCMetal\CDCMetal\CDCMetal.BLL\CDCBLL.cs:riga 886
+   in CDCMetal.CreaSpessoreFrm.btnCreaPDF_Click(Object sender, EventArgs e) in C:\VSProgetti\CDCMetal\CDCMetal\CDCMetal\CreaSpessoreFrm.cs:riga 798
+ERROR 2019-07-25 11:40:06,302 127641ms MainForm               LogScriviErrore    - Errore in crea PDF
+System.InvalidOperationException: La raccolta è stata modificata; impossibile eseguire l'operazione di enumerazione.
+   in System.Data.RBTree`1.RBTreeEnumerator.MoveNext()
+   in System.Linq.Enumerable.<CastIterator>d__97`1.MoveNext()
+   in System.Linq.Enumerable.WhereEnumerableIterator`1.MoveNext()
+   in CDCMetal.CreaSpessoreFrm.btnCreaPDF_Click(Object sender, EventArgs e) in C:\VSProgetti\CDCMetal\CDCMetal\CDCMetal\CreaSpessoreFrm.cs:riga 776
+ERROR 2019-07-25 11:40:20,476 141815ms MainForm               LogScriviErrore    - Errore in crea PDF
+System.InvalidOperationException: La raccolta è stata modificata; impossibile eseguire l'operazione di enumerazione.
+   in System.Data.RBTree`1.RBTreeEnumerator.MoveNext()
+   in System.Linq.Enumerable.<CastIterator>d__97`1.MoveNext()
+   in System.Linq.Enumerable.WhereEnumerableIterator`1.MoveNext()
+   in CDCMetal.CreaSpessoreFrm.btnCreaPDF_Click(Object sender, EventArgs e) in C:\VSProgetti\CDCMetal\CDCMetal\CDCMetal\CreaSpessoreFrm.cs:riga 776
+INFO  2019-07-25 11:45:02,574   231ms MainForm               LogScrivi          - Applicazione CDCMetal avviata
+ERROR 2019-07-25 11:45:27,784 25442ms MainForm               LogScriviErrore    - Errore in dgvDettaglio_CellClick
+System.InvalidOperationException: La sequenza non contiene elementi
+   in System.Linq.Enumerable.Max(IEnumerable`1 source)
+   in System.Linq.Enumerable.Max[TSource](IEnumerable`1 source, Func`2 selector)
+   in CDCMetal.CreaSpessoreFrm.CaricaCampioniMisuraPrecedente(Decimal IDGALVANICA) in C:\VSProgetti\CDCMetal\CDCMetal\CDCMetal\CreaSpessoreFrm.cs:riga 255
+   in CDCMetal.CreaSpessoreFrm.dgvDettaglio_CellClick(Object sender, DataGridViewCellEventArgs e) in C:\VSProgetti\CDCMetal\CDCMetal\CDCMetal\CreaSpessoreFrm.cs:riga 213
+ERROR 2019-07-25 11:46:16,406 74063ms MainForm               LogScriviErrore    - Errore in dgvDettaglio_CellClick
+System.InvalidOperationException: La sequenza non contiene elementi
+   in System.Linq.Enumerable.Max(IEnumerable`1 source)
+   in System.Linq.Enumerable.Max[TSource](IEnumerable`1 source, Func`2 selector)
+   in CDCMetal.CreaSpessoreFrm.CaricaCampioniMisuraPrecedente(Decimal IDGALVANICA) in C:\VSProgetti\CDCMetal\CDCMetal\CDCMetal\CreaSpessoreFrm.cs:riga 255
+   in CDCMetal.CreaSpessoreFrm.dgvDettaglio_CellClick(Object sender, DataGridViewCellEventArgs e) in C:\VSProgetti\CDCMetal\CDCMetal\CDCMetal\CreaSpessoreFrm.cs:riga 213
+ERROR 2019-07-25 11:47:06,847 124505ms MainForm               LogScriviErrore    - Errore in crea PDF
+Oracle.ManagedDataAccess.Client.OracleException (0x80004005): ORA-01400: impossibile inserire NULL in ("ITUSER_TEST"."CDC_APPLICAZIONE"."APPLICAZIONE")
+   in System.Data.Common.DbDataAdapter.UpdatedRowStatusErrors(RowUpdatedEventArgs rowUpdatedEvent, BatchCommandInfo[] batchCommands, Int32 commandCount)
+   in System.Data.Common.DbDataAdapter.UpdatedRowStatus(RowUpdatedEventArgs rowUpdatedEvent, BatchCommandInfo[] batchCommands, Int32 commandCount)
+   in System.Data.Common.DbDataAdapter.Update(DataRow[] dataRows, DataTableMapping tableMapping)
+   in Oracle.ManagedDataAccess.Client.OracleDataAdapter.Update(DataRow[] dataRows, DataTableMapping tableMapping)
+   in System.Data.Common.DbDataAdapter.UpdateFromDataTable(DataTable dataTable, DataTableMapping tableMapping)
+   in System.Data.Common.DbDataAdapter.Update(DataTable dataTable)
+   in CDCMetal.Data.CDCMetalAdapter.UpdateTable(String tablename, CDCDS ds) in C:\VSProgetti\CDCMetal\CDCMetal\CDCMetal.Data\CDCMetalAdapter.cs:riga 66
+   in CDCMetal.Data.CDCMetalBusiness.UpdateTabelleSpessore(CDCDS ds) in C:\VSProgetti\CDCMetal\CDCMetal\CDCMetal.Data\CDCMetalBusiness.cs:riga 231
+   in CDCMetal.BLL.CDCBLL.SalvaTabelleSpessori(CDCDS ds) in C:\VSProgetti\CDCMetal\CDCMetal\CDCMetal.BLL\CDCBLL.cs:riga 886
+   in CDCMetal.CreaSpessoreFrm.btnCreaPDF_Click(Object sender, EventArgs e) in C:\VSProgetti\CDCMetal\CDCMetal\CDCMetal\CreaSpessoreFrm.cs:riga 802
+INFO  2019-07-25 11:48:26,459   180ms MainForm               LogScrivi          - Applicazione CDCMetal avviata
+ERROR 2019-07-25 11:49:46,134 79854ms MainForm               LogScriviErrore    - Errore in crea PDF
+Oracle.ManagedDataAccess.Client.OracleException (0x80004005): ORA-00001: violata restrizione di unicità (ITUSER_TEST.IDX_CDC_SPESSORE_1)
+   in System.Data.Common.DbDataAdapter.UpdatedRowStatusErrors(RowUpdatedEventArgs rowUpdatedEvent, BatchCommandInfo[] batchCommands, Int32 commandCount)
+   in System.Data.Common.DbDataAdapter.UpdatedRowStatus(RowUpdatedEventArgs rowUpdatedEvent, BatchCommandInfo[] batchCommands, Int32 commandCount)
+   in System.Data.Common.DbDataAdapter.Update(DataRow[] dataRows, DataTableMapping tableMapping)
+   in Oracle.ManagedDataAccess.Client.OracleDataAdapter.Update(DataRow[] dataRows, DataTableMapping tableMapping)
+   in System.Data.Common.DbDataAdapter.UpdateFromDataTable(DataTable dataTable, DataTableMapping tableMapping)
+   in System.Data.Common.DbDataAdapter.Update(DataTable dataTable)
+   in CDCMetal.Data.CDCMetalAdapter.UpdateTable(String tablename, CDCDS ds) in C:\VSProgetti\CDCMetal\CDCMetal\CDCMetal.Data\CDCMetalAdapter.cs:riga 66
+   in CDCMetal.Data.CDCMetalBusiness.UpdateTabelleSpessore(CDCDS ds) in C:\VSProgetti\CDCMetal\CDCMetal\CDCMetal.Data\CDCMetalBusiness.cs:riga 229
+   in CDCMetal.BLL.CDCBLL.SalvaTabelleSpessori(CDCDS ds) in C:\VSProgetti\CDCMetal\CDCMetal\CDCMetal.BLL\CDCBLL.cs:riga 886
+   in CDCMetal.CreaSpessoreFrm.btnCreaPDF_Click(Object sender, EventArgs e) in C:\VSProgetti\CDCMetal\CDCMetal\CDCMetal\CreaSpessoreFrm.cs:riga 802
+INFO  2019-07-25 12:01:30,849   139ms MainForm               LogScrivi          - Applicazione CDCMetal avviata
+ERROR 2019-07-25 12:01:47,567 16856ms MainForm               LogScriviErrore    - Errore in dgvDettaglio_CellClick
+System.Data.StrongTypingException: The value for column 'APPLICAZIONE' in table 'CDC_APPLICAZIONE' is DBNull. ---> System.InvalidCastException: Impossibile eseguire il cast di oggetti di tipo 'System.DBNull' sul tipo 'System.String'.
+   in CDCMetal.Entities.CDCDS.CDC_APPLICAZIONERow.get_APPLICAZIONE() in C:\VSProgetti\CDCMetal\CDCMetal\CDCMetal.Entities\CDCDS.Designer.cs:riga 11306
+   --- Fine della traccia dello stack dell'eccezione interna ---
+   in CDCMetal.Entities.CDCDS.CDC_APPLICAZIONERow.get_APPLICAZIONE() in C:\VSProgetti\CDCMetal\CDCMetal\CDCMetal.Entities\CDCDS.Designer.cs:riga 11309
+   in CDCMetal.CreaSpessoreFrm.ImpostaApplicazione(String colore, String parte) in C:\VSProgetti\CDCMetal\CDCMetal\CDCMetal\CreaSpessoreFrm.cs:riga 147
+   in CDCMetal.CreaSpessoreFrm.dgvDettaglio_CellClick(Object sender, DataGridViewCellEventArgs e) in C:\VSProgetti\CDCMetal\CDCMetal\CDCMetal\CreaSpessoreFrm.cs:riga 205
+INFO  2019-07-25 16:53:27,683   165ms MainForm               LogScrivi          - Applicazione CDCMetal avviata
+INFO  2019-07-25 16:59:08,889   156ms MainForm               LogScrivi          - Applicazione CDCMetal avviata
+ERROR 2019-07-25 16:59:44,946 36213ms MainForm               LogScriviErrore    - Errore in crea PDF
+System.UnauthorizedAccessException: Accesso al percorso 'C:\Temp\CDC\CARTELLACOLLAUDO\Metalplus\COLLAUDI LUGLIO 2019\collaudo 22-7-19\00Y511-10878-0533 EACY 2019 590 24\10878 0533 EACY 2019 590 24.pdf' negato.
+   in System.IO.__Error.WinIOError(Int32 errorCode, String maybeFullPath)
+   in System.IO.File.InternalDelete(String path, Boolean checkHost)
+   in System.IO.File.Delete(String path)
+   in CDCMetal.BLL.CDCBLL.CreaPDFSpessore(Decimal IDDETTAGLIO, CDCDS ds, String pathCollaudo, Byte[] iLoghi, Byte[] iBowman, Boolean CopiaReferto, String pathCartellaReferto, List`1 medie, List`1 Std, List`1 Pct, List`1 range, List`1 minimo, List`1 massimo, String Brand, String numeroCampioni) in C:\VSProgetti\CDCMetal\CDCMetal\CDCMetal.BLL\CDCBLL.cs:riga 658
+   in CDCMetal.CreaSpessoreFrm.btnCreaPDF_Click(Object sender, EventArgs e) in C:\VSProgetti\CDCMetal\CDCMetal\CDCMetal\CreaSpessoreFrm.cs:riga 836
+ERROR 2019-07-25 16:59:58,505 49772ms MainForm               LogScriviErrore    - Errore in crea PDF
+System.Data.StrongTypingException: The value for column 'IDMISURA' in table 'CDC_MISURE' is DBNull. ---> System.InvalidCastException: Cast specificato non valido.
+   in CDCMetal.Entities.CDCDS.CDC_MISURERow.get_IDMISURA() in C:\VSProgetti\CDCMetal\CDCMetal\CDCMetal.Entities\CDCDS.Designer.cs:riga 10902
+   --- Fine della traccia dello stack dell'eccezione interna ---
+   in CDCMetal.Entities.CDCDS.CDC_MISURERow.get_IDMISURA() in C:\VSProgetti\CDCMetal\CDCMetal\CDCMetal.Entities\CDCDS.Designer.cs:riga 10905
+   in CDCMetal.CreaSpessoreFrm.<>c.<btnCreaPDF_Click>b__30_3(CDC_MISURERow x) in C:\VSProgetti\CDCMetal\CDCMetal\CDCMetal\CreaSpessoreFrm.cs:riga 776
+   in System.Linq.Enumerable.WhereSelectEnumerableIterator`2.MoveNext()
+   in System.Collections.Generic.List`1..ctor(IEnumerable`1 collection)
+   in System.Linq.Enumerable.ToList[TSource](IEnumerable`1 source)
+   in CDCMetal.CreaSpessoreFrm.btnCreaPDF_Click(Object sender, EventArgs e) in C:\VSProgetti\CDCMetal\CDCMetal\CDCMetal\CreaSpessoreFrm.cs:riga 776
+INFO  2019-07-25 17:05:28,214   223ms MainForm               LogScrivi          - Applicazione CDCMetal avviata
+ERROR 2019-07-25 17:06:52,066 84075ms MainForm               LogScriviErrore    - Errore in crea PDF
+System.Data.StrongTypingException: The value for column 'IDMISURA' in table 'CDC_MISURE' is DBNull. ---> System.InvalidCastException: Cast specificato non valido.
+   in CDCMetal.Entities.CDCDS.CDC_MISURERow.get_IDMISURA() in C:\VSProgetti\CDCMetal\CDCMetal\CDCMetal.Entities\CDCDS.Designer.cs:riga 10902
+   --- Fine della traccia dello stack dell'eccezione interna ---
+   in CDCMetal.Entities.CDCDS.CDC_MISURERow.get_IDMISURA() in C:\VSProgetti\CDCMetal\CDCMetal\CDCMetal.Entities\CDCDS.Designer.cs:riga 10905
+   in CDCMetal.CreaSpessoreFrm.<>c.<btnCreaPDF_Click>b__30_3(CDC_MISURERow x) in C:\VSProgetti\CDCMetal\CDCMetal\CDCMetal\CreaSpessoreFrm.cs:riga 776
+   in System.Linq.Enumerable.WhereSelectEnumerableIterator`2.MoveNext()
+   in System.Collections.Generic.List`1..ctor(IEnumerable`1 collection)
+   in System.Linq.Enumerable.ToList[TSource](IEnumerable`1 source)
+   in CDCMetal.CreaSpessoreFrm.btnCreaPDF_Click(Object sender, EventArgs e) in C:\VSProgetti\CDCMetal\CDCMetal\CDCMetal\CreaSpessoreFrm.cs:riga 776
+ERROR 2019-07-25 17:07:09,026 101035ms MainForm               LogScriviErrore    - Errore in crea PDF
+System.Data.StrongTypingException: The value for column 'IDMISURA' in table 'CDC_MISURE' is DBNull. ---> System.InvalidCastException: Cast specificato non valido.
+   in CDCMetal.Entities.CDCDS.CDC_MISURERow.get_IDMISURA() in C:\VSProgetti\CDCMetal\CDCMetal\CDCMetal.Entities\CDCDS.Designer.cs:riga 10902
+   --- Fine della traccia dello stack dell'eccezione interna ---
+   in CDCMetal.Entities.CDCDS.CDC_MISURERow.get_IDMISURA() in C:\VSProgetti\CDCMetal\CDCMetal\CDCMetal.Entities\CDCDS.Designer.cs:riga 10905
+   in CDCMetal.CreaSpessoreFrm.<>c.<btnCreaPDF_Click>b__30_3(CDC_MISURERow x) in C:\VSProgetti\CDCMetal\CDCMetal\CDCMetal\CreaSpessoreFrm.cs:riga 776
+   in System.Linq.Enumerable.WhereSelectEnumerableIterator`2.MoveNext()
+   in System.Collections.Generic.List`1..ctor(IEnumerable`1 collection)
+   in System.Linq.Enumerable.ToList[TSource](IEnumerable`1 source)
+   in CDCMetal.CreaSpessoreFrm.btnCreaPDF_Click(Object sender, EventArgs e) in C:\VSProgetti\CDCMetal\CDCMetal\CDCMetal\CreaSpessoreFrm.cs:riga 776
+ERROR 2019-07-25 17:07:19,393 111402ms MainForm               LogScriviErrore    - Errore in crea PDF
+System.Data.StrongTypingException: The value for column 'IDMISURA' in table 'CDC_MISURE' is DBNull. ---> System.InvalidCastException: Cast specificato non valido.
+   in CDCMetal.Entities.CDCDS.CDC_MISURERow.get_IDMISURA() in C:\VSProgetti\CDCMetal\CDCMetal\CDCMetal.Entities\CDCDS.Designer.cs:riga 10902
+   --- Fine della traccia dello stack dell'eccezione interna ---
+   in CDCMetal.Entities.CDCDS.CDC_MISURERow.get_IDMISURA() in C:\VSProgetti\CDCMetal\CDCMetal\CDCMetal.Entities\CDCDS.Designer.cs:riga 10905
+   in CDCMetal.CreaSpessoreFrm.<>c.<btnCreaPDF_Click>b__30_3(CDC_MISURERow x) in C:\VSProgetti\CDCMetal\CDCMetal\CDCMetal\CreaSpessoreFrm.cs:riga 776
+   in System.Linq.Enumerable.WhereSelectEnumerableIterator`2.MoveNext()
+   in System.Collections.Generic.List`1..ctor(IEnumerable`1 collection)
+   in System.Linq.Enumerable.ToList[TSource](IEnumerable`1 source)
+   in CDCMetal.CreaSpessoreFrm.btnCreaPDF_Click(Object sender, EventArgs e) in C:\VSProgetti\CDCMetal\CDCMetal\CDCMetal\CreaSpessoreFrm.cs:riga 776
+ERROR 2019-07-25 17:08:25,379 177388ms MainForm               LogScriviErrore    - Errore in crea PDF
+System.Data.StrongTypingException: The value for column 'IDMISURA' in table 'CDC_MISURE' is DBNull. ---> System.InvalidCastException: Cast specificato non valido.
+   in CDCMetal.Entities.CDCDS.CDC_MISURERow.get_IDMISURA() in C:\VSProgetti\CDCMetal\CDCMetal\CDCMetal.Entities\CDCDS.Designer.cs:riga 10902
+   --- Fine della traccia dello stack dell'eccezione interna ---
+   in CDCMetal.Entities.CDCDS.CDC_MISURERow.get_IDMISURA() in C:\VSProgetti\CDCMetal\CDCMetal\CDCMetal.Entities\CDCDS.Designer.cs:riga 10905
+   in CDCMetal.CreaSpessoreFrm.<>c.<btnCreaPDF_Click>b__30_3(CDC_MISURERow x) in C:\VSProgetti\CDCMetal\CDCMetal\CDCMetal\CreaSpessoreFrm.cs:riga 776
+   in System.Linq.Enumerable.WhereSelectEnumerableIterator`2.MoveNext()
+   in System.Collections.Generic.List`1..ctor(IEnumerable`1 collection)
+   in System.Linq.Enumerable.ToList[TSource](IEnumerable`1 source)
+   in CDCMetal.CreaSpessoreFrm.btnCreaPDF_Click(Object sender, EventArgs e) in C:\VSProgetti\CDCMetal\CDCMetal\CDCMetal\CreaSpessoreFrm.cs:riga 776
+ERROR 2019-07-25 17:09:03,410 215418ms MainForm               LogScriviErrore    - Errore in crea PDF
+System.Data.StrongTypingException: The value for column 'IDMISURA' in table 'CDC_MISURE' is DBNull. ---> System.InvalidCastException: Cast specificato non valido.
+   in CDCMetal.Entities.CDCDS.CDC_MISURERow.get_IDMISURA() in C:\VSProgetti\CDCMetal\CDCMetal\CDCMetal.Entities\CDCDS.Designer.cs:riga 10902
+   --- Fine della traccia dello stack dell'eccezione interna ---
+   in CDCMetal.Entities.CDCDS.CDC_MISURERow.get_IDMISURA() in C:\VSProgetti\CDCMetal\CDCMetal\CDCMetal.Entities\CDCDS.Designer.cs:riga 10905
+   in CDCMetal.CreaSpessoreFrm.<>c.<btnCreaPDF_Click>b__30_3(CDC_MISURERow x) in C:\VSProgetti\CDCMetal\CDCMetal\CDCMetal\CreaSpessoreFrm.cs:riga 776
+   in System.Linq.Enumerable.WhereSelectEnumerableIterator`2.MoveNext()
+   in System.Collections.Generic.List`1..ctor(IEnumerable`1 collection)
+   in System.Linq.Enumerable.ToList[TSource](IEnumerable`1 source)
+   in CDCMetal.CreaSpessoreFrm.btnCreaPDF_Click(Object sender, EventArgs e) in C:\VSProgetti\CDCMetal\CDCMetal\CDCMetal\CreaSpessoreFrm.cs:riga 776
+INFO  2019-07-25 17:09:46,918   175ms MainForm               LogScrivi          - Applicazione CDCMetal avviata
+INFO  2019-07-25 17:14:56,622   137ms MainForm               LogScrivi          - Applicazione CDCMetal avviata
+ERROR 2019-07-25 17:16:48,626 112142ms MainForm               LogScriviErrore    - Errore in crea PDF
+System.UnauthorizedAccessException: Accesso al percorso 'C:\Temp\CDC\CARTELLACOLLAUDO\Metalplus\COLLAUDI LUGLIO 2019\collaudo 22-7-19\00Y511-10878-0533 EACY 2019 590 24\10878 0533 EACY 2019 590 24.pdf' negato.
+   in System.IO.__Error.WinIOError(Int32 errorCode, String maybeFullPath)
+   in System.IO.File.InternalDelete(String path, Boolean checkHost)
+   in System.IO.File.Delete(String path)
+   in CDCMetal.BLL.CDCBLL.CreaPDFSpessore(Decimal IDDETTAGLIO, CDCDS ds, String pathCollaudo, Byte[] iLoghi, Byte[] iBowman, Boolean CopiaReferto, String pathCartellaReferto, List`1 medie, List`1 Std, List`1 Pct, List`1 range, List`1 minimo, List`1 massimo, String Brand, String numeroCampioni) in C:\VSProgetti\CDCMetal\CDCMetal\CDCMetal.BLL\CDCBLL.cs:riga 658
+   in CDCMetal.CreaSpessoreFrm.btnCreaPDF_Click(Object sender, EventArgs e) in C:\VSProgetti\CDCMetal\CDCMetal\CDCMetal\CreaSpessoreFrm.cs:riga 836
+ERROR 2019-07-25 17:17:05,852 129367ms MainForm               LogScriviErrore    - Errore in crea PDF
+System.Data.StrongTypingException: The value for column 'IDMISURA' in table 'CDC_MISURE' is DBNull. ---> System.InvalidCastException: Cast specificato non valido.
+   in CDCMetal.Entities.CDCDS.CDC_MISURERow.get_IDMISURA() in C:\VSProgetti\CDCMetal\CDCMetal\CDCMetal.Entities\CDCDS.Designer.cs:riga 10902
+   --- Fine della traccia dello stack dell'eccezione interna ---
+   in CDCMetal.Entities.CDCDS.CDC_MISURERow.get_IDMISURA() in C:\VSProgetti\CDCMetal\CDCMetal\CDCMetal.Entities\CDCDS.Designer.cs:riga 10905
+   in CDCMetal.CreaSpessoreFrm.<>c.<btnCreaPDF_Click>b__30_3(CDC_MISURERow x) in C:\VSProgetti\CDCMetal\CDCMetal\CDCMetal\CreaSpessoreFrm.cs:riga 776
+   in System.Linq.Enumerable.WhereSelectEnumerableIterator`2.MoveNext()
+   in System.Collections.Generic.List`1..ctor(IEnumerable`1 collection)
+   in System.Linq.Enumerable.ToList[TSource](IEnumerable`1 source)
+   in CDCMetal.CreaSpessoreFrm.btnCreaPDF_Click(Object sender, EventArgs e) in C:\VSProgetti\CDCMetal\CDCMetal\CDCMetal\CreaSpessoreFrm.cs:riga 776
+INFO  2019-07-25 17:25:02,842   125ms MainForm               LogScrivi          - Applicazione CDCMetal avviata
+INFO  2019-07-25 17:26:32,329   145ms MainForm               LogScrivi          - Applicazione CDCMetal avviata
+INFO  2019-07-25 17:28:43,264   139ms MainForm               LogScrivi          - Applicazione CDCMetal avviata
+ERROR 2019-07-25 17:28:53,149 10025ms MainForm               LogScriviErrore    - Errore in crea PDF
+System.NullReferenceException: Riferimento a un oggetto non impostato su un'istanza di oggetto.
+   in CDCMetal.CreaSpessoreFrm.btnCreaPDF_Click(Object sender, EventArgs e) in C:\VSProgetti\CDCMetal\CDCMetal\CDCMetal\CreaSpessoreFrm.cs:riga 716
+INFO  2019-07-25 17:30:26,718   144ms MainForm               LogScrivi          - Applicazione CDCMetal avviata
+INFO  2019-07-26 08:52:51,926   116ms MainForm               LogScrivi          - Applicazione CDCMetal avviata
+INFO  2019-07-26 08:54:02,098   137ms MainForm               LogScrivi          - Applicazione CDCMetal avviata
+ERROR 2019-07-26 08:54:25,676 23716ms MainForm               LogScriviErrore    - Errore in crea PDF
+System.UnauthorizedAccessException: Accesso al percorso 'C:\Temp\CDC\CARTELLACOLLAUDO\Metalplus\COLLAUDI LUGLIO 2019\collaudo 22-7-19\00Y511-10878-0533 EACY 2019 590 24\10878 0533 EACY 2019 590 24.pdf' negato.
+   in System.IO.__Error.WinIOError(Int32 errorCode, String maybeFullPath)
+   in System.IO.File.InternalDelete(String path, Boolean checkHost)
+   in System.IO.File.Delete(String path)
+   in CDCMetal.BLL.CDCBLL.CreaPDFSpessore(Decimal IDDETTAGLIO, CDCDS ds, String pathCollaudo, Byte[] iLoghi, Byte[] iBowman, Boolean CopiaReferto, String pathCartellaReferto, List`1 medie, List`1 Std, List`1 Pct, List`1 range, List`1 minimo, List`1 massimo, String Brand, String numeroCampioni) in C:\VSProgetti\CDCMetal\CDCMetal\CDCMetal.BLL\CDCBLL.cs:riga 658
+   in CDCMetal.CreaSpessoreFrm.btnCreaPDF_Click(Object sender, EventArgs e) in C:\VSProgetti\CDCMetal\CDCMetal\CDCMetal\CreaSpessoreFrm.cs:riga 844
+ERROR 2019-07-26 08:54:38,909 36949ms MainForm               LogScriviErrore    - Errore in crea PDF
+System.Data.StrongTypingException: The value for column 'IDMISURA' in table 'CDC_MISURE' is DBNull. ---> System.InvalidCastException: Cast specificato non valido.
+   in CDCMetal.Entities.CDCDS.CDC_MISURERow.get_IDMISURA() in C:\VSProgetti\CDCMetal\CDCMetal\CDCMetal.Entities\CDCDS.Designer.cs:riga 10902
+   --- Fine della traccia dello stack dell'eccezione interna ---
+   in CDCMetal.Entities.CDCDS.CDC_MISURERow.get_IDMISURA() in C:\VSProgetti\CDCMetal\CDCMetal\CDCMetal.Entities\CDCDS.Designer.cs:riga 10905
+   in CDCMetal.CreaSpessoreFrm.<>c.<btnCreaPDF_Click>b__30_3(CDC_MISURERow x) in C:\VSProgetti\CDCMetal\CDCMetal\CDCMetal\CreaSpessoreFrm.cs:riga 784
+   in System.Linq.Enumerable.WhereSelectEnumerableIterator`2.MoveNext()
+   in System.Collections.Generic.List`1..ctor(IEnumerable`1 collection)
+   in System.Linq.Enumerable.ToList[TSource](IEnumerable`1 source)
+   in CDCMetal.CreaSpessoreFrm.btnCreaPDF_Click(Object sender, EventArgs e) in C:\VSProgetti\CDCMetal\CDCMetal\CDCMetal\CreaSpessoreFrm.cs:riga 784
+ERROR 2019-07-26 08:54:54,943 52982ms MainForm               LogScriviErrore    - Errore in crea PDF
+System.Data.StrongTypingException: The value for column 'IDMISURA' in table 'CDC_MISURE' is DBNull. ---> System.InvalidCastException: Cast specificato non valido.
+   in CDCMetal.Entities.CDCDS.CDC_MISURERow.get_IDMISURA() in C:\VSProgetti\CDCMetal\CDCMetal\CDCMetal.Entities\CDCDS.Designer.cs:riga 10902
+   --- Fine della traccia dello stack dell'eccezione interna ---
+   in CDCMetal.Entities.CDCDS.CDC_MISURERow.get_IDMISURA() in C:\VSProgetti\CDCMetal\CDCMetal\CDCMetal.Entities\CDCDS.Designer.cs:riga 10905
+   in CDCMetal.CreaSpessoreFrm.<>c.<btnCreaPDF_Click>b__30_3(CDC_MISURERow x) in C:\VSProgetti\CDCMetal\CDCMetal\CDCMetal\CreaSpessoreFrm.cs:riga 784
+   in System.Linq.Enumerable.WhereSelectEnumerableIterator`2.MoveNext()
+   in System.Collections.Generic.List`1..ctor(IEnumerable`1 collection)
+   in System.Linq.Enumerable.ToList[TSource](IEnumerable`1 source)
+   in CDCMetal.CreaSpessoreFrm.btnCreaPDF_Click(Object sender, EventArgs e) in C:\VSProgetti\CDCMetal\CDCMetal\CDCMetal\CreaSpessoreFrm.cs:riga 784
+ERROR 2019-07-26 08:57:55,828 233867ms MainForm               LogScriviErrore    - Errore in crea PDF
+System.Data.StrongTypingException: The value for column 'IDMISURA' in table 'CDC_MISURE' is DBNull. ---> System.InvalidCastException: Cast specificato non valido.
+   in CDCMetal.Entities.CDCDS.CDC_MISURERow.get_IDMISURA() in C:\VSProgetti\CDCMetal\CDCMetal\CDCMetal.Entities\CDCDS.Designer.cs:riga 10902
+   --- Fine della traccia dello stack dell'eccezione interna ---
+   in CDCMetal.Entities.CDCDS.CDC_MISURERow.get_IDMISURA() in C:\VSProgetti\CDCMetal\CDCMetal\CDCMetal.Entities\CDCDS.Designer.cs:riga 10905
+   in CDCMetal.CreaSpessoreFrm.<>c.<btnCreaPDF_Click>b__30_3(CDC_MISURERow x) in C:\VSProgetti\CDCMetal\CDCMetal\CDCMetal\CreaSpessoreFrm.cs:riga 784
+   in System.Linq.Enumerable.WhereSelectEnumerableIterator`2.MoveNext()
+   in System.Collections.Generic.List`1..ctor(IEnumerable`1 collection)
+   in System.Linq.Enumerable.ToList[TSource](IEnumerable`1 source)
+   in CDCMetal.CreaSpessoreFrm.btnCreaPDF_Click(Object sender, EventArgs e) in C:\VSProgetti\CDCMetal\CDCMetal\CDCMetal\CreaSpessoreFrm.cs:riga 784
+INFO  2019-07-26 09:01:44,643   116ms MainForm               LogScrivi          - Applicazione CDCMetal avviata
+INFO  2019-07-26 09:08:52,430   144ms MainForm               LogScrivi          - Applicazione CDCMetal avviata
+INFO  2019-07-26 09:48:24,849   150ms MainForm               LogScrivi          - Applicazione CDCMetal avviata
+INFO  2019-07-26 09:51:00,882 156183ms MainForm               LogScrivi          - Applicazione CDCMetal fermata

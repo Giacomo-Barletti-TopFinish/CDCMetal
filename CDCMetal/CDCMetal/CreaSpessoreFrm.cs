@@ -144,7 +144,7 @@ namespace CDCMetal
             CDCDS.CDC_APPLICAZIONERow applicazione = Contesto.DS.CDC_APPLICAZIONE.Where(x => x.COLORE == colore && x.PARTE == parte).FirstOrDefault();
             if (applicazione != null)
             {
-                txtApplicazione.Text = applicazione.APPLICAZIONE;
+                txtApplicazione.Text = applicazione.IsAPPLICAZIONENull() ? string.Empty : applicazione.APPLICAZIONE;
                 nMisurePerCampione.Value = applicazione.NUMEROCAMPIONI;
                 txtSpessoreRichiesto.Text = applicazione.IsSPESSORENull() ? string.Empty : applicazione.SPESSORE;
             }
@@ -210,7 +210,7 @@ namespace CDCMetal
                 CDCDS.CDC_GALVANICARow galvanica = Contesto.DS.CDC_GALVANICA.Where(x => x.IDDETTAGLIO == IDDETTAGLIO).FirstOrDefault();
                 if (galvanica != null)
                 {
-                    CaricaCampioniMisuraPrecedente(galvanica.IDGALVANICA);
+                    CaricaCampioniMisuraPrecedente(galvanica);
                 }
                 else
                 {
@@ -247,13 +247,21 @@ namespace CDCMetal
             }
         }
 
-        private void CaricaCampioniMisuraPrecedente(decimal IDGALVANICA)
+        private void CaricaCampioniMisuraPrecedente(CDCDS.CDC_GALVANICARow galvanica)
         {
 
-            List<CDCDS.CDC_MISURERow> misurePrecedenti = Contesto.DS.CDC_MISURE.Where(x => x.IDGALVANICA == IDGALVANICA).OrderBy(x => x.NMISURA).ThenBy(x => x.NCOLONNA).ToList();
+            List<CDCDS.CDC_MISURERow> misurePrecedenti = Contesto.DS.CDC_MISURE.Where(x => x.IDGALVANICA == galvanica.IDGALVANICA).OrderBy(x => x.NMISURA).ThenBy(x => x.NCOLONNA).ToList();
 
             int numeroCampioni = (int)misurePrecedenti.Max(x => x.NMISURA) + 1;
             txtNumeroCampioni.Text = numeroCampioni.ToString();
+            if (((DataCollaudo)ddlDataCollaudo.SelectedItem).Brand == CDCBrands.YSL)
+            {
+                if(galvanica.MISURECAMPIONE>0)
+                {
+                    int aux = numeroCampioni / (int)galvanica.MISURECAMPIONE;
+                    txtNumeroCampioni.Text = aux.ToString();
+                }
+            }
             int numeroColonne = misurePrecedenti.Where(x => x.NMISURA == 1).Count();
 
             if (_dsServizio.Tables[tblMisure] != null)
@@ -432,7 +440,13 @@ namespace CDCMetal
                 return;
             }
 
-            int numeroCampioni = int.Parse(txtNumeroCampioni.Text);
+            int numeroCampioni = int.Parse(txtNumeroCampioni.Text); // caso GUCCI
+            if (((DataCollaudo)ddlDataCollaudo.SelectedItem).Brand == CDCBrands.YSL)
+            {
+                int numeroCampioniPerPezzo = int.Parse(txtNumeroCampioni.Text);
+                numeroCampioni = numeroCampioniPerPezzo * (int)nMisurePerCampione.Value;
+            }
+
             try
             {
                 popolaCDC_SPESSORE();
@@ -498,25 +512,42 @@ namespace CDCMetal
 
         private void CalcolaNumeroCampioni()
         {
-            int numeroCampioni = 0;
-            if (_dettaglio == null) return;
+            if (ddlDataCollaudo.SelectedIndex == -1) return;
 
-            if (_dettaglio.QUANTITA < 25)
-                numeroCampioni = 3 * (int)nMisurePerCampione.Value;
+            DataCollaudo dataCollaudo = (DataCollaudo)ddlDataCollaudo.SelectedItem;
 
-            if (_dettaglio.QUANTITA >= 25 && _dettaglio.QUANTITA <= 150)
-                numeroCampioni = 3 * (int)nMisurePerCampione.Value;
+            switch (dataCollaudo.Brand)
+            {
+                case CDCBrands.Gucci:
+                    int numeroCampioni = 0;
+                    if (_dettaglio == null) return;
 
-            if (_dettaglio.QUANTITA >= 151 && _dettaglio.QUANTITA <= 1200)
-                numeroCampioni = 5 * (int)nMisurePerCampione.Value;
+                    if (_dettaglio.QUANTITA < 25)
+                        numeroCampioni = 3 * (int)nMisurePerCampione.Value;
 
-            if (_dettaglio.QUANTITA >= 1201 && _dettaglio.QUANTITA <= 10000)
-                numeroCampioni = 8 * (int)nMisurePerCampione.Value;
+                    if (_dettaglio.QUANTITA >= 25 && _dettaglio.QUANTITA <= 150)
+                        numeroCampioni = 3 * (int)nMisurePerCampione.Value;
 
-            if (_dettaglio.QUANTITA > 10001)
-                numeroCampioni = 8 * (int)nMisurePerCampione.Value;
+                    if (_dettaglio.QUANTITA >= 151 && _dettaglio.QUANTITA <= 1200)
+                        numeroCampioni = 5 * (int)nMisurePerCampione.Value;
 
-            txtNumeroCampioni.Text = numeroCampioni.ToString();
+                    if (_dettaglio.QUANTITA >= 1201 && _dettaglio.QUANTITA <= 10000)
+                        numeroCampioni = 8 * (int)nMisurePerCampione.Value;
+
+                    if (_dettaglio.QUANTITA > 10001)
+                        numeroCampioni = 8 * (int)nMisurePerCampione.Value;
+
+                    txtNumeroCampioni.Text = numeroCampioni.ToString();
+                    txtNumeroCampioni.ReadOnly = true;
+                    break;
+
+                case CDCBrands.YSL:
+                    txtNumeroCampioni.ReadOnly = false;
+                    txtNumeroCampioni.Text = "1";
+                    break;
+
+            }
+
         }
 
         private void CalcolaValoriAggregati()
@@ -676,6 +707,7 @@ namespace CDCMetal
         {
             string filename = string.Empty;
 
+            string brand = ((DataCollaudo)ddlDataCollaudo.SelectedItem).Brand;
             try
             {
                 Cursor.Current = Cursors.WaitCursor;
@@ -693,13 +725,13 @@ namespace CDCMetal
                     return;
                 }
 
-                if (string.IsNullOrEmpty(txtApplicazione.Text))
+                if (string.IsNullOrEmpty(txtApplicazione.Text) && CDCBrands.Gucci == brand)
                 {
                     lblMessaggio.Text = "Il campo applicazione è vuoto impossibile procedere";
                     return;
                 }
 
-                if (string.IsNullOrEmpty(txtSpessoreRichiesto.Text))
+                if (string.IsNullOrEmpty(txtSpessoreRichiesto.Text) && CDCBrands.Gucci == brand)
                 {
                     lblMessaggio.Text = "Il campo spessore richiesto è vuoto impossibile procedere";
                     return;
@@ -749,8 +781,14 @@ namespace CDCMetal
 
                 decimal IDGALVANICA = bll.InserisciCDCGalvanica(Contesto.DS, txtSpessoreRichiesto.Text, IDDETTAGLIO, txtApplicazione.Text, Contesto.StrumentoSpessore, misurePerCampione, Contesto.Utente.FULLNAMEUSER);
 
-                foreach (CDCDS.CDC_MISURERow row in Contesto.DS.CDC_MISURE.Where(x => x.IDGALVANICA == IDGALVANICA))
-                    row.Delete();
+                Contesto.DS.CDC_MISURE.Clear();
+
+               // List<decimal> idMisuraDaCancellare = Contesto.DS.CDC_MISURE.Where(x => x.IDGALVANICA == IDGALVANICA).Select(x => x.IDMISURA).ToList();
+                //foreach (decimal idmisura in idMisuraDaCancellare)
+                //{
+                //    CDCDS.CDC_MISURERow row = Contesto.DS.CDC_MISURE.Where(x => x.RowState != DataRowState.Deleted && x.IDMISURA == idmisura).FirstOrDefault();
+                //    row.Delete();
+                //}
 
                 foreach (DataRow riga in _dsServizio.Tables[tblMisure].Rows)
                 {
@@ -805,8 +843,8 @@ namespace CDCMetal
                     minimo.Add(rigaMinimo[ncol].ToString());
                     massimo.Add(rigaMassimo[ncol].ToString());
                 }
-
-                filename = bll.CreaPDFSpessore(IDDETTAGLIO, Contesto.DS, Contesto.PathCollaudo, iLogo, iBowman, chkCopiaReferto.Checked, Contesto.PathRefertiLaboratorio, medie, Std, Pct, range, minimo, massimo);
+                filename = bll.CreaPDFSpessore(IDDETTAGLIO, Contesto.DS, Contesto.PathCollaudo, iLogo, iBowman, chkCopiaReferto.Checked, Contesto.GetPathRefertiLaboratorio(brand),
+                    medie, Std, Pct, range, minimo, massimo, brand, txtNumeroCampioni.Text);
 
                 if (chkApriPDF.Checked)
                 {

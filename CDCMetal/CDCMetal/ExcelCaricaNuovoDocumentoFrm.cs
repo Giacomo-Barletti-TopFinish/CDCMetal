@@ -22,6 +22,7 @@ namespace CDCMetal
 
         private void btnCercaFile_Click(object sender, EventArgs e)
         {
+            ddlBrand.SelectedIndex = -1;
             try
             {
                 OpenFileDialog openFileDialog = new OpenFileDialog();
@@ -149,6 +150,8 @@ namespace CDCMetal
                 bll.Salva(Contesto.DS);
 
                 lblMessage.Text = "Salvataggio riuscito";
+                ddlBrand.SelectedIndex = -1;
+
             }
             catch (Exception ex)
             {

@@ -81,6 +81,21 @@ namespace CDCMetal.BLL
             }
         }
 
+        public void FillCDC_VERNICICOPRENTI(CDCDS ds, List<decimal> IDDETTAGLIO)
+        {
+            using (CDCMetalBusiness bCDCMetal = new CDCMetalBusiness())
+            {
+                bCDCMetal.FillCDC_VERNICICOPRENTI(ds, IDDETTAGLIO);
+            }
+        }
+
+        public void FillCDC_TENUTACIDONITRICO(CDCDS ds, List<decimal> IDDETTAGLIO)
+        {
+            using (CDCMetalBusiness bCDCMetal = new CDCMetalBusiness())
+            {
+                bCDCMetal.FillCDC_TENUTACIDONITRICO(ds, IDDETTAGLIO);
+            }
+        }
         public void FillCDC_COLORE(CDCDS ds, List<decimal> IDDETTAGLIO)
         {
             using (CDCMetalBusiness bCDCMetal = new CDCMetalBusiness())
@@ -104,8 +119,6 @@ namespace CDCMetal.BLL
             {
                 bCDCMetal.UpdateCDC_ETICHETTE_DETTAGLIO(ds);
             }
-
-
         }
 
         public bool verificaNumeroEtichette(string numeroEtichette, out string messaggio, out List<Tuple<int, int>> SC_QTA)
@@ -203,6 +216,21 @@ namespace CDCMetal.BLL
             }
         }
 
+        public void SalvaDatiVerniciaturaCoprente(CDCDS ds)
+        {
+            using (CDCMetalBusiness bCDCMetal = new CDCMetalBusiness())
+            {
+                bCDCMetal.UpdateCDC_VERNICICOPRENTI(ds);
+            }
+        }
+
+        public void SalvaDatiTenutaAcidoNitrico(CDCDS ds)
+        {
+            using (CDCMetalBusiness bCDCMetal = new CDCMetalBusiness())
+            {
+                bCDCMetal.UpdateCDC_TENUTACIDONITRICO(ds);
+            }
+        }
         public void SalvaDatiColore(CDCDS ds)
         {
             using (CDCMetalBusiness bCDCMetal = new CDCMetalBusiness())
@@ -347,6 +375,155 @@ namespace CDCMetal.BLL
             return fileCreati.ToString();
         }
 
+        public string CreaPDFVerniceCoprente(List<decimal> idPerPDF, CDCDS ds, string pathCollaudo, byte[] image, bool CopiaReferto, string pathCartellaReferto)
+        {
+            StringBuilder fileCreati = new StringBuilder();
+
+            foreach (decimal IDDETTAGLIO in idPerPDF)
+            {
+                CDCDS.CDC_VERNICICOPRENTIRow vCoprente = ds.CDC_VERNICICOPRENTI.Where(x => x.IDDETTAGLIO == IDDETTAGLIO).FirstOrDefault();
+                if (vCoprente == null)
+                    throw new Exception("CDC_VERNICICOPRENTI riga non trovat per IDDETTAGLIO" + IDDETTAGLIO.ToString());
+                CDCDS.CDC_DETTAGLIORow dettaglio = ds.CDC_DETTAGLIO.Where(x => x.IDDETTAGLIO == vCoprente.IDDETTAGLIO).FirstOrDefault();
+                if (dettaglio == null)
+                {
+                    throw new Exception("IMPOSSIBILE TROVARE CDC DETTAGLIO DA CDC VERNICI COPRENTI'");
+                }
+                DateTime dt = DateTime.ParseExact(dettaglio.DATACOLLAUDO, "dd/MM/yyyy", CultureInfo.InvariantCulture);
+                //DateTime dt = DateTime.Today;
+                string cartella = CreaPathCartella(dt, pathCollaudo, dettaglio.ACCESSORISTA, dettaglio.PREFISSO, dettaglio.PARTE, dettaglio.COLORE, dettaglio.COMMESSAORDINE);
+                bool turbula = vCoprente.TURBULA == "S" ? true : false;
+                bool quadrettatura = vCoprente.QUADRETTATURA == "S" ? true : false;
+
+                string articolo = dettaglio.PARTE;
+                string finitura = dettaglio.COLORE;
+
+                string fileName = string.Format("TEST VERNICI COPRENTI {0} {1}.pdf", articolo, finitura);
+                string path = string.Format(@"{0}\{1}", cartella, fileName);
+
+                if (!Directory.Exists(cartella))
+                    Directory.CreateDirectory(cartella);
+
+                if (File.Exists(path))
+                    File.Delete(path);
+
+                CreaReportVerniciCoprenti(path, turbula, quadrettatura, vCoprente.DATATEST.ToShortDateString(), dettaglio.PARTE, dettaglio.COLORE, vCoprente.FORNITORE, vCoprente.NUMEROCAMPIONI.ToString(), image);
+
+                if (CopiaReferto)
+                {
+                    System.Globalization.CultureInfo culture = new System.Globalization.CultureInfo("it-IT");
+                    string acce = "Top";
+                    if (dettaglio.ACCESSORISTA.Trim() == "Metalplus s.r.l.")
+                        acce = "M+";
+                    string meseCollaudo = dt.ToString("MMMM", culture);
+                    string giorno = string.Format("{0}.{1}", dt.Day.ToString("00"), dt.Month.ToString("00"));
+                    string pathCartella = string.Format(@"{0}\{1}\{2}\{3}\{4}", pathCartellaReferto, dt.Year.ToString(), meseCollaudo, giorno, acce);
+                    string pathReferto = string.Format(@"{0}\{1}", pathCartella, fileName);
+
+                    if (!Directory.Exists(pathCartella))
+                        Directory.CreateDirectory(pathCartella);
+
+                    if (File.Exists(pathReferto))
+                        File.Delete(pathReferto);
+                    File.Copy(path, pathReferto, true);
+                }
+
+                fileCreati.AppendLine(path);
+
+                CDCDS.CDC_PDFRow pdf = ds.CDC_PDF.Where(x => x.IDDETTAGLIO == vCoprente.IDDETTAGLIO && x.TIPO == CDCTipoPDF.CERTIFICATOVERNICECOPRENTE).FirstOrDefault();
+                if (pdf == null)
+                {
+                    pdf = ds.CDC_PDF.NewCDC_PDFRow();
+                    pdf.TIPO = CDCTipoPDF.CERTIFICATOVERNICECOPRENTE;
+                    pdf.NOMEFILE = path;
+                    pdf.IDDETTAGLIO = vCoprente.IDDETTAGLIO;
+                    ds.CDC_PDF.AddCDC_PDFRow(pdf);
+
+                    using (CDCMetalBusiness bCDCMetalBusiness = new CDCMetalBusiness())
+                        bCDCMetalBusiness.UpdateCDC_PDF(ds);
+                    ds.CDC_PDF.AcceptChanges();
+                }
+            }
+
+            return fileCreati.ToString();
+        }
+
+        public string CreaPDFTenutaAcidoNitrico(List<decimal> idPerPDF, CDCDS ds, string pathCollaudo, byte[] image, bool CopiaReferto, string pathCartellaReferto)
+        {
+            StringBuilder fileCreati = new StringBuilder();
+
+            foreach (decimal IDDETTAGLIO in idPerPDF)
+            {
+                CDCDS.CDC_TENUTACIDONITRICORow tenuta = ds.CDC_TENUTACIDONITRICO.Where(x => x.IDDETTAGLIO == IDDETTAGLIO).FirstOrDefault();
+                if (tenuta == null)
+                    throw new Exception("CDC_TENUTACIDONITRICO riga non trovat per IDDETTAGLIO" + IDDETTAGLIO.ToString());
+                CDCDS.CDC_DETTAGLIORow dettaglio = ds.CDC_DETTAGLIO.Where(x => x.IDDETTAGLIO == tenuta.IDDETTAGLIO).FirstOrDefault();
+                if (dettaglio == null)
+                {
+                    throw new Exception("IMPOSSIBILE TROVARE CDC DETTAGLIO DA CDC_TENUTACIDONITRICO'");
+                }
+                DateTime dt = DateTime.ParseExact(dettaglio.DATACOLLAUDO, "dd/MM/yyyy", CultureInfo.InvariantCulture);
+                //DateTime dt = DateTime.Today;
+                string cartella = CreaPathCartella(dt, pathCollaudo, dettaglio.ACCESSORISTA, dettaglio.PREFISSO, dettaglio.PARTE, dettaglio.COLORE, dettaglio.COMMESSAORDINE);
+
+                string articolo = dettaglio.PARTE;
+                string finitura = dettaglio.COLORE;
+
+                string fileName = string.Format("CONTROLLO TENUTA ACIDO NITRICO {0} {1}.pdf", articolo, finitura);
+                string path = string.Format(@"{0}\{1}", cartella, fileName);
+
+                if (!Directory.Exists(cartella))
+                    Directory.CreateDirectory(cartella);
+
+                if (File.Exists(path))
+                    File.Delete(path);
+
+                bool esito = tenuta.ESITO == "S" ? true : false;
+
+                string bolla = tenuta.IsBOLLANull() ? string.Empty : tenuta.BOLLA;
+                string dataDDT = tenuta.IsDATADDTNull() ? string.Empty : tenuta.DATADDT.ToShortDateString();
+
+                CreaReportTenutaAcidoNitrico(path, esito, tenuta.DATATEST.ToShortDateString(), dettaglio.PARTE, dettaglio.COLORE, bolla, dataDDT, tenuta.NUMEROCAMPIONI.ToString(), image);
+
+                if (CopiaReferto)
+                {
+                    System.Globalization.CultureInfo culture = new System.Globalization.CultureInfo("it-IT");
+                    string acce = "Top";
+                    if (dettaglio.ACCESSORISTA.Trim() == "Metalplus s.r.l.")
+                        acce = "M+";
+                    string meseCollaudo = dt.ToString("MMMM", culture);
+                    string giorno = string.Format("{0}.{1}", dt.Day.ToString("00"), dt.Month.ToString("00"));
+                    string pathCartella = string.Format(@"{0}\{1}\{2}\{3}\{4}", pathCartellaReferto, dt.Year.ToString(), meseCollaudo, giorno, acce);
+                    string pathReferto = string.Format(@"{0}\{1}", pathCartella, fileName);
+
+                    if (!Directory.Exists(pathCartella))
+                        Directory.CreateDirectory(pathCartella);
+
+                    if (File.Exists(pathReferto))
+                        File.Delete(pathReferto);
+                    File.Copy(path, pathReferto, true);
+                }
+
+                fileCreati.AppendLine(path);
+
+                CDCDS.CDC_PDFRow pdf = ds.CDC_PDF.Where(x => x.IDDETTAGLIO == tenuta.IDDETTAGLIO && x.TIPO == CDCTipoPDF.CERTIFICATOTENUTAACIDONITRICO).FirstOrDefault();
+                if (pdf == null)
+                {
+                    pdf = ds.CDC_PDF.NewCDC_PDFRow();
+                    pdf.TIPO = CDCTipoPDF.CERTIFICATOTENUTAACIDONITRICO;
+                    pdf.NOMEFILE = path;
+                    pdf.IDDETTAGLIO = tenuta.IDDETTAGLIO;
+                    ds.CDC_PDF.AddCDC_PDFRow(pdf);
+
+                    using (CDCMetalBusiness bCDCMetalBusiness = new CDCMetalBusiness())
+                        bCDCMetalBusiness.UpdateCDC_PDF(ds);
+                    ds.CDC_PDF.AcceptChanges();
+                }
+            }
+
+            return fileCreati.ToString();
+        }
+
         public string CreaPDFColore(List<decimal> idPerPDF, CDCDS ds, string pathCollaudo, byte[] image, bool CopiaReferto, string pathCartellaReferto)
         {
             StringBuilder fileCreati = new StringBuilder();
@@ -438,13 +615,13 @@ namespace CDCMetal.BLL
         }
 
         public string CreaPDFSpessore(decimal IDDETTAGLIO, CDCDS ds, string pathCollaudo, byte[] iLoghi, byte[] iBowman, bool CopiaReferto, string pathCartellaReferto,
-            List<string> medie, List<string> Std, List<String> Pct, List<string> range, List<string> minimo, List<string> massimo)
+            List<string> medie, List<string> Std, List<String> Pct, List<string> range, List<string> minimo, List<string> massimo, string Brand, string numeroCampioni)
         {
             string fileCreato = string.Empty;
 
             CDCDS.CDC_GALVANICARow galvanica = ds.CDC_GALVANICA.Where(x => x.IDDETTAGLIO == IDDETTAGLIO).FirstOrDefault();
             if (galvanica == null)
-                throw new Exception("CDC_GALVANICA riga non trovat per IDDETTAGLIO" + IDDETTAGLIO.ToString());
+                throw new Exception("CDC_GALVANICA riga non trovata per IDDETTAGLIO" + IDDETTAGLIO.ToString());
             CDCDS.CDC_DETTAGLIORow dettaglio = ds.CDC_DETTAGLIO.Where(x => x.IDDETTAGLIO == galvanica.IDDETTAGLIO).FirstOrDefault();
             if (dettaglio == null)
             {
@@ -479,8 +656,16 @@ namespace CDCMetal.BLL
 
             if (File.Exists(path))
                 File.Delete(path);
+            switch (Brand)
+            {
+                case CDCBrands.Gucci:
+                    CreaReportSpessoriGucci(path, dt, commessaPerStampa, operatore, galvanica.SPESSORE, galvanica.APPLICAZIONE, galvanica.STRUMENTO, numeroMisure, etichette, medie, Std, Pct, range, minimo, massimo, iLoghi, iBowman, misure);
+                    break;
 
-            CreaReportSpessori(path, dt, commessaPerStampa, operatore, galvanica.SPESSORE, galvanica.APPLICAZIONE, galvanica.STRUMENTO, numeroMisure, etichette, medie, Std, Pct, range, minimo, massimo, iLoghi, iBowman, misure);
+                case CDCBrands.YSL:
+                    CreaReportSpessoriYSL(path, dt, numeroCampioni, dettaglio.PARTE, dettaglio.COLORE, numeroMisure, etichette, medie, iLoghi, misure);
+                    break;
+            }
 
             if (CopiaReferto)
             {
@@ -554,6 +739,23 @@ namespace CDCMetal.BLL
             pdfHelper.SalvaPdf(filename);
         }
 
+        private static void CreaReportVerniciCoprenti(string filename, bool turbula, bool quadrettatura, string data, string parte, string colore, string fornitore, string numeroCampioni, byte[] iloghi)
+        {
+            PDFHelper pdfHelper = new PDFHelper();
+            pdfHelper.CreaReportVerniciCoprenti(turbula, quadrettatura, data, parte, colore, fornitore, numeroCampioni, iloghi);
+
+
+            pdfHelper.SalvaPdf(filename);
+        }
+
+        private static void CreaReportTenutaAcidoNitrico(string filename, bool esito, string data, string parte, string colore, string bolla, string dataDDT, string numeroCampioni, byte[] iloghi)
+        {
+            PDFHelper pdfHelper = new PDFHelper();
+            pdfHelper.CreaReportTenutaAcidoNitrico(esito, data, parte, colore, bolla, dataDDT, numeroCampioni, iloghi);
+
+
+            pdfHelper.SalvaPdf(filename);
+        }
         private static void CreaReportColorimetrico(string filename, string dataCollaudo, string dataCalibrazione,
 string prefisso, string parte, string colore, string commessa, string quantita, string operatore,
 string strumentoMisura, string nota, List<MisuraColore> misure, byte[] iloghi)
@@ -564,16 +766,24 @@ string strumentoMisura, string nota, List<MisuraColore> misure, byte[] iloghi)
             pdfHelper.SalvaPdf(filename);
         }
 
-        private static void CreaReportSpessori(string filename, DateTime data, string commessa, string operatore, string spessoreRichiesto, string applicazione, string strumentoMisura, int numeroMisure,
+        private static void CreaReportSpessoriGucci(string filename, DateTime data, string commessa, string operatore, string spessoreRichiesto, string applicazione, string strumentoMisura, int numeroMisure,
             List<string> etichette, List<string> medie, List<string> Std, List<string> Pct, List<string> range, List<string> minimo, List<string> massimo, byte[] iloghi,
             byte[] iBowman, List<List<string>> misure)
         {
             PDFHelper pdfHelper = new PDFHelper();
-            pdfHelper.CreaReportSpessori(data, commessa, operatore, spessoreRichiesto, applicazione, strumentoMisura, numeroMisure, etichette, medie, Std, Pct, range, minimo, massimo, iloghi, iBowman, misure);
+            pdfHelper.CreaReportSpessoriGucci(data, commessa, operatore, spessoreRichiesto, applicazione, strumentoMisura, numeroMisure, etichette, medie, Std, Pct, range, minimo, massimo, iloghi, iBowman, misure);
 
             pdfHelper.SalvaPdf(filename);
         }
 
+        private static void CreaReportSpessoriYSL(string filename, DateTime data, string numeroCampioni, string parte, string colore, int numeroMisure,
+          List<string> etichette, List<string> medie, byte[] iloghi, List<List<string>> misure)
+        {
+            PDFHelper pdfHelper = new PDFHelper();
+            pdfHelper.CreaReportSpessoriYSL(data, numeroCampioni, parte, colore, numeroMisure, etichette, medie, iloghi, misure);
+
+            pdfHelper.SalvaPdf(filename);
+        }
         public string CreaPDFDimensionale(decimal IDDETTAGLIO, CDCDS ds, string operatore, string pathCollaudo, byte[] iFirma, byte[] iLoghi)
         {
 
@@ -610,7 +820,7 @@ string strumentoMisura, string nota, List<MisuraColore> misure, byte[] iloghi)
                     Massimo = dimensione.MASSIMO,
                     Minimo = dimensione.MINIMO,
                     Richieste = dimensione.RICHIESTO,
-                    RIferimento = dimensione.RIFERIMENTO,
+                    Riferimento = dimensione.RIFERIMENTO,
                     Tampone = dimensione.TAMPONE,
                     Tolleranza = dimensione.TOLLERANZA
                 };

@@ -636,7 +636,7 @@ namespace CDCMetal.Helpers
                 if (m == null)
                     cell.AddParagraph(string.Empty);
                 else
-                    cell.AddParagraph(m.RIferimento);
+                    cell.AddParagraph(m.Riferimento);
                 cell.Format.Alignment = ParagraphAlignment.Center;
                 cell.VerticalAlignment = VerticalAlignment.Center;
                 cell.Format.Font.Size = 10;
@@ -912,6 +912,370 @@ namespace CDCMetal.Helpers
             p.AddText("Crolli Fabio");
         }
 
+        public void CreaReportVerniciCoprenti(bool turbula, bool quadrettatura, string data, string parte, string colore, string fornitore, string numeroCampioni, byte[] iloghi)
+        {
+
+            document.Info.Title = "Autodichiarazione";
+            document.Info.Subject = String.Empty;
+            document.Info.Author = string.Empty;
+
+            Section section = document.AddSection();
+
+            DefineBasicStyles();
+
+            Paragraph p = document.LastSection.AddParagraph();
+            p.Format.Alignment = ParagraphAlignment.Center;
+            string iLogoMP = MigraDocFilenameFromByteArray(iloghi);
+            p.AddImage(iLogoMP);
+            p = document.LastSection.AddParagraph();
+            p.Format.Alignment = ParagraphAlignment.Center;
+            Font fontPiccolo = new Font("Times New Roman");
+            fontPiccolo.Size = 8;
+            fontPiccolo.Bold = true;
+
+            p.AddFormattedText("Top Finish 2002 S.p.A.", fontPiccolo);
+            p.AddLineBreak();
+            p.AddFormattedText("Viale Kennedy, 103 - 50038 SCARPERIA (FI) - P.Iva 04949200481", fontPiccolo);
+            p.AddLineBreak();
+            p.AddFormattedText("Tel 055 843611 - Fax 055 8436130 - e-mail: info@topfinish.it", fontPiccolo);
+
+            Font fontNormale = new Font("Times New Roman");
+            fontNormale.Size = 12;
+
+            Font fontGrande = new Font("Times New Roman");
+            fontGrande.Size = 18;
+            fontGrande.Bold = true;
+            p = document.LastSection.AddParagraph();
+            p.Format.Alignment = ParagraphAlignment.Center;
+            p.AddLineBreak();
+            p.AddLineBreak();
+            string testo = string.Format("Scarperia, {0}", data);
+            p.AddFormattedText(testo, fontGrande);
+            p.AddLineBreak();
+            p.AddLineBreak();
+            p.AddFormattedText("TEST VERNICI COPRENTI", fontGrande);
+
+            p = document.LastSection.AddParagraph();
+            p.AddLineBreak();
+            p.AddLineBreak();
+            p.AddLineBreak();
+
+            Table table = new Table();
+            table.Borders.Width = 1.5;
+            double larghezzaColonna1 = 10.0;
+            double larghezzaColonna2 = 7.0;
+            Column column = table.AddColumn(Unit.FromCentimeter(larghezzaColonna1));
+            column = table.AddColumn(Unit.FromCentimeter(larghezzaColonna2));
+
+            Row row = table.AddRow();
+            row.Height = Unit.FromCentimeter(1.3);
+
+            Cell cell = row.Cells[0];
+            cell.Format.Alignment = ParagraphAlignment.Center;
+            cell.VerticalAlignment = VerticalAlignment.Center;
+            cell.Format.Font.Bold = true;
+            cell.Format.Font.Size = 14;
+            cell.AddParagraph("Articolo");
+
+            cell = row.Cells[1];
+            cell.Format.Alignment = ParagraphAlignment.Center;
+            cell.VerticalAlignment = VerticalAlignment.Center;
+            cell.Format.Font.Bold = true;
+            cell.Format.Font.Size = 14;
+            cell.AddParagraph(parte);
+
+            row = table.AddRow();
+            row.Height = Unit.FromCentimeter(1.3);
+            cell = row.Cells[0];
+            cell.AddParagraph("Finitura");
+            cell.Format.Font.Bold = true;
+            cell.Format.Font.Size = 14;
+            cell.Format.Alignment = ParagraphAlignment.Center;
+            cell.VerticalAlignment = VerticalAlignment.Center;
+
+            cell = row.Cells[1];
+            cell.Format.Font.Bold = true;
+            cell.Format.Font.Size = 14;
+            cell.Format.Alignment = ParagraphAlignment.Center;
+            cell.VerticalAlignment = VerticalAlignment.Center;
+            cell.AddParagraph(colore);
+
+            row = table.AddRow();
+            row.Height = Unit.FromCentimeter(1.3);
+            cell = row.Cells[0];
+            cell.Format.Font.Size = 14;
+            cell.Format.Font.Bold = true;
+            cell.Format.Alignment = ParagraphAlignment.Center;
+            cell.VerticalAlignment = VerticalAlignment.Center;
+            cell.AddParagraph("N°campioni analizzati");
+            cell = row.Cells[1];
+            cell.Format.Font.Bold = true;
+            cell.Format.Alignment = ParagraphAlignment.Center;
+            cell.Format.Font.Size = 14;
+            cell.VerticalAlignment = VerticalAlignment.Center;
+            cell.AddParagraph(numeroCampioni);
+
+            row = table.AddRow();
+            row.Height = Unit.FromCentimeter(1.1);
+            cell = row.Cells[0];
+            cell.Format.Font.Bold = true;
+            cell.Format.Font.Size = 14;
+            cell.Format.Alignment = ParagraphAlignment.Center;
+            cell.VerticalAlignment = VerticalAlignment.Center;
+            cell.AddParagraph("Fornitore");
+            cell = row.Cells[1];
+            cell.Format.Font.Bold = true;
+            cell.Format.Alignment = ParagraphAlignment.Center;
+            cell.Format.Font.Size = 14;
+            cell.VerticalAlignment = VerticalAlignment.Center;
+            cell.AddParagraph(fornitore);
+
+            document.LastSection.Add(table);
+
+            p = document.LastSection.AddParagraph();
+            p.AddLineBreak();
+            p.AddLineBreak();
+
+            table = new Table();
+            table.Borders.Width = 1.5;
+
+            column = table.AddColumn(Unit.FromCentimeter(larghezzaColonna1));
+            column = table.AddColumn(Unit.FromCentimeter(larghezzaColonna2));
+
+            row = table.AddRow();
+            row.Height = Unit.FromCentimeter(1.3);
+
+            cell = row.Cells[0];
+            cell.Format.Alignment = ParagraphAlignment.Center;
+            cell.VerticalAlignment = VerticalAlignment.Center;
+            cell.Format.Font.Bold = true;
+            cell.Format.Font.Size = 14;
+            cell.AddParagraph("Test turbula");
+
+            cell = row.Cells[1];
+            cell.Format.Alignment = ParagraphAlignment.Center;
+            cell.VerticalAlignment = VerticalAlignment.Center;
+            cell.Format.Font.Bold = true;
+            cell.Format.Font.Size = 14;
+            cell.AddParagraph(turbula ? "ok" : "ko");
+
+            row = table.AddRow();
+            row.Height = Unit.FromCentimeter(1.3);
+            cell = row.Cells[0];
+            cell.AddParagraph("Test quadrettatura");
+            cell.Format.Font.Bold = true;
+            cell.Format.Font.Size = 14;
+            cell.Format.Alignment = ParagraphAlignment.Center;
+            cell.VerticalAlignment = VerticalAlignment.Center;
+
+            cell = row.Cells[1];
+            cell.Format.Font.Bold = true;
+            cell.Format.Font.Size = 14;
+            cell.Format.Alignment = ParagraphAlignment.Center;
+            cell.VerticalAlignment = VerticalAlignment.Center;
+            cell.AddParagraph(quadrettatura ? "ok" : "ko");
+
+            document.LastSection.Add(table);
+
+            p = document.LastSection.AddParagraph();
+            p.AddLineBreak();
+            p.AddLineBreak();
+            p.AddLineBreak();
+
+            p = document.LastSection.AddParagraph();
+            p.Format.Alignment = ParagraphAlignment.Left;
+
+            p.AddFormattedText("Test effettuati presso il Laboratorio Top Finish", fontNormale);
+            p.AddLineBreak();
+            p = document.LastSection.AddParagraph();
+            p.Format.Alignment = ParagraphAlignment.Right;
+            fontNormale.Bold = true;
+            p.AddFormattedText("Distinti Saluti", fontNormale);
+            p.AddLineBreak();
+            p.AddFormattedText("Laboratorio Qualità, R&D", fontNormale);
+            p.AddLineBreak();
+
+        }
+
+        public void CreaReportTenutaAcidoNitrico(bool esito, string data, string parte, string colore, string bolla, string dataDDT, string numeroCampioni, byte[] iloghi)
+        {
+
+            document.Info.Title = "Autodichiarazione";
+            document.Info.Subject = String.Empty;
+            document.Info.Author = string.Empty;
+
+            Section section = document.AddSection();
+
+            DefineBasicStyles();
+
+            Paragraph p = document.LastSection.AddParagraph();
+            p.Format.Alignment = ParagraphAlignment.Center;
+            string iLogoMP = MigraDocFilenameFromByteArray(iloghi);
+            p.AddImage(iLogoMP);
+            p = document.LastSection.AddParagraph();
+            p.Format.Alignment = ParagraphAlignment.Center;
+            Font fontPiccolo = new Font("Times New Roman");
+            fontPiccolo.Size = 8;
+            fontPiccolo.Bold = true;
+
+            p.AddFormattedText("Top Finish 2002 S.p.A.", fontPiccolo);
+            p.AddLineBreak();
+            p.AddFormattedText("Viale Kennedy, 103 - 50038 SCARPERIA (FI) - P.Iva 04949200481", fontPiccolo);
+            p.AddLineBreak();
+            p.AddFormattedText("Tel 055 843611 - Fax 055 8436130 - e-mail: info@topfinish.it", fontPiccolo);
+
+            Font fontNormale = new Font("Times New Roman");
+            fontNormale.Size = 12;
+
+            Font fontGrande = new Font("Times New Roman");
+            fontGrande.Size = 18;
+            fontGrande.Bold = true;
+            p = document.LastSection.AddParagraph();
+            p.Format.Alignment = ParagraphAlignment.Left;
+            p.AddLineBreak();
+            p.AddLineBreak();
+            string testo = string.Format("Scarperia, {0}", data);
+            p.AddFormattedText(testo, fontGrande);
+            p.AddLineBreak();
+            p.AddLineBreak();
+            p.AddFormattedText("Controllo di tenuta all'acido nitrico", fontGrande);
+
+            p = document.LastSection.AddParagraph();
+            p.AddLineBreak();
+            p.AddLineBreak();
+            p.AddLineBreak();
+
+            Table table = new Table();
+            table.Borders.Width = 1.5;
+            double larghezzaColonna1 = 10.0;
+            double larghezzaColonna2 = 7.0;
+            Column column = table.AddColumn(Unit.FromCentimeter(larghezzaColonna1));
+            column = table.AddColumn(Unit.FromCentimeter(larghezzaColonna2));
+
+            Row row = table.AddRow();
+            row.Height = Unit.FromCentimeter(1.3);
+
+            Cell cell = row.Cells[0];
+            cell.Format.Alignment = ParagraphAlignment.Center;
+            cell.VerticalAlignment = VerticalAlignment.Center;
+            cell.Format.Font.Bold = true;
+            cell.Format.Font.Size = 14;
+            cell.AddParagraph("Articolo");
+
+            cell = row.Cells[1];
+            cell.Format.Alignment = ParagraphAlignment.Center;
+            cell.VerticalAlignment = VerticalAlignment.Center;
+            cell.Format.Font.Bold = true;
+            cell.Format.Font.Size = 14;
+            cell.AddParagraph(parte);
+
+            row = table.AddRow();
+            row.Height = Unit.FromCentimeter(1.3);
+            cell = row.Cells[0];
+            cell.AddParagraph("Finitura");
+            cell.Format.Font.Bold = true;
+            cell.Format.Font.Size = 14;
+            cell.Format.Alignment = ParagraphAlignment.Center;
+            cell.VerticalAlignment = VerticalAlignment.Center;
+
+            cell = row.Cells[1];
+            cell.Format.Font.Bold = true;
+            cell.Format.Font.Size = 14;
+            cell.Format.Alignment = ParagraphAlignment.Center;
+            cell.VerticalAlignment = VerticalAlignment.Center;
+            cell.AddParagraph(colore);
+
+            row = table.AddRow();
+            row.Height = Unit.FromCentimeter(1.3);
+            cell = row.Cells[0];
+            cell.Format.Font.Size = 14;
+            cell.Format.Font.Bold = true;
+            cell.Format.Alignment = ParagraphAlignment.Center;
+            cell.VerticalAlignment = VerticalAlignment.Center;
+            cell.AddParagraph("N°campioni analizzati");
+            cell = row.Cells[1];
+            cell.Format.Font.Bold = true;
+            cell.Format.Alignment = ParagraphAlignment.Center;
+            cell.Format.Font.Size = 14;
+            cell.VerticalAlignment = VerticalAlignment.Center;
+            cell.AddParagraph(numeroCampioni);
+
+            row = table.AddRow();
+            row.Height = Unit.FromCentimeter(1.1);
+            cell = row.Cells[0];
+            cell.Format.Font.Bold = true;
+            cell.Format.Font.Size = 14;
+            cell.Format.Alignment = ParagraphAlignment.Center;
+            cell.VerticalAlignment = VerticalAlignment.Center;
+            cell.AddParagraph("N°bolla");
+            cell = row.Cells[1];
+            cell.Format.Font.Bold = true;
+            cell.Format.Alignment = ParagraphAlignment.Center;
+            cell.Format.Font.Size = 14;
+            cell.VerticalAlignment = VerticalAlignment.Center;
+            cell.AddParagraph(bolla);
+
+            row = table.AddRow();
+            row.Height = Unit.FromCentimeter(1.1);
+            cell = row.Cells[0];
+            cell.Format.Font.Bold = true;
+            cell.Format.Font.Size = 14;
+            cell.Format.Alignment = ParagraphAlignment.Center;
+            cell.VerticalAlignment = VerticalAlignment.Center;
+            cell.AddParagraph("Data DDT");
+            cell = row.Cells[1];
+            cell.Format.Font.Bold = true;
+            cell.Format.Alignment = ParagraphAlignment.Center;
+            cell.Format.Font.Size = 14;
+            cell.VerticalAlignment = VerticalAlignment.Center;
+            cell.AddParagraph(dataDDT);
+
+            document.LastSection.Add(table);
+
+            p = document.LastSection.AddParagraph();
+            p.AddLineBreak();
+            p.AddLineBreak();
+
+            table = new Table();
+            table.Borders.Width = 1.5;
+
+            column = table.AddColumn(Unit.FromCentimeter(larghezzaColonna1));
+            column = table.AddColumn(Unit.FromCentimeter(larghezzaColonna2));
+
+            row = table.AddRow();
+            row.Height = Unit.FromCentimeter(1.3);
+
+            cell = row.Cells[0];
+            cell.Format.Alignment = ParagraphAlignment.Center;
+            cell.VerticalAlignment = VerticalAlignment.Center;
+            cell.Format.Font.Bold = true;
+            cell.Format.Font.Size = 14;
+            cell.AddParagraph("Esito test (30 sec) turbula");
+
+            cell = row.Cells[1];
+            cell.Format.Alignment = ParagraphAlignment.Center;
+            cell.VerticalAlignment = VerticalAlignment.Center;
+            cell.Format.Font.Bold = true;
+            cell.Format.Font.Size = 14;
+            cell.AddParagraph(esito ? "ok" : "ko");
+
+
+            document.LastSection.Add(table);
+
+            p = document.LastSection.AddParagraph();
+            p.AddLineBreak();
+            p.AddLineBreak();
+            p.AddLineBreak();
+
+            p = document.LastSection.AddParagraph();
+            p.Format.Alignment = ParagraphAlignment.Right;
+            fontNormale.Bold = true;
+            p.AddFormattedText("Distinti Saluti", fontNormale);
+            p.AddLineBreak();
+            p.AddFormattedText("Laboratorio Qualità, R&D", fontNormale);
+            p.AddLineBreak();
+
+        }
         public void CreaReportColorimetrico(string dataCollaudo, string dataCalibrazione,
 string prefisso, string parte, string colore, string commessa, string quantita, string operatore,
 string strumentoMisura, string nota, List<MisuraColore> misure, byte[] iloghi)
@@ -1186,7 +1550,7 @@ string strumentoMisura, string nota, List<MisuraColore> misure, byte[] iloghi)
 
         }
 
-        public void CreaReportSpessori(DateTime data, string commessa, string operatore, string spessoreRichiesto, string applicazione, string strumentoMisura, int numeroMisure,
+        public void CreaReportSpessoriGucci(DateTime data, string commessa, string operatore, string spessoreRichiesto, string applicazione, string strumentoMisura, int numeroMisure,
           List<string> etichette, List<string> medie, List<string> Std, List<string> Pct, List<string> range, List<string> minimo, List<string> massimo, byte[] iloghi,
           byte[] iBowman, List<List<string>> misure)
         {
@@ -1552,7 +1916,7 @@ string strumentoMisura, string nota, List<MisuraColore> misure, byte[] iloghi)
                     cell = row.Cells[1];
                     cell.Format.Alignment = ParagraphAlignment.Center;
                     cell.VerticalAlignment = VerticalAlignment.Center;
-                    p = cell.AddParagraph((riga+1).ToString());
+                    p = cell.AddParagraph((riga + 1).ToString());
 
                     for (int colonna = 0; colonna < 9; colonna++)
                     {
@@ -1573,11 +1937,230 @@ string strumentoMisura, string nota, List<MisuraColore> misure, byte[] iloghi)
 
         }
 
+
+        public void CreaReportSpessoriYSL(DateTime data, string numeroCampioni, string parte, string colore, int numeroMisure,
+          List<string> etichette, List<string> medie, byte[] iloghi, List<List<string>> misure)
+        {
+            int nCampioni = int.Parse(numeroCampioni);
+            int nMisurePerPezzo = 0;
+            if (nCampioni > 0) nMisurePerPezzo = numeroMisure / nCampioni;
+
+            document.Info.Title = "Spessori";
+            document.Info.Subject = String.Empty;
+            document.Info.Author = string.Empty;
+
+            Section section = document.AddSection();
+
+            DefineBasicStyles();
+
+            Paragraph p = document.LastSection.AddParagraph();
+            p.Format.Alignment = ParagraphAlignment.Center;
+            string iLogoMP = MigraDocFilenameFromByteArray(iloghi);
+            p.AddImage(iLogoMP);
+            p = document.LastSection.AddParagraph();
+            p.Format.Alignment = ParagraphAlignment.Center;
+            Font fontPiccolo = new Font("Times New Roman");
+            fontPiccolo.Size = 8;
+            fontPiccolo.Bold = true;
+
+            p.AddFormattedText("Top Finish 2002 S.p.A.", fontPiccolo);
+            p.AddLineBreak();
+            p.AddFormattedText("Viale Kennedy, 103 - 50038 SCARPERIA (FI) - P.Iva 04949200481", fontPiccolo);
+            p.AddLineBreak();
+            p.AddFormattedText("Tel 055 843611 - Fax 055 8436130 - e-mail: info@topfinish.it", fontPiccolo);
+
+            Font fontNormale = new Font("Times New Roman");
+            fontNormale.Size = 12;
+
+            Font fontGrande = new Font("Times New Roman");
+            fontGrande.Size = 18;
+            fontGrande.Bold = true;
+            p = document.LastSection.AddParagraph();
+            p.Format.Alignment = ParagraphAlignment.Left;
+            p.AddLineBreak();
+            p.AddLineBreak();
+            string testo = string.Format("Scarperia, {0}", data.ToShortDateString());
+            p.AddFormattedText(testo, fontGrande);
+            p.AddLineBreak();
+            p.AddLineBreak();
+            p.AddFormattedText("Verifica spessori", fontGrande);
+
+            p = document.LastSection.AddParagraph();
+            p.AddLineBreak();
+            p.AddLineBreak();
+
+            Table table = new Table();
+            table.Borders.Width = 1.5;
+            double larghezzaColonna1 = 10.0;
+            double larghezzaColonna2 = 7.0;
+            Column column = table.AddColumn(Unit.FromCentimeter(larghezzaColonna1));
+            column = table.AddColumn(Unit.FromCentimeter(larghezzaColonna2));
+
+            Row row = table.AddRow();
+            row.Height = Unit.FromCentimeter(1.3);
+
+            Cell cell = row.Cells[0];
+            cell.Format.Alignment = ParagraphAlignment.Center;
+            cell.VerticalAlignment = VerticalAlignment.Center;
+            cell.Format.Font.Bold = true;
+            cell.Format.Font.Size = 14;
+            cell.AddParagraph("Articolo");
+
+            cell = row.Cells[1];
+            cell.Format.Alignment = ParagraphAlignment.Center;
+            cell.VerticalAlignment = VerticalAlignment.Center;
+            cell.Format.Font.Bold = true;
+            cell.Format.Font.Size = 14;
+            cell.AddParagraph(parte);
+
+            row = table.AddRow();
+            row.Height = Unit.FromCentimeter(1.3);
+            cell = row.Cells[0];
+            cell.AddParagraph("Finitura");
+            cell.Format.Font.Bold = true;
+            cell.Format.Font.Size = 14;
+            cell.Format.Alignment = ParagraphAlignment.Center;
+            cell.VerticalAlignment = VerticalAlignment.Center;
+
+            cell = row.Cells[1];
+            cell.Format.Font.Bold = true;
+            cell.Format.Font.Size = 14;
+            cell.Format.Alignment = ParagraphAlignment.Center;
+            cell.VerticalAlignment = VerticalAlignment.Center;
+            cell.AddParagraph(colore);
+
+            row = table.AddRow();
+            row.Height = Unit.FromCentimeter(1.3);
+            cell = row.Cells[0];
+            cell.Format.Font.Size = 14;
+            cell.Format.Font.Bold = true;
+            cell.Format.Alignment = ParagraphAlignment.Center;
+            cell.VerticalAlignment = VerticalAlignment.Center;
+            cell.AddParagraph("N°campioni analizzati");
+            cell = row.Cells[1];
+            cell.Format.Font.Bold = true;
+            cell.Format.Alignment = ParagraphAlignment.Center;
+            cell.Format.Font.Size = 14;
+            cell.VerticalAlignment = VerticalAlignment.Center;
+            cell.AddParagraph(numeroCampioni.ToString());
+
+            row = table.AddRow();
+            row.Height = Unit.FromCentimeter(1.1);
+            cell = row.Cells[0];
+            cell.Format.Font.Bold = true;
+            cell.Format.Font.Size = 14;
+            cell.Format.Alignment = ParagraphAlignment.Center;
+            cell.VerticalAlignment = VerticalAlignment.Center;
+            cell.AddParagraph("N° misure per pezzo");
+            cell = row.Cells[1];
+            cell.Format.Font.Bold = true;
+            cell.Format.Alignment = ParagraphAlignment.Center;
+            cell.Format.Font.Size = 14;
+            cell.VerticalAlignment = VerticalAlignment.Center;
+            cell.AddParagraph(nMisurePerPezzo.ToString());
+
+            document.LastSection.Add(table);
+
+            p = document.LastSection.AddParagraph();
+            p.AddLineBreak();
+            p.AddLineBreak();
+            p.AddLineBreak();
+
+            // TABELLA MISURE
+
+            table = new Table();
+            table.Borders.Width = 0.75;
+
+            column = table.AddColumn(Unit.FromCentimeter(2.0));
+            double larghezzaColonna = 2.0;
+            if (etichette.Count > 0)
+                larghezzaColonna = 15.0 / etichette.Count;
+            for (int i = 0; i < etichette.Count; i++)
+                column = table.AddColumn(Unit.FromCentimeter(larghezzaColonna));
+
+            row = table.AddRow();
+            row.Height = Unit.FromCentimeter(0.5);
+
+            cell = row.Cells[0];
+            cell.Format.Alignment = ParagraphAlignment.Center;
+            cell.VerticalAlignment = VerticalAlignment.Center;
+            cell.Format.Font.Bold = true;
+            cell.Format.Font.Size = 14;
+            p = cell.AddParagraph("Misura");
+
+            for (int i = 0; i < etichette.Count; i++)
+            {
+                cell = row.Cells[i + 1];
+                cell.Format.Alignment = ParagraphAlignment.Center;
+                cell.VerticalAlignment = VerticalAlignment.Center;
+                cell.Format.Font.Bold = true;
+                cell.Format.Font.Size = 14;
+                p = cell.AddParagraph(etichette[i]);
+            }
+
+            int indiceMisura = 1;
+
+            for (int riga = 0; riga < misure.Count; riga++)
+            {
+                row = table.AddRow();
+                row.Height = Unit.FromCentimeter(0.5);
+
+                if (riga < misure.Count)
+                {
+                    List<string> misura = misure[riga];
+
+                    cell = row.Cells[0];
+                    cell.Format.Alignment = ParagraphAlignment.Center;
+                    cell.VerticalAlignment = VerticalAlignment.Center;
+                    cell.Format.Font.Bold = true;
+                    cell.Format.Font.Size = 14;
+                    p = cell.AddParagraph((indiceMisura).ToString());
+
+                    indiceMisura++;
+                    if (indiceMisura > nMisurePerPezzo) indiceMisura = 1;
+
+                    for (int colonna = 0; colonna < etichette.Count; colonna++)
+                    {
+                        if (colonna < misura.Count)
+                        {
+                            cell = row.Cells[colonna + 1];
+                            cell.Format.Alignment = ParagraphAlignment.Center;
+                            cell.VerticalAlignment = VerticalAlignment.Center;
+                            cell.Format.Font.Bold = true;
+                            cell.Format.Font.Size = 14;
+
+                            p = cell.AddParagraph(misura[colonna]);
+                        }
+                    }
+
+                }
+            }
+
+            // riga dei valori medii
+            row = table.AddRow();
+            row.Height = Unit.FromCentimeter(0.5);
+
+            for (int colonna = 0; colonna < medie.Count; colonna++)
+            {
+                if (colonna < medie.Count)
+                {
+                    cell = row.Cells[colonna];
+                    cell.Format.Alignment = ParagraphAlignment.Center;
+                    cell.VerticalAlignment = VerticalAlignment.Center;
+                    cell.Format.Font.Bold = true;
+                    cell.Format.Font.Size = 14;
+                    p = cell.AddParagraph(medie[colonna]);
+                }
+            }
+
+            document.LastSection.Add(table);
+
+        }
     }
 
     public class MisuraDimensionale
     {
-        public string RIferimento { get; set; }
+        public string Riferimento { get; set; }
         public string Grandezza { get; set; }
         public string Richieste { get; set; }
         public string Tolleranza { get; set; }

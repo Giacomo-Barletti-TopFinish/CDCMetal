@@ -137,6 +137,27 @@ namespace CDCMetal.Data
             a.FillCDC_ANTIALLERGICO(ds, IDDETTAGLIO);
         }
 
+        [DataContext]
+        public void FillCDC_VERNICICOPRENTI(CDCDS ds, List<decimal> IDDETTAGLIO)
+        {
+            CDCMetalAdapter a = new CDCMetalAdapter(DbConnection, DbTransaction);
+            a.FillCDC_VERNICICOPRENTI(ds, IDDETTAGLIO);
+        }
+
+        [DataContext]
+        public void FillCDC_TENUTACIDONITRICO(CDCDS ds, List<decimal> IDDETTAGLIO)
+        {
+            CDCMetalAdapter a = new CDCMetalAdapter(DbConnection, DbTransaction);
+            a.FillCDC_TENUTACIDONITRICO(ds, IDDETTAGLIO);
+        }
+
+        [DataContext(true)]
+        public void UpdateCDC_TENUTACIDONITRICO(CDCDS ds)
+        {
+            CDCMetalAdapter a = new CDCMetalAdapter(DbConnection, DbTransaction);
+            a.UpdateTable(ds.CDC_TENUTACIDONITRICO.TableName, ds);
+        }
+
         [DataContext(true)]
         public void UpdateCDC_ANTIALLERGICO(CDCDS ds)
         {
@@ -144,6 +165,12 @@ namespace CDCMetal.Data
             a.UpdateTable(ds.CDC_ANTIALLERGICO.TableName, ds);
         }
 
+        [DataContext(true)]
+        public void UpdateCDC_VERNICICOPRENTI(CDCDS ds)
+        {
+            CDCMetalAdapter a = new CDCMetalAdapter(DbConnection, DbTransaction);
+            a.UpdateTable(ds.CDC_VERNICICOPRENTI.TableName, ds);
+        }
         [DataContext]
         public void FillCDC_COLORE(CDCDS ds, List<decimal> IDDETTAGLIO)
         {

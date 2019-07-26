@@ -8,14 +8,14 @@
     <Setting Name="PathSchedeTecnic" Type="System.String" Scope="Application">
       <Value Profile="(Default)">\\dc02\CONDIVISA\Metal Plus\Qualità - BAP e COLLAUDI GUCCI\COLLAUDI\SCHEDE TECNICHE</Value>
     </Setting>
-    <Setting Name="PathRefertiLaboratorio" Type="System.String" Scope="Application">
-      <Value Profile="(Default)">\\dc02\LABORATORIO\Referti Lab\Referti Gucci 2018</Value>
-    </Setting>
     <Setting Name="StrumentoColore" Type="System.String" Scope="Application">
       <Value Profile="(Default)">KONICA MINOLTA CM-A145</Value>
     </Setting>
     <Setting Name="StrumentoSpessore" Type="System.String" Scope="Application">
       <Value Profile="(Default)">XRF Bowman serie P (S/N P1718131)</Value>
+    </Setting>
+    <Setting Name="PathRefertiLaboratorio" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">\\dc02\GalvanicaFiles\Laboratorio e Backup\LABORATORIO\Referti Lab\Referti {0}\2019</Value>
     </Setting>
   </Settings>
 </SettingsFile>

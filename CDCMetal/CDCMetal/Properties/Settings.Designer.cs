@@ -12,7 +12,7 @@ namespace CDCMetal.Properties {
     
     
     [global::System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
-    [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.VisualStudio.Editors.SettingsDesigner.SettingsSingleFileGenerator", "15.8.0.0")]
+    [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.VisualStudio.Editors.SettingsDesigner.SettingsSingleFileGenerator", "15.9.0.0")]
     internal sealed partial class Settings : global::System.Configuration.ApplicationSettingsBase {
         
         private static Settings defaultInstance = ((Settings)(global::System.Configuration.ApplicationSettingsBase.Synchronized(new Settings())));
@@ -44,15 +44,6 @@ namespace CDCMetal.Properties {
         
         [global::System.Configuration.ApplicationScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("\\\\dc02\\LABORATORIO\\Referti Lab\\Referti Gucci 2018")]
-        public string PathRefertiLaboratorio {
-            get {
-                return ((string)(this["PathRefertiLaboratorio"]));
-            }
-        }
-        
-        [global::System.Configuration.ApplicationScopedSettingAttribute()]
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.DefaultSettingValueAttribute("KONICA MINOLTA CM-A145")]
         public string StrumentoColore {
             get {
@@ -66,6 +57,16 @@ namespace CDCMetal.Properties {
         public string StrumentoSpessore {
             get {
                 return ((string)(this["StrumentoSpessore"]));
+            }
+        }
+        
+        [global::System.Configuration.ApplicationScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("\\\\dc02\\GalvanicaFiles\\Laboratorio e Backup\\LABORATORIO\\Referti Lab\\Referti {0}\\20" +
+            "19")]
+        public string PathRefertiLaboratorio {
+            get {
+                return ((string)(this["PathRefertiLaboratorio"]));
             }
         }
     }

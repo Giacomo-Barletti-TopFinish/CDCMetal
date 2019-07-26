@@ -604,7 +604,7 @@ namespace CDCMetal
                 ImageConverter converter = new ImageConverter();
                 byte[] image = (byte[])converter.ConvertTo(firma, typeof(byte[]));
 
-                fileCreati = bll.CreaPDFColore(idPerPDF, Contesto.DS, Contesto.PathCollaudo, image, chkCopiaFileReferti.Checked, Contesto.PathRefertiLaboratorio);
+                fileCreati = bll.CreaPDFColore(idPerPDF, Contesto.DS, Contesto.PathCollaudo, image, chkCopiaFileReferti.Checked, Contesto.GetPathRefertiLaboratorio(((DataCollaudo)ddlDataCollaudo.SelectedItem).Brand));
                 btnLeggiDati_Click(null, null);
             }
             finally

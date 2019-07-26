@@ -24,10 +24,10 @@
     <UpdateRequired>true</UpdateRequired>
     <MapFileExtensions>true</MapFileExtensions>
     <InstallUrl>\\srv-webservices\publish\CDCMetal\</InstallUrl>
-    <MinimumRequiredVersion>1.0.0.41</MinimumRequiredVersion>
+    <MinimumRequiredVersion>2.0.0.4</MinimumRequiredVersion>
     <OpenBrowserOnPublish>false</OpenBrowserOnPublish>
-    <ApplicationRevision>41</ApplicationRevision>
-    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <ApplicationRevision>4</ApplicationRevision>
+    <ApplicationVersion>2.0.0.%2a</ApplicationVersion>
     <UseApplicationTrust>false</UseApplicationTrust>
     <PublishWizardCompleted>true</PublishWizardCompleted>
     <BootstrapperEnabled>true</BootstrapperEnabled>
@@ -126,6 +126,18 @@
     <Compile Include="CreaSpessoreFrm.Designer.cs">
       <DependentUpon>CreaSpessoreFrm.cs</DependentUpon>
     </Compile>
+    <Compile Include="CreaTenutaAcidoNitricoFrm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CreaTenutaAcidoNitricoFrm.Designer.cs">
+      <DependentUpon>CreaTenutaAcidoNitricoFrm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="CreaVerniciCoprentiFrm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CreaVerniciCoprentiFrm.Designer.cs">
+      <DependentUpon>CreaVerniciCoprentiFrm.cs</DependentUpon>
+    </Compile>
     <Compile Include="ExcelCaricaNuovoDocumentoFrm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -184,6 +196,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="CreaSpessoreFrm.resx">
       <DependentUpon>CreaSpessoreFrm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CreaTenutaAcidoNitricoFrm.resx">
+      <DependentUpon>CreaTenutaAcidoNitricoFrm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CreaVerniciCoprentiFrm.resx">
+      <DependentUpon>CreaVerniciCoprentiFrm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="ExcelCaricaNuovoDocumentoFrm.resx">
       <DependentUpon>ExcelCaricaNuovoDocumentoFrm.cs</DependentUpon>
