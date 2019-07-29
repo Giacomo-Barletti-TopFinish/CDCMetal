@@ -1663,3 +1663,231 @@ Oracle.ManagedDataAccess.Client.OracleException (0x80004005): ORA-12570: Session
 INFO  2019-07-29 14:22:43,210 87044ms MainForm               LogScrivi          - Applicazione CDCMetal fermata
 INFO  2019-07-29 14:22:55,398   150ms MainForm               LogScrivi          - Applicazione CDCMetal avviata
 INFO  2019-07-29 14:23:17,114 21866ms MainForm               LogScrivi          - Applicazione CDCMetal fermata
+INFO  2019-07-29 16:10:16,438   155ms MainForm               LogScrivi          - Applicazione CDCMetal avviata
+ERROR 2019-07-29 16:10:55,324 39042ms MainForm               LogScriviErrore    - Errore in dgvDettaglio_CellClick
+System.Data.DuplicateNameException: Una colonna denominata 'Au' appartiene già a questa DataTable.
+   in System.Data.DataColumnCollection.RegisterColumnName(String name, DataColumn column)
+   in System.Data.DataColumnCollection.BaseAdd(DataColumn column)
+   in System.Data.DataColumnCollection.AddAt(Int32 index, DataColumn column)
+   in System.Data.DataColumnCollection.Add(String columnName, Type type)
+   in CDCMetal.CreaSpessoreFrm.CaricaCampioniMisuraPrecedente(CDC_GALVANICARow galvanica) in C:\VSProgetti\CDCMetal\CDCMetal\CDCMetal\CreaSpessoreFrm.cs:riga 291
+   in CDCMetal.CreaSpessoreFrm.dgvDettaglio_CellClick(Object sender, DataGridViewCellEventArgs e) in C:\VSProgetti\CDCMetal\CDCMetal\CDCMetal\CreaSpessoreFrm.cs:riga 216
+ERROR 2019-07-29 16:11:23,797 67514ms MainForm               LogScriviErrore    - Errore in dgvDettaglio_CellClick
+System.Data.DuplicateNameException: Una colonna denominata 'Au' appartiene già a questa DataTable.
+   in System.Data.DataColumnCollection.RegisterColumnName(String name, DataColumn column)
+   in System.Data.DataColumnCollection.BaseAdd(DataColumn column)
+   in System.Data.DataColumnCollection.AddAt(Int32 index, DataColumn column)
+   in System.Data.DataColumnCollection.Add(String columnName, Type type)
+   in CDCMetal.CreaSpessoreFrm.CaricaCampioniMisuraPrecedente(CDC_GALVANICARow galvanica) in C:\VSProgetti\CDCMetal\CDCMetal\CDCMetal\CreaSpessoreFrm.cs:riga 291
+   in CDCMetal.CreaSpessoreFrm.dgvDettaglio_CellClick(Object sender, DataGridViewCellEventArgs e) in C:\VSProgetti\CDCMetal\CDCMetal\CDCMetal\CreaSpessoreFrm.cs:riga 216
+ERROR 2019-07-29 16:11:44,639 88356ms MainForm               LogScriviErrore    - Errore in dgvDettaglio_CellClick
+System.Data.DuplicateNameException: Una colonna denominata 'Ni' appartiene già a questa DataTable.
+   in System.Data.DataColumnCollection.RegisterColumnName(String name, DataColumn column)
+   in System.Data.DataColumnCollection.BaseAdd(DataColumn column)
+   in System.Data.DataColumnCollection.AddAt(Int32 index, DataColumn column)
+   in System.Data.DataColumnCollection.Add(String columnName, Type type)
+   in CDCMetal.CreaSpessoreFrm.CaricaCampioniMisuraPrecedente(CDC_GALVANICARow galvanica) in C:\VSProgetti\CDCMetal\CDCMetal\CDCMetal\CreaSpessoreFrm.cs:riga 291
+   in CDCMetal.CreaSpessoreFrm.dgvDettaglio_CellClick(Object sender, DataGridViewCellEventArgs e) in C:\VSProgetti\CDCMetal\CDCMetal\CDCMetal\CreaSpessoreFrm.cs:riga 216
+ERROR 2019-07-29 16:11:55,654 99371ms MainForm               LogScriviErrore    - Errore in dgvDettaglio_CellClick
+System.Data.DuplicateNameException: Una colonna denominata 'Ni' appartiene già a questa DataTable.
+   in System.Data.DataColumnCollection.RegisterColumnName(String name, DataColumn column)
+   in System.Data.DataColumnCollection.BaseAdd(DataColumn column)
+   in System.Data.DataColumnCollection.AddAt(Int32 index, DataColumn column)
+   in System.Data.DataColumnCollection.Add(String columnName, Type type)
+   in CDCMetal.CreaSpessoreFrm.CaricaCampioniMisuraPrecedente(CDC_GALVANICARow galvanica) in C:\VSProgetti\CDCMetal\CDCMetal\CDCMetal\CreaSpessoreFrm.cs:riga 291
+   in CDCMetal.CreaSpessoreFrm.dgvDettaglio_CellClick(Object sender, DataGridViewCellEventArgs e) in C:\VSProgetti\CDCMetal\CDCMetal\CDCMetal\CreaSpessoreFrm.cs:riga 216
+ERROR 2019-07-29 16:27:24,628 1028345ms MainForm               LogScriviErrore    - Errore in dgvDettaglio_CellClick
+System.Data.DuplicateNameException: Una colonna denominata 'Au' appartiene già a questa DataTable.
+   in System.Data.DataColumnCollection.RegisterColumnName(String name, DataColumn column)
+   in System.Data.DataColumnCollection.BaseAdd(DataColumn column)
+   in System.Data.DataColumnCollection.AddAt(Int32 index, DataColumn column)
+   in System.Data.DataColumnCollection.Add(String columnName, Type type)
+   in CDCMetal.CreaSpessoreFrm.CaricaCampioniMisuraPrecedente(CDC_GALVANICARow galvanica) in C:\VSProgetti\CDCMetal\CDCMetal\CDCMetal\CreaSpessoreFrm.cs:riga 291
+   in CDCMetal.CreaSpessoreFrm.dgvDettaglio_CellClick(Object sender, DataGridViewCellEventArgs e) in C:\VSProgetti\CDCMetal\CDCMetal\CDCMetal\CreaSpessoreFrm.cs:riga 216
+ERROR 2019-07-29 16:27:49,185 1052903ms MainForm               LogScriviErrore    - Errore in dgvDettaglio_CellClick
+System.Data.DuplicateNameException: Una colonna denominata 'Au' appartiene già a questa DataTable.
+   in System.Data.DataColumnCollection.RegisterColumnName(String name, DataColumn column)
+   in System.Data.DataColumnCollection.BaseAdd(DataColumn column)
+   in System.Data.DataColumnCollection.AddAt(Int32 index, DataColumn column)
+   in System.Data.DataColumnCollection.Add(String columnName, Type type)
+   in CDCMetal.CreaSpessoreFrm.CaricaCampioniMisuraPrecedente(CDC_GALVANICARow galvanica) in C:\VSProgetti\CDCMetal\CDCMetal\CDCMetal\CreaSpessoreFrm.cs:riga 291
+   in CDCMetal.CreaSpessoreFrm.dgvDettaglio_CellClick(Object sender, DataGridViewCellEventArgs e) in C:\VSProgetti\CDCMetal\CDCMetal\CDCMetal\CreaSpessoreFrm.cs:riga 216
+ERROR 2019-07-29 16:32:32,800 1336517ms MainForm               LogScriviErrore    - Errore in dgvDettaglio_CellClick
+System.Data.DuplicateNameException: Una colonna denominata 'Au' appartiene già a questa DataTable.
+   in System.Data.DataColumnCollection.RegisterColumnName(String name, DataColumn column)
+   in System.Data.DataColumnCollection.BaseAdd(DataColumn column)
+   in System.Data.DataColumnCollection.AddAt(Int32 index, DataColumn column)
+   in System.Data.DataColumnCollection.Add(String columnName, Type type)
+   in CDCMetal.CreaSpessoreFrm.CaricaCampioniMisuraPrecedente(CDC_GALVANICARow galvanica) in C:\VSProgetti\CDCMetal\CDCMetal\CDCMetal\CreaSpessoreFrm.cs:riga 291
+   in CDCMetal.CreaSpessoreFrm.dgvDettaglio_CellClick(Object sender, DataGridViewCellEventArgs e) in C:\VSProgetti\CDCMetal\CDCMetal\CDCMetal\CreaSpessoreFrm.cs:riga 216
+ERROR 2019-07-29 16:33:01,584 1365302ms MainForm               LogScriviErrore    - Errore in dgvDettaglio_CellClick
+System.Data.DuplicateNameException: Una colonna denominata 'Ni' appartiene già a questa DataTable.
+   in System.Data.DataColumnCollection.RegisterColumnName(String name, DataColumn column)
+   in System.Data.DataColumnCollection.BaseAdd(DataColumn column)
+   in System.Data.DataColumnCollection.AddAt(Int32 index, DataColumn column)
+   in System.Data.DataColumnCollection.Add(String columnName, Type type)
+   in CDCMetal.CreaSpessoreFrm.CaricaCampioniMisuraPrecedente(CDC_GALVANICARow galvanica) in C:\VSProgetti\CDCMetal\CDCMetal\CDCMetal\CreaSpessoreFrm.cs:riga 291
+   in CDCMetal.CreaSpessoreFrm.dgvDettaglio_CellClick(Object sender, DataGridViewCellEventArgs e) in C:\VSProgetti\CDCMetal\CDCMetal\CDCMetal\CreaSpessoreFrm.cs:riga 216
+ERROR 2019-07-29 16:33:14,977 1378695ms MainForm               LogScriviErrore    - Errore in dgvDettaglio_CellClick
+System.Data.DuplicateNameException: Una colonna denominata 'Au' appartiene già a questa DataTable.
+   in System.Data.DataColumnCollection.RegisterColumnName(String name, DataColumn column)
+   in System.Data.DataColumnCollection.BaseAdd(DataColumn column)
+   in System.Data.DataColumnCollection.AddAt(Int32 index, DataColumn column)
+   in System.Data.DataColumnCollection.Add(String columnName, Type type)
+   in CDCMetal.CreaSpessoreFrm.CaricaCampioniMisuraPrecedente(CDC_GALVANICARow galvanica) in C:\VSProgetti\CDCMetal\CDCMetal\CDCMetal\CreaSpessoreFrm.cs:riga 291
+   in CDCMetal.CreaSpessoreFrm.dgvDettaglio_CellClick(Object sender, DataGridViewCellEventArgs e) in C:\VSProgetti\CDCMetal\CDCMetal\CDCMetal\CreaSpessoreFrm.cs:riga 216
+ERROR 2019-07-29 16:33:23,097 1386814ms MainForm               LogScriviErrore    - Errore in dgvDettaglio_CellClick
+System.Data.DuplicateNameException: Una colonna denominata 'Ni' appartiene già a questa DataTable.
+   in System.Data.DataColumnCollection.RegisterColumnName(String name, DataColumn column)
+   in System.Data.DataColumnCollection.BaseAdd(DataColumn column)
+   in System.Data.DataColumnCollection.AddAt(Int32 index, DataColumn column)
+   in System.Data.DataColumnCollection.Add(String columnName, Type type)
+   in CDCMetal.CreaSpessoreFrm.CaricaCampioniMisuraPrecedente(CDC_GALVANICARow galvanica) in C:\VSProgetti\CDCMetal\CDCMetal\CDCMetal\CreaSpessoreFrm.cs:riga 291
+   in CDCMetal.CreaSpessoreFrm.dgvDettaglio_CellClick(Object sender, DataGridViewCellEventArgs e) in C:\VSProgetti\CDCMetal\CDCMetal\CDCMetal\CreaSpessoreFrm.cs:riga 216
+ERROR 2019-07-29 16:33:42,744 1406462ms MainForm               LogScriviErrore    - Errore in dgvDettaglio_CellClick
+System.Data.DuplicateNameException: Una colonna denominata 'Au' appartiene già a questa DataTable.
+   in System.Data.DataColumnCollection.RegisterColumnName(String name, DataColumn column)
+   in System.Data.DataColumnCollection.BaseAdd(DataColumn column)
+   in System.Data.DataColumnCollection.AddAt(Int32 index, DataColumn column)
+   in System.Data.DataColumnCollection.Add(String columnName, Type type)
+   in CDCMetal.CreaSpessoreFrm.CaricaCampioniMisuraPrecedente(CDC_GALVANICARow galvanica) in C:\VSProgetti\CDCMetal\CDCMetal\CDCMetal\CreaSpessoreFrm.cs:riga 291
+   in CDCMetal.CreaSpessoreFrm.dgvDettaglio_CellClick(Object sender, DataGridViewCellEventArgs e) in C:\VSProgetti\CDCMetal\CDCMetal\CDCMetal\CreaSpessoreFrm.cs:riga 216
+ERROR 2019-07-29 16:33:53,513 1417230ms MainForm               LogScriviErrore    - Errore in dgvDettaglio_CellClick
+System.Data.DuplicateNameException: Una colonna denominata 'Au' appartiene già a questa DataTable.
+   in System.Data.DataColumnCollection.RegisterColumnName(String name, DataColumn column)
+   in System.Data.DataColumnCollection.BaseAdd(DataColumn column)
+   in System.Data.DataColumnCollection.AddAt(Int32 index, DataColumn column)
+   in System.Data.DataColumnCollection.Add(String columnName, Type type)
+   in CDCMetal.CreaSpessoreFrm.CaricaCampioniMisuraPrecedente(CDC_GALVANICARow galvanica) in C:\VSProgetti\CDCMetal\CDCMetal\CDCMetal\CreaSpessoreFrm.cs:riga 291
+   in CDCMetal.CreaSpessoreFrm.dgvDettaglio_CellClick(Object sender, DataGridViewCellEventArgs e) in C:\VSProgetti\CDCMetal\CDCMetal\CDCMetal\CreaSpessoreFrm.cs:riga 216
+ERROR 2019-07-29 16:34:43,441 1467158ms MainForm               LogScriviErrore    - Errore in dgvDettaglio_CellClick
+System.Data.DuplicateNameException: Una colonna denominata 'Ni' appartiene già a questa DataTable.
+   in System.Data.DataColumnCollection.RegisterColumnName(String name, DataColumn column)
+   in System.Data.DataColumnCollection.BaseAdd(DataColumn column)
+   in System.Data.DataColumnCollection.AddAt(Int32 index, DataColumn column)
+   in System.Data.DataColumnCollection.Add(String columnName, Type type)
+   in CDCMetal.CreaSpessoreFrm.CaricaCampioniMisuraPrecedente(CDC_GALVANICARow galvanica) in C:\VSProgetti\CDCMetal\CDCMetal\CDCMetal\CreaSpessoreFrm.cs:riga 291
+   in CDCMetal.CreaSpessoreFrm.dgvDettaglio_CellClick(Object sender, DataGridViewCellEventArgs e) in C:\VSProgetti\CDCMetal\CDCMetal\CDCMetal\CreaSpessoreFrm.cs:riga 216
+ERROR 2019-07-29 16:35:09,462 1493180ms MainForm               LogScriviErrore    - Errore in dgvDettaglio_CellClick
+System.Data.DuplicateNameException: Una colonna denominata 'Ni' appartiene già a questa DataTable.
+   in System.Data.DataColumnCollection.RegisterColumnName(String name, DataColumn column)
+   in System.Data.DataColumnCollection.BaseAdd(DataColumn column)
+   in System.Data.DataColumnCollection.AddAt(Int32 index, DataColumn column)
+   in System.Data.DataColumnCollection.Add(String columnName, Type type)
+   in CDCMetal.CreaSpessoreFrm.CaricaCampioniMisuraPrecedente(CDC_GALVANICARow galvanica) in C:\VSProgetti\CDCMetal\CDCMetal\CDCMetal\CreaSpessoreFrm.cs:riga 291
+   in CDCMetal.CreaSpessoreFrm.dgvDettaglio_CellClick(Object sender, DataGridViewCellEventArgs e) in C:\VSProgetti\CDCMetal\CDCMetal\CDCMetal\CreaSpessoreFrm.cs:riga 216
+ERROR 2019-07-29 16:41:25,203 1868920ms MainForm               LogScriviErrore    - Errore in dgvDettaglio_CellClick
+System.Data.DuplicateNameException: Una colonna denominata 'Ni' appartiene già a questa DataTable.
+   in System.Data.DataColumnCollection.RegisterColumnName(String name, DataColumn column)
+   in System.Data.DataColumnCollection.BaseAdd(DataColumn column)
+   in System.Data.DataColumnCollection.AddAt(Int32 index, DataColumn column)
+   in System.Data.DataColumnCollection.Add(String columnName, Type type)
+   in CDCMetal.CreaSpessoreFrm.CaricaCampioniMisuraPrecedente(CDC_GALVANICARow galvanica) in C:\VSProgetti\CDCMetal\CDCMetal\CDCMetal\CreaSpessoreFrm.cs:riga 291
+   in CDCMetal.CreaSpessoreFrm.dgvDettaglio_CellClick(Object sender, DataGridViewCellEventArgs e) in C:\VSProgetti\CDCMetal\CDCMetal\CDCMetal\CreaSpessoreFrm.cs:riga 216
+ERROR 2019-07-29 16:41:52,132 1895849ms MainForm               LogScriviErrore    - Errore in dgvDettaglio_CellClick
+System.Data.DuplicateNameException: Una colonna denominata 'Au' appartiene già a questa DataTable.
+   in System.Data.DataColumnCollection.RegisterColumnName(String name, DataColumn column)
+   in System.Data.DataColumnCollection.BaseAdd(DataColumn column)
+   in System.Data.DataColumnCollection.AddAt(Int32 index, DataColumn column)
+   in System.Data.DataColumnCollection.Add(String columnName, Type type)
+   in CDCMetal.CreaSpessoreFrm.CaricaCampioniMisuraPrecedente(CDC_GALVANICARow galvanica) in C:\VSProgetti\CDCMetal\CDCMetal\CDCMetal\CreaSpessoreFrm.cs:riga 291
+   in CDCMetal.CreaSpessoreFrm.dgvDettaglio_CellClick(Object sender, DataGridViewCellEventArgs e) in C:\VSProgetti\CDCMetal\CDCMetal\CDCMetal\CreaSpessoreFrm.cs:riga 216
+INFO  2019-07-29 17:06:46,980   151ms MainForm               LogScrivi          - Applicazione CDCMetal avviata
+INFO  2019-07-29 17:15:13,576   183ms MainForm               LogScrivi          - Applicazione CDCMetal avviata
+ERROR 2019-07-29 17:15:27,569 14175ms MainForm               LogScriviErrore    - Errore in dgvDettaglio_CellClick
+System.Data.DuplicateNameException: Una colonna denominata 'Ni' appartiene già a questa DataTable.
+   in System.Data.DataColumnCollection.RegisterColumnName(String name, DataColumn column)
+   in System.Data.DataColumnCollection.BaseAdd(DataColumn column)
+   in System.Data.DataColumnCollection.AddAt(Int32 index, DataColumn column)
+   in System.Data.DataColumnCollection.Add(String columnName, Type type)
+   in CDCMetal.CreaSpessoreFrm.CaricaCampioniMisuraPrecedente(CDC_GALVANICARow galvanica) in C:\VSProgetti\CDCMetal\CDCMetal\CDCMetal\CreaSpessoreFrm.cs:riga 291
+   in CDCMetal.CreaSpessoreFrm.dgvDettaglio_CellClick(Object sender, DataGridViewCellEventArgs e) in C:\VSProgetti\CDCMetal\CDCMetal\CDCMetal\CreaSpessoreFrm.cs:riga 216
+ERROR 2019-07-29 17:16:45,186 91792ms MainForm               LogScriviErrore    - Errore in dgvDettaglio_CellClick
+System.Data.DuplicateNameException: Una colonna denominata 'Ni' appartiene già a questa DataTable.
+   in System.Data.DataColumnCollection.RegisterColumnName(String name, DataColumn column)
+   in System.Data.DataColumnCollection.BaseAdd(DataColumn column)
+   in System.Data.DataColumnCollection.AddAt(Int32 index, DataColumn column)
+   in System.Data.DataColumnCollection.Add(String columnName, Type type)
+   in CDCMetal.CreaSpessoreFrm.CaricaCampioniMisuraPrecedente(CDC_GALVANICARow galvanica) in C:\VSProgetti\CDCMetal\CDCMetal\CDCMetal\CreaSpessoreFrm.cs:riga 291
+   in CDCMetal.CreaSpessoreFrm.dgvDettaglio_CellClick(Object sender, DataGridViewCellEventArgs e) in C:\VSProgetti\CDCMetal\CDCMetal\CDCMetal\CreaSpessoreFrm.cs:riga 216
+ERROR 2019-07-29 17:16:51,961 98568ms MainForm               LogScriviErrore    - Errore in dgvDettaglio_CellClick
+System.Data.DuplicateNameException: Una colonna denominata 'Ni' appartiene già a questa DataTable.
+   in System.Data.DataColumnCollection.RegisterColumnName(String name, DataColumn column)
+   in System.Data.DataColumnCollection.BaseAdd(DataColumn column)
+   in System.Data.DataColumnCollection.AddAt(Int32 index, DataColumn column)
+   in System.Data.DataColumnCollection.Add(String columnName, Type type)
+   in CDCMetal.CreaSpessoreFrm.CaricaCampioniMisuraPrecedente(CDC_GALVANICARow galvanica) in C:\VSProgetti\CDCMetal\CDCMetal\CDCMetal\CreaSpessoreFrm.cs:riga 291
+   in CDCMetal.CreaSpessoreFrm.dgvDettaglio_CellClick(Object sender, DataGridViewCellEventArgs e) in C:\VSProgetti\CDCMetal\CDCMetal\CDCMetal\CreaSpessoreFrm.cs:riga 216
+ERROR 2019-07-29 17:17:05,870 112476ms MainForm               LogScriviErrore    - Errore in dgvDettaglio_CellClick
+System.Data.DuplicateNameException: Una colonna denominata 'Ni' appartiene già a questa DataTable.
+   in System.Data.DataColumnCollection.RegisterColumnName(String name, DataColumn column)
+   in System.Data.DataColumnCollection.BaseAdd(DataColumn column)
+   in System.Data.DataColumnCollection.AddAt(Int32 index, DataColumn column)
+   in System.Data.DataColumnCollection.Add(String columnName, Type type)
+   in CDCMetal.CreaSpessoreFrm.CaricaCampioniMisuraPrecedente(CDC_GALVANICARow galvanica) in C:\VSProgetti\CDCMetal\CDCMetal\CDCMetal\CreaSpessoreFrm.cs:riga 291
+   in CDCMetal.CreaSpessoreFrm.dgvDettaglio_CellClick(Object sender, DataGridViewCellEventArgs e) in C:\VSProgetti\CDCMetal\CDCMetal\CDCMetal\CreaSpessoreFrm.cs:riga 216
+ERROR 2019-07-29 17:19:00,272 226879ms MainForm               LogScriviErrore    - Errore in dgvDettaglio_CellClick
+System.Data.DuplicateNameException: Una colonna denominata 'Ni' appartiene già a questa DataTable.
+   in System.Data.DataColumnCollection.RegisterColumnName(String name, DataColumn column)
+   in System.Data.DataColumnCollection.BaseAdd(DataColumn column)
+   in System.Data.DataColumnCollection.AddAt(Int32 index, DataColumn column)
+   in System.Data.DataColumnCollection.Add(String columnName, Type type)
+   in CDCMetal.CreaSpessoreFrm.CaricaCampioniMisuraPrecedente(CDC_GALVANICARow galvanica) in C:\VSProgetti\CDCMetal\CDCMetal\CDCMetal\CreaSpessoreFrm.cs:riga 291
+   in CDCMetal.CreaSpessoreFrm.dgvDettaglio_CellClick(Object sender, DataGridViewCellEventArgs e) in C:\VSProgetti\CDCMetal\CDCMetal\CDCMetal\CreaSpessoreFrm.cs:riga 216
+ERROR 2019-07-29 17:19:22,373 248979ms MainForm               LogScriviErrore    - Errore in dgvDettaglio_CellClick
+System.Data.DuplicateNameException: Una colonna denominata 'Ni' appartiene già a questa DataTable.
+   in System.Data.DataColumnCollection.RegisterColumnName(String name, DataColumn column)
+   in System.Data.DataColumnCollection.BaseAdd(DataColumn column)
+   in System.Data.DataColumnCollection.AddAt(Int32 index, DataColumn column)
+   in System.Data.DataColumnCollection.Add(String columnName, Type type)
+   in CDCMetal.CreaSpessoreFrm.CaricaCampioniMisuraPrecedente(CDC_GALVANICARow galvanica) in C:\VSProgetti\CDCMetal\CDCMetal\CDCMetal\CreaSpessoreFrm.cs:riga 291
+   in CDCMetal.CreaSpessoreFrm.dgvDettaglio_CellClick(Object sender, DataGridViewCellEventArgs e) in C:\VSProgetti\CDCMetal\CDCMetal\CDCMetal\CreaSpessoreFrm.cs:riga 216
+ERROR 2019-07-29 17:20:02,369 288976ms MainForm               LogScriviErrore    - Errore in dgvDettaglio_CellClick
+System.Data.DuplicateNameException: Una colonna denominata 'Au' appartiene già a questa DataTable.
+   in System.Data.DataColumnCollection.RegisterColumnName(String name, DataColumn column)
+   in System.Data.DataColumnCollection.BaseAdd(DataColumn column)
+   in System.Data.DataColumnCollection.AddAt(Int32 index, DataColumn column)
+   in System.Data.DataColumnCollection.Add(String columnName, Type type)
+   in CDCMetal.CreaSpessoreFrm.CaricaCampioniMisuraPrecedente(CDC_GALVANICARow galvanica) in C:\VSProgetti\CDCMetal\CDCMetal\CDCMetal\CreaSpessoreFrm.cs:riga 291
+   in CDCMetal.CreaSpessoreFrm.dgvDettaglio_CellClick(Object sender, DataGridViewCellEventArgs e) in C:\VSProgetti\CDCMetal\CDCMetal\CDCMetal\CreaSpessoreFrm.cs:riga 216
+ERROR 2019-07-29 17:20:38,818 325425ms MainForm               LogScriviErrore    - Errore in dgvDettaglio_CellClick
+System.Data.DuplicateNameException: Una colonna denominata 'Au' appartiene già a questa DataTable.
+   in System.Data.DataColumnCollection.RegisterColumnName(String name, DataColumn column)
+   in System.Data.DataColumnCollection.BaseAdd(DataColumn column)
+   in System.Data.DataColumnCollection.AddAt(Int32 index, DataColumn column)
+   in System.Data.DataColumnCollection.Add(String columnName, Type type)
+   in CDCMetal.CreaSpessoreFrm.CaricaCampioniMisuraPrecedente(CDC_GALVANICARow galvanica) in C:\VSProgetti\CDCMetal\CDCMetal\CDCMetal\CreaSpessoreFrm.cs:riga 291
+   in CDCMetal.CreaSpessoreFrm.dgvDettaglio_CellClick(Object sender, DataGridViewCellEventArgs e) in C:\VSProgetti\CDCMetal\CDCMetal\CDCMetal\CreaSpessoreFrm.cs:riga 216
+ERROR 2019-07-29 17:27:31,920 738527ms MainForm               LogScriviErrore    - Errore in dgvDettaglio_CellClick
+System.Data.DuplicateNameException: Una colonna denominata 'Ni' appartiene già a questa DataTable.
+   in System.Data.DataColumnCollection.RegisterColumnName(String name, DataColumn column)
+   in System.Data.DataColumnCollection.BaseAdd(DataColumn column)
+   in System.Data.DataColumnCollection.AddAt(Int32 index, DataColumn column)
+   in System.Data.DataColumnCollection.Add(String columnName, Type type)
+   in CDCMetal.CreaSpessoreFrm.CaricaCampioniMisuraPrecedente(CDC_GALVANICARow galvanica) in C:\VSProgetti\CDCMetal\CDCMetal\CDCMetal\CreaSpessoreFrm.cs:riga 291
+   in CDCMetal.CreaSpessoreFrm.dgvDettaglio_CellClick(Object sender, DataGridViewCellEventArgs e) in C:\VSProgetti\CDCMetal\CDCMetal\CDCMetal\CreaSpessoreFrm.cs:riga 216
+ERROR 2019-07-29 17:29:02,987 829593ms MainForm               LogScriviErrore    - Errore in dgvDettaglio_CellClick
+System.Data.DuplicateNameException: Una colonna denominata 'Au' appartiene già a questa DataTable.
+   in System.Data.DataColumnCollection.RegisterColumnName(String name, DataColumn column)
+   in System.Data.DataColumnCollection.BaseAdd(DataColumn column)
+   in System.Data.DataColumnCollection.AddAt(Int32 index, DataColumn column)
+   in System.Data.DataColumnCollection.Add(String columnName, Type type)
+   in CDCMetal.CreaSpessoreFrm.CaricaCampioniMisuraPrecedente(CDC_GALVANICARow galvanica) in C:\VSProgetti\CDCMetal\CDCMetal\CDCMetal\CreaSpessoreFrm.cs:riga 291
+   in CDCMetal.CreaSpessoreFrm.dgvDettaglio_CellClick(Object sender, DataGridViewCellEventArgs e) in C:\VSProgetti\CDCMetal\CDCMetal\CDCMetal\CreaSpessoreFrm.cs:riga 216
+ERROR 2019-07-29 17:29:36,116 862722ms MainForm               LogScriviErrore    - Errore in dgvDettaglio_CellClick
+System.Data.DuplicateNameException: Una colonna denominata 'Au' appartiene già a questa DataTable.
+   in System.Data.DataColumnCollection.RegisterColumnName(String name, DataColumn column)
+   in System.Data.DataColumnCollection.BaseAdd(DataColumn column)
+   in System.Data.DataColumnCollection.AddAt(Int32 index, DataColumn column)
+   in System.Data.DataColumnCollection.Add(String columnName, Type type)
+   in CDCMetal.CreaSpessoreFrm.CaricaCampioniMisuraPrecedente(CDC_GALVANICARow galvanica) in C:\VSProgetti\CDCMetal\CDCMetal\CDCMetal\CreaSpessoreFrm.cs:riga 291
+   in CDCMetal.CreaSpessoreFrm.dgvDettaglio_CellClick(Object sender, DataGridViewCellEventArgs e) in C:\VSProgetti\CDCMetal\CDCMetal\CDCMetal\CreaSpessoreFrm.cs:riga 216
+ERROR 2019-07-29 17:30:08,876 895483ms MainForm               LogScriviErrore    - Errore in dgvDettaglio_CellClick
+System.Data.DuplicateNameException: Una colonna denominata 'Au' appartiene già a questa DataTable.
+   in System.Data.DataColumnCollection.RegisterColumnName(String name, DataColumn column)
+   in System.Data.DataColumnCollection.BaseAdd(DataColumn column)
+   in System.Data.DataColumnCollection.AddAt(Int32 index, DataColumn column)
+   in System.Data.DataColumnCollection.Add(String columnName, Type type)
+   in CDCMetal.CreaSpessoreFrm.CaricaCampioniMisuraPrecedente(CDC_GALVANICARow galvanica) in C:\VSProgetti\CDCMetal\CDCMetal\CDCMetal\CreaSpessoreFrm.cs:riga 291
+   in CDCMetal.CreaSpessoreFrm.dgvDettaglio_CellClick(Object sender, DataGridViewCellEventArgs e) in C:\VSProgetti\CDCMetal\CDCMetal\CDCMetal\CreaSpessoreFrm.cs:riga 216
+INFO  2019-07-29 17:31:02,903 949510ms MainForm               LogScrivi          - Applicazione CDCMetal fermata

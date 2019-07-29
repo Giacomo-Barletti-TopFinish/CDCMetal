@@ -784,14 +784,11 @@ namespace CDCMetal
 
                 decimal IDGALVANICA = bll.InserisciCDCGalvanica(_DS, txtSpessoreRichiesto.Text, IDDETTAGLIO, txtApplicazione.Text, Contesto.StrumentoSpessore, misurePerCampione, Contesto.Utente.FULLNAMEUSER);
 
-                _DS.CDC_MISURE.Clear();
-
-               // List<decimal> idMisuraDaCancellare = _DS.CDC_MISURE.Where(x => x.IDGALVANICA == IDGALVANICA).Select(x => x.IDMISURA).ToList();
-                //foreach (decimal idmisura in idMisuraDaCancellare)
-                //{
-                //    CDCDS.CDC_MISURERow row = _DS.CDC_MISURE.Where(x => x.RowState != DataRowState.Deleted && x.IDMISURA == idmisura).FirstOrDefault();
-                //    row.Delete();
-                //}
+                List<CDCDS.CDC_MISURERow> idMisuraDaCancellare = _DS.CDC_MISURE.Where(x => x.IDGALVANICA == IDGALVANICA).ToList();
+                foreach (CDCDS.CDC_MISURERow misura in idMisuraDaCancellare)
+                {
+                    misura.Delete();
+                }
 
                 foreach (DataRow riga in _dsServizio.Tables[tblMisure].Rows)
                 {
