@@ -189,6 +189,9 @@ namespace CDCMetal
             dgvSpessore.DataMember = tblSpessori;
 
             ((DataGridViewTextBoxColumn)dgvSpessore.Columns[0]).MaxInputLength = 2;
+
+            foreach (DataGridViewTextBoxColumn dgc in dgvSpessore.Columns)
+                dgc.SortMode = DataGridViewColumnSortMode.NotSortable;
         }
 
         private void dgvDettaglio_CellClick(object sender, DataGridViewCellEventArgs e)

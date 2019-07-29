@@ -1637,3 +1637,29 @@ System.InvalidOperationException: La raccolta è stata modificata; impossibile es
 INFO  2019-07-26 16:10:07,170 85731ms MainForm               LogScrivi          - Applicazione CDCMetal fermata
 INFO  2019-07-26 16:31:53,740   167ms MainForm               LogScrivi          - Applicazione CDCMetal avviata
 INFO  2019-07-26 16:32:11,319 17746ms MainForm               LogScrivi          - Applicazione CDCMetal fermata
+INFO  2019-07-29 14:07:28,737   155ms MainForm               LogScrivi          - Applicazione CDCMetal avviata
+INFO  2019-07-29 14:11:06,980   134ms MainForm               LogScrivi          - Applicazione CDCMetal avviata
+INFO  2019-07-29 14:11:35,801 28956ms MainForm               LogScrivi          - Applicazione CDCMetal fermata
+INFO  2019-07-29 14:21:16,306   140ms MainForm               LogScrivi          - Applicazione CDCMetal avviata
+ERROR 2019-07-29 14:22:04,123 47956ms MainForm               LogScriviErrore    - Errore in leggi dati
+Oracle.ManagedDataAccess.Client.OracleException (0x80004005): ORA-12570: Sessione di rete: errore imprevisto di lettura del pacchetto ---> OracleInternal.Network.NetworkException (0x80004005): ORA-12570: Sessione di rete: errore imprevisto di lettura del pacchetto ---> System.Net.Sockets.SocketException (0x80004005): Tentativo di operazione del socket verso una rete non raggiungibile
+   in System.Net.Sockets.Socket.Receive(Byte[] buffer, Int32 offset, Int32 size, SocketFlags socketFlags)
+   in OracleInternal.Network.ReaderStream.Read(OraBuf OB)
+   in OracleInternal.Network.ReaderStream.Read(OraBuf OB)
+   in OracleInternal.TTC.OraBufReader.GetDataFromNetwork()
+   in OracleInternal.TTC.OraBufReader.Read(Boolean bIgnoreData)
+   in OracleInternal.TTC.MarshallingEngine.UnmarshalUB1(Boolean bIgnoreData)
+   in OracleInternal.TTC.TTCExecuteSql.ReceiveExecuteResponse(Accessor[]& defineAccessors, Accessor[] bindAccessors, Boolean bHasReturningParams, SQLMetaData& sqlMetaData, SqlStatementType statementType, Int64 noOfRowsFetchedLastTime, Int32 noOfRowsToFetch, Int32& noOfRowsFetched, Int64& queryId, Int32 longFetchSize, Int64 initialLOBFetchSize, Int64[] scnFromExecution, Boolean bAllInputBinds, Int32 arrayBindCount, DataUnmarshaller& dataUnmarshaller, MarshalBindParameterValueHelper& marshalBindParamsHelper, Int64[]& rowsAffectedByArrayBind, Boolean bDefineDone, Boolean& bMoreThanOneRowAffectedByDmlWithRetClause, List`1& implicitRSList, Boolean bLOBArrayFetchRequired)
+   in Oracle.ManagedDataAccess.Client.OracleException.HandleError(OracleTraceLevel level, OracleTraceTag tag, Exception ex, OracleLogicalTransaction oracleLogicalTransaction)
+   in OracleInternal.TTC.TTCExecuteSql.ReceiveExecuteResponse(Accessor[]& defineAccessors, Accessor[] bindAccessors, Boolean bHasReturningParams, SQLMetaData& sqlMetaData, SqlStatementType statementType, Int64 noOfRowsFetchedLastTime, Int32 noOfRowsToFetch, Int32& noOfRowsFetched, Int64& queryId, Int32 longFetchSize, Int64 initialLOBFetchSize, Int64[] scnFromExecution, Boolean bAllInputBinds, Int32 arrayBindCount, DataUnmarshaller& dataUnmarshaller, MarshalBindParameterValueHelper& marshalBindParamsHelper, Int64[]& rowsAffectedByArrayBind, Boolean bDefineDone, Boolean& bMoreThanOneRowAffectedByDmlWithRetClause, List`1& implicitRSList, Boolean bLOBArrayFetchRequired)
+   in OracleInternal.ServiceObjects.OracleCommandImpl.ExecuteReader(String commandText, OracleParameterCollection paramColl, CommandType commandType, OracleConnectionImpl connectionImpl, OracleDataReaderImpl& rdrImpl, Int32 longFetchSize, Int64 clientInitialLOBFS, OracleDependencyImpl orclDependencyImpl, Int64[] scnForExecution, Int64[]& scnFromExecution, OracleParameterCollection& bindByPositionParamColl, Boolean& bBindParamPresent, Int64& internalInitialLOBFS, OracleException& exceptionForArrayBindDML, OracleConnection connection, OracleLogicalTransaction& oracleLogicalTransaction, IEnumerable`1 adrianParsedStmt, Boolean isDescribeOnly, Boolean isFromEF)
+   in Oracle.ManagedDataAccess.Client.OracleCommand.ExecuteReader(Boolean requery, Boolean fillRequest, CommandBehavior behavior)
+   in Oracle.ManagedDataAccess.Client.OracleDataAdapter.Fill(DataTable[] dataTables, Int32 startRecord, Int32 maxRecords, IDbCommand command, CommandBehavior behavior)
+   in System.Data.Common.DbDataAdapter.Fill(DataTable dataTable)
+   in CDCMetal.Data.CDCMetalAdapter.FillCDC_GALVANICA(CDCDS ds, List`1 IDDETTAGLIO) in C:\VSProgetti\CDCMetal\CDCMetal\CDCMetal.Data\CDCMetalAdapter.cs:riga 289
+   in CDCMetal.Data.CDCMetalBusiness.FillCDC_GALVANICA(CDCDS ds, List`1 IDDETTAGLIO) in C:\VSProgetti\CDCMetal\CDCMetal\CDCMetal.Data\CDCMetalBusiness.cs:riga 199
+   in CDCMetal.BLL.CDCBLL.FillCDC_GALVANICA(CDCDS ds, List`1 IDDETTAGLIO) in C:\VSProgetti\CDCMetal\CDCMetal\CDCMetal.BLL\CDCBLL.cs:riga 160
+   in CDCMetal.CreaSpessoreFrm.btnLeggiDati_Click(Object sender, EventArgs e) in C:\VSProgetti\CDCMetal\CDCMetal\CDCMetal\CreaSpessoreFrm.cs:riga 78
+INFO  2019-07-29 14:22:43,210 87044ms MainForm               LogScrivi          - Applicazione CDCMetal fermata
+INFO  2019-07-29 14:22:55,398   150ms MainForm               LogScrivi          - Applicazione CDCMetal avviata
+INFO  2019-07-29 14:23:17,114 21866ms MainForm               LogScrivi          - Applicazione CDCMetal fermata
