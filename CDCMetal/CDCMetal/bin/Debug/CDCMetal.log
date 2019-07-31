@@ -1891,3 +1891,5 @@ System.Data.DuplicateNameException: Una colonna denominata 'Au' appartiene già a
    in CDCMetal.CreaSpessoreFrm.CaricaCampioniMisuraPrecedente(CDC_GALVANICARow galvanica) in C:\VSProgetti\CDCMetal\CDCMetal\CDCMetal\CreaSpessoreFrm.cs:riga 291
    in CDCMetal.CreaSpessoreFrm.dgvDettaglio_CellClick(Object sender, DataGridViewCellEventArgs e) in C:\VSProgetti\CDCMetal\CDCMetal\CDCMetal\CreaSpessoreFrm.cs:riga 216
 INFO  2019-07-29 17:31:02,903 949510ms MainForm               LogScrivi          - Applicazione CDCMetal fermata
+INFO  2019-07-31 08:30:22,066   185ms MainForm               LogScrivi          - Applicazione CDCMetal avviata
+INFO  2019-07-31 08:30:52,167 30286ms MainForm               LogScrivi          - Applicazione CDCMetal fermata

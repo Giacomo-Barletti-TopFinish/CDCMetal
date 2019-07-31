@@ -914,6 +914,7 @@ namespace CDCMetal.Helpers
 
         public void CreaReportVerniciCoprenti(bool turbula, bool quadrettatura, string data, string parte, string colore, string fornitore, string numeroCampioni, byte[] iloghi)
         {
+            parte = parte.PadLeft(5, '0');
 
             document.Info.Title = "Autodichiarazione";
             document.Info.Subject = String.Empty;
@@ -1099,6 +1100,7 @@ namespace CDCMetal.Helpers
 
         public void CreaReportTenutaAcidoNitrico(bool esito, string data, string parte, string colore, string bolla, string dataDDT, string numeroCampioni, byte[] iloghi)
         {
+            parte = parte.PadLeft(5, '0');
 
             document.Info.Title = "Autodichiarazione";
             document.Info.Subject = String.Empty;
@@ -1941,6 +1943,7 @@ string strumentoMisura, string nota, List<MisuraColore> misure, byte[] iloghi)
         public void CreaReportSpessoriYSL(DateTime data, string numeroCampioni, string parte, string colore, int numeroMisure,
           List<string> etichette, List<string> medie, byte[] iloghi, List<List<string>> misure)
         {
+            parte = parte.PadLeft(5, '0');
             int nCampioni = int.Parse(numeroCampioni);
             int nMisurePerPezzo = 0;
             if (nCampioni > 0) nMisurePerPezzo = numeroMisure / nCampioni;

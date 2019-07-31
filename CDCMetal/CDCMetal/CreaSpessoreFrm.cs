@@ -253,13 +253,13 @@ namespace CDCMetal
         private void CaricaCampioniMisuraPrecedente(CDCDS.CDC_GALVANICARow galvanica)
         {
 
-            List<CDCDS.CDC_MISURERow> misurePrecedenti = _DS.CDC_MISURE.Where(x => x.IDGALVANICA == galvanica.IDGALVANICA).OrderBy(x => x.NMISURA).ThenBy(x => x.NCOLONNA).ToList();
+            List<CDCDS.CDC_MISURERow> misurePrecedenti = _DS.CDC_MISURE.Where(x => x.RowState != DataRowState.Deleted && x.IDGALVANICA == galvanica.IDGALVANICA).OrderBy(x => x.NMISURA).ThenBy(x => x.NCOLONNA).ToList();
 
             int numeroCampioni = (int)misurePrecedenti.Max(x => x.NMISURA) + 1;
             txtNumeroCampioni.Text = numeroCampioni.ToString();
             if (((DataCollaudo)ddlDataCollaudo.SelectedItem).Brand == CDCBrands.YSL)
             {
-                if(galvanica.MISURECAMPIONE>0)
+                if (galvanica.MISURECAMPIONE > 0)
                 {
                     int aux = numeroCampioni / (int)galvanica.MISURECAMPIONE;
                     txtNumeroCampioni.Text = aux.ToString();
@@ -784,7 +784,7 @@ namespace CDCMetal
 
                 decimal IDGALVANICA = bll.InserisciCDCGalvanica(_DS, txtSpessoreRichiesto.Text, IDDETTAGLIO, txtApplicazione.Text, Contesto.StrumentoSpessore, misurePerCampione, Contesto.Utente.FULLNAMEUSER);
 
-                List<CDCDS.CDC_MISURERow> idMisuraDaCancellare = _DS.CDC_MISURE.Where(x => x.IDGALVANICA == IDGALVANICA).ToList();
+                List<CDCDS.CDC_MISURERow> idMisuraDaCancellare = _DS.CDC_MISURE.Where(x => x.RowState != DataRowState.Deleted && x.IDGALVANICA == IDGALVANICA).ToList();
                 foreach (CDCDS.CDC_MISURERow misura in idMisuraDaCancellare)
                 {
                     misura.Delete();
