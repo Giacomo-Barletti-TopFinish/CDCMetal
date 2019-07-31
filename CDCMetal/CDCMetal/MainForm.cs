@@ -70,9 +70,11 @@ namespace CDCMetal
             Contesto.StrumentoColore = Properties.Settings.Default.StrumentoColore;
             Contesto.StrumentoSpessore = Properties.Settings.Default.StrumentoSpessore;
             Contesto.PathCollaudo = CDCMetal.Properties.Settings.Default.PathCollaudo;
+            Contesto.PathAnalisiPiombo = CDCMetal.Properties.Settings.Default.PathAnalisiPiombo;
 #if DEBUG
             Contesto.PathCollaudo = @"C:\Temp\CDC\CARTELLACOLLAUDO";
             Contesto.PathRefertiLaboratorio = @"C:\Temp\CDC\REFERTILABORATORIO";
+            Contesto.PathAnalisiPiombo = @"C:\Temp\CDC\ANALISIPIOMBO";
 #endif
 
         }
@@ -140,12 +142,15 @@ namespace CDCMetal
 
         private void DisabilitaElementiMenu(ToolStripItemCollection elementi, bool abilita)
         {
-            foreach (ToolStripMenuItem elemento in elementi)
+            foreach (ToolStripItem elemento in elementi)
             {
-                elemento.Enabled = abilita;
-                if (elemento.DropDownItems.Count > 0)
+                if (elemento is ToolStripMenuItem)
                 {
-                    DisabilitaElementiMenu(elemento.DropDownItems, abilita);
+                    (elemento as ToolStripMenuItem).Enabled = abilita;
+                    if ((elemento as ToolStripMenuItem).DropDownItems.Count > 0)
+                    {
+                        DisabilitaElementiMenu((elemento as ToolStripMenuItem).DropDownItems, abilita);
+                    }
                 }
 
             }
@@ -337,6 +342,20 @@ namespace CDCMetal
             catch (Exception ex)
             {
                 MostraEccezione("ERRORE IN CREA CERTIFICATO TENUTA ACIDO NITRICO", ex);
+            }
+        }
+
+        private void analisiPiomboToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                AnalisiPiomboFrm form = new AnalisiPiomboFrm();
+                form.MdiParent = this;
+                form.Show();
+            }
+            catch (Exception ex)
+            {
+                MostraEccezione("ERRORE IN CREA CERTIFICATO ANALISI PIOMBO", ex);
             }
         }
     }

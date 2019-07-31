@@ -24,9 +24,9 @@
     <UpdateRequired>true</UpdateRequired>
     <MapFileExtensions>true</MapFileExtensions>
     <InstallUrl>\\srv-webservices\publish\CDCMetal\</InstallUrl>
-    <MinimumRequiredVersion>2.0.0.7</MinimumRequiredVersion>
+    <MinimumRequiredVersion>2.0.0.9</MinimumRequiredVersion>
     <OpenBrowserOnPublish>false</OpenBrowserOnPublish>
-    <ApplicationRevision>7</ApplicationRevision>
+    <ApplicationRevision>9</ApplicationRevision>
     <ApplicationVersion>2.0.0.%2a</ApplicationVersion>
     <UseApplicationTrust>false</UseApplicationTrust>
     <PublishWizardCompleted>true</PublishWizardCompleted>
@@ -80,6 +80,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AnalisiPiomboFrm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AnalisiPiomboFrm.Designer.cs">
+      <DependentUpon>AnalisiPiomboFrm.cs</DependentUpon>
+    </Compile>
     <Compile Include="BaseChildForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -176,6 +182,9 @@
     <Compile Include="StampaEtichetteFrm.Designer.cs">
       <DependentUpon>StampaEtichetteFrm.cs</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="AnalisiPiomboFrm.resx">
+      <DependentUpon>AnalisiPiomboFrm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="CreaAntiallergicoFrm.resx">
       <DependentUpon>CreaAntiallergicoFrm.cs</DependentUpon>
     </EmbeddedResource>

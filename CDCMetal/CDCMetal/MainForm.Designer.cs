@@ -45,6 +45,7 @@
             this.colorimetricoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.spessoriToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.verniciCoprentiToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.tenutaAcidoNitricoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.pDFToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.listaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.eTICHETTEToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -53,7 +54,8 @@
             this.lblUserLoggato = new System.Windows.Forms.ToolStripStatusLabel();
             this.prgProgressBar = new System.Windows.Forms.ToolStripProgressBar();
             this.lblStatusBar = new System.Windows.Forms.ToolStripStatusLabel();
-            this.tenutaAcidoNitricoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
+            this.analisiPiomboToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.cdcMenu.SuspendLayout();
             this.statusStrip1.SuspendLayout();
             this.SuspendLayout();
@@ -167,7 +169,9 @@
             this.colorimetricoToolStripMenuItem,
             this.spessoriToolStripMenuItem,
             this.verniciCoprentiToolStripMenuItem,
-            this.tenutaAcidoNitricoToolStripMenuItem});
+            this.tenutaAcidoNitricoToolStripMenuItem,
+            this.toolStripSeparator1,
+            this.analisiPiomboToolStripMenuItem});
             this.laboratorioToolStripMenuItem.Name = "laboratorioToolStripMenuItem";
             this.laboratorioToolStripMenuItem.Size = new System.Drawing.Size(89, 21);
             this.laboratorioToolStripMenuItem.Text = "Laboratorio";
@@ -199,6 +203,13 @@
             this.verniciCoprentiToolStripMenuItem.Size = new System.Drawing.Size(226, 22);
             this.verniciCoprentiToolStripMenuItem.Text = "Vernici coprenti";
             this.verniciCoprentiToolStripMenuItem.Click += new System.EventHandler(this.verniciCoprentiToolStripMenuItem_Click);
+            // 
+            // tenutaAcidoNitricoToolStripMenuItem
+            // 
+            this.tenutaAcidoNitricoToolStripMenuItem.Name = "tenutaAcidoNitricoToolStripMenuItem";
+            this.tenutaAcidoNitricoToolStripMenuItem.Size = new System.Drawing.Size(226, 22);
+            this.tenutaAcidoNitricoToolStripMenuItem.Text = "Tenuta acido nitrico";
+            this.tenutaAcidoNitricoToolStripMenuItem.Click += new System.EventHandler(this.tenutaAcidoNitricoToolStripMenuItem_Click);
             // 
             // pDFToolStripMenuItem
             // 
@@ -257,12 +268,17 @@
             this.lblStatusBar.Name = "lblStatusBar";
             this.lblStatusBar.Size = new System.Drawing.Size(0, 17);
             // 
-            // tenutaAcidoNitricoToolStripMenuItem
+            // toolStripSeparator1
             // 
-            this.tenutaAcidoNitricoToolStripMenuItem.Name = "tenutaAcidoNitricoToolStripMenuItem";
-            this.tenutaAcidoNitricoToolStripMenuItem.Size = new System.Drawing.Size(226, 22);
-            this.tenutaAcidoNitricoToolStripMenuItem.Text = "Tenuta acido nitrico";
-            this.tenutaAcidoNitricoToolStripMenuItem.Click += new System.EventHandler(this.tenutaAcidoNitricoToolStripMenuItem_Click);
+            this.toolStripSeparator1.Name = "toolStripSeparator1";
+            this.toolStripSeparator1.Size = new System.Drawing.Size(223, 6);
+            // 
+            // analisiPiomboToolStripMenuItem
+            // 
+            this.analisiPiomboToolStripMenuItem.Name = "analisiPiomboToolStripMenuItem";
+            this.analisiPiomboToolStripMenuItem.Size = new System.Drawing.Size(226, 22);
+            this.analisiPiomboToolStripMenuItem.Text = "Analisi piombo";
+            this.analisiPiomboToolStripMenuItem.Click += new System.EventHandler(this.analisiPiomboToolStripMenuItem_Click);
             // 
             // MainForm
             // 
@@ -314,6 +330,8 @@
         private System.Windows.Forms.ToolStripMenuItem creaEtichetteToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem verniciCoprentiToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem tenutaAcidoNitricoToolStripMenuItem;
+        private System.Windows.Forms.ToolStripSeparator toolStripSeparator1;
+        private System.Windows.Forms.ToolStripMenuItem analisiPiomboToolStripMenuItem;
     }
 }
 

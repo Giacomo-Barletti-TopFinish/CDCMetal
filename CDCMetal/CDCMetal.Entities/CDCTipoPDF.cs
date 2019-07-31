@@ -15,5 +15,6 @@ namespace CDCMetal.Entities
         public static readonly string CERTIFICATOSPESSORE = "MIS";
         public static readonly string CERTIFICATOVERNICECOPRENTE = "VCO";
         public static readonly string CERTIFICATOTENUTAACIDONITRICO = "TAN";
+        public static readonly string ANALISIPIOMBO = "APD";
     }
 }

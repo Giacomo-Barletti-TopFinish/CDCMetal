@@ -200,6 +200,16 @@ namespace CDCMetal.BLL
             return string.Format(@"{0}\{1}\{2}\{3}\{4}", pathCollaudo, accessorista, meseCollaudo, giornoCollaudo, cartellaArticolo);
         }
 
+        public static string CreaPathCartellaAnalisiPiombo(DateTime dataSelezionata, string pathCollaudo)
+        {
+            System.Globalization.CultureInfo culture = new System.Globalization.CultureInfo("it-IT");
+
+            string mese = dataSelezionata.ToString("MMMM", culture);
+            string giornoCollaudo = string.Format("{0}.{1}", dataSelezionata.Day.ToString().PadLeft(2, '0'), dataSelezionata.Month.ToString().PadLeft(2, '0'));
+
+
+            return string.Format(@"{0}\{1}\{2}\{3}", pathCollaudo, dataSelezionata.Year.ToString(), mese, giornoCollaudo);
+        }
         public void SalvaDatiConformita(CDCDS ds)
         {
             using (CDCMetalBusiness bCDCMetal = new CDCMetalBusiness())
@@ -446,6 +456,36 @@ namespace CDCMetal.BLL
             }
 
             return fileCreati.ToString();
+        }
+        private const string barraTonda = "Barra tonda";
+        public string CreaPDFCertificatoPiombo(string elemento, string lunghezza, string larghezza, string spessore, string codiceCampione, string lotto, string esito, System.Drawing.Color colore, string metodo, DateTime dataAnalisi, decimal PdPPM, decimal CdPPM, string pathLaboratorio, byte[] image)
+        {
+            string cartella = CreaPathCartellaAnalisiPiombo(dataAnalisi, pathLaboratorio);
+
+            string nomeCampione = string.Empty;
+            string fileName = "report.pdf";
+            if (elemento == barraTonda)
+            {
+                fileName = string.Format("BARRA DIAMETRO {0} {1}_{2}_{3}.pdf", larghezza, codiceCampione, dataAnalisi.Day.ToString().PadLeft(2, '0'), dataAnalisi.Month.ToString().PadLeft(2, '0'));
+                nomeCampione = string.Format("{0} {1}x{2} {3}", elemento, lunghezza, larghezza, codiceCampione);
+            }
+            else
+            {
+                fileName = string.Format("PIATTO {0}x{1}X{2} {3}_{4}_{5}.pdf", lunghezza, larghezza, spessore, codiceCampione, dataAnalisi.Day.ToString().PadLeft(2, '0'), dataAnalisi.Month.ToString().PadLeft(2, '0'));
+                nomeCampione = string.Format("{0} {1}x{2}x{3} {3}", elemento, lunghezza, larghezza, spessore, codiceCampione);
+            }
+            string path = string.Format(@"{0}\{1}", cartella, fileName);
+
+            if (!Directory.Exists(cartella))
+                Directory.CreateDirectory(cartella);
+
+            if (File.Exists(path))
+                File.Delete(path);
+
+            CreaReportCertificatoPiombo(path, elemento, nomeCampione, lotto, esito, colore, metodo, dataAnalisi, PdPPM, CdPPM, pathLaboratorio, image);
+
+
+            return path;
         }
 
         public string CreaPDFTenutaAcidoNitrico(List<decimal> idPerPDF, CDCDS ds, string pathCollaudo, byte[] image, bool CopiaReferto, string pathCartellaReferto)
@@ -748,6 +788,14 @@ namespace CDCMetal.BLL
             pdfHelper.SalvaPdf(filename);
         }
 
+        private static void CreaReportCertificatoPiombo(string filename, string elemento, string nomecampione, string lotto, string esito, System.Drawing.Color colore, string metodo, DateTime dataAnalisi, decimal PdPPM, decimal CdPPM, string pathLaboratorio, byte[] image)
+        {
+            PDFHelper pdfHelper = new PDFHelper();
+            pdfHelper.CreaReportCertificatoPiombo(elemento, nomecampione, lotto, esito, colore, metodo, dataAnalisi, PdPPM, CdPPM, pathLaboratorio, image);
+
+
+            pdfHelper.SalvaPdf(filename);
+        }
         private static void CreaReportTenutaAcidoNitrico(string filename, bool esito, string data, string parte, string colore, string bolla, string dataDDT, string numeroCampioni, byte[] iloghi)
         {
             PDFHelper pdfHelper = new PDFHelper();
@@ -883,7 +931,24 @@ string strumentoMisura, string nota, List<MisuraColore> misure, byte[] iloghi)
         {
             using (CDCMetalBusiness bCDCMetal = new CDCMetalBusiness())
             {
-                bCDCMetal.UpdateTabelleSpessore(ds);
+                try
+                {
+                    bCDCMetal.UpdateTabelleSpessore(ds);
+                    ds.AcceptChanges();
+                }
+                catch
+                {
+                    bCDCMetal.Rollback();
+                    throw;
+                }
+            }
+        }
+
+        public void SalvaCertificatiPiombo(CDCDS ds)
+        {
+            using (CDCMetalBusiness bCDCMetal = new CDCMetalBusiness())
+            {
+                bCDCMetal.UpdateCertificatiPiombo(ds);
                 ds.AcceptChanges();
             }
         }

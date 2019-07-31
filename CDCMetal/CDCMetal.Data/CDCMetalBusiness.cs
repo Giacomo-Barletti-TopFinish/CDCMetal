@@ -230,5 +230,12 @@ namespace CDCMetal.Data
             a.UpdateTable(ds.CDC_MISURE.TableName, ds);
             a.UpdateTable(ds.CDC_APPLICAZIONE.TableName, ds);
         }
+
+        [DataContext(true)]
+        public void UpdateCertificatiPiombo(CDCDS ds)
+        {
+            CDCMetalAdapter a = new CDCMetalAdapter(DbConnection, DbTransaction);
+            a.UpdateTable(ds.CDC_CERTIFICATIPIOMBO.TableName, ds);
+        }
     }
 }
