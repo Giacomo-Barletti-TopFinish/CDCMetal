@@ -41,7 +41,7 @@ namespace CDCMetal.BLL
                 excelRow.DATI = dati;
 
                 ExcelHelper excel = new ExcelHelper();
-                if (!excel.ReadCDC(fs, ds, IDEXCEL, out messaggioErrore))
+                if (!excel.ReadCDC(fs, ds, IDEXCEL, utente, out messaggioErrore))
                 {
                     ds.CDC_DETTAGLIO.Clear();
                     ds.CDC_EXCEL.Clear();
@@ -90,6 +90,32 @@ namespace CDCMetal.BLL
                 bCDCMetal.UpdateCDC_DETTAGLIO(ds);
             }
 
+        }
+
+        public bool LeggiExcelAnalisiPiombo(CDCDS ds, string filePath, string utente, out string messaggioErrore)
+        {
+            messaggioErrore = string.Empty;
+            using (FileStream fs = new FileStream(filePath, FileMode.Open))
+            {
+                ds.CDC_CERTIFICATIPIOMBO.Clear();
+
+
+                ExcelHelper excel = new ExcelHelper();
+                if (!excel.ReadAnalisiPiombo(fs, ds, utente, out messaggioErrore))
+                {
+                    ds.CDC_CERTIFICATIPIOMBO.Clear();
+                    return false;
+                }
+
+                if (ds.CDC_CERTIFICATIPIOMBO.Count == 0)
+                {
+                    messaggioErrore = "Il file excel risulta essere vuoto";
+                    return false;
+                }
+
+                fs.Close();
+            }
+            return true;
         }
     }
 }

@@ -1915,3 +1915,79 @@ INFO  2019-07-31 12:23:45,514   164ms MainForm               LogScrivi          
 INFO  2019-07-31 12:25:06,786   143ms MainForm               LogScrivi          - Applicazione CDCMetal avviata
 INFO  2019-07-31 12:25:29,304 22661ms MainForm               LogScrivi          - Applicazione CDCMetal fermata
 INFO  2019-07-31 16:39:56,604   150ms MainForm               LogScrivi          - Applicazione CDCMetal avviata
+INFO  2019-08-01 16:16:34,267   170ms MainForm               LogScrivi          - Applicazione CDCMetal avviata
+INFO  2019-08-01 16:17:41,330   135ms MainForm               LogScrivi          - Applicazione CDCMetal avviata
+INFO  2019-08-01 16:18:26,543   181ms MainForm               LogScrivi          - Applicazione CDCMetal avviata
+INFO  2019-08-01 16:21:15,687   139ms MainForm               LogScrivi          - Applicazione CDCMetal avviata
+INFO  2019-08-01 16:23:25,644   146ms MainForm               LogScrivi          - Applicazione CDCMetal avviata
+INFO  2019-08-01 16:24:59,528   149ms MainForm               LogScrivi          - Applicazione CDCMetal avviata
+INFO  2019-08-01 16:28:37,357   195ms MainForm               LogScrivi          - Applicazione CDCMetal avviata
+INFO  2019-08-01 16:34:02,456   162ms MainForm               LogScrivi          - Applicazione CDCMetal avviata
+ERROR 2019-08-01 16:34:35,511 33217ms MainForm               LogScriviErrore    - ERRORE IN APRI FILE EXCEL
+System.IO.IOException: Il processo non può accedere al file 'C:\Temp\CDC\Piombo\31.07.xlsx' perché è in uso da un altro processo.
+   in System.IO.__Error.WinIOError(Int32 errorCode, String maybeFullPath)
+   in System.IO.FileStream.Init(String path, FileMode mode, FileAccess access, Int32 rights, Boolean useRights, FileShare share, Int32 bufferSize, FileOptions options, SECURITY_ATTRIBUTES secAttrs, String msgPath, Boolean bFromProxy, Boolean useLongPath, Boolean checkHost)
+   in System.IO.FileStream..ctor(String path, FileMode mode, FileAccess access, FileShare share, Int32 bufferSize, FileOptions options, String msgPath, Boolean bFromProxy)
+   in System.IO.FileStream..ctor(String path, FileMode mode)
+   in CDCMetal.BLL.ExcelBLL.LeggiExcelAnalisiPiombo(CDCDS ds, String filePath, String utente, String& messaggioErrore) in C:\VSProgetti\CDCMetal\CDCMetal\CDCMetal.BLL\ExcelBLL.cs:riga 98
+   in CDCMetal.AnalisiPiomboDaExcelFrm.btnApriFile_Click(Object sender, EventArgs e) in C:\VSProgetti\CDCMetal\CDCMetal\CDCMetal\AnalisiPiomboDaExcelFrm.cs:riga 66
+INFO  2019-08-01 16:35:52,457   183ms MainForm               LogScrivi          - Applicazione CDCMetal avviata
+ERROR 2019-08-01 16:37:29,083 96809ms MainForm               LogScriviErrore    - ERRORE IN APRI FILE EXCEL
+System.Data.NoNullAllowedException: La colonna 'METODO' non accetta valori nulls.
+   in System.Data.DataColumn.CheckNullable(DataRow row)
+   in System.Data.DataTable.RaiseRowChanging(DataRowChangeEventArgs args, DataRow eRow, DataRowAction eAction, Boolean fireEvent)
+   in System.Data.DataTable.SetNewRecordWorker(DataRow row, Int32 proposedRecord, DataRowAction action, Boolean isInMerge, Boolean suppressEnsurePropertyChanged, Int32 position, Boolean fireEvent, Exception& deferredException)
+   in System.Data.DataTable.InsertRow(DataRow row, Int64 proposedID, Int32 pos, Boolean fireEvent)
+   in System.Data.DataRowCollection.Add(DataRow row)
+   in CDCMetal.Entities.CDCDS.CDC_CERTIFICATIPIOMBODataTable.AddCDC_CERTIFICATIPIOMBORow(CDC_CERTIFICATIPIOMBORow row) in C:\VSProgetti\CDCMetal\CDCMetal\CDCMetal.Entities\CDCDS.Designer.cs:riga 8775
+   in CDCMetal.Helpers.ExcelHelper.ReadAnalisiPiombo(Stream stream, CDCDS ds, String utente, String& messaggioErrore)
+   in CDCMetal.BLL.ExcelBLL.LeggiExcelAnalisiPiombo(CDCDS ds, String filePath, String utente, String& messaggioErrore) in C:\VSProgetti\CDCMetal\CDCMetal\CDCMetal.BLL\ExcelBLL.cs:riga 104
+   in CDCMetal.AnalisiPiomboDaExcelFrm.btnApriFile_Click(Object sender, EventArgs e) in C:\VSProgetti\CDCMetal\CDCMetal\CDCMetal\AnalisiPiomboDaExcelFrm.cs:riga 66
+INFO  2019-08-01 16:45:50,243   134ms MainForm               LogScrivi          - Applicazione CDCMetal avviata
+INFO  2019-08-01 16:50:50,182 300073ms MainForm               LogScrivi          - Applicazione CDCMetal fermata
+INFO  2019-08-01 16:52:27,157   206ms MainForm               LogScrivi          - Applicazione CDCMetal avviata
+INFO  2019-08-01 16:54:45,295 138343ms MainForm               LogScrivi          - Applicazione CDCMetal fermata
+INFO  2019-08-01 17:04:57,101   153ms MainForm               LogScrivi          - Applicazione CDCMetal avviata
+INFO  2019-08-01 17:05:02,094  5147ms MainForm               LogScrivi          - Applicazione CDCMetal fermata
+INFO  2019-08-01 17:07:45,442   149ms MainForm               LogScrivi          - Applicazione CDCMetal avviata
+INFO  2019-08-01 17:08:04,639 19346ms MainForm               LogScrivi          - Applicazione CDCMetal fermata
+INFO  2019-08-01 17:08:36,750   135ms MainForm               LogScrivi          - Applicazione CDCMetal avviata
+INFO  2019-08-01 17:09:11,467   153ms MainForm               LogScrivi          - Applicazione CDCMetal avviata
+ERROR 2019-08-01 17:09:45,030 33715ms MainForm               LogScriviErrore    - ERRORE IN CREA PDF
+System.Data.StrongTypingException: The value for column 'SPESSORE' in table 'CDC_CERTIFICATIPIOMBO' is DBNull. ---> System.InvalidCastException: Cast specificato non valido.
+   in CDCMetal.Entities.CDCDS.CDC_CERTIFICATIPIOMBORow.get_SPESSORE() in C:\VSProgetti\CDCMetal\CDCMetal\CDCMetal.Entities\CDCDS.Designer.cs:riga 13179
+   --- Fine della traccia dello stack dell'eccezione interna ---
+   in CDCMetal.Entities.CDCDS.CDC_CERTIFICATIPIOMBORow.get_SPESSORE() in C:\VSProgetti\CDCMetal\CDCMetal\CDCMetal.Entities\CDCDS.Designer.cs:riga 13182
+   in CDCMetal.AnalisiPiomboDaExcelFrm.btnCreaPdf_Click(Object sender, EventArgs e) in C:\VSProgetti\CDCMetal\CDCMetal\CDCMetal\AnalisiPiomboDaExcelFrm.cs:riga 124
+INFO  2019-08-01 17:11:56,917   158ms MainForm               LogScrivi          - Applicazione CDCMetal avviata
+ERROR 2019-08-01 17:13:03,906 67147ms MainForm               LogScriviErrore    - ERRORE IN CREA PDF
+System.IO.DirectoryNotFoundException: Impossibile trovare una parte del percorso 'C:\Temp\CDC\ANALISIPIOMBO\2019\agosto\01.08\BARRA DIAMETRO 30 BARRA Ø 3,5 19\T\53_01_08.pdf'.
+   in System.IO.__Error.WinIOError(Int32 errorCode, String maybeFullPath)
+   in System.IO.FileStream.Init(String path, FileMode mode, FileAccess access, Int32 rights, Boolean useRights, FileShare share, Int32 bufferSize, FileOptions options, SECURITY_ATTRIBUTES secAttrs, String msgPath, Boolean bFromProxy, Boolean useLongPath, Boolean checkHost)
+   in System.IO.FileStream..ctor(String path, FileMode mode, FileAccess access, FileShare share)
+   in PdfSharp.Pdf.PdfDocument.Save(String path) in C:\Tools\PDFsharp-MigraDocFoundation-1_50-beta5\PDFsharp\src\PdfSharp\Pdf\PdfDocument.cs:riga 256
+   in CDCMetal.Helpers.PDFHelper.SalvaPdf(String filename) in C:\VSProgetti\CDCMetal\CDCMetal\CDCMetal.Helpers\PDFHelper.cs:riga 41
+   in CDCMetal.BLL.CDCBLL.CreaReportCertificatoPiombo(String filename, String elemento, String nomecampione, String lotto, String esito, Color colore, String metodo, DateTime dataAnalisi, Decimal PdPPM, Decimal CdPPM, String pathLaboratorio, Byte[] image) in C:\VSProgetti\CDCMetal\CDCMetal\CDCMetal.BLL\CDCBLL.cs:riga 827
+   in CDCMetal.BLL.CDCBLL.CreaPDFCertificatoPiombo(String elemento, String lunghezza, String larghezza, String spessore, String codiceCampione, String lotto, String esito, Color colore, String metodo, DateTime dataAnalisi, Decimal PdPPM, Decimal CdPPM, String pathLaboratorio, Byte[] image) in C:\VSProgetti\CDCMetal\CDCMetal\CDCMetal.BLL\CDCBLL.cs:riga 515
+   in CDCMetal.AnalisiPiomboDaExcelFrm.btnCreaPdf_Click(Object sender, EventArgs e) in C:\VSProgetti\CDCMetal\CDCMetal\CDCMetal\AnalisiPiomboDaExcelFrm.cs:riga 126
+INFO  2019-08-01 17:16:14,897   136ms MainForm               LogScrivi          - Applicazione CDCMetal avviata
+ERROR 2019-08-01 17:17:07,104 52343ms MainForm               LogScriviErrore    - ERRORE IN CREA PDF
+System.IO.DirectoryNotFoundException: Impossibile trovare una parte del percorso 'C:\Temp\CDC\ANALISIPIOMBO\2019\agosto\01.08\BARRA DIAMETRO 30 BARRA Ø 3,5 19\T\53_01_08.pdf'.
+   in System.IO.__Error.WinIOError(Int32 errorCode, String maybeFullPath)
+   in System.IO.FileStream.Init(String path, FileMode mode, FileAccess access, Int32 rights, Boolean useRights, FileShare share, Int32 bufferSize, FileOptions options, SECURITY_ATTRIBUTES secAttrs, String msgPath, Boolean bFromProxy, Boolean useLongPath, Boolean checkHost)
+   in System.IO.FileStream..ctor(String path, FileMode mode, FileAccess access, FileShare share)
+   in PdfSharp.Pdf.PdfDocument.Save(String path) in C:\Tools\PDFsharp-MigraDocFoundation-1_50-beta5\PDFsharp\src\PdfSharp\Pdf\PdfDocument.cs:riga 256
+   in CDCMetal.Helpers.PDFHelper.SalvaPdf(String filename) in C:\VSProgetti\CDCMetal\CDCMetal\CDCMetal.Helpers\PDFHelper.cs:riga 41
+   in CDCMetal.BLL.CDCBLL.CreaReportCertificatoPiombo(String filename, String elemento, String nomecampione, String lotto, String esito, Color colore, String metodo, DateTime dataAnalisi, Decimal PdPPM, Decimal CdPPM, String pathLaboratorio, Byte[] image) in C:\VSProgetti\CDCMetal\CDCMetal\CDCMetal.BLL\CDCBLL.cs:riga 828
+   in CDCMetal.BLL.CDCBLL.CreaPDFCertificatoPiombo(String elemento, String lunghezza, String larghezza, String spessore, String codiceCampione, String lotto, String esito, Color colore, String metodo, DateTime dataAnalisi, Decimal PdPPM, Decimal CdPPM, String pathLaboratorio, Byte[] image) in C:\VSProgetti\CDCMetal\CDCMetal\CDCMetal.BLL\CDCBLL.cs:riga 516
+   in CDCMetal.AnalisiPiomboDaExcelFrm.btnCreaPdf_Click(Object sender, EventArgs e) in C:\VSProgetti\CDCMetal\CDCMetal\CDCMetal\AnalisiPiomboDaExcelFrm.cs:riga 126
+ERROR 2019-08-01 17:18:29,900 135139ms MainForm               LogScriviErrore    - ERRORE IN CREA PDF
+System.IO.DirectoryNotFoundException: Impossibile trovare una parte del percorso 'C:\Temp\CDC\ANALISIPIOMBO\2019\agosto\01.08\BARRA DIAMETRO 30 BARRA Ø 3,5 19\T\53_01_08.pdf'.
+   in System.IO.__Error.WinIOError(Int32 errorCode, String maybeFullPath)
+   in System.IO.FileStream.Init(String path, FileMode mode, FileAccess access, Int32 rights, Boolean useRights, FileShare share, Int32 bufferSize, FileOptions options, SECURITY_ATTRIBUTES secAttrs, String msgPath, Boolean bFromProxy, Boolean useLongPath, Boolean checkHost)
+   in System.IO.FileStream..ctor(String path, FileMode mode, FileAccess access, FileShare share)
+   in PdfSharp.Pdf.PdfDocument.Save(String path) in C:\Tools\PDFsharp-MigraDocFoundation-1_50-beta5\PDFsharp\src\PdfSharp\Pdf\PdfDocument.cs:riga 256
+   in CDCMetal.Helpers.PDFHelper.SalvaPdf(String filename) in C:\VSProgetti\CDCMetal\CDCMetal\CDCMetal.Helpers\PDFHelper.cs:riga 41
+   in CDCMetal.BLL.CDCBLL.CreaReportCertificatoPiombo(String filename, String elemento, String nomecampione, String lotto, String esito, Color colore, String metodo, DateTime dataAnalisi, Decimal PdPPM, Decimal CdPPM, String pathLaboratorio, Byte[] image) in C:\VSProgetti\CDCMetal\CDCMetal\CDCMetal.BLL\CDCBLL.cs:riga 828
+   in CDCMetal.BLL.CDCBLL.CreaPDFCertificatoPiombo(String elemento, String lunghezza, String larghezza, String spessore, String codiceCampione, String lotto, String esito, Color colore, String metodo, DateTime dataAnalisi, Decimal PdPPM, Decimal CdPPM, String pathLaboratorio, Byte[] image) in C:\VSProgetti\CDCMetal\CDCMetal\CDCMetal.BLL\CDCBLL.cs:riga 516
+   in CDCMetal.AnalisiPiomboDaExcelFrm.btnCreaPdf_Click(Object sender, EventArgs e) in C:\VSProgetti\CDCMetal\CDCMetal\CDCMetal\AnalisiPiomboDaExcelFrm.cs:riga 126

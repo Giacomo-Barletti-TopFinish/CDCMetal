@@ -3,6 +3,7 @@ using CDCMetal.Entities;
 using CDCMetal.Helpers;
 using System;
 using System.Collections.Generic;
+using System.Drawing;
 using System.Globalization;
 using System.IO;
 using System.Linq;
@@ -121,6 +122,35 @@ namespace CDCMetal.BLL
             }
         }
 
+        public string CalcolaEsitoAnalisiPiombo(decimal nPd, out System.Drawing.Color colore)
+        {
+            string esito = string.Empty;
+            colore = SystemColors.Control;
+
+            if (nPd > 0 && nPd < 70)
+            {
+                esito = "PASS";
+                colore = Color.LightGreen;
+            }
+
+            if (nPd >= 70 && nPd < 80)
+            {
+                esito = "PASS";
+                colore = Color.Yellow;
+            }
+
+            if (nPd >= 80 && nPd < 90)
+            {
+                esito = "FAIL";
+                colore = Color.Red;
+            }
+            if (nPd >= 90)
+            {
+                esito = "FAIL";
+                colore = Color.Red;
+            }
+            return esito;
+        }
         public bool verificaNumeroEtichette(string numeroEtichette, out string messaggio, out List<Tuple<int, int>> SC_QTA)
         {
             StringBuilder sb = new StringBuilder();
@@ -474,6 +504,7 @@ namespace CDCMetal.BLL
                 fileName = string.Format("PIATTO {0}x{1}X{2} {3}_{4}_{5}.pdf", lunghezza, larghezza, spessore, codiceCampione, dataAnalisi.Day.ToString().PadLeft(2, '0'), dataAnalisi.Month.ToString().PadLeft(2, '0'));
                 nomeCampione = string.Format("{0} {1}x{2}x{3} {3}", elemento, lunghezza, larghezza, spessore, codiceCampione);
             }
+            fileName = fileName.Replace("\\", string.Empty).Replace("/", string.Empty);
             string path = string.Format(@"{0}\{1}", cartella, fileName);
 
             if (!Directory.Exists(cartella))

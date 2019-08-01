@@ -94,39 +94,10 @@ namespace CDCMetal
 
         private void CalcolaEsito()
         {
-            if (nPd.Value == 0)
-            {
-                txtEsito.Text = string.Empty;
-                txtEsito.BackColor = SystemColors.Control;
-                return;
-            }
-
-            if (nPd.Value > 0 && nPd.Value < 70)
-            {
-                txtEsito.Text = "PASS";
-                txtEsito.BackColor = Color.LightGreen;
-                return;
-            }
-
-            if (nPd.Value >= 70 && nPd.Value < 80)
-            {
-                txtEsito.Text = "PASS";
-                txtEsito.BackColor = Color.Yellow;
-                return;
-            }
-
-            if (nPd.Value >= 80 && nPd.Value < 90)
-            {
-                txtEsito.Text = "FAIL";
-                txtEsito.BackColor = Color.Red;
-                return;
-            }
-            if (nPd.Value >= 90)
-            {
-                txtEsito.Text = "FAIL";
-                txtEsito.BackColor = Color.Red;
-                return;
-            }
+            Color colore;
+            CDCBLL bll = new CDCBLL();
+            txtEsito.Text = bll.CalcolaEsitoAnalisiPiombo(nPd.Value, out colore);
+            txtEsito.BackColor = colore;
         }
 
         private void CalcolaPiombo()
@@ -199,18 +170,28 @@ namespace CDCMetal
                 esito = false;
                 sb.AppendLine("Indicare lo spessore");
             }
-            SalvaCertificatoPiombo();
+            try
+            {
+                SalvaCertificatoPiombo();
 
-            Bitmap firma = Properties.Resources.logo_tf_autodichiarazione;
-            ImageConverter converter = new ImageConverter();
-            byte[] image = (byte[])converter.ConvertTo(firma, typeof(byte[]));
+                Bitmap firma = Properties.Resources.logo_tf_autodichiarazione;
+                ImageConverter converter = new ImageConverter();
+                byte[] image = (byte[])converter.ConvertTo(firma, typeof(byte[]));
 
-            CDCBLL bll = new CDCBLL();
-            string path = bll.CreaPDFCertificatoPiombo(ddlElemento.SelectedItem as string, nLunghezza.Value.ToString(), nLarghezza.Value.ToString(), nSpessore.Value.ToString(), txtCodice.Text, txtLotto.Text,
-                 txtEsito.Text, txtEsito.BackColor, txtMetodo.Text, dtDataCertificato.Value, nPd.Value, nCd.Value, Contesto.PathAnalisiPiombo, image);
+                CDCBLL bll = new CDCBLL();
+                string path = bll.CreaPDFCertificatoPiombo(ddlElemento.SelectedItem as string, nLunghezza.Value.ToString(), nLarghezza.Value.ToString(), nSpessore.Value.ToString(), txtCodice.Text, txtLotto.Text,
+                     txtEsito.Text, txtEsito.BackColor, txtMetodo.Text, dtDataCertificato.Value, nPd.Value, nCd.Value, Contesto.PathAnalisiPiombo, image);
 
-            string messaggio = string.Format("Il file {0} è stato creato", path);
-            MessageBox.Show(messaggio, "ATTENZIONE", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                string messaggio = string.Format("Il file {0} è stato creato", path);
+                MessageBox.Show(messaggio, "ATTENZIONE", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+            catch (Exception ex)
+            {
+                MainForm.LogScriviErrore("ERRORE IN CREA PDF", ex);
+                ExceptionFrm frm = new ExceptionFrm(ex);
+                frm.ShowDialog();
+            }
+
         }
 
         private void SalvaCertificatoPiombo()

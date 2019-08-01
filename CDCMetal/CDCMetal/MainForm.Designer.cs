@@ -46,6 +46,8 @@
             this.spessoriToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.verniciCoprentiToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.tenutaAcidoNitricoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
+            this.analisiPiomboToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.pDFToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.listaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.eTICHETTEToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -54,8 +56,8 @@
             this.lblUserLoggato = new System.Windows.Forms.ToolStripStatusLabel();
             this.prgProgressBar = new System.Windows.Forms.ToolStripProgressBar();
             this.lblStatusBar = new System.Windows.Forms.ToolStripStatusLabel();
-            this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
-            this.analisiPiomboToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.singoloPDFToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.daExcelToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.cdcMenu.SuspendLayout();
             this.statusStrip1.SuspendLayout();
             this.SuspendLayout();
@@ -211,6 +213,20 @@
             this.tenutaAcidoNitricoToolStripMenuItem.Text = "Tenuta acido nitrico";
             this.tenutaAcidoNitricoToolStripMenuItem.Click += new System.EventHandler(this.tenutaAcidoNitricoToolStripMenuItem_Click);
             // 
+            // toolStripSeparator1
+            // 
+            this.toolStripSeparator1.Name = "toolStripSeparator1";
+            this.toolStripSeparator1.Size = new System.Drawing.Size(223, 6);
+            // 
+            // analisiPiomboToolStripMenuItem
+            // 
+            this.analisiPiomboToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.singoloPDFToolStripMenuItem,
+            this.daExcelToolStripMenuItem});
+            this.analisiPiomboToolStripMenuItem.Name = "analisiPiomboToolStripMenuItem";
+            this.analisiPiomboToolStripMenuItem.Size = new System.Drawing.Size(226, 22);
+            this.analisiPiomboToolStripMenuItem.Text = "Analisi piombo";
+            // 
             // pDFToolStripMenuItem
             // 
             this.pDFToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
@@ -268,17 +284,19 @@
             this.lblStatusBar.Name = "lblStatusBar";
             this.lblStatusBar.Size = new System.Drawing.Size(0, 17);
             // 
-            // toolStripSeparator1
+            // singoloPDFToolStripMenuItem
             // 
-            this.toolStripSeparator1.Name = "toolStripSeparator1";
-            this.toolStripSeparator1.Size = new System.Drawing.Size(223, 6);
+            this.singoloPDFToolStripMenuItem.Name = "singoloPDFToolStripMenuItem";
+            this.singoloPDFToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.singoloPDFToolStripMenuItem.Text = "Singolo PDF";
+            this.singoloPDFToolStripMenuItem.Click += new System.EventHandler(this.singoloPDFToolStripMenuItem_Click);
             // 
-            // analisiPiomboToolStripMenuItem
+            // daExcelToolStripMenuItem
             // 
-            this.analisiPiomboToolStripMenuItem.Name = "analisiPiomboToolStripMenuItem";
-            this.analisiPiomboToolStripMenuItem.Size = new System.Drawing.Size(226, 22);
-            this.analisiPiomboToolStripMenuItem.Text = "Analisi piombo";
-            this.analisiPiomboToolStripMenuItem.Click += new System.EventHandler(this.analisiPiomboToolStripMenuItem_Click);
+            this.daExcelToolStripMenuItem.Name = "daExcelToolStripMenuItem";
+            this.daExcelToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.daExcelToolStripMenuItem.Text = "Da Excel";
+            this.daExcelToolStripMenuItem.Click += new System.EventHandler(this.daExcelToolStripMenuItem_Click);
             // 
             // MainForm
             // 
@@ -332,6 +350,8 @@
         private System.Windows.Forms.ToolStripMenuItem tenutaAcidoNitricoToolStripMenuItem;
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator1;
         private System.Windows.Forms.ToolStripMenuItem analisiPiomboToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem singoloPDFToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem daExcelToolStripMenuItem;
     }
 }
 

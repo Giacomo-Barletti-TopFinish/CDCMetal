@@ -345,7 +345,7 @@ namespace CDCMetal
             }
         }
 
-        private void analisiPiomboToolStripMenuItem_Click(object sender, EventArgs e)
+        private void singoloPDFToolStripMenuItem_Click(object sender, EventArgs e)
         {
             try
             {
@@ -356,6 +356,20 @@ namespace CDCMetal
             catch (Exception ex)
             {
                 MostraEccezione("ERRORE IN CREA CERTIFICATO ANALISI PIOMBO", ex);
+            }
+        }
+
+        private void daExcelToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                AnalisiPiomboDaExcelFrm form = new AnalisiPiomboDaExcelFrm();
+                form.MdiParent = this;
+                form.Show();
+            }
+            catch (Exception ex)
+            {
+                MostraEccezione("ERRORE IN CREA CERTIFICATO ANALISI PIOMBO DA EXCEL", ex);
             }
         }
     }

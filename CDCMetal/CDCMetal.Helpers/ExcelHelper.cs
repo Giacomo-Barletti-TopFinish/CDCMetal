@@ -12,7 +12,7 @@ namespace CDCMetal.Helpers
 {
     public class ExcelHelper
     {
-        public bool ReadCDC(Stream stream, CDCDS ds, decimal IDEXCEL, out string messaggioErrore)
+        public bool ReadCDC(Stream stream, CDCDS ds, decimal IDEXCEL, string utente, out string messaggioErrore)
         {
             messaggioErrore = string.Empty;
             SpreadsheetDocument document = SpreadsheetDocument.Open(stream, true);
@@ -87,7 +87,7 @@ namespace CDCMetal.Helpers
                         case "G": // colore
                             {
                                 int lunghezza = 5;
-                                dettaglio.COLORE = cella.Length > lunghezza ? cella.Substring(0, lunghezza) : cella.PadLeft(4,'0');
+                                dettaglio.COLORE = cella.Length > lunghezza ? cella.Substring(0, lunghezza) : cella.PadLeft(4, '0');
                             }
                             break;
                         case "H": // misura
@@ -214,7 +214,164 @@ namespace CDCMetal.Helpers
 
             return true;
         }
+        private const string barraTonda = "Barra tonda";
+        private const string piatto = "Piatto";
+        public bool ReadAnalisiPiombo(Stream stream, CDCDS ds, string utente, out string messaggioErrore)
+        {
+            messaggioErrore = string.Empty;
+            SpreadsheetDocument document = SpreadsheetDocument.Open(stream, true);
+            SharedStringTable sharedStringTable = document.WorkbookPart.SharedStringTablePart.SharedStringTable;
 
+            WorkbookPart wbPart = document.WorkbookPart;
+
+            WorksheetPart worksheetPart = wbPart.WorksheetParts.First();
+            SheetData sheetData = worksheetPart.Worksheet.Elements<SheetData>().First();
+            CellFormats cellFormats = wbPart.WorkbookStylesPart.Stylesheet.CellFormats;
+            NumberingFormats numberingFormats = wbPart.WorkbookStylesPart.Stylesheet.NumberingFormats;
+
+            int rowCount = sheetData.Elements<Row>().Count();
+
+            int scartaRighe = 11;
+            int indiceRighe = 0;
+
+            foreach (Row r in sheetData.Elements<Row>())
+            {
+                if (indiceRighe < scartaRighe)
+                {
+                    indiceRighe++;
+                    continue;
+                }
+                bool esito = true;
+
+                if (r.FirstChild.InnerText == string.Empty) continue;
+
+                CDCDS.CDC_CERTIFICATIPIOMBORow cPiombo = ds.CDC_CERTIFICATIPIOMBO.NewCDC_CERTIFICATIPIOMBORow();
+
+                string elemento = string.Empty;
+                foreach (Cell cell in r.Elements<Cell>())
+                {
+                    string cella = EstraiValoreCella(cell, sharedStringTable, cellFormats, numberingFormats);
+                    cella = cella.Trim();
+                    string colonna = GetColumnReference(cell);
+                    switch (colonna)
+                    {
+                        case "A":
+                            if (string.IsNullOrEmpty(cella)) continue;
+                            cPiombo.CODICE = EstraiStringaDaCella(cella, 20);
+                            //esito = EstraiValoreCellaDecimal(cella, "IDPRENOTAZIONE", cPiombo, out messaggioErrore);
+                            break;
+                        case "B":
+                            {
+                                cPiombo.LOTTO = EstraiStringaDaCella(cella, 20);
+                            }
+                            break;
+                        case "C":
+                            //if (!VerificaData(cella))
+                            //{
+                            //    messaggioErrore = "La colonna DATA COLLAUDO non è una data nel formato yyyy/mm/dd";
+                            //    esito = false;
+                            //}
+                            //else
+                            //{
+                            //    int lunghezza = 10;
+                            //    cPiombo.DATACOLLAUDO = cella.Length > lunghezza ? cella.Substring(0, lunghezza) : cella;
+                            //}
+                            break;
+                        case "D":
+                            {
+                                esito = EstraiValoreCellaDecimal(cella.Replace('.', ','), "PESOCAMPIONE", cPiombo, out messaggioErrore);
+                            }
+                            break;
+                        case "E":
+                            {
+                                esito = EstraiValoreCellaDecimal(cella.Replace('.', ','), "MATRACCIOLO", cPiombo, out messaggioErrore);
+                            }
+                            break;
+                        case "F":
+                            {
+                                esito = EstraiValoreCellaDecimal(cella.Replace('.', ','), "CONCENTRAZIONE", cPiombo, out messaggioErrore);
+                            }
+                            break;
+                        case "G":
+                            {
+
+                                esito = EstraiValoreCellaDecimal(cell.CellValue.InnerText.Replace('.', ','), "PBPPM", cPiombo, out messaggioErrore);
+                            }
+                            break;
+                        case "H":
+                            {
+                            }
+                            break;
+                        case "I":
+                            esito = EstraiValoreCellaDecimal(cell.CellValue.InnerText.Replace('.', ','), "CDPPM", cPiombo, out messaggioErrore);
+                            break;
+                        case "J":
+                            {
+                                cPiombo.ELEMENTO = EstraiStringaDaCella(cella, 30);
+                                if (cPiombo.ELEMENTO.Trim().ToUpper() == "BARRA") cPiombo.ELEMENTO = barraTonda;
+                                if (cPiombo.ELEMENTO.Trim().ToUpper() == "PIATTO") cPiombo.ELEMENTO = piatto;
+                                elemento = cPiombo.ELEMENTO;
+                            }
+                            break;
+                        case "K":
+                            {
+                                if (!string.IsNullOrEmpty(elemento))
+                                {
+                                    if (cella.Length == 0)
+                                        cPiombo.MATERIALE = "OTTONE CON PIOMBO";
+                                    else
+                                        cPiombo.MATERIALE = "OTTONE SENZA PIOMBO";
+                                }
+                            }
+                            break;
+                        case "L":
+                            {
+                                if (!string.IsNullOrEmpty(elemento))
+                                {
+                                    esito = EstraiValoreCellaDecimal(cella, "LUNGHEZZA", cPiombo, out messaggioErrore);
+                                }
+                            }
+                            break;
+                        case "M":
+                            if (!string.IsNullOrEmpty(elemento))
+                            {
+                                esito = EstraiValoreCellaDecimal(cella, "LARGHEZZA", cPiombo, out messaggioErrore);
+                            }
+                            break;
+                        case "N":
+                            {
+                                if (!string.IsNullOrEmpty(elemento) && !string.IsNullOrEmpty(cella))
+                                {
+                                    esito = EstraiValoreCellaDecimal(cella, "SPESSORE", cPiombo, out messaggioErrore);
+                                }
+                            }
+                            break;
+
+                    }
+                    if (!esito)
+                        return false;
+                }
+
+                if (!string.IsNullOrEmpty(elemento))
+                {
+                    cPiombo.ESITO = (cPiombo.PBPPM >= 80) ? "FAIL" : "PASS";
+                    cPiombo.DATACERTIFICATO = DateTime.Today;
+                    cPiombo.DATAINSERIMENTO = DateTime.Today;
+                    cPiombo.UTENTE = utente;
+                    cPiombo.METODO = "XRF";
+                    cPiombo.PBPPM = Math.Round(cPiombo.PBPPM);
+                    cPiombo.CDPPM = Math.Round(cPiombo.CDPPM);
+                    ds.CDC_CERTIFICATIPIOMBO.AddCDC_CERTIFICATIPIOMBORow(cPiombo);
+                }
+            }
+
+            return true;
+        }
+
+        private string EstraiStringaDaCella(string cella, int lunghezzaMassimaConsentita)
+        {
+            return cella.Length > lunghezzaMassimaConsentita ? cella.Substring(0, lunghezzaMassimaConsentita) : cella;
+        }
         private bool EstraiValoreCellaDecimal(string cella, string colonna, CDCDS.CDC_DETTAGLIORow dettaglio, out string messaggioErrore)
         {
             messaggioErrore = string.Empty;
@@ -231,17 +388,33 @@ namespace CDCMetal.Helpers
             }
             return true;
         }
+        private bool EstraiValoreCellaDecimal(string cella, string colonna, CDCDS.CDC_CERTIFICATIPIOMBORow dettaglio, out string messaggioErrore)
+        {
+            messaggioErrore = string.Empty;
+            decimal aux;
 
+            if (!decimal.TryParse(cella, out aux))
+            {
+                messaggioErrore = string.Format("Errore lettura colonna ID {0} il valore non è un numero", colonna);
+                return false;
+            }
+            else
+            {
+                dettaglio[colonna] = aux;
+
+            }
+            return true;
+        }
         private bool VerificaData(string cella)
         {
-            string[] str = null; 
+            string[] str = null;
             if (cella.Contains('/'))
                 str = cella.Split('/');
 
             if (cella.Contains('-'))
                 str = cella.Split('-');
 
-            if (str!=null && str.Length == 3)
+            if (str != null && str.Length == 3)
             {
                 int anno;
                 if (int.TryParse(str[2], out anno))
