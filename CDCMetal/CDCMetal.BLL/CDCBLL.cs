@@ -200,6 +200,24 @@ namespace CDCMetal.BLL
                 bCDCMetal.CDC_PDF(ds, IDDETTAGLIO);
             }
         }
+
+        public void FillCDC_ASSOCIAZIONEPIOMBO(CDCDS ds, List<decimal> IDDETTAGLIO)
+        {
+            using (CDCMetalBusiness bCDCMetal = new CDCMetalBusiness())
+            {
+                ds.CDC_ASSOCIAZIONEPIOMBO.Clear();
+                bCDCMetal.FillCDC_ASSOCIAZIONEPIOMBO(ds, IDDETTAGLIO);
+            }
+        }
+
+        public void FillCDC_CERTIFICATIPIOMBO_NonAssegnati(CDCDS ds)
+        {
+            using (CDCMetalBusiness bCDCMetal = new CDCMetalBusiness())
+            {
+                bCDCMetal.FillCDC_CERTIFICATIPIOMBO_NonAssegnati(ds);
+            }
+        }
+
         public static string ConvertiAccessorista(string Accessorista)
         {
             if (Accessorista.Trim() == "Metalplus s.r.l.")
@@ -271,6 +289,14 @@ namespace CDCMetal.BLL
                 bCDCMetal.UpdateCDC_TENUTACIDONITRICO(ds);
             }
         }
+        public void SalvaDatiAssociazionePiombo(CDCDS ds)
+        {
+            using (CDCMetalBusiness bCDCMetal = new CDCMetalBusiness())
+            {
+                bCDCMetal.UpdateCDC_ASSOCIAZIONEPIOMBO(ds);
+            }
+        }
+
         public void SalvaDatiColore(CDCDS ds)
         {
             using (CDCMetalBusiness bCDCMetal = new CDCMetalBusiness())
@@ -488,11 +514,12 @@ namespace CDCMetal.BLL
             return fileCreati.ToString();
         }
         private const string barraTonda = "Barra tonda";
-        public string CreaPDFCertificatoPiombo(string elemento, string lunghezza, string larghezza, string spessore, string codiceCampione, string lotto, string esito, System.Drawing.Color colore, string metodo, DateTime dataAnalisi, decimal PdPPM, decimal CdPPM, string pathLaboratorio, byte[] image)
-        {
-            string cartella = CreaPathCartellaAnalisiPiombo(dataAnalisi, pathLaboratorio);
 
-            string nomeCampione = string.Empty;
+        public string CreaNomefileCertificatiAnalisiPiombo(string elemento, string lunghezza, string larghezza, string spessore, string codiceCampione, DateTime dataAnalisi, string pathLaboratorio, out string cartella, out string nomeCampione)
+        {
+            cartella = CreaPathCartellaAnalisiPiombo(dataAnalisi, pathLaboratorio);
+
+            nomeCampione = string.Empty;
             string fileName = "report.pdf";
             if (elemento == barraTonda)
             {
@@ -505,7 +532,14 @@ namespace CDCMetal.BLL
                 nomeCampione = string.Format("{0} {1}x{2}x{3} {3}", elemento, lunghezza, larghezza, spessore, codiceCampione);
             }
             fileName = fileName.Replace("\\", string.Empty).Replace("/", string.Empty);
-            string path = string.Format(@"{0}\{1}", cartella, fileName);
+            return string.Format(@"{0}\{1}", cartella, fileName);
+
+        }
+        public string CreaPDFCertificatoPiombo(string elemento, string lunghezza, string larghezza, string spessore, string codiceCampione, string lotto, string esito, System.Drawing.Color colore, string metodo, DateTime dataAnalisi, decimal PdPPM, decimal CdPPM, string pathLaboratorio, byte[] image)
+        {
+            string cartella;
+            string nomeCampione;
+            string path = CreaNomefileCertificatiAnalisiPiombo(elemento, lunghezza, larghezza, spessore, codiceCampione, dataAnalisi, pathLaboratorio, out cartella, out nomeCampione);
 
             if (!Directory.Exists(cartella))
                 Directory.CreateDirectory(cartella);

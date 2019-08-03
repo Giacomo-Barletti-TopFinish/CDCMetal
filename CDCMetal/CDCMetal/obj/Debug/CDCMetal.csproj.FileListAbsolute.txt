@@ -81,3 +81,4 @@ C:\VSProgetti\CDCMetal\CDCMetal\CDCMetal\obj\Debug\CDCMetal.CreaVerniciCoprentiF
 C:\VSProgetti\CDCMetal\CDCMetal\CDCMetal\obj\Debug\CDCMetal.CreaTenutaAcidoNitricoFrm.resources
 C:\VSProgetti\CDCMetal\CDCMetal\CDCMetal\obj\Debug\CDCMetal.AnalisiPiomboFrm.resources
 C:\VSProgetti\CDCMetal\CDCMetal\CDCMetal\obj\Debug\CDCMetal.AnalisiPiomboDaExcelFrm.resources
+C:\VSProgetti\CDCMetal\CDCMetal\CDCMetal\obj\Debug\CDCMetal.AssociaCertificatiPiomboFrm.resources

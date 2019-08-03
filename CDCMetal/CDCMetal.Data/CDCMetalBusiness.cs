@@ -82,6 +82,20 @@ namespace CDCMetal.Data
         }
 
         [DataContext]
+        public void FillCDC_CERTIFICATIPIOMBO_NonAssegnati(CDCDS ds)
+        {
+            CDCMetalAdapter a = new CDCMetalAdapter(DbConnection, DbTransaction);
+            a.FillCDC_CERTIFICATIPIOMBO_NonAssegnati(ds);
+        }
+
+        [DataContext]
+        public void FillCDC_ASSOCIAZIONEPIOMBO(CDCDS ds, List<decimal> IDDETTAGLIO)
+        {
+            CDCMetalAdapter a = new CDCMetalAdapter(DbConnection, DbTransaction);
+            a.FillCDC_ASSOCIAZIONEPIOMBO(ds, IDDETTAGLIO);
+        }
+
+        [DataContext]
         public void FillCDC_ETICHETTE_DETTAGLIO(CDCDS ds, List<decimal> IDDETTAGLIO)
         {
             CDCMetalAdapter a = new CDCMetalAdapter(DbConnection, DbTransaction);
@@ -156,6 +170,13 @@ namespace CDCMetal.Data
         {
             CDCMetalAdapter a = new CDCMetalAdapter(DbConnection, DbTransaction);
             a.UpdateTable(ds.CDC_TENUTACIDONITRICO.TableName, ds);
+        }
+
+        [DataContext(true)]
+        public void UpdateCDC_ASSOCIAZIONEPIOMBO(CDCDS ds)
+        {
+            CDCMetalAdapter a = new CDCMetalAdapter(DbConnection, DbTransaction);
+            a.UpdateTable(ds.CDC_ASSOCIAZIONEPIOMBO.TableName, ds);
         }
 
         [DataContext(true)]

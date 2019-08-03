@@ -372,5 +372,19 @@ namespace CDCMetal
                 MostraEccezione("ERRORE IN CREA CERTIFICATO ANALISI PIOMBO DA EXCEL", ex);
             }
         }
+
+        private void associaCertificatoPiomboToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                AssociaCertificatiPiomboFrm form = new AssociaCertificatiPiomboFrm();
+                form.MdiParent = this;
+                form.Show();
+            }
+            catch (Exception ex)
+            {
+                MostraEccezione("ERRORE IN CREA ASSOCIA CERTIFICATO PIOMBO ", ex);
+            }
+        }
     }
 }

@@ -115,6 +115,18 @@ namespace CDCMetal.Data
             }
         }
 
+        public void FillCDC_CERTIFICATIPIOMBO_NonAssegnati(CDCDS ds)
+        {
+            string select = @"SELECT * FROM CDC_CERTIFICATIPIOMBO 
+                            WHERE IDCERTIFICATIPIOMBO NOT IN (SELECT DISTINCT IDCERTIFICATIPIOMBO FROM CDC_ASSOCIAZIONEPIOMBO ) 
+                            ORDER BY DATACERTIFICATO ";
+
+            using (DbDataAdapter da = BuildDataAdapter(select))
+            {
+                da.Fill(ds.CDC_CERTIFICATIPIOMBO);
+            }
+        }
+
         public void FillCDC_CONFORMITA(CDCDS ds, List<decimal> IDDETTAGLIO)
         {
             string selezione = ConvertToStringForInCondition(IDDETTAGLIO);
@@ -128,6 +140,18 @@ namespace CDCMetal.Data
             }
         }
 
+        public void FillCDC_ASSOCIAZIONEPIOMBO(CDCDS ds, List<decimal> IDDETTAGLIO)
+        {
+            string selezione = ConvertToStringForInCondition(IDDETTAGLIO);
+            string select = @"SELECT * FROM CDC_ASSOCIAZIONEPIOMBO WHERE IDDETTAGLIO IN ({0}) ";
+
+            string query = string.Format(select, selezione);
+
+            using (DbDataAdapter da = BuildDataAdapter(query))
+            {
+                da.Fill(ds.CDC_ASSOCIAZIONEPIOMBO);
+            }
+        }
         public void FillCDC_DETTAGLIO_CON_DESCRIZIONE(CDCDS ds, List<decimal> IDEXCEL)
         {
             string selezione = ConvertToStringForInCondition(IDEXCEL);

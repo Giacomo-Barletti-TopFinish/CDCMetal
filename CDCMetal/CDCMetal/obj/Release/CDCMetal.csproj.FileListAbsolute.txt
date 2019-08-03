@@ -57,3 +57,4 @@ C:\VSProgetti\CDCMetal\CDCMetal\CDCMetal\obj\Release\CDCMetal.CreaTenutaAcidoNit
 C:\VSProgetti\CDCMetal\CDCMetal\CDCMetal\obj\Release\CDCMetal.CreaVerniciCoprentiFrm.resources
 C:\VSProgetti\CDCMetal\CDCMetal\CDCMetal\obj\Release\CDCMetal.AnalisiPiomboFrm.resources
 C:\VSProgetti\CDCMetal\CDCMetal\CDCMetal\obj\Release\CDCMetal.AnalisiPiomboDaExcelFrm.resources
+C:\VSProgetti\CDCMetal\CDCMetal\CDCMetal\obj\Release\CDCMetal.AssociaCertificatiPiomboFrm.resources

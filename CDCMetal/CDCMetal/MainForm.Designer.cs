@@ -48,6 +48,8 @@
             this.tenutaAcidoNitricoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
             this.analisiPiomboToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.singoloPDFToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.daExcelToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.pDFToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.listaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.eTICHETTEToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -56,8 +58,7 @@
             this.lblUserLoggato = new System.Windows.Forms.ToolStripStatusLabel();
             this.prgProgressBar = new System.Windows.Forms.ToolStripProgressBar();
             this.lblStatusBar = new System.Windows.Forms.ToolStripStatusLabel();
-            this.singoloPDFToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.daExcelToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.associaCertificatoPiomboToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.cdcMenu.SuspendLayout();
             this.statusStrip1.SuspendLayout();
             this.SuspendLayout();
@@ -172,6 +173,7 @@
             this.spessoriToolStripMenuItem,
             this.verniciCoprentiToolStripMenuItem,
             this.tenutaAcidoNitricoToolStripMenuItem,
+            this.associaCertificatoPiomboToolStripMenuItem,
             this.toolStripSeparator1,
             this.analisiPiomboToolStripMenuItem});
             this.laboratorioToolStripMenuItem.Name = "laboratorioToolStripMenuItem";
@@ -181,42 +183,42 @@
             // antiallergicoNichelFreeToolStripMenuItem
             // 
             this.antiallergicoNichelFreeToolStripMenuItem.Name = "antiallergicoNichelFreeToolStripMenuItem";
-            this.antiallergicoNichelFreeToolStripMenuItem.Size = new System.Drawing.Size(226, 22);
+            this.antiallergicoNichelFreeToolStripMenuItem.Size = new System.Drawing.Size(231, 22);
             this.antiallergicoNichelFreeToolStripMenuItem.Text = "Antiallergico / Nichel Free";
             this.antiallergicoNichelFreeToolStripMenuItem.Click += new System.EventHandler(this.antiallergicoNichelFreeToolStripMenuItem_Click);
             // 
             // colorimetricoToolStripMenuItem
             // 
             this.colorimetricoToolStripMenuItem.Name = "colorimetricoToolStripMenuItem";
-            this.colorimetricoToolStripMenuItem.Size = new System.Drawing.Size(226, 22);
+            this.colorimetricoToolStripMenuItem.Size = new System.Drawing.Size(231, 22);
             this.colorimetricoToolStripMenuItem.Text = "Colorimetrico";
             this.colorimetricoToolStripMenuItem.Click += new System.EventHandler(this.colorimetricoToolStripMenuItem_Click);
             // 
             // spessoriToolStripMenuItem
             // 
             this.spessoriToolStripMenuItem.Name = "spessoriToolStripMenuItem";
-            this.spessoriToolStripMenuItem.Size = new System.Drawing.Size(226, 22);
+            this.spessoriToolStripMenuItem.Size = new System.Drawing.Size(231, 22);
             this.spessoriToolStripMenuItem.Text = "Spessori";
             this.spessoriToolStripMenuItem.Click += new System.EventHandler(this.spessoriToolStripMenuItem_Click);
             // 
             // verniciCoprentiToolStripMenuItem
             // 
             this.verniciCoprentiToolStripMenuItem.Name = "verniciCoprentiToolStripMenuItem";
-            this.verniciCoprentiToolStripMenuItem.Size = new System.Drawing.Size(226, 22);
+            this.verniciCoprentiToolStripMenuItem.Size = new System.Drawing.Size(231, 22);
             this.verniciCoprentiToolStripMenuItem.Text = "Vernici coprenti";
             this.verniciCoprentiToolStripMenuItem.Click += new System.EventHandler(this.verniciCoprentiToolStripMenuItem_Click);
             // 
             // tenutaAcidoNitricoToolStripMenuItem
             // 
             this.tenutaAcidoNitricoToolStripMenuItem.Name = "tenutaAcidoNitricoToolStripMenuItem";
-            this.tenutaAcidoNitricoToolStripMenuItem.Size = new System.Drawing.Size(226, 22);
+            this.tenutaAcidoNitricoToolStripMenuItem.Size = new System.Drawing.Size(231, 22);
             this.tenutaAcidoNitricoToolStripMenuItem.Text = "Tenuta acido nitrico";
             this.tenutaAcidoNitricoToolStripMenuItem.Click += new System.EventHandler(this.tenutaAcidoNitricoToolStripMenuItem_Click);
             // 
             // toolStripSeparator1
             // 
             this.toolStripSeparator1.Name = "toolStripSeparator1";
-            this.toolStripSeparator1.Size = new System.Drawing.Size(223, 6);
+            this.toolStripSeparator1.Size = new System.Drawing.Size(228, 6);
             // 
             // analisiPiomboToolStripMenuItem
             // 
@@ -224,8 +226,22 @@
             this.singoloPDFToolStripMenuItem,
             this.daExcelToolStripMenuItem});
             this.analisiPiomboToolStripMenuItem.Name = "analisiPiomboToolStripMenuItem";
-            this.analisiPiomboToolStripMenuItem.Size = new System.Drawing.Size(226, 22);
+            this.analisiPiomboToolStripMenuItem.Size = new System.Drawing.Size(231, 22);
             this.analisiPiomboToolStripMenuItem.Text = "Analisi piombo";
+            // 
+            // singoloPDFToolStripMenuItem
+            // 
+            this.singoloPDFToolStripMenuItem.Name = "singoloPDFToolStripMenuItem";
+            this.singoloPDFToolStripMenuItem.Size = new System.Drawing.Size(146, 22);
+            this.singoloPDFToolStripMenuItem.Text = "Singolo PDF";
+            this.singoloPDFToolStripMenuItem.Click += new System.EventHandler(this.singoloPDFToolStripMenuItem_Click);
+            // 
+            // daExcelToolStripMenuItem
+            // 
+            this.daExcelToolStripMenuItem.Name = "daExcelToolStripMenuItem";
+            this.daExcelToolStripMenuItem.Size = new System.Drawing.Size(146, 22);
+            this.daExcelToolStripMenuItem.Text = "Da Excel";
+            this.daExcelToolStripMenuItem.Click += new System.EventHandler(this.daExcelToolStripMenuItem_Click);
             // 
             // pDFToolStripMenuItem
             // 
@@ -284,19 +300,12 @@
             this.lblStatusBar.Name = "lblStatusBar";
             this.lblStatusBar.Size = new System.Drawing.Size(0, 17);
             // 
-            // singoloPDFToolStripMenuItem
+            // associaCertificatoPiomboToolStripMenuItem
             // 
-            this.singoloPDFToolStripMenuItem.Name = "singoloPDFToolStripMenuItem";
-            this.singoloPDFToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
-            this.singoloPDFToolStripMenuItem.Text = "Singolo PDF";
-            this.singoloPDFToolStripMenuItem.Click += new System.EventHandler(this.singoloPDFToolStripMenuItem_Click);
-            // 
-            // daExcelToolStripMenuItem
-            // 
-            this.daExcelToolStripMenuItem.Name = "daExcelToolStripMenuItem";
-            this.daExcelToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
-            this.daExcelToolStripMenuItem.Text = "Da Excel";
-            this.daExcelToolStripMenuItem.Click += new System.EventHandler(this.daExcelToolStripMenuItem_Click);
+            this.associaCertificatoPiomboToolStripMenuItem.Name = "associaCertificatoPiomboToolStripMenuItem";
+            this.associaCertificatoPiomboToolStripMenuItem.Size = new System.Drawing.Size(231, 22);
+            this.associaCertificatoPiomboToolStripMenuItem.Text = "Associa certificato piombo";
+            this.associaCertificatoPiomboToolStripMenuItem.Click += new System.EventHandler(this.associaCertificatoPiomboToolStripMenuItem_Click);
             // 
             // MainForm
             // 
@@ -352,6 +361,7 @@
         private System.Windows.Forms.ToolStripMenuItem analisiPiomboToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem singoloPDFToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem daExcelToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem associaCertificatoPiomboToolStripMenuItem;
     }
 }
 
