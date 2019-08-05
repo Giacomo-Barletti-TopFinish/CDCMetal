@@ -246,7 +246,7 @@ namespace CDCMetal.Helpers
                 if (r.FirstChild.InnerText == string.Empty) continue;
 
                 CDCDS.CDC_CERTIFICATIPIOMBORow cPiombo = ds.CDC_CERTIFICATIPIOMBO.NewCDC_CERTIFICATIPIOMBORow();
-
+                cPiombo.MATERIALE = "OTTONE CON PIOMBO";
                 string elemento = string.Empty;
                 foreach (Cell cell in r.Elements<Cell>())
                 {
@@ -308,42 +308,42 @@ namespace CDCMetal.Helpers
                         case "J":
                             {
                                 cPiombo.ELEMENTO = EstraiStringaDaCella(cella, 30);
-                                if (cPiombo.ELEMENTO.Trim().ToUpper() == "BARRA") cPiombo.ELEMENTO = barraTonda;
-                                if (cPiombo.ELEMENTO.Trim().ToUpper() == "PIATTO") cPiombo.ELEMENTO = piatto;
-                                elemento = cPiombo.ELEMENTO;
+                                switch (cPiombo.ELEMENTO.Trim().ToUpper())
+                                {
+                                    case "BARRA":
+                                        cPiombo.ELEMENTO = barraTonda;
+                                        break;
+                                    case "PIATTO":
+                                        cPiombo.ELEMENTO = piatto;
+                                        break;
+                                    default:
+                                        cPiombo.ELEMENTO = "ALTRO";
+                                        break;
+                                }
                             }
                             break;
                         case "K":
                             {
-                                if (!string.IsNullOrEmpty(elemento))
-                                {
-                                    if (cella.Length == 0)
-                                        cPiombo.MATERIALE = "OTTONE CON PIOMBO";
-                                    else
-                                        cPiombo.MATERIALE = "OTTONE SENZA PIOMBO";
-                                }
+                                if (cella.Length == 0)
+                                    cPiombo.MATERIALE = "OTTONE CON PIOMBO";
+                                else
+                                    cPiombo.MATERIALE = "OTTONE SENZA PIOMBO";
                             }
                             break;
                         case "L":
                             {
-                                if (!string.IsNullOrEmpty(elemento))
-                                {
+                                if (!string.IsNullOrEmpty(cella))
                                     esito = EstraiValoreCellaDecimal(cella, "LUNGHEZZA", cPiombo, out messaggioErrore);
-                                }
                             }
                             break;
                         case "M":
-                            if (!string.IsNullOrEmpty(elemento))
-                            {
+                            if (!string.IsNullOrEmpty(cella))
                                 esito = EstraiValoreCellaDecimal(cella, "LARGHEZZA", cPiombo, out messaggioErrore);
-                            }
                             break;
                         case "N":
                             {
-                                if (!string.IsNullOrEmpty(elemento) && !string.IsNullOrEmpty(cella))
-                                {
+                                if (!string.IsNullOrEmpty(cella))
                                     esito = EstraiValoreCellaDecimal(cella, "SPESSORE", cPiombo, out messaggioErrore);
-                                }
                             }
                             break;
 
@@ -351,18 +351,15 @@ namespace CDCMetal.Helpers
                     if (!esito)
                         return false;
                 }
-
-                if (!string.IsNullOrEmpty(elemento))
-                {
-                    cPiombo.ESITO = (cPiombo.PBPPM >= 80) ? "FAIL" : "PASS";
-                    cPiombo.DATACERTIFICATO = DateTime.Today;
-                    cPiombo.DATAINSERIMENTO = DateTime.Today;
-                    cPiombo.UTENTE = utente;
-                    cPiombo.METODO = "XRF";
-                    cPiombo.PBPPM = Math.Round(cPiombo.PBPPM);
-                    cPiombo.CDPPM = Math.Round(cPiombo.CDPPM);
-                    ds.CDC_CERTIFICATIPIOMBO.AddCDC_CERTIFICATIPIOMBORow(cPiombo);
-                }
+                if (cPiombo[2] == DBNull.Value) continue;
+                cPiombo.ESITO = (cPiombo.PBPPM >= 80) ? "FAIL" : "PASS";
+                cPiombo.DATACERTIFICATO = DateTime.Today;
+                cPiombo.DATAINSERIMENTO = DateTime.Today;
+                cPiombo.UTENTE = utente;
+                cPiombo.METODO = "XRF";
+                cPiombo.PBPPM = Math.Round(cPiombo.PBPPM);
+                cPiombo.CDPPM = Math.Round(cPiombo.CDPPM);
+                ds.CDC_CERTIFICATIPIOMBO.AddCDC_CERTIFICATIPIOMBORow(cPiombo);
             }
 
             return true;

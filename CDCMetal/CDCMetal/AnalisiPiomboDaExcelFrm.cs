@@ -111,7 +111,6 @@ namespace CDCMetal
                 byte[] image = (byte[])converter.ConvertTo(firma, typeof(byte[]));
 
                 CDCBLL bll = new CDCBLL();
-                bll.SalvaCertificatiPiombo(_DS);
 
                 StringBuilder files = new StringBuilder();
 
@@ -121,13 +120,28 @@ namespace CDCMetal
                     Color colore;
                     bll.CalcolaEsitoAnalisiPiombo(nPd, out colore);
                     string spessore = string.Empty;
+                    string lunghezza = string.Empty;
+                    string larghezza = string.Empty;
+                    string elemento = string.Empty;
+                    if (!riga.IsELEMENTONull())
+                        elemento = riga.ELEMENTO.ToString();
+
+                    if (!riga.IsLUNGHEZZANull())
+                        lunghezza = riga.LUNGHEZZA.ToString();
+                    if (!riga.IsLARGHEZZANull())
+                        larghezza = riga.LARGHEZZA.ToString();
+
                     if (!riga.IsSPESSORENull())
                         spessore = riga.SPESSORE.ToString();
-                        string path = bll.CreaPDFCertificatoPiombo(riga.ELEMENTO, riga.LUNGHEZZA.ToString(), riga.LARGHEZZA.ToString(), spessore.ToString(), riga.CODICE, riga.LOTTO,
-                        riga.ESITO, colore, riga.METODO, riga.DATACERTIFICATO, riga.PBPPM, riga.CDPPM, Contesto.PathAnalisiPiombo, image);
+                    string path = bll.CreaPDFCertificatoPiombo(elemento, lunghezza, larghezza, spessore.ToString(), riga.CODICE, riga.LOTTO,
+                    riga.ESITO, colore, riga.METODO, riga.DATACERTIFICATO, riga.PBPPM, riga.CDPPM, Contesto.PathAnalisiPiombo, image);
                     files.AppendLine(path);
 
                 }
+                List<CDCDS.CDC_CERTIFICATIPIOMBORow> certificati = _DS.CDC_CERTIFICATIPIOMBO.Where(x => x.IsLUNGHEZZANull()).ToList();
+                foreach (CDCDS.CDC_CERTIFICATIPIOMBORow certificato in certificati)
+                    certificato.Delete();
+                bll.SalvaCertificatiPiombo(_DS);
             }
             catch (Exception ex)
             {

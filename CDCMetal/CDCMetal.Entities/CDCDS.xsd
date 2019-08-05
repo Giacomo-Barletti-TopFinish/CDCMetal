@@ -1133,7 +1133,7 @@
           <xs:complexType>
             <xs:sequence>
               <xs:element name="IDCERTIFICATIPIOMBO" msprop:Generator_ColumnVarNameInTable="columnIDCERTIFICATIPIOMBO" msprop:Generator_ColumnPropNameInRow="IDCERTIFICATIPIOMBO" msprop:Generator_ColumnPropNameInTable="IDCERTIFICATIPIOMBOColumn" msprop:Generator_UserColumnName="IDCERTIFICATIPIOMBO" type="xs:decimal" minOccurs="0" />
-              <xs:element name="ELEMENTO" msprop:Generator_ColumnVarNameInTable="columnELEMENTO" msprop:Generator_ColumnPropNameInRow="ELEMENTO" msprop:Generator_ColumnPropNameInTable="ELEMENTOColumn" msprop:Generator_UserColumnName="ELEMENTO">
+              <xs:element name="ELEMENTO" msprop:Generator_ColumnVarNameInTable="columnELEMENTO" msprop:Generator_ColumnPropNameInRow="ELEMENTO" msprop:Generator_ColumnPropNameInTable="ELEMENTOColumn" msprop:Generator_UserColumnName="ELEMENTO" minOccurs="0">
                 <xs:simpleType>
                   <xs:restriction base="xs:string">
                     <xs:maxLength value="30" />
@@ -1161,8 +1161,8 @@
                   </xs:restriction>
                 </xs:simpleType>
               </xs:element>
-              <xs:element name="LUNGHEZZA" msprop:Generator_ColumnVarNameInTable="columnLUNGHEZZA" msprop:Generator_ColumnPropNameInRow="LUNGHEZZA" msprop:Generator_ColumnPropNameInTable="LUNGHEZZAColumn" msprop:Generator_UserColumnName="LUNGHEZZA" type="xs:decimal" />
-              <xs:element name="LARGHEZZA" msprop:Generator_ColumnVarNameInTable="columnLARGHEZZA" msprop:Generator_ColumnPropNameInRow="LARGHEZZA" msprop:Generator_ColumnPropNameInTable="LARGHEZZAColumn" msprop:Generator_UserColumnName="LARGHEZZA" type="xs:decimal" />
+              <xs:element name="LUNGHEZZA" msprop:Generator_ColumnVarNameInTable="columnLUNGHEZZA" msprop:Generator_ColumnPropNameInRow="LUNGHEZZA" msprop:Generator_ColumnPropNameInTable="LUNGHEZZAColumn" msprop:Generator_UserColumnName="LUNGHEZZA" type="xs:decimal" minOccurs="0" />
+              <xs:element name="LARGHEZZA" msprop:Generator_ColumnVarNameInTable="columnLARGHEZZA" msprop:Generator_ColumnPropNameInRow="LARGHEZZA" msprop:Generator_ColumnPropNameInTable="LARGHEZZAColumn" msprop:Generator_UserColumnName="LARGHEZZA" type="xs:decimal" minOccurs="0" />
               <xs:element name="SPESSORE" msprop:Generator_ColumnVarNameInTable="columnSPESSORE" msprop:Generator_ColumnPropNameInRow="SPESSORE" msprop:Generator_ColumnPropNameInTable="SPESSOREColumn" msprop:Generator_UserColumnName="SPESSORE" type="xs:decimal" minOccurs="0" />
               <xs:element name="METODO" msprop:Generator_ColumnVarNameInTable="columnMETODO" msprop:Generator_ColumnPropNameInRow="METODO" msprop:Generator_ColumnPropNameInTable="METODOColumn" msprop:Generator_UserColumnName="METODO">
                 <xs:simpleType>

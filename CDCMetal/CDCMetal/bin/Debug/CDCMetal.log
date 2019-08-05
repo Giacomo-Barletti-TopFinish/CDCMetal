@@ -2015,3 +2015,116 @@ System.Data.StrongTypingException: The value for column 'SPESSORE' in table 'CDC
    --- Fine della traccia dello stack dell'eccezione interna ---
    in CDCMetal.Entities.CDCDS.CDC_CERTIFICATIPIOMBORow.get_SPESSORE() in C:\VSProgetti\CDCMetal\CDCMetal\CDCMetal.Entities\CDCDS.Designer.cs:riga 13570
    in CDCMetal.AssociaCertificatiPiomboFrm.btnCopiaCertificati_Click(Object sender, EventArgs e) in C:\VSProgetti\CDCMetal\CDCMetal\CDCMetal\AssociaCertificatiPiomboFrm.cs:riga 277
+INFO  2019-08-05 12:23:34,096   462ms MainForm               LogScrivi          - Applicazione CDCMetal avviata
+ERROR 2019-08-05 12:24:12,310 38675ms MainForm               LogScriviErrore    - ERRORE IN CREA PDF
+System.NullReferenceException: Riferimento a un oggetto non impostato su un'istanza di oggetto.
+   in CDCMetal.AnalisiPiomboFrm.SalvaCertificatoPiombo() in C:\VSProgetti\CDCMetal\CDCMetal\CDCMetal\AnalisiPiomboFrm.cs:riga 204
+   in CDCMetal.AnalisiPiomboFrm.btnCreaPDF_Click(Object sender, EventArgs e) in C:\VSProgetti\CDCMetal\CDCMetal\CDCMetal\AnalisiPiomboFrm.cs:riga 175
+INFO  2019-08-05 13:30:11,126 3997492ms MainForm               LogScrivi          - Applicazione CDCMetal fermata
+INFO  2019-08-05 13:49:54,237   357ms MainForm               LogScrivi          - Applicazione CDCMetal avviata
+INFO  2019-08-05 13:51:04,373   293ms MainForm               LogScrivi          - Applicazione CDCMetal avviata
+ERROR 2019-08-05 13:51:20,260 16180ms MainForm               LogScriviErrore    - ERRORE IN APRI FILE EXCEL
+System.Data.NoNullAllowedException: La colonna 'ELEMENTO' non accetta valori nulls.
+   in System.Data.DataColumn.CheckNullable(DataRow row)
+   in System.Data.DataTable.RaiseRowChanging(DataRowChangeEventArgs args, DataRow eRow, DataRowAction eAction, Boolean fireEvent)
+   in System.Data.DataTable.SetNewRecordWorker(DataRow row, Int32 proposedRecord, DataRowAction action, Boolean isInMerge, Boolean suppressEnsurePropertyChanged, Int32 position, Boolean fireEvent, Exception& deferredException)
+   in System.Data.DataTable.InsertRow(DataRow row, Int64 proposedID, Int32 pos, Boolean fireEvent)
+   in System.Data.DataRowCollection.Add(DataRow row)
+   in CDCMetal.Entities.CDCDS.CDC_CERTIFICATIPIOMBODataTable.AddCDC_CERTIFICATIPIOMBORow(CDC_CERTIFICATIPIOMBORow row) in C:\VSProgetti\CDCMetal\CDCMetal\CDCMetal.Entities\CDCDS.Designer.cs:riga 8810
+   in CDCMetal.Helpers.ExcelHelper.ReadAnalisiPiombo(Stream stream, CDCDS ds, String utente, String& messaggioErrore) in C:\VSProgetti\CDCMetal\CDCMetal\CDCMetal.Helpers\ExcelHelper.cs:riga 362
+   in CDCMetal.BLL.ExcelBLL.LeggiExcelAnalisiPiombo(CDCDS ds, String filePath, String utente, String& messaggioErrore) in C:\VSProgetti\CDCMetal\CDCMetal\CDCMetal.BLL\ExcelBLL.cs:riga 104
+   in CDCMetal.AnalisiPiomboDaExcelFrm.btnApriFile_Click(Object sender, EventArgs e) in C:\VSProgetti\CDCMetal\CDCMetal\CDCMetal\AnalisiPiomboDaExcelFrm.cs:riga 67
+INFO  2019-08-05 13:52:10,255   218ms MainForm               LogScrivi          - Applicazione CDCMetal avviata
+ERROR 2019-08-05 13:52:23,060 13023ms MainForm               LogScriviErrore    - ERRORE IN APRI FILE EXCEL
+System.Data.NoNullAllowedException: La colonna 'MATERIALE' non accetta valori nulls.
+   in System.Data.DataColumn.CheckNullable(DataRow row)
+   in System.Data.DataTable.RaiseRowChanging(DataRowChangeEventArgs args, DataRow eRow, DataRowAction eAction, Boolean fireEvent)
+   in System.Data.DataTable.SetNewRecordWorker(DataRow row, Int32 proposedRecord, DataRowAction action, Boolean isInMerge, Boolean suppressEnsurePropertyChanged, Int32 position, Boolean fireEvent, Exception& deferredException)
+   in System.Data.DataTable.InsertRow(DataRow row, Int64 proposedID, Int32 pos, Boolean fireEvent)
+   in System.Data.DataRowCollection.Add(DataRow row)
+   in CDCMetal.Entities.CDCDS.CDC_CERTIFICATIPIOMBODataTable.AddCDC_CERTIFICATIPIOMBORow(CDC_CERTIFICATIPIOMBORow row) in C:\VSProgetti\CDCMetal\CDCMetal\CDCMetal.Entities\CDCDS.Designer.cs:riga 8810
+   in CDCMetal.Helpers.ExcelHelper.ReadAnalisiPiombo(Stream stream, CDCDS ds, String utente, String& messaggioErrore) in C:\VSProgetti\CDCMetal\CDCMetal\CDCMetal.Helpers\ExcelHelper.cs:riga 362
+   in CDCMetal.BLL.ExcelBLL.LeggiExcelAnalisiPiombo(CDCDS ds, String filePath, String utente, String& messaggioErrore) in C:\VSProgetti\CDCMetal\CDCMetal\CDCMetal.BLL\ExcelBLL.cs:riga 104
+   in CDCMetal.AnalisiPiomboDaExcelFrm.btnApriFile_Click(Object sender, EventArgs e) in C:\VSProgetti\CDCMetal\CDCMetal\CDCMetal\AnalisiPiomboDaExcelFrm.cs:riga 67
+INFO  2019-08-05 13:52:30,510 20473ms MainForm               LogScrivi          - Applicazione CDCMetal fermata
+INFO  2019-08-05 13:52:57,726   233ms MainForm               LogScrivi          - Applicazione CDCMetal avviata
+ERROR 2019-08-05 13:53:19,676 22182ms MainForm               LogScriviErrore    - ERRORE IN APRI FILE EXCEL
+System.Data.NoNullAllowedException: La colonna 'MATERIALE' non accetta valori nulls.
+   in System.Data.DataColumn.CheckNullable(DataRow row)
+   in System.Data.DataTable.RaiseRowChanging(DataRowChangeEventArgs args, DataRow eRow, DataRowAction eAction, Boolean fireEvent)
+   in System.Data.DataTable.SetNewRecordWorker(DataRow row, Int32 proposedRecord, DataRowAction action, Boolean isInMerge, Boolean suppressEnsurePropertyChanged, Int32 position, Boolean fireEvent, Exception& deferredException)
+   in System.Data.DataTable.InsertRow(DataRow row, Int64 proposedID, Int32 pos, Boolean fireEvent)
+   in System.Data.DataRowCollection.Add(DataRow row)
+   in CDCMetal.Entities.CDCDS.CDC_CERTIFICATIPIOMBODataTable.AddCDC_CERTIFICATIPIOMBORow(CDC_CERTIFICATIPIOMBORow row) in C:\VSProgetti\CDCMetal\CDCMetal\CDCMetal.Entities\CDCDS.Designer.cs:riga 8810
+   in CDCMetal.Helpers.ExcelHelper.ReadAnalisiPiombo(Stream stream, CDCDS ds, String utente, String& messaggioErrore) in C:\VSProgetti\CDCMetal\CDCMetal\CDCMetal.Helpers\ExcelHelper.cs:riga 362
+   in CDCMetal.BLL.ExcelBLL.LeggiExcelAnalisiPiombo(CDCDS ds, String filePath, String utente, String& messaggioErrore) in C:\VSProgetti\CDCMetal\CDCMetal\CDCMetal.BLL\ExcelBLL.cs:riga 104
+   in CDCMetal.AnalisiPiomboDaExcelFrm.btnApriFile_Click(Object sender, EventArgs e) in C:\VSProgetti\CDCMetal\CDCMetal\CDCMetal\AnalisiPiomboDaExcelFrm.cs:riga 67
+ERROR 2019-08-05 13:53:50,879 53385ms MainForm               LogScriviErrore    - ERRORE IN APRI FILE EXCEL
+System.Data.NoNullAllowedException: La colonna 'MATERIALE' non accetta valori nulls.
+   in System.Data.DataColumn.CheckNullable(DataRow row)
+   in System.Data.DataTable.RaiseRowChanging(DataRowChangeEventArgs args, DataRow eRow, DataRowAction eAction, Boolean fireEvent)
+   in System.Data.DataTable.SetNewRecordWorker(DataRow row, Int32 proposedRecord, DataRowAction action, Boolean isInMerge, Boolean suppressEnsurePropertyChanged, Int32 position, Boolean fireEvent, Exception& deferredException)
+   in System.Data.DataTable.InsertRow(DataRow row, Int64 proposedID, Int32 pos, Boolean fireEvent)
+   in System.Data.DataRowCollection.Add(DataRow row)
+   in CDCMetal.Entities.CDCDS.CDC_CERTIFICATIPIOMBODataTable.AddCDC_CERTIFICATIPIOMBORow(CDC_CERTIFICATIPIOMBORow row) in C:\VSProgetti\CDCMetal\CDCMetal\CDCMetal.Entities\CDCDS.Designer.cs:riga 8810
+   in CDCMetal.Helpers.ExcelHelper.ReadAnalisiPiombo(Stream stream, CDCDS ds, String utente, String& messaggioErrore) in C:\VSProgetti\CDCMetal\CDCMetal\CDCMetal.Helpers\ExcelHelper.cs:riga 362
+   in CDCMetal.BLL.ExcelBLL.LeggiExcelAnalisiPiombo(CDCDS ds, String filePath, String utente, String& messaggioErrore) in C:\VSProgetti\CDCMetal\CDCMetal\CDCMetal.BLL\ExcelBLL.cs:riga 104
+   in CDCMetal.AnalisiPiomboDaExcelFrm.btnApriFile_Click(Object sender, EventArgs e) in C:\VSProgetti\CDCMetal\CDCMetal\CDCMetal\AnalisiPiomboDaExcelFrm.cs:riga 67
+INFO  2019-08-05 13:56:08,616   286ms MainForm               LogScrivi          - Applicazione CDCMetal avviata
+ERROR 2019-08-05 13:56:29,985 21655ms MainForm               LogScriviErrore    - ERRORE IN APRI FILE EXCEL
+System.InvalidCastException: Cast specificato non valido.
+   in CDCMetal.Entities.CDCDS.CDC_CERTIFICATIPIOMBORow.get_PBPPM() in C:\VSProgetti\CDCMetal\CDCMetal\CDCMetal.Entities\CDCDS.Designer.cs:riga 13638
+   in CDCMetal.Helpers.ExcelHelper.ReadAnalisiPiombo(Stream stream, CDCDS ds, String utente, String& messaggioErrore) in C:\VSProgetti\CDCMetal\CDCMetal\CDCMetal.Helpers\ExcelHelper.cs:riga 355
+   in CDCMetal.BLL.ExcelBLL.LeggiExcelAnalisiPiombo(CDCDS ds, String filePath, String utente, String& messaggioErrore) in C:\VSProgetti\CDCMetal\CDCMetal\CDCMetal.BLL\ExcelBLL.cs:riga 104
+   in CDCMetal.AnalisiPiomboDaExcelFrm.btnApriFile_Click(Object sender, EventArgs e) in C:\VSProgetti\CDCMetal\CDCMetal\CDCMetal\AnalisiPiomboDaExcelFrm.cs:riga 67
+ERROR 2019-08-05 13:58:06,493 118162ms MainForm               LogScriviErrore    - ERRORE IN APRI FILE EXCEL
+System.InvalidCastException: Cast specificato non valido.
+   in CDCMetal.Entities.CDCDS.CDC_CERTIFICATIPIOMBORow.get_PBPPM() in C:\VSProgetti\CDCMetal\CDCMetal\CDCMetal.Entities\CDCDS.Designer.cs:riga 13638
+   in CDCMetal.Helpers.ExcelHelper.ReadAnalisiPiombo(Stream stream, CDCDS ds, String utente, String& messaggioErrore) in C:\VSProgetti\CDCMetal\CDCMetal\CDCMetal.Helpers\ExcelHelper.cs:riga 355
+   in CDCMetal.BLL.ExcelBLL.LeggiExcelAnalisiPiombo(CDCDS ds, String filePath, String utente, String& messaggioErrore) in C:\VSProgetti\CDCMetal\CDCMetal\CDCMetal.BLL\ExcelBLL.cs:riga 104
+   in CDCMetal.AnalisiPiomboDaExcelFrm.btnApriFile_Click(Object sender, EventArgs e) in C:\VSProgetti\CDCMetal\CDCMetal\CDCMetal\AnalisiPiomboDaExcelFrm.cs:riga 67
+INFO  2019-08-05 14:04:05,227   167ms MainForm               LogScrivi          - Applicazione CDCMetal avviata
+ERROR 2019-08-05 14:04:23,016 17956ms MainForm               LogScriviErrore    - ERRORE IN APRI FILE EXCEL
+System.InvalidCastException: Cast specificato non valido.
+   in CDCMetal.Entities.CDCDS.CDC_CERTIFICATIPIOMBORow.get_PBPPM() in C:\VSProgetti\CDCMetal\CDCMetal\CDCMetal.Entities\CDCDS.Designer.cs:riga 13638
+   in CDCMetal.Helpers.ExcelHelper.ReadAnalisiPiombo(Stream stream, CDCDS ds, String utente, String& messaggioErrore) in C:\VSProgetti\CDCMetal\CDCMetal\CDCMetal.Helpers\ExcelHelper.cs:riga 355
+   in CDCMetal.BLL.ExcelBLL.LeggiExcelAnalisiPiombo(CDCDS ds, String filePath, String utente, String& messaggioErrore) in C:\VSProgetti\CDCMetal\CDCMetal\CDCMetal.BLL\ExcelBLL.cs:riga 104
+   in CDCMetal.AnalisiPiomboDaExcelFrm.btnApriFile_Click(Object sender, EventArgs e) in C:\VSProgetti\CDCMetal\CDCMetal\CDCMetal\AnalisiPiomboDaExcelFrm.cs:riga 67
+ERROR 2019-08-05 14:06:17,688 132627ms MainForm               LogScriviErrore    - ERRORE IN APRI FILE EXCEL
+System.InvalidCastException: Cast specificato non valido.
+   in CDCMetal.Entities.CDCDS.CDC_CERTIFICATIPIOMBORow.get_PBPPM() in C:\VSProgetti\CDCMetal\CDCMetal\CDCMetal.Entities\CDCDS.Designer.cs:riga 13638
+   in CDCMetal.Helpers.ExcelHelper.ReadAnalisiPiombo(Stream stream, CDCDS ds, String utente, String& messaggioErrore)
+   in CDCMetal.BLL.ExcelBLL.LeggiExcelAnalisiPiombo(CDCDS ds, String filePath, String utente, String& messaggioErrore) in C:\VSProgetti\CDCMetal\CDCMetal\CDCMetal.BLL\ExcelBLL.cs:riga 104
+   in CDCMetal.AnalisiPiomboDaExcelFrm.btnApriFile_Click(Object sender, EventArgs e) in C:\VSProgetti\CDCMetal\CDCMetal\CDCMetal\AnalisiPiomboDaExcelFrm.cs:riga 67
+ERROR 2019-08-05 14:08:55,827 290767ms MainForm               LogScriviErrore    - ERRORE IN APRI FILE EXCEL
+System.InvalidCastException: Cast specificato non valido.
+   in CDCMetal.Entities.CDCDS.CDC_CERTIFICATIPIOMBORow.get_PBPPM() in C:\VSProgetti\CDCMetal\CDCMetal\CDCMetal.Entities\CDCDS.Designer.cs:riga 13638
+   in CDCMetal.Helpers.ExcelHelper.ReadAnalisiPiombo(Stream stream, CDCDS ds, String utente, String& messaggioErrore)
+   in CDCMetal.BLL.ExcelBLL.LeggiExcelAnalisiPiombo(CDCDS ds, String filePath, String utente, String& messaggioErrore) in C:\VSProgetti\CDCMetal\CDCMetal\CDCMetal.BLL\ExcelBLL.cs:riga 104
+   in CDCMetal.AnalisiPiomboDaExcelFrm.btnApriFile_Click(Object sender, EventArgs e) in C:\VSProgetti\CDCMetal\CDCMetal\CDCMetal\AnalisiPiomboDaExcelFrm.cs:riga 67
+ERROR 2019-08-05 14:09:31,995 326935ms MainForm               LogScriviErrore    - ERRORE IN APRI FILE EXCEL
+System.InvalidCastException: Impossibile eseguire il cast di oggetti di tipo 'System.DBNull' sul tipo 'System.String'.
+   in CDCMetal.Entities.CDCDS.CDC_CERTIFICATIPIOMBORow.get_CODICE() in C:\VSProgetti\CDCMetal\CDCMetal\CDCMetal.Entities\CDCDS.Designer.cs:riga 13513
+   in CDCMetal.Helpers.ExcelHelper.ReadAnalisiPiombo(Stream stream, CDCDS ds, String utente, String& messaggioErrore)
+   in CDCMetal.BLL.ExcelBLL.LeggiExcelAnalisiPiombo(CDCDS ds, String filePath, String utente, String& messaggioErrore) in C:\VSProgetti\CDCMetal\CDCMetal\CDCMetal.BLL\ExcelBLL.cs:riga 104
+   in CDCMetal.AnalisiPiomboDaExcelFrm.btnApriFile_Click(Object sender, EventArgs e) in C:\VSProgetti\CDCMetal\CDCMetal\CDCMetal\AnalisiPiomboDaExcelFrm.cs:riga 67
+INFO  2019-08-05 14:11:38,415   138ms MainForm               LogScrivi          - Applicazione CDCMetal avviata
+INFO  2019-08-05 14:13:05,279 87002ms MainForm               LogScrivi          - Applicazione CDCMetal fermata
+INFO  2019-08-05 14:13:18,000   165ms MainForm               LogScrivi          - Applicazione CDCMetal avviata
+INFO  2019-08-05 14:16:10,422   248ms MainForm               LogScrivi          - Applicazione CDCMetal avviata
+ERROR 2019-08-05 14:17:24,975 74801ms MainForm               LogScriviErrore    - ERRORE IN CREA PDF
+System.Data.StrongTypingException: The value for column 'ELEMENTO' in table 'CDC_CERTIFICATIPIOMBO' is DBNull. ---> System.InvalidCastException: Impossibile eseguire il cast di oggetti di tipo 'System.DBNull' sul tipo 'System.String'.
+   in CDCMetal.Entities.CDCDS.CDC_CERTIFICATIPIOMBORow.get_ELEMENTO() in C:\VSProgetti\CDCMetal\CDCMetal\CDCMetal.Entities\CDCDS.Designer.cs:riga 13498
+   --- Fine della traccia dello stack dell'eccezione interna ---
+   in CDCMetal.Entities.CDCDS.CDC_CERTIFICATIPIOMBORow.get_ELEMENTO() in C:\VSProgetti\CDCMetal\CDCMetal\CDCMetal.Entities\CDCDS.Designer.cs:riga 13501
+   in CDCMetal.AnalisiPiomboDaExcelFrm.btnCreaPdf_Click(Object sender, EventArgs e) in C:\VSProgetti\CDCMetal\CDCMetal\CDCMetal\AnalisiPiomboDaExcelFrm.cs:riga 132
+ERROR 2019-08-05 14:19:02,640 172467ms MainForm               LogScriviErrore    - ERRORE IN CREA PDF
+System.Data.StrongTypingException: The value for column 'ELEMENTO' in table 'CDC_CERTIFICATIPIOMBO' is DBNull. ---> System.InvalidCastException: Impossibile eseguire il cast di oggetti di tipo 'System.DBNull' sul tipo 'System.String'.
+   in CDCMetal.Entities.CDCDS.CDC_CERTIFICATIPIOMBORow.get_ELEMENTO() in C:\VSProgetti\CDCMetal\CDCMetal\CDCMetal.Entities\CDCDS.Designer.cs:riga 13498
+   --- Fine della traccia dello stack dell'eccezione interna ---
+   in CDCMetal.Entities.CDCDS.CDC_CERTIFICATIPIOMBORow.get_ELEMENTO() in C:\VSProgetti\CDCMetal\CDCMetal\CDCMetal.Entities\CDCDS.Designer.cs:riga 13501
+   in CDCMetal.AnalisiPiomboDaExcelFrm.btnCreaPdf_Click(Object sender, EventArgs e) in C:\VSProgetti\CDCMetal\CDCMetal\CDCMetal\AnalisiPiomboDaExcelFrm.cs:riga 132
+INFO  2019-08-05 14:19:27,339   172ms MainForm               LogScrivi          - Applicazione CDCMetal avviata
+INFO  2019-08-05 14:20:28,835   163ms MainForm               LogScrivi          - Applicazione CDCMetal avviata
+INFO  2019-08-05 14:25:29,285   223ms MainForm               LogScrivi          - Applicazione CDCMetal avviata
+INFO  2019-08-05 14:26:04,071 35009ms MainForm               LogScrivi          - Applicazione CDCMetal fermata

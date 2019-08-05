@@ -8932,7 +8932,6 @@ namespace CDCMetal.Entities {
                 base.Columns.Add(this.columnUTENTE);
                 this.columnDATAINSERIMENTO = new global::System.Data.DataColumn("DATAINSERIMENTO", typeof(global::System.DateTime), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnDATAINSERIMENTO);
-                this.columnELEMENTO.AllowDBNull = false;
                 this.columnELEMENTO.MaxLength = 30;
                 this.columnCODICE.AllowDBNull = false;
                 this.columnCODICE.MaxLength = 20;
@@ -8940,8 +8939,6 @@ namespace CDCMetal.Entities {
                 this.columnMATERIALE.MaxLength = 20;
                 this.columnLOTTO.AllowDBNull = false;
                 this.columnLOTTO.MaxLength = 20;
-                this.columnLUNGHEZZA.AllowDBNull = false;
-                this.columnLARGHEZZA.AllowDBNull = false;
                 this.columnMETODO.AllowDBNull = false;
                 this.columnMETODO.MaxLength = 20;
                 this.columnPESOCAMPIONE.AllowDBNull = false;
@@ -13497,7 +13494,12 @@ namespace CDCMetal.Entities {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             public string ELEMENTO {
                 get {
-                    return ((string)(this[this.tableCDC_CERTIFICATIPIOMBO.ELEMENTOColumn]));
+                    try {
+                        return ((string)(this[this.tableCDC_CERTIFICATIPIOMBO.ELEMENTOColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'ELEMENTO\' in table \'CDC_CERTIFICATIPIOMBO\' is DBNull.", e);
+                    }
                 }
                 set {
                     this[this.tableCDC_CERTIFICATIPIOMBO.ELEMENTOColumn] = value;
@@ -13541,7 +13543,12 @@ namespace CDCMetal.Entities {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             public decimal LUNGHEZZA {
                 get {
-                    return ((decimal)(this[this.tableCDC_CERTIFICATIPIOMBO.LUNGHEZZAColumn]));
+                    try {
+                        return ((decimal)(this[this.tableCDC_CERTIFICATIPIOMBO.LUNGHEZZAColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'LUNGHEZZA\' in table \'CDC_CERTIFICATIPIOMBO\' is DBNull.", e);
+                    }
                 }
                 set {
                     this[this.tableCDC_CERTIFICATIPIOMBO.LUNGHEZZAColumn] = value;
@@ -13552,7 +13559,12 @@ namespace CDCMetal.Entities {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             public decimal LARGHEZZA {
                 get {
-                    return ((decimal)(this[this.tableCDC_CERTIFICATIPIOMBO.LARGHEZZAColumn]));
+                    try {
+                        return ((decimal)(this[this.tableCDC_CERTIFICATIPIOMBO.LARGHEZZAColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'LARGHEZZA\' in table \'CDC_CERTIFICATIPIOMBO\' is DBNull.", e);
+                    }
                 }
                 set {
                     this[this.tableCDC_CERTIFICATIPIOMBO.LARGHEZZAColumn] = value;
@@ -13695,6 +13707,42 @@ namespace CDCMetal.Entities {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             public void SetIDCERTIFICATIPIOMBONull() {
                 this[this.tableCDC_CERTIFICATIPIOMBO.IDCERTIFICATIPIOMBOColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public bool IsELEMENTONull() {
+                return this.IsNull(this.tableCDC_CERTIFICATIPIOMBO.ELEMENTOColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public void SetELEMENTONull() {
+                this[this.tableCDC_CERTIFICATIPIOMBO.ELEMENTOColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public bool IsLUNGHEZZANull() {
+                return this.IsNull(this.tableCDC_CERTIFICATIPIOMBO.LUNGHEZZAColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public void SetLUNGHEZZANull() {
+                this[this.tableCDC_CERTIFICATIPIOMBO.LUNGHEZZAColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public bool IsLARGHEZZANull() {
+                return this.IsNull(this.tableCDC_CERTIFICATIPIOMBO.LARGHEZZAColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public void SetLARGHEZZANull() {
+                this[this.tableCDC_CERTIFICATIPIOMBO.LARGHEZZAColumn] = global::System.Convert.DBNull;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
