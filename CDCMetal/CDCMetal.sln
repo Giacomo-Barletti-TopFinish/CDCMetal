@@ -13,6 +13,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CDCMetal.Helpers", "CDCMeta
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CDCMetal.BLL", "CDCMetal.BLL\CDCMetal.BLL.csproj", "{C55B61C6-BADE-491D-B91B-0398EEE028A1}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CDCMetal.Security", "CDCMetal.Security\CDCMetal.Security.csproj", "{C32536C3-2B76-47C8-954C-8EAB3082A967}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -39,6 +41,10 @@ Global
 		{C55B61C6-BADE-491D-B91B-0398EEE028A1}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{C55B61C6-BADE-491D-B91B-0398EEE028A1}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{C55B61C6-BADE-491D-B91B-0398EEE028A1}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C32536C3-2B76-47C8-954C-8EAB3082A967}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C32536C3-2B76-47C8-954C-8EAB3082A967}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C32536C3-2B76-47C8-954C-8EAB3082A967}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C32536C3-2B76-47C8-954C-8EAB3082A967}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

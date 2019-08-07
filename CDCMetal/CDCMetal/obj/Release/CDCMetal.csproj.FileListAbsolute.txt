@@ -58,3 +58,5 @@ C:\VSProgetti\CDCMetal\CDCMetal\CDCMetal\obj\Release\CDCMetal.CreaVerniciCoprent
 C:\VSProgetti\CDCMetal\CDCMetal\CDCMetal\obj\Release\CDCMetal.AnalisiPiomboFrm.resources
 C:\VSProgetti\CDCMetal\CDCMetal\CDCMetal\obj\Release\CDCMetal.AnalisiPiomboDaExcelFrm.resources
 C:\VSProgetti\CDCMetal\CDCMetal\CDCMetal\obj\Release\CDCMetal.AssociaCertificatiPiomboFrm.resources
+C:\VSProgetti\CDCMetal\CDCMetal\CDCMetal\bin\Release\CDCMetal.Security.dll
+C:\VSProgetti\CDCMetal\CDCMetal\CDCMetal\bin\Release\CDCMetal.Security.pdb

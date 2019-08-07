@@ -1,4 +1,5 @@
 ﻿using CDCMetal.Entities;
+using CDCMetal.Security;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -11,7 +12,8 @@ namespace CDCMetal
     {
         public bool UtenteConnesso;
 //        public CDCDS DS;
-        public CDCDS.USR_USERRow Utente;
+   //     public CDCDS.USR_USERRow Utente;
+        public Utente Utente;
         public string PathCollaudo;
         public string PathSchedeTecniche;
         public string PathAnalisiPiombo;

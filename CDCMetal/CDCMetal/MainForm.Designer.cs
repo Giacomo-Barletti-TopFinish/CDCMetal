@@ -46,6 +46,7 @@
             this.spessoriToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.verniciCoprentiToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.tenutaAcidoNitricoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.associaCertificatoPiomboToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
             this.analisiPiomboToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.singoloPDFToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -56,9 +57,8 @@
             this.creaEtichetteToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.statusStrip1 = new System.Windows.Forms.StatusStrip();
             this.lblUserLoggato = new System.Windows.Forms.ToolStripStatusLabel();
-            this.prgProgressBar = new System.Windows.Forms.ToolStripProgressBar();
             this.lblStatusBar = new System.Windows.Forms.ToolStripStatusLabel();
-            this.associaCertificatoPiomboToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.stUser = new System.Windows.Forms.ToolStripStatusLabel();
             this.cdcMenu.SuspendLayout();
             this.statusStrip1.SuspendLayout();
             this.SuspendLayout();
@@ -96,6 +96,7 @@
             this.loginToolStripMenuItem.Name = "loginToolStripMenuItem";
             this.loginToolStripMenuItem.Size = new System.Drawing.Size(121, 22);
             this.loginToolStripMenuItem.Text = "Login ...";
+            this.loginToolStripMenuItem.Visible = false;
             this.loginToolStripMenuItem.Click += new System.EventHandler(this.loginToolStripMenuItem_Click);
             // 
             // exitToolStripMenuItem
@@ -215,6 +216,13 @@
             this.tenutaAcidoNitricoToolStripMenuItem.Text = "Tenuta acido nitrico";
             this.tenutaAcidoNitricoToolStripMenuItem.Click += new System.EventHandler(this.tenutaAcidoNitricoToolStripMenuItem_Click);
             // 
+            // associaCertificatoPiomboToolStripMenuItem
+            // 
+            this.associaCertificatoPiomboToolStripMenuItem.Name = "associaCertificatoPiomboToolStripMenuItem";
+            this.associaCertificatoPiomboToolStripMenuItem.Size = new System.Drawing.Size(231, 22);
+            this.associaCertificatoPiomboToolStripMenuItem.Text = "Associa certificato piombo";
+            this.associaCertificatoPiomboToolStripMenuItem.Click += new System.EventHandler(this.associaCertificatoPiomboToolStripMenuItem_Click);
+            // 
             // toolStripSeparator1
             // 
             this.toolStripSeparator1.Name = "toolStripSeparator1";
@@ -277,8 +285,8 @@
             // 
             this.statusStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.lblUserLoggato,
-            this.prgProgressBar,
-            this.lblStatusBar});
+            this.lblStatusBar,
+            this.stUser});
             this.statusStrip1.Location = new System.Drawing.Point(0, 763);
             this.statusStrip1.Name = "statusStrip1";
             this.statusStrip1.Size = new System.Drawing.Size(1558, 22);
@@ -290,22 +298,16 @@
             this.lblUserLoggato.Name = "lblUserLoggato";
             this.lblUserLoggato.Size = new System.Drawing.Size(0, 17);
             // 
-            // prgProgressBar
-            // 
-            this.prgProgressBar.Name = "prgProgressBar";
-            this.prgProgressBar.Size = new System.Drawing.Size(100, 16);
-            // 
             // lblStatusBar
             // 
             this.lblStatusBar.Name = "lblStatusBar";
             this.lblStatusBar.Size = new System.Drawing.Size(0, 17);
             // 
-            // associaCertificatoPiomboToolStripMenuItem
+            // stUser
             // 
-            this.associaCertificatoPiomboToolStripMenuItem.Name = "associaCertificatoPiomboToolStripMenuItem";
-            this.associaCertificatoPiomboToolStripMenuItem.Size = new System.Drawing.Size(231, 22);
-            this.associaCertificatoPiomboToolStripMenuItem.Text = "Associa certificato piombo";
-            this.associaCertificatoPiomboToolStripMenuItem.Click += new System.EventHandler(this.associaCertificatoPiomboToolStripMenuItem_Click);
+            this.stUser.Name = "stUser";
+            this.stUser.Size = new System.Drawing.Size(118, 17);
+            this.stUser.Text = "toolStripStatusLabel1";
             // 
             // MainForm
             // 
@@ -333,7 +335,6 @@
 
         private System.Windows.Forms.MenuStrip cdcMenu;
         private System.Windows.Forms.StatusStrip statusStrip1;
-        private System.Windows.Forms.ToolStripProgressBar prgProgressBar;
         private System.Windows.Forms.ToolStripStatusLabel lblStatusBar;
         private System.Windows.Forms.ToolStripMenuItem fileToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem exitToolStripMenuItem;
@@ -362,6 +363,7 @@
         private System.Windows.Forms.ToolStripMenuItem singoloPDFToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem daExcelToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem associaCertificatoPiomboToolStripMenuItem;
+        private System.Windows.Forms.ToolStripStatusLabel stUser;
     }
 }
 

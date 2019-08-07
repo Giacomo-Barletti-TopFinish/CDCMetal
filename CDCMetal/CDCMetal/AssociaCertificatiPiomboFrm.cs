@@ -266,7 +266,7 @@ namespace CDCMetal
                     associazione.PESOARTICOLO = nPesoArticolo.Value;
                     associazione.PESOMATERIAPRIMA = nPesoAssociazione.Value;
                     associazione.PESOPRODUZIONE = nPesoRiga.Value;
-                    associazione.UTENTE = Contesto.Utente.UTENTE;
+                    associazione.UTENTE = Contesto.Utente.FULLNAMEUSER;
                    
 
                     CDCDS.CDC_CERTIFICATIPIOMBORow certificato = _DS.CDC_CERTIFICATIPIOMBO.Where(x => x.IDCERTIFICATIPIOMBO == cp.IDCERTIFICATIPIOMBO).FirstOrDefault();

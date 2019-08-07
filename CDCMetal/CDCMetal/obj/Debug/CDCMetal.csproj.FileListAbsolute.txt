@@ -82,3 +82,5 @@ C:\VSProgetti\CDCMetal\CDCMetal\CDCMetal\obj\Debug\CDCMetal.CreaTenutaAcidoNitri
 C:\VSProgetti\CDCMetal\CDCMetal\CDCMetal\obj\Debug\CDCMetal.AnalisiPiomboFrm.resources
 C:\VSProgetti\CDCMetal\CDCMetal\CDCMetal\obj\Debug\CDCMetal.AnalisiPiomboDaExcelFrm.resources
 C:\VSProgetti\CDCMetal\CDCMetal\CDCMetal\obj\Debug\CDCMetal.AssociaCertificatiPiomboFrm.resources
+C:\VSProgetti\CDCMetal\CDCMetal\CDCMetal\bin\Debug\CDCMetal.Security.dll
+C:\VSProgetti\CDCMetal\CDCMetal\CDCMetal\bin\Debug\CDCMetal.Security.pdb

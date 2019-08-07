@@ -24,9 +24,9 @@
     <UpdateRequired>true</UpdateRequired>
     <MapFileExtensions>true</MapFileExtensions>
     <InstallUrl>\\srv-webservices\publish\CDCMetal\</InstallUrl>
-    <MinimumRequiredVersion>2.0.0.12</MinimumRequiredVersion>
+    <MinimumRequiredVersion>2.0.0.13</MinimumRequiredVersion>
     <OpenBrowserOnPublish>false</OpenBrowserOnPublish>
-    <ApplicationRevision>12</ApplicationRevision>
+    <ApplicationRevision>13</ApplicationRevision>
     <ApplicationVersion>2.0.0.%2a</ApplicationVersion>
     <UseApplicationTrust>false</UseApplicationTrust>
     <PublishWizardCompleted>true</PublishWizardCompleted>
@@ -287,6 +287,10 @@
     <ProjectReference Include="..\CDCMetal.Helpers\CDCMetal.Helpers.csproj">
       <Project>{2c9c360c-7b1b-4471-bc40-4633effad067}</Project>
       <Name>CDCMetal.Helpers</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\CDCMetal.Security\CDCMetal.Security.csproj">
+      <Project>{C32536C3-2B76-47C8-954C-8EAB3082A967}</Project>
+      <Name>CDCMetal.Security</Name>
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>

@@ -63,8 +63,8 @@ namespace CDCMetal
         {
             Contesto = new CDCContext();
 
-            Contesto.UtenteConnesso = false;
-            Contesto.Utente = null;
+            Contesto.UtenteConnesso = true;
+            Contesto.Utente = new Security.Utente();
             Contesto.PathSchedeTecniche = CDCMetal.Properties.Settings.Default.PathSchedeTecnic;
             Contesto.PathRefertiLaboratorio = Properties.Settings.Default.PathRefertiLaboratorio;
             Contesto.StrumentoColore = Properties.Settings.Default.StrumentoColore;
@@ -85,58 +85,33 @@ namespace CDCMetal
             string fileVersion = FileVersionInfo.GetVersionInfo(Assembly.GetExecutingAssembly().Location).FileVersion;
             string productVersion = FileVersionInfo.GetVersionInfo(Assembly.GetExecutingAssembly().Location).ProductVersion;
             CreaContesto();
-            try
-            {
-                EseguiLogin();
-            }
-            catch (Exception ex)
-            {
-                MostraEccezione("ERRORE IN ESEGUI LOGIN", ex);
-            }
+            stUser.Text = Contesto.Utente.DisplayName;
+            //try
+            //{
+            ////    EseguiLogin();
+            //}
+            //catch (Exception ex)
+            //{
+            //    MostraEccezione("ERRORE IN ESEGUI LOGIN", ex);
+            //}
             AbilitaMenu();
 
         }
 
         private void AbilitaMenu()
         {
+            DisabilitaElementiMenu(cdcMenu.Items, true);
+            loginToolStripMenuItem.Enabled = true;
+            exitToolStripMenuItem.Enabled = true;
+            fileToolStripMenuItem.Enabled = true;
 
-            if (!Contesto.UtenteConnesso)
-            {
-                DisabilitaElementiMenu(cdcMenu.Items, false);
-                loginToolStripMenuItem.Enabled = true;
-                exitToolStripMenuItem.Enabled = true;
-                fileToolStripMenuItem.Enabled = true;
-            }
-            else
-            {
-                DisabilitaElementiMenu(cdcMenu.Items, true);
-                switch (Contesto.Utente.IDUSER)
-                {
-                    case "0000000029":
-                    case "0000000100":
-                    case "0000000122":
-                    case "0000000166":
-
-                        break;
-                    default:
-                        dimensioniToolStripMenuItem.Enabled = false;
-                        break;
-                }
-
-                switch (Contesto.Utente.IDUSER)
-                {
-                    case "0000000205":
-                    case "0000000206":
-                    case "0000000166":
-                    case "0000000234":
-
-                        break;
-                    default:
-                        laboratorioToolStripMenuItem.Enabled = false;
-                        break;
-                }
-            }
-
+            excelToolStripMenuItem.Enabled = Contesto.Utente.AbilitaExcel;
+            cartelleToolStripMenuItem.Enabled = Contesto.Utente.AbilitaCartelle;
+            conformitàToolStripMenuItem.Enabled = Contesto.Utente.AbilitaConformita;
+            dimensioniToolStripMenuItem.Enabled = Contesto.Utente.AbilitaDimensioni;
+            laboratorioToolStripMenuItem.Enabled = Contesto.Utente.AbilitaLaboratorio;
+            pDFToolStripMenuItem.Enabled = Contesto.Utente.AbilitaPDF;
+            eTICHETTEToolStripMenuItem.Enabled = Contesto.Utente.AbilitaEtichette;
 
         }
 
@@ -156,23 +131,23 @@ namespace CDCMetal
             }
         }
 
-        private void EseguiLogin()
-        {
-            LoginDialog frm = new LoginDialog();
-            if (frm.ShowDialog() == DialogResult.OK)
-            {
-                Contesto.UtenteConnesso = true;
-                Contesto.Utente = frm.User;
-                lblUserLoggato.Text = frm.User.FULLNAMEUSER.Trim();
-            }
-            else
-            {
+        //private void EseguiLogin()
+        //{
+        //    LoginDialog frm = new LoginDialog();
+        //    if (frm.ShowDialog() == DialogResult.OK)
+        //    {
+        //        Contesto.UtenteConnesso = true;
+        //        Contesto.Utente = frm.User;
+        //        lblUserLoggato.Text = frm.User.FULLNAMEUSER.Trim();
+        //    }
+        //    else
+        //    {
 
-                Contesto.UtenteConnesso = false;
-                Contesto.Utente = null;
-                lblUserLoggato.Text = string.Empty;
-            }
-        }
+        //        Contesto.UtenteConnesso = false;
+        //        Contesto.Utente = null;
+        //        lblUserLoggato.Text = string.Empty;
+        //    }
+        //}
 
         private void fileToolStripMenuItem_Click(object sender, EventArgs e)
         {
@@ -184,7 +159,7 @@ namespace CDCMetal
             try
             {
                 CreaContesto();
-                EseguiLogin();
+                //    EseguiLogin();
                 AbilitaMenu();
             }
             catch (Exception ex)
