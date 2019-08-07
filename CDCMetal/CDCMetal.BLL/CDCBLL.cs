@@ -522,17 +522,17 @@ namespace CDCMetal.BLL
 
             nomeCampione = string.Empty;
             string fileName = "report.pdf";
-            if (elemento == barraTonda)
-            {
-                fileName = string.Format("BARRA DIAMETRO {0} {1}_{2}_{3}.pdf", larghezza, codiceCampione, dataAnalisi.Day.ToString().PadLeft(2, '0'), dataAnalisi.Month.ToString().PadLeft(2, '0'));
-                nomeCampione = string.Format("{0} {1}x{2} {3}", elemento, lunghezza, larghezza, codiceCampione);
-            }
-            else if (elemento == piatto)
-            {
-                fileName = string.Format("PIATTO {0}x{1}x{2} {3}_{4}_{5}.pdf", lunghezza, larghezza, spessore, codiceCampione, dataAnalisi.Day.ToString().PadLeft(2, '0'), dataAnalisi.Month.ToString().PadLeft(2, '0'));
-                nomeCampione = string.Format("{0} {1}x{2}x{3} {4}", elemento, lunghezza, larghezza, spessore, codiceCampione);
-            }
-            else
+            //if (elemento == barraTonda)
+            //{
+            //    fileName = string.Format("BARRA DIAMETRO {0} {1}_{2}_{3}.pdf", larghezza, codiceCampione, dataAnalisi.Day.ToString().PadLeft(2, '0'), dataAnalisi.Month.ToString().PadLeft(2, '0'));
+            //    nomeCampione = string.Format("{0} {1}x{2} {3}", elemento, lunghezza, larghezza, codiceCampione);
+            //}
+            //else if (elemento == piatto)
+            //{
+            //    fileName = string.Format("PIATTO {0}x{1}x{2} {3}_{4}_{5}.pdf", lunghezza, larghezza, spessore, codiceCampione, dataAnalisi.Day.ToString().PadLeft(2, '0'), dataAnalisi.Month.ToString().PadLeft(2, '0'));
+            //    nomeCampione = string.Format("{0} {1}x{2}x{3} {4}", elemento, lunghezza, larghezza, spessore, codiceCampione);
+            //}
+            //else
             {
                 fileName = string.Format(" {0}_{1}_{2}.pdf", codiceCampione, dataAnalisi.Day.ToString().PadLeft(2, '0'), dataAnalisi.Month.ToString().PadLeft(2, '0'));
                 nomeCampione = string.Format("{0}", codiceCampione);
