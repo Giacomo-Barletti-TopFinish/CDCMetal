@@ -2148,3 +2148,17 @@ INFO  2019-08-07 09:16:38,441   153ms MainForm               LogScrivi          
 INFO  2019-08-07 09:17:03,981 25693ms MainForm               LogScrivi          - Applicazione CDCMetal fermata
 INFO  2019-08-07 09:17:06,940   156ms MainForm               LogScrivi          - Applicazione CDCMetal avviata
 INFO  2019-08-07 09:17:13,206  6422ms MainForm               LogScrivi          - Applicazione CDCMetal fermata
+INFO  2019-09-05 15:59:42,032   191ms MainForm               LogScrivi          - Applicazione CDCMetal avviata
+ERROR 2019-09-05 16:00:35,035 53194ms MainForm               LogScriviErrore    - ERRORE IN APRI FILE EXCEL
+System.IO.IOException: Il processo non può accedere al file '\\dc02\Galvanica Condivisa\Analisi Piombo_Cadmio\Analisi Pb&Cd\2019\settembre\05.09.xlsx' perché è in uso da un altro processo.
+   in System.IO.__Error.WinIOError(Int32 errorCode, String maybeFullPath)
+   in System.IO.FileStream.Init(String path, FileMode mode, FileAccess access, Int32 rights, Boolean useRights, FileShare share, Int32 bufferSize, FileOptions options, SECURITY_ATTRIBUTES secAttrs, String msgPath, Boolean bFromProxy, Boolean useLongPath, Boolean checkHost)
+   in System.IO.FileStream..ctor(String path, FileMode mode, FileAccess access, FileShare share, Int32 bufferSize, FileOptions options, String msgPath, Boolean bFromProxy)
+   in System.IO.FileStream..ctor(String path, FileMode mode)
+   in CDCMetal.BLL.ExcelBLL.LeggiExcelAnalisiPiombo(CDCDS ds, String filePath, String utente, String& messaggioErrore) in C:\VSProgetti\CDCMetal\CDCMetal\CDCMetal.BLL\ExcelBLL.cs:riga 98
+   in CDCMetal.AnalisiPiomboDaExcelFrm.btnApriFile_Click(Object sender, EventArgs e) in C:\VSProgetti\CDCMetal\CDCMetal\CDCMetal\AnalisiPiomboDaExcelFrm.cs:riga 67
+INFO  2019-09-05 16:19:31,742   156ms MainForm               LogScrivi          - Applicazione CDCMetal avviata
+INFO  2019-09-05 16:22:07,967   162ms MainForm               LogScrivi          - Applicazione CDCMetal avviata
+INFO  2019-09-05 16:25:28,129   168ms MainForm               LogScrivi          - Applicazione CDCMetal avviata
+INFO  2019-09-05 16:27:54,591   167ms MainForm               LogScrivi          - Applicazione CDCMetal avviata
+INFO  2019-09-05 16:28:44,337 49913ms MainForm               LogScrivi          - Applicazione CDCMetal fermata

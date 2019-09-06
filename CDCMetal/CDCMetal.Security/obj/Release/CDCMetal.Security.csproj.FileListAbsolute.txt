@@ -3,3 +3,4 @@ C:\VSProgetti\CDCMetal\CDCMetal\CDCMetal.Security\bin\Release\CDCMetal.Security.
 C:\VSProgetti\CDCMetal\CDCMetal\CDCMetal.Security\obj\Release\CDCMetal.Security.csproj.CoreCompileInputs.cache
 C:\VSProgetti\CDCMetal\CDCMetal\CDCMetal.Security\obj\Release\CDCMetal.Security.dll
 C:\VSProgetti\CDCMetal\CDCMetal\CDCMetal.Security\obj\Release\CDCMetal.Security.pdb
+C:\VSProgetti\CDCMetal\CDCMetal\CDCMetal.Security\obj\Release\CDCMetal.Security.csprojAssemblyReference.cache

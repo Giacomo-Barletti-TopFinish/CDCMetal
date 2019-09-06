@@ -252,17 +252,17 @@ namespace CDCMetal.Helpers
                 {
                     string cella = EstraiValoreCella(cell, sharedStringTable, cellFormats, numberingFormats);
                     cella = cella.Trim();
-                    string colonna = GetColumnReference(cell);
+                    string colonna = GetColumnReference(cell);                   
                     switch (colonna)
                     {
                         case "A":
                             if (string.IsNullOrEmpty(cella)) continue;
-                            cPiombo.CODICE = EstraiStringaDaCella(cella, 20);
+                            cPiombo.CODICE = EstraiStringaDaCella(cella, ds.CDC_CERTIFICATIPIOMBO.Columns[2].MaxLength);
                             //esito = EstraiValoreCellaDecimal(cella, "IDPRENOTAZIONE", cPiombo, out messaggioErrore);
                             break;
                         case "B":
                             {
-                                cPiombo.LOTTO = EstraiStringaDaCella(cella, 20);
+                                cPiombo.LOTTO = EstraiStringaDaCella(cella, ds.CDC_CERTIFICATIPIOMBO.Columns[4].MaxLength);
                             }
                             break;
                         case "C":
@@ -307,7 +307,7 @@ namespace CDCMetal.Helpers
                             break;
                         case "J":
                             {
-                                cPiombo.ELEMENTO = EstraiStringaDaCella(cella, 30);
+                                cPiombo.ELEMENTO = EstraiStringaDaCella(cella, ds.CDC_CERTIFICATIPIOMBO.Columns[1].MaxLength);
                                 switch (cPiombo.ELEMENTO.Trim().ToUpper())
                                 {
                                     case "BARRA":

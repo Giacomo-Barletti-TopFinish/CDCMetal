@@ -8934,7 +8934,7 @@ namespace CDCMetal.Entities {
                 base.Columns.Add(this.columnDATAINSERIMENTO);
                 this.columnELEMENTO.MaxLength = 30;
                 this.columnCODICE.AllowDBNull = false;
-                this.columnCODICE.MaxLength = 20;
+                this.columnCODICE.MaxLength = 40;
                 this.columnMATERIALE.AllowDBNull = false;
                 this.columnMATERIALE.MaxLength = 20;
                 this.columnLOTTO.AllowDBNull = false;

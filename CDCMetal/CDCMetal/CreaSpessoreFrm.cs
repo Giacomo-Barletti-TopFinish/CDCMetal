@@ -546,7 +546,7 @@ namespace CDCMetal
 
                 case CDCBrands.YSL:
                     txtNumeroCampioni.ReadOnly = false;
-                    txtNumeroCampioni.Text = "1";
+                    txtNumeroCampioni.Text = "3";
                     break;
 
             }
