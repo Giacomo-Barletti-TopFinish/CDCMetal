@@ -226,6 +226,7 @@ namespace CDCMetal
                     case "8953":
                     case "0953":
                         return "84";
+                    case "8900":
                     case "8000":
                     case "0901":
                         return "85";
@@ -250,6 +251,7 @@ namespace CDCMetal
                     case "0953":
                         return "2";
                     case "8000":
+                    case "8900":
                     case "0901":
                         return "7";
                     case "0812":
@@ -273,6 +275,7 @@ namespace CDCMetal
                     case "0953":
                         return "14,1";
                     case "8000":
+                    case "8900":
                     case "0901":
                         return "32";
                     case "0812":
@@ -297,6 +300,7 @@ namespace CDCMetal
                 {
                     case "8053":
                     case "8953":
+                    case "8900":
                     case "0953":
                         return "2";
                     case "8000":
@@ -323,6 +327,7 @@ namespace CDCMetal
                     case "0953":
                         return "0,7";
                     case "8000":
+                    case "8900":
                     case "0901":
                         return "1";
                     case "0812":
@@ -346,6 +351,7 @@ namespace CDCMetal
                     case "0953":
                         return "1,5";
                     case "8000":
+                    case "8900":
                     case "0901":
                         return "1";
                     case "0812":
@@ -381,6 +387,7 @@ namespace CDCMetal
                             return aux.ToString("F2");
                         }
                     case "8000":
+                    case "8900":
                     case "0901":
                         //16    =CASUALE.TRA(8350;8400)/100*T18
                         {
@@ -433,6 +440,7 @@ namespace CDCMetal
                             aux = aux / 1000;
                             return aux.ToString("F2");
                         }
+                    case "8900":
                     case "8000":
                     case "0901":
                         {
@@ -480,6 +488,7 @@ namespace CDCMetal
                             aux = aux / 100;
                             return aux.ToString("F2");
                         }
+                    case "8900":
                     case "8000":
                     case "0901":
                         {

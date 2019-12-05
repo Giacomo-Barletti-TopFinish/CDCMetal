@@ -141,7 +141,8 @@ namespace CDCMetal
 
                     MessageBox.Show(sb.ToString(), "RIGHE DUPLICATE", MessageBoxButtons.OK, MessageBoxIcon.Warning);
 
-                    foreach (CDCDS.CDC_DETTAGLIORow dettaglio in _DS.CDC_DETTAGLIO.Where(x => x.RowState != DataRowState.Deleted && IDPRENOTAZIONE_DUPLICATO.Contains(x.IDPRENOTAZIONE)))
+                    List<CDCDS.CDC_DETTAGLIORow> daCancellare = _DS.CDC_DETTAGLIO.Where(x => x.RowState != DataRowState.Deleted && IDPRENOTAZIONE_DUPLICATO.Contains(x.IDPRENOTAZIONE)).ToList();
+                    foreach (CDCDS.CDC_DETTAGLIORow dettaglio in daCancellare)
                         dettaglio.Delete();
 
                     _DS.CDC_DETTAGLIO.AcceptChanges();

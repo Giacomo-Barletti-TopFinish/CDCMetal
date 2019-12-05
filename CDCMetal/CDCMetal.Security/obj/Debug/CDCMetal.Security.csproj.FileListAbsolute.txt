@@ -1,6 +1,6 @@
-C:\VSProgetti\CDCMetal\CDCMetal\CDCMetal.Security\obj\Debug\CDCMetal.Security.csprojAssemblyReference.cache
-C:\VSProgetti\CDCMetal\CDCMetal\CDCMetal.Security\obj\Debug\CDCMetal.Security.csproj.CoreCompileInputs.cache
 C:\VSProgetti\CDCMetal\CDCMetal\CDCMetal.Security\bin\Debug\CDCMetal.Security.dll
 C:\VSProgetti\CDCMetal\CDCMetal\CDCMetal.Security\bin\Debug\CDCMetal.Security.pdb
+C:\VSProgetti\CDCMetal\CDCMetal\CDCMetal.Security\obj\Debug\CDCMetal.Security.csprojAssemblyReference.cache
+C:\VSProgetti\CDCMetal\CDCMetal\CDCMetal.Security\obj\Debug\CDCMetal.Security.csproj.CoreCompileInputs.cache
 C:\VSProgetti\CDCMetal\CDCMetal\CDCMetal.Security\obj\Debug\CDCMetal.Security.dll
 C:\VSProgetti\CDCMetal\CDCMetal\CDCMetal.Security\obj\Debug\CDCMetal.Security.pdb
