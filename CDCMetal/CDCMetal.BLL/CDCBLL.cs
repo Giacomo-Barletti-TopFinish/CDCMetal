@@ -23,6 +23,14 @@ namespace CDCMetal.BLL
             }
         }
 
+        public void FillCDC_CERTIFICATIPIOMBO(CDCDS ds)
+        {
+            using (CDCMetalBusiness bCDCMetal = new CDCMetalBusiness())
+            {
+                bCDCMetal.FillCDC_CERTIFICATIPIOMBO(ds);
+            }
+        }
+
         public List<DataCollaudo> LeggiDateCollaudo()
         {
             using (CDCMetalBusiness bCDCMetal = new CDCMetalBusiness())
