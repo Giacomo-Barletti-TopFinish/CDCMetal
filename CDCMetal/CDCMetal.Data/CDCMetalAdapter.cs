@@ -301,6 +301,17 @@ namespace CDCMetal.Data
             }
         }
 
+        public void FillCDC_CERTIFICATIPIOMBO(CDCDS ds)
+        {
+
+            string select = @"SELECT * FROM CDC_CERTIFICATIPIOMBO ";
+
+            using (DbDataAdapter da = BuildDataAdapter(select))
+            {
+                da.Fill(ds.CDC_CERTIFICATIPIOMBO);
+            }
+        }
+
         public void FillCDC_GALVANICA(CDCDS ds, List<decimal> IDDETTAGLIO)
         {
             string selezione = ConvertToStringForInCondition(IDDETTAGLIO);

@@ -2176,3 +2176,31 @@ INFO  2019-12-05 09:11:21,842   145ms MainForm               LogScrivi          
 INFO  2019-12-05 09:11:51,481 29784ms MainForm               LogScrivi          - Applicazione CDCMetal fermata
 INFO  2019-12-05 09:29:57,060   160ms MainForm               LogScrivi          - Applicazione CDCMetal avviata
 INFO  2019-12-05 09:30:55,637 58737ms MainForm               LogScrivi          - Applicazione CDCMetal fermata
+INFO  2019-12-05 13:42:20,337   172ms MainForm               LogScrivi          - Applicazione CDCMetal avviata
+INFO  2019-12-05 13:43:48,910 88746ms MainForm               LogScrivi          - Applicazione CDCMetal fermata
+INFO  2019-12-11 11:01:53,497   147ms MainForm               LogScrivi          - Applicazione CDCMetal avviata
+ERROR 2019-12-11 11:04:12,419 139069ms MainForm               LogScriviErrore    - ERRORE IN APRI FILE EXCEL
+System.IO.FileFormatException: Il file contiene dati danneggiati.
+   in MS.Internal.IO.Zip.ZipIOEndOfCentralDirectoryBlock.FindPosition(Stream archiveStream)
+   in MS.Internal.IO.Zip.ZipIOEndOfCentralDirectoryBlock.SeekableLoad(ZipIOBlockManager blockManager)
+   in MS.Internal.IO.Zip.ZipArchive..ctor(Stream archiveStream, FileMode mode, FileAccess access, Boolean streaming, Boolean ownStream)
+   in MS.Internal.IO.Zip.ZipArchive.OpenOnStream(Stream stream, FileMode mode, FileAccess access, Boolean streaming)
+   in System.IO.Packaging.ZipPackage..ctor(Stream s, FileMode mode, FileAccess access, Boolean streaming)
+   in System.IO.Packaging.Package.Open(Stream stream, FileMode packageMode, FileAccess packageAccess, Boolean streaming)
+   in DocumentFormat.OpenXml.Packaging.OpenXmlPackage.OpenCore(Stream stream, Boolean readWriteMode)
+   in DocumentFormat.OpenXml.Packaging.SpreadsheetDocument.Open(Stream stream, Boolean isEditable, OpenSettings openSettings)
+   in DocumentFormat.OpenXml.Packaging.SpreadsheetDocument.Open(Stream stream, Boolean isEditable)
+   in CDCMetal.Helpers.ExcelHelper.ReadCDC(Stream stream, CDCDS ds, Decimal IDEXCEL, String utente, String& messaggioErrore) in C:\VSProgetti\CDCMetal\CDCMetal\CDCMetal.Helpers\ExcelHelper.cs:riga 18
+   in CDCMetal.BLL.ExcelBLL.LeggiExcelCDC(CDCDS ds, String filePath, String utente, String brand, String& messaggioErrore) in C:\VSProgetti\CDCMetal\CDCMetal\CDCMetal.BLL\ExcelBLL.cs:riga 44
+   in CDCMetal.ExcelCaricaNuovoDocumentoFrm.btnApriFile_Click(Object sender, EventArgs e) in C:\VSProgetti\CDCMetal\CDCMetal\CDCMetal\ExcelCaricaNuovoDocumentoFrm.cs:riga 75
+INFO  2019-12-11 11:05:44,981   170ms MainForm               LogScrivi          - Applicazione CDCMetal avviata
+INFO  2019-12-11 11:28:21,747   164ms MainForm               LogScrivi          - Applicazione CDCMetal avviata
+ERROR 2019-12-11 11:28:37,546 15964ms MainForm               LogScriviErrore    - ERRORE IN APRI FILE EXCEL
+System.IO.IOException: Il processo non può accedere al file 'C:\Temp\CDC\excel tipo 2\sorgenti.xlsx' perché è in uso da un altro processo.
+   in System.IO.__Error.WinIOError(Int32 errorCode, String maybeFullPath)
+   in System.IO.FileStream.Init(String path, FileMode mode, FileAccess access, Int32 rights, Boolean useRights, FileShare share, Int32 bufferSize, FileOptions options, SECURITY_ATTRIBUTES secAttrs, String msgPath, Boolean bFromProxy, Boolean useLongPath, Boolean checkHost)
+   in System.IO.FileStream..ctor(String path, FileMode mode, FileAccess access, FileShare share, Int32 bufferSize, FileOptions options, String msgPath, Boolean bFromProxy)
+   in System.IO.FileStream..ctor(String path, FileMode mode)
+   in CDCMetal.BLL.ExcelBLL.LeggiExcelCDC(CDCDS ds, String filePath, String utente, String brand, String& messaggioErrore) in C:\VSProgetti\CDCMetal\CDCMetal\CDCMetal.BLL\ExcelBLL.cs:riga 19
+   in CDCMetal.ExcelCaricaNuovoDocumentoFrm.btnApriFile_Click(Object sender, EventArgs e) in C:\VSProgetti\CDCMetal\CDCMetal\CDCMetal\ExcelCaricaNuovoDocumentoFrm.cs:riga 75
+INFO  2019-12-11 11:40:31,945 730363ms MainForm               LogScrivi          - Applicazione CDCMetal fermata

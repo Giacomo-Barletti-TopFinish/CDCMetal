@@ -26,6 +26,17 @@ namespace CDCMetal.Helpers
             NumberingFormats numberingFormats = wbPart.WorkbookStylesPart.Stylesheet.NumberingFormats;
 
             int rowCount = sheetData.Elements<Row>().Count();
+            bool formatoExcelNuovo = false;
+            if (rowCount > 0)
+            {
+                Row r = sheetData.Elements<Row>().FirstOrDefault();
+                Cell cell = r.Elements<Cell>().FirstOrDefault();
+
+                string cella = EstraiValoreCella(cell, sharedStringTable, cellFormats, numberingFormats);
+                if (cella == "ID Prenotazione Collaudo")
+                    formatoExcelNuovo = true;
+            }
+
 
             bool intestazione = true;
             foreach (Row r in sheetData.Elements<Row>())
@@ -113,95 +124,192 @@ namespace CDCMetal.Helpers
                             break;
                         case "L": // um
                             {
-                                int lunghezza = 2;
-                                dettaglio.UM = cella.Length > lunghezza ? cella.Substring(0, lunghezza) : cella;
+                                if (formatoExcelNuovo)
+                                {
+                                    dettaglio.UM = string.Empty;
+                                    esito = EstraiValoreCellaDecimal(cella, "QUANTITA", dettaglio, out messaggioErrore);
+                                }
+                                else
+                                {   // UM
+                                    int lunghezza = 2;
+                                    dettaglio.UM = cella.Length > lunghezza ? cella.Substring(0, lunghezza) : cella;
+                                }
                             }
                             break;
                         case "M": // qta
-                            esito = EstraiValoreCellaDecimal(cella, "QUANTITA", dettaglio, out messaggioErrore);
-                            break;
-                        case "N": // assegn
-                            {
-                                int lunghezza = 2;
-                                dettaglio.ASSEGN = cella.Length > lunghezza ? cella.Substring(0, lunghezza) : cella;
-                            }
-                            break;
-                        case "O": // auto
-                            {
-                                int lunghezza = 5;
-                                dettaglio.AUTO = cella.Length > lunghezza ? cella.Substring(0, lunghezza) : cella;
-                            }
-                            break;
-                        case "P": // coll_to
-                            {
-                                int lunghezza = 5;
-                                dettaglio.COLLTO = cella.Length > lunghezza ? cella.Substring(0, lunghezza) : cella;
-                            }
-                            break;
-                        case "Q": // qtavalidita
+                            if (formatoExcelNuovo)
                             {
                                 int lunghezza = 6;
                                 dettaglio.QUANTITAVALIDITA = cella.Length > lunghezza ? cella.Substring(0, lunghezza) : cella;
                             }
+                            else
+                            {
+                                esito = EstraiValoreCellaDecimal(cella, "QUANTITA", dettaglio, out messaggioErrore);
+                            }
+                            break;
+                        case "N": // assegn
+                            {
+                                if (formatoExcelNuovo)
+                                {
+                                    dettaglio.ASSEGN = string.Empty;
+                                    int lunghezza = 5;
+                                    dettaglio.AUTO = cella.Length > lunghezza ? cella.Substring(0, lunghezza) : cella;
+                                }
+                                else
+                                {
+                                    int lunghezza = 2;
+                                    dettaglio.ASSEGN = cella.Length > lunghezza ? cella.Substring(0, lunghezza) : cella;
+                                }
+                            }
+                            break;
+                        case "O": // auto
+                            {
+                                if (formatoExcelNuovo)
+                                {
+                                    int lunghezza = 5;
+                                    dettaglio.COLLTO = cella.Length > lunghezza ? cella.Substring(0, lunghezza) : cella;
+                                }
+                                else
+                                {
+                                    int lunghezza = 5;
+                                    dettaglio.AUTO = cella.Length > lunghezza ? cella.Substring(0, lunghezza) : cella;
+                                }
+                            }
+                            break;
+                        case "P": // coll_to
+                            {
+                                if (formatoExcelNuovo)
+                                {
+                                    int lunghezza = 2;
+                                    dettaglio.LOTTOBLOCCATO = cella.Length > lunghezza ? cella.Substring(0, lunghezza) : cella;
+                                }
+                                else
+                                {
+                                    int lunghezza = 5;
+                                    dettaglio.COLLTO = cella.Length > lunghezza ? cella.Substring(0, lunghezza) : cella;
+                                }
+                            }
+                            break;
+                        case "Q": // qtavalidita
+                            {
+                                if (formatoExcelNuovo)
+                                {
+                                    int lunghezza = 2;
+                                    dettaglio.VERBALEBLOCCATO = cella.Length > lunghezza ? cella.Substring(0, lunghezza) : cella;
+                                }
+                                else
+                                {
+                                    int lunghezza = 6;
+                                    dettaglio.QUANTITAVALIDITA = cella.Length > lunghezza ? cella.Substring(0, lunghezza) : cella;
+                                }
+                            }
                             break;
                         case "R": // lotto_bloccato
                             {
-                                int lunghezza = 2;
-                                dettaglio.LOTTOBLOCCATO = cella.Length > lunghezza ? cella.Substring(0, lunghezza) : cella;
+                                if (!formatoExcelNuovo)
+                                {
+                                    int lunghezza = 2;
+                                    dettaglio.LOTTOBLOCCATO = cella.Length > lunghezza ? cella.Substring(0, lunghezza) : cella;
+                                }
                             }
                             break;
                         case "S": // verbalebloccato
                             {
-                                int lunghezza = 2;
-                                dettaglio.VERBALEBLOCCATO = cella.Length > lunghezza ? cella.Substring(0, lunghezza) : cella;
+                                if (!formatoExcelNuovo)
+                                {
+                                    int lunghezza = 2;
+                                    dettaglio.VERBALEBLOCCATO = cella.Length > lunghezza ? cella.Substring(0, lunghezza) : cella;
+                                }
                             }
                             break;
                         case "T": // deroga
                             {
-                                int lunghezza = 2;
-                                dettaglio.DEROGA = cella.Length > lunghezza ? cella.Substring(0, lunghezza) : cella;
+                                if (!formatoExcelNuovo)
+                                {
+                                    int lunghezza = 2;
+                                    dettaglio.DEROGA = cella.Length > lunghezza ? cella.Substring(0, lunghezza) : cella;
+                                }
+                                else
+                                {
+                                    dettaglio.DEROGA = string.Empty;
+                                }
                             }
                             break;
                         case "U": // controllo dimensionale
                             {
-                                int lunghezza = 2;
-                                dettaglio.CONTROLLODIMENSIONALE = cella.Length > lunghezza ? cella.Substring(0, lunghezza) : cella;
+                                if (!formatoExcelNuovo)
+                                {
+                                    int lunghezza = 2;
+                                    dettaglio.CONTROLLODIMENSIONALE = cella.Length > lunghezza ? cella.Substring(0, lunghezza) : cella;
+                                }
+                                else
+                                    dettaglio.CONTROLLODIMENSIONALE = string.Empty;
                             }
                             break;
                         case "V": // controllo estetico
                             {
-                                int lunghezza = 2;
-                                dettaglio.CONTROLLOESTETICO = cella.Length > lunghezza ? cella.Substring(0, lunghezza) : cella;
+                                if (!formatoExcelNuovo)
+                                {
+                                    int lunghezza = 2;
+                                    dettaglio.CONTROLLOESTETICO = cella.Length > lunghezza ? cella.Substring(0, lunghezza) : cella;
+                                }
+                                else
+                                    dettaglio.CONTROLLOESTETICO = string.Empty;
                             }
                             break;
                         case "W": // controllo funzionale
                             {
-                                int lunghezza = 2;
-                                dettaglio.CONTROLLOFUNZIONALE = cella.Length > lunghezza ? cella.Substring(0, lunghezza) : cella;
+                                if (!formatoExcelNuovo)
+                                {
+                                    int lunghezza = 2;
+                                    dettaglio.CONTROLLOFUNZIONALE = cella.Length > lunghezza ? cella.Substring(0, lunghezza) : cella;
+                                }
+                                else
+                                    dettaglio.CONTROLLOFUNZIONALE = string.Empty;
                             }
                             break;
                         case "X": // esitotest chimico
                             {
-                                int lunghezza = 2;
-                                dettaglio.ESITOTESTCHIMICO = cella.Length > lunghezza ? cella.Substring(0, lunghezza) : cella;
+                                if (!formatoExcelNuovo)
+                                {
+                                    int lunghezza = 2;
+                                    dettaglio.ESITOTESTCHIMICO = cella.Length > lunghezza ? cella.Substring(0, lunghezza) : cella;
+                                }
+                                else
+                                    dettaglio.ESITOTESTCHIMICO = string.Empty;
                             }
                             break;
                         case "Y": // test fisico
                             {
-                                int lunghezza = 2;
-                                dettaglio.TESTFISICO = cella.Length > lunghezza ? cella.Substring(0, lunghezza) : cella;
+                                if (!formatoExcelNuovo)
+                                {
+                                    int lunghezza = 2;
+                                    dettaglio.TESTFISICO = cella.Length > lunghezza ? cella.Substring(0, lunghezza) : cella;
+                                }
+                                else
+                                    dettaglio.TESTFISICO = string.Empty;
                             }
                             break;
                         case "Z": // notecollaudo
                             {
-                                int lunghezza = 100;
-                                dettaglio.NOTECOLLAUDO = cella.Length > lunghezza ? cella.Substring(0, lunghezza) : cella;
+                                if (!formatoExcelNuovo)
+                                {
+                                    int lunghezza = 100;
+                                    dettaglio.NOTECOLLAUDO = cella.Length > lunghezza ? cella.Substring(0, lunghezza) : cella;
+                                }
+                                else
+                                    dettaglio.NOTECOLLAUDO = string.Empty;
                             }
                             break;
                         case "AA": // assegnazione
                             {
-                                int lunghezza = 500;
-                                dettaglio.ASSEGNAZIONE = cella.Length > lunghezza ? cella.Substring(0, lunghezza) : cella;
+                                if (!formatoExcelNuovo)
+                                {
+                                    int lunghezza = 500;
+                                    dettaglio.ASSEGNAZIONE = cella.Length > lunghezza ? cella.Substring(0, lunghezza) : cella;
+                                }
+                                else
+                                    dettaglio.ASSEGNAZIONE = string.Empty;
                             }
                             break;
 
@@ -252,7 +360,7 @@ namespace CDCMetal.Helpers
                 {
                     string cella = EstraiValoreCella(cell, sharedStringTable, cellFormats, numberingFormats);
                     cella = cella.Trim();
-                    string colonna = GetColumnReference(cell);                   
+                    string colonna = GetColumnReference(cell);
                     switch (colonna)
                     {
                         case "A":

@@ -1134,7 +1134,7 @@ namespace CDCMetal.Helpers
             p.Format.Alignment = ParagraphAlignment.Center;
             p.AddLineBreak();
             p.AddLineBreak();
-            p.AddFormattedText("Report analisi Pd e Cd", fontGrande);
+            p.AddFormattedText("Report analisi Pb e Cd", fontGrande);
 
             p = document.LastSection.AddParagraph();
             p.AddLineBreak();
@@ -1220,7 +1220,7 @@ namespace CDCMetal.Helpers
             cell.VerticalAlignment = VerticalAlignment.Center;
             cell.Format.Font.Bold = true;
             cell.Format.Font.Size = tablefontsize;
-            cell.AddParagraph("Pd (PPM)");
+            cell.AddParagraph("Pb (PPM)");
 
             cell = row.Cells[4];
             cell.Format.Alignment = ParagraphAlignment.Center;

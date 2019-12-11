@@ -24,7 +24,7 @@
     <UpdateRequired>true</UpdateRequired>
     <MapFileExtensions>true</MapFileExtensions>
     <InstallUrl>\\srv-webservices\publish\CDCMetal\</InstallUrl>
-    <MinimumRequiredVersion>2.0.0.18</MinimumRequiredVersion>
+    <MinimumRequiredVersion>2.0.0.19</MinimumRequiredVersion>
     <OpenBrowserOnPublish>false</OpenBrowserOnPublish>
     <ApplicationRevision>19</ApplicationRevision>
     <ApplicationVersion>2.0.0.%2a</ApplicationVersion>

@@ -33,6 +33,13 @@ namespace CDCMetal.Data
             a.FillCDC_BRANDS(ds);
         }
 
+        [DataContext]
+        public void FillCDC_CERTIFICATIPIOMBO(CDCDS ds)
+        {
+            CDCMetalAdapter a = new CDCMetalAdapter(DbConnection, DbTransaction);
+            a.FillCDC_CERTIFICATIPIOMBO(ds);
+        }
+
         [DataContext(true)]
         public void UpdateCDC_EXCEL(CDCDS ds)
         {
