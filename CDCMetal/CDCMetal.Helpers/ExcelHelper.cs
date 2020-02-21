@@ -49,6 +49,7 @@ namespace CDCMetal.Helpers
                 bool esito = true;
                 CDCDS.CDC_DETTAGLIORow dettaglio = ds.CDC_DETTAGLIO.NewCDC_DETTAGLIORow();
                 dettaglio.IDEXCEL = IDEXCEL;
+                int count = r.Elements<Cell>().Count();
                 foreach (Cell cell in r.Elements<Cell>())
                 {
                     string cella = EstraiValoreCella(cell, sharedStringTable, cellFormats, numberingFormats);
@@ -68,7 +69,7 @@ namespace CDCMetal.Helpers
                         case "C": // data_collaudo
                             if (!VerificaData(cella))
                             {
-                                messaggioErrore = "La colonna DATA COLLAUDO non è una data nel formato yyyy/mm/dd";
+                                messaggioErrore = "La colonna DATA COLLAUDO non è una data nel formato dd/mm/yyyy";
                                 esito = false;
                             }
                             else
