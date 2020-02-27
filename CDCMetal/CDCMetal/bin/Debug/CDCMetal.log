@@ -2212,3 +2212,169 @@ INFO  2020-01-10 16:58:41,829   148ms MainForm               LogScrivi          
 INFO  2020-01-10 17:01:33,500   132ms MainForm               LogScrivi          - Applicazione CDCMetal avviata
 INFO  2020-01-10 17:07:59,877   144ms MainForm               LogScrivi          - Applicazione CDCMetal avviata
 INFO  2020-01-10 17:08:54,241 54508ms MainForm               LogScrivi          - Applicazione CDCMetal fermata
+INFO  2020-02-25 08:24:26,278   192ms MainForm               LogScrivi          - Applicazione CDCMetal avviata
+INFO  2020-02-25 08:46:57,985   173ms MainForm               LogScrivi          - Applicazione CDCMetal avviata
+INFO  2020-02-25 11:39:35,114 10357302ms MainForm               LogScrivi          - Applicazione CDCMetal fermata
+INFO  2020-02-25 13:54:40,285  1812ms MainForm               LogScrivi          - Applicazione CDCMetal avviata
+ERROR 2020-02-25 13:58:41,141 242668ms MainForm               LogScriviErrore    - ERRORE IN APRI FILE EXCEL
+System.InvalidOperationException: Generazione SQL dinamica per UpdateCommand non supportata per un SelectCommand che non restituisce informazioni di colonne chiave.
+   in System.Data.Common.DbCommandBuilder.BuildWhereClause(DataTableMapping mappings, DataRow dataRow, StringBuilder builder, DbCommand command, Int32 parameterCount, Boolean isUpdate)
+   in System.Data.Common.DbCommandBuilder.BuildUpdateCommand(DataTableMapping mappings, DataRow dataRow)
+   in System.Data.Common.DbCommandBuilder.GetUpdateCommand(DataRow dataRow, Boolean useColumnsForParameterNames)
+   in System.Data.Common.DbCommandBuilder.GetUpdateCommand()
+   in CDCMetal.Data.CDCMetalAdapter.UpdateTable(String tablename, CDCDS ds) in C:\Sorgenti\CDCMetal\CDCMetal\CDCMetal.Data\CDCMetalAdapter.cs:riga 66
+   in CDCMetal.Data.CDCMetalBusiness.UpdateCDC_EXCEL(CDCDS ds) in C:\Sorgenti\CDCMetal\CDCMetal\CDCMetal.Data\CDCMetalBusiness.cs:riga 47
+   in CDCMetal.BLL.ExcelBLL.Salva(CDCDS ds) in C:\Sorgenti\CDCMetal\CDCMetal\CDCMetal.BLL\ExcelBLL.cs:riga 89
+   in CDCMetal.ExcelCaricaNuovoDocumentoFrm.btnSalvaDB_Click(Object sender, EventArgs e) in C:\Sorgenti\CDCMetal\CDCMetal\CDCMetal\ExcelCaricaNuovoDocumentoFrm.cs:riga 151
+INFO  2020-02-25 14:11:48,472   237ms MainForm               LogScrivi          - Applicazione CDCMetal avviata
+INFO  2020-02-25 14:12:47,770   199ms MainForm               LogScrivi          - Applicazione CDCMetal avviata
+INFO  2020-02-25 14:23:58,433   215ms MainForm               LogScrivi          - Applicazione CDCMetal avviata
+INFO  2020-02-25 14:24:08,325 10108ms MainForm               LogScrivi          - Applicazione CDCMetal fermata
+INFO  2020-02-25 14:24:16,497   166ms MainForm               LogScrivi          - Applicazione CDCMetal avviata
+INFO  2020-02-25 14:24:28,469 12138ms MainForm               LogScrivi          - Applicazione CDCMetal fermata
+INFO  2020-02-25 15:08:12,201   233ms MainForm               LogScrivi          - Applicazione CDCMetal avviata
+ERROR 2020-02-25 15:08:41,258 29290ms MainForm               LogScriviErrore    - ERRORE IN APRI FILE EXCEL
+Oracle.ManagedDataAccess.Client.OracleException (0x80004005): ORA-00936: espressione mancante
+   in OracleInternal.ServiceObjects.OracleCommandImpl.VerifyExecution(OracleConnectionImpl connectionImpl, Int32& cursorId, Boolean bThrowArrayBindRelatedErrors, OracleException& exceptionForArrayBindDML, Boolean& hasMoreRowsInDB, Boolean bFirstIterationDone)
+   in OracleInternal.ServiceObjects.OracleCommandImpl.ExecuteReader(String commandText, OracleParameterCollection paramColl, CommandType commandType, OracleConnectionImpl connectionImpl, OracleDataReaderImpl& rdrImpl, Int32 longFetchSize, Int64 clientInitialLOBFS, OracleDependencyImpl orclDependencyImpl, Int64[] scnForExecution, Int64[]& scnFromExecution, OracleParameterCollection& bindByPositionParamColl, Boolean& bBindParamPresent, Int64& internalInitialLOBFS, OracleException& exceptionForArrayBindDML, Boolean isDescribeOnly, Boolean isFromEF)
+   in Oracle.ManagedDataAccess.Client.OracleCommand.ExecuteReader(Boolean requery, Boolean fillRequest, CommandBehavior behavior)
+   in Oracle.ManagedDataAccess.Client.OracleDataAdapter.Fill(DataTable[] dataTables, Int32 startRecord, Int32 maxRecords, IDbCommand command, CommandBehavior behavior)
+   in System.Data.Common.DbDataAdapter.Fill(DataTable dataTable)
+   in CDCMetal.Data.CDCMetalAdapter.FillCDC_DETTAGLIO(List`1 IDPRENOTAZIONE, CDCDS ds) in C:\Sorgenti\CDCMetal\CDCMetal\CDCMetal.Data\CDCMetalAdapter.cs:riga 40
+   in CDCMetal.Data.CDCMetalBusiness.FillCDC_DETTAGLIO(List`1 IDPRENOTAZIONE, CDCDS ds) in C:\Sorgenti\CDCMetal\CDCMetal\CDCMetal.Data\CDCMetalBusiness.cs:riga 26
+   in CDCMetal.BLL.ExcelBLL.VerificaExcelCaricato(CDCDS ds) in C:\Sorgenti\CDCMetal\CDCMetal\CDCMetal.BLL\ExcelBLL.cs:riga 77
+   in CDCMetal.ExcelCaricaNuovoDocumentoFrm.btnSalvaDB_Click(Object sender, EventArgs e) in C:\Sorgenti\CDCMetal\CDCMetal\CDCMetal\ExcelCaricaNuovoDocumentoFrm.cs:riga 135
+ERROR 2020-02-25 15:08:47,725 35757ms MainForm               LogScriviErrore    - ERRORE IN APRI FILE EXCEL
+Oracle.ManagedDataAccess.Client.OracleException (0x80004005): ORA-00936: espressione mancante
+   in OracleInternal.ServiceObjects.OracleCommandImpl.VerifyExecution(OracleConnectionImpl connectionImpl, Int32& cursorId, Boolean bThrowArrayBindRelatedErrors, OracleException& exceptionForArrayBindDML, Boolean& hasMoreRowsInDB, Boolean bFirstIterationDone)
+   in OracleInternal.ServiceObjects.OracleCommandImpl.ExecuteReader(String commandText, OracleParameterCollection paramColl, CommandType commandType, OracleConnectionImpl connectionImpl, OracleDataReaderImpl& rdrImpl, Int32 longFetchSize, Int64 clientInitialLOBFS, OracleDependencyImpl orclDependencyImpl, Int64[] scnForExecution, Int64[]& scnFromExecution, OracleParameterCollection& bindByPositionParamColl, Boolean& bBindParamPresent, Int64& internalInitialLOBFS, OracleException& exceptionForArrayBindDML, Boolean isDescribeOnly, Boolean isFromEF)
+   in Oracle.ManagedDataAccess.Client.OracleCommand.ExecuteReader(Boolean requery, Boolean fillRequest, CommandBehavior behavior)
+   in Oracle.ManagedDataAccess.Client.OracleDataAdapter.Fill(DataTable[] dataTables, Int32 startRecord, Int32 maxRecords, IDbCommand command, CommandBehavior behavior)
+   in System.Data.Common.DbDataAdapter.Fill(DataTable dataTable)
+   in CDCMetal.Data.CDCMetalAdapter.FillCDC_DETTAGLIO(List`1 IDPRENOTAZIONE, CDCDS ds) in C:\Sorgenti\CDCMetal\CDCMetal\CDCMetal.Data\CDCMetalAdapter.cs:riga 40
+   in CDCMetal.Data.CDCMetalBusiness.FillCDC_DETTAGLIO(List`1 IDPRENOTAZIONE, CDCDS ds) in C:\Sorgenti\CDCMetal\CDCMetal\CDCMetal.Data\CDCMetalBusiness.cs:riga 26
+   in CDCMetal.BLL.ExcelBLL.VerificaExcelCaricato(CDCDS ds) in C:\Sorgenti\CDCMetal\CDCMetal\CDCMetal.BLL\ExcelBLL.cs:riga 77
+   in CDCMetal.ExcelCaricaNuovoDocumentoFrm.btnSalvaDB_Click(Object sender, EventArgs e) in C:\Sorgenti\CDCMetal\CDCMetal\CDCMetal\ExcelCaricaNuovoDocumentoFrm.cs:riga 135
+INFO  2020-02-25 15:08:52,035 40067ms MainForm               LogScrivi          - Applicazione CDCMetal fermata
+INFO  2020-02-25 15:10:54,768   206ms MainForm               LogScrivi          - Applicazione CDCMetal avviata
+INFO  2020-02-25 15:11:22,352 27791ms MainForm               LogScrivi          - Applicazione CDCMetal fermata
+INFO  2020-02-25 15:31:31,789   179ms MainForm               LogScrivi          - Applicazione CDCMetal avviata
+INFO  2020-02-25 15:31:55,441 23832ms MainForm               LogScrivi          - Applicazione CDCMetal fermata
+INFO  2020-02-25 16:18:43,123   187ms MainForm               LogScrivi          - Applicazione CDCMetal avviata
+INFO  2020-02-25 16:19:29,473 46538ms MainForm               LogScrivi          - Applicazione CDCMetal fermata
+INFO  2020-02-25 16:23:52,302   203ms MainForm               LogScrivi          - Applicazione CDCMetal avviata
+INFO  2020-02-25 16:29:53,200   190ms MainForm               LogScrivi          - Applicazione CDCMetal avviata
+INFO  2020-02-25 16:32:56,141 183132ms MainForm               LogScrivi          - Applicazione CDCMetal fermata
+INFO  2020-02-25 16:33:03,114   184ms MainForm               LogScrivi          - Applicazione CDCMetal avviata
+INFO  2020-02-25 16:35:14,372 131442ms MainForm               LogScrivi          - Applicazione CDCMetal fermata
+INFO  2020-02-26 08:02:57,959   553ms MainForm               LogScrivi          - Applicazione CDCMetal avviata
+INFO  2020-02-26 08:13:08,045 610638ms MainForm               LogScrivi          - Applicazione CDCMetal fermata
+INFO  2020-02-26 08:34:12,210   235ms MainForm               LogScrivi          - Applicazione CDCMetal avviata
+INFO  2020-02-26 08:34:51,214 39239ms MainForm               LogScrivi          - Applicazione CDCMetal fermata
+INFO  2020-02-26 09:20:09,150   146ms MainForm               LogScrivi          - Applicazione CDCMetal avviata
+INFO  2020-02-26 09:23:40,627 211623ms MainForm               LogScrivi          - Applicazione CDCMetal fermata
+INFO  2020-02-26 09:46:55,566   148ms MainForm               LogScrivi          - Applicazione CDCMetal avviata
+INFO  2020-02-26 09:46:59,956  4538ms MainForm               LogScrivi          - Applicazione CDCMetal fermata
+INFO  2020-02-26 10:17:03,800   162ms MainForm               LogScrivi          - Applicazione CDCMetal avviata
+ERROR 2020-02-26 10:36:18,594 1154957ms MainForm               LogScriviErrore    - ERRORE IN APRI FILE EXCEL
+System.IO.IOException: Il processo non può accedere al file 'C:\Users\marco.chiti\Desktop\excel prova\30.08.xlsx' perché è in uso da un altro processo.
+   in System.IO.__Error.WinIOError(Int32 errorCode, String maybeFullPath)
+   in System.IO.FileStream.Init(String path, FileMode mode, FileAccess access, Int32 rights, Boolean useRights, FileShare share, Int32 bufferSize, FileOptions options, SECURITY_ATTRIBUTES secAttrs, String msgPath, Boolean bFromProxy, Boolean useLongPath, Boolean checkHost)
+   in System.IO.FileStream..ctor(String path, FileMode mode, FileAccess access, FileShare share, Int32 bufferSize, FileOptions options, String msgPath, Boolean bFromProxy)
+   in System.IO.FileStream..ctor(String path, FileMode mode)
+   in CDCMetal.BLL.ExcelBLL.LeggiExcelAnalisiPiombo(CDCDS ds, String filePath, String utente, String& messaggioErrore) in C:\Sorgenti\CDCMetal\CDCMetal\CDCMetal.BLL\ExcelBLL.cs:riga 98
+   in CDCMetal.AnalisiPiomboDaExcelFrm.btnApriFile_Click(Object sender, EventArgs e) in C:\Sorgenti\CDCMetal\CDCMetal\CDCMetal\AnalisiPiomboDaExcelFrm.cs:riga 67
+ERROR 2020-02-26 10:36:32,292 1168655ms MainForm               LogScriviErrore    - ERRORE IN APRI FILE EXCEL
+System.IO.IOException: Il processo non può accedere al file 'C:\Users\marco.chiti\Desktop\excel prova\30.08.xlsx' perché è in uso da un altro processo.
+   in System.IO.__Error.WinIOError(Int32 errorCode, String maybeFullPath)
+   in System.IO.FileStream.Init(String path, FileMode mode, FileAccess access, Int32 rights, Boolean useRights, FileShare share, Int32 bufferSize, FileOptions options, SECURITY_ATTRIBUTES secAttrs, String msgPath, Boolean bFromProxy, Boolean useLongPath, Boolean checkHost)
+   in System.IO.FileStream..ctor(String path, FileMode mode, FileAccess access, FileShare share, Int32 bufferSize, FileOptions options, String msgPath, Boolean bFromProxy)
+   in System.IO.FileStream..ctor(String path, FileMode mode)
+   in CDCMetal.BLL.ExcelBLL.LeggiExcelAnalisiPiombo(CDCDS ds, String filePath, String utente, String& messaggioErrore) in C:\Sorgenti\CDCMetal\CDCMetal\CDCMetal.BLL\ExcelBLL.cs:riga 98
+   in CDCMetal.AnalisiPiomboDaExcelFrm.btnApriFile_Click(Object sender, EventArgs e) in C:\Sorgenti\CDCMetal\CDCMetal\CDCMetal\AnalisiPiomboDaExcelFrm.cs:riga 67
+INFO  2020-02-26 10:36:40,003 1176366ms MainForm               LogScrivi          - Applicazione CDCMetal fermata
+INFO  2020-02-26 10:36:47,290   142ms MainForm               LogScrivi          - Applicazione CDCMetal avviata
+ERROR 2020-02-26 10:36:56,452  9304ms MainForm               LogScriviErrore    - ERRORE IN APRI FILE EXCEL
+System.IO.IOException: Il processo non può accedere al file 'C:\Users\marco.chiti\Desktop\excel prova\30.08.xlsx' perché è in uso da un altro processo.
+   in System.IO.__Error.WinIOError(Int32 errorCode, String maybeFullPath)
+   in System.IO.FileStream.Init(String path, FileMode mode, FileAccess access, Int32 rights, Boolean useRights, FileShare share, Int32 bufferSize, FileOptions options, SECURITY_ATTRIBUTES secAttrs, String msgPath, Boolean bFromProxy, Boolean useLongPath, Boolean checkHost)
+   in System.IO.FileStream..ctor(String path, FileMode mode, FileAccess access, FileShare share, Int32 bufferSize, FileOptions options, String msgPath, Boolean bFromProxy)
+   in System.IO.FileStream..ctor(String path, FileMode mode)
+   in CDCMetal.BLL.ExcelBLL.LeggiExcelAnalisiPiombo(CDCDS ds, String filePath, String utente, String& messaggioErrore) in C:\Sorgenti\CDCMetal\CDCMetal\CDCMetal.BLL\ExcelBLL.cs:riga 98
+   in CDCMetal.AnalisiPiomboDaExcelFrm.btnApriFile_Click(Object sender, EventArgs e) in C:\Sorgenti\CDCMetal\CDCMetal\CDCMetal\AnalisiPiomboDaExcelFrm.cs:riga 67
+INFO  2020-02-26 10:39:22,745 155597ms MainForm               LogScrivi          - Applicazione CDCMetal fermata
+INFO  2020-02-26 10:47:36,157   153ms MainForm               LogScrivi          - Applicazione CDCMetal avviata
+ERROR 2020-02-26 10:55:25,640 469636ms MainForm               LogScriviErrore    - ERRORE IN APRI FILE EXCEL
+System.IO.IOException: Il processo non può accedere al file 'C:\Users\marco.chiti\Desktop\excel prova\27.08.xlsx' perché è in uso da un altro processo.
+   in System.IO.__Error.WinIOError(Int32 errorCode, String maybeFullPath)
+   in System.IO.FileStream.Init(String path, FileMode mode, FileAccess access, Int32 rights, Boolean useRights, FileShare share, Int32 bufferSize, FileOptions options, SECURITY_ATTRIBUTES secAttrs, String msgPath, Boolean bFromProxy, Boolean useLongPath, Boolean checkHost)
+   in System.IO.FileStream..ctor(String path, FileMode mode, FileAccess access, FileShare share, Int32 bufferSize, FileOptions options, String msgPath, Boolean bFromProxy)
+   in System.IO.FileStream..ctor(String path, FileMode mode)
+   in CDCMetal.BLL.ExcelBLL.LeggiExcelAnalisiPiombo(CDCDS ds, String filePath, String utente, String& messaggioErrore) in C:\Sorgenti\CDCMetal\CDCMetal\CDCMetal.BLL\ExcelBLL.cs:riga 98
+   in CDCMetal.AnalisiPiomboDaExcelFrm.btnApriFile_Click(Object sender, EventArgs e) in C:\Sorgenti\CDCMetal\CDCMetal\CDCMetal\AnalisiPiomboDaExcelFrm.cs:riga 67
+INFO  2020-02-26 10:55:45,339 489334ms MainForm               LogScrivi          - Applicazione CDCMetal fermata
+INFO  2020-02-26 10:56:12,115   162ms MainForm               LogScrivi          - Applicazione CDCMetal avviata
+INFO  2020-02-26 11:00:34,364 262412ms MainForm               LogScrivi          - Applicazione CDCMetal fermata
+INFO  2020-02-26 11:01:17,149   122ms MainForm               LogScrivi          - Applicazione CDCMetal avviata
+INFO  2020-02-26 11:01:28,794 11767ms MainForm               LogScrivi          - Applicazione CDCMetal fermata
+INFO  2020-02-26 11:28:18,855   126ms MainForm               LogScrivi          - Applicazione CDCMetal avviata
+INFO  2020-02-26 14:36:47,757   169ms MainForm               LogScrivi          - Applicazione CDCMetal avviata
+INFO  2020-02-27 12:14:55,274   156ms MainForm               LogScrivi          - Applicazione CDCMetal avviata
+INFO  2020-02-27 12:15:47,687 52570ms MainForm               LogScrivi          - Applicazione CDCMetal fermata
+INFO  2020-02-27 12:15:54,606   150ms MainForm               LogScrivi          - Applicazione CDCMetal avviata
+INFO  2020-02-27 12:16:10,232 15776ms MainForm               LogScrivi          - Applicazione CDCMetal fermata
+INFO  2020-02-27 12:16:27,513   172ms MainForm               LogScrivi          - Applicazione CDCMetal avviata
+INFO  2020-02-27 12:16:53,376 26034ms MainForm               LogScrivi          - Applicazione CDCMetal fermata
+INFO  2020-02-27 12:17:04,546   192ms MainForm               LogScrivi          - Applicazione CDCMetal avviata
+INFO  2020-02-27 12:18:11,390 67036ms MainForm               LogScrivi          - Applicazione CDCMetal fermata
+INFO  2020-02-27 13:49:48,680   149ms MainForm               LogScrivi          - Applicazione CDCMetal avviata
+INFO  2020-02-27 14:30:52,172   166ms MainForm               LogScrivi          - Applicazione CDCMetal avviata
+ERROR 2020-02-27 14:39:33,129 521123ms MainForm               LogScriviErrore    - Errore in crea PDF
+System.InvalidOperationException: Generazione SQL dinamica per UpdateCommand non supportata per un SelectCommand che non restituisce informazioni di colonne chiave.
+   in System.Data.Common.DbCommandBuilder.BuildWhereClause(DataTableMapping mappings, DataRow dataRow, StringBuilder builder, DbCommand command, Int32 parameterCount, Boolean isUpdate)
+   in System.Data.Common.DbCommandBuilder.BuildUpdateCommand(DataTableMapping mappings, DataRow dataRow)
+   in System.Data.Common.DbCommandBuilder.GetUpdateCommand(DataRow dataRow, Boolean useColumnsForParameterNames)
+   in System.Data.Common.DbCommandBuilder.GetUpdateCommand()
+   in CDCMetal.Data.CDCMetalAdapter.UpdateTable(String tablename, CDCDS ds) in C:\Sorgenti\CDCMetal\CDCMetal\CDCMetal.Data\CDCMetalAdapter.cs:riga 66
+   in CDCMetal.Data.CDCMetalBusiness.UpdateTabelleSpessore(CDCDS ds) in C:\Sorgenti\CDCMetal\CDCMetal\CDCMetal.Data\CDCMetalBusiness.cs:riga 257
+   in CDCMetal.BLL.CDCBLL.SalvaTabelleSpessori(CDCDS ds) in C:\Sorgenti\CDCMetal\CDCMetal\CDCMetal.BLL\CDCBLL.cs:riga 1021
+   in CDCMetal.CreaSpessoreFrm.btnCreaPDF_Click(Object sender, EventArgs e) in C:\Sorgenti\CDCMetal\CDCMetal\CDCMetal\CreaSpessoreFrm.cs:riga 813
+INFO  2020-02-27 14:42:36,936 704930ms MainForm               LogScrivi          - Applicazione CDCMetal fermata
+INFO  2020-02-27 14:55:31,362   398ms MainForm               LogScrivi          - Applicazione CDCMetal avviata
+ERROR 2020-02-27 14:56:20,930 49965ms MainForm               LogScriviErrore    - Errore in crea PDF
+System.IO.FileNotFoundException: Il file 'C:\Temp\CDC\CARTELLACOLLAUDO\Metalplus\COLLAUDI FEBBRAIO 2020\collaudo 19-2-20\511-0052I-0708 EACB 2020 41 1\0052I 0708 EACB 2020 41 1.pdf' non è stato trovato.
+Nome file: 'C:\Temp\CDC\CARTELLACOLLAUDO\Metalplus\COLLAUDI FEBBRAIO 2020\collaudo 19-2-20\511-0052I-0708 EACB 2020 41 1\0052I 0708 EACB 2020 41 1.pdf'
+   in System.IO.__Error.WinIOError(Int32 errorCode, String maybeFullPath)
+   in System.IO.File.InternalCopy(String sourceFileName, String destFileName, Boolean overwrite, Boolean checkHost)
+   in System.IO.File.Copy(String sourceFileName, String destFileName, Boolean overwrite)
+   in CDCMetal.BLL.CDCBLL.CreaPDFSpessore(Decimal IDDETTAGLIO, CDCDS ds, String pathCollaudo, Byte[] iLoghi, Byte[] iBowman, Boolean CopiaReferto, String pathCartellaReferto, List`1 medie, List`1 Std, List`1 Pct, List`1 range, List`1 minimo, List`1 massimo, String Brand, String numeroCampioni) in C:\Sorgenti\CDCMetal\CDCMetal\CDCMetal.BLL\CDCBLL.cs:riga 805
+   in CDCMetal.CreaSpessoreFrm.btnCreaPDF_Click(Object sender, EventArgs e) in C:\Sorgenti\CDCMetal\CDCMetal\CDCMetal\CreaSpessoreFrm.cs:riga 847
+ERROR 2020-02-27 15:03:21,658 470693ms MainForm               LogScriviErrore    - Errore in crea PDF
+System.IO.FileNotFoundException: Il file 'C:\Temp\CDC\CARTELLACOLLAUDO\Metalplus\COLLAUDI FEBBRAIO 2020\collaudo 19-2-20\511-0052I-0708 EACB 2020 41 1\0052I 0708 EACB 2020 41 1.pdf' non è stato trovato.
+Nome file: 'C:\Temp\CDC\CARTELLACOLLAUDO\Metalplus\COLLAUDI FEBBRAIO 2020\collaudo 19-2-20\511-0052I-0708 EACB 2020 41 1\0052I 0708 EACB 2020 41 1.pdf'
+   in System.IO.__Error.WinIOError(Int32 errorCode, String maybeFullPath)
+   in System.IO.File.InternalCopy(String sourceFileName, String destFileName, Boolean overwrite, Boolean checkHost)
+   in System.IO.File.Copy(String sourceFileName, String destFileName, Boolean overwrite)
+   in CDCMetal.BLL.CDCBLL.CreaPDFSpessore(Decimal IDDETTAGLIO, CDCDS ds, String pathCollaudo, Byte[] iLoghi, Byte[] iBowman, Boolean CopiaReferto, String pathCartellaReferto, List`1 medie, List`1 Std, List`1 Pct, List`1 range, List`1 minimo, List`1 massimo, String Brand, String numeroCampioni) in C:\Sorgenti\CDCMetal\CDCMetal\CDCMetal.BLL\CDCBLL.cs:riga 805
+   in CDCMetal.CreaSpessoreFrm.btnCreaPDF_Click(Object sender, EventArgs e) in C:\Sorgenti\CDCMetal\CDCMetal\CDCMetal\CreaSpessoreFrm.cs:riga 847
+ERROR 2020-02-27 15:10:22,647 891683ms MainForm               LogScriviErrore    - Errore in crea PDF
+System.IO.FileNotFoundException: Il file 'C:\Temp\CDC\CARTELLACOLLAUDO\Metalplus\COLLAUDI FEBBRAIO 2020\collaudo 19-2-20\511-0052I-0708 EACB 2020 41 1\0052I 0708 EACB 2020 41 1.pdf' non è stato trovato.
+Nome file: 'C:\Temp\CDC\CARTELLACOLLAUDO\Metalplus\COLLAUDI FEBBRAIO 2020\collaudo 19-2-20\511-0052I-0708 EACB 2020 41 1\0052I 0708 EACB 2020 41 1.pdf'
+   in System.IO.__Error.WinIOError(Int32 errorCode, String maybeFullPath)
+   in System.IO.File.InternalCopy(String sourceFileName, String destFileName, Boolean overwrite, Boolean checkHost)
+   in System.IO.File.Copy(String sourceFileName, String destFileName, Boolean overwrite)
+   in CDCMetal.BLL.CDCBLL.CreaPDFSpessore(Decimal IDDETTAGLIO, CDCDS ds, String pathCollaudo, Byte[] iLoghi, Byte[] iBowman, Boolean CopiaReferto, String pathCartellaReferto, List`1 medie, List`1 Std, List`1 Pct, List`1 range, List`1 minimo, List`1 massimo, String Brand, String numeroCampioni) in C:\Sorgenti\CDCMetal\CDCMetal\CDCMetal.BLL\CDCBLL.cs:riga 805
+   in CDCMetal.CreaSpessoreFrm.btnCreaPDF_Click(Object sender, EventArgs e) in C:\Sorgenti\CDCMetal\CDCMetal\CDCMetal\CreaSpessoreFrm.cs:riga 847
+INFO  2020-02-27 15:19:23,862 1432898ms MainForm               LogScrivi          - Applicazione CDCMetal fermata
+INFO  2020-02-27 15:20:12,300 1481335ms MainForm               LogScrivi          - Applicazione CDCMetal fermata
+INFO  2020-02-27 15:20:13,748 1482784ms MainForm               LogScrivi          - Applicazione CDCMetal fermata
+INFO  2020-02-27 15:20:36,131 1505167ms MainForm               LogScrivi          - Applicazione CDCMetal fermata
+INFO  2020-02-27 15:20:39,595 1508631ms MainForm               LogScrivi          - Applicazione CDCMetal fermata
+INFO  2020-02-27 15:20:39,900 1508935ms MainForm               LogScrivi          - Applicazione CDCMetal fermata
+INFO  2020-02-27 15:20:54,035 1523071ms MainForm               LogScrivi          - Applicazione CDCMetal fermata
+INFO  2020-02-27 15:20:56,099 1525134ms MainForm               LogScrivi          - Applicazione CDCMetal fermata
+INFO  2020-02-27 15:20:56,396 1525431ms MainForm               LogScrivi          - Applicazione CDCMetal fermata
+INFO  2020-02-27 15:21:30,169 1559205ms MainForm               LogScrivi          - Applicazione CDCMetal fermata
+INFO  2020-02-27 15:21:44,081 1573117ms MainForm               LogScrivi          - Applicazione CDCMetal fermata
+INFO  2020-02-27 15:21:44,953 1573989ms MainForm               LogScrivi          - Applicazione CDCMetal fermata
+INFO  2020-02-27 15:23:18,983   154ms MainForm               LogScrivi          - Applicazione CDCMetal avviata

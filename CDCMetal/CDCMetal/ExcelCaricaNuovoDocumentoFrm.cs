@@ -126,9 +126,11 @@ namespace CDCMetal
         }
 
         private void btnSalvaDB_Click(object sender, EventArgs e)
+
         {
             try
             {
+                Cursor.Current = Cursors.WaitCursor;
                 lblMessage.Text = string.Empty;
 
                 ExcelBLL bll = new ExcelBLL();
@@ -153,6 +155,9 @@ namespace CDCMetal
                 lblMessage.Text = "Salvataggio riuscito";
                 ddlBrand.SelectedIndex = -1;
 
+                string message = "operazione riuscita";
+                MessageBox.Show(message,"INFORMAZIONE",MessageBoxButtons.OK,MessageBoxIcon.Information);
+
             }
             catch (Exception ex)
             {
@@ -160,6 +165,11 @@ namespace CDCMetal
                 ExceptionFrm frm = new ExceptionFrm(ex);
                 frm.ShowDialog();
             }
+            finally
+            {
+                Cursor.Current = Cursors.Default;
+            }
+
         }
 
         private void ExcelCaricaNuovoDocumentoFrm_Load(object sender, EventArgs e)
@@ -173,6 +183,16 @@ namespace CDCMetal
         private void CaricaDropDownListBrands()
         {
             ddlBrand.Items.AddRange(_DS.CDC_BRANDS.Select(XmlReadMode => XmlReadMode.CODICE).ToArray());
+        }
+
+        private void txtFilePath_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void ddlBrand_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }

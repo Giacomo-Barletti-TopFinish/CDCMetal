@@ -323,9 +323,21 @@ namespace CDCMetal.Helpers
 
             return true;
         }
+        private Sheet EstraiSheetPerNome(WorkbookPart wbPart, string nomeDaTrovare)
+        {
+            Sheets fogliExcel = wbPart.Workbook.Sheets;
+            foreach (Sheet foglio in fogliExcel)
+            {
+                if (foglio.Name == nomeDaTrovare) return foglio;
+            }
+            return null;
+        }
+
+
         private const string barraTonda = "Barra tonda";
         private const string piatto = "Piatto";
         public bool ReadAnalisiPiombo(Stream stream, CDCDS ds, string utente, out string messaggioErrore)
+
         {
             messaggioErrore = string.Empty;
             SpreadsheetDocument document = SpreadsheetDocument.Open(stream, true);
@@ -333,8 +345,10 @@ namespace CDCMetal.Helpers
 
             WorkbookPart wbPart = document.WorkbookPart;
 
-            WorksheetPart worksheetPart = wbPart.WorksheetParts.First();
+            Sheet foglio = EstraiSheetPerNome(wbPart, "Calcolo Pb+Cd");
+            WorksheetPart worksheetPart = (WorksheetPart)wbPart.GetPartById(foglio.Id);
             SheetData sheetData = worksheetPart.Worksheet.Elements<SheetData>().First();
+
             CellFormats cellFormats = wbPart.WorkbookStylesPart.Stylesheet.CellFormats;
             NumberingFormats numberingFormats = wbPart.WorkbookStylesPart.Stylesheet.NumberingFormats;
 

@@ -34,13 +34,14 @@
             this.lblNumeroRigheExcel = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.lblDataExcel = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.btnSalvaDB = new System.Windows.Forms.Button();
             this.btnApriFile = new System.Windows.Forms.Button();
             this.btnCercaFile = new System.Windows.Forms.Button();
             this.txtFilePath = new System.Windows.Forms.TextBox();
             this.dgvExcelCaricato = new System.Windows.Forms.DataGridView();
-            this.label2 = new System.Windows.Forms.Label();
+            ((System.ComponentModel.ISupportInitialize)(this._DS)).BeginInit();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvExcelCaricato)).BeginInit();
             this.SuspendLayout();
@@ -73,6 +74,7 @@
             this.ddlBrand.Name = "ddlBrand";
             this.ddlBrand.Size = new System.Drawing.Size(121, 21);
             this.ddlBrand.TabIndex = 3;
+            this.ddlBrand.SelectedIndexChanged += new System.EventHandler(this.ddlBrand_SelectedIndexChanged);
             // 
             // lblMessage
             // 
@@ -113,6 +115,16 @@
             this.lblDataExcel.Name = "lblDataExcel";
             this.lblDataExcel.Size = new System.Drawing.Size(0, 16);
             this.lblDataExcel.TabIndex = 2;
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Location = new System.Drawing.Point(1052, 13);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(44, 16);
+            this.label2.TabIndex = 2;
+            this.label2.Text = "Brand";
             // 
             // label1
             // 
@@ -165,6 +177,7 @@
             this.txtFilePath.Name = "txtFilePath";
             this.txtFilePath.Size = new System.Drawing.Size(877, 24);
             this.txtFilePath.TabIndex = 1;
+            this.txtFilePath.TextChanged += new System.EventHandler(this.txtFilePath_TextChanged);
             // 
             // dgvExcelCaricato
             // 
@@ -176,16 +189,6 @@
             this.dgvExcelCaricato.Size = new System.Drawing.Size(1360, 541);
             this.dgvExcelCaricato.TabIndex = 1;
             // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(1052, 13);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(44, 16);
-            this.label2.TabIndex = 2;
-            this.label2.Text = "Brand";
-            // 
             // ExcelCaricaNuovoDocumentoFrm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -196,6 +199,7 @@
             this.Name = "ExcelCaricaNuovoDocumentoFrm";
             this.Text = "Carica nuovo excel";
             this.Load += new System.EventHandler(this.ExcelCaricaNuovoDocumentoFrm_Load);
+            ((System.ComponentModel.ISupportInitialize)(this._DS)).EndInit();
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvExcelCaricato)).EndInit();

@@ -10,5 +10,6 @@ namespace CDCMetal.Entities
     {
         public const string Gucci = "GUCCI";
         public const string YSL = "YSL";
+        public const string Balenciaga = "BALENCIAGA";
     }
 }

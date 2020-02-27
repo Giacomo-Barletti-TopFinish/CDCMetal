@@ -21,6 +21,7 @@ namespace CDCMetal
         {
             InitializeComponent();
         }
+
         private void PopolaDDLDate()
         {
             ddlDataCollaudo.Items.AddRange(CaricaDateCollaudo().ToArray());

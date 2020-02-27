@@ -14,16 +14,16 @@
       </applicationRequestMinimum>
       <requestedPrivileges xmlns="urn:schemas-microsoft-com:asm.v3">
         <!--
-          UAC Manifest Options
-          If you want to change the Windows User Account Control level replace the 
-          requestedExecutionLevel node with one of the following.
+          Opzioni manifesto Controllo dell'account utente
+          Se si vuole modificare il livello di Controllo dell'account utente di Windows, sostituire il
+          nodo requestedExecutionLevel con uno dei seguenti.
 
         <requestedExecutionLevel  level="asInvoker" uiAccess="false" />
         <requestedExecutionLevel  level="requireAdministrator" uiAccess="false" />
         <requestedExecutionLevel  level="highestAvailable" uiAccess="false" />
 
-         If you want to utilize File and Registry Virtualization for backward 
-         compatibility then delete the requestedExecutionLevel node.
+         Se si vuole usare Virtualizzazione file system e registro di sistema per la 
+         compatibilità con le versioni precedenti, eliminare il nodo requestedExecutionLevel.
     -->
         <requestedExecutionLevel level="asInvoker" uiAccess="false" />
       </requestedPrivileges>
@@ -42,14 +42,14 @@
     </dependentAssembly>
   </dependency>
   <dependency>
-    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="CDCMetal.exe" size="775168">
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="CDCMetal.exe" size="775680">
       <assemblyIdentity name="CDCMetal" version="1.0.0.0" language="neutral" processorArchitecture="msil" />
       <hash>
         <dsig:Transforms>
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>lXyNIyhc/VMzXKFRRwJz/LbnVVgKnFSI32T0wk7nYjc=</dsig:DigestValue>
+        <dsig:DigestValue>En5INlNibRgqY2l9zYiuWlei+mGLL8/Up0ReYjwm69M=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>
@@ -61,7 +61,7 @@
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>TK1L+NzcRTLfqKZNmktWWj33F8rSkEWTSjxAotWScCU=</dsig:DigestValue>
+        <dsig:DigestValue>tv+kBJPwswAiM/v+o1wlGdO2q0wzNtXYlBc7et6wOag=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>
@@ -73,7 +73,7 @@
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>VBtKE2yqm03OtaHyaQ7Ig7mt58ZoUBFcLHIvFHbIo1Q=</dsig:DigestValue>
+        <dsig:DigestValue>j3sSGmd4UNIC5Eq+GBv3nlOoTPEqsP20NMsyEKWixIY=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>
@@ -85,19 +85,19 @@
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>RpSRCAbCzbjl3ryKBLSpOvmmWvcSvD2f/qxl9HyEC24=</dsig:DigestValue>
+        <dsig:DigestValue>vo+J/iRjt7Hp4zQcJtJYyBufTf0s+j8xfbSPE03mD+0=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>
   <dependency>
-    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="CDCMetal.Helpers.dll" size="61440">
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="CDCMetal.Helpers.dll" size="61952">
       <assemblyIdentity name="CDCMetal.Helpers" version="1.0.0.0" language="neutral" processorArchitecture="msil" />
       <hash>
         <dsig:Transforms>
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>t78hmBFjudexboaaVzuDoSkUYDb4NgL/hSGvFxBj91U=</dsig:DigestValue>
+        <dsig:DigestValue>SWjHfEzY+1W8uOIeP8N5HvbqUPcYW5w0+iQ9u9pFW90=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>
@@ -109,7 +109,7 @@
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>zGeaTstAXHvt1SDe7siieRQCku+Hxp/BDlxnrPnC+LY=</dsig:DigestValue>
+        <dsig:DigestValue>UL+p5MGjxA0AdZzCg6ZMu4iQw03YMkogG2oA3lnGy78=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>
@@ -162,18 +162,6 @@
     </dependentAssembly>
   </dependency>
   <dependency>
-    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="Oracle.ManagedDataAccess.dll" size="4877312">
-      <assemblyIdentity name="Oracle.ManagedDataAccess" version="4.122.1.0" publicKeyToken="89B483F429C47342" language="neutral" processorArchitecture="msil" />
-      <hash>
-        <dsig:Transforms>
-          <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
-        </dsig:Transforms>
-        <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>DYrMyQdPkxpDGIGWRmi2mfZUivi2Sk7TEdSEaxygQ3Y=</dsig:DigestValue>
-      </hash>
-    </dependentAssembly>
-  </dependency>
-  <dependency>
     <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="PdfSharp.dll" size="534016">
       <assemblyIdentity name="PdfSharp" version="1.50.4740.0" publicKeyToken="F94615AA0424F9EB" language="neutral" processorArchitecture="msil" />
       <hash>
@@ -197,13 +185,13 @@
       </hash>
     </dependentAssembly>
   </dependency>
-  <file name="CDCMetal.exe.config" size="3390">
+  <file name="CDCMetal.exe.config" size="3395">
     <hash>
       <dsig:Transforms>
         <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
       </dsig:Transforms>
       <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-      <dsig:DigestValue>F7uwxlZdWGRwjIrM9SBPlh6wEHbR3Af/uA+Ovq0QhWE=</dsig:DigestValue>
+      <dsig:DigestValue>N5rTPZV0usKJbfP1mTfmfqugaF7CTBFkZs4URvkmmMo=</dsig:DigestValue>
     </hash>
   </file>
 </asmv1:assembly>

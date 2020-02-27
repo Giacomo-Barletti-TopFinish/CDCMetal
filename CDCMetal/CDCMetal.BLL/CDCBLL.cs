@@ -781,6 +781,7 @@ namespace CDCMetal.BLL
                     CreaReportSpessoriGucci(path, dt, commessaPerStampa, operatore, galvanica.SPESSORE, galvanica.APPLICAZIONE, galvanica.STRUMENTO, numeroMisure, etichette, medie, Std, Pct, range, minimo, massimo, iLoghi, iBowman, misure);
                     break;
 
+                case CDCBrands.Balenciaga:
                 case CDCBrands.YSL:
                     CreaReportSpessoriYSL(path, dt, numeroCampioni, dettaglio.PARTE, dettaglio.COLORE, numeroMisure, etichette, medie, iLoghi, misure);
                     break;
