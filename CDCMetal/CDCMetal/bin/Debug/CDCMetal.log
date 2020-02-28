@@ -2378,3 +2378,32 @@ INFO  2020-02-27 15:21:30,169 1559205ms MainForm               LogScrivi        
 INFO  2020-02-27 15:21:44,081 1573117ms MainForm               LogScrivi          - Applicazione CDCMetal fermata
 INFO  2020-02-27 15:21:44,953 1573989ms MainForm               LogScrivi          - Applicazione CDCMetal fermata
 INFO  2020-02-27 15:23:18,983   154ms MainForm               LogScrivi          - Applicazione CDCMetal avviata
+INFO  2020-02-28 15:23:38,852   171ms MainForm               LogScrivi          - Applicazione CDCMetal avviata
+INFO  2020-02-28 15:24:20,005 41324ms MainForm               LogScrivi          - Applicazione CDCMetal fermata
+INFO  2020-02-28 15:26:36,801   157ms MainForm               LogScrivi          - Applicazione CDCMetal avviata
+INFO  2020-02-28 15:26:51,107 14463ms MainForm               LogScrivi          - Applicazione CDCMetal fermata
+INFO  2020-02-28 15:31:47,958   160ms MainForm               LogScrivi          - Applicazione CDCMetal avviata
+INFO  2020-02-28 15:32:49,217 61419ms MainForm               LogScrivi          - Applicazione CDCMetal fermata
+INFO  2020-02-28 15:32:53,479   140ms MainForm               LogScrivi          - Applicazione CDCMetal avviata
+INFO  2020-02-28 15:33:07,729 14390ms MainForm               LogScrivi          - Applicazione CDCMetal fermata
+INFO  2020-02-28 15:34:08,714   149ms MainForm               LogScrivi          - Applicazione CDCMetal avviata
+INFO  2020-02-28 15:34:31,288 22723ms MainForm               LogScrivi          - Applicazione CDCMetal fermata
+INFO  2020-02-28 15:35:38,621   148ms MainForm               LogScrivi          - Applicazione CDCMetal avviata
+INFO  2020-02-28 15:36:41,463 62990ms MainForm               LogScrivi          - Applicazione CDCMetal fermata
+INFO  2020-02-28 15:36:46,014   153ms MainForm               LogScrivi          - Applicazione CDCMetal avviata
+INFO  2020-02-28 15:38:06,267 80406ms MainForm               LogScrivi          - Applicazione CDCMetal fermata
+INFO  2020-02-28 15:38:11,149   159ms MainForm               LogScrivi          - Applicazione CDCMetal avviata
+INFO  2020-02-28 15:40:43,461   140ms MainForm               LogScrivi          - Applicazione CDCMetal avviata
+INFO  2020-02-28 15:50:02,990 559668ms MainForm               LogScrivi          - Applicazione CDCMetal fermata
+INFO  2020-02-28 15:50:13,400   161ms MainForm               LogScrivi          - Applicazione CDCMetal avviata
+INFO  2020-02-28 15:55:22,199   160ms MainForm               LogScrivi          - Applicazione CDCMetal avviata
+ERROR 2020-02-28 15:55:37,023 14984ms MainForm               LogScriviErrore    - Errore in dgvDettaglio_CellClick
+System.Data.StrongTypingException: Il valore della colonna 'ELEMENTO' nella tabella 'CDC_CERTIFICATIPIOMBO' è DBNull. ---> System.InvalidCastException: Impossibile eseguire il cast di oggetti di tipo 'System.DBNull' sul tipo 'System.String'.
+   in CDCMetal.Entities.CDCDS.CDC_CERTIFICATIPIOMBORow.get_ELEMENTO() in C:\Sorgenti\CDCMetal\CDCMetal\CDCMetal.Entities\CDCDS.Designer.cs:riga 13659
+   --- Fine della traccia dello stack dell'eccezione interna ---
+   in CDCMetal.Entities.CDCDS.CDC_CERTIFICATIPIOMBORow.get_ELEMENTO() in C:\Sorgenti\CDCMetal\CDCMetal\CDCMetal.Entities\CDCDS.Designer.cs:riga 13662
+   in CDCMetal.AssociaCertificatiPiomboFrm.CaricaCertificatiPiombo() in C:\Sorgenti\CDCMetal\CDCMetal\CDCMetal\AssociaCertificatiPiomboFrm.cs:riga 44
+   in CDCMetal.AssociaCertificatiPiomboFrm.dgvDettaglio_CellClick(Object sender, DataGridViewCellEventArgs e) in C:\Sorgenti\CDCMetal\CDCMetal\CDCMetal\AssociaCertificatiPiomboFrm.cs:riga 179
+INFO  2020-02-28 15:56:07,420 45381ms MainForm               LogScrivi          - Applicazione CDCMetal fermata
+INFO  2020-02-28 15:56:25,847   155ms MainForm               LogScrivi          - Applicazione CDCMetal avviata
+INFO  2020-02-28 15:58:46,985   194ms MainForm               LogScrivi          - Applicazione CDCMetal avviata

@@ -41,15 +41,15 @@ namespace CDCMetal
             foreach (CDCDS.CDC_CERTIFICATIPIOMBORow certificato in _DS.CDC_CERTIFICATIPIOMBO)
             {
                 decimal volume = 0;
-                if (certificato.ELEMENTO as string == barraTonda)
-                {
-                    decimal raggio = certificato.LARGHEZZA / 2;
-                    volume = (decimal)Math.PI * raggio * raggio * certificato.LUNGHEZZA;
-                }
-                else
-                {
-                    volume = certificato.LUNGHEZZA * certificato.LARGHEZZA * certificato.SPESSORE;
-                }
+                //if (certificato.ELEMENTO as string == barraTonda)
+                //{
+                //    decimal raggio = certificato.LARGHEZZA / 2;
+                //    volume = (decimal)Math.PI * raggio * raggio * certificato.LUNGHEZZA;
+                //}
+                //else
+                //{
+                //    volume = certificato.LUNGHEZZA * certificato.LARGHEZZA * certificato.SPESSORE;
+                //}
                 volume = volume / 1000;
                 decimal pesoSpecifico = 8.40m;
 
@@ -311,6 +311,11 @@ namespace CDCMetal
                 MostraEccezione(ex, "Errore salva associazione ");
 
             }
+        }
+
+        private void lstCertificatiAssociati_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
         }
     }
 

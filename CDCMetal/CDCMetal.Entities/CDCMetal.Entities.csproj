@@ -43,6 +43,9 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="CDCBrands.cs" />
+    <Compile Include="CDCDS.cs">
+      <DependentUpon>CDCDS.xsd</DependentUpon>
+    </Compile>
     <Compile Include="CDCDS.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>

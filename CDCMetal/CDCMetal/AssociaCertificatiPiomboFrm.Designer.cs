@@ -248,6 +248,7 @@
             this.lstCertificatiAssociati.Name = "lstCertificatiAssociati";
             this.lstCertificatiAssociati.Size = new System.Drawing.Size(313, 112);
             this.lstCertificatiAssociati.TabIndex = 22;
+            this.lstCertificatiAssociati.SelectedIndexChanged += new System.EventHandler(this.lstCertificatiAssociati_SelectedIndexChanged);
             // 
             // btnRimuovi
             // 

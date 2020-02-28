@@ -136,12 +136,15 @@ namespace CDCMetal
                     string path = bll.CreaPDFCertificatoPiombo(elemento, lunghezza, larghezza, spessore.ToString(), riga.CODICE, riga.LOTTO,
                     riga.ESITO, colore, riga.METODO, riga.DATACERTIFICATO, riga.PBPPM, riga.CDPPM, Contesto.PathAnalisiPiombo, image);
                     files.AppendLine(path);
+                    riga.PATHFILE = path.Length > 300 ? path.Substring(0, 300) : path;
 
                 }
-                List<CDCDS.CDC_CERTIFICATIPIOMBORow> certificati = _DS.CDC_CERTIFICATIPIOMBO.Where(x => x.IsLUNGHEZZANull()).ToList();
-                foreach (CDCDS.CDC_CERTIFICATIPIOMBORow certificato in certificati)
-                    certificato.Delete();
+                //List<CDCDS.CDC_CERTIFICATIPIOMBORow> certificati = _DS.CDC_CERTIFICATIPIOMBO.Where(x => x.IsLUNGHEZZANull()).ToList();
+                //foreach (CDCDS.CDC_CERTIFICATIPIOMBORow certificato in certificati)
+                //    certificato.Delete();
                 bll.SalvaCertificatiPiombo(_DS);
+
+                MessageBox.Show("Operazionbe eseguita con successo", "INFORMAZIONE", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
             catch (Exception ex)
             {
