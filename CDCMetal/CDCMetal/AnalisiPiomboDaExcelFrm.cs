@@ -101,11 +101,23 @@ namespace CDCMetal
             }
         }
 
+
+
         private void btnCreaPdf_Click(object sender, EventArgs e)
         {
             try
             {
                 Cursor.Current = Cursors.WaitCursor;
+
+                foreach (CDCDS.CDC_CERTIFICATIPIOMBORow riga in _DS.CDC_CERTIFICATIPIOMBO)
+                {
+                    if (string.IsNullOrEmpty(riga.LOTTO))
+                    {
+                        MessageBox.Show("La colonna LOTTO deve essere valorizzata", "ERRORE", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        return;
+                    }
+                }
+
                 Bitmap firma = Properties.Resources.logo_tf_autodichiarazione;
                 ImageConverter converter = new ImageConverter();
                 byte[] image = (byte[])converter.ConvertTo(firma, typeof(byte[]));

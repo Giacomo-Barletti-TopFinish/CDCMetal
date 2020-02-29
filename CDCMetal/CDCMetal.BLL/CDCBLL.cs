@@ -542,7 +542,7 @@ namespace CDCMetal.BLL
             //}
             //else
             {
-                fileName = string.Format(" {0}_{1}_{2}.pdf", codiceCampione, dataAnalisi.Day.ToString().PadLeft(2, '0'), dataAnalisi.Month.ToString().PadLeft(2, '0'));
+                fileName = string.Format("{0}_{1}_{2}.pdf", codiceCampione, dataAnalisi.Day.ToString().PadLeft(2, '0'), dataAnalisi.Month.ToString().PadLeft(2, '0'));
                 nomeCampione = string.Format("{0}", codiceCampione);
             }
             fileName = fileName.Replace("\\", string.Empty).Replace("/", string.Empty);
@@ -554,6 +554,8 @@ namespace CDCMetal.BLL
             string cartella;
             string nomeCampione;
             string path = CreaNomefileCertificatiAnalisiPiombo(elemento, lunghezza, larghezza, spessore, codiceCampione, dataAnalisi, pathLaboratorio, out cartella, out nomeCampione);
+
+            path = PathHelper.VerificaPathPerScritturaOracle(path);
 
             if (!Directory.Exists(cartella))
                 Directory.CreateDirectory(cartella);
@@ -1028,8 +1030,22 @@ string strumentoMisura, string nota, List<MisuraColore> misure, byte[] iloghi)
         {
             using (CDCMetalBusiness bCDCMetal = new CDCMetalBusiness())
             {
-                bCDCMetal.UpdateCertificatiPiombo(ds);
-                ds.AcceptChanges();
+
+                foreach (CDCDS.CDC_CERTIFICATIPIOMBORow riga in ds.CDC_CERTIFICATIPIOMBO)
+                {
+                    decimal? lunghezza = riga.IsLUNGHEZZANull() ? (decimal?)null : riga.LUNGHEZZA;
+                    decimal? larghezza = riga.IsLARGHEZZANull() ? (decimal?)null : riga.LARGHEZZA;
+                    decimal? spessore = riga.IsSPESSORENull() ? (decimal?)null : riga.SPESSORE;
+                    string elemento = riga.IsELEMENTONull() ? string.Empty : riga.ELEMENTO;
+
+                    bCDCMetal.InsertCDC_CERTIFICATOPIOMBO(elemento, riga.CODICE, riga.MATERIALE, riga.LOTTO, lunghezza, larghezza, spessore,
+                        riga.METODO, riga.PESOCAMPIONE, riga.MATRACCIOLO, riga.CONCENTRAZIONE,
+                        riga.PBPPM, riga.CDPPM, riga.ESITO, riga.DATACERTIFICATO, riga.UTENTE, riga.DATAINSERIMENTO, riga.PATHFILE);
+                }
+
+
+                //bCDCMetal.UpdateCertificatiPiombo(ds);
+                //ds.AcceptChanges();
             }
         }
     }

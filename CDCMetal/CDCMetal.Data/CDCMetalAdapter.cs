@@ -52,9 +52,11 @@ namespace CDCMetal.Data
                     a.ContinueUpdateOnError = false;
                     DataTable dt = ds.Tables[tablename];
                     DbCommandBuilder cmd = BuildCommandBuilder(a);
+                    a.AcceptChangesDuringFill = true;
                     a.UpdateCommand = cmd.GetUpdateCommand();
                     a.DeleteCommand = cmd.GetDeleteCommand();
                     a.InsertCommand = cmd.GetInsertCommand();
+
                     a.Update(dt);
                 }
                 catch (DBConcurrencyException ex)
@@ -359,6 +361,48 @@ namespace CDCMetal.Data
             {
                 da.Fill(ds.CDC_APPLICAZIONE);
             }
+        }
+
+        public long InsertCDC_CERTIFICATOPIOMBO(string ELEMENTO, string CODICE, string MATERIALE,
+                                string LOTTO, decimal? LUNGHEZZA, decimal? LARGHEZZA, decimal? SPESSORE, string METODO, decimal PESOCAMPIONE, decimal MATRACCIOLO, decimal CONCENTRAZIONE,
+                                decimal PBPPM, decimal CDPPM, string ESITO, DateTime DATACERTIFICATO, string UTENTE, DateTime DATAINSERIMENTO, string PATHFILE)
+        {
+            long ret;
+            string query = @"INSERT INTO CDC_CERTIFICATIPIOMBO ( IDCERTIFICATIPIOMBO, ELEMENTO, CODICE, MATERIALE, 
+                                LOTTO, LUNGHEZZA, LARGHEZZA, SPESSORE, METODO, PESOCAMPIONE, MATRACCIOLO, CONCENTRAZIONE, 
+                                PBPPM, CDPPM, ESITO, DATACERTIFICATO, UTENTE, DATAINSERIMENTO, PATHFILE ) VALUES ( 
+                                null, $P<ELEMENTO>, $P<CODICE>, $P<MATERIALE>, 
+                                $P<LOTTO>, $P<LUNGHEZZA>, $P<LARGHEZZA>, $P<SPESSORE>, $P<METODO>, $P<PESOCAMPIONE>, $P<MATRACCIOLO>, $P<CONCENTRAZIONE>, 
+                                $P<PBPPM>, $P<CDPPM>, $P<ESITO>, $P<DATACERTIFICATO>, $P<UTENTE>, $P<DATAINSERIMENTO>, $P<PATHFILE>)";
+
+            ParamSet ps = new ParamSet();
+
+            ps.AddParam("ELEMENTO", DbType.String, string.IsNullOrEmpty(ELEMENTO) ? (object)DBNull.Value : ELEMENTO);
+            ps.AddParam("CODICE", DbType.String, CODICE);
+            ps.AddParam("MATERIALE", DbType.String, MATERIALE);
+            ps.AddParam("LOTTO", DbType.String, LOTTO);
+            ps.AddParam("LUNGHEZZA", DbType.Decimal, LUNGHEZZA.HasValue ? LUNGHEZZA.Value : (object)DBNull.Value);
+            ps.AddParam("LARGHEZZA", DbType.Decimal, LARGHEZZA.HasValue ? LARGHEZZA.Value : (object)DBNull.Value);
+            ps.AddParam("SPESSORE", DbType.Decimal, SPESSORE.HasValue ? SPESSORE.Value : (object)DBNull.Value);
+            ps.AddParam("METODO", DbType.String, METODO);
+            ps.AddParam("PESOCAMPIONE", DbType.Decimal, PESOCAMPIONE);
+            ps.AddParam("MATRACCIOLO", DbType.Decimal, MATRACCIOLO);
+            ps.AddParam("CONCENTRAZIONE", DbType.Decimal, CONCENTRAZIONE);
+            ps.AddParam("PBPPM", DbType.Decimal, PBPPM);
+            ps.AddParam("CDPPM", DbType.Decimal, CDPPM);
+            ps.AddParam("ESITO", DbType.String, ESITO);
+
+            ps.AddParam("DATACERTIFICATO", DbType.DateTime, DATACERTIFICATO);
+            ps.AddParam("UTENTE", DbType.String, UTENTE);
+            ps.AddParam("DATAINSERIMENTO", DbType.DateTime, DATAINSERIMENTO);
+            ps.AddParam("PATHFILE", DbType.String, PATHFILE);
+
+            using (DbCommand cmd = BuildCommand(query, ps))
+            {
+                object o = cmd.ExecuteScalar();
+                ret = Convert.ToInt64(o);
+            }
+            return ret;
         }
     }
 }
