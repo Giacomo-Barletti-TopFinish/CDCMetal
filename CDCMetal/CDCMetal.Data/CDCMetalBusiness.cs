@@ -135,6 +135,12 @@ namespace CDCMetal.Data
             a.UpdateTable(ds.CDC_CONFORMITA.TableName, ds);
             a.UpdateTable(ds.CDC_CONFORMITA_DETTAGLIO.TableName, ds);
         }
+        [DataContext(true)]
+        public void UpdateMateriaprima(CDCDS ds)
+        {
+            CDCMetalAdapter a = new CDCMetalAdapter(DbConnection, DbTransaction);
+            a.UpdateTable(ds.CDC_MATERIAPRIMA.TableName, ds);
+        }
 
         [DataContext(true)]
         public void UpdateCDC_PDF(CDCDS ds)
@@ -247,6 +253,13 @@ namespace CDCMetal.Data
         {
             CDCMetalAdapter a = new CDCMetalAdapter(DbConnection, DbTransaction);
             a.FillCDC_APPLICAZIONE(ds);
+        }
+
+        [DataContext]
+        public void FillCDC_MATERIAPRIMA(CDCDS ds)
+        {
+            CDCMetalAdapter a = new CDCMetalAdapter(DbConnection, DbTransaction);
+            a.FillCDC_MATERIAPRIMA(ds);
         }
 
         [DataContext(true)]

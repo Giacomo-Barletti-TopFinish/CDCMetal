@@ -35,24 +35,18 @@
             this.btnLeggiDati = new System.Windows.Forms.Button();
             this.ddlDataCollaudo = new System.Windows.Forms.ComboBox();
             this.label1 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
-            this.nPesoArticolo = new System.Windows.Forms.NumericUpDown();
-            this.label4 = new System.Windows.Forms.Label();
-            this.nPesoRiga = new System.Windows.Forms.NumericUpDown();
             this.label5 = new System.Windows.Forms.Label();
             this.btnAssocia = new System.Windows.Forms.Button();
-            this.nPesoAssociazione = new System.Windows.Forms.NumericUpDown();
-            this.label6 = new System.Windows.Forms.Label();
             this.lstCertificatiDaAssociare = new System.Windows.Forms.ListBox();
             this.lstCertificatiAssociati = new System.Windows.Forms.ListBox();
             this.btnRimuovi = new System.Windows.Forms.Button();
             this.btnCopiaCertificati = new System.Windows.Forms.Button();
+            this.label7 = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
+            this.txtMateriaPrima = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this._DS)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvDettaglio)).BeginInit();
             this.groupBox1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.nPesoArticolo)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.nPesoRiga)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.nPesoAssociazione)).BeginInit();
             this.SuspendLayout();
             // 
             // label2
@@ -133,61 +127,11 @@
             this.label1.TabIndex = 1;
             this.label1.Text = "Data collaudo";
             // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(18, 300);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(118, 18);
-            this.label3.TabIndex = 18;
-            this.label3.Text = "Peso articolo (g)";
-            // 
-            // nPesoArticolo
-            // 
-            this.nPesoArticolo.DecimalPlaces = 1;
-            this.nPesoArticolo.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.nPesoArticolo.Location = new System.Drawing.Point(147, 297);
-            this.nPesoArticolo.Maximum = new decimal(new int[] {
-            5000,
-            0,
-            0,
-            0});
-            this.nPesoArticolo.Name = "nPesoArticolo";
-            this.nPesoArticolo.Size = new System.Drawing.Size(85, 24);
-            this.nPesoArticolo.TabIndex = 19;
-            this.nPesoArticolo.ValueChanged += new System.EventHandler(this.nPesoArticolo_ValueChanged);
-            // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(273, 300);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(193, 18);
-            this.label4.TabIndex = 18;
-            this.label4.Text = "Peso riga prenotazione (Kg)";
-            // 
-            // nPesoRiga
-            // 
-            this.nPesoRiga.DecimalPlaces = 3;
-            this.nPesoRiga.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.nPesoRiga.Location = new System.Drawing.Point(471, 297);
-            this.nPesoRiga.Maximum = new decimal(new int[] {
-            2000,
-            0,
-            0,
-            0});
-            this.nPesoRiga.Name = "nPesoRiga";
-            this.nPesoRiga.ReadOnly = true;
-            this.nPesoRiga.Size = new System.Drawing.Size(85, 24);
-            this.nPesoRiga.TabIndex = 19;
-            // 
             // label5
             // 
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(262, 341);
+            this.label5.Location = new System.Drawing.Point(262, 350);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(123, 18);
             this.label5.TabIndex = 20;
@@ -204,51 +148,25 @@
             this.btnAssocia.UseVisualStyleBackColor = true;
             this.btnAssocia.Click += new System.EventHandler(this.btnAssocia_Click);
             // 
-            // nPesoAssociazione
-            // 
-            this.nPesoAssociazione.DecimalPlaces = 3;
-            this.nPesoAssociazione.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.nPesoAssociazione.Location = new System.Drawing.Point(617, 298);
-            this.nPesoAssociazione.Maximum = new decimal(new int[] {
-            2000,
-            0,
-            0,
-            0});
-            this.nPesoAssociazione.Name = "nPesoAssociazione";
-            this.nPesoAssociazione.ReadOnly = true;
-            this.nPesoAssociazione.Size = new System.Drawing.Size(85, 24);
-            this.nPesoAssociazione.TabIndex = 19;
-            // 
-            // label6
-            // 
-            this.label6.AutoSize = true;
-            this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.Location = new System.Drawing.Point(729, 303);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(167, 18);
-            this.label6.TabIndex = 18;
-            this.label6.Text = "Peso associazione (Kg)";
-            // 
             // lstCertificatiDaAssociare
             // 
-            this.lstCertificatiDaAssociare.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lstCertificatiDaAssociare.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lstCertificatiDaAssociare.FormattingEnabled = true;
-            this.lstCertificatiDaAssociare.ItemHeight = 18;
-            this.lstCertificatiDaAssociare.Location = new System.Drawing.Point(265, 373);
+            this.lstCertificatiDaAssociare.ItemHeight = 16;
+            this.lstCertificatiDaAssociare.Location = new System.Drawing.Point(249, 373);
             this.lstCertificatiDaAssociare.Name = "lstCertificatiDaAssociare";
-            this.lstCertificatiDaAssociare.Size = new System.Drawing.Size(313, 112);
+            this.lstCertificatiDaAssociare.Size = new System.Drawing.Size(313, 196);
             this.lstCertificatiDaAssociare.TabIndex = 22;
             // 
             // lstCertificatiAssociati
             // 
-            this.lstCertificatiAssociati.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lstCertificatiAssociati.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lstCertificatiAssociati.FormattingEnabled = true;
-            this.lstCertificatiAssociati.ItemHeight = 18;
-            this.lstCertificatiAssociati.Location = new System.Drawing.Point(732, 370);
+            this.lstCertificatiAssociati.ItemHeight = 16;
+            this.lstCertificatiAssociati.Location = new System.Drawing.Point(752, 373);
             this.lstCertificatiAssociati.Name = "lstCertificatiAssociati";
-            this.lstCertificatiAssociati.Size = new System.Drawing.Size(313, 112);
+            this.lstCertificatiAssociati.Size = new System.Drawing.Size(313, 196);
             this.lstCertificatiAssociati.TabIndex = 22;
-            this.lstCertificatiAssociati.SelectedIndexChanged += new System.EventHandler(this.lstCertificatiAssociati_SelectedIndexChanged);
             // 
             // btnRimuovi
             // 
@@ -264,7 +182,7 @@
             // btnCopiaCertificati
             // 
             this.btnCopiaCertificati.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnCopiaCertificati.Location = new System.Drawing.Point(572, 543);
+            this.btnCopiaCertificati.Location = new System.Drawing.Point(577, 607);
             this.btnCopiaCertificati.Name = "btnCopiaCertificati";
             this.btnCopiaCertificati.Size = new System.Drawing.Size(159, 33);
             this.btnCopiaCertificati.TabIndex = 2;
@@ -272,23 +190,48 @@
             this.btnCopiaCertificati.UseVisualStyleBackColor = true;
             this.btnCopiaCertificati.Click += new System.EventHandler(this.btnCopiaCertificati_Click);
             // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label7.Location = new System.Drawing.Point(749, 350);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(132, 18);
+            this.label7.TabIndex = 20;
+            this.label7.Text = "Certificati associati";
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.Location = new System.Drawing.Point(18, 302);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(98, 18);
+            this.label3.TabIndex = 20;
+            this.label3.Text = "Materia prima";
+            // 
+            // txtMateriaPrima
+            // 
+            this.txtMateriaPrima.Location = new System.Drawing.Point(170, 300);
+            this.txtMateriaPrima.MaxLength = 100;
+            this.txtMateriaPrima.Name = "txtMateriaPrima";
+            this.txtMateriaPrima.Size = new System.Drawing.Size(576, 20);
+            this.txtMateriaPrima.TabIndex = 23;
+            // 
             // AssociaCertificatiPiomboFrm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1384, 685);
+            this.Controls.Add(this.txtMateriaPrima);
             this.Controls.Add(this.lstCertificatiAssociati);
             this.Controls.Add(this.lstCertificatiDaAssociare);
             this.Controls.Add(this.btnCopiaCertificati);
             this.Controls.Add(this.btnRimuovi);
             this.Controls.Add(this.btnAssocia);
-            this.Controls.Add(this.label5);
-            this.Controls.Add(this.label6);
-            this.Controls.Add(this.label4);
-            this.Controls.Add(this.nPesoAssociazione);
-            this.Controls.Add(this.nPesoRiga);
-            this.Controls.Add(this.nPesoArticolo);
+            this.Controls.Add(this.label7);
             this.Controls.Add(this.label3);
+            this.Controls.Add(this.label5);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.dgvDettaglio);
             this.Controls.Add(this.groupBox1);
@@ -299,9 +242,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.dgvDettaglio)).EndInit();
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.nPesoArticolo)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.nPesoRiga)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.nPesoAssociazione)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -316,17 +256,14 @@
         private System.Windows.Forms.Button btnLeggiDati;
         private System.Windows.Forms.ComboBox ddlDataCollaudo;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.NumericUpDown nPesoArticolo;
-        private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.NumericUpDown nPesoRiga;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Button btnAssocia;
-        private System.Windows.Forms.NumericUpDown nPesoAssociazione;
-        private System.Windows.Forms.Label label6;
         private System.Windows.Forms.ListBox lstCertificatiDaAssociare;
         private System.Windows.Forms.ListBox lstCertificatiAssociati;
         private System.Windows.Forms.Button btnRimuovi;
         private System.Windows.Forms.Button btnCopiaCertificati;
+        private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.TextBox txtMateriaPrima;
     }
 }

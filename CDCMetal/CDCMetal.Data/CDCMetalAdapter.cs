@@ -306,7 +306,9 @@ namespace CDCMetal.Data
         public void FillCDC_CERTIFICATIPIOMBO(CDCDS ds)
         {
 
-            string select = @"SELECT * FROM CDC_CERTIFICATIPIOMBO ";
+
+
+            string select = @"SELECT * FROM CDC_CERTIFICATIPIOMBO order by datacertificato desc";
 
             using (DbDataAdapter da = BuildDataAdapter(select))
             {
@@ -360,6 +362,16 @@ namespace CDCMetal.Data
             using (DbDataAdapter da = BuildDataAdapter(select))
             {
                 da.Fill(ds.CDC_APPLICAZIONE);
+            }
+        }
+
+        public void FillCDC_MATERIAPRIMA(CDCDS ds)
+        {
+            string select = @"SELECT * FROM CDC_MATERIAPRIMA";
+
+            using (DbDataAdapter da = BuildDataAdapter(select))
+            {
+                da.Fill(ds.CDC_MATERIAPRIMA);
             }
         }
 

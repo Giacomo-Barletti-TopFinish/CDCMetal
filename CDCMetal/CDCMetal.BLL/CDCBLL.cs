@@ -58,6 +58,13 @@ namespace CDCMetal.BLL
             }
         }
 
+        public void LeggiMateriaPrimaArticoli(CDCDS ds)
+        {
+            using (CDCMetalBusiness bCDCMetal = new CDCMetalBusiness())
+            {
+                bCDCMetal.FillCDC_MATERIAPRIMA(ds);
+            }
+        }
         public void LeggiCollaudoDaDataConDescrizione(CDCDS ds, DataCollaudo dataSelezionata)
         {
             using (CDCMetalBusiness bCDCMetal = new CDCMetalBusiness())
@@ -271,6 +278,14 @@ namespace CDCMetal.BLL
             using (CDCMetalBusiness bCDCMetal = new CDCMetalBusiness())
             {
                 bCDCMetal.UpdateConformita(ds);
+            }
+        }
+
+        public void SalvaMateriaPrima(CDCDS ds)
+        {
+            using (CDCMetalBusiness bCDCMetal = new CDCMetalBusiness())
+            {
+                bCDCMetal.UpdateMateriaprima(ds);
             }
         }
 

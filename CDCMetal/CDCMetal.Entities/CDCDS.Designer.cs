@@ -66,6 +66,8 @@ namespace CDCMetal.Entities {
         
         private CDC_CERTIFICATIPIOMBODataTable tableCDC_CERTIFICATIPIOMBO;
         
+        private CDC_MATERIAPRIMADataTable tableCDC_MATERIAPRIMA;
+        
         private global::System.Data.SchemaSerializationMode _schemaSerializationMode = global::System.Data.SchemaSerializationMode.IncludeSchema;
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -156,6 +158,9 @@ namespace CDCMetal.Entities {
                 }
                 if ((ds.Tables["CDC_CERTIFICATIPIOMBO"] != null)) {
                     base.Tables.Add(new CDC_CERTIFICATIPIOMBODataTable(ds.Tables["CDC_CERTIFICATIPIOMBO"]));
+                }
+                if ((ds.Tables["CDC_MATERIAPRIMA"] != null)) {
+                    base.Tables.Add(new CDC_MATERIAPRIMADataTable(ds.Tables["CDC_MATERIAPRIMA"]));
                 }
                 this.DataSetName = ds.DataSetName;
                 this.Prefix = ds.Prefix;
@@ -387,6 +392,16 @@ namespace CDCMetal.Entities {
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+        [global::System.ComponentModel.Browsable(false)]
+        [global::System.ComponentModel.DesignerSerializationVisibility(global::System.ComponentModel.DesignerSerializationVisibility.Content)]
+        public CDC_MATERIAPRIMADataTable CDC_MATERIAPRIMA {
+            get {
+                return this.tableCDC_MATERIAPRIMA;
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
         [global::System.ComponentModel.BrowsableAttribute(true)]
         [global::System.ComponentModel.DesignerSerializationVisibilityAttribute(global::System.ComponentModel.DesignerSerializationVisibility.Visible)]
         public override global::System.Data.SchemaSerializationMode SchemaSerializationMode {
@@ -514,6 +529,9 @@ namespace CDCMetal.Entities {
                 }
                 if ((ds.Tables["CDC_CERTIFICATIPIOMBO"] != null)) {
                     base.Tables.Add(new CDC_CERTIFICATIPIOMBODataTable(ds.Tables["CDC_CERTIFICATIPIOMBO"]));
+                }
+                if ((ds.Tables["CDC_MATERIAPRIMA"] != null)) {
+                    base.Tables.Add(new CDC_MATERIAPRIMADataTable(ds.Tables["CDC_MATERIAPRIMA"]));
                 }
                 this.DataSetName = ds.DataSetName;
                 this.Prefix = ds.Prefix;
@@ -674,6 +692,12 @@ namespace CDCMetal.Entities {
                     this.tableCDC_CERTIFICATIPIOMBO.InitVars();
                 }
             }
+            this.tableCDC_MATERIAPRIMA = ((CDC_MATERIAPRIMADataTable)(base.Tables["CDC_MATERIAPRIMA"]));
+            if ((initTable == true)) {
+                if ((this.tableCDC_MATERIAPRIMA != null)) {
+                    this.tableCDC_MATERIAPRIMA.InitVars();
+                }
+            }
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -726,6 +750,8 @@ namespace CDCMetal.Entities {
             base.Tables.Add(this.tableCDC_ASSOCIAZIONEPIOMBO);
             this.tableCDC_CERTIFICATIPIOMBO = new CDC_CERTIFICATIPIOMBODataTable();
             base.Tables.Add(this.tableCDC_CERTIFICATIPIOMBO);
+            this.tableCDC_MATERIAPRIMA = new CDC_MATERIAPRIMADataTable();
+            base.Tables.Add(this.tableCDC_MATERIAPRIMA);
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -856,6 +882,12 @@ namespace CDCMetal.Entities {
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+        private bool ShouldSerializeCDC_MATERIAPRIMA() {
+            return false;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
         private void SchemaChanged(object sender, global::System.ComponentModel.CollectionChangeEventArgs e) {
             if ((e.Action == global::System.ComponentModel.CollectionChangeAction.Remove)) {
                 this.InitVars();
@@ -971,6 +1003,9 @@ namespace CDCMetal.Entities {
         
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
         public delegate void CDC_CERTIFICATIPIOMBORowChangeEventHandler(object sender, CDC_CERTIFICATIPIOMBORowChangeEvent e);
+        
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+        public delegate void CDC_MATERIAPRIMARowChangeEventHandler(object sender, CDC_MATERIAPRIMARowChangeEvent e);
         
         /// <summary>
         ///Represents the strongly named DataTable class.
@@ -9448,6 +9483,285 @@ namespace CDCMetal.Entities {
         }
         
         /// <summary>
+        ///Represents the strongly named DataTable class.
+        ///</summary>
+        [global::System.Serializable()]
+        [global::System.Xml.Serialization.XmlSchemaProviderAttribute("GetTypedTableSchema")]
+        public partial class CDC_MATERIAPRIMADataTable : global::System.Data.TypedTableBase<CDC_MATERIAPRIMARow> {
+            
+            private global::System.Data.DataColumn columnIDMATERIAPRIMA;
+            
+            private global::System.Data.DataColumn columnPARTE;
+            
+            private global::System.Data.DataColumn columnMATERIAPRIMA;
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public CDC_MATERIAPRIMADataTable() {
+                this.TableName = "CDC_MATERIAPRIMA";
+                this.BeginInit();
+                this.InitClass();
+                this.EndInit();
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            internal CDC_MATERIAPRIMADataTable(global::System.Data.DataTable table) {
+                this.TableName = table.TableName;
+                if ((table.CaseSensitive != table.DataSet.CaseSensitive)) {
+                    this.CaseSensitive = table.CaseSensitive;
+                }
+                if ((table.Locale.ToString() != table.DataSet.Locale.ToString())) {
+                    this.Locale = table.Locale;
+                }
+                if ((table.Namespace != table.DataSet.Namespace)) {
+                    this.Namespace = table.Namespace;
+                }
+                this.Prefix = table.Prefix;
+                this.MinimumCapacity = table.MinimumCapacity;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            protected CDC_MATERIAPRIMADataTable(global::System.Runtime.Serialization.SerializationInfo info, global::System.Runtime.Serialization.StreamingContext context) : 
+                    base(info, context) {
+                this.InitVars();
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public global::System.Data.DataColumn IDMATERIAPRIMAColumn {
+                get {
+                    return this.columnIDMATERIAPRIMA;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public global::System.Data.DataColumn PARTEColumn {
+                get {
+                    return this.columnPARTE;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public global::System.Data.DataColumn MATERIAPRIMAColumn {
+                get {
+                    return this.columnMATERIAPRIMA;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            [global::System.ComponentModel.Browsable(false)]
+            public int Count {
+                get {
+                    return this.Rows.Count;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public CDC_MATERIAPRIMARow this[int index] {
+                get {
+                    return ((CDC_MATERIAPRIMARow)(this.Rows[index]));
+                }
+            }
+            
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public event CDC_MATERIAPRIMARowChangeEventHandler CDC_MATERIAPRIMARowChanging;
+            
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public event CDC_MATERIAPRIMARowChangeEventHandler CDC_MATERIAPRIMARowChanged;
+            
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public event CDC_MATERIAPRIMARowChangeEventHandler CDC_MATERIAPRIMARowDeleting;
+            
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public event CDC_MATERIAPRIMARowChangeEventHandler CDC_MATERIAPRIMARowDeleted;
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public void AddCDC_MATERIAPRIMARow(CDC_MATERIAPRIMARow row) {
+                this.Rows.Add(row);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public CDC_MATERIAPRIMARow AddCDC_MATERIAPRIMARow(decimal IDMATERIAPRIMA, string PARTE, string MATERIAPRIMA) {
+                CDC_MATERIAPRIMARow rowCDC_MATERIAPRIMARow = ((CDC_MATERIAPRIMARow)(this.NewRow()));
+                object[] columnValuesArray = new object[] {
+                        IDMATERIAPRIMA,
+                        PARTE,
+                        MATERIAPRIMA};
+                rowCDC_MATERIAPRIMARow.ItemArray = columnValuesArray;
+                this.Rows.Add(rowCDC_MATERIAPRIMARow);
+                return rowCDC_MATERIAPRIMARow;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public override global::System.Data.DataTable Clone() {
+                CDC_MATERIAPRIMADataTable cln = ((CDC_MATERIAPRIMADataTable)(base.Clone()));
+                cln.InitVars();
+                return cln;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            protected override global::System.Data.DataTable CreateInstance() {
+                return new CDC_MATERIAPRIMADataTable();
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            internal void InitVars() {
+                this.columnIDMATERIAPRIMA = base.Columns["IDMATERIAPRIMA"];
+                this.columnPARTE = base.Columns["PARTE"];
+                this.columnMATERIAPRIMA = base.Columns["MATERIAPRIMA"];
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            private void InitClass() {
+                this.columnIDMATERIAPRIMA = new global::System.Data.DataColumn("IDMATERIAPRIMA", typeof(decimal), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnIDMATERIAPRIMA);
+                this.columnPARTE = new global::System.Data.DataColumn("PARTE", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnPARTE);
+                this.columnMATERIAPRIMA = new global::System.Data.DataColumn("MATERIAPRIMA", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnMATERIAPRIMA);
+                this.columnPARTE.AllowDBNull = false;
+                this.columnPARTE.MaxLength = 6;
+                this.columnMATERIAPRIMA.AllowDBNull = false;
+                this.columnMATERIAPRIMA.MaxLength = 100;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public CDC_MATERIAPRIMARow NewCDC_MATERIAPRIMARow() {
+                return ((CDC_MATERIAPRIMARow)(this.NewRow()));
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            protected override global::System.Data.DataRow NewRowFromBuilder(global::System.Data.DataRowBuilder builder) {
+                return new CDC_MATERIAPRIMARow(builder);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            protected override global::System.Type GetRowType() {
+                return typeof(CDC_MATERIAPRIMARow);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            protected override void OnRowChanged(global::System.Data.DataRowChangeEventArgs e) {
+                base.OnRowChanged(e);
+                if ((this.CDC_MATERIAPRIMARowChanged != null)) {
+                    this.CDC_MATERIAPRIMARowChanged(this, new CDC_MATERIAPRIMARowChangeEvent(((CDC_MATERIAPRIMARow)(e.Row)), e.Action));
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            protected override void OnRowChanging(global::System.Data.DataRowChangeEventArgs e) {
+                base.OnRowChanging(e);
+                if ((this.CDC_MATERIAPRIMARowChanging != null)) {
+                    this.CDC_MATERIAPRIMARowChanging(this, new CDC_MATERIAPRIMARowChangeEvent(((CDC_MATERIAPRIMARow)(e.Row)), e.Action));
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            protected override void OnRowDeleted(global::System.Data.DataRowChangeEventArgs e) {
+                base.OnRowDeleted(e);
+                if ((this.CDC_MATERIAPRIMARowDeleted != null)) {
+                    this.CDC_MATERIAPRIMARowDeleted(this, new CDC_MATERIAPRIMARowChangeEvent(((CDC_MATERIAPRIMARow)(e.Row)), e.Action));
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            protected override void OnRowDeleting(global::System.Data.DataRowChangeEventArgs e) {
+                base.OnRowDeleting(e);
+                if ((this.CDC_MATERIAPRIMARowDeleting != null)) {
+                    this.CDC_MATERIAPRIMARowDeleting(this, new CDC_MATERIAPRIMARowChangeEvent(((CDC_MATERIAPRIMARow)(e.Row)), e.Action));
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public void RemoveCDC_MATERIAPRIMARow(CDC_MATERIAPRIMARow row) {
+                this.Rows.Remove(row);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public static global::System.Xml.Schema.XmlSchemaComplexType GetTypedTableSchema(global::System.Xml.Schema.XmlSchemaSet xs) {
+                global::System.Xml.Schema.XmlSchemaComplexType type = new global::System.Xml.Schema.XmlSchemaComplexType();
+                global::System.Xml.Schema.XmlSchemaSequence sequence = new global::System.Xml.Schema.XmlSchemaSequence();
+                CDCDS ds = new CDCDS();
+                global::System.Xml.Schema.XmlSchemaAny any1 = new global::System.Xml.Schema.XmlSchemaAny();
+                any1.Namespace = "http://www.w3.org/2001/XMLSchema";
+                any1.MinOccurs = new decimal(0);
+                any1.MaxOccurs = decimal.MaxValue;
+                any1.ProcessContents = global::System.Xml.Schema.XmlSchemaContentProcessing.Lax;
+                sequence.Items.Add(any1);
+                global::System.Xml.Schema.XmlSchemaAny any2 = new global::System.Xml.Schema.XmlSchemaAny();
+                any2.Namespace = "urn:schemas-microsoft-com:xml-diffgram-v1";
+                any2.MinOccurs = new decimal(1);
+                any2.ProcessContents = global::System.Xml.Schema.XmlSchemaContentProcessing.Lax;
+                sequence.Items.Add(any2);
+                global::System.Xml.Schema.XmlSchemaAttribute attribute1 = new global::System.Xml.Schema.XmlSchemaAttribute();
+                attribute1.Name = "namespace";
+                attribute1.FixedValue = ds.Namespace;
+                type.Attributes.Add(attribute1);
+                global::System.Xml.Schema.XmlSchemaAttribute attribute2 = new global::System.Xml.Schema.XmlSchemaAttribute();
+                attribute2.Name = "tableTypeName";
+                attribute2.FixedValue = "CDC_MATERIAPRIMADataTable";
+                type.Attributes.Add(attribute2);
+                type.Particle = sequence;
+                global::System.Xml.Schema.XmlSchema dsSchema = ds.GetSchemaSerializable();
+                if (xs.Contains(dsSchema.TargetNamespace)) {
+                    global::System.IO.MemoryStream s1 = new global::System.IO.MemoryStream();
+                    global::System.IO.MemoryStream s2 = new global::System.IO.MemoryStream();
+                    try {
+                        global::System.Xml.Schema.XmlSchema schema = null;
+                        dsSchema.Write(s1);
+                        for (global::System.Collections.IEnumerator schemas = xs.Schemas(dsSchema.TargetNamespace).GetEnumerator(); schemas.MoveNext(); ) {
+                            schema = ((global::System.Xml.Schema.XmlSchema)(schemas.Current));
+                            s2.SetLength(0);
+                            schema.Write(s2);
+                            if ((s1.Length == s2.Length)) {
+                                s1.Position = 0;
+                                s2.Position = 0;
+                                for (; ((s1.Position != s1.Length) 
+                                            && (s1.ReadByte() == s2.ReadByte())); ) {
+                                    ;
+                                }
+                                if ((s1.Position == s1.Length)) {
+                                    return type;
+                                }
+                            }
+                        }
+                    }
+                    finally {
+                        if ((s1 != null)) {
+                            s1.Close();
+                        }
+                        if ((s2 != null)) {
+                            s2.Close();
+                        }
+                    }
+                }
+                xs.Add(dsSchema);
+                return type;
+            }
+        }
+        
+        /// <summary>
         ///Represents strongly named DataRow class.
         ///</summary>
         public partial class USR_USERRow : global::System.Data.DataRow {
@@ -13924,6 +14238,71 @@ namespace CDCMetal.Entities {
         }
         
         /// <summary>
+        ///Represents strongly named DataRow class.
+        ///</summary>
+        public partial class CDC_MATERIAPRIMARow : global::System.Data.DataRow {
+            
+            private CDC_MATERIAPRIMADataTable tableCDC_MATERIAPRIMA;
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            internal CDC_MATERIAPRIMARow(global::System.Data.DataRowBuilder rb) : 
+                    base(rb) {
+                this.tableCDC_MATERIAPRIMA = ((CDC_MATERIAPRIMADataTable)(this.Table));
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public decimal IDMATERIAPRIMA {
+                get {
+                    try {
+                        return ((decimal)(this[this.tableCDC_MATERIAPRIMA.IDMATERIAPRIMAColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'IDMATERIAPRIMA\' in table \'CDC_MATERIAPRIMA\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableCDC_MATERIAPRIMA.IDMATERIAPRIMAColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public string PARTE {
+                get {
+                    return ((string)(this[this.tableCDC_MATERIAPRIMA.PARTEColumn]));
+                }
+                set {
+                    this[this.tableCDC_MATERIAPRIMA.PARTEColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public string MATERIAPRIMA {
+                get {
+                    return ((string)(this[this.tableCDC_MATERIAPRIMA.MATERIAPRIMAColumn]));
+                }
+                set {
+                    this[this.tableCDC_MATERIAPRIMA.MATERIAPRIMAColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public bool IsIDMATERIAPRIMANull() {
+                return this.IsNull(this.tableCDC_MATERIAPRIMA.IDMATERIAPRIMAColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public void SetIDMATERIAPRIMANull() {
+                this[this.tableCDC_MATERIAPRIMA.IDMATERIAPRIMAColumn] = global::System.Convert.DBNull;
+            }
+        }
+        
+        /// <summary>
         ///Row event argument class
         ///</summary>
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
@@ -14623,6 +15002,40 @@ namespace CDCMetal.Entities {
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             public CDC_CERTIFICATIPIOMBORow Row {
+                get {
+                    return this.eventRow;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public global::System.Data.DataRowAction Action {
+                get {
+                    return this.eventAction;
+                }
+            }
+        }
+        
+        /// <summary>
+        ///Row event argument class
+        ///</summary>
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+        public class CDC_MATERIAPRIMARowChangeEvent : global::System.EventArgs {
+            
+            private CDC_MATERIAPRIMARow eventRow;
+            
+            private global::System.Data.DataRowAction eventAction;
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public CDC_MATERIAPRIMARowChangeEvent(CDC_MATERIAPRIMARow row, global::System.Data.DataRowAction action) {
+                this.eventRow = row;
+                this.eventAction = action;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public CDC_MATERIAPRIMARow Row {
                 get {
                     return this.eventRow;
                 }

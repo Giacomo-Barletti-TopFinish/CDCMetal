@@ -26,7 +26,11 @@ namespace CDCMetal
 
         private void AssociaCertificatiPiomboFrm_Load(object sender, EventArgs e)
         {
+            CDCBLL bll = new CDCBLL();
             PopolaDDLDate();
+            bll.LeggiMateriaPrimaArticoli(_DS);
+
+            CaricaCertificatiPiombo();
         }
 
         private const string barraTonda = "Barra tonda";
@@ -36,21 +40,11 @@ namespace CDCMetal
         {
             _DS.CDC_CERTIFICATIPIOMBO.Clear();
             CDCBLL bll = new CDCBLL();
-            bll.FillCDC_CERTIFICATIPIOMBO_NonAssegnati(_DS);
+            bll.FillCDC_CERTIFICATIPIOMBO(_DS);
 
             foreach (CDCDS.CDC_CERTIFICATIPIOMBORow certificato in _DS.CDC_CERTIFICATIPIOMBO)
             {
                 decimal volume = 0;
-                //if (certificato.ELEMENTO as string == barraTonda)
-                //{
-                //    decimal raggio = certificato.LARGHEZZA / 2;
-                //    volume = (decimal)Math.PI * raggio * raggio * certificato.LUNGHEZZA;
-                //}
-                //else
-                //{
-                //    volume = certificato.LUNGHEZZA * certificato.LARGHEZZA * certificato.SPESSORE;
-                //}
-                volume = volume / 1000;
                 decimal pesoSpecifico = 8.40m;
 
                 if (certificato.MATERIALE == "OTTONE SENZA PIOMBO") pesoSpecifico = 8.36m;
@@ -62,7 +56,8 @@ namespace CDCMetal
                     IDCERTIFICATIPIOMBO = certificato.IDCERTIFICATIPIOMBO,
                     Peso = peso,
                     Volume = volume,
-                    DataCertificato = certificato.DATACERTIFICATO
+                    DataCertificato = certificato.DATACERTIFICATO,
+                    path = certificato.PATHFILE
                 };
                 lstCertificatiDaAssociare.Items.Add(cp);
             }
@@ -166,18 +161,19 @@ namespace CDCMetal
             try
             {
                 lblMessaggio.Text = string.Empty;
+                txtMateriaPrima.Text = string.Empty;
 
                 if (e.RowIndex == -1) return;
                 DataRow r = _DS.CDC_DETTAGLIO.Rows[e.RowIndex];
                 decimal IDDETTAGLIO = (decimal)r[0];
                 _dettaglio = _DS.CDC_DETTAGLIO.Where(x => x.IDDETTAGLIO == IDDETTAGLIO).FirstOrDefault();
 
-                CalcolaPesoRiga();
                 lstCertificatiAssociati.Items.Clear();
                 lstCertificatiDaAssociare.Items.Clear();
-                nPesoAssociazione.Value = 0;
                 CaricaCertificatiPiombo();
-
+                CDCDS.CDC_MATERIAPRIMARow materiaPrima = _DS.CDC_MATERIAPRIMA.Where(x => x.PARTE == _dettaglio.PARTE).FirstOrDefault();
+                if (materiaPrima != null)
+                    txtMateriaPrima.Text = materiaPrima.MATERIAPRIMA;
             }
             catch (Exception ex)
             {
@@ -185,16 +181,6 @@ namespace CDCMetal
             }
         }
 
-        private void CalcolaPesoRiga()
-        {
-            decimal aux = 0;
-            if (_dettaglio != null && !_dettaglio.IsQUANTITANull())
-            {
-                aux = (_dettaglio.QUANTITA * nPesoArticolo.Value) / 1000;
-            }
-            nPesoRiga.Value = aux;
-            associaColore();
-        }
 
         private void btnAssocia_Click(object sender, EventArgs e)
         {
@@ -202,24 +188,8 @@ namespace CDCMetal
             {
                 CertificatoPiombo cp = (CertificatoPiombo)lstCertificatiDaAssociare.SelectedItem;
                 lstCertificatiDaAssociare.Items.Remove(cp);
-                nPesoAssociazione.Value = nPesoAssociazione.Value + (cp.Peso / 1000);
                 lstCertificatiAssociati.Items.Add(cp);
             }
-            associaColore();
-        }
-
-        private void associaColore()
-        {
-            if (nPesoRiga.Value > 0)
-            {
-                if (nPesoRiga.Value > nPesoAssociazione.Value)
-                    nPesoAssociazione.BackColor = Color.OrangeRed;
-                if (nPesoRiga.Value <= nPesoAssociazione.Value)
-                    nPesoAssociazione.BackColor = Color.LightGreen;
-            }
-            else
-                nPesoAssociazione.BackColor = SystemColors.Control;
-
         }
 
         private void btnRimuovi_Click(object sender, EventArgs e)
@@ -228,21 +198,25 @@ namespace CDCMetal
             {
                 CertificatoPiombo cp = (CertificatoPiombo)lstCertificatiAssociati.SelectedItem;
                 lstCertificatiAssociati.Items.Remove(cp);
-                nPesoAssociazione.Value = nPesoAssociazione.Value - (cp.Peso / 1000);
                 lstCertificatiDaAssociare.Items.Add(cp);
             }
-            associaColore();
-        }
-
-        private void nPesoArticolo_ValueChanged(object sender, EventArgs e)
-        {
-            CalcolaPesoRiga();
         }
 
         private void btnCopiaCertificati_Click(object sender, EventArgs e)
         {
             try
             {
+                CDCDS.CDC_MATERIAPRIMARow materiaPrima = _DS.CDC_MATERIAPRIMA.Where(x => x.PARTE == _dettaglio.PARTE).FirstOrDefault();
+                if (materiaPrima != null)
+                    materiaPrima.MATERIAPRIMA = txtMateriaPrima.Text;
+                else
+                {
+                    materiaPrima = _DS.CDC_MATERIAPRIMA.NewCDC_MATERIAPRIMARow();
+                    materiaPrima.PARTE = _dettaglio.PARTE;
+                    materiaPrima.MATERIAPRIMA = txtMateriaPrima.Text;
+                    _DS.CDC_MATERIAPRIMA.AddCDC_MATERIAPRIMARow(materiaPrima);
+                }
+
                 if (lstCertificatiAssociati.Items.Count == 0)
                 {
                     MessageBox.Show("Associare almeno un certificato di analisi del piombo", "ATTENZIONE", MessageBoxButtons.OK, MessageBoxIcon.Warning);
@@ -259,26 +233,19 @@ namespace CDCMetal
                 CDCBLL bll = new CDCBLL();
                 foreach (CertificatoPiombo cp in lstCertificatiAssociati.Items)
                 {
-                    CDCDS.CDC_ASSOCIAZIONEPIOMBORow associazione = _DS.CDC_ASSOCIAZIONEPIOMBO.NewCDC_ASSOCIAZIONEPIOMBORow();
-                    associazione.DATAINSERIMENTO = DateTime.Now;
-                    associazione.IDCERTIFICATIPIOMBO = cp.IDCERTIFICATIPIOMBO;
-                    associazione.IDDETTAGLIO = _dettaglio.IDDETTAGLIO;
-                    associazione.PESOARTICOLO = nPesoArticolo.Value;
-                    associazione.PESOMATERIAPRIMA = nPesoAssociazione.Value;
-                    associazione.PESOPRODUZIONE = nPesoRiga.Value;
-                    associazione.UTENTE = Contesto.Utente.FULLNAMEUSER;
-                   
 
-                    CDCDS.CDC_CERTIFICATIPIOMBORow certificato = _DS.CDC_CERTIFICATIPIOMBO.Where(x => x.IDCERTIFICATIPIOMBO == cp.IDCERTIFICATIPIOMBO).FirstOrDefault();
-                    if (certificato == null)
-                    {
-                        MessageBox.Show("Errore nel recuperare il certificato IDCERTIFICATIPIOMBO:" + cp.IDCERTIFICATIPIOMBO.ToString(), "ERRORE", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                        return;
-                    }
-                    string cartella, nomeCampione;
-                    string spessore = certificato.IsSPESSORENull() ? string.Empty : certificato.SPESSORE.ToString();
+                    //CDCDS.CDC_CERTIFICATIPIOMBORow certificato = _DS.CDC_CERTIFICATIPIOMBO.Where(x => x.IDCERTIFICATIPIOMBO == cp.IDCERTIFICATIPIOMBO).FirstOrDefault();
+                    //if (certificato == null)
+                    //{
+                    //    MessageBox.Show("Errore nel recuperare il certificato IDCERTIFICATIPIOMBO:" + cp.IDCERTIFICATIPIOMBO.ToString(), "ERRORE", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    //    return;
+                    //}
+                    //string cartella, nomeCampione;
+                    //string spessore = certificato.IsSPESSORENull() ? string.Empty : certificato.SPESSORE.ToString();
 
-                    string fileDaCopiare = bll.CreaNomefileCertificatiAnalisiPiombo(certificato.ELEMENTO, certificato.LUNGHEZZA.ToString(), certificato.LARGHEZZA.ToString(), spessore, certificato.CODICE, certificato.DATACERTIFICATO, Contesto.PathAnalisiPiombo, out cartella, out nomeCampione);
+                    //                    string fileDaCopiare = bll.CreaNomefileCertificatiAnalisiPiombo(certificato.ELEMENTO, certificato.LUNGHEZZA.ToString(), certificato.LARGHEZZA.ToString(), spessore, certificato.CODICE, certificato.DATACERTIFICATO, Contesto.PathAnalisiPiombo, out cartella, out nomeCampione);
+
+                    string fileDaCopiare = cp.path;
                     DateTime dt = DateTime.Today;
                     DateTime dtCollaudo = DateTime.ParseExact(_dettaglio.DATACOLLAUDO, "dd/MM/yyyy", CultureInfo.InvariantCulture);
                     string pathDestinazione = CDCBLL.CreaPathCartella(dtCollaudo, Contesto.PathCollaudo, _dettaglio.ACCESSORISTA, _dettaglio.PREFISSO, _dettaglio.PARTE, _dettaglio.COLORE, _dettaglio.COMMESSAORDINE);
@@ -290,17 +257,16 @@ namespace CDCMetal
                         if (!Directory.Exists(pathDestinazione))
                             Directory.CreateDirectory(pathDestinazione);
                         File.Copy(fileDaCopiare, fileDestinazione, true);
-                        _DS.CDC_ASSOCIAZIONEPIOMBO.AddCDC_ASSOCIAZIONEPIOMBORow(associazione);
                     }
                     else
                         sbNonTrovati.AppendLine(fileDaCopiare);
                 }
-                bll.SalvaDatiAssociazionePiombo(_DS);
+                bll.SalvaMateriaPrima(_DS);
 
                 string messaggio = string.Format("I seguenti file sono stati copiati. {0}", sb.ToString());
                 MessageBox.Show(messaggio, "INFORMAZIONE", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
-                if(sbNonTrovati.Length>0)
+                if (sbNonTrovati.Length > 0)
                 {
                     messaggio = string.Format("I seguenti file NON sono stati trovati e quindi NON SONO STATI COPIATI I CERTIFICATI E NON E' STATO ASSOCIATO IL CERTIFICATO. {0}", sb.ToString());
                     MessageBox.Show(messaggio, "ATTENZIONE", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
@@ -313,10 +279,6 @@ namespace CDCMetal
             }
         }
 
-        private void lstCertificatiAssociati_SelectedIndexChanged(object sender, EventArgs e)
-        {
-
-        }
     }
 
     public class CertificatoPiombo
@@ -326,7 +288,7 @@ namespace CDCMetal
         public decimal Volume;
         public decimal Peso;
         public DateTime DataCertificato;
-
+        public string path;
         public override string ToString()
         {
             return string.Format("{0} - {1} - {2}", Descrizione, DataCertificato.ToShortDateString(), Peso / 1000);
