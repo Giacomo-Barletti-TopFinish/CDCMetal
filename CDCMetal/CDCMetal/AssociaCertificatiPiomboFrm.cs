@@ -57,7 +57,7 @@ namespace CDCMetal
                     Peso = peso,
                     Volume = volume,
                     DataCertificato = certificato.DATACERTIFICATO,
-                    path = certificato.PATHFILE
+                    path = certificato.IsPATHFILENull() ? string.Empty : certificato.PATHFILE
                 };
                 lstCertificatiDaAssociare.Items.Add(cp);
             }
@@ -206,6 +206,16 @@ namespace CDCMetal
         {
             try
             {
+                if (lstCertificatiAssociati.Items.Count == 0)
+                {
+                    MessageBox.Show("Associare almeno un certificato di analisi del piombo", "ATTENZIONE", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    return;
+                }
+                if (_dettaglio == null)
+                {
+                    MessageBox.Show("Selezionare una riga dalla griglia", "ATTENZIONE", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    return;
+                }
                 CDCDS.CDC_MATERIAPRIMARow materiaPrima = _DS.CDC_MATERIAPRIMA.Where(x => x.PARTE == _dettaglio.PARTE).FirstOrDefault();
                 if (materiaPrima != null)
                     materiaPrima.MATERIAPRIMA = txtMateriaPrima.Text;
@@ -217,16 +227,6 @@ namespace CDCMetal
                     _DS.CDC_MATERIAPRIMA.AddCDC_MATERIAPRIMARow(materiaPrima);
                 }
 
-                if (lstCertificatiAssociati.Items.Count == 0)
-                {
-                    MessageBox.Show("Associare almeno un certificato di analisi del piombo", "ATTENZIONE", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                    return;
-                }
-                if (_dettaglio == null)
-                {
-                    MessageBox.Show("Selezionare una riga dalla griglia", "ATTENZIONE", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                    return;
-                }
                 StringBuilder sb = new StringBuilder();
                 StringBuilder sbNonTrovati = new StringBuilder();
 
@@ -240,12 +240,24 @@ namespace CDCMetal
                     //    MessageBox.Show("Errore nel recuperare il certificato IDCERTIFICATIPIOMBO:" + cp.IDCERTIFICATIPIOMBO.ToString(), "ERRORE", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     //    return;
                     //}
-                    //string cartella, nomeCampione;
+                    string cartella, nomeCampione;
                     //string spessore = certificato.IsSPESSORENull() ? string.Empty : certificato.SPESSORE.ToString();
 
                     //                    string fileDaCopiare = bll.CreaNomefileCertificatiAnalisiPiombo(certificato.ELEMENTO, certificato.LUNGHEZZA.ToString(), certificato.LARGHEZZA.ToString(), spessore, certificato.CODICE, certificato.DATACERTIFICATO, Contesto.PathAnalisiPiombo, out cartella, out nomeCampione);
 
                     string fileDaCopiare = cp.path;
+                    if (string.IsNullOrEmpty(cp.path))
+                    {
+                        CDCDS.CDC_CERTIFICATIPIOMBORow certificato = _DS.CDC_CERTIFICATIPIOMBO.Where(x => x.IDCERTIFICATIPIOMBO == cp.IDCERTIFICATIPIOMBO).FirstOrDefault();
+                        if (certificato == null)
+                        {
+                            MessageBox.Show("Errore nel recuperare il certificato IDCERTIFICATIPIOMBO:" + cp.IDCERTIFICATIPIOMBO.ToString(), "ERRORE", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                            return;
+                        }
+
+                        fileDaCopiare = bll.CreaNomefileCertificatiAnalisiPiombo(certificato.ELEMENTO, certificato.LUNGHEZZA.ToString(), certificato.LARGHEZZA.ToString(), string.Empty, certificato.CODICE, certificato.DATACERTIFICATO, Contesto.PathAnalisiPiombo, out cartella, out nomeCampione);
+                    }
+
                     DateTime dt = DateTime.Today;
                     DateTime dtCollaudo = DateTime.ParseExact(_dettaglio.DATACOLLAUDO, "dd/MM/yyyy", CultureInfo.InvariantCulture);
                     string pathDestinazione = CDCBLL.CreaPathCartella(dtCollaudo, Contesto.PathCollaudo, _dettaglio.ACCESSORISTA, _dettaglio.PREFISSO, _dettaglio.PARTE, _dettaglio.COLORE, _dettaglio.COMMESSAORDINE);
