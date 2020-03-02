@@ -9633,7 +9633,6 @@ namespace CDCMetal.Entities {
                 base.Columns.Add(this.columnMATERIAPRIMA);
                 this.columnPARTE.AllowDBNull = false;
                 this.columnPARTE.MaxLength = 6;
-                this.columnMATERIAPRIMA.AllowDBNull = false;
                 this.columnMATERIAPRIMA.MaxLength = 100;
             }
             
@@ -14282,7 +14281,12 @@ namespace CDCMetal.Entities {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             public string MATERIAPRIMA {
                 get {
-                    return ((string)(this[this.tableCDC_MATERIAPRIMA.MATERIAPRIMAColumn]));
+                    try {
+                        return ((string)(this[this.tableCDC_MATERIAPRIMA.MATERIAPRIMAColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'MATERIAPRIMA\' in table \'CDC_MATERIAPRIMA\' is DBNull.", e);
+                    }
                 }
                 set {
                     this[this.tableCDC_MATERIAPRIMA.MATERIAPRIMAColumn] = value;
@@ -14299,6 +14303,18 @@ namespace CDCMetal.Entities {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             public void SetIDMATERIAPRIMANull() {
                 this[this.tableCDC_MATERIAPRIMA.IDMATERIAPRIMAColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public bool IsMATERIAPRIMANull() {
+                return this.IsNull(this.tableCDC_MATERIAPRIMA.MATERIAPRIMAColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public void SetMATERIAPRIMANull() {
+                this[this.tableCDC_MATERIAPRIMA.MATERIAPRIMAColumn] = global::System.Convert.DBNull;
             }
         }
         
