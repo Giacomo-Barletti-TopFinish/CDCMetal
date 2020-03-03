@@ -799,6 +799,7 @@ namespace CDCMetal.BLL
                     break;
 
                 case CDCBrands.Balenciaga:
+                case CDCBrands.McQueen:
                 case CDCBrands.YSL:
                     CreaReportSpessoriYSL(path, dt, numeroCampioni, dettaglio.PARTE, dettaglio.COLORE, numeroMisure, etichette, medie, iLoghi, misure);
                     break;

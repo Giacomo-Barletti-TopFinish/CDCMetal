@@ -257,7 +257,9 @@ namespace CDCMetal
 
             int numeroCampioni = (int)misurePrecedenti.Max(x => x.NMISURA) + 1;
             txtNumeroCampioni.Text = numeroCampioni.ToString();
-            if (((DataCollaudo)ddlDataCollaudo.SelectedItem).Brand == CDCBrands.YSL || ((DataCollaudo)ddlDataCollaudo.SelectedItem).Brand == CDCBrands.Balenciaga)
+            if (((DataCollaudo)ddlDataCollaudo.SelectedItem).Brand == CDCBrands.YSL 
+                || ((DataCollaudo)ddlDataCollaudo.SelectedItem).Brand == CDCBrands.Balenciaga
+                || ((DataCollaudo)ddlDataCollaudo.SelectedItem).Brand == CDCBrands.McQueen)
                 
             {
                 if (galvanica.MISURECAMPIONE > 0)
@@ -445,7 +447,9 @@ namespace CDCMetal
             }
 
             int numeroCampioni = int.Parse(txtNumeroCampioni.Text); // caso GUCCI
-            if (((DataCollaudo)ddlDataCollaudo.SelectedItem).Brand == CDCBrands.YSL || ((DataCollaudo)ddlDataCollaudo.SelectedItem).Brand == CDCBrands.Balenciaga)
+            if (((DataCollaudo)ddlDataCollaudo.SelectedItem).Brand == CDCBrands.YSL 
+                || ((DataCollaudo)ddlDataCollaudo.SelectedItem).Brand == CDCBrands.Balenciaga
+                || ((DataCollaudo)ddlDataCollaudo.SelectedItem).Brand == CDCBrands.McQueen)
             {
                 int numeroCampioniPerPezzo = int.Parse(txtNumeroCampioni.Text);
                 numeroCampioni = numeroCampioniPerPezzo * (int)nMisurePerCampione.Value;
@@ -545,6 +549,7 @@ namespace CDCMetal
                     txtNumeroCampioni.ReadOnly = true;
                     break;
                 case CDCBrands.Balenciaga:
+                case CDCBrands.McQueen:
                 case CDCBrands.YSL:
                     txtNumeroCampioni.ReadOnly = false;
                     txtNumeroCampioni.Text = "3";
