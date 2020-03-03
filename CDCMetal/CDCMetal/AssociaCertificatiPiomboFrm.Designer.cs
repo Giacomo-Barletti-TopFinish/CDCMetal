@@ -44,6 +44,8 @@
             this.label7 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.txtMateriaPrima = new System.Windows.Forms.TextBox();
+            this.txtFiltro = new System.Windows.Forms.TextBox();
+            this.btnFiltro = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this._DS)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvDettaglio)).BeginInit();
             this.groupBox1.SuspendLayout();
@@ -131,7 +133,7 @@
             // 
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(262, 350);
+            this.label5.Location = new System.Drawing.Point(262, 375);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(123, 18);
             this.label5.TabIndex = 20;
@@ -140,7 +142,7 @@
             // btnAssocia
             // 
             this.btnAssocia.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnAssocia.Location = new System.Drawing.Point(599, 373);
+            this.btnAssocia.Location = new System.Drawing.Point(599, 398);
             this.btnAssocia.Name = "btnAssocia";
             this.btnAssocia.Size = new System.Drawing.Size(110, 33);
             this.btnAssocia.TabIndex = 2;
@@ -153,7 +155,7 @@
             this.lstCertificatiDaAssociare.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lstCertificatiDaAssociare.FormattingEnabled = true;
             this.lstCertificatiDaAssociare.ItemHeight = 16;
-            this.lstCertificatiDaAssociare.Location = new System.Drawing.Point(249, 373);
+            this.lstCertificatiDaAssociare.Location = new System.Drawing.Point(249, 398);
             this.lstCertificatiDaAssociare.Name = "lstCertificatiDaAssociare";
             this.lstCertificatiDaAssociare.Size = new System.Drawing.Size(313, 196);
             this.lstCertificatiDaAssociare.TabIndex = 22;
@@ -164,7 +166,7 @@
             this.lstCertificatiAssociati.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lstCertificatiAssociati.FormattingEnabled = true;
             this.lstCertificatiAssociati.ItemHeight = 16;
-            this.lstCertificatiAssociati.Location = new System.Drawing.Point(752, 373);
+            this.lstCertificatiAssociati.Location = new System.Drawing.Point(752, 398);
             this.lstCertificatiAssociati.Name = "lstCertificatiAssociati";
             this.lstCertificatiAssociati.Size = new System.Drawing.Size(313, 196);
             this.lstCertificatiAssociati.TabIndex = 22;
@@ -173,7 +175,7 @@
             // btnRimuovi
             // 
             this.btnRimuovi.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnRimuovi.Location = new System.Drawing.Point(599, 430);
+            this.btnRimuovi.Location = new System.Drawing.Point(599, 455);
             this.btnRimuovi.Name = "btnRimuovi";
             this.btnRimuovi.Size = new System.Drawing.Size(110, 33);
             this.btnRimuovi.TabIndex = 2;
@@ -196,7 +198,7 @@
             // 
             this.label7.AutoSize = true;
             this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label7.Location = new System.Drawing.Point(749, 350);
+            this.label7.Location = new System.Drawing.Point(749, 375);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(132, 18);
             this.label7.TabIndex = 20;
@@ -220,11 +222,31 @@
             this.txtMateriaPrima.Size = new System.Drawing.Size(576, 20);
             this.txtMateriaPrima.TabIndex = 23;
             // 
+            // txtFiltro
+            // 
+            this.txtFiltro.Location = new System.Drawing.Point(249, 342);
+            this.txtFiltro.Name = "txtFiltro";
+            this.txtFiltro.Size = new System.Drawing.Size(171, 20);
+            this.txtFiltro.TabIndex = 24;
+            // 
+            // btnFiltro
+            // 
+            this.btnFiltro.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F);
+            this.btnFiltro.Location = new System.Drawing.Point(482, 336);
+            this.btnFiltro.Name = "btnFiltro";
+            this.btnFiltro.Size = new System.Drawing.Size(75, 33);
+            this.btnFiltro.TabIndex = 25;
+            this.btnFiltro.Text = "Filtra";
+            this.btnFiltro.UseVisualStyleBackColor = true;
+            this.btnFiltro.Click += new System.EventHandler(this.btnFiltro_Click);
+            // 
             // AssociaCertificatiPiomboFrm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1384, 685);
+            this.Controls.Add(this.btnFiltro);
+            this.Controls.Add(this.txtFiltro);
             this.Controls.Add(this.txtMateriaPrima);
             this.Controls.Add(this.lstCertificatiAssociati);
             this.Controls.Add(this.lstCertificatiDaAssociare);
@@ -267,5 +289,7 @@
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.TextBox txtMateriaPrima;
+        private System.Windows.Forms.TextBox txtFiltro;
+        private System.Windows.Forms.Button btnFiltro;
     }
 }

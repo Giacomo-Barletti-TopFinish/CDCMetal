@@ -308,7 +308,7 @@ namespace CDCMetal.Data
 
 
 
-            string select = @"SELECT * FROM CDC_CERTIFICATIPIOMBO order by datacertificato desc";
+            string select = @"SELECT * FROM CDC_CERTIFICATIPIOMBO order by datacertificato desc, elemento";
 
             using (DbDataAdapter da = BuildDataAdapter(select))
             {

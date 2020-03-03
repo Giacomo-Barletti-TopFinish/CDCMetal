@@ -31,19 +31,22 @@ namespace CDCMetal
             PopolaDDLDate();
             bll.LeggiMateriaPrimaArticoli(_DS);
 
-            CaricaCertificatiPiombo();
+            CaricaCertificatiPiombo(string.Empty);
         }
 
         private const string barraTonda = "Barra tonda";
         private const string piatto = "Piatto";
 
-        private void CaricaCertificatiPiombo()
+        private void CaricaCertificatiPiombo(string filtro)
         {
             _DS.CDC_CERTIFICATIPIOMBO.Clear();
             CDCBLL bll = new CDCBLL();
             bll.FillCDC_CERTIFICATIPIOMBO(_DS);
 
-            foreach (CDCDS.CDC_CERTIFICATIPIOMBORow certificato in _DS.CDC_CERTIFICATIPIOMBO)
+            lstCertificatiDaAssociare.Items.Clear();
+            List<CDCDS.CDC_CERTIFICATIPIOMBORow> certificati = _DS.CDC_CERTIFICATIPIOMBO.ToList();
+
+            foreach (CDCDS.CDC_CERTIFICATIPIOMBORow certificato in certificati)
             {
                 decimal volume = 0;
                 decimal pesoSpecifico = 8.40m;
@@ -60,6 +63,10 @@ namespace CDCMetal
                     DataCertificato = certificato.DATACERTIFICATO,
                     path = certificato.IsPATHFILENull() ? string.Empty : certificato.PATHFILE
                 };
+
+                if (!string.IsNullOrEmpty(filtro) && !cp.ToString().Contains(filtro))
+                    continue;
+
                 lstCertificatiDaAssociare.Items.Add(cp);
             }
         }
@@ -170,8 +177,8 @@ namespace CDCMetal
                 _dettaglio = _DS.CDC_DETTAGLIO.Where(x => x.IDDETTAGLIO == IDDETTAGLIO).FirstOrDefault();
 
                 lstCertificatiAssociati.Items.Clear();
-                lstCertificatiDaAssociare.Items.Clear();
-                CaricaCertificatiPiombo();
+
+                CaricaCertificatiPiombo(string.Empty);
                 CDCDS.CDC_MATERIAPRIMARow materiaPrima = _DS.CDC_MATERIAPRIMA.Where(x => x.PARTE == _dettaglio.PARTE).FirstOrDefault();
                 if (materiaPrima != null)
                     txtMateriaPrima.Text = materiaPrima.MATERIAPRIMA;
@@ -305,6 +312,11 @@ namespace CDCMetal
             string filename = EstraiPathFileDaCopiare(cp);
             if (File.Exists(filename))
                 Process.Start(filename);
+        }
+
+        private void btnFiltro_Click(object sender, EventArgs e)
+        {
+            CaricaCertificatiPiombo(txtFiltro.Text.ToUpper());
         }
     }
 
