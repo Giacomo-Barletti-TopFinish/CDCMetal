@@ -4,6 +4,7 @@ using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Diagnostics;
 using System.Drawing;
 using System.Globalization;
 using System.IO;
@@ -239,24 +240,12 @@ namespace CDCMetal
                     //{
                     //    MessageBox.Show("Errore nel recuperare il certificato IDCERTIFICATIPIOMBO:" + cp.IDCERTIFICATIPIOMBO.ToString(), "ERRORE", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     //    return;
-                    //}
-                    string cartella, nomeCampione;
+                    //}                   
                     //string spessore = certificato.IsSPESSORENull() ? string.Empty : certificato.SPESSORE.ToString();
 
                     //                    string fileDaCopiare = bll.CreaNomefileCertificatiAnalisiPiombo(certificato.ELEMENTO, certificato.LUNGHEZZA.ToString(), certificato.LARGHEZZA.ToString(), spessore, certificato.CODICE, certificato.DATACERTIFICATO, Contesto.PathAnalisiPiombo, out cartella, out nomeCampione);
 
-                    string fileDaCopiare = cp.path;
-                    if (string.IsNullOrEmpty(cp.path))
-                    {
-                        CDCDS.CDC_CERTIFICATIPIOMBORow certificato = _DS.CDC_CERTIFICATIPIOMBO.Where(x => x.IDCERTIFICATIPIOMBO == cp.IDCERTIFICATIPIOMBO).FirstOrDefault();
-                        if (certificato == null)
-                        {
-                            MessageBox.Show("Errore nel recuperare il certificato IDCERTIFICATIPIOMBO:" + cp.IDCERTIFICATIPIOMBO.ToString(), "ERRORE", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                            return;
-                        }
-
-                        fileDaCopiare = bll.CreaNomefileCertificatiAnalisiPiombo(certificato.ELEMENTO, certificato.LUNGHEZZA.ToString(), certificato.LARGHEZZA.ToString(), string.Empty, certificato.CODICE, certificato.DATACERTIFICATO, Contesto.PathAnalisiPiombo, out cartella, out nomeCampione);
-                    }
+                    string fileDaCopiare = EstraiPathFileDaCopiare(cp);
 
                     DateTime dt = DateTime.Today;
                     DateTime dtCollaudo = DateTime.ParseExact(_dettaglio.DATACOLLAUDO, "dd/MM/yyyy", CultureInfo.InvariantCulture);
@@ -291,6 +280,32 @@ namespace CDCMetal
             }
         }
 
+        private string EstraiPathFileDaCopiare(CertificatoPiombo cp)
+        {
+            CDCBLL bll = new CDCBLL();
+            string cartella, nomeCampione;
+            string fileDaCopiare = cp.path;
+            if (string.IsNullOrEmpty(cp.path))
+            {
+                CDCDS.CDC_CERTIFICATIPIOMBORow certificato = _DS.CDC_CERTIFICATIPIOMBO.Where(x => x.IDCERTIFICATIPIOMBO == cp.IDCERTIFICATIPIOMBO).FirstOrDefault();
+                if (certificato == null)
+                {
+                    return string.Empty;
+                }
+
+                fileDaCopiare = bll.CreaNomefileCertificatiAnalisiPiombo(certificato.ELEMENTO, certificato.LUNGHEZZA.ToString(), certificato.LARGHEZZA.ToString(), string.Empty, certificato.CODICE, certificato.DATACERTIFICATO, Contesto.PathAnalisiPiombo, out cartella, out nomeCampione);
+            }
+            return fileDaCopiare;
+        }
+
+        private void lstCertificatiDaAssociare_DoubleClick(object sender, EventArgs e)
+        {
+            ListBox lst = (ListBox)sender;
+            CertificatoPiombo cp = (CertificatoPiombo)lst.SelectedItem;
+            string filename = EstraiPathFileDaCopiare(cp);
+            if (File.Exists(filename))
+                Process.Start(filename);
+        }
     }
 
     public class CertificatoPiombo

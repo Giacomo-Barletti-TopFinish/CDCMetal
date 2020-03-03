@@ -157,6 +157,7 @@
             this.lstCertificatiDaAssociare.Name = "lstCertificatiDaAssociare";
             this.lstCertificatiDaAssociare.Size = new System.Drawing.Size(313, 196);
             this.lstCertificatiDaAssociare.TabIndex = 22;
+            this.lstCertificatiDaAssociare.DoubleClick += new System.EventHandler(this.lstCertificatiDaAssociare_DoubleClick);
             // 
             // lstCertificatiAssociati
             // 
@@ -167,6 +168,7 @@
             this.lstCertificatiAssociati.Name = "lstCertificatiAssociati";
             this.lstCertificatiAssociati.Size = new System.Drawing.Size(313, 196);
             this.lstCertificatiAssociati.TabIndex = 22;
+            this.lstCertificatiAssociati.DoubleClick += new System.EventHandler(this.lstCertificatiDaAssociare_DoubleClick);
             // 
             // btnRimuovi
             // 
