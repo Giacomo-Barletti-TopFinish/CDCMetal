@@ -1,0 +1,29 @@
+INFO  2020-03-02 13:56:07,994   364ms MainForm               LogScrivi          - Applicazione CDCMetal avviata
+ERROR 2020-03-02 14:00:36,184 268554ms MainForm               LogScriviErrore    - Errore salva associazione 
+Oracle.ManagedDataAccess.Client.OracleException (0x80004005): ORA-01400: impossibile inserire NULL in ("ITUSER_TEST"."CDC_MATERIAPRIMA"."MATERIAPRIMA")
+   in System.Data.Common.DbDataAdapter.UpdatedRowStatusErrors(RowUpdatedEventArgs rowUpdatedEvent, BatchCommandInfo[] batchCommands, Int32 commandCount)
+   in System.Data.Common.DbDataAdapter.UpdatedRowStatus(RowUpdatedEventArgs rowUpdatedEvent, BatchCommandInfo[] batchCommands, Int32 commandCount)
+   in System.Data.Common.DbDataAdapter.Update(DataRow[] dataRows, DataTableMapping tableMapping)
+   in Oracle.ManagedDataAccess.Client.OracleDataAdapter.Update(DataRow[] dataRows, DataTableMapping tableMapping)
+   in System.Data.Common.DbDataAdapter.UpdateFromDataTable(DataTable dataTable, DataTableMapping tableMapping)
+   in System.Data.Common.DbDataAdapter.Update(DataTable dataTable)
+   in CDCMetal.Data.CDCMetalAdapter.UpdateTable(String tablename, CDCDS ds) in C:\VSProgetti\CDCMetal\CDCMetal\CDCMetal.Data\CDCMetalAdapter.cs:riga 68
+   in CDCMetal.Data.CDCMetalBusiness.UpdateMateriaprima(CDCDS ds) in C:\VSProgetti\CDCMetal\CDCMetal\CDCMetal.Data\CDCMetalBusiness.cs:riga 142
+   in CDCMetal.BLL.CDCBLL.SalvaMateriaPrima(CDCDS ds) in C:\VSProgetti\CDCMetal\CDCMetal\CDCMetal.BLL\CDCBLL.cs:riga 288
+   in CDCMetal.AssociaCertificatiPiomboFrm.btnCopiaCertificati_Click(Object sender, EventArgs e) in C:\VSProgetti\CDCMetal\CDCMetal\CDCMetal\AssociaCertificatiPiomboFrm.cs:riga 276
+INFO  2020-03-02 14:02:20,403   192ms MainForm               LogScrivi          - Applicazione CDCMetal avviata
+INFO  2020-03-02 14:05:30,315 190104ms MainForm               LogScrivi          - Applicazione CDCMetal fermata
+INFO  2020-03-03 09:12:21,191   152ms MainForm               LogScrivi          - Applicazione CDCMetal avviata
+INFO  2020-03-03 09:20:51,758   146ms MainForm               LogScrivi          - Applicazione CDCMetal avviata
+INFO  2020-03-03 14:51:11,817   158ms MainForm               LogScrivi          - Applicazione CDCMetal avviata
+INFO  2020-03-03 16:37:52,890   185ms MainForm               LogScrivi          - Applicazione CDCMetal avviata
+INFO  2020-03-03 16:37:56,118  3413ms MainForm               LogScrivi          - Applicazione CDCMetal fermata
+INFO  2020-03-03 16:39:00,963   147ms MainForm               LogScrivi          - Applicazione CDCMetal avviata
+INFO  2020-03-03 16:51:09,418   148ms MainForm               LogScrivi          - Applicazione CDCMetal avviata
+INFO  2020-03-03 16:52:29,812 80543ms MainForm               LogScrivi          - Applicazione CDCMetal fermata
+INFO  2020-04-06 13:28:43,904   227ms MainForm               LogScrivi          - Applicazione CDCMetal avviata
+INFO  2020-04-06 13:28:47,979  4302ms MainForm               LogScrivi          - Applicazione CDCMetal fermata
+INFO  2020-04-30 10:21:30,076   143ms MainForm               LogScrivi          - Applicazione CDCMetal avviata
+INFO  2020-04-30 10:28:16,121 406188ms MainForm               LogScrivi          - Applicazione CDCMetal fermata
+INFO  2020-05-04 17:32:16,453   257ms MainForm               LogScrivi          - Applicazione CDCMetal avviata
+INFO  2020-05-04 17:36:52,639 276444ms MainForm               LogScrivi          - Applicazione CDCMetal fermata

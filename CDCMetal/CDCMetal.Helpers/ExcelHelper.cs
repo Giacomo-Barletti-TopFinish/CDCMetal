@@ -50,14 +50,23 @@ namespace CDCMetal.Helpers
                 CDCDS.CDC_DETTAGLIORow dettaglio = ds.CDC_DETTAGLIO.NewCDC_DETTAGLIORow();
                 dettaglio.IDEXCEL = IDEXCEL;
                 int count = r.Elements<Cell>().Count();
+                bool saltaRiga = false;
                 foreach (Cell cell in r.Elements<Cell>())
                 {
                     string cella = EstraiValoreCella(cell, sharedStringTable, cellFormats, numberingFormats);
                     cella = cella.Trim();
                     string colonna = GetColumnReference(cell);
+
+                    if (saltaRiga) continue;
+
                     switch (colonna)
                     {
                         case "A": //idprenotazione
+                            if(string.IsNullOrEmpty(cella))
+                            {
+                                saltaRiga = true;
+                                continue;
+                            }
                             esito = EstraiValoreCellaDecimal(cella, "IDPRENOTAZIONE", dettaglio, out messaggioErrore);
                             break;
                         case "B": // id_verbale

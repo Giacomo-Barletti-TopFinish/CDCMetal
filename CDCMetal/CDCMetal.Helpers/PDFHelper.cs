@@ -1449,7 +1449,7 @@ namespace CDCMetal.Helpers
             cell.VerticalAlignment = VerticalAlignment.Center;
             cell.Format.Font.Bold = true;
             cell.Format.Font.Size = 14;
-            cell.AddParagraph("Esito test (30 sec) turbula");
+            cell.AddParagraph("Esito test (30 sec) ");
 
             cell = row.Cells[1];
             cell.Format.Alignment = ParagraphAlignment.Center;
