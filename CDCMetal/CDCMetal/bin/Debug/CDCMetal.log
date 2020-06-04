@@ -27,3 +27,45 @@ INFO  2020-04-30 10:21:30,076   143ms MainForm               LogScrivi          
 INFO  2020-04-30 10:28:16,121 406188ms MainForm               LogScrivi          - Applicazione CDCMetal fermata
 INFO  2020-05-04 17:32:16,453   257ms MainForm               LogScrivi          - Applicazione CDCMetal avviata
 INFO  2020-05-04 17:36:52,639 276444ms MainForm               LogScrivi          - Applicazione CDCMetal fermata
+INFO  2020-05-12 19:49:12,581   193ms MainForm               LogScrivi          - Applicazione CDCMetal avviata
+ERROR 2020-05-12 19:51:44,394 152006ms MainForm               LogScriviErrore    - ERRORE IN APRI FILE EXCEL
+System.ArgumentNullException: Il valore non può essere null.
+Nome parametro: source
+   in System.Linq.Enumerable.Cast[TResult](IEnumerable source)
+   in CDCMetal.Helpers.ExcelHelper.EstraiValoreCella(Cell cell, SharedStringTable sharedStringTable, CellFormats cellFormats, NumberingFormats numberingFormats) in C:\VSProgetti\CDCMetal\CDCMetal\CDCMetal.Helpers\ExcelHelper.cs:riga 626
+   in CDCMetal.Helpers.ExcelHelper.ReadCDC(Stream stream, CDCDS ds, Decimal IDEXCEL, String utente, String& messaggioErrore) in C:\VSProgetti\CDCMetal\CDCMetal\CDCMetal.Helpers\ExcelHelper.cs:riga 56
+   in CDCMetal.BLL.ExcelBLL.LeggiExcelCDC(CDCDS ds, String filePath, String utente, String brand, String& messaggioErrore) in C:\VSProgetti\CDCMetal\CDCMetal\CDCMetal.BLL\ExcelBLL.cs:riga 44
+   in CDCMetal.ExcelCaricaNuovoDocumentoFrm.btnApriFile_Click(Object sender, EventArgs e) in C:\VSProgetti\CDCMetal\CDCMetal\CDCMetal\ExcelCaricaNuovoDocumentoFrm.cs:riga 75
+ERROR 2020-05-12 19:52:11,590 179203ms MainForm               LogScriviErrore    - ERRORE IN APRI FILE EXCEL
+System.ArgumentNullException: Il valore non può essere null.
+Nome parametro: source
+   in System.Linq.Enumerable.Cast[TResult](IEnumerable source)
+   in CDCMetal.Helpers.ExcelHelper.EstraiValoreCella(Cell cell, SharedStringTable sharedStringTable, CellFormats cellFormats, NumberingFormats numberingFormats) in C:\VSProgetti\CDCMetal\CDCMetal\CDCMetal.Helpers\ExcelHelper.cs:riga 626
+   in CDCMetal.Helpers.ExcelHelper.ReadCDC(Stream stream, CDCDS ds, Decimal IDEXCEL, String utente, String& messaggioErrore) in C:\VSProgetti\CDCMetal\CDCMetal\CDCMetal.Helpers\ExcelHelper.cs:riga 56
+   in CDCMetal.BLL.ExcelBLL.LeggiExcelCDC(CDCDS ds, String filePath, String utente, String brand, String& messaggioErrore) in C:\VSProgetti\CDCMetal\CDCMetal\CDCMetal.BLL\ExcelBLL.cs:riga 44
+   in CDCMetal.ExcelCaricaNuovoDocumentoFrm.btnApriFile_Click(Object sender, EventArgs e) in C:\VSProgetti\CDCMetal\CDCMetal\CDCMetal\ExcelCaricaNuovoDocumentoFrm.cs:riga 75
+ERROR 2020-05-12 19:53:22,647 250259ms MainForm               LogScriviErrore    - ERRORE IN APRI FILE EXCEL
+System.ArgumentNullException: Il valore non può essere null.
+Nome parametro: source
+   in System.Linq.Enumerable.Cast[TResult](IEnumerable source)
+   in CDCMetal.Helpers.ExcelHelper.EstraiValoreCella(Cell cell, SharedStringTable sharedStringTable, CellFormats cellFormats, NumberingFormats numberingFormats) in C:\VSProgetti\CDCMetal\CDCMetal\CDCMetal.Helpers\ExcelHelper.cs:riga 626
+   in CDCMetal.Helpers.ExcelHelper.ReadCDC(Stream stream, CDCDS ds, Decimal IDEXCEL, String utente, String& messaggioErrore) in C:\VSProgetti\CDCMetal\CDCMetal\CDCMetal.Helpers\ExcelHelper.cs:riga 56
+   in CDCMetal.BLL.ExcelBLL.LeggiExcelCDC(CDCDS ds, String filePath, String utente, String brand, String& messaggioErrore) in C:\VSProgetti\CDCMetal\CDCMetal\CDCMetal.BLL\ExcelBLL.cs:riga 44
+   in CDCMetal.ExcelCaricaNuovoDocumentoFrm.btnApriFile_Click(Object sender, EventArgs e) in C:\VSProgetti\CDCMetal\CDCMetal\CDCMetal\ExcelCaricaNuovoDocumentoFrm.cs:riga 75
+INFO  2020-05-12 19:53:27,483 255095ms MainForm               LogScrivi          - Applicazione CDCMetal fermata
+INFO  2020-05-12 19:53:56,817   155ms MainForm               LogScrivi          - Applicazione CDCMetal avviata
+ERROR 2020-05-12 19:54:12,015 15353ms MainForm               LogScriviErrore    - ERRORE IN APRI FILE EXCEL
+System.ArgumentNullException: Il valore non può essere null.
+Nome parametro: source
+   in System.Linq.Enumerable.Cast[TResult](IEnumerable source)
+   in CDCMetal.Helpers.ExcelHelper.EstraiValoreCella(Cell cell, SharedStringTable sharedStringTable, CellFormats cellFormats, NumberingFormats numberingFormats) in C:\VSProgetti\CDCMetal\CDCMetal\CDCMetal.Helpers\ExcelHelper.cs:riga 626
+   in CDCMetal.Helpers.ExcelHelper.ReadCDC(Stream stream, CDCDS ds, Decimal IDEXCEL, String utente, String& messaggioErrore) in C:\VSProgetti\CDCMetal\CDCMetal\CDCMetal.Helpers\ExcelHelper.cs:riga 56
+   in CDCMetal.BLL.ExcelBLL.LeggiExcelCDC(CDCDS ds, String filePath, String utente, String brand, String& messaggioErrore) in C:\VSProgetti\CDCMetal\CDCMetal\CDCMetal.BLL\ExcelBLL.cs:riga 44
+   in CDCMetal.ExcelCaricaNuovoDocumentoFrm.btnApriFile_Click(Object sender, EventArgs e) in C:\VSProgetti\CDCMetal\CDCMetal\CDCMetal\ExcelCaricaNuovoDocumentoFrm.cs:riga 75
+INFO  2020-05-12 19:54:17,524 20862ms MainForm               LogScrivi          - Applicazione CDCMetal fermata
+INFO  2020-05-12 19:54:38,499   168ms MainForm               LogScrivi          - Applicazione CDCMetal avviata
+INFO  2020-05-21 10:23:25,192   165ms MainForm               LogScrivi          - Applicazione CDCMetal avviata
+INFO  2020-05-21 10:38:47,615   135ms MainForm               LogScrivi          - Applicazione CDCMetal avviata
+INFO  2020-05-21 10:41:08,868 141389ms MainForm               LogScrivi          - Applicazione CDCMetal fermata
+INFO  2020-06-04 12:16:23,684   165ms MainForm               LogScrivi          - Applicazione CDCMetal avviata
+INFO  2020-06-04 12:18:03,811   124ms MainForm               LogScrivi          - Applicazione CDCMetal avviata
