@@ -2,3 +2,6 @@ INFO  2018-10-23 17:02:22,194   109ms MainForm               .ctor              
 INFO  2018-10-23 17:02:27,223  5138ms MainForm               inForm_FormClosing - Applicazione CDCMetal fermata
 INFO  2020-03-03 09:21:39,058   128ms MainForm               .ctor              - Applicazione CDCMetal avviata
 INFO  2020-03-03 09:22:19,645 40715ms MainForm               inForm_FormClosing - Applicazione CDCMetal fermata
+INFO  2020-09-02 12:33:06,373   203ms MainForm               .ctor              - Applicazione CDCMetal avviata
+INFO  2020-09-02 12:34:26,475 80305ms MainForm               inForm_FormClosing - Applicazione CDCMetal fermata
+INFO  2020-09-02 15:27:50,975   151ms MainForm               .ctor              - Applicazione CDCMetal avviata

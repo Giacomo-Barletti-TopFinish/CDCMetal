@@ -39,6 +39,7 @@
             this.btnStampaEtichette = new System.Windows.Forms.Button();
             this.btnVerificaEtichette = new System.Windows.Forms.Button();
             this.label2 = new System.Windows.Forms.Label();
+            ((System.ComponentModel.ISupportInitialize)(this._DS)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvDettaglio)).BeginInit();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
@@ -164,7 +165,7 @@
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(405, 18);
             this.label2.TabIndex = 6;
-            this.label2.Text = "NUMORE ETICHETTE deve essere nel formato NSCXQTA;";
+            this.label2.Text = "NUMERO ETICHETTE deve essere nel formato NSCXQTA;";
             // 
             // CreaEtichetteFrm
             // 
@@ -177,6 +178,7 @@
             this.Name = "CreaEtichetteFrm";
             this.Text = "CreaEtichetteFrm";
             this.Load += new System.EventHandler(this.CreaEtichetteFrm_Load);
+            ((System.ComponentModel.ISupportInitialize)(this._DS)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvDettaglio)).EndInit();
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();

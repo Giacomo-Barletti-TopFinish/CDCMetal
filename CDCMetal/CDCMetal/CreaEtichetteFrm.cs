@@ -224,7 +224,9 @@ namespace CDCMetal
                     destinazione = destinazione.Trim();
                     numeroEtichette = numeroEtichette.Replace(" ", string.Empty).ToUpper();
 
-                    if (string.IsNullOrEmpty(linea))
+                    string finitura = (string)riga[5];
+                    finitura = finitura.ToUpper().Trim();
+                    if ((!string.IsNullOrEmpty(finitura) || !(finitura == "NULL")) && string.IsNullOrEmpty(linea))
                     {
                         mostraMessaggioErrore = true;
                         messaggioErrore.AppendLine(string.Format("Riga {0}: Inserire la linea", indiceRiga));

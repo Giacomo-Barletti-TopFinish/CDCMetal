@@ -11,9 +11,9 @@ namespace CDCMetal.Helpers
     {
         public static void EseguiStampaEtichetta(string zebraPrinter, DataRow riga, string quantita)
         {
-#if DEBUG
-            return;
-#endif
+//#if DEBUG
+//            return;
+//#endif
 
             string linea = string.Empty;
             if (riga[9] != System.DBNull.Value)
@@ -47,9 +47,9 @@ namespace CDCMetal.Helpers
 
         public static void EseguiStampaEtichettaSeparatore(string zebraPrinter)
         {
-#if DEBUG
-            return;
-#endif
+//#if DEBUG
+//            return;
+//#endif
             string asterischi = "******************";
             EtichettaCDC(zebraPrinter, asterischi, string.Empty, asterischi, string.Empty, asterischi, string.Empty, string.Empty, string.Empty, string.Empty, string.Empty);
 
@@ -58,6 +58,8 @@ namespace CDCMetal.Helpers
         public static void EtichettaCDC(string zebraPrinter, string accessorista, string descrizione, string quantita, string destinazione, string commessa, string collaudo, string prefisso, string parte, string colore, string linea)
         {
             string articolo = string.Format("{0}-{1}-{2}-{3}", prefisso, parte, colore, linea);
+            if (string.IsNullOrEmpty(colore)||colore.ToUpper().Trim()=="NULL")
+                articolo = string.Format("{0}-{1}", prefisso, parte);
 
             //            zebraPrinter = @"\\k-conf-01\ZDesigner GK420t";
             StringBuilder sb = new StringBuilder();
