@@ -786,7 +786,7 @@ namespace CDCMetal.BLL
             }
             List<string> elementoRiga = new List<string>();
 
-            string operatore = "MM";
+            string operatore = "IP";
             if (!Directory.Exists(cartella))
                 Directory.CreateDirectory(cartella);
 

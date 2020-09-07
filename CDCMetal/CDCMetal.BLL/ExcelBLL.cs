@@ -79,6 +79,12 @@ namespace CDCMetal.BLL
 
             List<decimal> IDPRENOTAZIONEDUPLICATI = dsDB.CDC_DETTAGLIO.Select(x => x.IDPRENOTAZIONE).Distinct().ToList();
 
+            foreach (CDCDS.CDC_DETTAGLIORow riga in ds.CDC_DETTAGLIO)
+            {
+                if (string.IsNullOrEmpty(riga.ENTE))
+                    riga.ENTE = "-";
+            }
+
             return IDPRENOTAZIONEDUPLICATI;
         }
 

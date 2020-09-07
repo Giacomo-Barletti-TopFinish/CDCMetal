@@ -229,6 +229,7 @@ namespace CDCMetal
                     case "8900":
                     case "8000":
                     case "0901":
+                    case "8687":
                         return "85";
                     case "0812":
                     case "8991":
@@ -258,6 +259,8 @@ namespace CDCMetal
                     case "8991":
                     case "0912":
                         return "5";
+                    case "8687":
+                        return "6";
                     case "8126":
                     case "8926":
                     case "0926":
@@ -287,6 +290,8 @@ namespace CDCMetal
                     case "0926":
                     case "8931":
                         return "";
+                    case "8687":
+                        return "30";
                     case "8130":
                         return "0";
                 }
@@ -301,6 +306,7 @@ namespace CDCMetal
                     case "8053":
                     case "8953":
                     case "8900":
+                    case "8687":
                     case "0953":
                         return "2";
                     case "8000":
@@ -329,7 +335,7 @@ namespace CDCMetal
                     case "8000":
                     case "8900":
                     case "0901":
-                        return "1";
+                    case "8687":
                     case "0812":
                     case "8991":
                     case "0912":
@@ -338,7 +344,6 @@ namespace CDCMetal
                     case "8926":
                     case "0926":
                     case "8931":
-                        return "0";
                     case "8130":
                         return "0";
                 }
@@ -356,6 +361,7 @@ namespace CDCMetal
                         return "1";
                     case "0812":
                     case "8991":
+                    case "8687":
                     case "0912":
                         return "2";
                     case "8126":
@@ -406,6 +412,14 @@ namespace CDCMetal
                             aux = aux / 100;
                             return aux.ToString("F2");
                         }
+                    case "8687":
+                        //20  =CASUALE.TRA(8300;8500)/100*T18
+                        {
+                            int i = _rnd.Next(8350, 8650);
+                            decimal aux = i * constante;
+                            aux = aux / 100;
+                            return aux.ToString("F2");
+                        }
                     case "8126":
                     case "8926":
                     case "0926":
@@ -446,6 +460,13 @@ namespace CDCMetal
                         {
                             //16 =CASUALE.TRA(680;750)/100*T18                     
                             int i = _rnd.Next(680, 750);
+                            decimal aux = i * constante;
+                            aux = aux / 100;
+                            return aux.ToString("F2");
+                        }
+                    case "8687":
+                        {                                        
+                            int i = _rnd.Next(520, 690);
                             decimal aux = i * constante;
                             aux = aux / 100;
                             return aux.ToString("F2");
@@ -494,6 +515,14 @@ namespace CDCMetal
                         {
                             //16=CASUALE.TRA(3150;3250)/100*T18                    
                             int i = _rnd.Next(3150, 3250);
+                            decimal aux = i * constante;
+                            aux = aux / 100;
+                            return aux.ToString("F2");
+                        }
+                    case "8687":
+                        {
+                            //16=CASUALE.TRA(3150;3250)/100*T18                    
+                            int i = _rnd.Next(2850, 3150);
                             decimal aux = i * constante;
                             aux = aux / 100;
                             return aux.ToString("F2");
