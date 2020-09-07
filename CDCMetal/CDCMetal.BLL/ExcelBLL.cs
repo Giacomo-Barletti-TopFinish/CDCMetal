@@ -81,7 +81,7 @@ namespace CDCMetal.BLL
 
             foreach (CDCDS.CDC_DETTAGLIORow riga in ds.CDC_DETTAGLIO)
             {
-                if (string.IsNullOrEmpty(riga.ENTE))
+                if (riga.IsENTENull() || string.IsNullOrEmpty(riga.ENTE))
                     riga.ENTE = "-";
             }
 

@@ -73,3 +73,37 @@ INFO  2020-08-05 10:01:34,656   301ms MainForm               LogScrivi          
 INFO  2020-09-02 15:29:38,622   153ms MainForm               LogScrivi          - Applicazione CDCMetal avviata
 INFO  2020-09-02 15:32:52,753   176ms MainForm               LogScrivi          - Applicazione CDCMetal avviata
 INFO  2020-09-02 15:37:06,876 254299ms MainForm               LogScrivi          - Applicazione CDCMetal fermata
+INFO  2020-09-07 11:47:44,917   166ms MainForm               LogScrivi          - Applicazione CDCMetal avviata
+ERROR 2020-09-07 11:51:14,762 210011ms MainForm               LogScriviErrore    - ERRORE IN APRI FILE EXCEL
+System.Data.NoNullAllowedException: La colonna 'ENTE' non accetta valori nulls.
+   in System.Data.DataColumn.CheckNullable(DataRow row)
+   in System.Data.DataTable.RaiseRowChanging(DataRowChangeEventArgs args, DataRow eRow, DataRowAction eAction, Boolean fireEvent)
+   in System.Data.DataTable.SetNewRecordWorker(DataRow row, Int32 proposedRecord, DataRowAction action, Boolean isInMerge, Boolean suppressEnsurePropertyChanged, Int32 position, Boolean fireEvent, Exception& deferredException)
+   in System.Data.DataTable.InsertRow(DataRow row, Int64 proposedID, Int32 pos, Boolean fireEvent)
+   in System.Data.DataRowCollection.Add(DataRow row)
+   in CDCMetal.Entities.CDCDS.CDC_DETTAGLIODataTable.AddCDC_DETTAGLIORow(CDC_DETTAGLIORow row) in C:\VSProgetti\CDCMetal\CDCMetal\CDCMetal.Entities\CDCDS.Designer.cs:riga 1884
+   in CDCMetal.Helpers.ExcelHelper.ReadCDC(Stream stream, CDCDS ds, Decimal IDEXCEL, String utente, String& messaggioErrore) in C:\VSProgetti\CDCMetal\CDCMetal\CDCMetal.Helpers\ExcelHelper.cs:riga 330
+   in CDCMetal.BLL.ExcelBLL.LeggiExcelCDC(CDCDS ds, String filePath, String utente, String brand, String& messaggioErrore) in C:\VSProgetti\CDCMetal\CDCMetal\CDCMetal.BLL\ExcelBLL.cs:riga 44
+   in CDCMetal.ExcelCaricaNuovoDocumentoFrm.btnApriFile_Click(Object sender, EventArgs e) in C:\VSProgetti\CDCMetal\CDCMetal\CDCMetal\ExcelCaricaNuovoDocumentoFrm.cs:riga 75
+ERROR 2020-09-07 11:51:24,805 220054ms MainForm               LogScriviErrore    - ERRORE IN APRI FILE EXCEL
+System.Data.NoNullAllowedException: La colonna 'ENTE' non accetta valori nulls.
+   in System.Data.DataColumn.CheckNullable(DataRow row)
+   in System.Data.DataTable.RaiseRowChanging(DataRowChangeEventArgs args, DataRow eRow, DataRowAction eAction, Boolean fireEvent)
+   in System.Data.DataTable.SetNewRecordWorker(DataRow row, Int32 proposedRecord, DataRowAction action, Boolean isInMerge, Boolean suppressEnsurePropertyChanged, Int32 position, Boolean fireEvent, Exception& deferredException)
+   in System.Data.DataTable.InsertRow(DataRow row, Int64 proposedID, Int32 pos, Boolean fireEvent)
+   in System.Data.DataRowCollection.Add(DataRow row)
+   in CDCMetal.Entities.CDCDS.CDC_DETTAGLIODataTable.AddCDC_DETTAGLIORow(CDC_DETTAGLIORow row) in C:\VSProgetti\CDCMetal\CDCMetal\CDCMetal.Entities\CDCDS.Designer.cs:riga 1884
+   in CDCMetal.Helpers.ExcelHelper.ReadCDC(Stream stream, CDCDS ds, Decimal IDEXCEL, String utente, String& messaggioErrore) in C:\VSProgetti\CDCMetal\CDCMetal\CDCMetal.Helpers\ExcelHelper.cs:riga 330
+   in CDCMetal.BLL.ExcelBLL.LeggiExcelCDC(CDCDS ds, String filePath, String utente, String brand, String& messaggioErrore) in C:\VSProgetti\CDCMetal\CDCMetal\CDCMetal.BLL\ExcelBLL.cs:riga 44
+   in CDCMetal.ExcelCaricaNuovoDocumentoFrm.btnApriFile_Click(Object sender, EventArgs e) in C:\VSProgetti\CDCMetal\CDCMetal\CDCMetal\ExcelCaricaNuovoDocumentoFrm.cs:riga 75
+INFO  2020-09-07 11:51:32,700 227949ms MainForm               LogScrivi          - Applicazione CDCMetal fermata
+INFO  2020-09-07 11:52:06,935   148ms MainForm               LogScrivi          - Applicazione CDCMetal avviata
+ERROR 2020-09-07 11:52:23,199 16412ms MainForm               LogScriviErrore    - ERRORE IN APRI FILE EXCEL
+System.Data.StrongTypingException: The value for column 'ENTE' in table 'CDC_DETTAGLIO' is DBNull. ---> System.InvalidCastException: Impossibile eseguire il cast di oggetti di tipo 'System.DBNull' sul tipo 'System.String'.
+   in CDCMetal.Entities.CDCDS.CDC_DETTAGLIORow.get_ENTE() in C:\VSProgetti\CDCMetal\CDCMetal\CDCMetal.Entities\CDCDS.Designer.cs:riga 10407
+   --- Fine della traccia dello stack dell'eccezione interna ---
+   in CDCMetal.Entities.CDCDS.CDC_DETTAGLIORow.get_ENTE() in C:\VSProgetti\CDCMetal\CDCMetal\CDCMetal.Entities\CDCDS.Designer.cs:riga 10410
+   in CDCMetal.BLL.ExcelBLL.VerificaExcelCaricato(CDCDS ds) in C:\VSProgetti\CDCMetal\CDCMetal\CDCMetal.BLL\ExcelBLL.cs:riga 84
+   in CDCMetal.ExcelCaricaNuovoDocumentoFrm.btnApriFile_Click(Object sender, EventArgs e) in C:\VSProgetti\CDCMetal\CDCMetal\CDCMetal\ExcelCaricaNuovoDocumentoFrm.cs:riga 99
+INFO  2020-09-07 11:53:53,909   134ms MainForm               LogScrivi          - Applicazione CDCMetal avviata
+INFO  2020-09-07 11:56:02,891 129117ms MainForm               LogScrivi          - Applicazione CDCMetal fermata

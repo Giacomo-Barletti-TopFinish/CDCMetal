@@ -2076,7 +2076,6 @@ namespace CDCMetal.Entities {
                 this.columnCOLORE.MaxLength = 5;
                 this.columnCOMMESSAORDINE.AllowDBNull = false;
                 this.columnCOMMESSAORDINE.MaxLength = 18;
-                this.columnENTE.AllowDBNull = false;
                 this.columnENTE.MaxLength = 5;
                 this.columnUM.MaxLength = 2;
                 this.columnASSEGN.MaxLength = 2;
@@ -10404,7 +10403,12 @@ namespace CDCMetal.Entities {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             public string ENTE {
                 get {
-                    return ((string)(this[this.tableCDC_DETTAGLIO.ENTEColumn]));
+                    try {
+                        return ((string)(this[this.tableCDC_DETTAGLIO.ENTEColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'ENTE\' in table \'CDC_DETTAGLIO\' is DBNull.", e);
+                    }
                 }
                 set {
                     this[this.tableCDC_DETTAGLIO.ENTEColumn] = value;
@@ -10713,6 +10717,18 @@ namespace CDCMetal.Entities {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             public void SetLIVELLODIFFNull() {
                 this[this.tableCDC_DETTAGLIO.LIVELLODIFFColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public bool IsENTENull() {
+                return this.IsNull(this.tableCDC_DETTAGLIO.ENTEColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public void SetENTENull() {
+                this[this.tableCDC_DETTAGLIO.ENTEColumn] = global::System.Convert.DBNull;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
