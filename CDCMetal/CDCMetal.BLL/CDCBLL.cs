@@ -39,14 +39,14 @@ namespace CDCMetal.BLL
             }
         }
 
-        public void LeggiTabelleSpessori(CDCDS ds)
+        public void LeggiTabelleSpessori(CDCDS ds, string tipoCertificato)
         {
             ds.CDC_SPESSORE.Clear();
             ds.CDC_APPLICAZIONE.Clear();
             using (CDCMetalBusiness bCDCMetal = new CDCMetalBusiness())
             {
-                bCDCMetal.FillCDC_SPESSORE(ds);
-                bCDCMetal.FillCDC_APPLICAZIONE(ds);
+                bCDCMetal.FillCDC_SPESSORE(ds, tipoCertificato);
+                bCDCMetal.FillCDC_APPLICAZIONE(ds, tipoCertificato);
             }
         }
 
@@ -196,13 +196,13 @@ namespace CDCMetal.BLL
             messaggio = sb.ToString();
             return esito;
         }
-        public void FillCDC_GALVANICA(CDCDS ds, List<decimal> IDDETTAGLIO)
+        public void FillCDC_GALVANICA(CDCDS ds, List<decimal> IDDETTAGLIO, string tipoCertificato)
         {
             using (CDCMetalBusiness bCDCMetal = new CDCMetalBusiness())
             {
                 ds.CDC_GALVANICA.Clear();
                 ds.CDC_MISURE.Clear();
-                bCDCMetal.FillCDC_GALVANICA(ds, IDDETTAGLIO);
+                bCDCMetal.FillCDC_GALVANICA(ds, IDDETTAGLIO, tipoCertificato);
                 bCDCMetal.FillCDC_MISURE(ds, IDDETTAGLIO);
             }
         }
@@ -750,12 +750,12 @@ namespace CDCMetal.BLL
             return fileCreati.ToString();
         }
 
-        public string CreaPDFSpessore(decimal IDDETTAGLIO, CDCDS ds, string pathCollaudo, byte[] iLoghi, byte[] iBowman, bool CopiaReferto, string pathCartellaReferto,
+        public string CreaPDFSpessore(decimal IDDETTAGLIO, string tipoCertificato, CDCDS ds, string pathCollaudo, byte[] iLoghi, byte[] iBowman, bool CopiaReferto, string pathCartellaReferto,
             List<string> medie, List<string> Std, List<String> Pct, List<string> range, List<string> minimo, List<string> massimo, string Brand, string numeroCampioni)
         {
             string fileCreato = string.Empty;
 
-            CDCDS.CDC_GALVANICARow galvanica = ds.CDC_GALVANICA.Where(x => x.IDDETTAGLIO == IDDETTAGLIO).FirstOrDefault();
+            CDCDS.CDC_GALVANICARow galvanica = ds.CDC_GALVANICA.Where(x => x.IDDETTAGLIO == IDDETTAGLIO && x.CERTIFICATO == tipoCertificato).FirstOrDefault();
             if (galvanica == null)
                 throw new Exception("CDC_GALVANICA riga non trovata per IDDETTAGLIO" + IDDETTAGLIO.ToString());
             CDCDS.CDC_DETTAGLIORow dettaglio = ds.CDC_DETTAGLIO.Where(x => x.IDDETTAGLIO == galvanica.IDDETTAGLIO).FirstOrDefault();
@@ -776,6 +776,8 @@ namespace CDCMetal.BLL
             string commessa = dettaglio.COMMESSAORDINE.Replace('_', ' ');
             string commessaPerStampa = string.Format("{0}-{1}-{2}-{3}-PZ{4}", dettaglio.PREFISSO, dettaglio.PARTE, dettaglio.COLORE, dettaglio.COMMESSAORDINE, dettaglio.QUANTITA);
             string fileName = string.Format("{0} {1} {2}.pdf", dettaglio.PARTE, dettaglio.COLORE, commessa);//A3174 0933 EACP 2018 1916 E.pdf
+            if (tipoCertificato == TipoCertificatoSpessore.CERTIFICATOSPESSORENICHEL)
+                fileName = string.Format("Nichel {0}", fileName);
             string path = string.Format(@"{0}\{1}", cartella, fileName);
 
             List<List<string>> misure = new List<List<string>>();
@@ -825,12 +827,16 @@ namespace CDCMetal.BLL
             }
 
             fileCreato = path;
+            CDCDS.CDC_PDFRow pdf;
+            if (tipoCertificato == TipoCertificatoSpessore.CERTIFICATOSPESSOREGENERICO)
+                pdf = ds.CDC_PDF.Where(x => x.IDDETTAGLIO == galvanica.IDDETTAGLIO && x.TIPO == CDCTipoPDF.CERTIFICATOSPESSORE).FirstOrDefault();
+            else
+                pdf = ds.CDC_PDF.Where(x => x.IDDETTAGLIO == galvanica.IDDETTAGLIO && x.TIPO == CDCTipoPDF.CERTIFICATOSPESSORENICHEL).FirstOrDefault();
 
-            CDCDS.CDC_PDFRow pdf = ds.CDC_PDF.Where(x => x.IDDETTAGLIO == galvanica.IDDETTAGLIO && x.TIPO == CDCTipoPDF.CERTIFICATOSPESSORE).FirstOrDefault();
             if (pdf == null)
             {
                 pdf = ds.CDC_PDF.NewCDC_PDFRow();
-                pdf.TIPO = CDCTipoPDF.CERTIFICATOSPESSORE;
+                pdf.TIPO = (tipoCertificato == TipoCertificatoSpessore.CERTIFICATOSPESSOREGENERICO) ? CDCTipoPDF.CERTIFICATOSPESSORE : CDCTipoPDF.CERTIFICATOSPESSORENICHEL;
                 pdf.NOMEFILE = path;
                 pdf.IDDETTAGLIO = galvanica.IDDETTAGLIO;
                 ds.CDC_PDF.AddCDC_PDFRow(pdf);
@@ -993,7 +999,7 @@ string strumentoMisura, string nota, List<MisuraColore> misure, byte[] iloghi)
             return path;
         }
 
-        public decimal InserisciCDCGalvanica(CDCDS ds, string spessore, decimal IDDETTAGLIO, string applicazione, string strumentoMisura, int misurePreCampione, string utente)
+        public decimal InserisciCDCGalvanica(CDCDS ds, string spessore, decimal IDDETTAGLIO, string applicazione, string strumentoMisura, int misurePreCampione, string utente, string tipoCertificato)
         {
             using (CDCMetalBusiness bCDCMetal = new CDCMetalBusiness())
             {
@@ -1009,6 +1015,7 @@ string strumentoMisura, string nota, List<MisuraColore> misure, byte[] iloghi)
                     galvanica.UTENTE = utente;
                     galvanica.STRUMENTO = strumentoMisura;
                     galvanica.MISURECAMPIONE = misurePreCampione;
+                    galvanica.CERTIFICATO = tipoCertificato;
                     ds.CDC_GALVANICA.AddCDC_GALVANICARow(galvanica);
                 }
                 else

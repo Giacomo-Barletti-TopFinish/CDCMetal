@@ -316,14 +316,16 @@ namespace CDCMetal.Data
             }
         }
 
-        public void FillCDC_GALVANICA(CDCDS ds, List<decimal> IDDETTAGLIO)
+        public void FillCDC_GALVANICA(CDCDS ds, List<decimal> IDDETTAGLIO, string tipoCertificato)
         {
             string selezione = ConvertToStringForInCondition(IDDETTAGLIO);
-            string select = @"SELECT * FROM CDC_GALVANICA WHERE IDDETTAGLIO IN ({0}) ";
+            string select = @"SELECT * FROM CDC_GALVANICA WHERE IDDETTAGLIO IN ({0}) AND CERTIFICATO = $P<CERTIFICATO> ";
 
             string query = string.Format(select, selezione);
 
-            using (DbDataAdapter da = BuildDataAdapter(query))
+            ParamSet ps = new ParamSet();
+            ps.AddParam("CERTIFICATO", DbType.String, tipoCertificato);
+            using (DbDataAdapter da = BuildDataAdapter(query, ps))
             {
                 da.Fill(ds.CDC_GALVANICA);
             }
@@ -344,22 +346,27 @@ namespace CDCMetal.Data
             }
         }
 
-        public void FillCDC_SPESSORE(CDCDS ds)
+        public void FillCDC_SPESSORE(CDCDS ds, string tipoCertificato)
         {
-            string select = @"SELECT * FROM CDC_SPESSORE";
+            string select = @"SELECT * FROM CDC_SPESSORE WHERE CERTIFICATO = $P<CERTIFICATO>";
 
-            using (DbDataAdapter da = BuildDataAdapter(select))
+            ParamSet ps = new ParamSet();
+            ps.AddParam("CERTIFICATO", DbType.String, tipoCertificato);
+            using (DbDataAdapter da = BuildDataAdapter(select, ps))
             {
                 da.Fill(ds.CDC_SPESSORE);
             }
         }
 
 
-        public void FillCDC_APPLICAZIONE(CDCDS ds)
+        public void FillCDC_APPLICAZIONE(CDCDS ds, string tipoCertificato)
         {
-            string select = @"SELECT * FROM CDC_APPLICAZIONE";
+            string select = @"SELECT * FROM CDC_APPLICAZIONE WHERE CERTIFICATO = $P<CERTIFICATO>";
 
-            using (DbDataAdapter da = BuildDataAdapter(select))
+            ParamSet ps = new ParamSet();
+            ps.AddParam("CERTIFICATO", DbType.String, tipoCertificato);
+
+            using (DbDataAdapter da = BuildDataAdapter(select, ps))
             {
                 da.Fill(ds.CDC_APPLICAZIONE);
             }

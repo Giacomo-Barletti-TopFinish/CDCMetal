@@ -15,6 +15,7 @@ namespace CDCMetal
 {
     public partial class CreaSpessoreFrm : BaseChildForm
     {
+        private string tipoCertificato;
         private DataSet _dsServizio = new DataSet();
         private string tblMisure = "MISURE";
         private string tblAggregati = "AGGREGATI";
@@ -25,8 +26,9 @@ namespace CDCMetal
         private enum COLONNEAGGREGATI { Media = 0, StdDev, Pct, Range, Minimo, Massimo };
 
         private CDCDS.CDC_DETTAGLIORow _dettaglio;
-        public CreaSpessoreFrm()
+        public CreaSpessoreFrm(string tipoCertificatoSpessore)
         {
+            tipoCertificato = tipoCertificatoSpessore;
             InitializeComponent();
         }
 
@@ -44,7 +46,7 @@ namespace CDCMetal
         private void CaricaTabelleSpessori()
         {
             CDCBLL bll = new CDCBLL();
-            bll.LeggiTabelleSpessori(_DS);
+            bll.LeggiTabelleSpessori(_DS, tipoCertificato);
 
         }
 
@@ -75,7 +77,7 @@ namespace CDCMetal
                 {
                     btnCreaPDF.Enabled = true;
                     List<decimal> IDDETTAGLIO = _DS.CDC_DETTAGLIO.Select(x => x.IDDETTAGLIO).Distinct().ToList();
-                    bll.FillCDC_GALVANICA(_DS, IDDETTAGLIO);
+                    bll.FillCDC_GALVANICA(_DS, IDDETTAGLIO, tipoCertificato);
                     bll.CDC_PDF(_DS, IDDETTAGLIO);
                 }
                 else
@@ -127,7 +129,12 @@ namespace CDCMetal
 
         private void evidenziaPDFFatti()
         {
-            List<decimal> iddettaglioConPdf = _DS.CDC_PDF.Where(x => x.TIPO == CDCTipoPDF.CERTIFICATOSPESSORE).Select(x => x.IDDETTAGLIO).Distinct().ToList();
+            List<decimal> iddettaglioConPdf;
+            if (tipoCertificato == TipoCertificatoSpessore.CERTIFICATOSPESSOREGENERICO)
+                iddettaglioConPdf = _DS.CDC_PDF.Where(x => x.TIPO == CDCTipoPDF.CERTIFICATOSPESSORE).Select(x => x.IDDETTAGLIO).Distinct().ToList();
+            else
+                iddettaglioConPdf = _DS.CDC_PDF.Where(x => x.TIPO == CDCTipoPDF.CERTIFICATOSPESSORENICHEL).Select(x => x.IDDETTAGLIO).Distinct().ToList();
+
             foreach (DataGridViewRow riga in dgvDettaglio.Rows)
             {
                 decimal IDDETTAGLIO = (decimal)riga.Cells["IDDETTAGLIO"].Value;
@@ -257,10 +264,10 @@ namespace CDCMetal
 
             int numeroCampioni = (int)misurePrecedenti.Max(x => x.NMISURA) + 1;
             txtNumeroCampioni.Text = numeroCampioni.ToString();
-            if (((DataCollaudo)ddlDataCollaudo.SelectedItem).Brand == CDCBrands.YSL 
+            if (((DataCollaudo)ddlDataCollaudo.SelectedItem).Brand == CDCBrands.YSL
                 || ((DataCollaudo)ddlDataCollaudo.SelectedItem).Brand == CDCBrands.Balenciaga
                 || ((DataCollaudo)ddlDataCollaudo.SelectedItem).Brand == CDCBrands.McQueen)
-                
+
             {
                 if (galvanica.MISURECAMPIONE > 0)
                 {
@@ -418,6 +425,7 @@ namespace CDCMetal
                 spessore.MINIMO = Minimo;
                 spessore.PARTE = _dettaglio.PARTE;
                 spessore.SEQUENZA = sequenza;
+                spessore.CERTIFICATO = tipoCertificato;
                 _DS.CDC_SPESSORE.AddCDC_SPESSORERow(spessore);
 
                 sequenza++;
@@ -447,7 +455,7 @@ namespace CDCMetal
             }
 
             int numeroCampioni = int.Parse(txtNumeroCampioni.Text); // caso GUCCI
-            if (((DataCollaudo)ddlDataCollaudo.SelectedItem).Brand == CDCBrands.YSL 
+            if (((DataCollaudo)ddlDataCollaudo.SelectedItem).Brand == CDCBrands.YSL
                 || ((DataCollaudo)ddlDataCollaudo.SelectedItem).Brand == CDCBrands.Balenciaga
                 || ((DataCollaudo)ddlDataCollaudo.SelectedItem).Brand == CDCBrands.McQueen)
             {
@@ -778,6 +786,7 @@ namespace CDCMetal
                     applicazioneRow.APPLICAZIONE = txtApplicazione.Text;
                     applicazioneRow.NUMEROCAMPIONI = nMisurePerCampione.Value;
                     applicazioneRow.SPESSORE = txtSpessoreRichiesto.Text;
+                    applicazioneRow.CERTIFICATO = tipoCertificato;
                     _DS.CDC_APPLICAZIONE.AddCDC_APPLICAZIONERow(applicazioneRow);
                 }
                 else
@@ -788,7 +797,7 @@ namespace CDCMetal
                 }
 
 
-                decimal IDGALVANICA = bll.InserisciCDCGalvanica(_DS, txtSpessoreRichiesto.Text, IDDETTAGLIO, txtApplicazione.Text, Contesto.StrumentoSpessore, misurePerCampione, Contesto.Utente.FULLNAMEUSER);
+                decimal IDGALVANICA = bll.InserisciCDCGalvanica(_DS, txtSpessoreRichiesto.Text, IDDETTAGLIO, txtApplicazione.Text, Contesto.StrumentoSpessore, misurePerCampione, Contesto.Utente.FULLNAMEUSER, tipoCertificato);
 
                 List<CDCDS.CDC_MISURERow> idMisuraDaCancellare = _DS.CDC_MISURE.Where(x => x.RowState != DataRowState.Deleted && x.IDGALVANICA == IDGALVANICA).ToList();
                 foreach (CDCDS.CDC_MISURERow misura in idMisuraDaCancellare)
@@ -849,7 +858,7 @@ namespace CDCMetal
                     minimo.Add(rigaMinimo[ncol].ToString());
                     massimo.Add(rigaMassimo[ncol].ToString());
                 }
-                filename = bll.CreaPDFSpessore(IDDETTAGLIO, _DS, Contesto.PathCollaudo, iLogo, iBowman, chkCopiaReferto.Checked, Contesto.GetPathRefertiLaboratorio(brand),
+                filename = bll.CreaPDFSpessore(IDDETTAGLIO,tipoCertificato, _DS, Contesto.PathCollaudo, iLogo, iBowman, chkCopiaReferto.Checked, Contesto.GetPathRefertiLaboratorio(brand),
                     medie, Std, Pct, range, minimo, massimo, brand, txtNumeroCampioni.Text);
 
                 if (chkApriPDF.Checked)

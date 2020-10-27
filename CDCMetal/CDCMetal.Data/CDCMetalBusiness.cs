@@ -227,10 +227,10 @@ namespace CDCMetal.Data
         }
 
         [DataContext]
-        public void FillCDC_GALVANICA(CDCDS ds, List<decimal> IDDETTAGLIO)
+        public void FillCDC_GALVANICA(CDCDS ds, List<decimal> IDDETTAGLIO,string tipoCertificato)
         {
             CDCMetalAdapter a = new CDCMetalAdapter(DbConnection, DbTransaction);
-            a.FillCDC_GALVANICA(ds, IDDETTAGLIO);
+            a.FillCDC_GALVANICA(ds, IDDETTAGLIO,tipoCertificato);
         }
 
         [DataContext]
@@ -241,18 +241,18 @@ namespace CDCMetal.Data
         }
 
         [DataContext]
-        public void FillCDC_SPESSORE(CDCDS ds)
+        public void FillCDC_SPESSORE(CDCDS ds, string tipoCertificato)
         {
             CDCMetalAdapter a = new CDCMetalAdapter(DbConnection, DbTransaction);
-            a.FillCDC_SPESSORE(ds);
+            a.FillCDC_SPESSORE(ds,tipoCertificato);
         }
 
 
         [DataContext]
-        public void FillCDC_APPLICAZIONE(CDCDS ds)
+        public void FillCDC_APPLICAZIONE(CDCDS ds, string tipoCertificato)
         {
             CDCMetalAdapter a = new CDCMetalAdapter(DbConnection, DbTransaction);
-            a.FillCDC_APPLICAZIONE(ds);
+            a.FillCDC_APPLICAZIONE(ds,tipoCertificato);
         }
 
         [DataContext]

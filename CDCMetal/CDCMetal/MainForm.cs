@@ -268,7 +268,7 @@ namespace CDCMetal
         {
             try
             {
-                CreaSpessoreFrm form = new CreaSpessoreFrm();
+                CreaSpessoreFrm form = new CreaSpessoreFrm(TipoCertificatoSpessore.CERTIFICATOSPESSOREGENERICO);
                 form.MdiParent = this;
                 form.Show();
             }
@@ -360,6 +360,21 @@ namespace CDCMetal
             {
                 MostraEccezione("ERRORE IN CREA ASSOCIA CERTIFICATO PIOMBO ", ex);
             }
+        }
+
+        private void spessoriNichelToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                CreaSpessoreFrm form = new CreaSpessoreFrm(TipoCertificatoSpessore.CERTIFICATOSPESSORENICHEL);
+                form.MdiParent = this;
+                form.Show();
+            }
+            catch (Exception ex)
+            {
+                MostraEccezione("ERRORE IN CREA CERTIFICATI SPESSORI PIOMBO", ex);
+            }
+
         }
     }
 }

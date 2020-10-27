@@ -13,6 +13,7 @@ namespace CDCMetal.Entities
         public static readonly string CERTIFICATOANTIALLERGICO = "ANT";
         public static readonly string CERTIFICATOCOLORIMETRICO = "COL";
         public static readonly string CERTIFICATOSPESSORE = "MIS";
+        public static readonly string CERTIFICATOSPESSORENICHEL = "NIC";
         public static readonly string CERTIFICATOVERNICECOPRENTE = "VCO";
         public static readonly string CERTIFICATOTENUTAACIDONITRICO = "TAN";
         public static readonly string ANALISIPIOMBO = "APD";

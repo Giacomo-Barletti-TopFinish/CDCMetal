@@ -59,6 +59,7 @@
             this.lblUserLoggato = new System.Windows.Forms.ToolStripStatusLabel();
             this.lblStatusBar = new System.Windows.Forms.ToolStripStatusLabel();
             this.stUser = new System.Windows.Forms.ToolStripStatusLabel();
+            this.spessoriNichelToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.cdcMenu.SuspendLayout();
             this.statusStrip1.SuspendLayout();
             this.SuspendLayout();
@@ -172,6 +173,7 @@
             this.antiallergicoNichelFreeToolStripMenuItem,
             this.colorimetricoToolStripMenuItem,
             this.spessoriToolStripMenuItem,
+            this.spessoriNichelToolStripMenuItem,
             this.verniciCoprentiToolStripMenuItem,
             this.tenutaAcidoNitricoToolStripMenuItem,
             this.associaCertificatoPiomboToolStripMenuItem,
@@ -309,6 +311,13 @@
             this.stUser.Size = new System.Drawing.Size(118, 17);
             this.stUser.Text = "toolStripStatusLabel1";
             // 
+            // spessoriNichelToolStripMenuItem
+            // 
+            this.spessoriNichelToolStripMenuItem.Name = "spessoriNichelToolStripMenuItem";
+            this.spessoriNichelToolStripMenuItem.Size = new System.Drawing.Size(231, 22);
+            this.spessoriNichelToolStripMenuItem.Text = "Spessori nichel";
+            this.spessoriNichelToolStripMenuItem.Click += new System.EventHandler(this.spessoriNichelToolStripMenuItem_Click);
+            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -364,6 +373,7 @@
         private System.Windows.Forms.ToolStripMenuItem daExcelToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem associaCertificatoPiomboToolStripMenuItem;
         private System.Windows.Forms.ToolStripStatusLabel stUser;
+        private System.Windows.Forms.ToolStripMenuItem spessoriNichelToolStripMenuItem;
     }
 }
 
