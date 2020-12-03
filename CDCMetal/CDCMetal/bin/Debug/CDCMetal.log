@@ -159,3 +159,12 @@ Oracle.ManagedDataAccess.Client.OracleException (0x80004005): ORA-00001: violata
    in CDCMetal.BLL.CDCBLL.SalvaTabelleSpessori(CDCDS ds) in C:\VSProgetti\CDCMetal\CDCMetal\CDCMetal.BLL\CDCBLL.cs:riga 1047
    in CDCMetal.CreaSpessoreFrm.btnCreaPDF_Click(Object sender, EventArgs e) in C:\VSProgetti\CDCMetal\CDCMetal\CDCMetal\CreaSpessoreFrm.cs:riga 827
 INFO  2020-10-27 10:11:04,754 2059398ms MainForm               LogScrivi          - Applicazione CDCMetal fermata
+INFO  2020-11-16 09:56:36,181   146ms MainForm               LogScrivi          - Applicazione CDCMetal avviata
+INFO  2020-11-16 13:43:41,562   300ms MainForm               LogScrivi          - Applicazione CDCMetal avviata
+INFO  2020-11-16 14:14:58,742 1877479ms MainForm               LogScrivi          - Applicazione CDCMetal fermata
+INFO  2020-11-16 18:07:19,661   195ms MainForm               LogScrivi          - Applicazione CDCMetal avviata
+INFO  2020-11-16 18:07:44,804 25338ms MainForm               LogScrivi          - Applicazione CDCMetal fermata
+INFO  2020-11-17 08:08:01,217   156ms MainForm               LogScrivi          - Applicazione CDCMetal avviata
+INFO  2020-11-17 09:49:09,922 6068860ms MainForm               LogScrivi          - Applicazione CDCMetal fermata
+INFO  2020-11-17 18:01:10,727   230ms MainForm               LogScrivi          - Applicazione CDCMetal avviata
+INFO  2020-11-18 14:34:39,810 74009313ms MainForm               LogScrivi          - Applicazione CDCMetal fermata

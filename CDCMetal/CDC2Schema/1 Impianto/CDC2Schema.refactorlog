@@ -1,0 +1,24 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Operations Version="1.0" xmlns="http://schemas.microsoft.com/sqlserver/dac/Serialization/2012/02">
+  <Operation Name="Rename Refactor" Key="82596d1a-ad89-4bdf-b22f-000c2ded4c1e" ChangeDateTime="11/16/2020 07:48:27">
+    <Property Name="ElementName" Value="[dbo].[BRAND].[Id]" />
+    <Property Name="ElementType" Value="SqlSimpleColumn" />
+    <Property Name="ParentElementName" Value="[dbo].[BRAND]" />
+    <Property Name="ParentElementType" Value="SqlTable" />
+    <Property Name="NewName" Value="IDBRAND" />
+  </Operation>
+  <Operation Name="Rename Refactor" Key="7d47db10-350a-4c65-95ee-589bb252f87b" ChangeDateTime="11/16/2020 08:02:18">
+    <Property Name="ElementName" Value="[dbo].[BRAND].[IX_BRAND_Column]" />
+    <Property Name="ElementType" Value="SqlIndex" />
+    <Property Name="ParentElementName" Value="[dbo].[BRAND]" />
+    <Property Name="ParentElementType" Value="SqlTable" />
+    <Property Name="NewName" Value="[IX_BRAND_CODICE]" />
+  </Operation>
+  <Operation Name="Rename Refactor" Key="e3476562-08fd-4084-9f3c-70b109576251" ChangeDateTime="11/16/2020 08:03:01">
+    <Property Name="ElementName" Value="[dbo].[ENTI].[Id]" />
+    <Property Name="ElementType" Value="SqlSimpleColumn" />
+    <Property Name="ParentElementName" Value="[dbo].[ENTI]" />
+    <Property Name="ParentElementType" Value="SqlTable" />
+    <Property Name="NewName" Value="IDENTE" />
+  </Operation>
+</Operations>
