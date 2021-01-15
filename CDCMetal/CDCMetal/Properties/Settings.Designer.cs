@@ -62,20 +62,19 @@ namespace CDCMetal.Properties {
         
         [global::System.Configuration.ApplicationScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("\\\\dc02\\GalvanicaFiles\\Laboratorio e Backup\\LABORATORIO\\Referti Lab\\Referti {0}\\20" +
-            "19")]
-        public string PathRefertiLaboratorio {
+        [global::System.Configuration.DefaultSettingValueAttribute("\\\\dc02\\Galvanica Condivisa\\Analisi Piombo_Cadmio\\Certificati")]
+        public string PathAnalisiPiombo {
             get {
-                return ((string)(this["PathRefertiLaboratorio"]));
+                return ((string)(this["PathAnalisiPiombo"]));
             }
         }
         
         [global::System.Configuration.ApplicationScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("\\\\dc02\\Galvanica Condivisa\\Analisi Piombo_Cadmio\\Certificati")]
-        public string PathAnalisiPiombo {
+        [global::System.Configuration.DefaultSettingValueAttribute("\\\\dc02\\GalvanicaFiles\\Laboratorio e Backup\\LABORATORIO\\Referti Lab\\Referti {0}")]
+        public string PathRefertiLaboratorio {
             get {
-                return ((string)(this["PathAnalisiPiombo"]));
+                return ((string)(this["PathRefertiLaboratorio"]));
             }
         }
     }

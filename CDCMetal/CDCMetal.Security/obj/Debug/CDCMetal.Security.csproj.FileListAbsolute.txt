@@ -4,7 +4,3 @@ C:\VSProgetti\CDCMetal\CDCMetal\CDCMetal.Security\obj\Debug\CDCMetal.Security.cs
 C:\VSProgetti\CDCMetal\CDCMetal\CDCMetal.Security\obj\Debug\CDCMetal.Security.csproj.CoreCompileInputs.cache
 C:\VSProgetti\CDCMetal\CDCMetal\CDCMetal.Security\obj\Debug\CDCMetal.Security.dll
 C:\VSProgetti\CDCMetal\CDCMetal\CDCMetal.Security\obj\Debug\CDCMetal.Security.pdb
-C:\Sorgenti\CDCMetal\CDCMetal\CDCMetal.Security\bin\Debug\CDCMetal.Security.dll
-C:\Sorgenti\CDCMetal\CDCMetal\CDCMetal.Security\bin\Debug\CDCMetal.Security.pdb
-C:\Sorgenti\CDCMetal\CDCMetal\CDCMetal.Security\obj\Debug\CDCMetal.Security.dll
-C:\Sorgenti\CDCMetal\CDCMetal\CDCMetal.Security\obj\Debug\CDCMetal.Security.pdb

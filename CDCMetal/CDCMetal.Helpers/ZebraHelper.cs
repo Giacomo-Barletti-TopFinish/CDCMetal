@@ -30,7 +30,7 @@ namespace CDCMetal.Helpers
 
             string accessorista = (string)riga[1];
             if (accessorista == "TopFinish")
-                accessorista = "TOP FINISH";
+                accessorista = "METAL-PLUS";
             else
                 accessorista = "METAL-PLUS";
 

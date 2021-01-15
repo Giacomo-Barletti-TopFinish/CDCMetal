@@ -73,7 +73,7 @@ namespace CDCMetal
                 {
                     riga[9] = DateTime.Today.AddDays(-2);
                     riga[10] = 2;
-                    riga[11] = "Top Finish";
+                    riga[11] = "Metalplus";
                     riga[12] = true;
                     riga[13] = true;
                 }

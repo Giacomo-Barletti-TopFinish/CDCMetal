@@ -238,7 +238,7 @@ namespace CDCMetal.BLL
             if (Accessorista.Trim() == "Metalplus s.r.l.")
                 return "Metalplus";
             else
-                return "TopFinish";
+                return "Metalplus";
         }
 
         private static string creaStringaCartellaGiornoCollaudo(DateTime dataSelezionata)

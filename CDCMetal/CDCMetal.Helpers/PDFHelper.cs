@@ -764,7 +764,7 @@ namespace CDCMetal.Helpers
             p.AddFormattedText("Viale Kennedy, 103 - 50038 SCARPERIA (FI) - P.Iva 04949200481", fontPiccolo);
             p.AddLineBreak();
             p.AddLineBreak();
-            p.AddFormattedText("Tel 055 843611 - Fax 055 8436130 - e-mail: info@topfinish.it", fontPiccolo);
+            p.AddFormattedText("Tel 055 843611 - Fax 055 8436130 - e-mail: info@metal-plus.it", fontPiccolo);
 
             Font fontGrande = new Font("Times New Roman");
             fontGrande.Size = 22;
@@ -893,9 +893,9 @@ namespace CDCMetal.Helpers
             p.AddLineBreak();
             p.AddLineBreak();
             if (nichelFree)
-                p.AddFormattedText("L’azienda Top Finish dichiara in fede che nella realizzazione del riporto galvanico del lotto in oggetto è stato seguito il ciclo Nichel free previsto sulla scheda del Capitolato Gucci, con la giusta sequenza dei bagni evitando tassativamente di utilizzare un qualunque bagno o trattamento che possa comportare un qualsivoglia deposito di nichel su pezzi. ", fontNormale);
+                p.AddFormattedText("L’azienda Metalplus dichiara in fede che nella realizzazione del riporto galvanico del lotto in oggetto è stato seguito il ciclo Nichel free previsto sulla scheda del Capitolato Gucci, con la giusta sequenza dei bagni evitando tassativamente di utilizzare un qualunque bagno o trattamento che possa comportare un qualsivoglia deposito di nichel su pezzi. ", fontNormale);
             else
-                p.AddFormattedText("L’azienda Top Finish dichiara in fede che nella realizzazione del riporto galvanico del lotto in oggetto è stato seguito il ciclo antiallergico previsto sulla scheda del Capitolato Gucci, con la giusta sequenza dei bagni. ", fontNormale);
+                p.AddFormattedText("L’azienda Metalplus dichiara in fede che nella realizzazione del riporto galvanico del lotto in oggetto è stato seguito il ciclo antiallergico previsto sulla scheda del Capitolato Gucci, con la giusta sequenza dei bagni. ", fontNormale);
             p.AddLineBreak();
             p.AddLineBreak();
 
@@ -934,11 +934,11 @@ namespace CDCMetal.Helpers
             fontPiccolo.Size = 8;
             fontPiccolo.Bold = true;
 
-            p.AddFormattedText("Top Finish 2002 S.p.A.", fontPiccolo);
+            p.AddFormattedText("Metalplus S.r.l.", fontPiccolo);
             p.AddLineBreak();
             p.AddFormattedText("Viale Kennedy, 103 - 50038 SCARPERIA (FI) - P.Iva 04949200481", fontPiccolo);
             p.AddLineBreak();
-            p.AddFormattedText("Tel 055 843611 - Fax 055 8436130 - e-mail: info@topfinish.it", fontPiccolo);
+            p.AddFormattedText("Tel 055 843611 - Fax 055 8436130 - e-mail: info@metal-plus.it", fontPiccolo);
 
             Font fontNormale = new Font("Times New Roman");
             fontNormale.Size = 12;
@@ -1086,7 +1086,7 @@ namespace CDCMetal.Helpers
             p = document.LastSection.AddParagraph();
             p.Format.Alignment = ParagraphAlignment.Left;
 
-            p.AddFormattedText("Test effettuati presso il Laboratorio Top Finish", fontNormale);
+            p.AddFormattedText("Test effettuati presso il Laboratorio Metalplus", fontNormale);
             p.AddLineBreak();
             p = document.LastSection.AddParagraph();
             p.Format.Alignment = ParagraphAlignment.Right;
@@ -1118,11 +1118,11 @@ namespace CDCMetal.Helpers
             fontPiccolo.Size = 8;
             fontPiccolo.Bold = true;
 
-            p.AddFormattedText("Top Finish 2002 S.p.A.", fontPiccolo);
+            p.AddFormattedText("Metalplus S.r.l.", fontPiccolo);
             p.AddLineBreak();
             p.AddFormattedText("Viale Kennedy, 103 - 50038 SCARPERIA (FI) - P.Iva 04949200481", fontPiccolo);
             p.AddLineBreak();
-            p.AddFormattedText("Tel 055 843611 - Fax 055 8436130 - e-mail: info@topfinish.it", fontPiccolo);
+            p.AddFormattedText("Tel 055 843611 - Fax 055 8436130 - e-mail: info@metal-plus.it", fontPiccolo);
 
             Font fontNormale = new Font("Times New Roman");
             fontNormale.Size = 12;
@@ -1317,11 +1317,11 @@ namespace CDCMetal.Helpers
             fontPiccolo.Size = 8;
             fontPiccolo.Bold = true;
 
-            p.AddFormattedText("Top Finish 2002 S.p.A.", fontPiccolo);
+            p.AddFormattedText("Metalplus S.r.l.", fontPiccolo);
             p.AddLineBreak();
             p.AddFormattedText("Viale Kennedy, 103 - 50038 SCARPERIA (FI) - P.Iva 04949200481", fontPiccolo);
             p.AddLineBreak();
-            p.AddFormattedText("Tel 055 843611 - Fax 055 8436130 - e-mail: info@topfinish.it", fontPiccolo);
+            p.AddFormattedText("Tel 055 843611 - Fax 055 8436130 - e-mail: info@metal-plus.it", fontPiccolo);
 
             Font fontNormale = new Font("Times New Roman");
             fontNormale.Size = 12;
@@ -1782,14 +1782,14 @@ string strumentoMisura, string nota, List<MisuraColore> misure, byte[] iloghi)
             Cell cell = row.Cells[0];
             cell.Format.Alignment = ParagraphAlignment.Left;
             cell.VerticalAlignment = VerticalAlignment.Center;
-            Paragraph p = cell.AddParagraph("Top Finish 2002 S.p.A.");
+            Paragraph p = cell.AddParagraph("Metalplus S.r.l.");
             p.Format.Font.Size = 22;
             p.Format.Font.Bold = true;
             p = cell.AddParagraph("Viale Kennedy nr. 103 int F -50038 - Scarperia e San Piero(FI)");
             p.Format.Font.Bold = true;
             p = cell.AddParagraph("Tel. 39 055 843611 - Fax 39 055 8436130");
             p.Format.Font.Bold = true;
-            p = cell.AddParagraph("www.topfinish.it - info@topfinish.it");
+            p = cell.AddParagraph("www.metal-plus.it - info@metal-plus.it");
             p.Format.Font.Bold = true;
             p = cell.AddParagraph("P.IVA e C.F: 04949200481");
             p.Format.Font.Bold = true;
@@ -2163,11 +2163,11 @@ string strumentoMisura, string nota, List<MisuraColore> misure, byte[] iloghi)
             fontPiccolo.Size = 8;
             fontPiccolo.Bold = true;
 
-            p.AddFormattedText("Top Finish 2002 S.p.A.", fontPiccolo);
+            p.AddFormattedText("Metalplus S.r.l.", fontPiccolo);
             p.AddLineBreak();
             p.AddFormattedText("Viale Kennedy, 103 - 50038 SCARPERIA (FI) - P.Iva 04949200481", fontPiccolo);
             p.AddLineBreak();
-            p.AddFormattedText("Tel 055 843611 - Fax 055 8436130 - e-mail: info@topfinish.it", fontPiccolo);
+            p.AddFormattedText("Tel 055 843611 - Fax 055 8436130 - e-mail: info@metal-plus.it", fontPiccolo);
 
             Font fontNormale = new Font("Times New Roman");
             fontNormale.Size = 12;

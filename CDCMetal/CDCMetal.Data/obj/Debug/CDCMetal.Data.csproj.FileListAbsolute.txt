@@ -1,14 +1,3 @@
-C:\VSProgetti\TEST\CDCMetal\CDCMetal.Data\bin\Debug\CDCMetal.Data.dll
-C:\VSProgetti\TEST\CDCMetal\CDCMetal.Data\bin\Debug\CDCMetal.Data.pdb
-C:\VSProgetti\TEST\CDCMetal\CDCMetal.Data\bin\Debug\Oracle.ManagedDataAccess.dll
-C:\VSProgetti\TEST\CDCMetal\CDCMetal.Data\obj\Debug\CDCMetal.Data.csprojAssemblyReference.cache
-C:\VSProgetti\TEST\CDCMetal\CDCMetal.Data\obj\Debug\CDCMetal.Data.csproj.CoreCompileInputs.cache
-C:\VSProgetti\TEST\CDCMetal\CDCMetal.Data\obj\Debug\CDCMetal.Data.csproj.CopyComplete
-C:\VSProgetti\TEST\CDCMetal\CDCMetal.Data\obj\Debug\CDCMetal.Data.dll
-C:\VSProgetti\TEST\CDCMetal\CDCMetal.Data\obj\Debug\CDCMetal.Data.pdb
-C:\VSProgetti\TEST\CDCMetal\CDCMetal.Data\bin\Debug\CDCMetal.Entities.dll
-C:\VSProgetti\TEST\CDCMetal\CDCMetal.Data\bin\Debug\CDCMetal.Entities.pdb
-C:\VSProgetti\TEST\CDCMetal\CDCMetal.Data\bin\Debug\CDCMetal.Entities.dll.config
 C:\VSProgetti\CDCMetal\CDCMetal\CDCMetal.Data\bin\Debug\CDCMetal.Data.dll
 C:\VSProgetti\CDCMetal\CDCMetal\CDCMetal.Data\bin\Debug\CDCMetal.Data.pdb
 C:\VSProgetti\CDCMetal\CDCMetal\CDCMetal.Data\bin\Debug\CDCMetal.Entities.dll
@@ -20,12 +9,3 @@ C:\VSProgetti\CDCMetal\CDCMetal\CDCMetal.Data\obj\Debug\CDCMetal.Data.csproj.Cor
 C:\VSProgetti\CDCMetal\CDCMetal\CDCMetal.Data\obj\Debug\CDCMetal.Data.csproj.CopyComplete
 C:\VSProgetti\CDCMetal\CDCMetal\CDCMetal.Data\obj\Debug\CDCMetal.Data.dll
 C:\VSProgetti\CDCMetal\CDCMetal\CDCMetal.Data\obj\Debug\CDCMetal.Data.pdb
-C:\Sorgenti\CDCMetal\CDCMetal\CDCMetal.Data\bin\Debug\CDCMetal.Data.dll
-C:\Sorgenti\CDCMetal\CDCMetal\CDCMetal.Data\bin\Debug\CDCMetal.Data.pdb
-C:\Sorgenti\CDCMetal\CDCMetal\CDCMetal.Data\bin\Debug\CDCMetal.Entities.dll
-C:\Sorgenti\CDCMetal\CDCMetal\CDCMetal.Data\bin\Debug\CDCMetal.Entities.pdb
-C:\Sorgenti\CDCMetal\CDCMetal\CDCMetal.Data\bin\Debug\CDCMetal.Entities.dll.config
-C:\Sorgenti\CDCMetal\CDCMetal\CDCMetal.Data\obj\Debug\CDCMetal.Data.csprojAssemblyReference.cache
-C:\Sorgenti\CDCMetal\CDCMetal\CDCMetal.Data\obj\Debug\CDCMetal.Data.csproj.CopyComplete
-C:\Sorgenti\CDCMetal\CDCMetal\CDCMetal.Data\obj\Debug\CDCMetal.Data.dll
-C:\Sorgenti\CDCMetal\CDCMetal\CDCMetal.Data\obj\Debug\CDCMetal.Data.pdb
