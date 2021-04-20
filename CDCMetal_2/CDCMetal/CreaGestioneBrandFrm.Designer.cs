@@ -42,7 +42,7 @@
             // button1
             // 
             this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F);
-            this.button1.Location = new System.Drawing.Point(660, 221);
+            this.button1.Location = new System.Drawing.Point(544, 248);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(110, 33);
             this.button1.TabIndex = 6;
@@ -65,7 +65,7 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F);
-            this.label1.Location = new System.Drawing.Point(12, 16);
+            this.label1.Location = new System.Drawing.Point(12, 4);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(55, 18);
             this.label1.TabIndex = 4;
@@ -85,7 +85,7 @@
             // 
             this.dgvBrands.AllowUserToDeleteRows = false;
             this.dgvBrands.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvBrands.Location = new System.Drawing.Point(15, 37);
+            this.dgvBrands.Location = new System.Drawing.Point(15, 25);
             this.dgvBrands.Name = "dgvBrands";
             this.dgvBrands.ReadOnly = true;
             this.dgvBrands.Size = new System.Drawing.Size(639, 217);
@@ -94,7 +94,7 @@
             // button2
             // 
             this.button2.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F);
-            this.button2.Location = new System.Drawing.Point(660, 543);
+            this.button2.Location = new System.Drawing.Point(544, 582);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(110, 33);
             this.button2.TabIndex = 7;
@@ -106,13 +106,15 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1291, 588);
+            this.ClientSize = new System.Drawing.Size(675, 622);
             this.Controls.Add(this.button2);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.dgvEnti);
             this.Controls.Add(this.dgvBrands);
+            this.MaximizeBox = false;
+            this.MinimizeBox = false;
             this.Name = "CreaGestioneBrandFrm";
             this.Text = "CreaGestioneBrandFrm";
             ((System.ComponentModel.ISupportInitialize)(this._DS)).EndInit();
